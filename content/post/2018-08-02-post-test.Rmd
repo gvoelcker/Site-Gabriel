@@ -7,3 +7,33 @@ categories:
   - R
 tags: []
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+```{r, echo=FALSE, message=FALSE, include=FALSE}
+library(GetDFPData)
+library(BETS)
+library(ggplot2)
+library(tidyverse)
+library(tidyquant)
+library(dplyr)
+library(readxl)
+library(writexl)
+library(stringr)
+library(tidyverse)
+library(rstudioapi)
+library(magrittr)
+library(tidyverse)
+library(ggplot2)
+library(dslabs)
+library(lubridate)
+require(zoo)
+library(BatchGetSymbols)
+require(xfun)
+library(knitr)
+library(kableExtra)
+
+```
+
