@@ -17,7 +17,7 @@
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/2018/08/02/post-test/</guid>
-      <description></description>
+      <description>library(GetDFPData) library(BETS) ## Warning: package &amp;#39;BETS&amp;#39; was built under R version 3.4.4 library(ggplot2) library(tidyverse) library(tidyquant) ## Warning: package &amp;#39;tidyquant&amp;#39; was built under R version 3.4.4 ## Warning: package &amp;#39;quantmod&amp;#39; was built under R version 3.4.4 library(dplyr) library(readxl) library(writexl) </description>
     </item>
     
     <item>
