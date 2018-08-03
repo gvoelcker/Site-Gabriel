@@ -1,0 +1,15 @@
+---
+title: 'Working Paper #1: My Masters Dissertation'
+author: Gabriel Voelcker
+date: '2018-08-05'
+slug: working-paper-1-my-masters-dissertation
+categories: []
+tags:
+  - family firms
+  - risk
+  - risk-taking
+Description: ''
+Tags: []
+---
+As I near the end of my masters, I decided to share the working paper based on my dissertation. It is centered around the hypothesis: are family firms more averse to risk-taking than non-family firms.
+
