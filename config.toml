@@ -5,6 +5,7 @@ licenselink = "https://github.com/titi/hurock/LICENSE"
 homepage = "https://github.com/titi/hurock"
 tags = ["blog", "personal"]
 features = ["sidebar", "TableOfContents", "highlight", "404"]
+ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
 
 [author]
   name = "Gabriel Voelcker"
@@ -15,4 +16,9 @@ features = ["sidebar", "TableOfContents", "highlight", "404"]
   
 [permalinks]
 posts = "/:year/:month/:filename/"
+  
+[sidebar]
+
+  github = "https://github.com/gvoelcker/"
+  twitter = "https://twitter.com/skyvoelcker"
   
