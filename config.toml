@@ -25,7 +25,7 @@ theme = "vienna"
     #ga_api_key = "Your Google Analytics tracking id"
     # Mixpanel API key.
     #mixpanel_api_key = "Your Mixpanel API key"
-    #author = "Your Name"
+    author = "Gabriel Voelcker"
     #avatar = "/path/to/avatar"
     contact = "(mailto:gvoelcker@gmail.com)"
     # bio = "Economist from Porto Alegre, Brazil"
