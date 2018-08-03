@@ -6,6 +6,8 @@ homepage = "https://github.com/titi/hurock"
 tags = ["blog", "personal"]
 features = ["sidebar", "TableOfContents", "highlight", "404"]
 ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+theme = "hurock"
+
 
 [author]
   name = "Gabriel Voelcker"
