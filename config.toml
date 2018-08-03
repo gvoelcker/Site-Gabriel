@@ -1,39 +1,20 @@
-baseurl = "/"
-languageCode = "en-us"
-title = "Gabriel Voelcker's ideas are stored here"
-theme = "hugo-theme-cleanwhite-master"
-googleAnalytics = ""
-disqusShortname = ""
-ignoreFiles = ["\\.Rmd$", "\\.Rmarkdown$", "_files$", "_cache$"]
+# theme.toml template for a Hugo theme
+# See https://github.com/spf13/hugoThemes#themetoml for an example
 
-[permalinks]
-    post = "/:year/:month/:day/:slug/"
+name = "Clean White"
+license = "Apache"
+licenselink = "https://github.com/zhaohuabing/hugo-theme-cleanwhite/blob/master/LICENSE"
+description = "A clean, elegant blog theme for hugo"
+homepage = "https://github.com/zhaohuabing/hugo-theme-cleanwhite"
+tags = [ "minimal", "responsive", "blog","light", "clean", "search"]
+features = ["disqus", "site search", "responsive", "google analytics", "side bar"]
+min_version = 0.10
 
-[[menu.main]]
-    name = "About"
-    url = "/about/"
-[[menu.main]]
-    name = "GitHub"
-    url = "https://github.com/rstudio/blogdown"
-[[menu.main]]
-    name = "Twitter"
-    url = "https://twitter.com/skyvoelcker"
+[author]
+  name = "Huabing Zhao"
+  homepage = "https://github.com/zhaohuabing"
 
-[params]
-    description = "A website built through Hugo and blogdown."
-
-    # options for highlight.js (version, additional languages, and theme)
-    highlightjsVersion = "9.11.0"
-    highlightjsCDN = "//cdn.bootcss.com"
-    highlightjsLang = ["r", "yaml"]
-    highlightjsTheme = "github"
-
-    MathJaxCDN = "//cdn.bootcss.com"
-    MathJaxVersion = "2.7.1"
-
-    [params.logo]
-    url = "logo.png"
-    width = 50
-    height = 50
-    alt = "Logo"
-
+# If porting an existing theme
+[original]
+  name = "huxblog"
+  homepage = "https://github.com/Huxpro/huxpro.github.io"
