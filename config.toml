@@ -7,5 +7,12 @@ tags = ["blog", "personal"]
 features = ["sidebar", "TableOfContents", "highlight", "404"]
 
 [author]
-  name = "Thibault ROHMER"
-  homepage = "http://titi.github.io"
+  name = "Gabriel Voelcker"
+  email = "gvoelcker@gmail.com"
+  
+  github = "https://github.com/gvoelcker/"
+  twitter = "https://twitter.com/skyvoelcker"
+  
+[permalinks]
+posts = "/:year/:month/:filename/"
+  

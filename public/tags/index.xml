@@ -5,6 +5,8 @@
     <link>/tags/</link>
     <description>Recent content in Tags on </description>
     <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>gvoelcker@gmail.com (Gabriel Voelcker)</managingEditor>
+    <webMaster>gvoelcker@gmail.com (Gabriel Voelcker)</webMaster>
     <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/tags/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Plot</title>
       <link>/tags/plot/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
+      <author>gvoelcker@gmail.com (Gabriel Voelcker)</author>
       <guid>/tags/plot/</guid>
       <description></description>
     </item>
@@ -23,7 +25,7 @@
       <title>R Markdown</title>
       <link>/tags/r-markdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
+      <author>gvoelcker@gmail.com (Gabriel Voelcker)</author>
       <guid>/tags/r-markdown/</guid>
       <description></description>
     </item>
@@ -32,7 +34,7 @@
       <title>Regression</title>
       <link>/tags/regression/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
+      <author>gvoelcker@gmail.com (Gabriel Voelcker)</author>
       <guid>/tags/regression/</guid>
       <description></description>
     </item>

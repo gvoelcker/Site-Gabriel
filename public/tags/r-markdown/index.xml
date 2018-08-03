@@ -5,6 +5,8 @@
     <link>/tags/r-markdown/</link>
     <description>Recent content in R Markdown on </description>
     <generator>Hugo -- gohugo.io</generator>
+    <managingEditor>gvoelcker@gmail.com (Gabriel Voelcker)</managingEditor>
+    <webMaster>gvoelcker@gmail.com (Gabriel Voelcker)</webMaster>
     <lastBuildDate>Thu, 23 Jul 2015 21:13:14 -0500</lastBuildDate>
     
 	<atom:link href="/tags/r-markdown/index.xml" rel="self" type="application/rss+xml" />
@@ -14,7 +16,7 @@
       <title>Hello R Markdown</title>
       <link>/post/2015-07-23-r-rmarkdown/</link>
       <pubDate>Thu, 23 Jul 2015 21:13:14 -0500</pubDate>
-      
+      <author>gvoelcker@gmail.com (Gabriel Voelcker)</author>
       <guid>/post/2015-07-23-r-rmarkdown/</guid>
       <description>R Markdown This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see http://rmarkdown.rstudio.com.
 You can embed an R code chunk like this:
