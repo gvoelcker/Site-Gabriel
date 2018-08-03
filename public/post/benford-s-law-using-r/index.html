@@ -3,19 +3,22 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <meta property="og:title" content=" Posts &middot;  Gabriel Voelcker" />
+  <meta property="og:title" content=" Benford&#39;s Law: Using R &middot;  Gabriel Voelcker" />
   
   <meta name="theme-color" content="#hexcolor" />
  
   <meta property="og:site_name" content="Gabriel Voelcker" />
-  <meta property="og:url" content="/post/" />
+  <meta property="og:url" content="/post/benford-s-law-using-r/" />
   
   
-  <meta property="og:type" content="website" />
+  <meta property="og:type" content="article" />
+  
+  <meta property="og:article:published_time" content="2018-08-10T00:00:00Z" />
+  
   
 
   <title>
-     Posts &middot;  Gabriel Voelcker
+     Benford&#39;s Law: Using R &middot;  Gabriel Voelcker
   </title>
 
   <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -74,90 +77,73 @@
       </a>
       
       
-      
     </section>
   </header>
   <main class="container">
 
-<section class="article-list">
-  <h1>Posts</h1>
-  
-  <hr/>
-  <article>
+
+<article>
   <header>
-    <h2><a href="/post/benford-s-law-using-r/">Benford&#39;s Law: Using R</a></h2>
+    <h1 class="text-primary">Benford&#39;s Law: Using R</h1>
     <div class="post-meta clearfix">
+    
       <div class="post-date pull-left">
         Posted on
         <time datetime="2018-08-10T00:00:00Z">
           Aug 10, 2018
         </time>
       </div>
-    </div>
-  </header>
-  <div>
-    I am thinking of a number from 1 to 99. I am giving you 2 seconds to guess which is the first digit of that number.
-   So, which number did you think of? Actually, that’s irrelevant. My intention here is to make you reflect about this question: what were the odds of you correctly guessing the first digit?
-First of, there are 9 possibilities(0,1,2,3,4,5,6,7,8,9) since 0 is never a first digit among the possibilities I’ve described.
-  </div>
-  
-  <footer>
-    <ul class="pager">
-      <li class="next"><a href="/post/benford-s-law-using-r/">Read more <span aria-hidden="true">&raquo;</span></a></li>
-    </ul>
-  </footer>
-  
-</article>
-
-  
-  <hr/>
-  <article>
-  <header>
-    <h2><a href="/post/about/">Stand</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2018-08-03T00:00:00Z">
-          Aug 3, 2018
-        </time>
+    
+      <div class="pull-right">
+        
       </div>
     </div>
   </header>
-  <div>
-    My name is Gabriel Voelcker and I am, among other things, an economist. I hope to use this netlify as a place to formalize my ideas, improve my coding skills and, last but not least, connect with other people who share interests with me.
-  </div>
-  
-</article>
+  <section>
+    <p>I am thinking of a number from 1 to 99. I am giving you 2 seconds to guess which is the first <strong>digit</strong> of that number.</p>
+<ol style="list-style-type: decimal">
+<li></li>
+<li></li>
+</ol>
+<p>So, which number did you think of? Actually, that’s irrelevant. My intention here is to make you reflect about this question: what were the odds of you correctly guessing the first digit?</p>
+<p>First of, there are 9 possibilities(0,1,2,3,4,5,6,7,8,9) since 0 is never a first digit among the possibilities I’ve described. So, if you chose 4, there were 11/99 = 1/9 =~ 11% of chances that you guessed correctly, right? So far, simple math. This is illustrated by the figure below.</p>
+<p>INCLUDE 1/9 DISTRIBUTION HERE</p>
+<p>But let me ask you now about a different set of numbers: 2<sup>n</sup>. Suppose, the first digit of all the powers of 2 from 1 to 1000. (2, 4, 8, 16, 32…). Would you say that by choosing 4 the odds of guessing correctly would remain 1/9? The answer is no! But the issue here is why? What drives that? Thanks to two gentlemen, Simon Newcomb and Frank Benford, we have something to say about that. In <a href="http://gerry.lamost.org/upload/newcomb.pdf"><strong>1881</strong></a>, Simon Newcomb noticed that the first pages of a logarithm book were usually more worned out than the later ones. From this, he derived his intuition that given a list of arbitrary numbers more numbers will tend to begin with an “1” than any other digit.</p>
+<p>But it wasn’t until <a href="https://www.jstor.org/stable/984802?seq=1#page_scan_tab_contents"><strong>1938</strong></a> that Frank Benford formalized this discovery, which is now called Benford’s Law.</p>
 
-  
-  <hr/>
-  <article>
-  <header>
-    <h2><a href="/post/about-the-author/">About the author</a></h2>
-    <div class="post-meta clearfix">
-      <div class="post-date pull-left">
-        Posted on
-        <time datetime="2018-08-02T00:00:00Z">
-          Aug 2, 2018
-        </time>
-      </div>
-    </div>
-  </header>
-  <div>
-    I am an economist from Brazil. My alma mater is Universidade Federal do Rio Grande do Sul, and I graduated in 2016. I am currently finishing my masters in Accounting at Universidade do Vale do Rio dos Sinos. My main research interests include: econometrics, microeconomics, disclosure, disclosure regulation, game theory, risk, behavioural economics, decision-making, cultural economics and dividend policy.
-You can find everything I have published in my Google Scholar page, although I haven’t many contributions yet.
-  </div>
-  
+  </section>
   <footer>
+    
+    
+    
+    <section class="author-info row">
+      <div class="author-avatar col-md-2">
+        
+      </div>
+      <div class="author-meta col-md-6">
+        
+        
+      </div>
+      
+      <div class="author-contact col-md-4">
+        <a href="#ZgotmplZ">
+          <i class="fa fa-envelope-o" aria-hidden="true"></i>
+          &nbsp;Contact me
+        </a>
+      </div>
+      
+    </section>
     <ul class="pager">
-      <li class="next"><a href="/post/about-the-author/">Read more <span aria-hidden="true">&raquo;</span></a></li>
+      
+      <li class="previous"><a href="/post/about/"><span aria-hidden="true">&larr;</span> Older</a></li>
+      
+      
+      <li class="next disabled"><a href="#">Newer <span aria-hidden="true">&rarr;</span></a></li>
+      
     </ul>
   </footer>
-  
 </article>
 
-  
-</section>
   </main>
   <footer class="container global-footer">
     <div class="copyright-note pull-left">
@@ -204,5 +190,4 @@ You can find everything I have published in my Google Scholar page, although I h
   
 </body>
 </html>
-
 
