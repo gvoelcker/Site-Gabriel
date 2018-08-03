@@ -9,7 +9,7 @@ theme = "vienna"
     # Social accounts. Link to these accounts are displayed in the header and
     # footer.
     twitter = "skyvoelcker"
-    github = "https://github.com/gvoelcker/"
+    github = "gvoelcker"
     #gitlab = "Your GitLab username"
     #linkedin = "Your LinkedIn username"
     #googleplus = "Your Google+ user id"
