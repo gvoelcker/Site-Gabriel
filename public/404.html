@@ -1,167 +1,124 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8"/>
-  <title>404 Page not found</title>
-
-  <meta name="description" content="404 Page not found"/>
-  <meta name="author" content="Gabriel Voelcker"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <base href="/" />
-
-  <link rel="stylesheet" href="css/fonts.css"/>
-  <link rel="stylesheet" href="css/normalize.css"/>
-  <link rel="stylesheet" href="css/skeleton.css"/>
-  <link rel="stylesheet" href="css/custom.css"/>
-  <link rel="stylesheet" href="genericons/genericons.css"/>
+<html lang="en-us">
+<head prefix="og: http://ogp.me/ns#">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
+  <meta property="og:title" content=" 404 Page not found &middot;  Gabriel Voelcker" />
+  
+  <meta name="theme-color" content="#hexcolor" />
+ 
+  <meta property="og:site_name" content="Gabriel Voelcker" />
+  <meta property="og:url" content="" />
   
   
-  <link rel="stylesheet" href="highlight/tomorrow-night.css"/>
+  <meta property="og:type" content="website" />
+  
 
-  <link href="index.xml" rel="alternate" type="application/rss+xml" title="Posts + Links" />
-  <link href="links/index.xml" rel="alternate" type="application/rss+xml" title="Links" />
-  <link href="posts/index.xml" rel="alternate" type="application/rss+xml" title="Posts" />
+  <title>
+     404 Page not found &middot;  Gabriel Voelcker
+  </title>
 
+  <link rel="stylesheet" href="/css/bootstrap.min.css" />
+  <link rel="stylesheet" href="/css/main.css" />
+  <link rel="stylesheet" href="/css/font-awesome.min.css" />
+  <link rel="stylesheet" href="/css/github.css" />
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400" type="text/css">
+  <link rel="shortcut icon" href="/images/favicon.ico" />
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png" />
   
 </head>
 <body>
+    <header class="global-header"  style="background-image:url( /images/bg.jpg )">
+    <section class="header-text">
+      <h1><a href="/">Gabriel Voelcker</a></h1>
+      
+      <div class="tag-line">
+        A storage for works, projects and ideas.
+      </div>
+      
+      <div class="sns-links hidden-print">
+  
+  
+  <a href="https://twitter.com/skyvoelcker" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  
+  
+  <a href="https://github.com/Your%20GitHub%20username" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  
+  
+  <a href="https://stackoverflow.com/users/8661013" target="_blank">
+    <i class="fa fa-stack-overflow"></i>
+  </a>
+  
+  
+  
+</div>
 
+      
+      <a href="/" class="btn-header btn-back hidden-xs">
+        <i class="fa fa-angle-left" aria-hidden="true"></i>
+        &nbsp;Home
+      </a>
+      
+      
+    </section>
+  </header>
+  <main class="container">
 
-<style type="text/css">
-.ctn {
-width: 600px;
-height: 400px;
-position: relative;
-}
-
-#splash {
-position: absolute;
-width: 600px;
-height: 400px;
-top: 0;
-left:0;
-background-image: url('404/fernetjs-invaders.png');
-opacity: 0;
-display:none;
-z-index: 2;
-text-align: right;
-float: right;
-}
-
-#splash a {
-font-family: Verdana;
-font-size: 12pt;
-text-decoration: none;
-color: #323330;
-margin: 40px;
-line-height: 4;
-}
-
-#game-canvas {
-border-radius: 10px;
--moz-border-radius: 10px;
--webkit-border-radius: 10px;
-border: 1px solid silver;
-background-color:#000;
-}
-
-#fps {
-display: none;
-}
-</style>
-
-<div id="flex-container">
-  <input type="checkbox" id="sidebar-menu-checkbox" />
-  <label for="sidebar-menu-checkbox" id="sidebar-menu"></label>
-
-  <div id="fake-sidebar"></div>
-  <div id="container">
-
-
-<div align="center">
-  <h1>Oops! That page couldn't be found :-/</h1>
-  Want to play some SpaceInvaders instead?
-
-  <div class="ctn">
-    <canvas id="game-canvas" width="600" height="400"></canvas>
-    <div id="splash">
-      <a href="#" onclick="play();return false;" style="font-size: 26px;">Play again!</a>
-      <br/>
-      <a href="https://github.com/pjnovas/invaders404" target="_blank">[Project homepage]</a>
+<section class="row not-found">
+  <h1 class="col-md-4 col-md-offset-4">404</h1>
+  <div class="col-md-4 col-md-offset-4">That page doesn't exist!</div>
+</section>
+  </main>
+  <footer class="container global-footer">
+    <div class="copyright-note pull-left">
+      &copy; Copyright notice
     </div>
-  </div>
-  <span id="fps"></span>
+    <div class="sns-links hidden-print">
+  
+  
+  <a href="https://twitter.com/skyvoelcker" target="_blank">
+    <i class="fa fa-twitter"></i>
+  </a>
+  
+  
+  
+  
+  
+  <a href="https://github.com/Your%20GitHub%20username" target="_blank">
+    <i class="fa fa-github"></i>
+  </a>
+  
+  
+  
+  
+  
+  <a href="https://stackoverflow.com/users/8661013" target="_blank">
+    <i class="fa fa-stack-overflow"></i>
+  </a>
+  
+  
+  
 </div>
 
-<footer>
-  <p class="footnote">Copyright &copy; 2018: All rights reserved by <a href="mailto:gvoelcker@gmail.com">Gabriel Voelcker</a></p>
-</footer>
+  </footer>
 
-  </div>
-  <div id="container-mask"></div>
-<div id="sidebar">
-<div class="sidebar">
-  <div class="sidebar-about">
-    <a href="/">
-      <img src="media/me.jpg" title="Gabriel Voelcker" alt="Me" />
-      <h4 class="sidebar-title"></h4>
-    </a>
-    <span class="sidebar-tagline"></span>
-  </div>
-  <nav class="sidebar-nav">
-    <ul class="sidebar-nav-list">
-      <li class="sidebar-nav-item nav-home">
-        <span class="genericon genericon-home"></span><a class="sidebar-link" href="/">Home</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="genericon genericon-feed" href="posts/index.xml"></a><a class="sidebar-link" href="posts/">Posts/</a>
-      </li>
-      <li class="sidebar-nav-item">
-        <a class="genericon genericon-feed" href="links/index.xml"></a><a class="sidebar-link" href="links/">Links/</a>
-      </li>
-    </ul>
-  </nav>
-  <div class="sidebar-externals">
+  <script src="/js/highlight.pack.js"></script>
+  <script>
+    hljs.initHighlightingOnLoad();
+  </script>
   
-
   
-  <a class="genericon genericon-github" href="https://github.com/https://github.com/gvoelcker/" ></a>
-  
-
-  
-  | <a class="genericon genericon-twitter" href="https://twitter.com/https://twitter.com/skyvoelcker"></a>
-  
-
-  
-
-  
-
-  
-
-  
-  | <a class="genericon genericon-mail" href="mailto:gvoelcker@gmail.com"></a>
-  </div>
-  <div class="sidebar-bottom">
-    <hr />
-    <p>Powered by <a href="http://gohugo.io">Hugo</a>.</p> <p>Theme: <a href="https://github.com/TiTi/hurock">Hurock</a>.</p>
-    <p>Copyright &copy; 2018.</p> <p>All rights reserved.</p>
-  </div>
-</div>
-</div>
-
-</div>
-
-
-<script type="text/javascript" src="404/game.min.js"></script>
-<script type="text/javascript" src="404/start.js"></script>
-
-<script src="highlight/highlight.pack.js"></script>
-<script>hljs.initHighlightingOnLoad();</script>
-
-
-
-
-
 </body>
 </html>
+
 

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on </title>
+    <title>Categories on Gabriel Voelcker</title>
     <link>/categories/</link>
-    <description>Recent content in Categories on </description>
+    <description>Recent content in Categories on Gabriel Voelcker</description>
     <generator>Hugo -- gohugo.io</generator>
-    <managingEditor>gvoelcker@gmail.com (Gabriel Voelcker)</managingEditor>
-    <webMaster>gvoelcker@gmail.com (Gabriel Voelcker)</webMaster>
+    <language>en-us</language>
+    <copyright>&amp;copy; Copyright notice</copyright>
     
 	<atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
       <title>R</title>
       <link>/categories/r/</link>
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
-      <author>gvoelcker@gmail.com (Gabriel Voelcker)</author>
+      
       <guid>/categories/r/</guid>
       <description></description>
     </item>
