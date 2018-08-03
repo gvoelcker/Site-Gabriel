@@ -3,10 +3,11 @@ title: "About"
 date: "2018-08-03T10:00:00-07:00"
 ---
 
-I am an Economist from Brazil. My alma mater is [**Universidade Federal do Rio Grande do Sul**](http://www.ufrgs.br/ufrgs/inicial), where I graduated in 2016. I am currently finishing my masters in Accounting in [**Universidade do Vale do Rio dos Sinos**](http://www.unisinos.br/). My main areas of interest include: econometrics, microeconomics, game theory, risk, behavioural economics, decision-making, cultural economics and dividend policy. 
+I am an Economist from Brazil. My alma mater is [**Universidade Federal do Rio Grande do Sul**](https://www.ufrgs.br/fce/), where I graduated in 2016. I am currently finishing my masters in Accounting in [**Universidade do Vale do Rio dos Sinos**](http://www.unisinos.br/mestrado-e-doutorado/ciencias-contabeis/presencial/porto-alegre). My main areas of interest include: econometrics, microeconomics, game theory, risk, behavioural economics, decision-making, cultural economics and dividend policy. 
 
 I have  worked as a research assistant for three distinct research projects: [**1**](https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-679X.12201), a second one which hasn't been published and [**3**](https://www.lume.ufrgs.br/bitstream/handle/10183/153772/Poster_45933.pdf?sequence=2).
-My previous work experiences include working at Coca-Cola Brazil, [*XP Investimentos**](https://www.xpi.com.br/) and [*Auxiliadora Predial**](https://www.auxiliadorapredial.com.br/). 
+
+My previous work experiences include working at [**Coca-Cola Brazil**](https://www.cocacolabrasil.com.br/), [**XP Investimentos**](https://www.xpi.com.br/) and [**Auxiliadora Predial**](https://www.auxiliadorapredial.com.br/). 
 
 Regarding my academic approach, I leave you with my favourite quote.
 
