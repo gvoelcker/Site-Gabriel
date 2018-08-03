@@ -28,7 +28,7 @@ theme = "vienna"
     #author = "Your Name"
     #avatar = "/path/to/avatar"
     #contact = "Your contact link (ex. mailto:foo@example.com)"
-    bio = "Economist from Porto Alegre, Brazil"
+    # bio = "Economist from Porto Alegre, Brazil"
     # Short subtitle/tagline. This is displayed in the header.
     subtitle = "A storage for works, projects and ideas."
     themecolor = "#hexcolor" # Defines the tab color in Chrome for Android.
