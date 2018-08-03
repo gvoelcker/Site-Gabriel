@@ -1,6 +1,15 @@
 ---
 title: "About"
-date: "2016-05-05T21:48:51-07:00"
+date: "2018-08-03T10:00:00-07:00"
 ---
 
-This is a "hello world" example website for the [**blogdown**](https://github.com/rstudio/blogdown) package. The theme was forked from [@jrutheiser/hugo-lithium-theme](https://github.com/jrutheiser/hugo-lithium-theme) and modified by [Yihui Xie](https://github.com/yihui/hugo-lithium).
+I am an Economist from Brazil. My alma mater is [**Universidade Federal do Rio Grande do Sul**](http://www.ufrgs.br/ufrgs/inicial), where I graduated in 2016. I am currently finishing my masters in Accounting in [**Universidade do Vale do Rio dos Sinos**](http://www.unisinos.br/). My main areas of interest include: econometrics, microeconomics, game theory, risk, behavioural economics, decision-making, cultural economics and dividend policy. 
+
+I have  worked as a research assistant for three distinct research projects: [**1**](https://onlinelibrary.wiley.com/doi/abs/10.1111/1475-679X.12201), a second one which hasn't been published and [**3**](https://www.lume.ufrgs.br/bitstream/handle/10183/153772/Poster_45933.pdf?sequence=2).
+My previous work experiences include working at Coca-Cola Brazil, [*XP Investimentos**](https://www.xpi.com.br/) and [*Auxiliadora Predial**](https://www.auxiliadorapredial.com.br/). 
+
+Regarding my academic approach, I leave you with my favourite quote.
+
+"I consider that a man's brain originally is like a little empty attic, and you have to stock it with such furniture as you choose. A fool takes in all the lumber of every sort that he comes across, so that the knowledge which might be useful to him gets crowded out, or at best is jumbled up with a lot of other things, so that he has a difficulty in laying his hands upon it. Now the skillful workman is very careful indeed as to what he takes into his brain-attic. He will have nothing but the tools which may help him in doing his work, but of these he has a large assortment, and all in the most perfect order. It is a mistake to think that that little room has elastic walls and can distend to any extent. Depend upon it there comes a time when for every addition of knowledge you forget something that you knew before. It is of the highest importance, therefore, not to have useless facts elbowing out the useful ones.?
+
+A Study in Scarlet, by Arthur Conan Doyle.
