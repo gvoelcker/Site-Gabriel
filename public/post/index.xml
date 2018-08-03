@@ -7,10 +7,19 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright notice</copyright>
-    <lastBuildDate>Fri, 03 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Working Paper #1: My Masters Dissertation</title>
+      <link>/post/working-paper-1-my-masters-dissertation/</link>
+      <pubDate>Sun, 05 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/working-paper-1-my-masters-dissertation/</guid>
+      <description>As I near the end of my masters, I decided to share the working paper based on my dissertation. It is centered around the hypothesis: are family firms more averse to risk-taking than non-family firms</description>
+    </item>
     
     <item>
       <title>Stand</title>
