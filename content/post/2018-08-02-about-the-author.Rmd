@@ -1,5 +1,5 @@
 ---
-title: About the author.
+title: About the author
 author: Gabriel Voelcker
 date: '2018-08-02'
 slug: about-the-author

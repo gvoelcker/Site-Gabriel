@@ -13,15 +13,6 @@
     
     
     <item>
-      <title>About me</title>
-      <link>/post/about-me/</link>
-      <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/about-me/</guid>
-      <description>Testing.</description>
-    </item>
-    
-    <item>
       <title>Stand</title>
       <link>/post/about/</link>
       <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
@@ -32,7 +23,7 @@ In case you are wondering, the above picture is from Vienna, Austria.</descripti
     </item>
     
     <item>
-      <title>About the author.</title>
+      <title>About the author</title>
       <link>/post/about-the-author/</link>
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
