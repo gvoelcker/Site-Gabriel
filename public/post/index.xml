@@ -2,33 +2,43 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Gabriel Voelcker</title>
-    <link>/post/</link>
+    <link>https://gabrielvoelcker.netlify.com/post/</link>
     <description>Recent content in Posts on Gabriel Voelcker</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright notice</copyright>
     <lastBuildDate>Fri, 03 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gabrielvoelcker.netlify.com/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>Stand</title>
-      <link>/post/about/</link>
+      <title>About me</title>
+      <link>https://gabrielvoelcker.netlify.com/post/about-me/</link>
       <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/about/</guid>
-      <description>My name is Gabriel Voelcker and I am, among other things, an economist. I hope to use this netlify as a place to formalize my ideas, improve my coding skills and, last but not least, connect with other people who share interests with me.</description>
+      <guid>https://gabrielvoelcker.netlify.com/post/about-me/</guid>
+      <description>Testing.</description>
+    </item>
+    
+    <item>
+      <title>Stand</title>
+      <link>https://gabrielvoelcker.netlify.com/post/about/</link>
+      <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>https://gabrielvoelcker.netlify.com/post/about/</guid>
+      <description>My name is Gabriel Voelcker and I am, among other things, an economist. I hope to use this netlify as a place to formalize my ideas, improve my coding skills and, last but not least, connect with other people who share interests with me.
+In case you are wondering, the above picture is from Vienna, Austria.</description>
     </item>
     
     <item>
       <title>About the author.</title>
-      <link>/post/about-the-author/</link>
+      <link>https://gabrielvoelcker.netlify.com/post/about-the-author/</link>
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/about-the-author/</guid>
-      <description>I am an Economist from Brazil. My alma mater is Universidade Federal do Rio Grande do Sul, where I graduated in 2016. I am currently finishing my masters in Accounting in Universidade do Vale do Rio dos Sinos. My main areas of interest include: econometrics, microeconomics, game theory, risk, behavioural economics, decision-making, cultural economics and dividend policy.
-I have worked as a research assistant for three distinct research projects: 1, a second one which hasn’t been published and 3.</description>
+      <guid>https://gabrielvoelcker.netlify.com/post/about-the-author/</guid>
+      <description>I am an economist from Brazil. My alma mater is Universidade Federal do Rio Grande do Sul, and I graduated in 2016. I am currently finishing my masters in Accounting in Universidade do Vale do Rio dos Sinos. My main research interests include: econometrics, microeconomics, game theory, risk, behavioural economics, decision-making, cultural economics and dividend policy.
+You can find everything I have published in my Google Scholar page. I also have worked as a research assistant in three distinct research projects: 1, a second one which hasn’t been published yet and 3.</description>
     </item>
     
   </channel>
