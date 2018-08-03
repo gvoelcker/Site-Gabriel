@@ -21,5 +21,15 @@
       <description>My name is Gabriel Voelcker and I am, among other things, an economist. I hope to use this netlify as a place to formalize my ideas, improve my coding skills and, last but not least, connect with other people who share interests with me.</description>
     </item>
     
+    <item>
+      <title>About the author.</title>
+      <link>/post/about-the-author/</link>
+      <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/about-the-author/</guid>
+      <description>I am an Economist from Brazil. My alma mater is Universidade Federal do Rio Grande do Sul, where I graduated in 2016. I am currently finishing my masters in Accounting in Universidade do Vale do Rio dos Sinos. My main areas of interest include: econometrics, microeconomics, game theory, risk, behavioural economics, decision-making, cultural economics and dividend policy.
+I have worked as a research assistant for three distinct research projects: 1, a second one which hasn’t been published and 3.</description>
+    </item>
+    
   </channel>
 </rss>
