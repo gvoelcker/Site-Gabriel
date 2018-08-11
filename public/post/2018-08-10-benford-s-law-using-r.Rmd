@@ -53,28 +53,28 @@ I am thinking of a number from 1 to 99. You have 2 seconds to guess which is the
 
 Which number did you choose? Actually, that's irrelevant! My intention here is to make you reflect on this question: what were the odds of you correctly guessing the first digit? 
 
-1/9, right? There were 9 possibilities(1,2,3,4,5,6,7,8,9), since 0 is not a first digit among the possibilities I've described. So, if you chose 4, in 11 of 99 possible outcomes you would've pick correctly (4,40,41,42,43,44,45,46,47,48,49). So far, simple math. This is illustrated by the figure below. 
+1/9, right? There were 9 possibilities(1,2,3,4,5,6,7,8,9), since 0 is not a first digit among the possibilities I've described. So, if you chose 4, in 11 of 99 possible outcomes you would've pick correctly (4,40,41,42,43,44,45,46,47,48,49). So far, simple math. 
+
+But what if we use another set of numbers? For example: the first 1000 occurrences of the Fibonacci sequence(Any number of the Fibonacci sequence is the sum of the previous two numbers, so: 1,1,2,3,5,8,13... and so forth). Would you say that your odds of guessing correctly would remain 1/9 were you to choose 4 again? Let me show you the distribution.
 
 ```{r Digit, echo=FALSE, message=FALSE, include=FALSE}
-Base <- read_excel("Base.xlsx", sheet=1, col_names = TRUE)
+Base <- read_excel("Fibonacci.xlsx", sheet=1, col_names = TRUE)
 ```
 
 ```{r Beta, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
 Graf1 <- ggplot(data = Base, mapping = aes(Digit, as.numeric(Distribution))) +
   geom_col() +
   theme_economist(base_size = 12) +
-    scale_y_continuous(name="Distribution", limits=c(0, 0.22), breaks=c(0,0.11,0.22), labels = percent) +
+    scale_y_continuous(name="Distribution", limits=c(0, 0.4), breaks=c(0,0.1,0.2,0.3,0.4), labels = percent) +
   theme(plot.title = element_text(hjust = 0.5)) +
   scale_x_continuous(name = "First Digit", breaks=c(Base$Digit)) + 
   ggtitle("1st Digit Distribution")
 Graf1
 ```
 
-But let me ask you now about a different set of numbers, say, the first 1000 occurrences of the Fibonacci sequence?(Any number of the Fibonacci sequence is the sum of the previous two numbers, so: 1,1,2,3,5,8,13... and so forth). Would you say that your odds of guessing correctly would remain 1/9 were you to choose 4 again? Let me show you the distribution.
+The answer is no! And the reason is because what we have here is a very peculiar mathematical phenomenon called Benford's Law. Thanks to two gentlemen, Simon Newcomb and Frank Benford, there's a good story behind that answer. In [**1881**](http://gerry.lamost.org/upload/newcomb.pdf), Simon Newcomb, an astronomer, noticed that the first pages of a logarithm book were usually more worned out than the later ones. From this, he derived his intuition that given a list of arbitrary numbers more numbers will tend to begin with an "1" than any other digit. So, why is it called Benford's Law, and not Newcomb's law? (that's a classic case of [**Stigler's Law**](https://io9.gizmodo.com/5820736/stiglers-law-why-nothing-in-science-is-ever-named-after-its-actual-discoverer)[this law is named after this [**Stigler**](https://galton.uchicago.edu/faculty/stigler.shtml), not his [**father**](https://research.chicagobooth.edu/stigler/about/george-stigler), the economist and Nobel Laureate]).
 
-The answer is no! What we have here is a very peculiar mathematical phenomenon called Benford's Law. Thanks to two gentlemen, Simon Newcomb and Frank Benford, there's a good story behind that answer. In [**1881**](http://gerry.lamost.org/upload/newcomb.pdf), Simon Newcomb, an astronomer, noticed that the first pages of a logarithm book were usually more worned out than the later ones. From this, he derived his intuition that given a list of arbitrary numbers more numbers will tend to begin with an "1" than any other digit. So, why is it called Benford's Law, and not Newcomb's law? (that's a classic case of [**Stigler's Law**](https://io9.gizmodo.com/5820736/stiglers-law-why-nothing-in-science-is-ever-named-after-its-actual-discoverer)[and no, this law is named after this [**Stigler**](https://galton.uchicago.edu/faculty/stigler.shtml), not his [**father**](https://research.chicagobooth.edu/stigler/about/george-stigler), the economist and Nobel Laureate]).
-
-Well, it wasn't until [**1938**](https://www.jstor.org/stable/984802?seq=1#page_scan_tab_contents) that physicist Frank Benford formalized this discovery, which he regarded as the Law of Anomalous Numbers. He tested the distribution of the first digit of 20 different samples, and concluded that in populations of exponential growth, the distribution of the first digit followed a certain pattern. What is this pattern? If **d** is the first digit, with d(d E{1,2,...,9}), then: 
+Well, it wasn't until [**1938**](https://www.jstor.org/stable/984802?seq=1#page_scan_tab_contents) that physicist(remember when I talked about Econophysics?) Frank Benford formalized this discovery, which he regarded as the Law of Anomalous Numbers. He tested the distribution of the first digit of 20 different samples, and concluded that in populations of exponential growth, the distribution of the first digit followed a certain pattern. What is this pattern? If **d** is the first digit, with d(d E{1,2,...,9}), then: 
 
 $$P(d) = \log_{10}(d+1) - \log_{10}(d) = \log_{10}(\frac{d+1}{d}) = \log_{10}(\frac{d+1}{d})$$
 
