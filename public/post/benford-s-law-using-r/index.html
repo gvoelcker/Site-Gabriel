@@ -100,16 +100,18 @@
     </div>
   </header>
   <section>
-    <p>I am thinking of a number from 1 to 99. You have 2 seconds to guess which is the first <strong>digit</strong> of that number.</p>
+    <p>In 2016 I had the opportunity to take a class in my masters entitled Econophysics. Econophysics is a field of study that applies methods and theories developed by physicists to economic problems. Around that time I came across a very interesting phenomenon called Benford’s Law. This post is an introduction to Benford’s Law using RStudio. Let’s start by understanding what Benford’s Law is.</p>
+<p>I am thinking of a number from 1 to 99. You have 2 seconds to guess which is the first <strong>digit</strong> of that number.</p>
 <ol style="list-style-type: decimal">
 <li></li>
 <li></li>
 </ol>
-<p>Which number did you choose? Actually, that’s irrelevant. My intention here is to make you reflect on this question: what were the odds of you correctly guessing the first digit?</p>
-<p>1/9, right? There are 9 possibilities(1,2,3,4,5,6,7,8,9), since 0 is never a first digit among the possibilities I’ve described. So, if you chose 4, in 11 of 99 possible outcomes you would’ve pick correctly. So far, simple math. This is illustrated by the figure below.</p>
+<p>Which number did you choose? Actually, that’s irrelevant! My intention here is to make you reflect on this question: what were the odds of you correctly guessing the first digit?</p>
+<p>1/9, right? There were 9 possibilities(1,2,3,4,5,6,7,8,9), since 0 is not a first digit among the possibilities I’ve described. So, if you chose 4, in 11 of 99 possible outcomes you would’ve pick correctly (4,40,41,42,43,44,45,46,47,48,49). So far, simple math. This is illustrated by the figure below.</p>
 <p><img src="/post/2018-08-10-benford-s-law-using-r_files/figure-html/Beta-1.png" width="672" /></p>
-<p>But let me ask you now about a different set of numbers: 2<sup>x</sup>, x = {x | 1 &lt; x &lt; 1000}. Would you say that the odds of guessing correctly would remain 1/9 were you to choose 4 again? Let’s see the distribution.</p>
+<p>But let me ask you now about a different set of numbers, say, the first 1000 occurrences of the Fibonacci sequence?(Any number of the Fibonacci sequence is the sum of the previous two numbers, so: 1,1,2,3,5,8,13… and so forth). Would you say that your odds of guessing correctly would remain 1/9 were you to choose 4 again? Let me show you the distribution.</p>
 <p>PLOT 2ˆnˆ DISTRIBUTION HERE</p>
+<pre class="r"><code>Base &lt;- read_excel(&quot;Fibonacci.xlsx&quot;, sheet=1, col_names = TRUE)</code></pre>
 <p>The answer is no! What we have here is a very peculiar mathematical phenomenon called Benford’s Law. Thanks to two gentlemen, Simon Newcomb and Frank Benford, there’s a good story behind that answer. In <a href="http://gerry.lamost.org/upload/newcomb.pdf"><strong>1881</strong></a>, Simon Newcomb, an astronomer, noticed that the first pages of a logarithm book were usually more worned out than the later ones. From this, he derived his intuition that given a list of arbitrary numbers more numbers will tend to begin with an “1” than any other digit. So, why is it called Benford’s Law, and not Newcomb’s law? (that’s a classic case of <a href="https://io9.gizmodo.com/5820736/stiglers-law-why-nothing-in-science-is-ever-named-after-its-actual-discoverer"><strong>Stigler’s Law</strong></a>[and no, this law is named after this <a href="https://galton.uchicago.edu/faculty/stigler.shtml"><strong>Stigler</strong></a>, not his <a href="https://research.chicagobooth.edu/stigler/about/george-stigler"><strong>father</strong></a>, the economist and Nobel Laureate]).</p>
 <p>Well, it wasn’t until <a href="https://www.jstor.org/stable/984802?seq=1#page_scan_tab_contents"><strong>1938</strong></a> that physicist Frank Benford formalized this discovery, which he regarded as the Law of Anomalous Numbers. He tested the distribution of the first digit of 20 different samples, and concluded that in populations of exponential growth, the distribution of the first digit followed a certain pattern. What is this pattern? If <strong>d</strong> is the first digit, with d(d E{1,2,…,9}), then:</p>
 <p><span class="math display">\[P(d) = \log_{10}(d+1) - \log_{10}(d) = \log_{10}(\frac{d+1}{d}) = \log_{10}(\frac{d+1}{d})\]</span></p>

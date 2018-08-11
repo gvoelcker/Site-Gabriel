@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright notice</copyright>
-    <lastBuildDate>Fri, 03 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Introduction to Benford&#39;s Law basics</title>
+      <link>/post/benford-s-law-using-r/</link>
+      <pubDate>Fri, 10 Aug 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/benford-s-law-using-r/</guid>
+      <description>In 2016 I had the opportunity to take a class in my masters entitled Econophysics. Econophysics is a field of study that applies methods and theories developed by physicists to economic problems. Around that time I came across a very interesting phenomenon called Benford’s Law. This post is an introduction to Benford’s Law using RStudio. Let’s start by understanding what Benford’s Law is.
+I am thinking of a number from 1 to 99.</description>
+    </item>
     
     <item>
       <title>Stand</title>
@@ -18,8 +28,7 @@
       <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/about/</guid>
-      <description>My name is Gabriel Voelcker and I am, among other things, an economist. I hope to use this netlify as a place to formalize my ideas, improve my coding skills and, last but not least, connect with other people who share interests with me.
-This website is 100% written in R.</description>
+      <description>My name is Gabriel Voelcker and I am, among other things, an economist. I hope to use this netlify as a place to share my research ideas, improve my coding skills and, last but not least, connect with other people who share interests with me. I will try to write everything in a way that you are capable of understanding. So, regardless if the person reading what I write doesn’t have a clue what tidyverse or Cobb-Douglas is, or is a Nobel winner(not unprecedented to be honest, but let’s save this story for another time) he or she should be able to understand what I’m trying to convey.</description>
     </item>
     
     <item>

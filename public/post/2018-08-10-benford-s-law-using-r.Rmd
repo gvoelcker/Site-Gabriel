@@ -43,15 +43,17 @@ library(knitr)
 library(kableExtra)
 
 ```
+In 2016 I had the opportunity to take a class in my masters entitled Econophysics. Econophysics is a field of study that applies methods and theories developed by physicists to economic problems. Around that time I came across a very interesting phenomenon called Benford's Law. This post is an introduction to Benford's Law using RStudio. Let's start by understanding what Benford's Law is.
+
 I am thinking of a number from 1 to 99. You have 2 seconds to guess which is the first **digit** of that number. 
 
 1.
 
 2.
 
-Which number did you choose? Actually, that's irrelevant. My intention here is to make you reflect on this question: what were the odds of you correctly guessing the first digit? 
+Which number did you choose? Actually, that's irrelevant! My intention here is to make you reflect on this question: what were the odds of you correctly guessing the first digit? 
 
-1/9, right? There are 9 possibilities(1,2,3,4,5,6,7,8,9), since 0 is never a first digit among the possibilities I've described. So, if you chose 4, in 11 of 99 possible outcomes you would've pick correctly. So far, simple math. This is illustrated by the figure below. 
+1/9, right? There were 9 possibilities(1,2,3,4,5,6,7,8,9), since 0 is not a first digit among the possibilities I've described. So, if you chose 4, in 11 of 99 possible outcomes you would've pick correctly (4,40,41,42,43,44,45,46,47,48,49). So far, simple math. This is illustrated by the figure below. 
 
 ```{r Digit, echo=FALSE, message=FALSE, include=FALSE}
 Base <- read_excel("Base.xlsx", sheet=1, col_names = TRUE)
@@ -68,9 +70,15 @@ Graf1 <- ggplot(data = Base, mapping = aes(Digit, as.numeric(Distribution))) +
 Graf1
 ```
 
-But let me ask you now about a different set of numbers: 2^x^, x = {x | 1 < x < 1000}.  Would you say that the odds of guessing correctly would remain 1/9 were you to choose 4 again? Let's see the distribution.
+But let me ask you now about a different set of numbers, say, the first 1000 occurrences of the Fibonacci sequence?(Any number of the Fibonacci sequence is the sum of the previous two numbers, so: 1,1,2,3,5,8,13... and so forth). Would you say that your odds of guessing correctly would remain 1/9 were you to choose 4 again? Let me show you the distribution.
 
 PLOT 2ˆnˆ DISTRIBUTION HERE
+
+```{r}
+Base <- read_excel("Fibonacci.xlsx", sheet=1, col_names = TRUE)
+```
+
+
 
 The answer is no! What we have here is a very peculiar mathematical phenomenon called Benford's Law. Thanks to two gentlemen, Simon Newcomb and Frank Benford, there's a good story behind that answer. In [**1881**](http://gerry.lamost.org/upload/newcomb.pdf), Simon Newcomb, an astronomer, noticed that the first pages of a logarithm book were usually more worned out than the later ones. From this, he derived his intuition that given a list of arbitrary numbers more numbers will tend to begin with an "1" than any other digit. So, why is it called Benford's Law, and not Newcomb's law? (that's a classic case of [**Stigler's Law**](https://io9.gizmodo.com/5820736/stiglers-law-why-nothing-in-science-is-ever-named-after-its-actual-discoverer)[and no, this law is named after this [**Stigler**](https://galton.uchicago.edu/faculty/stigler.shtml), not his [**father**](https://research.chicagobooth.edu/stigler/about/george-stigler), the economist and Nobel Laureate]).
 
@@ -138,4 +146,3 @@ jointdigit.benftest(Test1, digits = 1)
 As you can see, BenfordTests have a variety of tests that you can use to test Benford's Law in set a of numbers. The most important part is to interpret them. But the packages contain more than just tests. It is possible to perform a graphical analysis of the first significant digits:
 
 If you are a fan of math, there's still a lot you can learn about Benford's law [**here**](http://mathworld.wolfram.com/BenfordsLaw.html).
-
