@@ -72,18 +72,10 @@ Graf1
 
 But let me ask you now about a different set of numbers, say, the first 1000 occurrences of the Fibonacci sequence?(Any number of the Fibonacci sequence is the sum of the previous two numbers, so: 1,1,2,3,5,8,13... and so forth). Would you say that your odds of guessing correctly would remain 1/9 were you to choose 4 again? Let me show you the distribution.
 
-```{r, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
+```{r Beta, tidy=FALSE, echo=FALSE, message=FALSE, include=FALSE, warning=FALSE}
 Fibonacci <- read_excel("Fibonacci.xlsx", sheet="Sheet1", col_names = TRUE)
-```
-
-```{r Beta, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
-Graf2 <- ggplot(data = Fibonacci, mapping = aes(Digit, as.numeric(Distribution))) +
-  geom_col() +
-  theme_economist(base_size = 12) +
-    scale_y_continuous(name="Distribution", limits=c(0, 0.35), breaks=c(0,0.05,0.1,0.15,0.2,0.25,0.3,0.35), labels = percent) +
-  theme(plot.title = element_text(hjust = 0.5)) +
-  scale_x_continuous(name = "First Digit", breaks=c(Base$Digit)) + 
-  ggtitle("1st Digit Distribution")
+Graf2 <- ggplot(Fibonacci, mapping = aes(Digit, as.numeric(Distribution))) +
+  geom_col() 
 Graf2
 ```
 

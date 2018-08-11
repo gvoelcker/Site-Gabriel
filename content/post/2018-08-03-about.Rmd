@@ -13,4 +13,4 @@ My name is Gabriel Voelcker and I am, among other things, an economist. I hope t
 
 This website is 100% written in RStudio. I've started using R recently, having used only Stata and Gretl in my undergraduate econometrics. You are welcome to see the code behind this website [**here**](https://github.com/gvoelcker/Site-Gabriel). I've chosen this language of coding not only because it's suits me best, but also because of its broad applicability. 
 
-Feel free to contact me in your language. Falo português, anche parlo italiano und ich spreche Deutsch(aber mein Deutsch ist ein bisschen kaputt). Españo no es mi fuerte.
+Feel free to contact me in your language. Falo português, anche parlo italiano und ich spreche Deutsch(aber mein Deutsch ist ein bisschen kaputt).
