@@ -11,4 +11,4 @@ Tags: []
 
 My name is Gabriel Voelcker and I am, among other things, an economist. I hope to use this netlify as a place to formalize my ideas, improve my coding skills and, last but not least, connect with other people who share interests with me. 
 
-
+This website is 100% written in R.
