@@ -3,7 +3,7 @@
 <head prefix="og: http://ogp.me/ns#">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-  <meta property="og:title" content=" Introduction to Benford&#39;s Law basics &middot;  Gabriel Voelcker" />
+  <meta property="og:title" content=" Benford&#39;s Law &middot;  Gabriel Voelcker" />
   
   <meta name="theme-color" content="#hexcolor" />
  
@@ -18,7 +18,7 @@
   
 
   <title>
-     Introduction to Benford&#39;s Law basics &middot;  Gabriel Voelcker
+     Benford&#39;s Law &middot;  Gabriel Voelcker
   </title>
 
   <link rel="stylesheet" href="/css/bootstrap.min.css" />
@@ -84,7 +84,7 @@
 
 <article>
   <header>
-    <h1 class="text-primary">Introduction to Benford&#39;s Law basics</h1>
+    <h1 class="text-primary">Benford&#39;s Law</h1>
     <div class="post-meta clearfix">
     
       <div class="post-date pull-left">
@@ -100,114 +100,123 @@
     </div>
   </header>
   <section>
-    <p>In 2016 I had the opportunity to take a class in my masters entitled Econophysics. Econophysics is a field of study that applies methods and theories developed by physicists to economic problems. Around that time I came across a very interesting phenomenon called Benford’s Law. This post is an introduction to Benford’s Law using RStudio. Let’s start by understanding what Benford’s Law is.</p>
+    <script src="/rmarkdown-libs/kePrint/kePrint.js"></script>
+
+
+<p>In 2016 I had the opportunity to take a class in my masters entitled Econophysics. Econophysics is a field of study that applies methods and theories developed by physicists to economic problems. Around that time I came across a very interesting phenomenon called Benford’s Law. This post is an introduction to Benford’s Law using RStudio. Let’s start by understanding what Benford’s Law is.</p>
 <p>I am thinking of a number from 1 to 99. You have 2 seconds to guess which is the first <strong>digit</strong> of that number.</p>
 <ol style="list-style-type: decimal">
 <li></li>
 <li></li>
 </ol>
 <p>Which number did you choose? Actually, that’s irrelevant! My intention here is to make you reflect on this question: what were the odds of you correctly guessing the first digit?</p>
-<p>1/9, right? There were 9 possibilities(1,2,3,4,5,6,7,8,9), since 0 is not a first digit among the possibilities I’ve described. So, if you chose 4, in 11 of 99 possible outcomes you would’ve pick correctly (4,40,41,42,43,44,45,46,47,48,49). So far, simple math.</p>
-<p>But what if we use another set of numbers? For example: the first 1000 occurrences of the Fibonacci sequence(Any number of the Fibonacci sequence is the sum of the previous two numbers, so: 1,1,2,3,5,8,13… and so forth). Would you say that your odds of guessing correctly would remain 1/9 were you to choose 4 again? Let me show you the distribution.</p>
+<p>1/9, right? There were 9 possibilities(1,2,3,4,5,6,7,8,9), since 0 is not a first digit among the possibilities I’ve described. So, if you chose 4, in 11(4,40,41,42,43,44,45,46,47,48,49) of 99 possible outcomes you would’ve pick correctly. So far, simple math.</p>
+<p>But what if we use another set of numbers? For example: the first 1000 occurrences of the Fibonacci sequence(Any number of the Fibonacci sequence is the sum of the previous two numbers, so it works like this: 1,1,2,3,5,8,13… and so forth). Would you say that your odds of guessing correctly would remain 1/9 were you to choose 4 again? Let me illustrate the distribution of the first digit of this sequence:</p>
 <p><img src="/post/2018-08-10-benford-s-law-using-r_files/figure-html/Beta-1.png" width="672" /></p>
-<p>The answer is no! And the reason is because what we have here is a very peculiar mathematical phenomenon called Benford’s Law. Thanks to two gentlemen, Simon Newcomb and Frank Benford, there’s a good story behind that answer. In <a href="http://gerry.lamost.org/upload/newcomb.pdf"><strong>1881</strong></a>, Simon Newcomb, an astronomer, noticed that the first pages of a logarithm book were usually more worned out than the later ones. From this, he derived his intuition that given a list of arbitrary numbers more numbers will tend to begin with an “1” than any other digit. So, why is it called Benford’s Law, and not Newcomb’s law? (that’s a classic case of <a href="https://io9.gizmodo.com/5820736/stiglers-law-why-nothing-in-science-is-ever-named-after-its-actual-discoverer"><strong>Stigler’s Law</strong></a>[this law is named after this <a href="https://galton.uchicago.edu/faculty/stigler.shtml"><strong>Stigler</strong></a>, not his <a href="https://research.chicagobooth.edu/stigler/about/george-stigler"><strong>father</strong></a>, the economist and Nobel Laureate]).</p>
+<p>Clearly, we have a different distribution! And the reason is because what we have here is a very peculiar mathematical phenomenon called Benford’s Law. Thanks to two gentlemen, Simon Newcomb and Frank Benford, there’s a good story behind this distribution. In <a href="http://gerry.lamost.org/upload/newcomb.pdf"><strong>1881</strong></a>, Simon Newcomb, an astronomer, noticed that the first pages of a logarithm book were usually more worned out than the last ones. From this, he derived the intuition that, given a list of arbitrary numbers, more numbers will tend to begin with an “1” than any other digit. So, why is it called Benford’s Law, and not Newcomb’s law? (in case you’re wondering, that’s a classic case of <a href="https://io9.gizmodo.com/5820736/stiglers-law-why-nothing-in-science-is-ever-named-after-its-actual-discoverer"><strong>Stigler’s Law</strong></a>[this law is named after this <a href="https://galton.uchicago.edu/faculty/stigler.shtml"><strong>Stigler</strong></a>, not his <a href="https://research.chicagobooth.edu/stigler/about/george-stigler"><strong>father</strong></a>, the economist and Nobel Laureate]).</p>
 <p>Well, it wasn’t until <a href="https://www.jstor.org/stable/984802?seq=1#page_scan_tab_contents"><strong>1938</strong></a> that physicist(remember when I talked about Econophysics?) Frank Benford formalized this discovery, which he regarded as the Law of Anomalous Numbers. He tested the distribution of the first digit of 20 different samples, and concluded that in populations of exponential growth, the distribution of the first digit followed a certain pattern. What is this pattern? If <strong>d</strong> is the first digit, with d(d E{1,2,…,9}), then:</p>
 <p><span class="math display">\[P(d) = \log_{10}(d+1) - \log_{10}(d) = \log_{10}(\frac{d+1}{d}) = \log_{10}(\frac{d+1}{d})\]</span></p>
 <p>Substituting d for the nine digits, we have the following results:</p>
-<table>
+<table class="table table-striped table-hover table-condensed" style="margin-left: auto; margin-right: auto;">
 <caption>
 <span id="tab:tables-mtcars">Table 1: </span>Benford Distribution
 </caption>
 <thead>
 <tr>
-<th style="text-align:right;">
-Digit
+<th style="text-align:left;">
+1st Digit
 </th>
-<th style="text-align:right;">
+<th style="text-align:left;">
 Distribution
 </th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td style="text-align:right;">
+<td style="text-align:left;">
 1
 </td>
-<td style="text-align:right;">
-0.301
+<td style="text-align:left;">
+30.1%
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
+<td style="text-align:left;">
 2
 </td>
-<td style="text-align:right;">
-0.176
+<td style="text-align:left;">
+17.6%
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
+<td style="text-align:left;">
 3
 </td>
-<td style="text-align:right;">
-0.125
+<td style="text-align:left;">
+12.5%
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
+<td style="text-align:left;">
 4
 </td>
-<td style="text-align:right;">
-0.097
+<td style="text-align:left;">
+9.7%
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
+<td style="text-align:left;">
 5
 </td>
-<td style="text-align:right;">
-0.079
+<td style="text-align:left;">
+7.9%
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
+<td style="text-align:left;">
 6
 </td>
-<td style="text-align:right;">
-0.067
+<td style="text-align:left;">
+6.7%
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
+<td style="text-align:left;">
 7
 </td>
-<td style="text-align:right;">
-0.058
+<td style="text-align:left;">
+5.8%
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
+<td style="text-align:left;">
 8
 </td>
-<td style="text-align:right;">
-0.051
+<td style="text-align:left;">
+5.1%
 </td>
 </tr>
 <tr>
-<td style="text-align:right;">
+<td style="text-align:left;">
 9
 </td>
-<td style="text-align:right;">
-0.046
+<td style="text-align:left;">
+4.6%
 </td>
 </tr>
 </tbody>
 </table>
 <p>If we plot this distribution, we get:</p>
-<p><img src="/post/2018-08-10-benford-s-law-using-r_files/figure-html/Benforddist-1.png" width="672" /> (Very similar to the Fibonacci 1st digit distribution, right?) But, as one of my academics advisors used to always ask me, what is the purpose of this information? The beauty of Benford is how applicable this distribution is to different sets of numbers. In 1972, <a href="http://people.ischool.berkeley.edu/~hal/"><strong>Hal Varian</strong></a> suggested that the Benford distribution could be used to detect accounting frauds. The literature <a href="https://search.proquest.com/openview/7d019c616546c4c5da54cba2c85d136d/1?pq-origsite=gscholar&amp;cbl=31718"><strong>w</strong></a><a href="https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00028759/ilm1-2013200266.pdf"><strong>o</strong></a><a href="http://jhr.uwpress.org/content/44/1/1.short"><strong>r</strong></a><a href="https://amstat.tandfonline.com/doi/abs/10.1198/000313007X223496"><strong>k</strong></a><a href="https://www.ams.org/journals/proc/1995-123-03/S0002-9939-1995-1233974-8/"><strong>s</strong></a> applied Benford’s distribution to investigate a variety of datasets.</p>
-<p>Statistically speaking, when data should conform to Benford???s law, a null-hypothesis rejection suggests that some form of data manipulation has taken place. Now it is time to use R to test empirically Benford’s distribution.</p>
-<p>There are two packages that can get the job done: <a href="https://cran.r-project.org/web/packages/BenfordTests/BenfordTests.pdf"><strong>BenfordTests</strong></a> and <a href="https://cran.r-project.org/web/packages/benford.analysis/benford.analysis.pdf"><strong>benford.analysis</strong></a>. Let’s go through to the basics together.</p>
-<p>Let’s use this database, which uses the first 1000 instances of 2<sup>n</sup>. BenfordTests provides a series of test to see if your database conforms to Benford’s Law. For example, let’s use a Kolmogorov-Smirnov test:</p>
+<p><img src="/post/2018-08-10-benford-s-law-using-r_files/figure-html/Benforddist-1.png" width="672" /></p>
+<p>(Very similar to the Fibonacci 1st digit distribution, right?)</p>
+<p>Give yourself a moment to let that sink in. If you love math as much as I do, there’s a lot of reflection to be done here. There you have it: the Law of Anomalous Numbers. In a variety of data sets, the frequency distribution of the first digit obeys this law, conforming to the distribution plotted above. But, as one of my academics advisors used to always ask me, what is the purpose of this information?</p>
+<p>The beauty of Benford’s Law is how this distribution is applied in all sorts of data sets. In 1972, <a href="http://people.ischool.berkeley.edu/~hal/"><strong>Hal Varian</strong></a> suggested that the Benford distribution could be used to detect accounting frauds. Some <a href="https://search.proquest.com/openview/7d019c616546c4c5da54cba2c85d136d/1?pq-origsite=gscholar&amp;cbl=31718"><strong>w</strong></a><a href="https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00028759/ilm1-2013200266.pdf"><strong>o</strong></a><a href="http://jhr.uwpress.org/content/44/1/1.short"><strong>r</strong></a><a href="https://amstat.tandfonline.com/doi/abs/10.1198/000313007X223496"><strong>k</strong></a><a href="https://www.ams.org/journals/proc/1995-123-03/S0002-9939-1995-1233974-8/"><strong>s</strong></a> applied Benford’s distribution to investigate a variety of datasets. Statistically speaking, when data should conform to Benford’s Law, a null-hypothesis rejection suggests that some form of data manipulation has taken place. In other words, if a data set should conform to Benford’s Law and it doesn’t, something is wrong. Let me introduce you to two RStudio packages that can test that:</p>
+<ol style="list-style-type: decimal">
+<li><a href="https://cran.r-project.org/web/packages/BenfordTests/BenfordTests.pdf"><strong>BenfordTests</strong></a>; and</li>
+<li><a href="https://cran.r-project.org/web/packages/benford.analysis/benford.analysis.pdf"><strong>benford.analysis</strong></a>.</li>
+</ol>
+<p>Let’s go through to the basics together.</p>
+<p>Let’s use the first 1000 terms of the Fibonacci sequence with the BenfordTests package. It provides a series of tests to see if your database conforms to Benford’s Law. For example, let’s use a Kolmogorov-Smirnov test:</p>
 <pre class="r"><code>DataBenford &lt;- read_excel(&quot;dataBenford.xlsx&quot;, sheet=1, col_names = TRUE)
 Test1 &lt;- as.numeric(DataBenford$First_Digit)
 ks.benftest(Test1, digits = 1, pvalmethod = &quot;simulate&quot;)
@@ -215,7 +224,7 @@ ks.benftest(Test1, digits = 1, pvalmethod = &quot;simulate&quot;)
 ##  K-S Test for Benford Distribution
 ## 
 ## data:  Test1
-## D = 0.060145, p-value = 1</code></pre>
+## D = 0.060145, p-value = 0.9999</code></pre>
 <p>Or a Chi-Square test:</p>
 <pre class="r"><code>library(BenfordTests)
 chisq.benftest(Test1, digits = 1)

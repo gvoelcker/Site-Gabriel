@@ -1,5 +1,5 @@
 ---
-title: 'Introduction to Benford''s Law basics'
+title: 'Benford''s Law'
 author: Gabriel Voelcker
 date: '2018-08-10'
 slug: benford-s-law-using-r
@@ -53,9 +53,9 @@ I am thinking of a number from 1 to 99. You have 2 seconds to guess which is the
 
 Which number did you choose? Actually, that's irrelevant! My intention here is to make you reflect on this question: what were the odds of you correctly guessing the first digit? 
 
-1/9, right? There were 9 possibilities(1,2,3,4,5,6,7,8,9), since 0 is not a first digit among the possibilities I've described. So, if you chose 4, in 11 of 99 possible outcomes you would've pick correctly (4,40,41,42,43,44,45,46,47,48,49). So far, simple math. 
+1/9, right? There were 9 possibilities(1,2,3,4,5,6,7,8,9), since 0 is not a first digit among the possibilities I've described. So, if you chose 4, in 11(4,40,41,42,43,44,45,46,47,48,49) of 99 possible outcomes you would've pick correctly. So far, simple math. 
 
-But what if we use another set of numbers? For example: the first 1000 occurrences of the Fibonacci sequence(Any number of the Fibonacci sequence is the sum of the previous two numbers, so: 1,1,2,3,5,8,13... and so forth). Would you say that your odds of guessing correctly would remain 1/9 were you to choose 4 again? Let me show you the distribution.
+But what if we use another set of numbers? For example: the first 1000 occurrences of the Fibonacci sequence(Any number of the Fibonacci sequence is the sum of the previous two numbers, so it works like this: 1,1,2,3,5,8,13... and so forth). Would you say that your odds of guessing correctly would remain 1/9 were you to choose 4 again? Let me illustrate the distribution of the first digit of this sequence:
 
 ```{r Digit, echo=FALSE, message=FALSE, include=FALSE}
 Base <- read_excel("Fibonacci.xlsx", sheet=1, col_names = TRUE)
@@ -72,7 +72,7 @@ Graf1 <- ggplot(data = Base, mapping = aes(Digit, as.numeric(Distribution))) +
 Graf1
 ```
 
-The answer is no! And the reason is because what we have here is a very peculiar mathematical phenomenon called Benford's Law. Thanks to two gentlemen, Simon Newcomb and Frank Benford, there's a good story behind that answer. In [**1881**](http://gerry.lamost.org/upload/newcomb.pdf), Simon Newcomb, an astronomer, noticed that the first pages of a logarithm book were usually more worned out than the later ones. From this, he derived his intuition that given a list of arbitrary numbers more numbers will tend to begin with an "1" than any other digit. So, why is it called Benford's Law, and not Newcomb's law? (that's a classic case of [**Stigler's Law**](https://io9.gizmodo.com/5820736/stiglers-law-why-nothing-in-science-is-ever-named-after-its-actual-discoverer)[this law is named after this [**Stigler**](https://galton.uchicago.edu/faculty/stigler.shtml), not his [**father**](https://research.chicagobooth.edu/stigler/about/george-stigler), the economist and Nobel Laureate]).
+Clearly, we have a different distribution! And the reason is because what we have here is a very peculiar mathematical phenomenon called Benford's Law. Thanks to two gentlemen, Simon Newcomb and Frank Benford, there's a good story behind this distribution. In [**1881**](http://gerry.lamost.org/upload/newcomb.pdf), Simon Newcomb, an astronomer, noticed that the first pages of a logarithm book were usually more worned out than the last ones. From this, he derived the intuition that, given a list of arbitrary numbers, more numbers will tend to begin with an "1" than any other digit. So, why is it called Benford's Law, and not Newcomb's law? (in case you're wondering, that's a classic case of [**Stigler's Law**](https://io9.gizmodo.com/5820736/stiglers-law-why-nothing-in-science-is-ever-named-after-its-actual-discoverer)[this law is named after this [**Stigler**](https://galton.uchicago.edu/faculty/stigler.shtml), not his [**father**](https://research.chicagobooth.edu/stigler/about/george-stigler), the economist and Nobel Laureate]).
 
 Well, it wasn't until [**1938**](https://www.jstor.org/stable/984802?seq=1#page_scan_tab_contents) that physicist(remember when I talked about Econophysics?) Frank Benford formalized this discovery, which he regarded as the Law of Anomalous Numbers. He tested the distribution of the first digit of 20 different samples, and concluded that in populations of exponential growth, the distribution of the first digit followed a certain pattern. What is this pattern? If **d** is the first digit, with d(d E{1,2,...,9}), then: 
 
@@ -81,10 +81,12 @@ $$P(d) = \log_{10}(d+1) - \log_{10}(d) = \log_{10}(\frac{d+1}{d}) = \log_{10}(\f
 Substituting d for the nine digits, we have the following results:
 
 ```{r tables-mtcars, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
-Base <- read_excel("Base.xlsx", sheet=1, col_names = TRUE)
-Benford <- as.data.frame(cbind(Base$Digit, Base$Benford))
-colnames(Benford) <- c("Digit", "Distribution")
-knitr::kable(Benford[], caption = 'Benford Distribution')
+Digits <- c(1,2,3,4,5,6,7,8,9)
+Benford <- c("30.1%", "17.6%", "12.5%", "9.7%", "7.9%", "6.7%", "5.8%", "5.1%","4.6%")
+Benford <- as.data.frame(cbind(Digits, Benford))
+colnames(Benford) <- c("1st Digit", "Distribution")
+knitr::kable(Benford[], caption = 'Benford Distribution') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", full_width = F))
 ```
 
 If we plot this distribution, we get:
@@ -102,14 +104,19 @@ ggplot(data = Base, mapping = aes(Digit, Benford)) +
 
   
 ```
+
 (Very similar to the Fibonacci 1st digit distribution, right?)
-But, as one of my academics advisors used to always ask me, what is the purpose of this information? The beauty of Benford is how applicable this distribution is to different sets of numbers. In 1972, [**Hal Varian**](http://people.ischool.berkeley.edu/~hal/) suggested that the Benford distribution could be used to detect accounting frauds. The literature [**w**](https://search.proquest.com/openview/7d019c616546c4c5da54cba2c85d136d/1?pq-origsite=gscholar&cbl=31718)[**o**](https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00028759/ilm1-2013200266.pdf)[**r**](http://jhr.uwpress.org/content/44/1/1.short)[**k**](https://amstat.tandfonline.com/doi/abs/10.1198/000313007X223496)[**s**](https://www.ams.org/journals/proc/1995-123-03/S0002-9939-1995-1233974-8/) applied Benford's distribution to investigate a variety of datasets. 
 
-Statistically speaking, when data should conform to Benford???s law, a null-hypothesis rejection suggests that some form of data manipulation has taken place. Now it is time to use R to test empirically Benford's distribution.
+Give yourself a moment to let that sink in. If you love math as much as I do, there's a lot of reflection to be done here. There you have it: the Law of Anomalous Numbers. In a variety of data sets, the frequency distribution of the first digit obeys this law, conforming to the distribution plotted above. But, as one of my academics advisors used to always ask me, what is the purpose of this information? 
 
-There are two packages that can get the job done: [**BenfordTests**](https://cran.r-project.org/web/packages/BenfordTests/BenfordTests.pdf) and [**benford.analysis**](https://cran.r-project.org/web/packages/benford.analysis/benford.analysis.pdf). Let's go through to the basics together. 
+The beauty of Benford's Law is how this distribution is applied in all sorts of data sets. In 1972, [**Hal Varian**](http://people.ischool.berkeley.edu/~hal/) suggested that the Benford distribution could be used to detect accounting frauds. Some [**w**](https://search.proquest.com/openview/7d019c616546c4c5da54cba2c85d136d/1?pq-origsite=gscholar&cbl=31718)[**o**](https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00028759/ilm1-2013200266.pdf)[**r**](http://jhr.uwpress.org/content/44/1/1.short)[**k**](https://amstat.tandfonline.com/doi/abs/10.1198/000313007X223496)[**s**](https://www.ams.org/journals/proc/1995-123-03/S0002-9939-1995-1233974-8/) applied Benford's distribution to investigate a variety of datasets. Statistically speaking, when data should conform to Benford's Law, a null-hypothesis rejection suggests that some form of data manipulation has taken place. In other words, if a data set should conform to Benford's Law and it doesn't, something is wrong. Let me introduce you to two RStudio packages that can test that:
 
-Let's use this database, which uses the first 1000 instances of 2^n^. BenfordTests provides a series of test to see if your database conforms to Benford's Law. For example, let's use a Kolmogorov-Smirnov test:
+1)  [**BenfordTests**](https://cran.r-project.org/web/packages/BenfordTests/BenfordTests.pdf); and 
+2) [**benford.analysis**](https://cran.r-project.org/web/packages/benford.analysis/benford.analysis.pdf). 
+
+Let's go through to the basics together. 
+
+Let's use the first 1000 terms of the Fibonacci sequence with the BenfordTests package. It provides a series of tests to see if your database conforms to Benford's Law. For example, let's use a Kolmogorov-Smirnov test:
 
 ```{r}
 DataBenford <- read_excel("dataBenford.xlsx", sheet=1, col_names = TRUE)
@@ -118,6 +125,7 @@ ks.benftest(Test1, digits = 1, pvalmethod = "simulate")
 ```
 
 Or a Chi-Square test:
+
 ```{r}
 library(BenfordTests)
 chisq.benftest(Test1, digits = 1)
