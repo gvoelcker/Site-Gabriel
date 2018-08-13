@@ -1,5 +1,5 @@
 ---
-title: 'Benford''s Law'
+title: 'Benford''s Law with RStudio'
 author: Gabriel Voelcker
 date: '2018-08-10'
 slug: benford-s-law-using-r
@@ -37,7 +37,7 @@ library(lubridate)
 require(zoo)
 library(BatchGetSymbols)
 require(xfun)
-xfun::pkg_load2(c('base64enc', 'htmltools', 'mime'))
+xfun::pkg_load2(c('base64enc', 'htmltools', 'mime', 'readxl'))
 
 library(knitr)
 library(kableExtra)
@@ -111,38 +111,38 @@ Give yourself a moment to let that sink in. If you love math as much as I do, th
 
 The beauty of Benford's Law is how this distribution is applied in all sorts of data sets. In 1972, [**Hal Varian**](http://people.ischool.berkeley.edu/~hal/) suggested that the Benford distribution could be used to detect accounting frauds. Some [**w**](https://search.proquest.com/openview/7d019c616546c4c5da54cba2c85d136d/1?pq-origsite=gscholar&cbl=31718)[**o**](https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00028759/ilm1-2013200266.pdf)[**r**](http://jhr.uwpress.org/content/44/1/1.short)[**k**](https://amstat.tandfonline.com/doi/abs/10.1198/000313007X223496)[**s**](https://www.ams.org/journals/proc/1995-123-03/S0002-9939-1995-1233974-8/) applied Benford's distribution to investigate a variety of datasets. Statistically speaking, when data should conform to Benford's Law, a null-hypothesis rejection suggests that some form of data manipulation has taken place. In other words, if a data set should conform to Benford's Law and it doesn't, something is wrong. Let me introduce you to two RStudio packages that can test that:
 
-1)  [**BenfordTests**](https://cran.r-project.org/web/packages/BenfordTests/BenfordTests.pdf); and 
+1)  [**BenfordTests**](https://cran.r-project.org/web/packages/BenfordTests/BenfordTests.pdf);  
 2) [**benford.analysis**](https://cran.r-project.org/web/packages/benford.analysis/benford.analysis.pdf). 
 
 Let's go through to the basics together. 
 
-Let's use the first 1000 terms of the Fibonacci sequence with the BenfordTests package. It provides a series of tests to see if your database conforms to Benford's Law. For example, let's use a Kolmogorov-Smirnov test:
+Let's use the first 1000 terms of the Fibonacci sequence(feel free to download them in xlsx format [**here**](https://github.com/gvoelcker/Site-Gabriel/blob/master/content/post/Fibonacci.xlsx)) with the BenfordTests package. It provides a series of tests to see if your database conforms to Benford's Law. 
+
+For example, let's perform a Kolmogorov-Smirnov test. Quoting the package manual: "ks.benftest takes any numerical vector reduces the sample to the specified number of significant digits and performs the Kolmogorov-Smirnov goodness-of-fit test to assert if the data conforms to Benford’s law.". Here's the code:
 
 ```{r}
-DataBenford <- read_excel("dataBenford.xlsx", sheet=1, col_names = TRUE)
-Test1 <- as.numeric(DataBenford$First_Digit)
+library(readxl)
+library(BenfordTests)
+Fibonacci <- read_excel("Fibonacci.xlsx", sheet=2, col_names = TRUE)
+Test1 <- as.numeric(Fibonacci$FirstDigit)
 ks.benftest(Test1, digits = 1, pvalmethod = "simulate")
 ```
 
-Or a Chi-Square test:
+The most important part is how to interpret them. If H0 is rejected, then we have indications that the distribution doesn't conform to Benford's Law. Since the result we got was D = 0.068029, we can say that with a level of significance of 93.2% that the set of numbers conforms to Benford's Law. I'll leave it up to you if that's rigorous enough for your analysis.
+
+The BenfordTests package has other tests of conformity using other methodologies, feel free to test them by slightly adjusting the code and using other tests, such as chisq.benftest or edist.benftest.
+
+But the packages contain more than just tests. It is possible to perform a graphical analysis of the first significant digits using signifd.analysis: 
 
 ```{r}
-library(BenfordTests)
-chisq.benftest(Test1, digits = 1)
+signifd.analysis(Test1)
 ```
 
-Or a Euclidean Distance test:
-```{r}
-library(BenfordTests)
-edist.benftest(Test1, digits = 1)
-```
+Suppose our data set should conform to Benford's Law but it doesn't. Wouldn't you agree that zooming in in each number is a good way of trying to find out where the non-conformity is? There are lots of ways you can go deep in a Benford's Law analysis, but I believe the basics have been introduced here. 
+If you are craving for more, Benford's Law is also applicable, and useful, for the second digit or a combination of the first two digits. Here we have it:
 
-Or a Hotelling T Square test:
-```{r}
-library(BenfordTests)
-jointdigit.benftest(Test1, digits = 1)
-```
+PLOTTAR TABELA COM OS PERCENTUAIS POR DÍGITO
 
-As you can see, BenfordTests have a variety of tests that you can use to test Benford's Law in set a of numbers. The most important part is to interpret them. But the packages contain more than just tests. It is possible to perform a graphical analysis of the first significant digits:
+If you want to learn even more about Benford's Law, I advise you to test all the features in both packages, read their documentation and the papers that originated every test. I hope this introduction has been useful.  
 
-If you are a fan of math, there's still a lot you can learn about Benford's law [**here**](http://mathworld.wolfram.com/BenfordsLaw.html).
+Bonus: If you are a fan of math, there's still a lot you can learn about Benford's law [**here**](http://mathworld.wolfram.com/BenfordsLaw.html).
