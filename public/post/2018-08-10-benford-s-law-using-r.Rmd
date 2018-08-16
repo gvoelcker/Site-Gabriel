@@ -141,7 +141,24 @@ signifd.analysis(Test1)
 Suppose our data set should conform to Benford's Law but it doesn't. Wouldn't you agree that zooming in in each number is a good way of trying to find out where the non-conformity is? There are lots of ways you can go deep in a Benford's Law analysis, but I believe the basics have been introduced here. 
 If you are craving for more, Benford's Law is also applicable, and useful, for the second digit or a combination of the first two digits. Here we have it:
 
-PLOTTAR TABELA COM OS PERCENTUAIS POR DÍGITO
+```{r tables-1stand2nddigit, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
+Second_Digit <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,"First Digit Distribution")
+First <- c(4.14, 3.78, 3.48, 3.22, 3.00, 2.80, 2.63, 2.48, 2.35, 2.23, 30.10)
+Second <- c(2.12, 2.02, 1.93, 1.85, 1.77, 1.70, 1.64, 1.58, 1.52, 1.47, 17.61)
+Third <- c(1.42, 1.38, 1.34, 1.30, 1.26, 1.22, 1.19, 1.16, 1.13, 1.10, 12.49)
+Fourth <- c(1.07, 1.05, 1.02, 1.00, .98, .95, .93, .91, .90, .88, 9.69)
+Fifth <- c(.86, .84, .83, .81, .80, .78, .77, .76, .74, .73, 7.92)
+Sixth <- c(.72, .71, .69, .68, .67, .66, .65, .64, .63, .62, 6.69)
+Seventh <- c(.62, .61, .60, .59, .58, .58, .57, .56, .55, .55, 5.80)
+Eighth <- c(.54, .53, .53, .52, .51, .51, .50, .50, .49, .49, 5.12)
+Ninth <- c(.48, .47, .47, .46, .46, .45, .45, .45, .44, .44, 4.58)
+SecondDigit <- c("Total", 11.97, 11.39, 10.88, 10.43, 10.03, 9.67, 9.34, 9.04, 8.76, 8.50)
+Table <- as.data.frame(cbind(Second_Digit, First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth, SecondDigit))
+colnames(Table) <- c("Second Digit", "1", "2", "3", "4", "5", "6", "7", "8", "9", "Second Digit Distribution")
+knitr::kable(Table[], caption = '1st and 2nd Digit Distribution') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", full_width = F)) %>% 
+row_spec(0, angle = -90)
+```
 
 If you want to learn even more about Benford's Law, I advise you to test all the features in both packages, read their documentation and the papers that originated every test. I hope this introduction has been useful.  
 
