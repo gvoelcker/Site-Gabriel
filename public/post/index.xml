@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright notice</copyright>
-    <lastBuildDate>Fri, 10 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Aug 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>Benford&#39;s Law with RStudio</title>
       <link>/post/benford-s-law-using-r/</link>
-      <pubDate>Fri, 10 Aug 2018 00:00:00 +0000</pubDate>
+      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
       
       <guid>/post/benford-s-law-using-r/</guid>
       <description>In 2016 I had the opportunity to take a class in my masters entitled Econophysics. Econophysics is a field of study that applies methods and theories developed by physicists to economic problems. Around that time I came across a very interesting phenomenon called Benford’s Law. This post is an introduction to Benford’s Law using RStudio. Let’s start by understanding what Benford’s Law is.
