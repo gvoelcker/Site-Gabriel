@@ -114,7 +114,9 @@ Give yourself a moment to let that sink in. If you love math as much as I do, th
 The beauty of Benford's Law is how this distribution is applied in all sorts of data sets. In 1972, [**Hal Varian**](http://people.ischool.berkeley.edu/~hal/) suggested that the Benford distribution could be used to detect accounting frauds. Some [**w**](https://search.proquest.com/openview/7d019c616546c4c5da54cba2c85d136d/1?pq-origsite=gscholar&cbl=31718)[**o**](https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00028759/ilm1-2013200266.pdf)[**r**](http://jhr.uwpress.org/content/44/1/1.short)[**k**](https://amstat.tandfonline.com/doi/abs/10.1198/000313007X223496)[**s**](https://www.ams.org/journals/proc/1995-123-03/S0002-9939-1995-1233974-8/) applied Benford's distribution to investigate a variety of datasets. Statistically speaking, when data should conform to Benford's Law, a null-hypothesis rejection suggests that some form of data manipulation has taken place. In other words, if a data set should conform to Benford's Law and it doesn't, something is wrong. Let me introduce you to a RStudio packages that can test that: [**BenfordTests**](https://cran.r-project.org/web/packages/BenfordTests/BenfordTests.pdf).
 
 Let's go through to the basics together. Let's use the first 1000 terms of the Fibonacci sequence: 
-
+```{r Fibonaccidownload, echo=FALSE}
+xfun::embed_file("Fibonacci.xlsx")
+```
 with the BenfordTests package. It provides a series of tests to see if your database conforms to Benford's Law. If you don't have the packages installed in your RStudio, I recommend you to do so now.
 
 For example, let's perform a Kolmogorov-Smirnov test. Quoting the package manual: "ks.benftest takes any numerical vector reduces the sample to the specified number of significant digits and performs the Kolmogorov-Smirnov goodness-of-fit test to assert if the data conforms to Benford’s law.". Here's the code:
