@@ -53,9 +53,9 @@ I am thinking of a number from 1 to 99. You have 2 seconds to guess which is the
 
 Which number did you choose? Actually, that's irrelevant! My intention here is to make you reflect on this question: what were the odds of you correctly guessing the first digit? 
 
-1/9, right? There were 9 possibilities(1,2,3,4,5,6,7,8,9), since 0 is not a first digit among the possibilities I've described. So, if you chose 4, in 11(4,40,41,42,43,44,45,46,47,48,49) of 99 possible outcomes you would've pick correctly. So far, simple math. 
+1/9, right? There were 9 possibilities(1,2,3,4,5,6,7,8,9), since 0 is not a first digit among the possibilities I've described. For example, if you chose 4, in 11(4,40,41,42,43,44,45,46,47,48,49) of 99 possible outcomes you would've pick correctly. So far, simple math. 
 
-But what if we use another set of numbers? For example: the first 1000 occurrences of the Fibonacci sequence(Any number of the Fibonacci sequence is the sum of the previous two numbers, so it works like this: 1,1,2,3,5,8,13... and so forth). Would you say that your odds of guessing correctly would remain 1/9 were you to choose 4 again? Let me illustrate the distribution of the first digit of this sequence:
+But what if we use another set of numbers? For example: the first 1000 occurrences of the Fibonacci sequence (any number of the Fibonacci sequence is the sum of the previous two numbers, so it works like this: 1,1,2,3,5,8,13... and so forth). Would you say that your odds of guessing correctly would remain 1/9 were you to choose 4 again? Let me illustrate the distribution of the first digit of this sequence:
 
 ```{r Digit, echo=FALSE, message=FALSE, include=FALSE}
 Base <- read_excel("Fibonacci.xlsx", sheet=1, col_names = TRUE)
@@ -74,13 +74,8 @@ Graf1
 
 Clearly, we have a different distribution! And the reason is because what we have here is a very peculiar mathematical phenomenon called Benford's Law. Thanks to two gentlemen, Simon Newcomb and Frank Benford, there's a good story behind this distribution. In [**1881**](http://gerry.lamost.org/upload/newcomb.pdf), Simon Newcomb, an astronomer, noticed that the first pages of a logarithm book were usually more worned out than the last ones. From this, he derived the intuition that, given a list of arbitrary numbers, more numbers will tend to begin with an "1" than any other digit. So, why is it called Benford's Law, and not Newcomb's law? (in case you're wondering, that's a classic case of [**Stigler's Law**](https://io9.gizmodo.com/5820736/stiglers-law-why-nothing-in-science-is-ever-named-after-its-actual-discoverer)[this law is named after this [**Stigler**](https://galton.uchicago.edu/faculty/stigler.shtml), not his [**father**](https://research.chicagobooth.edu/stigler/about/george-stigler), the economist and Nobel Laureate]).
 
-Well, it wasn't until [**1938**](https://www.jstor.org/stable/984802?seq=1#page_scan_tab_contents) that physicist(remember when I talked about Econophysics?) Frank Benford formalized this discovery, which he regarded as the Law of Anomalous Numbers. He tested the distribution of the first digit of 20 different samples, and concluded that in populations of exponential growth, the distribution of the first digit followed a certain pattern. What is this pattern? If **d** is the first digit, with d(d E{1,2,...,9}), then: 
+Well, it wasn't until [**1938**](https://www.jstor.org/stable/984802?seq=1#page_scan_tab_contents) that physicist(remember what I said about Econophysics?) Frank Benford formalized this discovery, which he regarded as the Law of Anomalous Numbers. He tested the distribution of the first digit of 20 different samples, and concluded that in populations of exponential growth, the distribution of the first digit followed a certain pattern. What is this pattern? If **d** is the first digit, with d(d E{1,2,...,9}), then: 
 
-
-
-```{r}
-xfun::embed_file("Fibonacci.xlsx")
-```
 
 $$P(d) = \log_{10}(d+1) - \log_{10}(d) = \log_{10}(\frac{d+1}{d}) = \log_{10}(\frac{d+1}{d})$$
 
@@ -116,14 +111,13 @@ ggplot(data = Base, mapping = aes(Digit, Benford)) +
 
 Give yourself a moment to let that sink in. If you love math as much as I do, there's a lot of reflection to be done here. There you have it: the Law of Anomalous Numbers. In a variety of data sets, the frequency distribution of the first digit obeys this law, conforming to the distribution plotted above. But, as one of my academics advisors used to always ask me, what is the purpose of this information? 
 
-The beauty of Benford's Law is how this distribution is applied in all sorts of data sets. In 1972, [**Hal Varian**](http://people.ischool.berkeley.edu/~hal/) suggested that the Benford distribution could be used to detect accounting frauds. Some [**w**](https://search.proquest.com/openview/7d019c616546c4c5da54cba2c85d136d/1?pq-origsite=gscholar&cbl=31718)[**o**](https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00028759/ilm1-2013200266.pdf)[**r**](http://jhr.uwpress.org/content/44/1/1.short)[**k**](https://amstat.tandfonline.com/doi/abs/10.1198/000313007X223496)[**s**](https://www.ams.org/journals/proc/1995-123-03/S0002-9939-1995-1233974-8/) applied Benford's distribution to investigate a variety of datasets. Statistically speaking, when data should conform to Benford's Law, a null-hypothesis rejection suggests that some form of data manipulation has taken place. In other words, if a data set should conform to Benford's Law and it doesn't, something is wrong. Let me introduce you to two RStudio packages that can test that:
+The beauty of Benford's Law is how this distribution is applied in all sorts of data sets. In 1972, [**Hal Varian**](http://people.ischool.berkeley.edu/~hal/) suggested that the Benford distribution could be used to detect accounting frauds. Some [**w**](https://search.proquest.com/openview/7d019c616546c4c5da54cba2c85d136d/1?pq-origsite=gscholar&cbl=31718)[**o**](https://www.db-thueringen.de/servlets/MCRFileNodeServlet/dbt_derivate_00028759/ilm1-2013200266.pdf)[**r**](http://jhr.uwpress.org/content/44/1/1.short)[**k**](https://amstat.tandfonline.com/doi/abs/10.1198/000313007X223496)[**s**](https://www.ams.org/journals/proc/1995-123-03/S0002-9939-1995-1233974-8/) applied Benford's distribution to investigate a variety of datasets. Statistically speaking, when data should conform to Benford's Law, a null-hypothesis rejection suggests that some form of data manipulation has taken place. In other words, if a data set should conform to Benford's Law and it doesn't, something is wrong. Let me introduce you to a RStudio packages that can test that: [**BenfordTests**](https://cran.r-project.org/web/packages/BenfordTests/BenfordTests.pdf).
 
-1)  [**BenfordTests**](https://cran.r-project.org/web/packages/BenfordTests/BenfordTests.pdf);  
-2) [**benford.analysis**](https://cran.r-project.org/web/packages/benford.analysis/benford.analysis.pdf). 
-
-Let's go through to the basics together. 
-
-Let's use the first 1000 terms of the Fibonacci sequence(feel free to download them in xlsx format [**here**](https://github.com/gvoelcker/Site-Gabriel/blob/master/content/post/Fibonacci.xlsx)) with the BenfordTests package. It provides a series of tests to see if your database conforms to Benford's Law. 
+Let's go through to the basics together. Let's use the first 1000 terms of the Fibonacci sequence: 
+```{r Fibonaccidownload, echo=FALSE}
+xfun::embed_file("Fibonacci.xlsx")
+```
+with the BenfordTests package. It provides a series of tests to see if your database conforms to Benford's Law. If you don't have the packages installed in your RStudio, I recommend you to do so now.
 
 For example, let's perform a Kolmogorov-Smirnov test. Quoting the package manual: "ks.benftest takes any numerical vector reduces the sample to the specified number of significant digits and performs the Kolmogorov-Smirnov goodness-of-fit test to assert if the data conforms to Benford’s law.". Here's the code:
 
@@ -135,21 +129,23 @@ Test1 <- as.numeric(Fibonacci$FirstDigit)
 ks.benftest(Test1, digits = 1, pvalmethod = "simulate")
 ```
 
-The most important part is how to interpret them. If H0 is rejected, then we have indications that the distribution doesn't conform to Benford's Law. Since the result we got was D = 0.068029, we can say that with a level of significance of 93.2% that the set of numbers conforms to Benford's Law. I'll leave it up to you if that's rigorous enough for your analysis.
+The most important part is how to interpret this. If H0 is rejected, then we have indications that the distribution doesn't conform to Benford's Law. The D statistic denotes the absolute max distance between the Cumulative Distribution Function(CDF) of both samples. The closer the number is to 0, the more likely it is that our dataset conforms to Benford's Law. We got a result that was D = 0.068029, so I'll leave it up to you if that's rigorous enough for your analysis. If you want a little bit of fun, here's how D is calculated:
 
-The BenfordTests package has other tests of conformity using other methodologies, feel free to test them by slightly adjusting the code and using other tests, such as chisq.benftest or edist.benftest.
+$$D = sup_x |F_0(x) - F_{data}(x)   |$$
+Where the first F is the CDF distribution of the hypothesized distribution(in our case, Benford's Law) and the second F is the empirical distribution function of our observed data(in our case, Fibonacci's sequence).
 
-But the packages contain more than just tests. It is possible to perform a graphical analysis of the first significant digits using signifd.analysis: 
+The BenfordTests package has other tests of conformity using other methodologies, feel free to test them by slightly adjusting the code and using other tests, such as chisq.benftest or edist.benftest. The package contain more than just tests. It is possible to perform a graphical analysis of the first significant digit(sometimes called the significant digit, hence the test name) using signifd.analysis: 
 
 ```{r}
 signifd.analysis(Test1)
 ```
 
 Suppose our data set should conform to Benford's Law but it doesn't. Wouldn't you agree that zooming in in each number is a good way of trying to find out where the non-conformity is? There are lots of ways you can go deep in a Benford's Law analysis, but I believe the basics have been introduced here. 
-If you are craving for more, Benford's Law is also applicable, and useful, for the second digit or a combination of the first two digits. Here we have it:
+
+If you are craving for more, Benford's Law is also applicable, and useful, for the second digit or a combination of the first two digits. Please find the distribution in Table 2:
 
 ```{r tables-1stand2nddigit, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
-Second_Digit <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,"1st Digit Distribution")
+Second_Digit <- c(0, 1, 2, 3, 4, 5, 6, 7, 8, 9,"1st Digit Distribution:")
 First <- c(4.14, 3.78, 3.48, 3.22, 3.00, 2.80, 2.63, 2.48, 2.35, 2.23, 30.10)
 Second <- c(2.12, 2.02, 1.93, 1.85, 1.77, 1.70, 1.64, 1.58, 1.52, 1.47, 17.61)
 Third <- c(1.42, 1.38, 1.34, 1.30, 1.26, 1.22, 1.19, 1.16, 1.13, 1.10, 12.49)
@@ -161,11 +157,24 @@ Eighth <- c(.54, .53, .53, .52, .51, .51, .50, .50, .49, .49, 5.12)
 Ninth <- c(.48, .47, .47, .46, .46, .45, .45, .45, .44, .44, 4.58)
 SecondDigit <- c(11.97, 11.39, 10.88, 10.43, 10.03, 9.67, 9.34, 9.04, 8.76, 8.50, "Total")
 Table <- as.data.frame(cbind(Second_Digit, First, Second, Third, Fourth, Fifth, Sixth, Seventh, Eighth, Ninth, SecondDigit))
-colnames(Table) <- c("2nd Digit \ 1st Digit", "1", "2", "3", "4", "5", "6", "7", "8", "9", "2nd Digit Distribution")
+colnames(Table) <- c("", "1", "2", "3", "4", "5", "6", "7", "8", "9", "2nd Digit Distribution:")
 knitr::kable(Table[], caption = '1st and 2nd Digit Distribution') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", full_width = F)) 
 ```
 
-If you want to learn even more about Benford's Law, I advise you to test all the features in both packages, read their documentation and the papers that originated every test. I hope this introduction has been useful.  
+As you can see, the bottom line is the distribution of the first digit, that you are already familiar with since this is the same distribution presented in Table 1. The main difference in analyzing the second digit is that now 0 is a possibility!(10, 20, 30, ..., 90). The second digit distribution is more uniform than the first digit but nonetheless useful. If you change the code for the ks.benftest performed above and use "digits = 2", the Benford test performed will take into account the first two digits:
+```{r}
+ks.benftest(Test1, digits = 2, pvalmethod = "simulate")
+```
+
+There you have it, the basics of Benford's Law using RStudio! You can still do more things Benford, let me address them. 
+
+BenfordTests package have other features that I think it would be nice to familiarize yourself with. You can also read its documentation and even the papers that originated every test.
+
+Second, there's another package in RStudio that performs Benford's Law analysis: [**benford.analysis**](https://cran.r-project.org/web/packages/benford.analysis/benford.analysis.pdf). It is also useful and fun to use this package. 
 
 Bonus: If you are a fan of math, there's still a lot you can learn about Benford's law [**here**](http://mathworld.wolfram.com/BenfordsLaw.html).
+
+I hope you had as much fun reading this introduction as I had writing/coding it. Feel free to contact me if you have any doubts, found any mistakes or need help with performing any of the coded used above.
+
+PS: I'd like to thank [**Davi Simon**](https://davi-simon.netlify.com/) for all the help and useful comments while I was creating this post! 
