@@ -27,7 +27,7 @@ theme = "vienna"
     #mixpanel_api_key = "Your Mixpanel API key"
     # author = "Gabriel Voelcker"
     #avatar = "/path/to/avatar"
-    contact = "Your contact link (ex. mailto:gvoelcker@gmail.com)"
+    contact = "Your contact link (ex. mailto: gvoelcker@gmail.com)"
     # bio = "Economist from Porto Alegre, Brazil"
     # Short subtitle/tagline. This is displayed in the header.
     subtitle = "A storage for works, projects and ideas."

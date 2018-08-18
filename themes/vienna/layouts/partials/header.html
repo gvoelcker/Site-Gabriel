@@ -56,10 +56,10 @@
         &nbsp;Home
       </a>
       {{ end }}
-      {{ with .RSSLink }}
-      <a href="{{ . }}" class="btn-header btn-subscribe hidden-xs">
+      {{ partial "link.html" . }}
+      <a href="{{ https://gabrielvoelcker.netlify.com/post/about-the-author/ }}" class="btn-header">
         <i class="fa fa-rss" aria-hidden="true"></i>
-        &nbsp;Subscribe
+        &nbsp;About
       </a>
       {{ end }}
     </section>

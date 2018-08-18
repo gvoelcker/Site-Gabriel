@@ -12,5 +12,3 @@ Tags: []
 My name is Gabriel Voelcker and I am, among other things, an economist. I hope to use this netlify as a place to share my research ideas, improve my coding skills and, last but not least, connect with other people who share interests with me. Since I love telling stories, I will try to write everything in a way that you are capable of understanding. So, regardless if the person reading what I will write doesn't have a clue what tidyverse or Cobb-Douglas is, or is a Nobel laureate(not unprecedented to be honest, but let's save this story for another time) he or she should be able to understand what I'm trying to convey.
 
 This website is 100% written in RStudio. I've started using R recently, having used only Stata and Gretl in my undergraduate econometrics. You are welcome to see the code behind this website [**here**](https://github.com/gvoelcker/Site-Gabriel). I've chosen this language of coding not only because it's suits me best, but also because of its broad applicability. 
-
-Feel free to contact me in your language. Falo português, anche parlo italiano und ich spreche Deutsch(aber mein Deutsch ist ein bisschen kaputt).
