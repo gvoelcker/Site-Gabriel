@@ -17,7 +17,7 @@ library(png)
 
 ```{r,echo=FALSE,include=FALSE}
 setwd("~/Dropbox/R/Site-Gabriel/content/post")
-img1_path <- "~/Dropbox/R/Site-Gabriel/content/post/whats1.png"
+img1_path <- "~/Dropbox/R/Site-Gabriel/content/post/masters1.png"
 img1 <- readPNG(img1_path, native = TRUE, info = TRUE)
 attr(img1, "info")
 ```
@@ -29,7 +29,20 @@ The main objective of the research is to empirically test whether family firms a
 
 I'd like to acknowledge the contributions of the examination board, which consisted of Profs. PhDs Guilherme Kirch, Cristiano Costa, Roberto Decourt and Daniel Vancin. There is still a lot to work on until this project is published but I'm happy to share for Portuguese speakers the current version of the paper [**here**](https://gabrielvoelcker.netlify.com/FF_Semead.pdf). 
 
-```{r, echo=FALSE, out.width = "80%"}
-library(knitr)
-include_graphics(img1_path)
+
+
+
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/content/post")
+img <- readPNG("masters1.png")
+ grid.raster(img)
 ```
+
+
+
+
+
+
