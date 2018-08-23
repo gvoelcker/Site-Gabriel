@@ -1,5 +1,5 @@
 ---
-title: My Dissertation
+title: My Master's Dissertation
 author: Gabriel Voelcker
 date: '2018-08-22'
 slug: master
