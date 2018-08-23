@@ -15,7 +15,7 @@ The main objective of the research is to empirically test whether family firms a
 
 I used a sample of brazilian firms, with data from 2010 to 2017, obtaining 1188 observations. There were two main sources of information that I used. The first is [**Economática**](https://economatica.com/), which can be introduced as the brazilian Compustat. Almost all variables were downloaded from this software, available to me as a Unisinos student. But I also need all the information about shareholders, families and board of directors, which must be disclosed by all companies listed in the Brazilian stock market. 
 
-There are two ways of obtaining this information. The first is the more troublesome one: downloading all the available data at the [**source**](https://cvmweb.cvm.gov.br/SWB/Sistemas/SCW/CPublica/CiaAb/FormBuscaCiaAb.aspx?TipoConsult=c). In this case, one would have to download manually for each year and each company of the sample.
+There are two ways of obtaining this information. The first is the more troublesome one: downloading all the available data at the [**source**](https://cvmweb.cvm.gov.br/SWB/Sistemas/SCW/CPublica/CiaAb/FormBuscaCiaAb.aspx?TipoConsult=c). In this case, one would have to download manually for each year and each company of the desired sample.
 
 Luckily, a RStudio package has been developed that quickly downloads all the available data upon setting some parameters: GetDFPData. It is possible to obtain all the data via RStudio or [**here**](http://www.msperlin.com/shiny/GetDFPData/). If one is interested in obtaining data from Brazilian companies, this is the best free source of data available, in my opinion. All the information is in English.
 
