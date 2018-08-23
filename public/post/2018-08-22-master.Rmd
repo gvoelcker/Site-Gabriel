@@ -9,7 +9,7 @@ Description: ''
 Tags: []
 ---
 
-This last Monday I presented my dissertation and had the pleasure of concluding my masters. The work is entitled: "An Analysis of Risk-Taking in Family Firms", and was oriented by Prof. PhD. Clea B. Macagnan. 
+This last Monday I presented my dissertation and had the pleasure of concluding another cycle: my masters in accounting and finance. The work is entitled: "An Analysis of Risk-Taking in Family Firms", and I was oriented by Prof. PhD. Clea B. Macagnan. 
 
 The main objective of the research is to empirically test whether family firms are more risk averse than non-family firms. The empirical procedures can be divided into two stages. First, I performed tests to compare the average of variables differentiating among family firms and non family firms(62.5% of the tests indicated that they behave differently). Then, I tested my hypothesis using OLS and Random Effects. The results point to a more conservative behaviour from family firms towards risk-taking.
 
