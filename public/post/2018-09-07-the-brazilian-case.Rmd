@@ -1,0 +1,33 @@
+---
+title: The Brazilian Case
+author: Gabriel Voelcker
+date: '2018-09-07'
+slug: the-brazilian-case
+categories: []
+tags:
+  - brazil
+  - rstudio
+  - GetDFPData
+  - GetHFData
+Description: ''
+Tags: []
+---
+This post aims to introduce the Brazilian stock market to those not acquainted with it and to teach how to download data from it using RStudio.
+
+The Brazilian Stock Market is called B3(Brasil Bolsa Balcão S.A.), formerly Bovespa(Bolsa de Valores de São Paulo). It is situated in São Paulo, opening from 9/10 am to 5/6 pm daily, except weekends. It is one of the largest stock markets in the world by Market Cap, ranked at 18 as of April 30, 2018. It has a market cap of more than a trillion dollars, ranking first among Latin America countries. There are more than 500 companies being traded. 
+
+Brazil's market is not particularly famous for protecting minority stock holders, and selected groups tend to concentrate a lot of the ownership of publicly traded companies. The number varies through the years, but is a fair assumption to say that 40% of the firms in the B3 are controlled by families. Brazil also has relevant State-owned companies that play a large role not only in our economy but also in the Bovespa Index(e.g., Petrobrás and Vale).
+
+Brazil is not a pro-business country. In the latest [**Doing Business**](http://www.doingbusiness.org/rankings) ranking, it is ranked at 125 out of 190 nations. In the categories of the ranking, we're particularly bad at Starting a Business(#176), Dealing With Construction Permits(#170) and Paying Taxes(#184).
+
+If you are interested in understanding a little bit of accounting history in Brazil, I've worked in a project that describes it. You can find it [**here**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2960069).
+
+
+### **Data from the Brazilian Market**
+There are many ways that you can obtain data from the B3. In Brazil, there's a software called [**Economática**]() which is the  Brazilian equivalent of Compustat. Universities usually subscribe to it in order to access information necessary for research. Investors also can access data from their home brokers. 
+
+-- GetDFPData
+
+-- GetHFData
+
+-- Linkar post do Davi
