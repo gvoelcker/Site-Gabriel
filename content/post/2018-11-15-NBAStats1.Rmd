@@ -32,6 +32,7 @@ library(ggthemes)
 library(scales)
 library(dslabs)
 library(plotly)
+library(readxl)
 library(lubridate)
 require(zoo)
 library(BatchGetSymbols)
@@ -45,7 +46,7 @@ library(kableExtra)
 
 
 ```{r Table2, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
-setwd("~/Dropbox/R/NBA")
+setwd("~/Dropbox/R/Site-Gabriel/content/post")
 player_data <- read_excel("playerdata.xlsx")
 team_data <- read_excel("teamdata.xlsx")
 

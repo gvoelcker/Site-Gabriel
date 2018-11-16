@@ -4,7 +4,7 @@ author: "Gabriel Voelcker"
 date: '2018-11-15'
 categories: []
 Tags: []
-slug: nbastats1
+slug: nbastats2
 tags:
 - nba
 - stats
@@ -47,7 +47,7 @@ This post is a mock post, just a test. It's objective is to understand which sta
 For example, if we compare W% and EFG:
 
 ```{r Beta, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
-setwd("~/Dropbox/R/NBA")
+setwd("~/Dropbox/R/Site-Gabriel/content/post")
 player_data <- read_excel("playerdata.xlsx")
 team_data <- read_excel("teamdata.xlsx")
 
