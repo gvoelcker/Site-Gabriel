@@ -1,0 +1,82 @@
+---
+title: 'NBA Stats - Season 2016-2017'
+author: Gabriel Voelcker
+date: '2018-11-15'
+slug: nbastats1
+categories: []
+tags:
+  - nba
+  - stats
+Description: ''
+Tags: []
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+```{r packages, echo=FALSE, message=FALSE, include=FALSE}
+library(GetDFPData)
+library(tidyverse)
+library(benford.analysis)
+library(BenfordTests)
+library(dplyr)
+library(dygraphs)
+library(readxl)
+library(blogdown)
+library(writexl)
+library(rstudioapi)
+library(magrittr)
+library(ggplot2)
+library(ggthemes)
+library(scales)
+library(dslabs)
+library(plotly)
+library(lubridate)
+require(zoo)
+library(BatchGetSymbols)
+require(xfun)
+xfun::pkg_load2(c('base64enc', 'htmltools', 'mime', 'readxl'))
+
+library(knitr)
+library(kableExtra)
+
+```
+
+
+
+
+```{r Table1, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
+setwd("~/Dropbox/R/NBA")
+player_data <- read_excel("playerdata.xlsx")
+team_data <- read_excel("teamdata.xlsx")
+
+ggplotly(
+  player_data %>%
+    arrange(desc(TEAM_PLUS_MINUS)) %>%
+    ggplot(aes(TEAM_ABBREVIATION, FG2M)) +
+    geom_boxplot())
+
+```
+
+
+```{r Table2, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
+setwd("~/Dropbox/R/NBA")
+player_data <- read_excel("playerdata.xlsx")
+team_data <- read_excel("teamdata.xlsx")
+
+ggplotly(
+  player_data %>%
+    arrange(desc(TEAM_PLUS_MINUS)) %>%
+    ggplot(aes(RPM, fill = TEAM_ABBREVIATION)) +
+    geom_density(alpha = .2))
+
+ggplotly(
+  ggplot(team_data,aes(TEAM_RPM,NET_RATING)) +
+    geom_point(aes(color = TEAM_NAME)) +
+    geom_smooth(method = "glm") +
+    geom_abline()
+)
+
+
+```
