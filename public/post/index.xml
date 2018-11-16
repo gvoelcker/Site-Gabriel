@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright notice</copyright>
-    <lastBuildDate>Wed, 22 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 07 Sep 2018 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>The Brazilian Case</title>
+      <link>/post/the-brazilian-case/</link>
+      <pubDate>Fri, 07 Sep 2018 00:00:00 +0000</pubDate>
+      
+      <guid>/post/the-brazilian-case/</guid>
+      <description>This post aims to introduce the Brazilian stock market to those not acquainted with it and to teach how to download data from it using RStudio.
+The Brazilian Stock Market is called B3(Brasil Bolsa Balcão S.A.), formerly Bovespa(Bolsa de Valores de São Paulo). It is situated in São Paulo, opening from 9/10 am to 5/6 pm daily, except weekends. It is one of the largest stock markets in the world by Market Cap, ranked at 18 as of April 30, 2018.</description>
+    </item>
     
     <item>
       <title>My Master&#39;s Dissertation</title>
