@@ -1,0 +1,67 @@
+---
+title: "NBA Stats 2 - Season 2016-2017"
+author: "Gabriel Voelcker"
+date: '2018-11-15'
+categories: []
+Tags: []
+slug: nbastats1
+tags:
+- nba
+- stats
+Description: ''
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(collapse = TRUE)
+```
+
+```{r packages, echo=FALSE, message=FALSE, include=FALSE}
+library(GetDFPData)
+library(tidyverse)
+library(benford.analysis)
+library(BenfordTests)
+library(dplyr)
+library(dygraphs)
+library(readxl)
+library(blogdown)
+library(writexl)
+library(rstudioapi)
+library(magrittr)
+library(ggplot2)
+library(ggthemes)
+library(scales)
+library(dslabs)
+library(plotly)
+library(lubridate)
+require(zoo)
+library(BatchGetSymbols)
+require(xfun)
+xfun::pkg_load2(c('base64enc', 'htmltools', 'mime', 'readxl'))
+
+library(knitr)
+library(kableExtra)
+
+```
+This post is a mock post, just a test. It's objective is to understand which stats drive the success of a team in the NBA. The data used is from the 2016-2017 NBA Regular Season and the main proxy for success is the winning percentage. 
+
+For example, if we compare W% and EFG:
+
+```{r Beta, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
+setwd("~/Dropbox/R/NBA")
+player_data <- read_excel("playerdata.xlsx")
+team_data <- read_excel("teamdata.xlsx")
+
+Graf1 <- ggplot(data = team_data, mapping = aes(EFG_PCT, W_PCT)) +
+  geom_point() + 
+  stat_smooth() +
+  theme_economist(base_size = 12) +
+  scale_y_continuous(name="Winning Percentage", limits=c(0, 1), breaks=c(0,0.25,0.5,0.75,1), labels = percent) +
+  theme(plot.title = element_text(hjust = 0.5)) +
+  scale_x_continuous(name = "Effective Field Goal Percentage", breaks=c(0,0.25,0.5,0.75,1)) + 
+  ggtitle("W% vs EFG")
+  
+Graf1
+```
+
+Of course, that outlier on top right of the plot is the Golden State Warriors. Let's name them?
+

@@ -44,37 +44,6 @@ library(kableExtra)
 ```
 
 
-
-
-```{r Table1, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
-setwd("~/Dropbox/R/NBA")
-player_data <- read_excel("playerdata.xlsx")
-team_data <- read_excel("teamdata.xlsx")
-
-ggplotly(
-  player_data %>%
-    arrange(desc(TEAM_PLUS_MINUS)) %>%
-    ggplot(aes(TEAM_ABBREVIATION, FG2M)) +
-    geom_boxplot())
-
-```
-
-
-```{r Table2, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
-setwd("~/Dropbox/R/NBA")
-player_data <- read_excel("playerdata.xlsx")
-team_data <- read_excel("teamdata.xlsx")
-
-ggplotly(
-  player_data %>%
-    arrange(desc(TEAM_PLUS_MINUS)) %>%
-    ggplot(aes(RPM, fill = TEAM_ABBREVIATION)) +
-    geom_density(alpha = .2))
-
-
-```
-
-
 ```{r Table2, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
 setwd("~/Dropbox/R/NBA")
 player_data <- read_excel("playerdata.xlsx")
