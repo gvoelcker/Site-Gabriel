@@ -45,7 +45,7 @@ library(kableExtra)
 ```
 
 
-```{r Table2, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
+```{r TableNBA, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
 setwd("~/Dropbox/R/Site-Gabriel/content/post")
 player_data <- read_excel("playerdata.xlsx")
 team_data <- read_excel("teamdata.xlsx")
