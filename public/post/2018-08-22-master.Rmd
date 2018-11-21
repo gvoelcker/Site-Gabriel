@@ -19,7 +19,11 @@ There are two ways of obtaining this information. The first is the more troubles
 
 Luckily, a RStudio package has been developed that quickly downloads all the available data: GetDFPData. It is possible to obtain all the data via RStudio or using the developer's [**website**](http://www.msperlin.com/shiny/GetDFPData/). To anyone interested in obtaining data from Brazilian companies, this is the best free source of data available, in my opinion. All the information provided has already been translated to English. To access the documentation on the package, just click [**here**](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3128252).(I am currently planning to write a post about the relevance and particularities of the Brazilian stock market as well as methods of obtaining its information using RStudio)
 
-I'd like to acknowledge the contributions of the examination board, which consisted of Profs. PhDs Guilherme Kirch, Cristiano Costa, Roberto Decourt and Daniel Vancin. There is still a lot to work on until this project is published but I'm happy to share for Portuguese speakers the current version of the paper [**here**](https://gabrielvoelcker.netlify.com/FF_Semead.pdf). This version has been approved to the [**Semead Congress **](http://semead.com.br/21/).
+I'd like to acknowledge the contributions of the examination board, which consisted of Profs. PhDs Guilherme Kirch, Cristiano Costa, Roberto Decourt and Daniel Vancin. There is still a lot to work on until this project is published but I'm happy to share for Portuguese speakers the current version of the paper [**here**](https://gabrielvoelcker.netlify.com/FF_Semead.pdf).
+
+Edit on 09/14/2018: This version has been approved to the [**Semead Congress **](http://semead.com.br/21/). 
+
+Edit on 11/03/2018: the paper version of the dissertation is to be presented on Semead on 11/08/2018, 8am, at FEA1 - SALA G03. More info [**here**](http://semead.com.br/21/wp-content/uploads/sites/8/2018/11/Programacao_v7.pdf) and the official paper version of the congress can be found [**here**](http://login.semead.com.br/21semead/arquivos/1505.pdf).
 
 ```{r,echo=FALSE,include=FALSE}
 library(knitr)    
