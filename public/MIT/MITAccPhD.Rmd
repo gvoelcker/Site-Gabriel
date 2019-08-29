@@ -1,0 +1,13 @@
+---
+title: "PhD Accounting - MIT"
+author: "Gabriel Voelcker"
+date: "8/29/2019"
+output: html_document
+---
+#{.tabset}
+Welcome! The material you now have access to covers all the classes I've had on my PhD in Accounting at MIT. Feel free to send any questions/comments to gmv@mit.edu
+
+## 2019/1:
+
+[**Microeconomic Theory I**](https://gabrielvoelcker.netlify.com/microeconomic-theory-i)
+
