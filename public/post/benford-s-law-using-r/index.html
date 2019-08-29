@@ -216,7 +216,7 @@ ks.benftest(Test1, digits = 1, pvalmethod = &quot;simulate&quot;)
 ##  K-S Test for Benford Distribution
 ## 
 ## data:  Test1
-## D = 0.068029, p-value = 1</code></pre>
+## D = 0.068029, p-value = 0.9998</code></pre>
 <p>The most important part is how to interpret this. If H0 is rejected, then we have indications that the distribution doesn’t conform to Benford’s Law. The D statistic denotes the absolute max distance between the Cumulative Distribution Function(CDF) of both samples. The closer the number is to 0, the more likely it is that our dataset conforms to Benford’s Law. We got a result that was D = 0.068029, so I’ll leave it up to you if that’s rigorous enough for your analysis. If you want a little bit of fun, here’s how D is calculated:</p>
 <p><span class="math display">\[D = sup_x |F_0(x) - F_{data}(x)   |\]</span> Where the first F is the CDF distribution of the hypothesized distribution(in our case, Benford’s Law) and the second F is the empirical distribution function of our observed data(in our case, Fibonacci’s sequence).</p>
 <p>The BenfordTests package has other tests of conformity using other methodologies, feel free to test them by slightly adjusting the code and using other tests, such as chisq.benftest or edist.benftest. The package contain more than just tests. It is possible to perform a graphical analysis of the first significant digit(sometimes called the significant digit, hence the test name) using signifd.analysis:</p>
