@@ -6,6 +6,8 @@ output: html_document
 
 ## Useful 
 
+[**Syllabus 2018**](https://gabrielvoelcker.netlify.com/mit/syllabus_fall2018.pdf)
+
 ## **1st Lecture: Utility and Revealed Preferences**
 
 Summary
