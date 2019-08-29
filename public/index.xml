@@ -2,51 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gabriel Voelcker</title>
-    <link>/</link>
+    <link>https://gabrielvoelcker.netlify.com/</link>
     <description>Recent content on Gabriel Voelcker</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <copyright>&amp;copy; Copyright notice</copyright>
-    <lastBuildDate>Wed, 22 Aug 2018 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 03 Aug 2018 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://gabrielvoelcker.netlify.com/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>My Master&#39;s Dissertation</title>
-      <link>/post/master/</link>
-      <pubDate>Wed, 22 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/master/</guid>
-      <description>This last Monday I presented my dissertation and had the pleasure of concluding an important step: my masters in accounting and finance. The work is entitled: “An Analysis of Risk-Taking in Family Firms”, and I was oriented by Prof. PhD. Clea B. Macagnan.
-The main objective of the research is to empirically test whether family firms are more risk averse than non-family firms. The empirical procedures can be divided into two stages.</description>
-    </item>
-    
-    <item>
-      <title>Benford&#39;s Law with RStudio</title>
-      <link>/post/benford-s-law-using-r/</link>
-      <pubDate>Fri, 17 Aug 2018 00:00:00 +0000</pubDate>
-      
-      <guid>/post/benford-s-law-using-r/</guid>
-      <description>In 2016 I had the opportunity to take a class in my masters entitled Econophysics. Econophysics is a field of study that applies methods and theories developed by physicists to economic problems. Around that time I came across a very interesting phenomenon called Benford’s Law. This post is an introduction to Benford’s Law using RStudio. Let’s start by understanding what Benford’s Law is.
-I am thinking of a number from 1 to 99.</description>
-    </item>
     
     <item>
       <title>Stand</title>
-      <link>/post/about/</link>
+      <link>https://gabrielvoelcker.netlify.com/post/about/</link>
       <pubDate>Fri, 03 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/about/</guid>
+      <guid>https://gabrielvoelcker.netlify.com/post/about/</guid>
       <description>My name is Gabriel Voelcker and I am, among other things, an economist. I hope to use this netlify as a place to share my research ideas, improve my coding skills and, last but not least, connect with other people who share interests with me. Since I love telling stories, I will try make everything I write as easy to understand as possible. Unfortunately, since most of what is going to be talked about here concerns researches in accounting, economics and finance, readers outside this area of research may find it difficult to comprehend what I wirte.</description>
     </item>
     
     <item>
       <title>About the author</title>
-      <link>/post/about-the-author/</link>
+      <link>https://gabrielvoelcker.netlify.com/post/about-the-author/</link>
       <pubDate>Thu, 02 Aug 2018 00:00:00 +0000</pubDate>
       
-      <guid>/post/about-the-author/</guid>
+      <guid>https://gabrielvoelcker.netlify.com/post/about-the-author/</guid>
       <description>I am an economist from Brazil. My alma mater is Universidade Federal do Rio Grande do Sul, and I graduated in 2016. In 2018 I finished my masters in accounting and finance at Universidade do Vale do Rio dos Sinos. My main research interests include: econometrics, microeconomics, disclosure, disclosure regulation, game theory, risk, behavioural economics, decision-making, cultural economics and dividend policy.
 You can find everything I have published in my Google Scholar page, although I haven’t many contributions yet.</description>
     </item>

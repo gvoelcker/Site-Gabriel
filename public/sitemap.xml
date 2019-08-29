@@ -3,44 +3,34 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/post/master/</loc>
-    <lastmod>2018-08-22T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/benford-s-law-using-r/</loc>
-    <lastmod>2018-08-17T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/post/about/</loc>
+    <loc>https://gabrielvoelcker.netlify.com/post/about/</loc>
     <lastmod>2018-08-03T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/post/about-the-author/</loc>
+    <loc>https://gabrielvoelcker.netlify.com/post/about-the-author/</loc>
     <lastmod>2018-08-02T00:00:00+00:00</lastmod>
   </url>
   
   <url>
-    <loc>/categories/</loc>
+    <loc>https://gabrielvoelcker.netlify.com/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2018-08-22T00:00:00+00:00</lastmod>
+    <loc>https://gabrielvoelcker.netlify.com/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/post/</loc>
-    <lastmod>2018-08-22T00:00:00+00:00</lastmod>
+    <loc>https://gabrielvoelcker.netlify.com/post/</loc>
+    <lastmod>2018-08-03T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>/tags/</loc>
+    <loc>https://gabrielvoelcker.netlify.com/tags/</loc>
     <priority>0</priority>
   </url>
   
