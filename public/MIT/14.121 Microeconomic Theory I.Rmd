@@ -511,7 +511,7 @@ img <- readPNG("2.png")
 
 ## **Useful**{.tabset}
 
-### **Course**
+### **Course Info**
 
 Prof: [**Parag Pathak**](https://economics.mit.edu/faculty/ppathak)
 
@@ -524,6 +524,18 @@ Required readings:
 - [**Microeconomic Foundations I - Kreps**](https://gabrielvoelcker.netlify.com/mit/David%20M.%20Kreps-Microeconomic%20Foundations%20I_%20Choice%20and%20Competitive%20Markets-Princeton%20University%20Press%20(2013).pdf)
 
 ### **Problem Sets Solutions**{.tabset}
+
+#### **2017**
+
+[**Problem Set 1**](https://gabrielvoelcker.netlify.com/mit/14.121 pset1_solutions_2017.pdf)
+
+[**Problem Set 2**](https://gabrielvoelcker.netlify.com/mit/14.121 pset2_solutions_2017.pdf)
+
+[**Problem Set 3**](https://gabrielvoelcker.netlify.com/mit/14.121 pset3_solutions_2017.pdf)
+
+[**Problem Set 4**](https://gabrielvoelcker.netlify.com/mit/14.121 pset4_solutions_2017.pdf)
+
+[**Problem Set 5**](https://gabrielvoelcker.netlify.com/mit/14.121 pset5_solutions_2017.pdf)
 
 #### **2018**
 
@@ -539,3 +551,29 @@ Required readings:
 
 [**Problem Set 6**](https://gabrielvoelcker.netlify.com/mit/14.121 ps6sol_2018.pdf)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### **Tests**{.tabset}
+
+[**2015**](https://gabrielvoelcker.netlify.com/mit/2015exam.pdf)
+
+[**2015 solutions**](https://gabrielvoelcker.netlify.com/mit/2015exam_solutions.pdf)
+
+[**2017**](https://gabrielvoelcker.netlify.com/mit/2017_Final Exam.pdf)
+
+[**2018**](https://gabrielvoelcker.netlify.com/mit/examF18_wSOL_sketch.pdf)
