@@ -1,0 +1,27 @@
+---
+output: html_document
+---
+
+# 14.381 - Statistical Methods{.tabset}
+
+## **Useful Info**{.tabset}
+
+### Schedule
+
+[**Schedule**](https://gabrielvoelcker.netlify.com/mit/schedule_2018.pdf)
+
+### Material
+
+[**Statistical Inference - Casella & Berger**](https://gabrielvoelcker.netlify.com/mit/Casella Berger - Statistical Inference.pdf)
+
+[**All of Statistics**](https://gabrielvoelcker.netlify.com/mit/Wasserman - All of Statistics.pdf)
+
+### Problem Sets
+
+
+### Exams
+
+[**Midterm 2018**](https://gabrielvoelcker.netlify.com/mit/midterm_exam_fall12.pdf)
+
+[**Midterm 2018 Solutions**](https://gabrielvoelcker.netlify.com/mit/midterm_exam_fall12_solutions.pdf)
+
