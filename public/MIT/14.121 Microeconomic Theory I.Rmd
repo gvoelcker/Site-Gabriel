@@ -409,11 +409,11 @@ nonsatiation and h is continuously differentiable. Then $\frac{\partial h_i}{\pa
 
 Let $\phi$($\alpha$) = $max_{x \in \mathbb{R}^L}$ f(x;$\alpha$). Suppose $\phi$ is differentiable at $\overline{\rm \alpha}$ and f(x;$\alpha$) is uniquely maximized at x($\overline{\rm \alpha}$). Then
 
-<center> $\frac{d \phi}{d \alpha_i}$ = $\frac{\partial f}{\partial \alpha_i}$(x($\overline{\rm \alpha}$);$\overline{\rm \alpha}$)
+<center> $\frac{d \phi}{d \alpha_i}$ = $\frac{\partial f}{\partial \alpha_i}$(x($\overline{\rm \alpha}$);$\overline{\rm \alpha}$) </center>
 
 **Proof**: follows directly from the chain rule:
 
-$\frac{d \phi}{d \alpha_i}$ = $\frac{\partial f(x(\overline{\rm \alpha});\overline{\rm \alpha})}{\partial \alpha_i}$ + $\sum_{j = 1}^L$ $\frac{\partial f}{\partial x_j}$ (x($\overline{\rm \alpha}$);$\overline{\rm \alpha}$)$\frac{\partial x_j}{\partial \alpha_i}(\overline{\rm \alpha})$ = $\frac{\partial f (x($\overline{\rm \alpha});$\overline{\rm \alpha})}{\partial \alpha_i}$
+<center>$\frac{d \phi}{d \alpha_i}$ = $\frac{\partial f(x(\overline{\rm \alpha});\overline{\rm \alpha})}{\partial \alpha_i}$ + $\sum_{j = 1}^L$ $\frac{\partial f}{\partial x_j}$ (x($\overline{\rm \alpha}$);$\overline{\rm \alpha}$)$\frac{\partial x_j}{\partial \alpha_i}(\overline{\rm \alpha})$ = $\frac{\partial f (x(\overline{\rm \alpha});\overline{\rm \alpha})}{\partial \alpha_i}$ </center>
 
 as the second term drops out since x($\overline{\rm \alpha}$) maximizes f.
 
@@ -425,7 +425,7 @@ So, Slutsky thought about compensation a little differently. Instead of just giv
 
 **Definition**: the **Slutsky substition matrix** S(p,w) is the L x L matrix with
 
-<center> $s_{ij}$ = $\frac{\partial x_i}{\partial p_j}$ + $\frac{\partial x_i}{\partial w}$ $x_j$
+<center> $s_{ij}$ = $\frac{\partial x_i}{\partial p_j}$ + $\frac{\partial x_i}{\partial w}$ $x_j$ </center>
 
 This means the change in xi resulting from changing $p_j$ **and** giving consumer wealth $x_jdp_j$ to make old bundle affordable.
 
@@ -442,7 +442,7 @@ rises?
 
 Rewriting:
 
-$\frac{\partial x_i}{\partial p_j}$(p,w) = $\frac{\partial h_i}{\partial p_j}$(p,$u_0$) - $\frac{\partial x_i}{\partial w}$(p,w)$x_j$(p,w)
+<center> $\frac{\partial x_i}{\partial p_j}$(p,w) = $\frac{\partial h_i}{\partial p_j}$(p,$u_0$) - $\frac{\partial x_i}{\partial w}$(p,w)$x_j$(p,w) </center>
 
 The first element after the = is the relative price effect, the second is the real income effect.
 
@@ -462,8 +462,9 @@ where p is the price vector of goods and *w* is income. So, it provides analogou
 
 Suppose that u($\circ$) is continuous utility function and preferences are locally nonsatiated and strictly convex. Suppose that the indirect utility function is differentiable at ($p^{\ast},w^{\ast}$) $\gg$ 0. Then for every i = 1, ..., L,
 
-<center>$x_i(p^{\ast},w^{\ast})$ = -$\frac{\partial v (p^{\ast},w^{\ast})}{\partial p_i}$ / $\frac{\partial v (p^{\ast},w^{\ast})}{\partial w}$
+<center>$x_i(p^{\ast},w^{\ast})$ = -$\frac{\partial v (p^{\ast},w^{\ast})}{\partial p_i}$ / $\frac{\partial v (p^{\ast},w^{\ast})}{\partial w}$ </center>
 
+<center>
 ```{r ,echo=FALSE}
 library(png)
 library(grid)
@@ -471,18 +472,7 @@ setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
 img <- readPNG("2.png")
  grid.raster(img)
 ```
-
-
-
-
-
-
-
-
-
-
-
-
+</center>
 ## **Useful** 
 
 Prof: [**Parag Pathak**](https://economics.mit.edu/faculty/ppathak)
