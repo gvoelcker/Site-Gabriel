@@ -116,7 +116,7 @@ Some things to note:
 [**Debreu's Theorem**](https://en.wikipedia.org/wiki/Debreu_theorems): the Debreu theorems come to answer the following basic question: what conditions on the preference relation of the agent guarantee that such representative utility function can be found? So, his 1954 theorems state that for every preference relation which is complete, transitive and continuous, this relation can be represented by a [**continuous ordinal utility function**](https://en.wikipedia.org/wiki/Ordinal_utility#Continuity). **Slide definition**: supposte the rational preference relation is $\succeq$ on X is continuous. Then there is a continuous utility function u(x) that represents $\succeq$. See p 47 of [**MWG**](https://gabrielvoelcker.netlify.com/mit/Mas-Colell,%20Whinston%20&%20Green%20-%20Microeconomic%20Theory.pdf).
 
 **Choices as primitive**: So far we have taken preferences as a primitive.
-Another approach is to take treat choice behavior as the primitive. Let $\mathcal{B}$ be a set of nonempty subsets of X and Ch($\circle$) be a choice rule that assigns a nonempty set of chosen elements Ch(B) $\subset$ B for each B $\in$ $\mathcal{B}$. A lot of modern literature begins this way, more [**here**](https://www.taylorfrancis.com/books/9780429498619).
+Another approach is to take treat choice behavior as the primitive. Let $\mathcal{B}$ be a set of nonempty subsets of X and Ch($\circ$) be a choice rule that assigns a nonempty set of chosen elements Ch(B) $\subset$ B for each B $\in$ $\mathcal{B}$. A lot of modern literature begins this way, more [**here**](https://www.taylorfrancis.com/books/9780429498619).
 
 #### **Recap**
 
@@ -127,7 +127,7 @@ assumptions we make.
 
 ### **Revealed Preferences**
 
-- [**Revealed Preferences Theory**](https://en.wikipedia.org/wiki/Revealed_preference):  is a method of analyzing choices made by individuals, mostly used for comparing the influence of policies on consumer behavior. Revealed preference models assume that the preferences of consumers can be revealed by their purchasing habits.
+[**Revealed Preferences Theory**](https://en.wikipedia.org/wiki/Revealed_preference):  is a method of analyzing choices made by individuals, mostly used for comparing the influence of policies on consumer behavior. Revealed preference models assume that the preferences of consumers can be revealed by their purchasing habits.
 
 In terms of choice experiment, suppose a consumer is repeatedly asked to choose a consumption bundle x $\in$ $\mathbb{R}^{L+}$. The consumer r is confronted with different prices and we observe resulting choices C = {($p^1,x^1$),($p^2,x^2$),...}. What can we say about preferences and what axioms they satisfy? Need some **structure on preferences**, otherwise indifference could rationalize any behavior.
 
@@ -166,6 +166,41 @@ Then the slides turn to some examples of choices:
 2) [**Grandmothers and Granddaughters: Old-Age Pensions and Intrahousehold Allocation in South Africa**](https://www.jstor.org/stable/3990043?seq=1#page_scan_tab_contents)
 
 3) [**Choices, Values, and Frames**](https://www.worldscientific.com/doi/abs/10.1142/9789814417358_0016)
+
+## **Recitation: Debreu's Theorem**
+
+### 1)  What is Debreu’s theorem? Why should we care?
+
+[**Debreu's Theorems**](https://en.wikipedia.org/wiki/Debreu_theorems): In economics, the Debreu theorems are several statements about the representation of a preference ordering by a real-valued function. Any rational and continuous preference relation $\succeq$ on a (separable,
+connected) space X can be represented by a continuous utility
+function u : X -> $\mathbb{R}$.
+
+This theorem provides (one) justification for using utility functions
+when thinking about choice because: a) it links utility function to appealing and simple axioms; b) Much easier, mathematically, to work with utility functions than preference relations.
+
+#### Proof
+
+Considering the special case:
+
+1) X = $\mathbb{R}_+^n$ for some n $\in$ $\mathbb{N}$.
+
+2) $\succeq$ is strictly monotone.
+
+Some definitions:
+
+1) **Rational**: Complete, transitive and reflexive.
+
+2) **Continuous**: the sets U(x) := {y $\in$ X: y $\succeq$ x} and L(x) := {y $\in$ X : x $\succeq$ y} are closed (contain all their limit points).
+
+3) **Strictly monotone**: y ≥ x $\implies$ y $\succ$ x (actually, we only need y ≥ x $\implies$ y $\succeq$ x and y $\gg$ x $\implies$ y $\succ$ x)
+
+### 2) Overview of proof, and key intuitions
+
+See the proof [**here**](https://gabrielvoelcker.netlify.com/mit/debreu_continuityproof.pdf).
+
+### 3) Details of proof
+
+### 4) Concluding thoughts
 
 ## **2) Demand Theory**
 
@@ -473,7 +508,10 @@ img <- readPNG("2.png")
  grid.raster(img)
 ```
 </center>
-## **Useful** 
+
+## **Useful**{.tabset}
+
+### **Course**
 
 Prof: [**Parag Pathak**](https://economics.mit.edu/faculty/ppathak)
 
@@ -484,3 +522,20 @@ Required readings:
 - [**Microeconomic Theory - Colell & Whinston**](https://gabrielvoelcker.netlify.com/mit/Mas-Colell,%20Whinston%20&%20Green%20-%20Microeconomic%20Theory.pdf)
 
 - [**Microeconomic Foundations I - Kreps**](https://gabrielvoelcker.netlify.com/mit/David%20M.%20Kreps-Microeconomic%20Foundations%20I_%20Choice%20and%20Competitive%20Markets-Princeton%20University%20Press%20(2013).pdf)
+
+### **Problem Sets Solutions**{.tabset}
+
+#### **2018**
+
+[**Problem Set 1**](https://gabrielvoelcker.netlify.com/mit/14.121 ps1sol_2018.pdf)
+
+[**Problem Set 2**](https://gabrielvoelcker.netlify.com/mit/14.121 ps2sol_2018.pdf)
+
+[**Problem Set 3**](https://gabrielvoelcker.netlify.com/mit/14.121 ps3sol_2018.pdf)
+
+[**Problem Set 4**](https://gabrielvoelcker.netlify.com/mit/14.121 ps4sol_2018.pdf)
+
+[**Problem Set 5**](https://gabrielvoelcker.netlify.com/mit/14.121 ps5sol_2018.pdf)
+
+[**Problem Set 6**](https://gabrielvoelcker.netlify.com/mit/14.121 ps6sol_2018.pdf)
+
