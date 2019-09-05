@@ -184,15 +184,16 @@ summary {
 <h1>14.121 - Microeconomic Theory I</h1>
 <div id="utility-and-revealed-preferences" class="section level2">
 <h2><strong>1) Utility and Revealed Preferences</strong></h2>
+<p>Based on <a href="https://gabrielvoelcker.netlify.com/mit/14.121lecture1.pdf"><strong>this</strong></a>.</p>
 <div id="utility-theory" class="section level3">
 <h3>Utility Theory</h3>
 <p>The first class of the semester covers basic Microeconomic topics such as Utility Theory and Revealed preferences. We use an axiomatic approach to the utility theory to find less obvious asumptions of utility theory. It was recognized that utility could not be measured or observed directly, so instead economists devised a way to infer underlying relative utilities from observed choice.</p>
 <div id="utility-theory-1" class="section level4">
 <h4><a href="https://en.wikipedia.org/wiki/Utility"><strong>Utility Theory</strong></a>:</h4>
-<p>In Economics, the concept of <strong>utility</strong> is used to model worth/value. In most economic models, agents are assumed to have a utility function that they maximize. The utility function approach usually serves two purposes:</p>
+<p>In Economics, the concept of <strong>utility</strong> is used to model worth/value. In most economic models, agents are assumed to have a utility function that they maximize. The utility function approach usually serves <a href="https://www.investopedia.com/ask/answers/12/difference-between-positive-normative-economics.asp"><strong>two purposes</strong></a>:</p>
 <ol style="list-style-type: decimal">
-<li><p>Model for predicting behavior (positive); i.e. agent will maximize utility.</p></li>
-<li><p>Framework for welfare analysis (normative); i.e. utility is “good”.</p></li>
+<li><p>Model for predicting behavior (positive); i.e. agent will maximize utility. This is the “what is” approach. This is most commonly used (95%).</p></li>
+<li><p>Framework for welfare analysis (normative); i.e. utility is “good”. This is the “what should happen” approach.</p></li>
 </ol>
 <p>If we reflect about this utility approach, we have an opportunity to introduce one useful economic methodology: the <strong>axiomatic approach</strong>.</p>
 </div>
@@ -226,11 +227,39 @@ summary {
 <p>Our first result is the following <strong>proposition</strong>: if <span class="math inline">\(\succeq_P\)</span> is represented by <em>u</em> on <em>X</em>, then <span class="math inline">\(\succeq_P\)</span> is complete, reflexive and transitive.</p>
 <p><strong>Proof</strong>:</p>
 <ul>
-<li><p>Complete: given any <em>x,y</em> <span class="math inline">\(\in\)</span> <em>X</em>, either u(x) ≥ u(y) or u(y) ≥ u(x) (property of real numbers). This implies x <span class="math inline">\(\succeq_P\)</span> y or y <span class="math inline">\(\succeq_P\)</span> x(by representation assumption).</p></li>
+<li><p>Complete: given any <em>x,y</em> <span class="math inline">\(\in\)</span> <em>X</em>, either u(x) ≥ u(y) or u(y) ≥ u(x) (property of real numbers). This implies x <span class="math inline">\(\succeq_P\)</span> y or y <span class="math inline">\(\succeq_P\)</span> x(by representation assumption). Indifference between two goods doesn’t violate completeness.</p></li>
 <li><p>Reflexive: given any x <span class="math inline">\(\in\)</span> X, u(x) ≥ u(x) <span class="math inline">\(\implies\)</span> x <span class="math inline">\(\succeq_P\)</span> x.</p></li>
 <li><p>Transitive: if x <span class="math inline">\(\succeq_P\)</span> y and y <span class="math inline">\(\succeq_P\)</span> z, then u(x) ≥ u(y) and u(y) ≥ u(z). Transitivity of ≥ on <span class="math inline">\(\mathbb{R}\)</span> implies that u(x) ≥ u(z) <span class="math inline">\(\implies\)</span> x <span class="math inline">\(\succeq_P\)</span> z.</p></li>
 </ul>
 <p>Usually we leave out preferences that do not satisfy these 3 assumptions. Now let’s consider the other way around: if <span class="math inline">\(\succeq_P\)</span> is complete, reflexive and transitive, then can it be described by some utility function? It depends on whether the X is <strong>finite</strong>.</p>
+<p><strong>Proposition</strong>:</p>
+<p>Let X be a finite set. Let P be a preference on X. Assume <span class="math inline">\(\succeq_p\)</span> is complete on X, reflexive on X, and transitive on X. Then there exists a utility function <em>u</em> which represents P.</p>
+<p><strong>Proof by construction</strong>: B(x) {z <span class="math inline">\(\varepsilon\)</span> X | x <span class="math inline">\(\succeq_p\)</span> z} <span class="math inline">\(\implies\)</span> z is “below” x. Let u(x) = |B(x)| -&gt; count of itens “below” x.</p>
+<ol style="list-style-type: decimal">
+<li><p>u(x) ≥ u(y) <span class="math inline">\(\implies\)</span> x ≥ y</p></li>
+<li><p>x <span class="math inline">\(\succeq_p\)</span> y <span class="math inline">\(\implies\)</span> u(x) ≥ u(y)</p></li>
+</ol>
+<p>Transitivity: a <span class="math inline">\(\succeq_p\)</span> b <span class="math inline">\(\succeq_p\)</span> c.</p>
+<p>Ex: u(c) = 1, u(b) = 2, u(a) = 3.</p>
+<ol style="list-style-type: decimal">
+<li>u(x) ≥ u(y) <span class="math inline">\(\implies\)</span> |B(x)| ≥ |B(y)|</li>
+</ol>
+<p>By definition: y <span class="math inline">\(\varepsilon\)</span> B(x) x <span class="math inline">\(\succeq_p\)</span> y</p>
+<p>y <span class="math inline">\(\nexists\)</span> B(x) |B(y)| - 1 = |B(y) - {y}|</p>
+<p>Since |B(x)| ≥ |B(y)|</p>
+<p>|B(x)| ≥ |B(y)| - 1</p>
+<p>|B(x) - {y}| &gt; |B(y) - {y}|</p>
+<p><span class="math inline">\(\exists\)</span> z <span class="math inline">\(\varepsilon\)</span> X - {y}</p>
+<p>x <span class="math inline">\(\succeq_p\)</span> z but y <span class="math inline">\(\succeq_p\)</span> z</p>
+<p>Completeness: z <span class="math inline">\(\succeq_p\)</span> y</p>
+<p>Transitivity: x <span class="math inline">\(\succeq_p\)</span> y, y <span class="math inline">\(\varepsilon\)</span> B(x) *<strong>-&gt;&lt;-</strong>. We started from: |B(x)| ≥ |B(y)|</p>
+<ol start="2" style="list-style-type: decimal">
+<li>x <span class="math inline">\(\succeq_p\)</span> y <span class="math inline">\(\implies\)</span> u(x) ≥ u(y)</li>
+</ol>
+<p>z <span class="math inline">\(\varepsilon\)</span> B(y)</p>
+<p>x <span class="math inline">\(\succeq_p\)</span> y; y <span class="math inline">\(\succeq_p\)</span> z</p>
+<p>x <span class="math inline">\(\succeq_p\)</span> z <span class="math inline">\(\implies\)</span> z <span class="math inline">\(\varepsilon\)</span> B(x)</p>
+<p>B(y) <span class="math inline">\(\subset\)</span> B(x) <span class="math inline">\(\implies\)</span> |B(x)| ≥ |B(y)| -&gt; u(x) ≥ u(y)</p>
 <p>Some comments:</p>
 <ol style="list-style-type: decimal">
 <li><p>With finite sets, apparently assuming utility maximization is exactly the same as assuming preferences are complete, reflexive and transitive.</p></li>
@@ -618,8 +647,8 @@ h(p,u) <span class="math inline">\(\equiv\)</span> {z <span class="math inline">
 <p><a href="https://gabrielvoelcker.netlify.com/mit/14.121%20ps6sol_2018.pdf"><strong>Problem Set 6</strong></a></p>
 </div>
 </div>
-<div id="tests" class="section level3 tabset">
-<h3><strong>Tests</strong></h3>
+<div id="exams" class="section level3 tabset">
+<h3><strong>Exams</strong></h3>
 <p><a href="https://gabrielvoelcker.netlify.com/mit/2015exam.pdf"><strong>2015</strong></a></p>
 <p><a href="https://gabrielvoelcker.netlify.com/mit/2015exam_solutions.pdf"><strong>2015 solutions</strong></a></p>
 <p><a href="https://gabrielvoelcker.netlify.com/mit/2017_Final%20Exam.pdf"><strong>2017</strong></a></p>

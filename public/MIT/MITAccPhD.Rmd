@@ -11,4 +11,4 @@ Welcome! The material you now have access to covers all the classes I've had on 
 
 [**14.121 - Microeconomic Theory I**](https://gabrielvoelcker.netlify.com/mit/14.121-microeconomic-theory-i)
 
-
+[**14.381 - Statistical Methods**](https://gabrielvoelcker.netlify.com/mit/14.381-statistical-methods)

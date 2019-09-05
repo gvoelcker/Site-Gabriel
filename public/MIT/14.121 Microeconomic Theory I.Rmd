@@ -4,8 +4,9 @@ output: html_document
 
 # 14.121 - Microeconomic Theory I{.tabset}
 
-
 ## **1) Utility and Revealed Preferences**
+
+Based on [**this**](https://gabrielvoelcker.netlify.com/mit/14.121lecture1.pdf).
 
 ### Utility Theory
 
@@ -13,11 +14,11 @@ The first class of the semester covers basic Microeconomic topics such as Utilit
 
 #### [**Utility Theory**](https://en.wikipedia.org/wiki/Utility): 
 
-In Economics, the concept of **utility** is used to model worth/value. In most economic models, agents are assumed to have a utility function that they maximize. The utility function approach usually serves two purposes:
+In Economics, the concept of **utility** is used to model worth/value. In most economic models, agents are assumed to have a utility function that they maximize. The utility function approach usually serves [**two purposes**](https://www.investopedia.com/ask/answers/12/difference-between-positive-normative-economics.asp):
 
-1) Model for predicting behavior (positive); i.e. agent will maximize utility.
+1) Model for predicting behavior (positive); i.e. agent will maximize utility. This is the "what is" approach. This is most commonly used (95%).
     
-2) Framework for welfare analysis (normative); i.e. utility is "good".
+2) Framework for welfare analysis (normative); i.e. utility is "good". This is the "what should happen" approach.
 
 If we reflect about this utility approach, we have an opportunity to introduce one useful economic methodology: the **axiomatic approach**.
     
@@ -61,13 +62,57 @@ Our first result is the following **proposition**: if $\succeq_P$ is represented
 
 **Proof**:
 
-- Complete: given any *x,y* $\in$ *X*, either u(x) ≥ u(y) or u(y) ≥ u(x) (property of real numbers). This implies x $\succeq_P$ y or y $\succeq_P$ x(by representation assumption).
+- Complete: given any *x,y* $\in$ *X*, either u(x) ≥ u(y) or u(y) ≥ u(x) (property of real numbers). This implies x $\succeq_P$ y or y $\succeq_P$ x(by representation assumption). Indifference between two goods doesn't violate completeness.
 
 - Reflexive: given any x $\in$ X, u(x) ≥ u(x) $\implies$ x $\succeq_P$ x.
 
 - Transitive: if x $\succeq_P$ y and y $\succeq_P$ z, then u(x) ≥ u(y) and u(y) ≥ u(z). Transitivity of ≥ on $\mathbb{R}$ implies that u(x) ≥ u(z) $\implies$ x $\succeq_P$ z.
 
 Usually we leave out preferences that do not satisfy these 3 assumptions. Now let's consider the other way around: if $\succeq_P$ is complete, reflexive and transitive, then can it be described by some utility function? It depends on whether the X is **finite**. 
+
+**Proposition**:
+
+Let X be a finite set. Let P be a preference on X. Assume $\succeq_p$ is complete on X, reflexive on X, and transitive on X. Then there exists a utility function *u* which represents P.
+
+**Proof by construction**: B(x) {z $\varepsilon$ X | x $\succeq_p$ z} $\implies$ z is "below" x. Let u(x) = |B(x)| -> count of itens "below" x.
+
+1) u(x) ≥ u(y) $\implies$ x ≥ y
+
+2) x $\succeq_p$ y $\implies$ u(x) ≥ u(y)
+
+Transitivity: a $\succeq_p$ b $\succeq_p$ c.
+
+Ex: u(c) = 1, u(b) = 2, u(a) = 3.
+
+1) u(x) ≥ u(y) $\implies$ |B(x)| ≥ |B(y)|
+
+By definition: y $\varepsilon$ B(x) x $\succeq_p$ y
+
+y $\nexists$ B(x) |B(y)| - 1 = |B(y) - {y}|
+
+Since |B(x)| ≥ |B(y)|
+
+|B(x)| ≥ |B(y)| - 1
+
+|B(x) - {y}| > |B(y) - {y}|
+
+$\exists$ z $\varepsilon$ X - {y}
+
+x $\succeq_p$ z but y $\succeq_p$ z
+
+Completeness: z $\succeq_p$ y
+
+Transitivity: x $\succeq_p$ y, y $\varepsilon$ B(x) ***-><-**. We started from: |B(x)| ≥ |B(y)|
+
+2) x $\succeq_p$ y $\implies$ u(x) ≥ u(y)
+
+z $\varepsilon$ B(y)
+
+x $\succeq_p$ y; y $\succeq_p$ z
+
+x $\succeq_p$ z $\implies$ z $\varepsilon$ B(x)
+
+B(y) $\subset$ B(x) $\implies$ |B(x)| ≥ |B(y)| -> u(x) ≥ u(y)
 
 Some comments:
 
@@ -568,7 +613,7 @@ Required readings:
 
 
 
-### **Tests**{.tabset}
+### **Exams**{.tabset}
 
 [**2015**](https://gabrielvoelcker.netlify.com/mit/2015exam.pdf)
 

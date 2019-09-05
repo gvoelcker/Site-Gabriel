@@ -4,6 +4,36 @@ output: html_document
 
 # 14.381 - Statistical Methods{.tabset}
 
+## Lecture 1
+
+Based on [**this**](https://gabrielvoelcker.netlify.com/mit/14.381_lec1.pdf). Introduction. Short summary of probabilistic concepts. Normal distribution.
+
+### 1 Random Variables
+
+#### 1.1 Basic Definitions 
+
+#### 1.2 Functions of Random Variables
+
+#### 1.3 Expected Value
+
+##### 1.3.1 Properties of Expectation
+
+#### 1.4 Examples of Random Variables
+
+### 2 Bivariate (multivariate) distributions
+
+#### 2.1 Joint, marginal, conditional
+
+#### 2.2 Independence
+
+#### 2.3 Covariance
+
+### 3 Normal Random Variables
+
+#### 3.1 Conditional Distribution
+
+
+
 ## **Useful Info**{.tabset}
 
 ### Schedule
@@ -14,7 +44,7 @@ output: html_document
 
 [**Statistical Inference - Casella & Berger**](https://gabrielvoelcker.netlify.com/mit/Casella Berger - Statistical Inference.pdf)
 
-[**All of Statistics**](https://gabrielvoelcker.netlify.com/mit/Wasserman - All of Statistics.pdf)
+[**All of Statistics - Wasserman**](https://gabrielvoelcker.netlify.com/mit/Wasserman - All of Statistics.pdf)
 
 ### Problem Sets
 
