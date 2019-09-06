@@ -9,7 +9,7 @@ Welcome! The material you now have access to covers all the classes I've had on 
 
 ## 2019/1:
 
-[**Math Camp**](https://gabrielvoelcker.netlify.com/mit/)
+[**Math Camp**](https://gabrielvoelcker.netlify.com/mit/Math-Camp)
 
 [**14.121 - Microeconomic Theory I**](https://gabrielvoelcker.netlify.com/mit/14.121-microeconomic-theory-i)
 
