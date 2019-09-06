@@ -12,6 +12,16 @@ Based on [**this**](https://gabrielvoelcker.netlify.com/mit/14.381_lec1.pdf). In
 
 #### 1.1 Basic Definitions 
 
+[**Random Variable**](https://en.wikipedia.org/wiki/Random_variable). There are 3 types:
+
+1) [**Discrete**](https://en.wikipedia.org/wiki/Random_variable#Standard_case).
+
+2) [**Continuous**](https://en.wikipedia.org/wiki/Random_variable#Continuous_random_variable).
+
+3) Mixed.
+
+[**Cdf definition**](https://en.wikipedia.org/wiki/Cumulative_distribution_function).
+
 #### 1.2 Functions of Random Variables
 
 #### 1.3 Expected Value
