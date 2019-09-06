@@ -7,6 +7,8 @@ output: html_document
 
 ## Math Camp Key Concepts {.tabset}
 
+All the material for the 2019 Math Camp is [**here**](https://gabrielvoelcker.netlify.com/mit/Math-Camp.zip).
+
 ### Symbols
 
 - $\mathbb{N}$ = set of natural numbers.
