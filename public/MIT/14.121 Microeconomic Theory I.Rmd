@@ -564,7 +564,9 @@ Prof: [**Parag Pathak**](https://economics.mit.edu/faculty/ppathak)
 
 Required readings:
 
-- [**Microeconomic Theory - Colell & Whinston**](https://gabrielvoelcker.netlify.com/mit/Mas-Colell,%20Whinston%20&%20Green%20-%20Microeconomic%20Theory.pdf)
+- [**Microeconomic Theory - MWG**](https://gabrielvoelcker.netlify.com/mit/Mas-Colell,%20Whinston%20&%20Green%20-%20Microeconomic%20Theory.pdf)
+
+- [**Microeconomic Theory Solutions - MWG**](https://gabrielvoelcker.netlify.com/mit/Mas-Colell, Whinston & Green - Solutions Manual for Microeconomics Theory.pdf)
 
 - [**Microeconomic Foundations I - Kreps**](https://gabrielvoelcker.netlify.com/mit/David%20M.%20Kreps-Microeconomic%20Foundations%20I_%20Choice%20and%20Competitive%20Markets-Princeton%20University%20Press%20(2013).pdf)
 

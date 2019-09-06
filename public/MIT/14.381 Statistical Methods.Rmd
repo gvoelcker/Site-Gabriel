@@ -18,11 +18,13 @@ Based on [**this**](https://gabrielvoelcker.netlify.com/mit/14.381_lec1.pdf). In
 
 2) [**Continuous**](https://en.wikipedia.org/wiki/Random_variable#Continuous_random_variable).
 
-3) Mixed.
+3) [**Mixed**](https://en.wikipedia.org/wiki/Random_variable#Mixed_type).
 
 [**Cdf definition**](https://en.wikipedia.org/wiki/Cumulative_distribution_function).
 
 #### 1.2 Functions of Random Variables
+
+[**Definition**](https://en.wikipedia.org/wiki/Random_variable#Functions_of_random_variables)
 
 #### 1.3 Expected Value
 
