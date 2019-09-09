@@ -7,7 +7,7 @@ output: html_document
 
 ## Math Camp Key Concepts {.tabset}
 
-All the material for the 2019 Math Camp is [**here**](https://gabrielvoelcker.netlify.com/mit/Math Camp 2019.zip).
+# All the material for the 2019 Math Camp is [**here**](https://gabrielvoelcker.netlify.com/mit/Math Camp 2019.zip).
 
 ### Symbols
 

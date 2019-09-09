@@ -212,6 +212,66 @@ Then the slides turn to some examples of choices:
 
 3) [**Choices, Values, and Frames**](https://www.worldscientific.com/doi/abs/10.1142/9789814417358_0016)
 
+### MWG 1) Preference and Choice
+
+The starting point for any individual decision problem is a set of possible (mutually exclusive) alternatives from which the individual must choose. This set is denoted by X.
+
+There are two approaches to modeling individual choice behavior:
+
+#### 1) *Preference relation*: 
+The theory is developed by first imposing rationality axioms on the decision maker's preferences and then analyzing the consequences of these preferences for her choice behavior. The objectives of the decision maker are summarized in a *preference relation*, which we denote by $\succeq$. This is a binary relation on the set of alternatives X, allowing the comparison of pairs of alternatives x,y $\in$ X. x $\succeq$ y can be read as "x is at least as good as y". From $\succeq$ we can derive two other important relations on X:
+
+  a) the **strict preference** relation: $\succ$, defined by x $\succ$ y $\iff$ x $\succeq$ y but not y $\succeq$ x, and it is read as "x is preferred to y".
+  
+  b) The **indifference** relation, ~, defined by x ~ y $\iff$ x $\succeq$ y and y $\succeq$ x, and read "x is indifferent to y".
+  
+$\succeq$ is called rational if it possesses the following properties:
+
+- **Completeness**: $\forall$ x,y $\in$ X, we have that x $\succeq$ y or y $\succeq$ x, or both.
+
+- **Transitivity**: $\forall$ x,y,z $\in$ X, if x $\succeq$ y and y $\succeq$ z, then x $\succeq$ z.
+
+Some implications about $\succeq$'s rationality: 
+
+- $\succ$ is both **irreflexive** (x $\succ$ y never holds) and **transitive** (if x $\succ$ y and y $\succ$ z, then x $\succ$ z).
+
+- ~ is **reflexive** (x ~ x for all x), **transitive** (if x ~ y and y ~ z, then x ~ z), and **symmetric** (if x ~ y, then y ~ x). 
+
+- if x $\succ$ y $\succeq$ z, then x $\succ$ z.
+
+#### 2) *Choice rules*: 
+Treats the individual's choice behavior as the primitive feature and proceeds by making assumptions directly concerning this behavior. It imposes an element of consistency on choice behavior, paralleling the rationality assumptions of the preference-based approach. Formally, the choice behavior is represented by means of a *choice structure*. A choice structure ($\mathcal{B}$, C($\circ$)) consists of two ingredients: 
+
+a) $\mathcal{B}$ is a family of nonempty sets of X; that is, every element of $\mathcal{B}$ is a set B $\subset$ X. We call the elements B $\in$ $\mathcal{B}$ *budget sets*. The budget sets should be thought of as an exhaustive listing of all the choice experiments that the institutionally, physically or otherwise restricted social situation can conceivably pose to the decision maker.
+
+b) C($\circ$) is a *choice rule* (technically, it is a correspondence) that assigns a nonempty set of chosen elements C(B) $subset$ B for every budget B $\in \mathcal{B}$. The set C(B) may contain one or more than one element. If it contains just one element, that element is the individual's choice from among the alternatives in B. If it contains more than a single element, the elements of C(B) are the alternatives that the decision maker *might* choose, that is, his/her *acceptable alternatives*.
+
+The choice structure ($\mathcal{B}$, C($\circ$)) satisfies the weak axiom of revealed preference if the following property holds:
+
+If x is ever chosen when y is available, then there can be no budget set containing both alternatives for which y is chosen and x is not. If for some B $\in$ $\mathcal{B}$ with x,y $\in$ B we have x $\in$ C(B), then for any B' $\in$ $\mathcal{B}$ with x,y $\in$ B' and y $\in$ C(B'), we must also have x $\in$C(B'). 
+
+A somewhat simpler statement of the weak axiom can be obtained by defining a *revealed preference relation* $\succeq \ast$ from the observed choice behavior in C($\circ$). Given a choice structure ($\mathcal{B}$,C($\circ$)) the revealed preference relation $\succeq \ast$ is defined by x $\succeq \ast$ y $\iff$ there is some B $\in$ $\mathcal{B}$ such that x,y $\in$ B and x $\in$ C(B). We read x $\succeq \ast$ y as "x is revealed at least as good as y". Informally,  we might also say that "x is revealed preferred to y" if there is some B $\in$ $\mathcal{B}$ such that x,y $\in$ B, x $\in$ C(B) and y $\nexists$ C(B), that is, if x is ever chosen over y when both are feasible. Put simply: *if x is revealed at least as good as y, then y can't be revealed preferred to x*.
+
+**Utility functions**: in economics we often describe preference relations by means of a **utility function**. A utilitiy function u(x) assigns a numerical value to each element in X, ranking the elements of X in accordance with the individual's preferences. A function u: X -> $\mathbb{R}$ is a *utility representing preference relation* $\succeq$ if, $\forall$ x,y $\in$ X, x $\succeq$ y $\iff$ u(x) ≥ u(y). A preference relation can only be represented by a function if it is rational.
+
+#### 3) Relationship between Preference Relations and Choice Rules
+
+Consider the following questions: 
+
+**1)** If a decision maker has a rational preference ordering $\succeq$, do her decisions when facing choices from budget sets in $\mathcal{B}$ necessarily generate a choice structure that satisfies the weak axiom?
+
+Yes! Proof: suppose that an individual has a rational preference relation $\succeq$ on X. If this individual faces a nonempty subset of alternatives B $\subset$ X, her preference-maximizing behavior is to choose any one of the elements in the set: C$\ast$(B,$\succeq$) = {x $\in$ B: x $\succeq$ y for every y $\in$ B}
+
+The elements of C$\ast$(B,$\succeq$) are the decision maker's most preferred alternatives in B. In principle, we could have C$\ast$(B, $\succeq$) = $\varnothing$ for some B; but if X is finite, or if suitable(continuity) conditions hold, then C$\ast$(B,$\succeq$) will be nonempty. From now on, we will consider only preferences $\succeq$ and families of budget sets $\mathcal{B}$ such that C$\ast$(B,$\succeq$) is nonempty for all B $\in$ $\mathcal{B}$. We say that the rational preference relation $\succeq$ *generates* the choice structure ($\mathcal{B}$,C$\ast$($\circ,\succeq$)).
+
+Proposition 1.D.1: suppose that $\succeq$ is a rational preference relation. Then the choice structure generated by $\succeq$ ($\mathcal{B}$,C$\ast$($\circ$,$\succeq$)), satisfies the weak axiom. Proof: suppose that for some B $\in$ $\mathcal{B}$, we have x,y $\in$ B and x $\in$C$\ast$(B,$\succeq$). By the definition of C$\ast$(B,$\succeq$), this implies x $\succeq$ y. To check whether the weak axiom holds, suppose that for some B' $\in$ $\mathcal{B}$ with x,y $\in$ B' we have y $\in$ C$\ast$(B',$\succeq$). This implies that y $\succeq$ z $\forall$ z $in$ B'. But we already know that x $\succeq$ y. Hence, by transitivity, x $\succeq$ z for all z $\in$ B', and so x $\in$ C$\ast$(B',$\succeq$). This is precisely the conclusion the weak axiom demands. So, if the behavior is generated by rational preferences, then it satisfies the consistency requirements of the weak axiom.
+
+**2)** If an individual's choice behavior for a family of budget sets $\mathcal{B}$ is captured by a choice structure ($\mathcal{B}$, C($\circ$)) satisfying the weak axiom, is there necessarily a rational preference relation that is consistent with these choices?
+
+Maybe! Given a choice structure ($\mathcal{B},C(\circ$)), we say that the rational preference relation $\succeq$ rationalizes C($\circ$) relative to $\mathcal{B}$ if **C(B) = C$\ast$(B,$\succeq$)** for all B $\in$ $\mathcal{B}$, that is, if $\succeq$ generates the choice structure ($\mathcal{B},C(\circ)$). In words the rational preference $\succeq$ rationalizes the choice rule C($\circ$) on $\mathcal{B}$ if the optimal cnoices generated by $\succeq$(captured by C$\circ$($\circ$,$\succeq$)) coincide with C($\circ$) for all budget sets in $\mathcal{B}$. In a sense, preferences explain behavior; we can interpret the decision maker's choices as if she were a preference maximizer. Note that in general, there may be more than one rationalizing preference relation $\succeq$ for a given choice structure ($\mathcal{B},C(\circ)$).
+
+The proposition above (1.D.1) implies that the weak axiom must be satisfied if there is to be a rationalizing preference relation. In particular, since C$\ast$($\circ$,$\succeq$) satisfies the weak axiom for any $\succeq$, only a choice rule that satisfies the weak axiom can be rationalized. It turns out that the weak axiom is not sufficient to ensure the existence of a rationalizing preference relation.
+
 ## **Recitation: Debreu's Theorem**
 
 ### 1)  What is Debreu’s theorem? Why should we care?
@@ -607,6 +667,59 @@ Required readings:
 
 
 
+
+
+
+
+
+
+
+
+
+#### **2019**
+
+Gabriel Voelcker 14.121 Microeconomic Theory 1
+
+##### Problem Set 1 
+
+1a) **Transitivity**: it is transitive. $\forall$ x,y,z $\in$ X, let x $\succeq$ y and y $\succeq$ z, then x $\succeq$ z implies transitivity. Given that "≥" is transitive in $\mathbb{R}_+$, we can assume that $\forall$ i, $x_i$ ≥ $y_i$ and $y_i$ ≥ $z_i$ and by transitivity we know that for all *i*, $x_i$ ≥ $z_i$, which implies x $\succeq$ z. 
+
+**Completeness**: it is not complete. Proof by contradiction: given k = 2, let x = {4,2} and y = {2,4}. For i = 1, $x_1$ ≥ $y_1$, but for i = 2, $y_1$ ≥ $x_1$. It concludes that $x_i$ > $y_i$ holds for i = 1 but not for i = 2, which leads to $y_i$ > $x_i$. Since neither x $\succeq$ y nor y $\succeq$ x holds, there is a contradiction and $\succeq$ is not complete.
+
+1b) **Reflexive**: $\succ$ is not reflexive. $\forall$ x $\in$ X, to be reflexive it would need for x $\succeq$ x **and** $\neg$ x $\succeq$ x. A statement and its negation cannot be true together, so $\succ$ is not reflexive.
+
+**Transitive**: $\succ$ is transitive. $\forall$ x,y,z $\in$ X. Let x $\succ$ y and y $\succ$ z. So, $\forall$ i, $x_i$ ≥ $y_i$, $y_i$ ≥ $z_i$. Transitivity will hold if $x_i$ ≥ $y_i$ and $y_i$ ≥ $z_i$, then $x_i$ ≥ $z_i$. Knowing that x ≠ y ≠ z, we have x $\succ$ z.
+
+**Symmetry**: $\succ$ is not symmetric. For $\succ$ to be symmetric, we would need x $\succ$ y and y $\succ$ x to hold. Proof by contradiction: let k = 2 and x = {2,2} and y = {1,1}, we would have that x $\succ$ y but y $\succ$ x doesn't hold, so $\succ$ is not symmetric. 
+
+1c) **Reflexive**: ~ it is reflexive. ~ implies that $x$ ≥ $y$ and $y$ ≥ $x$ $\forall$ x,y. Thus x ~ y means that x = y. By definition, it is clear then that x ~ x.
+
+**Transitive**: it is transitive. Let x ~ y and y ~ z, we have that x = y and y = z. We conclude that x = z and that we have transitivity, because x ~ z.
+
+**Symmetry**: it is symmetric. If x ~ y, we have that x = y, so y ~ x.
+
+2a) C(B) is a frequency distribution over the alternatives of B. We have 6 alternatives in B: 
+
+$B_1$ = {x $\succ$ y $\succ$ z}
+
+$B_2$ = {x $\succ$ z $\succ$ y}
+
+$B_3$ = {y $\succ$ x $\succ$ z}
+
+$B_4$ = {y $\succ$ z $\succ$ x}
+
+$B_5$ = {z $\succ$ x $\succ$ y}
+
+$B_6$ = {z $\succ$ y $\succ$ x}
+
+x is preferred to y in half of the budget sets, and vice versa. The same goes for x and z and y and z. So for a stochastic choice function to be *rationalized by preferences*, we must find a probability distribution Pr over the preference relations on X such that for every budget set, the choice rule is precisely the frequency of choices induced by Pr. By assigning to $\frac{1}{6}$ to each budget set, we have a stochastic choice rationalized by preferences.
+
+2b) On this problem, the probabilities assigned to x $\succ$ y, y $\succ$ z and z $\succ$ x are different, $\frac{1}{4}$. So, the possibility of them all happening together should ≤ $\frac{3}{4}$. However, at least one of the 3 preferences always holds, because if x $\succ$ y and y $\succ$ z don't hold, then y $\succ$ x  and z $\succ$ y, and by transitivity we have that z $\succ$ x, so the stochastic choice function is *not rationalized by preferences* since the sum of all the probabilities cannot exceed 1.
+
+2c) $\alpha$ can gravitate only between $\frac{1}{3}$ and $\frac{2}{3}$. Because of transitivity, one of the three preference relations always holds. So the Pr(x $\succ$ y) or Pr(y $\succ$ z) or Pr(z $\succ$ x) has to equal 1. For this to be true at most, Pr(x $\succ$ y) = Pr(y $\succ$ z) = Pr(z $\succ$ x) = $\frac{1}{3}$.
+
+
+By assigning a value inferior than $\frac{1}{3}$, for ex: $\frac{1}{5}$, the stochastic function ceases to be rationalized by preferences since the $\neg${x,y}, $\neg${y,z} and {z,x} will have Pr of $\frac{4}{5}$, $\frac{4}{5}$ and $\frac{1}{5}$ respectively. 
 
 
 

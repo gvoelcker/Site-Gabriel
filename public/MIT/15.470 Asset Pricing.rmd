@@ -128,6 +128,118 @@ Standard summary statistics to consider when comparing the returns of different 
   
 
 
+## Lecture 2 - Basic Framework
+
+Based on [**this**](https://gabrielvoelcker.netlify.com/mit/Lecture-2_Basic-Framework.pdf).
+
+### Stylized Facts
+
+What were returns historically for different financial assets?
+
+```{r, echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("4.png")
+grid.raster(img)
+```
+
+- One year distributions for some major asset classes.
+
+- Means and standard deviations: portfolios and individual stocks.
+
+- Cumulative returns across asset classes.
+
+- Inflation makes future nominal payments risky.
+
+- Real returns across asset classes.
+
+- Rankings are fairly stable across countries.
+
+- Relative riskiness depends on the **horizon**.
+
+We start with a parsimonious framework, aimed at capturing the basic economic function of financial transactions/activities – resource allocation. We start simple and then build up. Key components: 
+
+a) Financial environment.
+
+b) Agents.
+
+c) Financial/securities market.
+
+d) Market equilibrium.
+
+e) Efficiency.
+
+While we will emphasize theory throughout most of this course, financial markets provide a wealth of data which constantly challenge our models qualitatively and (especially) quantitatively.
+
+### Environment
+
+Two key elements of finance/resource allocation: **time** and **risk**. Consider two dates: t = 0 and 1. There are M possible states at t = 1, denoted by: $\omega_1$, ..., $\omega_M$. The set $\Omega$ = {$\omega_1, ..., \omega_M$} is called the **state space**. 
+
+There is a **probability measure $\mathbb{P}$ over the state space. The probability for state $\omega_m$ is $p_m$ > 0, m = 1, ..., M, and $\sum_{m=1}^M p_m$ = 1.
+
+Most of what we discuss will hold (even w/ the same notation) in alternative environments with multiple periods. More generally, $m$ can be an index for different combinations of future states and time periods. Useful example: no uncertainty about the future, m indexes different time periods in the future. Only substantive change will be that, in this case, probabilities may not sum to 1 (you may be surprised how infrequently probabilities appear). Interpretation: agents come to the market at time 0, trade to choose state- and time-contingent consumption bundles.
+
+### Agents
+
+We assume that the economy is populated by K agents, k = 1, ..., K. Each agent has the following characteristics:
+
+- Resources:
+
+    - Information.
+    
+    - Endowment.
+    
+    - Production technology.
+
+- Choices: consumption (+ resource allocation).
+
+- Preferences.
+
+#### Agent's Information
+
+In addition to P, agents may receive information at t = 0 about the states at t = 1. This information can be public and private. For now, we assume that agents receive no information other than $\mathbb{P}$. All agents use $\mathbb{P}$ as their prior assessment of the likelihood of time-1 states. The agents have: **rational expectations** and **homogenous beliefs**. 
+
+#### Agent's endowment
+
+There is only one *perishable* good/type of capital in the economy. Each agent *k* is endowed with the following:
+
+- $e_0^k$ at t = 0. 
+
+- $e_{1\omega}^k$ at t = 1 in state $\omega$, $\omega \in \Omega$.
+
+Notation: [·,...,·] denotes a row vector, and [·; ...;·] denotes a column vector.
+
+The endowment of agent k can then be by the following vector: $e^k$ $\equiv$ $[e_0^k;e_1^k]$ $\equiv$ $[e_0^k;[e_{11}^k;...;e_{1M}^k]]$, k = 1,...,K.
+
+- Useful special case: standard portfolio problem ≡ $e^k_0$ > 0, $e^k_1$ = 0.
+
+Let $\mathbb{R}^{1 + M}$ denote an (1 + M)-dimensional real space and $\mathbb{R}^{1 + M}_+$ its non- + negative quadrant. Non-negative endowment means e $\in$ $\mathbb{R}^{1 + M}_+$. For a vector...........
+
+#### Agent's production
+
+Each agent may possess a set of **production technologies**. A production technology turns an *investment at t = 0 into output at t = 1*. We can define a production technology by a production function: $y_1(I)$ = [$f_1$(I); ...; $f_M$(I)]. We will assume that: $f_\omega$(0) = $f'_\omega$(I) ≥ 0, $f_\omega$''(I) ≤ 0, $\forall \omega \in \Omega$. The condition on concavity implies **decreasing return to scale**.
+
+#### Agent's consumption
+
+Agents use their economic resources to best meet their economic needs. An agent’s economic need is defined over her **consumption**: $c_0$ at t = 0 and $c_{1\omega}$ at t = 1 in state $\omega$, $\omega$ $\in$ $\Omega$, or $c^k$ $\equiv$ [$c^k_0;c^k_1$] $\equiv$ [$c^k_0$;[$c^k_11;...;c^k_1M$]], k = 1,...,K.
+
+A possible consumption choice, c = [$c_0$; $c_{1\omega}$], is called a **consumption plan**. A realization of a consumption plan, ($c_0, c_{1\omega}$) is called a **consumption path**. C is the **consumption set** and denotes the set of all possible consumption plans. C is a subset of $\mathbb{R}^{1+M}$. Standard choice of C is $\mathbb{R}^{1+M}_+$.
+
+
+### Securities Market
+
+### The Economy
+
+### Market Equilibrium
+
+### Optimality
+
+
+
+
+
+###
 ## Useful Info
 
 ### Grading
