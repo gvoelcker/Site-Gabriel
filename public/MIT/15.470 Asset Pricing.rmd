@@ -226,8 +226,64 @@ Agents use their economic resources to best meet their economic needs. An agent�
 
 A possible consumption choice, c = [$c_0$; $c_{1\omega}$], is called a **consumption plan**. A realization of a consumption plan, ($c_0, c_{1\omega}$) is called a **consumption path**. C is the **consumption set** and denotes the set of all possible consumption plans. C is a subset of $\mathbb{R}^{1+M}$. Standard choice of C is $\mathbb{R}^{1+M}_+$.
 
+#### Contrast with "standard" application
+
+First application of consumer theory: different arguments of C are associated with different goods: e.g., good 1 is pizza and good 2 is beer. Here, "good" is roughly the same -> always talking about consumption. Elements of $c^k$ correspond with agent k's **state-contingent consumption**. Two reasons why states may differ: 
+
+  - Preferences may differ across states.
+  
+  - Endowments may differ: different amounts of resources available to consume.
+  
+  - Models will tend to emphasize the latter channel.
+
+More general environment introduced above: consumption could be state and time-dependent.
+
+#### Agent's Consumption
+
+[**Convex set definition**](https://en.wikipedia.org/wiki/Convex_set): a set in $R^n$ is convex if $\forall$*a* and *b* in the set and $\alpha \in [0,1]$, $\alpha a$ + (1 - $\alpha$)b is also in the set.
+
+**Closed set definition**: a set in $R^n$ is closed if a sequence of elements in the set $a_i$, i = 1,2,.., has *a* as the limit, then *a* is also in the set.
+
+**Consumption set assumption**: consumption set C is a closed, convex subset of $\mathbb{R}^{1 + M}$.
+
+#### Agent's Preferences
+
+An agent’s economic need is described by her preferences, defined by her ranking of all possible consumption plans. 
+
+**Preferences definition**: a preference is a set of binary relations $\succeq$ on C such that:
+
+1) $\succeq$ is complete: $\forall$a,b $\in$ C, a $\succeq$ b or b $\succeq$ a, or both.
+
+2) $\succeq$ is transitive: a $\succeq$ b and b $\succeq$ c implies a $\succeq$ c.
+
+[**Utility function assumption**](https://en.wikipedia.org/wiki/Utility): a preference relation $\succeq$ can be represented by a **utility function**: u(.): c $\mapsto$ R, such that: $\forall a,b \in C$ a $\succeq$ b $\iff$ u(a) ≥ u(b).
+
+Is the utility function realistic? Under certain mild assumptions on a preference relation (continuity), we can show the existence of a corresponding utility function. In general, u(.) is an *ordinal* operator: any strictly increasing transformation of u(.) represents the same preferences.
+
+#### Last note's about agents
+
+Consumption $\iff$ financial wealth. Everything is consumed at t = 1. This can be a shorthand for a more complicated market structure with multiple goods. Agent k solves static consumer problem in background with financial resources $c^k_{1\omega}$. In this case, we think of $c_{1\omega}$ as the indirect utility associated with choosing a consumption bundle a given amount of wealth, with prices given. Another source of uncertainty: prices of goods could depend on $\omega$.
 
 ### Securities Market
+
+A [**security**](https://en.wikipedia.org/wiki/Security_(finance)) is a financial claim yielding a payoff at t = 1: $D_{1\omega}$, $\forall \omega \in \Omega$, or $D_1$ = $[D_{11};D_{12};...;D_{1M}]$. **D** will be referred to as **dividend** or **cash flow**. Define $\mathbb{R}^M$ as the **payoff space**. A security is then defined by a vector in the payoff space.
+
+#### Frictionless market
+
+A [**frictionless market**](https://www.investopedia.com/terms/f/frictionlessmarket.asp). features:
+
+- No access cost.
+
+- No transaction costs.
+
+- No position limits(constraints).
+
+- No market impact.
+
+- No information asymmetry.
+
+- No taxes.
+
 
 ### The Economy
 
