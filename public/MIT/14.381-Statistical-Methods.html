@@ -189,14 +189,43 @@ summary {
 <h3>1 Random Variables</h3>
 <div id="basic-definitions" class="section level4">
 <h4>1.1 Basic Definitions</h4>
+<p><a href="https://en.wikipedia.org/wiki/Random_variable"><strong>Random Variable</strong></a>. There are 3 types:</p>
+<ol style="list-style-type: decimal">
+<li><p><a href="https://en.wikipedia.org/wiki/Random_variable#Standard_case"><strong>Discrete</strong></a>.</p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Random_variable#Continuous_random_variable"><strong>Continuous</strong></a>.</p></li>
+<li><p><a href="https://en.wikipedia.org/wiki/Random_variable#Mixed_type"><strong>Mixed</strong></a>.</p></li>
+</ol>
+<p><a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function"><strong>Cdf definition</strong></a>.</p>
 </div>
 <div id="functions-of-random-variables" class="section level4">
 <h4>1.2 Functions of Random Variables</h4>
+<p><a href="https://en.wikipedia.org/wiki/Random_variable#Functions_of_random_variables"><strong>Definition</strong></a></p>
+<p>Suppose we have random variable X and function g : <span class="math inline">\(\mathbb{R}\)</span> -&gt; <span class="math inline">\(\mathbb{R}\)</span>. Then we can defi􏰀ne another random variable Y = g(X). The cdf of Y can be calculated as follows:</p>
+<p><span class="math inline">\(F_Y\)</span>(t) = P {Y ≤ t} = P{g(X) ≤ t} = P{X <span class="math inline">\(\in\)</span> <span class="math inline">\(g^{-1}\)</span> (-<span class="math inline">\(\infty\)</span>,t]},</p>
+<p>where <span class="math inline">\(g^{-1}\)</span> may be the set-valued inverse of <em>g</em>. The set <span class="math inline">\(g^{-1}(-\infty,t]\)</span> consists of all s <span class="math inline">\(\in\)</span> <span class="math inline">\(\mathbb{R}\)</span> such that g(x) <span class="math inline">\(\in\)</span> (-<span class="math inline">\(\infty\)</span>,t] i.e. g(s) ≤ t. If g is strictly increasing and continuously differentiable then it has strictly increasing and continuously differentiable inverse <span class="math inline">\(g^{-1}\)</span> defined on set g(<span class="math inline">\(\mathbb{R}\)</span>). In this case P{X <span class="math inline">\(\in\)</span> <span class="math inline">\(g^{-1}\)</span>(-<span class="math inline">\(\infty,t\)</span>]} = P{X ≤ <span class="math inline">\(g^{-1}\)</span>(t)} = <span class="math inline">\(F_X(g^{-1}(t))\)</span> for all t <span class="math inline">\(\in\)</span> g(<span class="math inline">\(mathbb{R}\)</span>). If in addition, X is a continuous random variable, then ……</p>
 </div>
 <div id="expected-value" class="section level4">
-<h4>1.3 Expected Value</h4>
+<h4>1.3 <a href="https://en.wikipedia.org/wiki/Expected_value"><strong>Expected Value</strong></a></h4>
+<p>The <strong>Expected Value</strong> of a random variable, intuitively, is the long-run average value of repetitions of the same experiment it represents.</p>
 <div id="properties-of-expectation" class="section level5">
-<h5>1.3.1 Properties of Expectation</h5>
+<h5>1.3.1 <a href="https://en.wikipedia.org/wiki/Expected_value#Basic_properties"><strong>Properties of Expectation</strong></a></h5>
+<ul>
+<li><p>E[<span class="math inline">\(1_A\)</span>] = P(A)</p></li>
+<li><p>If X = Y, then E[X] = E[Y]</p></li>
+<li><p>Expected value of a constant.</p></li>
+<li><p>Linearity.</p></li>
+<li><p>E[X] exists and is finite if and only if E[|X|] is finite.</p></li>
+<li><p>If X ≥ 0 (a.s.) then E[X] ≥ 0.</p></li>
+<li><p>Monotonicity.</p></li>
+<li><p>If |X| ≤ Y (a.s.) and E[Y] is finite then so is E[X].</p></li>
+<li><p>If E|<span class="math inline">\(X^ß\)</span> &lt; <span class="math inline">\(\infty\)</span> and 0 &lt; <span class="math inline">\(\alpha\)</span> &lt; ß then E|<span class="math inline">\(X^\alpha\)</span>| &lt; <span class="math inline">\(\infty\)</span></p></li>
+<li><p>Extremal Property.</p></li>
+<li><p>Non-degeneracy.</p></li>
+<li><p>If E[X] &lt; <span class="math inline">\(+\infty\)</span> then X &lt; <span class="math inline">\(+\infty\)</span></p></li>
+<li><p>Non-multiplicativity.</p></li>
+<li><p>Countable non-additivity.</p></li>
+<li><p>Countable additivity for non-negative random variables.</p></li>
+</ul>
 </div>
 </div>
 <div id="examples-of-random-variables" class="section level4">
@@ -204,21 +233,58 @@ summary {
 </div>
 </div>
 <div id="bivariate-multivariate-distributions" class="section level3">
-<h3>2 Bivariate (multivariate) distributions</h3>
+<h3>2 <a href="https://en.wikipedia.org/wiki/Joint_probability_distribution"><strong>Bivariate (multivariate) distributions</strong></a></h3>
+<p>Given random variables X,Y, that are defined on a probability space, the joint probability distribution for X,Y, is a probability distribution that gives the probability that each of X,Y, falls in any particular range or discrete set of values specified for that variable. In the case of only two random variables, this is called a bivariate distribution, but the concept generalizes to any number of random variables, giving a multivariate distribution.</p>
 <div id="joint-marginal-conditional" class="section level4">
-<h4>2.1 Joint, marginal, conditional</h4>
+<h4>2.1 <a href="https://sites.nicholas.duke.edu/statsreview/jmc/"><strong>Joint, marginal, conditional</strong></a></h4>
+<p><a href="https://en.wikipedia.org/wiki/Marginal_distribution"><strong>Marginal probability</strong></a>: is the probability distribution of the variables contained in the subset. It gives the probabilities of various values of the variables in the subset without reference to the values of the other variables.</p>
+<p><a href="https://www.investopedia.com/terms/j/jointprobability.asp"><strong>Joint probability</strong></a>: is a statistical measure that calculates the likelihood of two events occurring together and at the same point in time. Joint probability is the probability of event Y occurring at the same time that event X occurs.</p>
+<p><a href="https://en.wikipedia.org/wiki/Conditional_probability"><strong>Conditional probability</strong></a>: is a measure of the probability of an event occurring given that another event has (by assumption, presumption, assertion or evidence) occurred.</p>
 </div>
 <div id="independence" class="section level4">
 <h4>2.2 Independence</h4>
 </div>
 <div id="covariance" class="section level4">
-<h4>2.3 Covariance</h4>
+<h4>2.3 <a href="https://en.wikipedia.org/wiki/Covariance"><strong>Covariance</strong></a></h4>
+<p>Covariance is a measure of the joint variability of two random variables. If the greater values of one variable mainly correspond with the greater values of the other variable, and the same holds for the lesser values, (i.e., the variables tend to show similar behavior), the covariance is positive.</p>
 </div>
 </div>
 <div id="normal-random-variables" class="section level3">
-<h3>3 Normal Random Variables</h3>
+<h3>3 <a href="https://en.wikipedia.org/wiki/Normal_distribution"><strong>Normal Random Variables</strong></a></h3>
 <div id="conditional-distribution" class="section level4">
-<h4>3.1 Conditional Distribution</h4>
+<h4>3.1 <a href="https://www.statisticshowto.datasciencecentral.com/conditional-distribution/"><strong>Conditional Distribution</strong></a></h4>
+<p>A conditional distribution is a probability distribution for a sub-population. In other words, it shows the probability that a randomly selected item in a sub-population has a characteristic you’re interested in.</p>
+</div>
+</div>
+</div>
+<div id="lecture-2" class="section level2">
+<h2>Lecture 2</h2>
+<div id="useful-inequalities" class="section level3">
+<h3>1 Useful Inequalities</h3>
+<p><a href="https://en.wikipedia.org/wiki/Markov%27s_inequality"><strong>Markov’s Inequality</strong></a>: gives an upper bound for the probability that a non-negative function of a random variable is greater than or equal to some positive constant. <a href="https://www.youtube.com/watch?v=4nHcPJsxyv8"><strong>Intuition</strong></a>.</p>
+<p><a href="https://en.wikipedia.org/wiki/Chebyshev%27s_inequality"><strong>Chebyshev’s Inequality</strong></a>: guarantees that, for a wide class of probability distributions, no more than a certain fraction of values can be more than a certain distance from the mean.</p>
+<p><a href="https://en.wikipedia.org/wiki/H%C3%B6lder%27s_inequality"><strong>Hölder’s Inequality</strong></a>: is a fundamental inequality between integrals and an indispensable tool for the study of <span class="math inline">\(L^p\)</span> spaces.</p>
+</div>
+<div id="convergence-in-probability-and-law-of-large-numbers." class="section level3">
+<h3>2 <a href="https://en.wikipedia.org/wiki/Convergence_of_random_variables"><strong>Convergence in Probability</strong></a> and <a href="https://en.wikipedia.org/wiki/Law_of_large_numbers"><strong>Law of Large Numbers</strong></a>.</h3>
+<p>Is a theorem that describes the result of performing the same experiment a large number of times. According to the law, the average of the results obtained from a large number of trials should be close to the expected value, and will tend to become closer as more trials are performed.</p>
+</div>
+<div id="weak-convergence-and-central-limit-theorem" class="section level3">
+<h3>3 <a href="https://en.wikipedia.org/wiki/Law_of_large_numbers#Weak_law"><strong>Weak Convergence</strong></a> and <a href="https://en.wikipedia.org/wiki/Central_limit_theorem"><strong>Central Limit Theorem</strong></a></h3>
+<p>CLT: the central limit theorem (CLT) establishes that, in some situations, when independent random variables are added, their properly normalized sum tends toward a normal distribution (informally a “bell curve”) even if the original variables themselves are not normally distributed. The theorem is a key concept in probability theory because it implies that probabilistic and statistical methods that work for normal distributions can be applicable to many problems involving other types of distributions.</p>
+</div>
+<div id="asymptotic-statements-derived-from-basic-limit-theorems" class="section level3">
+<h3>4 Asymptotic statements derived from basic limit theorems</h3>
+<p><a href="https://en.wikipedia.org/wiki/Slutsky%27s_theorem"><strong>Slutsky’s Theorem</strong></a></p>
+<p><a href="https://en.wikipedia.org/wiki/Continuous_mapping_theorem"><strong>Continuous Mapping Theorem</strong></a></p>
+<div id="symbols-o_p-and-o_p" class="section level4">
+<h4>4.1 Symbols <span class="math inline">\(o_p\)</span> and <span class="math inline">\(O_p\)</span></h4>
+</div>
+</div>
+<div id="delta-method" class="section level3">
+<h3>5 Delta Method</h3>
+<div id="example" class="section level4">
+<h4>5.1 Example</h4>
 </div>
 </div>
 </div>

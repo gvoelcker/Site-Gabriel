@@ -718,15 +718,7 @@ x is preferred to y in half of the budget sets, and vice versa. The same goes fo
 
 2c) $\alpha$ can gravitate only between $\frac{1}{3}$ and $\frac{2}{3}$. Because of transitivity, one of the three preference relations always holds. So the Pr(x $\succ$ y) or Pr(y $\succ$ z) or Pr(z $\succ$ x) has to equal 1. For this to be true at most, Pr(x $\succ$ y) = Pr(y $\succ$ z) = Pr(z $\succ$ x) = $\frac{1}{3}$.
 
-
 By assigning a value inferior than $\frac{1}{3}$, for ex: $\frac{1}{5}$, the stochastic function ceases to be rationalized by preferences since the $\neg${x,y}, $\neg${y,z} and {z,x} will have Pr of $\frac{4}{5}$, $\frac{4}{5}$ and $\frac{1}{5}$ respectively. 
-
-
-
-
-
-
-
 
 ### **Exams**{.tabset}
 
