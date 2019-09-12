@@ -6,7 +6,7 @@ output: html_document
 
 ## **1) Utility and Revealed Preferences**
 
-Based on [**this**](https://gabrielvoelcker.netlify.com/mit/14.121lecture1.pdf).
+Materials: [**class**](https://gabrielvoelcker.netlify.com/mit/14.121lecture1.pdf), [**recitation**](https://gabrielvoelcker.netlify.com/mit/recitation1_debreu.pdf) and [**Debreu's Proof**](https://gabrielvoelcker.netlify.com/mit/debreu_continuityproof.pdf).
 
 ### Utility Theory
 
@@ -272,9 +272,9 @@ Maybe! Given a choice structure ($\mathcal{B},C(\circ$)), we say that the ration
 
 The proposition above (1.D.1) implies that the weak axiom must be satisfied if there is to be a rationalizing preference relation. In particular, since C$\ast$($\circ$,$\succeq$) satisfies the weak axiom for any $\succeq$, only a choice rule that satisfies the weak axiom can be rationalized. It turns out that the weak axiom is not sufficient to ensure the existence of a rationalizing preference relation.
 
-## **Recitation: Debreu's Theorem**
+### **Recitation: Debreu's Theorem**
 
-### 1)  What is Debreu’s theorem? Why should we care?
+#### 1)  What is Debreu’s theorem? Why should we care?
 
 [**Debreu's Theorems**](https://en.wikipedia.org/wiki/Debreu_theorems): In economics, the Debreu theorems are several statements about the representation of a preference ordering by a real-valued function. Any rational and continuous preference relation $\succeq$ on a (separable,
 connected) space X can be represented by a continuous utility
@@ -299,13 +299,13 @@ Some definitions:
 
 3) **Strictly monotone**: y ≥ x $\implies$ y $\succ$ x (actually, we only need y ≥ x $\implies$ y $\succeq$ x and y $\gg$ x $\implies$ y $\succ$ x)
 
-### 2) Overview of proof, and key intuitions
+#### 2) Overview of proof, and key intuitions
 
 See the proof [**here**](https://gabrielvoelcker.netlify.com/mit/debreu_continuityproof.pdf).
 
-### 3) Details of proof
+#### 3) Details of proof
 
-### 4) Concluding thoughts
+#### 4) Concluding thoughts
 
 ## **2) Demand Theory**
 
