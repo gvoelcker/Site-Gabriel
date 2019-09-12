@@ -384,14 +384,14 @@ The definition for the **elasticity of demand with price** is
 
 <center>$\varepsilon_{ij}$ = $\frac{\partial x_i}{\partial p_j}$ $\circ$ $\frac{p_j}{x_i}$ = $\frac{\partial log x_i}{\partial log p_j}$</center>
 
-An appeal of elasticities is that they are unit-less (though it is important to remember they are evaluated at particular points). Elasticities must satisfy “adding up constraints” implied by Walras’
-law.
+An appeal of elasticities is that they are unit-less (though it is important to remember they are evaluated at particular points). Elasticities must satisfy “adding up constraints” implied by [**Walras’
+law**](https://en.wikipedia.org/wiki/Walras%27s_law).
 
 **Proposition**: let $s_i$ be the budget share of the good i, $s_i$ = $\frac{p_ix_i(p,w)}{w}$. Then
 
-1) [**Engel aggregation**](https://www.youtube.com/watch?v=BvXVhd9Y3N8): total expenditure must change by an amount equal to any wealth change(no savings!?). Formally: $\sum_{i=1}^n s_i \eta_i$ = 1. The Engel aggregation means that not all goods are luxuries ($\eta_i >1$), or necessities ($\eta_i <1$) or inferior goods ($\eta_i < 0$).
+1) [**Engel aggregation**](https://www.youtube.com/watch?v=BvXVhd9Y3N8): total expenditure must change by an amount equal to any wealth change(no savings!?). Formally: $\sum_{i=1}^n s_i \eta_i$ = 1. The Engel aggregation means that not all goods are luxuries ($\eta_i >1$), or necessities ($\eta_i <1$) or inferior goods ($\eta_i < 0$). **Proof in class**.
 
-2) [**Cournot aggregation**](https://www.youtube.com/watch?v=-hkIadrfNGM): $\sum_{i=1}^n s_i \varepsilon_{ij}$ = -$s_j$. The Cournot aggregation says that the budget share $s_j$ of the good j is small when the good j has many substitutes ($\varepsilon_{ij}$ > 0), and big when it has many complements ($\varepsilon_{ij}$ < 0), or their respective budget shares are large.
+2) [**Cournot aggregation**](https://www.youtube.com/watch?v=-hkIadrfNGM): $\sum_{i=1}^n s_i \varepsilon_{ij}$ = -$s_j$. The Cournot aggregation says that the budget share $s_j$ of the good j is small when the good j has many substitutes ($\varepsilon_{ij}$ > 0), and big when it has many complements ($\varepsilon_{ij}$ < 0), or their respective budget shares are large. **Proof in class**.
 
 #### [**Indirect Utility Functions**](https://en.wikipedia.org/wiki/Indirect_utility_function) and [**2**](https://www.youtube.com/watch?v=O3_It-2KEzU)
 
@@ -421,7 +421,7 @@ Alternatively, this is v(p,w) = u(x(p,w)) if x(p,w) is a function or v(p,w) = u(
 
 #### [**Theorem of the Maximum**](https://en.wikipedia.org/wiki/Maximum_theorem)
 
-The maximum theorem provides conditions for the continuity of an optimized function and the set of its maximizers with respect to its parameters. The theorem is primarily used in mathematical economics and optimal control.
+The maximum theorem provides conditions for the continuity of an optimized function and the set of its maximizers with respect to its parameters.
 
 So, formally: given A $\subset$ $\mathbb{R}^N$ and the closed set Y $\subset$ $\mathbb{R}^K$, the correspondence f: A $\rightrightarrows$ Y is **upper hemicontinuous** if it has a closed graph and images of compact sets are bounded.
 
@@ -513,7 +513,7 @@ Basic properties of the Hicksian demands: suppose u is a continuous utility func
 
 **Properties of Hicksian Demands**: Suppose u is a continuous utility function satisfying local nonsatiation. Then the Hicksian demand correspondence h(p, u) satisfies:
 
-1) h is homogenous of degree 0 in p, i.e. h($\alpha$p,u) = h(p,u), $\forall \alpha,p,u
+1) h is [**homogenous**](https://en.wikipedia.org/wiki/Homogeneous_function) of degree 0 in p, i.e. h($\alpha$p,u) = h(p,u), $\forall \alpha,p,u
 
 2) No excess utility property: u(x) = u $\forall$ x $\in$ h(p,u)
 
@@ -613,6 +613,79 @@ img <- readPNG("2.png")
  grid.raster(img)
 ```
 </center>
+
+## **3) Putting Consumer Theory to Work**
+
+### 1) Price Changes and Welfare
+
+Central question in applied micro: how do price changes affect welfare? This comes up in various ways:
+
+  1) effects of taxes or subsidies 
+  
+  2) effects of inflation, e.g. Social Security cost of living increase
+  
+  3) loses due to monopoly pricing
+  
+  4) distributional national accounting: do the poor pay more?
+  
+  5) welfare benefits of innovation
+  
+**Equivalent variation**
+  
+**Compensating variation**
+
+### 2) Welfare from new goods
+
+**virtual price**
+
+### 3) Price Indexes
+
+**Laspeyres price index**
+
+**Paasche price index**
+
+**Fisher Ideal Index**
+
+### 4) Choosing functional forms
+
+Usually consumers have demand over many goods, but we want to work with simpler functions. Why?
+
+**Restrict preferences**
+
+**Restrict price movements**
+
+**Restricting price movements:**
+
+### 5) Integrability
+
+Following our earlier discussion of GARP and preferences, one might want to know if a set of demand functions corresponds to utility maximization.
+
+### 6) Estimating demand
+
+So far we’ve studied the properties of a demand functions. Now we are going to provide an overview on how modern applied microeconomists estimate demand.
+
+Two approaches:
+
+- Treat products as primitives
+
+-􏰅 Treat product characteristics as primitives
+
+
+### 7) Demand aggregation
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## **Useful**{.tabset}
 

@@ -287,15 +287,76 @@ A [**frictionless market**](https://www.investopedia.com/terms/f/frictionlessmar
 
 ### The Economy
 
+Summarizing the components we've worked so far, we arrived at a definition of what the economy looks like.
+
 ### Market Equilibrium
+
+In the economy defined above, agents can trade in the securities market to best meet her economic needs, given her resources. By purchasing portfolio $\theta$ at t = 0, she can achieve consumption: 
+
+$c_0$ = $e_0$ - $P^T$ $\theta$,
+
+$c_1$ = $e_1$ + $D_1 \theta$.
+
+The set of consumption plans available to her is given by:
+
+B(e,{$D_1,P$}) $\equiv$ {c ≥ 0: $c_0$ = $e_0$ - $P^T \theta$, $c_1$ = $e_1$ + $D_1 \theta$, $\theta$ $\in$ $R^N$}.
+
+**Budget set**: B(e, {$D_1$, P}).
+
+Each agent solves his/her optimization problem by maximizing utility restricted to budget sets. The **solution** is denoted by $\theta^k$(P,e).
 
 ### Optimality
 
+Optimality/Allocational Efficiency: is feasible given the total endowment of the economy {$e^k \forall k$} if: 
 
+$\sum_{k}c^k$ = $\sum_k e^k$
 
+- [**Pareto dominance**](https://en.wikipedia.org/wiki/Pareto_efficiency).
 
+- Pareto optimality.
 
 ###
+## Lecture 3 - Arbitrage Pricing
+
+### Introduction
+
+Following the basic framework, we start our analysis with the general properties of the securities market.
+
+**Redundant security**: its payoff can be replicated by a portfolio of other traded securities. In a frictionless market, redundant securities do not influence equilibrium.
+
+**D** is the payoff matrix. Going forward, D includes only securities with linearly independent payoffs.
+
+**Payoff space**: 
+
+**Market completeness**: a securities market is complete if any payoff at t = 1 can be achieved from the payoff of a portfolio of traded securities. So
+
+  - D defines market structure.
+  
+  - $\theta$ denotes a portfolio.
+  
+  - $c_1 \in R^M$ and $\theta \in R^N$.
+  
+Market completeness $\forall c_1 \in R^M$, $\exists \theta \in R^N$ such that D$\theta$ = $c_1$.
+
+Clearly, if N < M, the market cannot be complete.
+
+**Sufficient Condition for Market Completeness**: a securities market, defined by D, is complete if and only if the rank of D equals the number of states at t = 1: rank(D) = M.
+
+**State-Contingent Claims**: a state-$\omega$ contingent claim pays 1 in state $\omega$ and nothing otherwise. Also called an **Arrow-Debreu security**.
+
+
+### State Prices
+
+### Arbitrage
+
+### FTAP
+
+An **asset pricing model** is a mapping from a security’s payoff vector d to its price P: P = V(d).
+
+V(.) is called the **pricing/valuation operator/functional**.
+
+The NA principle imposes general properties on the pricing operator V (·).
+
 ## Useful Info
 
 ### Grading

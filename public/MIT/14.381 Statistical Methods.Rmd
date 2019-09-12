@@ -4,7 +4,7 @@ output: html_document
 
 # 14.381 - Statistical Methods{.tabset}
 
-## Lecture 1
+## **1 - Distributions and Random Variables**
 
 Based on [**this**](https://gabrielvoelcker.netlify.com/mit/14.381_lec1.pdf). Introduction. Short summary of probabilistic concepts. Normal distribution.
 
@@ -12,15 +12,17 @@ Based on [**this**](https://gabrielvoelcker.netlify.com/mit/14.381_lec1.pdf). In
 
 #### 1.1 Basic Definitions 
 
-[**Random Variable**](https://en.wikipedia.org/wiki/Random_variable). There are 3 types:
+[**Random Variable**](https://en.wikipedia.org/wiki/Random_variable): is described informally as a variable whose values depend on outcomes of a random phenomenon. There are 3 types of r.v.: 
 
-1) [**Discrete**](https://en.wikipedia.org/wiki/Random_variable#Standard_case).
+1) [**Discrete**](https://en.wikipedia.org/wiki/Random_variable#Discrete_random_variable): can only take on a finite number of values.
 
-2) [**Continuous**](https://en.wikipedia.org/wiki/Random_variable#Continuous_random_variable).
+2) [**Continuous**](https://en.wikipedia.org/wiki/Random_variable#Continuous_random_variable): 
 
-3) [**Mixed**](https://en.wikipedia.org/wiki/Random_variable#Mixed_type).
+3) [**Mixed**](https://en.wikipedia.org/wiki/Random_variable#Mixed_type): neither discrete nor continuous.
 
-[**Cdf definition**](https://en.wikipedia.org/wiki/Cumulative_distribution_function).
+[**Video**](https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/random-variables-discrete/v/discrete-and-continuous-random-variables).
+
+[**Cdf definition**](https://en.wikipedia.org/wiki/Cumulative_distribution_function): the cdf of $F_x$ is the probability that X will take a value less than x. $F_x(t)$ = P{X ≤ t} $\forall t \in \mathbb{R}$. P{X ≤ t} denotes the probability that X ≤ t.
 
 #### 1.2 Functions of Random Variables
 
@@ -30,12 +32,21 @@ Suppose we have random variable X and function g : $\mathbb{R}$ -> $\mathbb{R}$.
 
 $F_Y$(t) = P {Y ≤ t} = P{g(X) ≤ t} = P{X $\in$ $g^{-1}$ (-$\infty$,t]},
 
-where $g^{-1}$ may be the set-valued inverse of *g*. The set $g^{-1}(-\infty,t]$ consists of all s $\in$ $\mathbb{R}$ such that g(x) $\in$ (-$\infty$,t] i.e. g(s) ≤ t. If g is strictly increasing and continuously differentiable then it has strictly increasing and continuously differentiable inverse $g^{-1}$ defined on set g($\mathbb{R}$). In this case P{X $\in$ $g^{-1}$(-$\infty,t$]} = P{X ≤ $g^{-1}$(t)} = $F_X(g^{-1}(t))$ for all t $\in$ g($mathbb{R}$). If in addition, X is a continuous random variable, then ......
+where $g^{-1}$ may be the set-valued inverse of *g*. The set $g^{-1}(-\infty,t]$ consists of all s $\in$ $\mathbb{R}$ such that g(x) $\in$ (-$\infty$,t] i.e. g(s) ≤ t. If g is strictly increasing and continuously differentiable then it has strictly increasing and continuously differentiable inverse $g^{-1}$ defined on set g($\mathbb{R}$). 
 
+**Linear transformation**: if a function is a linear transformation, e.g. Y = X - a, then
 
-#### 1.3 [**Expected Value**](https://en.wikipedia.org/wiki/Expected_value)
+<center>$F_Y$(t) = P{Y ≤ t} = P{X - a≤ t} = P{X ≤ t + a} = $F_X$(t + a)</center>
 
-The **Expected Value** of a random variable, intuitively, is the long-run average value of repetitions of the same experiment it represents.
+#### 1.3 **Expected Value**
+
+The [**Expected Value**](https://en.wikipedia.org/wiki/Expected_value) of a random variable, intuitively, is the long-run average value of repetitions of the same experiment it represents. For discrete variables:
+
+<center> E[g(X)] = $\sum_i$g($x_i$)$p_i$</center>
+
+And for discrete random variables:
+
+<center>E[g(X)] = $\int_{-\infty}^{+\infty}$ g(x)$f_X$(x)dx.</center>
 
 ##### 1.3.1 [**Properties of Expectation**](https://en.wikipedia.org/wiki/Expected_value#Basic_properties)
 
@@ -71,31 +82,117 @@ The **Expected Value** of a random variable, intuitively, is the long-run averag
 
 #### 1.4 Examples of Random Variables
 
+**Discrete variables**:
+
+- [**Bernoulli**](https://en.wikipedia.org/wiki/Bernoulli_distribution): if a r.v. only takes values $\mathcal{X}$ = {0,1}, P{X = 0} = 1 - p and P{X = 1} = p. Its expectation E[X] = 1 p + 0 (1 - p) = p. Its second moment E[$X^2$] = $1^2 p$ + $0^2 (1-p)$ = p. Thus, the variance is V(X) = E[$X^2$] - $(E[X])^2$ = p - $p^2$ = p(1-p). Notation: X ~ Bernoulli(p).
+
+- [**Poisson**](https://en.wikipedia.org/wiki/Poisson_distribution): r.v. X has a Poisson ($\lambda$) distribution if it takes values from $\mathcal{X}$ = {0,1,2,...} and P(X = j) = $e^{-\lambda}\lambda^j/j!$. Notation: X ~ Poisson($\lambda$). 
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("6.png")
+ grid.raster(img)
+```
+
+**Continuous random variables:**
+
+- [**Uniform**](https://en.wikipedia.org/wiki/Uniform_distribution_(continuous))(a,b): r.v. X has a Uniform(a,b) distribution if its density $f_X$(x) = 1/(b-a) for x $\in$ (a,b) and $f_X$(x) = 0 otherwise. Notation: X ~ U(a,b)
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("7.png")
+ grid.raster(img)
+```
+
+- [**Normal**](https://en.wikipedia.org/wiki/Normal_distribution)($\mu,\sigma^2$): its distribution has density $f_X$(x) = exp($\frac{\frac{-(x-\mu)^2}{(2\sigma^2)}}{\sqrt{2 \pi}\sigma}$) $\forall$ x $\in \mathbb{R}$. E[X] = $\mu$ and variance V(X) = $\sigma^2$. Notation: X ~ N($\mu, \sigma ^2$).
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("8.png")
+ grid.raster(img)
+```
+
 ### 2 [**Bivariate (multivariate) distributions**](https://en.wikipedia.org/wiki/Joint_probability_distribution)
 
 Given random variables X,Y, that are defined on a probability space, the joint probability distribution for X,Y, is a probability distribution that gives the probability that each of X,Y, falls in any particular range or discrete set of values specified for that variable. In the case of only two random variables, this is called a bivariate distribution, but the concept generalizes to any number of random variables, giving a multivariate distribution.
 
 #### 2.1 [**Joint, marginal, conditional**](https://sites.nicholas.duke.edu/statsreview/jmc/)
 
-[**Marginal probability**](https://en.wikipedia.org/wiki/Marginal_distribution): is the probability distribution of the variables contained in the subset. It gives the probabilities of various values of the variables in the subset without reference to the values of the other variables.
+Joint CDF: $F_{X,Y}(x,y)$P{X ≤ x, Y ≤ y}
+
+Joint PDF: $F_{X,Y}(x,y) = \frac{\partial F_{X,Y}(x,y)}{\partial x \partial y}$.
+
+[**Marginal probability**](https://en.wikipedia.org/wiki/Marginal_distribution): is the probability distribution of the variables contained in the subset. It gives the probabilities of various values of the variables in the subset without reference to the values of the other variables. 
 
 [**Joint probability**](https://www.investopedia.com/terms/j/jointprobability.asp): is a statistical measure that calculates the likelihood of two events occurring together and at the same point in time. Joint probability is the probability of event Y occurring at the same time that event X occurs.
 
 [**Conditional probability**](https://en.wikipedia.org/wiki/Conditional_probability): is a measure of the probability of an event occurring given that another event has (by assumption, presumption, assertion or evidence) occurred.
 
+- E[f(X)Y| X = x] = f(x) E[Y|X = x];
+
+- Law of iterated expectations: E[E[Y|X = x]] = E[Y]
+
 #### 2.2 Independence
+
+r.v.s X and Y are **independent** if $f_{Y|X}$(y|x) = $f_Y(y)$ for all x $\in \mathbb{R}$. If X and Y are independent, then so are any g(X) and f(Y).
 
 #### 2.3 [**Covariance**](https://en.wikipedia.org/wiki/Covariance)
 
-Covariance is a measure of the joint variability of two random variables. If the greater values of one variable mainly correspond with the greater values of the other variable, and the same holds for the lesser values, (i.e., the variables tend to show similar behavior), the covariance is positive.
+Covariance is a measure of the joint variability of two random variables. If the greater values of one variable mainly correspond with the greater values of the other variable, and the same holds for the lesser values, (i.e., the variables tend to show similar behavior), the covariance is positive. Vice-versa, it's negative.
+
+Useful **properties**:
+
+1) cov(X,Y) = 0 whenever X and Y are independent.
+
+2) cov (aX,bY) = *ab*cov(X,Y) for any r.v. X and Y and any constants *a* and *b*.
+
+3) cov(X + a,Y) = cov(X,Y) for any r.v. X and Y and any constant *a*.
+
+4) cov(X,Y) = cov(Y,X) for any r.v. X and Y.
+
+5) |cov(X,Y)| ≤ $\sqrt{V(X)V(Y)}$ for any r.v. X and Y.
+
+6) V(X+Y) = V(X) + V(Y) + 2cov(X,Y) for any r.v. X and Y.
+
+7) V($\sum_{i = 1}^nX_i$) = $\sum_{i = 1}^n$ V($X_i$) whenever $X_1,...,X_n$ are independent.
 
 ### 3 [**Normal Random Variables**](https://en.wikipedia.org/wiki/Normal_distribution)
+
+[**Multivariate normal distribution**](https://en.wikipedia.org/wiki/Multivariate_normal_distribution): is a generalization of the one-dimensional (univariate) normal distribution to higher dimensions. One definition is that a random vector is said to be k-variate normally distributed if every linear combination of its k components has a univariate normal distribution. 
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("9.png")
+ grid.raster(img)
+```
+
+**Properties of the normal distribution:**
+
+1) if X ~ N($\mu, \sum$), then $\sum_{ij}$ = cov($X_i,X_j$) for any i,j = 1,...,n where X = ($X_1,...,X_n$)$^T$.
+
+2) if X ~ N($\mu, \sum$), then $\mu_i$ = E[$X_i$] for any i = 1,...,n.
+
+3) if X ~ N($\mu, \sum$), then any subset of components of X is normal as well. In particular: $X_i$ ~ N($\mu_i,\sum_{ii}$).
+
+4) if X and Y are uncorrelated normal r.v., then X and Y are independent.
+
+5) if X ~ N($\mu_X, \sigma^2_X$), Y ~ N($\mu_Y, \sigma^2_Y$) and X and Y are independent, then X+Y ~ N($\mu_X + \mu_Y, \sigma^2_X + \sigma^2_Y$)
+
+6) Any linear combination of normals is normal. That is, if X ~ N($\mu,\sum$) is an *n x 1* dimensional normal vector, and A is a fixed *k x n* full-rank matrix with k ≤ n, then Y = AX is a normal k x 1 vector: Y ~ N(A$\mu$,A$\sum$A$^T$).
 
 #### 3.1 [**Conditional Distribution**](https://www.statisticshowto.datasciencecentral.com/conditional-distribution/)
 
 A conditional distribution is a probability distribution for a sub-population. In other words, it shows the probability that a randomly selected item in a sub-population has a characteristic you’re interested in. 
 
-## Lecture 2
+## **2 - Limit Theorems**
 
 ### 1 Useful Inequalities
 
@@ -108,8 +205,6 @@ A conditional distribution is a probability distribution for a sub-population. I
 ### 2 [**Convergence in Probability**](https://en.wikipedia.org/wiki/Convergence_of_random_variables) and [**Law of Large Numbers**](https://en.wikipedia.org/wiki/Law_of_large_numbers).
 
 Is a theorem that describes the result of performing the same experiment a large number of times. According to the law, the average of the results obtained from a large number of trials should be close to the expected value, and will tend to become closer as more trials are performed.
-
-
 
 ### 3 [**Weak Convergence**](https://en.wikipedia.org/wiki/Law_of_large_numbers#Weak_law) and [**Central Limit Theorem**](https://en.wikipedia.org/wiki/Central_limit_theorem)
 
@@ -125,7 +220,91 @@ CLT: the central limit theorem (CLT) establishes that, in some situations, when 
 
 ### 5 Delta Method
 
-#### 5.1 Example
+[**Delta Method**](https://en.wikipedia.org/wiki/Delta_method): is a result concerning the approximate probability distribution for a function of an asymptotically normal statistical estimator from knowledge of the limiting variance of that estimator. 
+
+Theorem: assume that for a sequence of random variables $X_n$, and constants $\mu$ and $\sigma$ we have $\sqrt{n}(X_n - \mu)$ $\implies$ N(0,$\sigma^2$). If g'($\sigma$) ≠ 0, then $\sqrt{n}(g(X_n) - g(\mu))$ $\implies$ N(0, $\sigma^2$(g'($\mu$))$^2$).
+
+
+## **3 - Intro to Statistics**
+
+### 1) Basic Concepts: Population, Sample, Parameter, Statistics
+
+[**Sample**](https://en.wikipedia.org/wiki/Sample_(statistics)): a single draw of data from all potential realizations of that data. It is a realization **x** of vector **X**. 
+
+[**Population**](https://en.wikipedia.org/wiki/Statistical_population): is the distribution $F_x$ of data vector $\mathcal{X}$.
+
+[**Parameter**](https://en.wikipedia.org/wiki/Statistical_parameter): is a numerical characteristic of a statistical population or a statistical model. The goal of statistics is to render some judgement about a parameter (or a population $F_x$) based on a single draw from this population, which is called *inference*. There are three types of inference: 
+
+  a) **Estimation**:
+  
+  b) **Confidence set construction**:
+  
+  c) **Testing**:
+
+[**Statistic**](https://en.wikipedia.org/wiki/Statistic): any function of a r.v.. The distribution of a statistic is called the [**sampling distribution**](https://en.wikipedia.org/wiki/Sampling_distribution). 
+
+Types of data:
+
+[**Cross-section**](https://en.wikipedia.org/wiki/Cross-sectional_data): i.i.d. random vectors $X_1,...,X_n$. 
+
+[**Time-series**](https://en.wikipedia.org/wiki/Time_series):  is a series of data points indexed/listed/graphed in time order. Usually they allow for dependency between consecutive observations. $X_t$ with t = 1,...,T.
+
+[**Panel data**](https://en.wikipedia.org/wiki/Panel_data): are multi-dimensional data involving measurements over time. $X_{i,t}$,i = 1,...,n and t = 1,...,T.
+
+#### 1.1) Sample mean and sample variance.
+
+[**Sample mean**](https://en.wikipedia.org/wiki/Sample_mean_and_covariance): is an estimator of the population mean, $\overline{\rm X}_n$ = $\sum_{i=1}^n X_i/n$.
+
+[**Sample variance**](https://en.wikipedia.org/wiki/Variance): variance is the expectation of the squared deviation of a random variable from its mean. $s^2$ = $\frac{\sum_{i = 1}^n(X_i - \overline{\rm X}_n)^2}{n-1}$. 
+
+#### 1.2) Empirical distribution function
+
+[**Empirical Distribution Function**](https://en.wikipedia.org/wiki/Empirical_distribution_function): is the distribution function associated with the empirical measure of a sample. This cumulative distribution function is a step function that jumps up by 1/n at each of the n data points:
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("5.png")
+ grid.raster(img)
+```
+This is represented by the formula:
+
+<center>
+$\hat{F}_n(x) = \sum_{i=1}^n I(X_i ≤ x)/n$
+</center>
+
+Where:
+
+I(.) = indicator function: the function which equals 1 if the statement in brackets is true and 0 otherwise.
+
+$\hat{F}_n(x)$ shows the fraction of observations with a value smaller than or equal to x. It tends to F(x) as n -> $\infty$.
+
+### 2) Ways to find the distribution of a statistic
+
+To make inferences we often need to know the distribution of different statistics.
+
+#### 2.1) Exact Distribution
+
+Rare case in which we can actually calculate the exact distribution of a statistic.
+
+#### 2.2) Monte-Carlos Method
+
+[**Monte-Carlo Method**](https://en.wikipedia.org/wiki/Monte_Carlo_method): are a broad class of computational algorithms that rely on repeated random sampling to obtain numerical results. The underlying concept is to use randomness to solve problems that might be deterministic in principle. The important assumption is: we assume that we know the distribution of data.
+
+#### 2.3) Asymptotic Approximation
+
+[**Asymptotic Approximation**](https://en.wikipedia.org/wiki/Asymptotic_expansion): is a formal series of functions which has the property that truncating the series after a finite number of terms provides an approximation to a given function as the argument of the function tends towards a particular, often infinite, point. 
+
+#### 2.4) Bootstrap
+
+[**Bootstrapping**](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)): is any test or metric that relies on random sampling with replacement. 
+
+### 3) Plug-in estimators
+
+### 4) Parametric Families: Normal
+
+
 
 
 ## **Useful Info**{.tabset}
@@ -139,6 +318,8 @@ CLT: the central limit theorem (CLT) establishes that, in some situations, when 
 [**Statistical Inference - Casella & Berger**](https://gabrielvoelcker.netlify.com/mit/Casella Berger - Statistical Inference.pdf)
 
 [**All of Statistics - Wasserman**](https://gabrielvoelcker.netlify.com/mit/Wasserman - All of Statistics.pdf)
+
+Useful website [**1**](https://towardsdatascience.com/why-sample-variance-is-divided-by-n-1-89821b83ef6d).
 
 ### Problem Sets
 
