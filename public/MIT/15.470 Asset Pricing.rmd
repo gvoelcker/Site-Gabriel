@@ -357,6 +357,16 @@ V(.) is called the **pricing/valuation operator/functional**.
 
 The NA principle imposes general properties on the pricing operator V (·).
 
+## Lecture 4 - Arbitrage Pricing (cont.)
+
+### FTAP
+
+There is no arbitrage in the securities market if and only if there exists φ ≫ 0 such that for all traded securities:
+
+$P^T = \phi^T D$
+
+$\phi$ = state price vector implied from D and P.
+
 ## Useful Info
 
 ### Grading

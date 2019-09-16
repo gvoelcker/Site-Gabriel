@@ -341,9 +341,9 @@ Suppose u is continuous and satisfies local nonsatiation. Then:
 
 1) The UMP problem has at least one solution.
 
-2) x(p,w) is [**homogenous**](https://en.wikipedia.org/wiki/Homogeneous_function) of degree 0, i.e. x($\alpha$p, $\alpha$w) = x(p,w) for all $\alpha$ > 0.
+2) x(p,w) is [**homogenous**](https://en.wikipedia.org/wiki/Homogeneous_function) of degree 0, i.e. x($\alpha$p, $\alpha$w) = x(p,w) for all $\alpha$ > 0. This means that if both prices and wealth change in the same proportion ($\alpha$), then the individual's consumer choice doesn't change.
 
-3) x(p,w) satisfies [**Walras’s law**](https://en.wikipedia.org/wiki/Walras%27s_law)([**2**](https://www.youtube.com/watch?v=5pCeeU5Jbbk)), i.e. p $\circ$ z = w for all z $\in$ x(p,w). An implication of Walras' Law is that the consumers budget will be balanced.
+3) x(p,w) satisfies [**Walras’s law**](https://en.wikipedia.org/wiki/Walras%27s_law)([**2**](https://www.youtube.com/watch?v=5pCeeU5Jbbk)), i.e. p $\circ$ z = w for all z $\in$ x(p,w). An implication of Walras' Law is that the consumers budget will be balanced. Walras' Law states that the consumer fully expends his/her wealth over his/her lifetime.
 
 4) If u is strictly quasi-concave, then x(p,w) is a function, i.e.
 each x(p,w) contains a single bundle.
@@ -351,6 +351,59 @@ each x(p,w) contains a single bundle.
 #### [**Kuhn-Tucker**](https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions) necessary conditions:
 
 In mathematical optimization, the Karush–Kuhn–Tucker (KKT) conditions are **first derivative tests** (sometimes called first-order) necessary conditions for a solution in nonlinear programming to be optimal, provided that some regularity conditions are satisfied. Allowing inequality constraints, the KKT approach to nonlinear programming generalizes the method of [**Lagrange multipliers**](https://en.wikipedia.org/wiki/Lagrange_multiplier), which allows only equality constraints. Similar to the Lagrange approach, the constrained maximization (minimization) problem is **rewritten as a Lagrange function whose optimal point is a saddle point**, i.e. a global maximum (minimum) over the domain of the choice variables and a global minimum (maximum) over the multipliers.
+
+#### The Lagrangian
+
+Imagine the following conditions:
+
+Labor: $20/h
+
+Steel: $2000/ton.
+
+Revenue(h,s) = 100 $h^{2/3} s^{1/3}$
+
+Budget = $20,000 = 20h + 2000S 
+
+$\bigtriangledown	R = \lambda \bigtriangledown	g$
+
+Gradient of R($\bigtriangledown	R$):
+
+
+\left(\begin{array}{cc} 
+\frac{\partial R}{\partial h} \\
+\frac{\partial R}{\partial s} 
+\end{array}\right)
+
+= 
+
+\left(\begin{array}{cd} 
+100 \frac{2}{3}h^{-1/3}s^{1/3} \\
+100 \frac{1}{3}h^{2/3}s^{-2/3}
+\end{array}\right)
+ 
+
+Gradient of g($\bigtriangledown	g$):
+
+$$
+\left[\begin{array}{cc} 
+\frac{\partial g}{\partial h} \\
+\frac{\partial g}{\partial s} 
+\end{array}\right]
+
+= 
+
+\left[\begin{array}{cc} 
+20 \\
+2000
+\end{array}\right]
+$$ 
+
+We get a pair of equations:
+
+$\frac{200}{3} \frac{s^{1/3}}{h^{1/3}} = 20 \lambda$
+
+$\frac{100}{3} \frac{h^{2/3}{s^{2/3}} = 2000 \lambda$
+
 
 So, suppose *u* is [**continuously differentiable**](https://en.wikipedia.org/wiki/Differentiable_function#Differentiability_and_continuity). If $x^{\ast}$ $\in$ x(p,w) is a solution to the UMP, then $\exists$ a constant $\lambda$ ≥ 0 s.t.
 
@@ -802,3 +855,94 @@ By assigning a value inferior than $\frac{1}{3}$, for ex: $\frac{1}{5}$, the sto
 [**2017**](https://gabrielvoelcker.netlify.com/mit/2017_Final Exam.pdf)
 
 [**2018**](https://gabrielvoelcker.netlify.com/mit/examF18_wSOL_sketch.pdf)
+
+## **MWG Takeaways**
+
+### **Chapter 1 - Preference and Choice**
+
+### **Chapter 2 - Consumer Choice**
+
+What we deal with:
+
+- Commodities: the objects of choice for the consumer.
+- Consumption set: physical constraint that limit the consumer's choices.
+- Walrasian budget set: economic constraints.
+- Walrasian demand function: the consumer's choice rule.
+- Weak axiom of revealed preference.
+
+#### 2.B) Commodities
+
+The decision problem faced by the consumer in a market economy is to choose consumption levels of the various goods and services that are available for purchase in the market. We call these **commodities**. A **commodity vector** is a list of amounts of the different commodities:
+
+
+$$\left[\begin{array}{cc} 
+x_1 \\
+... \\
+... \\
+x_n
+\end{array}\right]$$
+
+Rigorously: bread today ≠ bread tomorrow
+
+#### 2.C) The Consumption Set
+
+The consumption set is a subset of the commodity space $\mathbb{R}^L$, denoted by X $\subset$ $\mathbb{R}^L$, whose elements are the consumption bundles that the individual can conceivably consume given the physical constraints imposed by his environment. Simplest sort of consumption set:
+
+<center> X = $\mathbb{R}^L_+$ = {x $\in \mathbb{R}^L : x_l ≥ 0$ for $\mathcal{l} = 1,...,L$}
+
+#### 2.D) Competitive Budgets
+
+#### 2.E) Demand Functions and Comparative Statics
+
+#### 2.F) The Weak Axiom of Revealed Preference and the Law of Demand
+
+### **Chapter 3 - Classical Demand Theory**
+
+Preference-based approach to consumer demand:
+B) Consumer's relation and basic properties(monotonicity{LNS} and convexity).
+
+C) Continuity properties of utility funcions that represent the consumer's preferences.
+
+D) Consumer's problem framed as utilitiy maximization problem (price-taking assumption) focus on: consumer's optimal choice(embodied in the Walrasian demand correspondence) and the consumer's optimal utility value (captured by indirect utility function).
+
+E) Expenditure minimization problem. 
+
+F) mathematical underpinnings of duality theory.
+
+G) Results of demand theory: connect demand and value functions.
+
+H) Integrability problem.
+
+I) Start welfare analysis.
+
+J) Strong axiom of revealed preference.
+
+#### 3.B) Preference Relations: Basic Properties
+
+#### 3.C) Preference and Utility
+
+#### 3.D) Utility Maximization Problem
+
+#### 3.E) Expenditure Minimization Problem
+
+#### 3.F) Duality: A Mathematical Introduction
+
+#### 3.G) Relationships between Demand, Indirect Utility, and Expenditure Functions
+
+#### 3.H) Integrability
+
+#### 3.I) Welfare Evaluation of Changes
+
+#### 3.J) Strong Axiom of Revealed Preferences
+
+
+### **Chapter 4 - Aggregate Demand**
+## **Krebs Takeaways**
+
+### Chapter 1
+
+### Chapter 2
+
+### Chapter 3
+
+

@@ -442,14 +442,44 @@ summary {
 <p>Suppose u is continuous and satisfies local nonsatiation. Then:</p>
 <ol style="list-style-type: decimal">
 <li><p>The UMP problem has at least one solution.</p></li>
-<li><p>x(p,w) is <a href="https://en.wikipedia.org/wiki/Homogeneous_function"><strong>homogenous</strong></a> of degree 0, i.e. x(<span class="math inline">\(\alpha\)</span>p, <span class="math inline">\(\alpha\)</span>w) = x(p,w) for all <span class="math inline">\(\alpha\)</span> &gt; 0.</p></li>
-<li><p>x(p,w) satisfies <a href="https://en.wikipedia.org/wiki/Walras%27s_law"><strong>Walras’s law</strong></a>(<a href="https://www.youtube.com/watch?v=5pCeeU5Jbbk"><strong>2</strong></a>), i.e. p <span class="math inline">\(\circ\)</span> z = w for all z <span class="math inline">\(\in\)</span> x(p,w). An implication of Walras’ Law is that the consumers budget will be balanced.</p></li>
+<li><p>x(p,w) is <a href="https://en.wikipedia.org/wiki/Homogeneous_function"><strong>homogenous</strong></a> of degree 0, i.e. x(<span class="math inline">\(\alpha\)</span>p, <span class="math inline">\(\alpha\)</span>w) = x(p,w) for all <span class="math inline">\(\alpha\)</span> &gt; 0. This means that if both prices and wealth change in the same proportion (<span class="math inline">\(\alpha\)</span>), then the individual’s consumer choice doesn’t change.</p></li>
+<li><p>x(p,w) satisfies <a href="https://en.wikipedia.org/wiki/Walras%27s_law"><strong>Walras’s law</strong></a>(<a href="https://www.youtube.com/watch?v=5pCeeU5Jbbk"><strong>2</strong></a>), i.e. p <span class="math inline">\(\circ\)</span> z = w for all z <span class="math inline">\(\in\)</span> x(p,w). An implication of Walras’ Law is that the consumers budget will be balanced. Walras’ Law states that the consumer fully expends his/her wealth over his/her lifetime.</p></li>
 <li><p>If u is strictly quasi-concave, then x(p,w) is a function, i.e. each x(p,w) contains a single bundle.</p></li>
 </ol>
 </div>
 <div id="kuhn-tucker-necessary-conditions" class="section level4">
 <h4><a href="https://en.wikipedia.org/wiki/Karush%E2%80%93Kuhn%E2%80%93Tucker_conditions"><strong>Kuhn-Tucker</strong></a> necessary conditions:</h4>
 <p>In mathematical optimization, the Karush–Kuhn–Tucker (KKT) conditions are <strong>first derivative tests</strong> (sometimes called first-order) necessary conditions for a solution in nonlinear programming to be optimal, provided that some regularity conditions are satisfied. Allowing inequality constraints, the KKT approach to nonlinear programming generalizes the method of <a href="https://en.wikipedia.org/wiki/Lagrange_multiplier"><strong>Lagrange multipliers</strong></a>, which allows only equality constraints. Similar to the Lagrange approach, the constrained maximization (minimization) problem is <strong>rewritten as a Lagrange function whose optimal point is a saddle point</strong>, i.e. a global maximum (minimum) over the domain of the choice variables and a global minimum (maximum) over the multipliers.</p>
+</div>
+<div id="the-lagrangian" class="section level4">
+<h4>The Lagrangian</h4>
+<p>Imagine the following conditions:</p>
+<p>Labor: $20/h</p>
+<p>Steel: $2000/ton.</p>
+<p>Revenue(h,s) = 100 <span class="math inline">\(h^{2/3} s^{1/3}\)</span></p>
+<p>Budget = $20,000 = 20h + 2000S</p>
+<p><span class="math inline">\(\bigtriangledown R = \lambda \bigtriangledown g\)</span></p>
+<p>Gradient of R(<span class="math inline">\(\bigtriangledown R\)</span>):</p>
+(
+<span class="math display">\[\begin{array}{cc} 
+\frac{\partial R}{\partial h} \\
+\frac{\partial R}{\partial s} 
+\end{array}\]</span>
+<p>)</p>
+<p>=</p>
+(
+<span class="math display">\[\begin{array}{cd} 
+100 \frac{2}{3}h^{-1/3}s^{1/3} \\
+100 \frac{1}{3}h^{2/3}s^{-2/3}
+\end{array}\]</span>
+<p>)</p>
+<p>Gradient of g(<span class="math inline">\(\bigtriangledown g\)</span>):</p>
+<p>$$ </p>
+<p>=</p>
+<p>$$</p>
+<p>We get a pair of equations:</p>
+<p><span class="math inline">\(\frac{200}{3} \frac{s^{1/3}}{h^{1/3}} = 20 \lambda\)</span></p>
+<p><span class="math inline">\(\frac{100}{3} \frac{h^{2/3}{s^{2/3}} = 2000 \lambda\)</span></p>
 <p>So, suppose <em>u</em> is <a href="https://en.wikipedia.org/wiki/Differentiable_function#Differentiability_and_continuity"><strong>continuously differentiable</strong></a>. If <span class="math inline">\(x^{\ast}\)</span> <span class="math inline">\(\in\)</span> x(p,w) is a solution to the UMP, then <span class="math inline">\(\exists\)</span> a constant <span class="math inline">\(\lambda\)</span> ≥ 0 s.t.</p>
 <center>
 <span class="math inline">\(\frac{du}{dx_i} = \lambda p_i \forall i \in {1,2,...,L}\)</span> with <span class="math inline">\(x_i^{\ast} &gt; 0\)</span>
@@ -776,6 +806,46 @@ h(p,u) <span class="math inline">\(\equiv\)</span> {z <span class="math inline">
 <p><a href="https://gabrielvoelcker.netlify.com/mit/2015exam_solutions.pdf"><strong>2015 solutions</strong></a></p>
 <p><a href="https://gabrielvoelcker.netlify.com/mit/2017_Final%20Exam.pdf"><strong>2017</strong></a></p>
 <p><a href="https://gabrielvoelcker.netlify.com/mit/examF18_wSOL_sketch.pdf"><strong>2018</strong></a></p>
+</div>
+</div>
+<div id="mwg-takeaways" class="section level2">
+<h2><strong>MWG Takeaways</strong></h2>
+<div id="chapter-1---preference-and-choice" class="section level3">
+<h3><strong>Chapter 1 - Preference and Choice</strong></h3>
+</div>
+<div id="chapter-2---consumer-choice" class="section level3">
+<h3><strong>Chapter 2 - Consumer Choice</strong></h3>
+<p>What we deal with:</p>
+<ul>
+<li>Commodities: the objects of choice for the consumer.</li>
+<li>Consumption set: physical constraint that limit the consumer’s choices.</li>
+<li>Walrasian budget set: economic constraints.</li>
+<li>Walrasian demand function: the consumer’s choice rule.</li>
+<li>Weak axiom of revealed preference.</li>
+</ul>
+<div id="b-commodities" class="section level4">
+<h4>2.B) Commodities</h4>
+<p>The decision problem faced by the consumer in a market economy is to choose consumption levels of the various goods and services that are available for purchase in the market. We call these <strong>commodities</strong>. A <strong>commodity vector</strong> is a list of amounts of the different commodities:</p>
+<p><span class="math display">\[\left[\begin{array}{cc} 
+x_1 \\
+... \\
+... \\
+x_n
+\end{array}\right]\]</span></p>
+<p>Rigorously: bread today ≠ bread tomorrow</p>
+</div>
+<div id="c-the-consumption-set" class="section level4">
+<h4>2.C) The Consumption Set</h4>
+<p>The consumption set is a subset of the commodity space <span class="math inline">\(\mathbb{R}^L\)</span>, denoted by X <span class="math inline">\(\subset\)</span> <span class="math inline">\(\mathbb{R}^L\)</span>, whose elements are the consumption bundles that the individual can conceivably consume given the physical constraints imposed by his environment. Simplest sort of consumption set:</p>
+<center>
+<p>X = <span class="math inline">\(\mathbb{R}^L_+\)</span> = {x <span class="math inline">\(\in \mathbb{R}^L : x_l ≥ 0\)</span> for <span class="math inline">\(\mathcal{l} = 1,...,L\)</span>}</p>
+</div>
+</div>
+<div id="chapter-3---classical-demand-theory" class="section level3">
+<h3><strong>Chapter 3 - Classical Demand Theory</strong></h3>
+</div>
+<div id="chapter-4---aggregate-demand" class="section level3">
+<h3><strong>Chapter 4 - Aggregate Demand</strong></h3>
 </div>
 </div>
 </div>

@@ -197,26 +197,57 @@ A conditional distribution is a probability distribution for a sub-population. I
 ### 1 Useful Inequalities
 
 [**Markov's Inequality**](https://en.wikipedia.org/wiki/Markov%27s_inequality): gives an upper bound for the probability that a non-negative function of a random variable is greater than or equal to some positive constant. [**Intuition**](https://www.youtube.com/watch?v=4nHcPJsxyv8).
-
+ Let X be any nonnegative random variable such that E[X] exists. Then for any t > 0, we have P{X ≥ t} ≤ E[X]/t.
 [**Chebyshev's Inequality**](https://en.wikipedia.org/wiki/Chebyshev%27s_inequality): guarantees that, for a wide class of probability distributions, no more than a certain fraction of values can be more than a certain distance from the mean.
-
+ For any random variable X with mean $\mu$ and finite variance and for any t > 0, we have P{|X - $\mu$| ≥ t} ≤ Var(X)/$t^2$.
 [**Hölder's Inequality**](https://en.wikipedia.org/wiki/H%C3%B6lder%27s_inequality): is a fundamental inequality between integrals and an indispensable tool for the study of $L^p$ spaces.
+ E|XY| ≤(E|X|$^p$)$^{1/p}$(E|Y|$^q$)$^1/q$
 
 ### 2 [**Convergence in Probability**](https://en.wikipedia.org/wiki/Convergence_of_random_variables) and [**Law of Large Numbers**](https://en.wikipedia.org/wiki/Law_of_large_numbers).
 
 Is a theorem that describes the result of performing the same experiment a large number of times. According to the law, the average of the results obtained from a large number of trials should be close to the expected value, and will tend to become closer as more trials are performed.
 
+**Definition 4**: We say that {$X_n$}$_{n=1}^\infty$ converges to X in probability if for any $\varepsilon$ > 0 P{|$X_n - X$| > $\varepsilon$} -> 0 as n -> $\infty$.
+
+**Theorem 5**: if E($X_n - X$)$^2$ -> 0, then $X_n$ -> X.
+
+**Theorem 6**: if $\{X_i\}_{i = 1}^\infty$ is a sequence of iid r.v. with E[$X_i$] = $\mu$ and Var($X_i$) = $\sigma^2$ < $\infty$, then $	\overline{\rm X}_n$ := $\sum_{i = 1}^n$ $X_i$/n ->$^p$ $\mu$.
+
+**Theorem 7**: if $\{X_n\}_{n=1}^\infty$ is a sequence of iid r.v. with E$X_n$ = $\mu$ and E|$X_n$| < $\infty$, then $\overline{\rm X}_n$ ->$_p$ $\mu$.
+
 ### 3 [**Weak Convergence**](https://en.wikipedia.org/wiki/Law_of_large_numbers#Weak_law) and [**Central Limit Theorem**](https://en.wikipedia.org/wiki/Central_limit_theorem)
 
 CLT: the central limit theorem (CLT) establishes that, in some situations, when independent random variables are added, their properly normalized sum tends toward a normal distribution (informally a "bell curve") even if the original variables themselves are not normally distributed. The theorem is a key concept in probability theory because it implies that probabilistic and statistical methods that work for normal distributions can be applicable to many problems involving other types of distributions.
+
+**Definition 8**: we say that $\{X_n\}_{n=1}^\infty$ converges to X in distribution or weakly if lim$_{n-> \infty}$ F$_{X_n}$(x) = $F_X$(x) $\forall$ x $\in$ $\mathbb{R}$ where $F_X$(x) is continuous. $X_n \implies X$.
+
+**Theorem 9**: If $X_n$ ->$_p$ X, then $X_n \implies X$.
+
+**Theorem 10**: Central Limit Theorem: Let $\{X_i\}$ be a sequence of iid r.v. with a mean $\mu$ and variance $\sigma^2$. Then $\sum_{i = 1}^n$ ($X_i - \mu$)/$\sqrt{n}$ $\implies$ N(0,$\sigma^2$).
+
+**Theorem 11: Linderberg??:  **
 
 ### 4 Asymptotic statements derived from basic limit theorems
 
 [**Slutsky's Theorem**](https://en.wikipedia.org/wiki/Slutsky%27s_theorem)
 
+1) If $X_n$ ->$_p$ X and $Y_n$ ->$_p$ Y, then $X_n$ + $Y_n$ ->$_p$ X + Y, and $X_nY_n$ ->$_p$ XY.
+
+2) If $X_n$ $\implies$ X and Y ->$_p$ c, then $X_n$ + $Y_n$ $\implies$ X + c and $X_nY_n$ $\implies$ cX.
+
 [**Continuous Mapping Theorem**](https://en.wikipedia.org/wiki/Continuous_mapping_theorem)
 
-#### 4.1 Symbols $o_p$ and $O_p$
+3) If $X_n$ ->$_p$ X, then g($X_n$) ->$_p$ g(X).
+
+4) If $X_n$ $\implies$ X, then g($X_n$) $\implies$ g(x)
+
+#### 4.1 Asymptotic Notation: Symbols $o_p$ and $O_p$
+
+- It is written $x_n = o(b_n)$ when $lim_{n->\infty}$ $\frac{x_n}{b_n}$ = 0. It is described often as "$x_n$ is asymptotically smaller than $b_n$". Informally. it means that $x_n$  grows much slower than $b_n$ and is insignificant in comparison.
+
+- It is written $x_n$ = O($b_n$) when $sup_n$ |$\frac{x_n}{b_n}$| < $\infty$. Intuitively, this means that $x_n$ does not grow faster than ($b_n$).
+
+**Definition 13:** We say that $X_n$ = $o_p$($b_n$) iff $\frac{X_n}{b_n}$ ->$_p$ 0.
 
 ### 5 Delta Method
 
@@ -303,9 +334,6 @@ Rare case in which we can actually calculate the exact distribution of a statist
 ### 3) Plug-in estimators
 
 ### 4) Parametric Families: Normal
-
-
-
 
 ## **Useful Info**{.tabset}
 
