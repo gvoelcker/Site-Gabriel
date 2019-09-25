@@ -322,25 +322,20 @@ $\sum_{k}c^k$ = $\sum_k e^k$
 
 Following the basic framework, we start our analysis with the general properties of the securities market.
 
-**Redundant security**: its payoff can be replicated by a portfolio of other traded securities. In a frictionless market, redundant securities do not influence equilibrium.
 
-**D** is the payoff matrix. Going forward, D includes only securities with linearly independent payoffs.
 
-**Payoff space**: 
+**Security(N)**: a security is an asset of the market. It is considered **redundant** if its payoff can be **replicated** by a portfolio of other traded securities. This can be represented by $\exists \theta_{\n}$ s.t. $D_{\n}\theta_{\n}$ = $D_n$. 
 
-**Market completeness**: a securities market is complete if any payoff at t = 1 can be achieved from the payoff of a portfolio of traded securities. So
+**Portfolio of securities ($\theta$)**: represents a combination of securities.
 
-  - D defines market structure.
-  
-  - $\theta$ denotes a portfolio.
-  
-  - $c_1 \in R^M$ and $\theta \in R^N$.
-  
-Market completeness $\forall c_1 \in R^M$, $\exists \theta \in R^N$ such that D$\theta$ = $c_1$.
+**States of the market(M)**: all the different combinatios of payoffs possible in that market.
 
-Clearly, if N < M, the market cannot be complete.
+**Payoff Matrix(D)**: denote the market structure with N securities. Example: $D_n$ is the payoff vector of security *n*, $D_{\n}$ is the payoff matrix excluding $D_n$. **D** includes only securities with linearly independent payoffs $\implies$ rank(D) = N ≤ M. Given D, the set $C_1(D)$ = $\{c_1 = D \theta : \theta \in R^n \}$ is called the **payoff space**. The set of securities in D is said to  **span**$C_1$(D). 
 
-**Sufficient Condition for Market Completeness**: a securities market, defined by D, is complete if and only if the rank of D equals the number of states at t = 1: rank(D) = M.
+Any payoff vector in $c_1 \in C_1$(D) can be delivered by a portfolio $\theta$. It is said then that $c_1$ is to be replicated or financed by $\theta$.
+
+**Market Completeness**: a securities market is complete if any payoff at t = 1 can be achieved from the payoff of a portfolio of traded securities. If N < M, the market cannot be complete. A **sufficient condition for market completeness* is that when the rank of D equals the number of States(rank(D) = M), the market is complete.
+
 
 **State-Contingent Claims**: a state-$\omega$ contingent claim pays 1 in state $\omega$ and nothing otherwise. Also called an **Arrow-Debreu security**.
 

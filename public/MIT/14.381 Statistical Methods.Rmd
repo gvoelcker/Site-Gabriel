@@ -335,6 +335,77 @@ Rare case in which we can actually calculate the exact distribution of a statist
 
 ### 4) Parametric Families: Normal
 
+
+## **4 - Sufficient Statistics**
+
+### 1) Sufficient Statistics
+
+A sufficient statistic is a sample statistic that conveys the same information about the data generating process as the entire data itself. Let f(x|$\theta$) with $\theta \in \Theta$ be some parametric family. X = ($X_1,...,X_n$) is a random sample from distribution f(x|$\theta$). A [**sufficient statistic**](https://en.wikipedia.org/wiki/Sufficient_statistic) separates all the information of X into two parts: 1) all the valuable information for parameter $\theta$; 2) pure noise.
+
+Definition 1: Statistic T(X) is **sufficient** for $\theta$ if the conditional distribution of X given T(X) does not depend on $\theta$. 
+
+Let X(T) be a sufficient statistic and consider the pair (X,T(X)). Obviously, T(X) contains the same information about $\theta$ as X alone. But since T(X) is a sufficient statistic, X itself has no value for us since by observing it we cannot say whether one particular value of parameter $\theta$ is more likely than another. Once we know T(X), we can discard X completely.
+
+### 2) Factorization Theorem
+
+Theorem 2 ([**Factorization Theorem**](https://www.sciencedirect.com/topics/computer-science/factorization-theorem)): Let f(x|$\theta$) be the pdf of X. Then T(X) is a sufficient statistic iff there exist functions g(t|$\theta$) and h(x) such that f(x|$\theta$) = g(T(x)|$\theta$)h(x).
+
+### 3) Minimal Sufficient Statistics
+
+Given two statistics: T(X) and T$\ast$(X). We say that T$\ast$ is not bigger than T whenever having T is sufficient for calculating T$\ast$. In this case, when T$\ast$ changes, T must change as well. 
+
+**Definition 3**: A sufficient statistic T$\ast$(X) is called *minimal* if for any sufficient statistic T(X) there exists some function *r* such that T$\ast$(X) = r(T(X)) $\implies$ the minimal sufficient statistic gives us the greatest data reduction without a loss of information about parameters. 
+
+**Theorem 4**: let f(x|$\theta$) be the pdf of X and T(X) be such that, for any x,y statement $\{f(x|\theta)/f(y|\theta)$ does not depend on $\theta \}$ is equivalent to statement $\{$T(x) = T(y) $\}$. Then T(X) is minimal sufficient.
+
+### 4) Estimators and their Properties
+
+An [**estimator**](https://en.wikipedia.org/wiki/Estimator) is a function of the data(statistic). If we have a parametric family with parameter $\theta$, then an estimator of $\theta$ is usually denoted by $\hat{\theta}$. Ex: sample variance $\hat{\sigma}^2$ is an estimator of the population variance.
+
+#### 4.1) Unbiasness
+
+Let X be our data and $\hat{\theta}$ = T(X) be an estimator where T is some function. We say that $\hat{\theta}$ is **unbiased** if $E_{\theta}[T(X)]$ = $\theta$ for all possible values of $\theta$ where $E_{\theta}$ denotes the expectation when $\theta$ is the true parameter value. The *bias* of $\hat{\theta}$ is defined by Bias($\hat{\theta}$)  = $E_{\theta}[\hat{\theta}] - \theta$. The concept of unbiasness means that we are on average correct. 
+
+#### 4.2) Efficiency: MSE
+
+[**Mean Square Error**](https://en.wikipedia.org/wiki/Mean_squared_error): evaluates the performance of estimators. MSE($\hat{\theta}$) = $E_{\theta}[(\hat{\theta} - \theta)^2]$. 
+
+**Theorem 5**: MSE($\hat{\theta}$) = $Bias^2 (\hat{\theta})$ + V($\hat{\theta}$). The smaller the MSE, the more efficient it is. 
+
+#### 4.3)  Connection between efficiency and sufficient statistics
+
+For any estimator $\hat{\theta}$ = $\delta$(X), there is another estimator which depends on data X only through T(X) and is at least as efficient as $\hat{\theta}$.
+
+[**Theorem 6(Rao-Blackwell)**](https://en.wikipedia.org/wiki/Rao%E2%80%93Blackwell_theorem): define $\phi$(T) = E[$\delta(X)|T$]. Then $\hat{\theta}_2$ = $\phi$(T(X)) is an estimator for $\theta$ and MSE($\hat{\theta}_2$) ≤ MSE($\hat{\theta}$). In addition, if $\hat{\theta}$ is unbiased, then $\hat{\theta}_2$ is unbiased as well. So, we're asked to take an estimate of whatever we want to find and plug in the original estimator and through Rao-Blackwellization find a better estimator. If you plug in biased estimators you'll get biased estimators, otherwise unbiased $\rightarrow$ unbiased estimator.
+
+To solve it: plug in the original estimator and 
+
+### 5) Point Estimators
+
+#### 5.1) Estimators and their properties
+
+An [**estimator**](https://en.wikipedia.org/wiki/Estimator) is a function of the data. If we have a parametric family with parameter $\theta$, then an estimator of $\theta$ is usually denoted by $\hat{\theta}$. Ex: sample variance $\hat{\sigma}^2$ is an estimator of the population variance.
+
+##### 5.1.1) Unbiasness
+
+We say that $\hat{\theta}$ is *unbiased* for $\theta$ if $E_{\theta}$[T(X)] = $\theta$ for all possible values of $\theta$ where $E_{\theta}$ denotes the expectation when $\theta$ is the true parameter value. Bias($\hat{\theta}$) = $E_{\theta}[\hat{\theta}]$ - $\theta$. $\hat{\theta}$ is only unbiased if it equals 0. 
+
+##### 5.1.1.1) Bootstrap bias correction
+
+5 steps to estimate the bias.
+
+##### 5.1.1.2) Efficiency: MSE
+
+##### 5.1.2) Asymptotic Properties
+
+###### 5.1.2.1) Consistency
+
+$\hat{\theta}_n$ is **consistent** for $\theta$ if $\hat{\theta}_n$ $\rightarrow_p$ $\theta$.
+
+###### 5.1.2.2) Asymptotic Normality
+
+We say that $\hat{\theta}_n$ is *asymptotically normal* if there are sequences $(a_n)^\infty_{n = 1}$ and $(r_n)^\infty_{n = 1}$ and constant $\sigma^2$ s.t. $r_n(\hat{\theta} - a_n)$ $\implies$ N(0,$\sigma^2$). Then $r_n$ is called the *rate of convergence*, $a_n$ is the *asymptotic mean* and $\sigma^2$ - the asymptotic variance.
+
 ## **Useful Info**{.tabset}
 
 ### Schedule
@@ -357,4 +428,5 @@ Useful website [**1**](https://towardsdatascience.com/why-sample-variance-is-div
 [**Midterm 2018**](https://gabrielvoelcker.netlify.com/mit/midterm_exam_fall12.pdf)
 
 [**Midterm 2018 Solutions**](https://gabrielvoelcker.netlify.com/mit/midterm_exam_fall12_solutions.pdf)
+
 

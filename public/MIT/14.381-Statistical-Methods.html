@@ -422,6 +422,73 @@ E[g(X)] = <span class="math inline">\(\int_{-\infty}^{+\infty}\)</span> g(x)<spa
 <h3>4) Parametric Families: Normal</h3>
 </div>
 </div>
+<div id="sufficient-statistics" class="section level2">
+<h2><strong>4 - Sufficient Statistics</strong></h2>
+<div id="sufficient-statistics-1" class="section level3">
+<h3>1) Sufficient Statistics</h3>
+<p>A sufficient statistic is a sample statistic that conveys the same information about the data generating process as the entire data itself. Let f(x|<span class="math inline">\(\theta\)</span>) with <span class="math inline">\(\theta \in \Theta\)</span> be some parametric family. X = (<span class="math inline">\(X_1,...,X_n\)</span>) is a random sample from distribution f(x|<span class="math inline">\(\theta\)</span>). A <a href="https://en.wikipedia.org/wiki/Sufficient_statistic"><strong>sufficient statistic</strong></a> separates all the information of X into two parts: 1) all the valuable information for parameter <span class="math inline">\(\theta\)</span>; 2) pure noise.</p>
+<p>Definition 1: Statistic T(X) is <strong>sufficient</strong> for <span class="math inline">\(\theta\)</span> if the conditional distribution of X given T(X) does not depend on <span class="math inline">\(\theta\)</span>.</p>
+<p>Let X(T) be a sufficient statistic and consider the pair (X,T(X)). Obviously, T(X) contains the same information about <span class="math inline">\(\theta\)</span> as X alone. But since T(X) is a sufficient statistic, X itself has no value for us since by observing it we cannot say whether one particular value of parameter <span class="math inline">\(\theta\)</span> is more likely than another. Once we know T(X), we can discard X completely.</p>
+</div>
+<div id="factorization-theorem" class="section level3">
+<h3>2) Factorization Theorem</h3>
+<p>Theorem 2 (<a href="https://www.sciencedirect.com/topics/computer-science/factorization-theorem"><strong>Factorization Theorem</strong></a>): Let f(x|<span class="math inline">\(\theta\)</span>) be the pdf of X. Then T(X) is a sufficient statistic iff there exist functions g(t|<span class="math inline">\(\theta\)</span>) and h(x) such that f(x|<span class="math inline">\(\theta\)</span>) = g(T(x)|<span class="math inline">\(\theta\)</span>)h(x).</p>
+</div>
+<div id="minimal-sufficient-statistics" class="section level3">
+<h3>3) Minimal Sufficient Statistics</h3>
+<p>Given two statistics: T(X) and T<span class="math inline">\(\ast\)</span>(X). We say that T<span class="math inline">\(\ast\)</span> is not bigger than T whenever having T is sufficient for calculating T<span class="math inline">\(\ast\)</span>. In this case, when T<span class="math inline">\(\ast\)</span> changes, T must change as well.</p>
+<p><strong>Definition 3</strong>: A sufficient statistic T<span class="math inline">\(\ast\)</span>(X) is called <em>minimal</em> if for any sufficient statistic T(X) there exists some function <em>r</em> such that T<span class="math inline">\(\ast\)</span>(X) = r(T(X)) <span class="math inline">\(\implies\)</span> the minimal sufficient statistic gives us the greatest data reduction without a loss of information about parameters.</p>
+<p><strong>Theorem 4</strong>: let f(x|<span class="math inline">\(\theta\)</span>) be the pdf of X and T(X) be such that, for any x,y statement <span class="math inline">\(\{f(x|\theta)/f(y|\theta)\)</span> does not depend on <span class="math inline">\(\theta \}\)</span> is equivalent to statement <span class="math inline">\(\{\)</span>T(x) = T(y) <span class="math inline">\(\}\)</span>. Then T(X) is minimal sufficient.</p>
+</div>
+<div id="estimators-and-their-properties" class="section level3">
+<h3>4) Estimators and their Properties</h3>
+<p>An <a href="https://en.wikipedia.org/wiki/Estimator"><strong>estimator</strong></a> is a function of the data(statistic). If we have a parametric family with parameter <span class="math inline">\(\theta\)</span>, then an estimator of <span class="math inline">\(\theta\)</span> is usually denoted by <span class="math inline">\(\hat{\theta}\)</span>. Ex: sample variance <span class="math inline">\(\hat{\sigma}^2\)</span> is an estimator of the population variance.</p>
+<div id="unbiasness" class="section level4">
+<h4>4.1) Unbiasness</h4>
+<p>Let X be our data and <span class="math inline">\(\hat{\theta}\)</span> = T(X) be an estimator where T is some function. We say that <span class="math inline">\(\hat{\theta}\)</span> is <strong>unbiased</strong> if <span class="math inline">\(E_{\theta}[T(X)]\)</span> = <span class="math inline">\(\theta\)</span> for all possible values of <span class="math inline">\(\theta\)</span> where <span class="math inline">\(E_{\theta}\)</span> denotes the expectation when <span class="math inline">\(\theta\)</span> is the true parameter value. The <em>bias</em> of <span class="math inline">\(\hat{\theta}\)</span> is defined by Bias(<span class="math inline">\(\hat{\theta}\)</span>) = <span class="math inline">\(E_{\theta}[\hat{\theta}] - \theta\)</span>. The concept of unbiasness means that we are on average correct.</p>
+</div>
+<div id="efficiency-mse" class="section level4">
+<h4>4.2) Efficiency: MSE</h4>
+<p><a href="https://en.wikipedia.org/wiki/Mean_squared_error"><strong>Mean Square Error</strong></a>: evaluates the performance of estimators. MSE(<span class="math inline">\(\hat{\theta}\)</span>) = <span class="math inline">\(E_{\theta}[(\hat{\theta} - \theta)^2]\)</span>.</p>
+<p><strong>Theorem 5</strong>: MSE(<span class="math inline">\(\hat{\theta}\)</span>) = <span class="math inline">\(Bias^2 (\hat{\theta})\)</span> + V(<span class="math inline">\(\hat{\theta}\)</span>). The smaller the MSE, the more efficient it is.</p>
+</div>
+<div id="connection-between-efficiency-and-sufficient-statistics" class="section level4">
+<h4>4.3) Connection between efficiency and sufficient statistics</h4>
+<p>For any estimator <span class="math inline">\(\hat{\theta}\)</span> = <span class="math inline">\(\delta\)</span>(X), there is another estimator which depends on data X only through T(X) and is at least as efficient as <span class="math inline">\(\hat{\theta}\)</span>.</p>
+<p><a href="https://en.wikipedia.org/wiki/Rao%E2%80%93Blackwell_theorem"><strong>Theorem 6(Rao-Blackwell)</strong></a>: define <span class="math inline">\(\phi\)</span>(T) = E[<span class="math inline">\(\delta(X)|T\)</span>]. Then <span class="math inline">\(\hat{\theta}_2\)</span> = <span class="math inline">\(\phi\)</span>(T(X)) is an estimator for <span class="math inline">\(\theta\)</span> and MSE(<span class="math inline">\(\hat{\theta}_2\)</span>) ≤ MSE(<span class="math inline">\(\hat{\theta}\)</span>). In addition, if <span class="math inline">\(\hat{\theta}\)</span> is unbiased, then <span class="math inline">\(\hat{\theta}_2\)</span> is unbiased as well. So, we’re asked to take an estimate of whatever we want to find and plug in the original estimator and through Rao-Blackwellization find a better estimator. If you plug in biased estimators you’ll get biased estimators, otherwise unbiased <span class="math inline">\(\rightarrow\)</span> unbiased estimator.</p>
+<p>To solve it: plug in the original estimator and</p>
+</div>
+</div>
+<div id="point-estimators" class="section level3">
+<h3>5) Point Estimators</h3>
+<div id="estimators-and-their-properties-1" class="section level4">
+<h4>5.1) Estimators and their properties</h4>
+<p>An <a href="https://en.wikipedia.org/wiki/Estimator"><strong>estimator</strong></a> is a function of the data. If we have a parametric family with parameter <span class="math inline">\(\theta\)</span>, then an estimator of <span class="math inline">\(\theta\)</span> is usually denoted by <span class="math inline">\(\hat{\theta}\)</span>. Ex: sample variance <span class="math inline">\(\hat{\sigma}^2\)</span> is an estimator of the population variance.</p>
+<div id="unbiasness-1" class="section level5">
+<h5>5.1.1) Unbiasness</h5>
+<p>We say that <span class="math inline">\(\hat{\theta}\)</span> is <em>unbiased</em> for <span class="math inline">\(\theta\)</span> if <span class="math inline">\(E_{\theta}\)</span>[T(X)] = <span class="math inline">\(\theta\)</span> for all possible values of <span class="math inline">\(\theta\)</span> where <span class="math inline">\(E_{\theta}\)</span> denotes the expectation when <span class="math inline">\(\theta\)</span> is the true parameter value. Bias(<span class="math inline">\(\hat{\theta}\)</span>) = <span class="math inline">\(E_{\theta}[\hat{\theta}]\)</span> - <span class="math inline">\(\theta\)</span>. <span class="math inline">\(\hat{\theta}\)</span> is only unbiased if it equals 0.</p>
+</div>
+<div id="bootstrap-bias-correction" class="section level5">
+<h5>5.1.1.1) Bootstrap bias correction</h5>
+<p>5 steps to estimate the bias.</p>
+</div>
+<div id="efficiency-mse-1" class="section level5">
+<h5>5.1.1.2) Efficiency: MSE</h5>
+</div>
+<div id="asymptotic-properties" class="section level5">
+<h5>5.1.2) Asymptotic Properties</h5>
+<div id="consistency" class="section level6">
+<h6>5.1.2.1) Consistency</h6>
+<p><span class="math inline">\(\hat{\theta}_n\)</span> is <strong>consistent</strong> for <span class="math inline">\(\theta\)</span> if <span class="math inline">\(\hat{\theta}_n\)</span> <span class="math inline">\(\rightarrow_p\)</span> <span class="math inline">\(\theta\)</span>.</p>
+</div>
+<div id="asymptotic-normality" class="section level6">
+<h6>5.1.2.2) Asymptotic Normality</h6>
+<p>We say that <span class="math inline">\(\hat{\theta}_n\)</span> is <em>asymptotically normal</em> if there are sequences <span class="math inline">\((a_n)^\infty_{n = 1}\)</span> and <span class="math inline">\((r_n)^\infty_{n = 1}\)</span> and constant <span class="math inline">\(\sigma^2\)</span> s.t. <span class="math inline">\(r_n(\hat{\theta} - a_n)\)</span> <span class="math inline">\(\implies\)</span> N(0,<span class="math inline">\(\sigma^2\)</span>). Then <span class="math inline">\(r_n\)</span> is called the <em>rate of convergence</em>, <span class="math inline">\(a_n\)</span> is the <em>asymptotic mean</em> and <span class="math inline">\(\sigma^2\)</span> - the asymptotic variance.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
 <div id="useful-info" class="section level2 tabset">
 <h2><strong>Useful Info</strong></h2>
 <div id="schedule" class="section level3">
