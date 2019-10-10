@@ -449,3 +449,278 @@ Stochastic dominance does not give a total order, but rather only a partial orde
 
 [**Financial Asset**](https://en.wikipedia.org/wiki/Financial_asset):  is a non-physical asset whose value is derived from a contractual claim, such as bank deposits, bonds, and stocks. Financial assets are usually more liquid than other tangible assets, such as commodities or real estate, and may be traded on financial markets.
 
+
+## Ross' Notes
+
+### Introduction
+
+A pillar of economics is the ownership of claims to [**assets**](https://en.wikipedia.org/wiki/Asset). Finance is about valuing those claims, i.e., determining the prices of assets. The financial markets create continuous and voluminous records of these valuations.
+
+We begin our study of finance with stock market data. The prices displayed are the prices at the close of the month for one share of stock quoted on exchanges where the stocks are traded throughout the day. What is it that each party thinks they can get from the transaction? In other words, what do you gain or lose from buying or selling an asset? Given two consecutive dates, t and t+1, say one month apart, consider the gain over the period from the purchase of \$1 of stock. If the price per share is $p_t$, then \$ 1 will buy $\frac{1}{p_t}$ shares of stock at time *t*. 
+
+If the investor holds these shares over the month from t to t+1, then the price of these shares will have changed to: $p_{t+1}$ and these shares would then be worth: $\frac{p_{t+1}}{p_t}$. Hence, the **profit** would be:
+
+\[ \frac{p_{t+1}}{p_t} - 1 = \frac{p_{t+1} - p_t}{p_t} \]
+
+This is the [**capital gain**](https://en.wikipedia.org/wiki/Capital_gain) (or loss, if negative), the percentage increase (decrease) in the value of the asset over this period. In addition to the change in the value of the asset, assets often have an associated cash flow which is paid to the holder. For stocks the attendant cash flow is called a [**dividend**](https://en.wikipedia.org/wiki/Dividend). If this stock paid a dividend per share of $d_t$ at the end of the period(at $t+1$), then \$ 1 of investment at t would entitle the holder to $\frac{d_t}{p_t}$ dollars of dividends per \$ 1 investment.
+
+The **total rate of return** over period t would be:
+
+\[ R_t \equiv \frac{p_{t+1}- p_t}{p_t} + \frac{d_t}{p_t} \]
+
+The **gross return** would be 1 + $R_t$.
+
+Letting {$x_1,...,x_n$} denote a sequence of n data points, we define the sample mean, μ, the standard deviation, σ, the skewness, η, and the kurtosis, κ, as follows:
+
+\[ mean = \mu = \frac{1}{n} \sum_i x_i\]
+
+\[ standard \, deviation = \sigma \sqrt{(\frac{1}{n-1})\sum_i (x_i - \mu)^2}\]
+
+\[ skewness = \eta = \frac{n}{(n-1)(n-2)} \sum \frac{x_i - \mu}{\sigma}^3 \]
+
+\[ kurtosis = \mathcal{k} = \frac{n(n+1)}{(n-1)(n-2)(n-3)} \sum \frac{x_i - \mu}{\sigma}^4  - \frac{3(n-1)^2}{(n-2)(n-3)} \]
+
+\[ t-statistic = \frac{\mu}{(\frac{\sigma}{\sqrt{n}})}  \]
+
+**Risk-premia**: the difference between risky-assets and the treasury interest rates(risk-free).
+
+**Equity risk premium**: difference between stocks and risk free interests rates.
+
+This influences the decision to invest in risky or not risky assets.
+
+- **Cross Section Betas**: the regressions of each stock on the S&P 500 index indicate significant correlations. The coefficients are significant and, generally positive, and this is true not only for our sample but for the market as a whole. This is an important stylized fact about the returns on these risky securities and the theories we will develop will take account of this observation.
+
+- **Time Series Properties: Efficient Market Theory:**  the absence of a pattern in the return data is consistent with one of the central intuitions of modern finance. If the market accurately processes information, then we describe such market as informationally efficient. 
+A **market is efficient** if prices “reflect” the information available to investors. There is no easy money: the efficient market theory would say that no trading strategy could beat simply buying and holding an asset or some portfolio of assets - assuming that  both the trading strategy and the buy and hold strategy had the same inherent risks(standard deviations and other measures of risk).
+
+### **Summary of Introduction to Finance**
+
+Summarizing this introduction to finance, then, we have discovered three stylized facts about asset returns which the theory of finance will have to address.
+
+i) Efficient Markets: Asset returns are, apparently, quite random and unpredictable.
+
+ii) Positive Risk Premiums: On average, the risky stock market appears to have higher expected returns than less risky or volatile Treasury rates of return.
+
+iii) Significant ‘betas’: Random asset returns appear to be cross correlated.
+
+### **Chapter 1: The Arrow Debreu State Space Framework**
+
+We need to develop a framework within which random financial choices are compared and made:
+
+Two **time periods**: 0 and 1. Trades happen at 0, payoffs occur by time 1. We model **uncertainty** by using a finite state space approach, given the perspective ex-ante at 0, there is a **finite set of states of nature** that could possibly occur. The **state space** consists of:
+
+\[ \Omega = \{\theta_1,...,\theta_m\} \]
+
+Needless to say, these states are mutually exclusive. We define also a **measure(probability vector)**:
+
+\[ \pi = \{ \pi_1,...,\pi_m \}  \]
+
+Over the states of nature, where each $\pi_i$ is interpreted as the probability that the state of nature will be $\theta_i$ at time 1. The sum of all measures add up to 1. 
+
+Knowing this, we can model any r.v. such as the time 1 price of a stock as a function from $\Omega$ to the line R. The price of the $j^{th}$ stock at time 1 can be modeled as:
+
+\[ x^j = x^j (\theta) \]
+
+Since we have a finite state space, this is equivalent to representing the time 1 dollar price of asset j as a vector:
+
+\[ x^j = \{ x^j (\theta_1),...,x^j(\theta_m)\} = \{ x_{1j},...,x_{mj}  \}  \]
+
+Using a matrix, we can represent all the possibilities of period 1 prices for the *n* assets as
+
+\[ X = [x_{ij}] = \begin{bmatrix}
+    x_{11} & \dots  & x_{1n} \\
+    \dots & \dots  & \dots \\
+    x_{m1} & \dots  & x_{mn}
+\end{bmatrix} \]
+
+
+**Payoffs**: $x_{ij}$, the quantities, are the time 1 prices of the assets in the different states and they are cum dividends and cashflows. Each column of X displays the payoffs on the assets traded in the market as a function of the state of nature. The matrix X is called the **Arrow-Debreu tableux** or **State-space tableau**.
+
+Each of the traded assets has a current, time 0 price, $p_j$, and the vector of such prices is given by the n vector:
+
+\[ p = <p_1, \dots, p_n > _{1 \times n}  \]
+
+Assuming the prices are nonzero, we can write the (mxn) matrix of
+gross returns across assets and states, R, as: R = $XP^{-1}$ where P is the diagonal matrix with entries $p_i$ on the diagonal.
+
+#### **The Individual Portfolio-Consumption Problem**
+
+Given wealth today = $w_0$, wealth at time 1 = $w_1$, as well as an endowment of holdings of stocks $\phi_i$, then their endowment vector is
+
+\[ \varphi = \{ \varphi_0, \dots, \varphi_n \} \]
+
+and their current wealth is given by:
+
+\[ w_0 = \varphi_0 + \sum \varphi_i \rho_i = \varphi_0 + \varphi_\rho  \]
+
+To move the wealth in the next period, the investor can purchase only the *n* assets. Suppose the investor buys a vector of stocks:
+
+\[ a = (a_1,\dots,a_n)_{n \times 1} \]
+
+$a_i$ denotes the quantity of shares bought at the period 0. The budget constraint is given by: 
+
+\[ c_0 + pa = c_0 + \sum p_i a_i ≤ w_0  \]
+
+The wealth not consumed in the first period will be denoted by $\omega_0$, so that $\omega_0$ = $w_0$ - $c_0$. The budget constraint then is $pa ≤ w_0$.
+
+Imagine an asset has negative payoff. What should we do? A practical way this is accomplished in the market is for the short seller to borrow this asset at time 0 from another investor and then sell it. This is called a short sale since the seller of the asset is ‘short’ it, i.e., the seller has borrowed it and owes it back to a lender.
+
+The vector **a** is a quantity, but it is often convenient to redefine the variable quantities of the portfolio problem in terms of how much of current wealth ($w_0$) is invested in each asset. The proportion of current wealth (not consumed) and invested in asset *i* is given by:
+
+$\alpha_i$ = $\frac{\rho_i a_i}{\omega_0}$
+
+Given that the investor has two possibilities: consume or invest; the inequality in the budget constraint is an equality and the proportions must sum to 1:
+
+\[ \sum \alpha_i = \alpha e = 1   \]
+
+**Portfolio**: is an n-vector whose entries, represented by $\alpha_j$, sum to one:
+
+\[ \sum \alpha_j = 1 \]
+
+But not all elements have to be ≥ 0. When time passes and we arrive at time = 1, the wealth of the investor will depend on **which state has happened**. At time 1, the payoff in state of nature θi from holding aj units of stock j is given by: $a_j x_{ij}$. The total payoff or wealth in state $\theta_i$ is given by:
+
+\[ w_1(i) = \sum_j a_j x_{ij} \]
+
+Thus, the vector of wealth payoffs at time 1 in state $\theta_i$ is given by
+
+\[ w_1 = \{ w_1(i) = X_a\} \]
+
+Different portfolio choices, $\alpha$, and current consumption choices, $c_0$, will result in different terminal wealth vectors, $w_1$.
+
+#### **The Two State, Two Asset (Binomial) Example**
+
+Given m(states) = 2 and n(assets) = 2. Given the two future states $w_1(1)$ and $w_1(2)$. 
+
+The original form of budget constraint is $p_1 a_1 + p_2 a_2 = \omega_0$ and given this BC, the set of possible payoffs is the set:
+
+\[ w_1(i) = a_1X_{i1} + a_2X_{i2} \]
+
+Which is the line in the figure that goes through the two points where there is only investment in each of the assets.
+
+```{r, echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("20.png")
+grid.raster(img)
+```
+
+If the agent only buys asset 1:
+
+\[ \{ (\frac{\omega_0}{p_1})X_{11},(\frac{\omega_0}{p_1})X_{21}\} = \omega_0 \{ R_{11},R_{21} \}  \]
+
+Because $R = XP^{-1}$ (X is the payoff in state i of asset j). If the investor only buys asset 2:
+
+\[ \{ (\frac{\omega_0}{p_2})X_{12},(\frac{\omega_0}{p_2})X_{22}\} = \omega_0 \{ R_{12},R_{22} \}  \]
+
+About short-selling: on the **budget line** between the two points the wealth is divided between them.  On the budget line to the left of the first asset, though, the investment in the first asset exceeds $\omega_0$ and the additional wealth comes from short selling the second asset.  By having the budget line end at the two axes we are allowing short sales but not to such an extent that they risk bankruptcy.
+
+“the investor is free to purchase any portfolio so long as it satisfies the budget constraint” by appending the additional constraint that wealth be non-negative in every state. Thus, the feasible, F, set of choices for the investor has the form:
+
+\[ F = \{a|pa ≤ \omega, X_a ≥ 0\} \]
+
+#### **The investor's problem**
+
+
+Suppose that there is some investor who actually does have an optimal portfolio and consumption choice. Label these choices <$\alpha^*, c^*$>. Since they are optimal, they can't be improved. Since they must be feasible, they satisfy the budget constraint:
+
+\[ c^* + pa^* = w_0 \]
+
+or
+
+\[ pa^* = \omega_0 ^* \equiv w_0 - c^*\]
+
+Now consider any proposed improvement on the portfolio portion of this position. Such an improvement would be an *n* vector of holdings, $\eta$, such that the altered position is feasible:
+
+\[ p(a* + \eta) ≤ \omega_0 ^* \]
+
+or 
+
+\[ \rho \eta ≤ 0 \]
+
+Any portfolio/position that satifies the above constraint, that is, **uses no wealth**, is said to be **self-financing**. 
+
+**Arbitrage portfolio**: is an *n* vector $\eta$, such that:
+
+\[  \rho \eta = 0 (it costs nothing to buy) \]
+
+As a consequence of the change, $\eta$, the wealth vector at time 1, $w_1$ has been altered to
+
+\[ w_1 + X\eta \]
+
+We do know that $\eta$ can't be an improvement on $a^*$. That implies that $\eta$ cannot increase wealth in any state of nature unless it 
+lowers wealth in at least one other state. If the arbitrage portfolio $\eta$ costs nothing or a negative amount today: $\rho \eta ≤ 0$.
+
+### **Options, Derivatives and Other Financial Instruments**
+
+**Call Option**: gives the holder the **right**, but not the obligation, to purchase the security for a stated amount, **K**, the **exercise/strike** price at some time in the future called the **maturity**. Since it gives the holder the right to purchase the security for K, if the price of the security at the time of exercise, X, is greater than the strike price, K, the holder will exercise the option, i.e., buy the security for K and sell it for X. The difference, then, X - K, is the value of the option. Since this is a right and not an obligation, if X < K, holders will not exercise their right of purchase and the option will expire without being exercised. Thus, the formula for the payoff on a call option at maturity is:
+
+\[ C(X:K) = max[X-K,0] = [X - K]^+ \]
+
+This payoff can be seen in the following picture: 
+
+```{r, echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("21.png")
+grid.raster(img)
+```
+
+**Put options**: gives the holder the right, but not the obligation, to sell the security for a stated amount, K, the **exercise price** or **strike price** at some time in the future called the **maturity**.
+
+If the value of the security at maturity, X, falls short of the exercise price, then the holder will exercise the put, purchasing the security for its market price of X and selling it to the **writer**. This results in a profit at maturity of K - X. The **payoff of a put option at maturity** is:
+
+\[ P(X;K) = max[K - X,0] = [K - X]^+ \]
+
+While the holder of an option has the right to exercise it, the seller or writer of the option has an obligation. In practice, most options are settled in cash, which means that rather than buying or selling the security, the **cash value of the option** at maturity, say $[X - K]^+$ for a call, is **paid by the writer to the holder**.
+
+```{r, echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("22.png")
+grid.raster(img)
+```
+
+**In the money**: call: X > K; put: K > X.
+
+**Out of the money**: call: X < K; put K < X.
+
+**At the money**: X $\equiv$ K.
+
+**Put** and **call** options are examples of **derivatives**: a type of security whose value depends on the value of another security, called the **primitive** or **underlying security**. 
+
+### **Combining Options**
+
+A **forward** or a **future** contract commits the long (the ‘buyer’) to the purchase of
+a specified quantity of some good or asset at a specified price, the futures or forward price and at
+some fixed future date, the maturity, and commits the short (the ‘seller’) to the sale of that good or
+asset. The difference to an option is that both parties are **committed** to doing the trade. The equilibrium is reached by adjusting the forward or future price. This price means that the forward price must be set so that the value of the contract today is zero.
+
+\[ S_1 - F_1 \]
+
+\[ Value \, of \, forward \, contract = (\frac{1}{1+r})E^* [S_1 - F_1] = 0 \]
+
+\[ \implies E^*[S_1] = E^*[F_1] = F_1 = S_0(1+r) \]
+
+\[ F_1 = E^*[S_1] \]
+
+Forward contracts settle as we have described them, at the end of the period. Futures contracts, on the other hand, mark to market, which means that they must settle with a cash payment every day and, sometimes, even intraday. By settling we mean that each day money changes hands as the futures price changes with changing expectations about the future value of the contract. If tomorrow’s futures price is higher than today’s, then the short must give the difference to the long and if it is lower the long must pay the difference to the short. By this settling process, the value of the contract is continuously kept at zero. A forward contract, by contrast, is only settled at maturity and if the final price, $S^1$.
+
+#### **Put-Call Parity**
+
+A riskless bond that pays K for sure plus a call with an exercise price of K on an asset is equivalent to or replicated by a put with an exercise price of K and a holding of the underlying asset:
+
+\[ \frac{K}{1+r} + C(S_o,K) = S_o + P(S_0,K) \]
+
+Where $S_0$ is the current price of the asset and *r* is the riskless rate.
+
+
+
+
+
+
+
+
+

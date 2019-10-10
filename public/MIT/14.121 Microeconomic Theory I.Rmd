@@ -1127,7 +1127,25 @@ where the ($l$,k)th entry is
 
 \[ s_{lk}(p,w) = \frac{\partial x_l (p,w)}{\partial p_k} + \frac{\partial x_l(p,w)}{\partial w} x_k(p,w) \]
 
+That's how we arrive at the term that measures the differential change in the consumption of commodity $l$ due to a differential change in the price of commodity $k$ when wealth is adjusted so that the consumer can still just afford his original consumption bundle: $s_{lk}(p,w)$. This is summarized in Proposition 2F2:
+
+If a differentiable Walrasian demand function x(p,w) satisfies Walras' Law, Homogeneity of degree zero and the weak axiom, then at any (p,w) the Slutsky matrix S(p,w) satisfies v S(p,w)v ≤ 0 $\forall$ v $\in$ $\mathbb{R}^L$.
+
+Given that the substitution effect of good *l* with respect to its own price is always nonpositive. A matrix that satisfies this is called **negative semi-definite** (see appendix MD). S(p,w) being negative semi-definite implies that $s_{ll}(p,w)≤0$.
+
+Lastly, Proposition 2.F.3. states that: when the Walrasian demand function x(p,w) is differentiable, homogeneous of degree 0 and satisfies Walras' Law, then p S(p,w) = 0 and S(p,w)p = 0 $\forall$(p,w). This proposition implies that S(p,w) is always singular $\implies$ the negative semidefiniteness can't be extended to negative definiteness.
+
+**Summarizing 2F:**
+
+i) The consistency requirement of WARP is equivalent to the compensated law of demand.
+
+ii) The compensated law of demand, in turn, implies negative semidefiniteness of the substitution matrix S(p,w).
+
+iii) These assumptions do not imply symmetry of S(p,w), except when L = 2.
+
 ### **Chapter 3 - Classical Demand Theory**
+
+#### **Chapter 3**
 
 Preference-based approach to consumer demand:
 
@@ -1151,11 +1169,267 @@ J) Strong axiom of revealed preference.
 
 #### 3.B) Preference Relations: Basic Properties
 
+We start by specifying the consumer's preferences given the bundles in the consumption set X $\subset$ $\mathbb{R}_+^L$. We assume that the consumer's preferences are captured by $\succeq$ that is rational (i.e. complete and transitive). We use another two assumptions about preferences:
+
+**i) Desirability**: larger amounts $\succeq$ smaller amounts. It is called **monotone** if x $\in$ X and y $\gg$ x implies that y $\succeq$ x. It is **strongly monotone** y $\gg$ x and y ≠ x. This implies that we are talking about "goods" rather than "bads". 
+
+**Definition 3B3**: the preference relation $\succeq$ on X is **locally nonsatiated** if $\forall$ x $\in$ X and every $\varepsilon$ > 0, there is y $\in$ X such that ||y - x|| ≤ $\varepsilon$ and y $\succ$ x. 
+
+**Indifference set** containing point x is the set of all bundles that are indifferent to x, formally it is {y $\in$ X: y ~ x}.
+
+**Upper contour set** of bundle x is the set of all bundles that are at least as good as x:{y $\in$ X: y $\succeq$ x}.
+
+**Lower contour set** of x is the set of all bundles that x is at least as good as {y $\in$ X: x $\succeq$ y}.
+
+**ii) Convexity assumptions**: concerns the trade-offs that the consumer is willing to make. Definition 3B4: the preference relation $\succeq$ on X is *convex* if for every x $\in$ X, the upper contour set {y $\in$ X: y $\succeq$ x} is convex; that is, if y $\succeq$ x and z $\succeq$ x, then $\alpha$y + (1 - $\alpha$)z $\succeq$ x for any $\alpha$ $\in$ [0,1]. 
+
+Convexity is a strong but central hypothesis in economics. It can be interpreted in terms of **diminishing marginal rates of substitution**: with convex preferences from any initial consumption situation x, and for any two commodities, it takes increasingly larger amounts of one commodity to compensate for successive unit losses of the other. Convexity can also be viewed as the formal expression of a basic inclination of economic agents for diversification.  
+
+It is common to focus on preferences for which it is possible to deduce the consumer's entire preference relation from a single indifference set. Two examples are the classes of **homethetic** and **quasilinear** preferences.
+
+**Homothetic**(3B6): a monotone preference relation $\succeq$ on X = $\mathbb{R}_+^L$ is *homothetic* if all indifference sets are related by proportional expansion along rays; that is, if x ~ y, then $\alpha$x ~ $\alpha$y $\forall$ $\alpha$ ≥ 0. 
+
+An illustration of homothetic preferences:
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("15.png")
+ grid.raster(img)
+```
+
+**Quasilinear**(3B7): $\succeq$ on X = ($- \infty,\infty$) $\times$ $\mathbb{R}_+^{L-1}$ is quasilinear with respect to commodity 1(aka the **numeraire** commodity) if:
+
+i) If x ~ y, then (x + $\alpha e_1$) ~ (y + $\alpha e_1$) for $e_1$ = (1,0,...,0) and any $\alpha \in \mathbb{R}$. So, all indifference sets are parallel displacements of each other along the axis of commodity 1.
+
+ii) Good 1 is desirable; that is, x + $\alpha e_1 \succeq x$ $\forall x$ and $\alpha > 0$.
+
+An illustration of homothetic preference relation:
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("14.png")
+ grid.raster(img)
+```
+
+As we can see, how much we consume of $x_1$ and $x_2$ have a different impact on the utility function. The more $x_1$, the better. 
+
 #### 3.C) Preference and Utility
+
+It is helpful to summarize the consumer's behavior using a utility function. When can this be done? We begin by introducing the continuity assumption.
+
+**Lexicographic Preference Relation**: assume that X = $\mathbb{R}_+^2$. Given two commodities, the first one has the highest priority in determining the preference order. So, if x $\succeq$ y, then either $x_1 > y_1$ or $x_1 = y_1$ and $x_2 ≥ y_2$. This remembers how the dictionary works. A word beginning with "A" always comes before one that starts with "B", but if both words begin with "A", we turn to the second letter in order to figure out which is ordered first. This preference relation is **not continuous**.
+
+**Continuous Preference Relation**(3C1): in order for a utility function to exist, it has to be **continuous**. Continuity implies that **the consumer's preferences cannot exhibit "jumps"**. Formally, $\succeq$ on X is *continuous* if it is preserved under limits. That is, for any sequence of pairs {($x^n,y^n$)}$_{n=1}^\infty$ with $x^n \succeq y^n$ $\forall n$, x = $lim_{n \rightarrow \infty} x^n$ and y = $lim_{n \rightarrow \infty} y^n$ we have x $\succeq$ y. 
+
+**Continuity of Preference Relation implies Continuity of Utility Function**(3C1): continuity of $\succeq$ is sufficient for the existence of a utility function representation. Pf:
+
+But the utility function is not unique: any strictly increasing transformation of u(.), say v(x) = f(u(x)), where f(.) is a strictly increasing function, also represents $\succeq$. Proposition 3C1 tells us that if $\succeq$ is continuous, there exists some continuous utility function representing $\succeq$. It is possible for continuous preferences not to be representable by a differentiable utility function, for ex: the Leontief preferences. 
+
+Some properties of preferences($\succeq$) can be translated to utility functions(u(.)). For example: **restrictions** on preferences translate into restrictions on the form of utility functions. The property of monotonicity, for example, implies that the utility function is increasing: u(x) > u(y) if x $\gg$ y.
+
+**Quasiconcavity**: a utility function u(.) is quasiconcave if the set ${u \in \mathbb{R}_+^L : u(y) ≥ u(x) }$ is convex $\forall$ x or, if $u(\alpha x + (1 - \alpha)y)$ ≥ Min${u(x), u(y)}$ $\forall x,y$ and $\forall \alpha \in [0,1]$. So, the property of convexity of preferences implies that u(.) is quasiconcave. u(.) is quasiconcave if the set {y $\in$ $\mathbb{R}_+^L$: u(y) ≥ u(x)} is convex for all x or, equivalently, if u($\alpha$x + (1 - $\alpha$)y) ≥ Min{u(x),u(y)} for any x,y and all $\alpha \in$ [0,1].
+
+Monotonicity and convexity of $\succeq$ imply that all utility functions of $\succeq$ are increasing and quasiconcave.  
 
 #### 3.D) Utility Maximization Problem
 
+We assume throughout that the consumer has a rational, continuous and locally nonsatiated preference relation, and we take u(x) to be a continuous utility function representing these preferences. The consumption set is X = $\mathbb{R}^L_+$. The consumer problem is choosing the most preferred bundle given prices p $\gg$ 0 and wealth w > 0, which can now be stated as the *Utility Maximization Problem*(UMP):
+
+\[  Max_{x≥0}u(x) s.t. px ≤ w \]
+
+In the UMP, the consumer chooses a consumption bundle in the Walrasian budget set $B_{p,w}$ {$x \in \mathbb{R}^L_+ : px ≤ w$} to maximize her utility. 
+
+**UMP has a solution**: if p $\gg$ 0 and u(.) is continuous, then the utility maximization problem has a solution. 
+
+Proof: given that the budget set $B_{p,w}$ = {$x \in \mathbb{R}^L_+: px ≤ w$} is a **compact set** because it is both **bounded** and **closed**. Since a **continuous function always has a maximum value on any compact set**, the utility maximization problem has a solution. Given the illustration below, you can have more than one solution:
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("16.png")
+ grid.raster(img)
+```
+
+Given that **every utility function has a solution**, we turn to two problems that emerge from the UMP:
+
+1) The consumer's set of optimal consumption bundles (the solution of the UMP).
+
+2) The consumer's maximal utility value (the value function of the UMP).
+
+##### **Walrasian Demand Correspondence**:
+
+**Walrasian Demand Correspondence**: is the set of optimal consumption vectors in the UMP, denoted by x(p,w) $\in \mathbb{R}_+^L$. x(p,w) can represent a point or have more than one element, as the figure above illustrates. When it is single valued for all (p,w), we refer to it as the **Walrasian demand function**. If u(.) is a continuous utility function, representing a LNS preference relation $\succeq$ defined on the consumption set X = $\mathbb{R}^L_+$, then it has the following properties:
+
+i) **Homogeneity of degree zero** in (p,w): x($\alpha$p, $\alpha$w) = x(p,w) $\forall$p,w, and scalar $\alpha$ > 0.
+
+ii) **Walras' Law**: px = w $\forall$ x $\in$ x(p,w). Total consumption!
+
+iii) **Convexity/uniqueness**: if $\succeq$ is convex, so that u(.) is quasiconcave, then x(p,w) is a convex set. Moreover, if $\succeq$ is **strictly convex**, so that u(.) is **strictly quasiconcave**, then **x(p,w) consists of a single element**. 
+
+See book(pg 52) for Proof of the three properties. 
+
+**Kuhn-Tucker conditions**: if there is a x$\ast$ $\in$ x(p,w) as a solution to the UMP, then there exists a *Lagrange Multiplier* ≥ 0 s.t. $\forall$ l = 1,...,L:
+
+\[ \frac{\partial u(x*)}{\partial c_l} ≤ \lambda p_l   \]
+
+with equality if $x^*_l$ >0.
+
+The gradient vector of u(.) at x is denoted by $\triangledown$u(x) = [$\frac{\partial u(x)}{\partial x_1},...,\frac{\partial u(x)}{\partial x_L}$]. So the above equation could be writen in matrix notation as
+
+\[ \triangledown u(x^{\ast}) ≤ \lambda p\]
+
+and
+
+\[ x^{\ast}[\triangledown u(x^{\ast})- \lambda p] = 0 \]
+
+Thus, if we are at an interior optimum(x $\gg$ 0), we must have
+
+\[ \triangledown u(x^{*}) = \lambda p  \]
+
+This tells us that an interior optimum, the gradient vector of the consumer's utility function $\triangledown$u(x) must be proportional to the price vector *p*. If $\triangledown$u($x^{*}$) $\gg$ 0, this is equivalent to the requirement that for any two goods *l* and *k* we have
+
+\[ \frac{\partial u(x^*)/\partial x_l}{\partial u(x^*)/ \partial x_k} = \frac{p_l}{p_k}    \]
+
+The **marginal rate of substitution** of good *l* for good *k* at $x^*$($MRS_{lk}(x^*)$) is the left side of the equation above. It tells us the amount of good *k* that the consumer must be given to compensate her for a one-unit marginal reduction in her consumption of good *l*.
+
+The $\lambda$ is the **consumer's marginal utility of wealth**. It equals the consumer's marginal utility value of wealth at the optimum. To see this, consider for simplicity the case where x(p,w) is a differentiable function and x(p,w) $\gg$ 0. The change in utility from a marginal increase in *w* is given by $\triangledown$u(x(p,w)) $\circ$ $D_w$x(p,w), where $D_w$x(p,w) = [$\frac{\partial x_1(p,w)}{\partial w},...,\frac{\partial x_L (p,w)}{\partial w}$]. Substituting for $\triangledown$u(x(p,w)) from previous equations, we get:
+
+$\triangledown$u(x(p,w)) $\circ$ $D_w x(p,w)$ = $\lambda p$ $D_w x(p,w)$ = $\lambda$
+
+This holds because px(p,w) = w $\forall$ w (Walras' Law), and therefore p$\circ$ $D_wx(p,w)$ = 1.
+
+Ex 3D1: **The Demand Function Derived from the Cobb-Douglas Utility Function**: A CD for L=2 is given by u($x_1,x_2$) = $kx_1^\alpha x_2^{1-\alpha}$ for some $\alpha \in (0,1)$ and k > 0. It is increasing at all ($x_1,x_2$) $\gg$ 0 and is homogeneous of degree one. It is easier to use the increasing linear transformation $\alpha ln x_1 + (1 - \alpha)ln x_2$ as the utility function. 
+
+\[ Max_{x_1,x_2} \alpha ln x_1 + (1 - \alpha)ln x_2 \]
+
+s.t. $p_1x_1 + p_2x_2$ = w. 
+
+Since ln 0 = -$\infty$, the optimal choice ($x_1(p,w)$), ($x_2(p,w)$) is strictly positive and must satisfy the first-order conditions(we write the consumption levels simply as $x_1,x_2$):
+
+\[ \frac{\alpha}{x_1} = \lambda p_1 \]
+
+\[ \frac{1 - \alpha}{x_2} = \lambda p_2 \]
+
+For some $\lambda$ ≥ 0, and the budget constraint px(p,w) = w.
+
+\[ p_1x_1 = \frac{\alpha}{1 - \alpha}p_2x_2 \]
+
+or
+
+\[ p_1x_1 = \frac{\alpha}{1 - \alpha}(w - p_1x_1) \]
+
+Hence: 
+
+\[ x_1(p,w) = \frac{(1 - \alpha)w}{p_2} \]
+
+In the CD utility function, the expenditure on each commodity is a constant fraction of wealth for any price vector *p*.
+
+##### **Indirect Utility Function** 
+
+**Indirect Utility Function**: is an analytical tool that assesses for each value (p,w) $\gg$ 0, the utility value of the UMP is denoted v(p,w) $\in \mathbb{R}$. It is equal to u($x^*$) $\forall$ $x^* \in x(p,w)$. 
+
+Suppose tht u(.) is a continuous utility function representing a LNS preference relation $\succeq$ defined on the consumption set X = $\mathbb{R}^L_+$. The indirect utility function is:
+
+i) Homogeneous of degree zero.
+
+ii) Strictly increasing in *w* and nonincreasing in $p_l$ for any $l$.
+
+iii) Quasiconvex: the set {(p,w): v(p,w) ≤ $\hat{v}$} is convex $\forall \hat{v}$.
+
+iv) Continuous in *p* and *w*.
+
 #### 3.E) Expenditure Minimization Problem
+
+This section studies the EMP for p $\gg$ 0 and u > u(0): 
+
+\[ Min_{x ≥ 0}\, p x |  u(x) ≥ u \]
+
+The **EMP computes the minimal level of wealth required to reach utility level u**. It is the dual problem to the UMP.  
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("17.png")
+ grid.raster(img)
+```
+
+The consumption bundle x* is the least costly bundle that still allows the consumer to achieve u. Graphwise, is the point in the set {x $\in$ $\mathbb{R}^L_+$: u(x) ≥ u}. 
+
+**EMP properties**: given that u(.) is a continuous utility function representing a LNS $\succeq$ defined on the consumption set X = $\mathbb{R}_+^L$ and that the price vector is p $\gg$ 0, then:
+
+i) If x\* is optimal in the UMP when wealth is w > 0, then x\* is optimal in the EMP when the required utility level is u(x\*) and the minimized expenditure level in this EMP is exactly w.
+
+ii) If x\* is optimal in the EMP when the required utility level is u > u(0), then x\* is optimal in the UMP when wealth is px\* and the maximized utility level is u.
+
+We now proceed to study the optimal consumption vector and the value function of the EMP. We consider the value function first.
+
+##### **The Expenditure Function**
+
+The **Expenditure Function** is given by e(p,u). It is assumed: *a)* prices p $\gg$ 0; *b)* required utility level u > u(0); *c)* u(.) is a continuous utility function representing a LNS defined on the consumption set X = $\mathbb{R}^L_+$. Its value for any (p,u) is simply px\*, where x\* is any solution to the EMP. The basic properties of the EF are:
+
+i) Homogeneous of degree one in *p*.
+
+ii) Strictly increasing in *u* and nondecreasing in $p_l$ for any $l$.
+
+iii) Concave in p.
+
+iv) Continuous in *p* and *u*.
+
+Connecting the expenditure function and the indirect utility function: $\forall$ p $\gg$ 0, w > 0 and u > u(0), we have
+
+\[ e(p,v(p,w)) = w \, and \, v(p,e(p,u)) = u \]
+
+These conditions imply that for a fixed price vector $\tilde{p}$, $\e(\tilde{p},.)$ and $v(\tilde{p},i)$ are inverses to one another. 
+
+##### **The Hicksian(Compensated) Demand Function**
+
+The set of **optimal commodity vectors in the EMP is denoted h(p,u)** $\subset$ $\mathbb{R}_+^L$, and is known as the **Hicksian(compensated) demand correspondence(function if single valued)**. 
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("18.png")
+ grid.raster(img)
+```
+
+The Hicksian parallels the Walrasian demand. Given that u(.) is a continuous utility function representing a LNS preference relation $\succeq$ defined on the consumption set X = $\mathbb{R}^L_+$. Then, for any p $\gg$ 0, the Hicksian demand correspondence h(p,u) has the following properties: 
+
+i) Homogeneity of degree zero in p: h($\alpha$p,u) = h(p,u) $\forall$ p,u and $\alpha$ > 0.
+
+ii) **No excess utility**: for any x $\in$ h(p,u), u(x) = u.
+
+iii) **Convexity/uniqueness**: if $\succeq$ is convex, then h(p,u) is a convex set; and if $\succeq$ is strictly convex, so that u(.) is strictly quasiconcave, then there is a unique element in h(p,u).
+
+Just as in the UMP the **optimal consumption bundle in the EMP can be characterized using first-order conditions**. Using proposition 3E1 we can relate the Hicksian and Walrasian demand correspondences as follows: 
+
+\[ h(p,u) = x(p,e(p,u)) \, and \, x(p,w) = h(p,v(p,w))  \]
+
+**Compensated demand correspondence**: as prices vary, h(p,u) gives precisely the level of demand that would arise if the consummer's wealth ere simultaneously adjusted to keep her utility level at u. This is known as the **Hicksian Wealth Compensation**. Let's illustrate:
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("19.png")
+ grid.raster(img)
+```
+
+Starting fromm the the price-wealth pair (p,w), prices change to p', where $p_1'$ = $p_1$ and $p_2'$ > $p_2$. The Hicksian wealth compensation is the amount $\Delta w_{Hicks}$ = e(p',u) - w. Thus, the demand function h(p,u) keeps the consumer's utility level fixed as prices change, in contrast with the Walrasian demand function, which keeps money wealth fixed but allows utility to vary. 
+
+##### **Hicksian Demand and the Compensated Law of Demand**
+
+An important property of Hicksian demand is that it satisfies the **compensated law of demand**: Demand and Price Move in **opposite directions** for price changes that are accompanied by Hicksian wealth compensation. Given u(.) CUF representing a LNS $\succeq$ and that h(p,u) consists of a **single element** $\forall$ p $\gg$ 0. Then the Hicksian demand function h(p,u) satisfies the compensated law of demand: for all p' and p'':
+
+(p'' - p')[h(p'',u)-f(p',u)] ≤ 0.
+
+For more, see Proof and Cobb-Douglas example.
 
 #### 3.F) Duality: A Mathematical Introduction
 
@@ -1169,7 +1443,20 @@ J) Strong axiom of revealed preference.
 
 
 ### **Chapter 4 - Aggregate Demand**
-## **Krebs Takeaways**{.tabset}
+
+#### **Chapter 4**
+
+Extends the theory of chapters 1-3 to **aggregate demand**. 3 questions about aggregate demand:
+
+1) When can aggregate demand be expressed as a function of prices and aggregate wealth?
+(of interest to the econometrician)
+2) When does aggregate demand satisfy the weak axiom?
+
+3) When does aggregate demand have welfare significance?
+
+#
+
+# **Krebs Takeaways**{.tabset}
 
 ### 1
 

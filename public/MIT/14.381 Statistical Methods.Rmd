@@ -430,3 +430,33 @@ Useful website [**1**](https://towardsdatascience.com/why-sample-variance-is-div
 [**Midterm 2018 Solutions**](https://gabrielvoelcker.netlify.com/mit/midterm_exam_fall12_solutions.pdf)
 
 
+
+## **Statistical Inference**{.tabset}
+
+### **5 - Properties of a Random Sample**
+
+#### 5.1 Basic Concepts of Random Samples
+
+**Random Sample**: the random variables $X_1,\dots,X_n$ are a random sample with size *n* from a population f(x) if they are mutually independent random variables and the marginal pdf or pmf of each $X_i$ is the same function f(x). They can also be called i.i.d. variables. The variable of interest has a probability distribution described by *f(x)*. If only one observation X is made, then probabilities for X can be calculated using f(x). However, in most experiments there are n > 1 repeated observations. Each $X_i$ is an observation on the same variable and each $X_i$ has a marginal distribution given by f(x). The joint pdf/pmf of $X_1,\dots,X_n$ is given by:
+
+\[ f(x_1,\dots,x_n) = f(x_1)f(x_2)\dots f(x_n) = \prod_{i = 1}^{n} f(x_i) \]
+
+This joint pdf can be used to calculate probabilities involving the sample. If the population pdf is a member of a parametric family, with pdf given by f(x | $\theta$), then the joint pdf is
+
+\[ f(x_1,\dots,x_n|\theta) \prod_{i = 1}^{n} f(x_i| \theta) \]
+
+Where the same parameter value $\theta$ is used in each of the terms. Sometimes the true parameter value is unknown, and considering different possible values of $\theta$, we can study how a random sample would behave for different conditions. 
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
