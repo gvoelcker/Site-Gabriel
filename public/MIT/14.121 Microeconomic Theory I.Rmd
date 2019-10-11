@@ -4,6 +4,81 @@ output: html_document
 
 # 14.121 - Microeconomic Theory I{.tabset}
 
+## **Backbone of the course**
+
+14.121 is structured in 7 Lectures. 
+
+1) The first lecture deals with **utility** and **revealed preferences**. This is useful for modelling how individuals make decisions. We use a **utility function** to model the preferences of a consumer. This utility implies that preferences are complete, reflexive and transitive. **Revealed preferences** are the choices a consumer makes when confronted with different bundles. If x is chosen when y could have been chosen, then x is **directly revealed preferred** to y. 
+
+2) Having constructed these basic notions we advance to **Demand Theory**, our second lecture. We assume that the consumer is trying to **maximize his utility**. In order to do that, he defines his **budget set** given his wealth, and then we use this information to assess his **Utility Maximization Problem**. Knowing what his demand will be, we can figure out what his **Walrasian Demand Correspondence** is. From this information we derive elasticities and other interesting information about the UMP. Then we advance to the **indirect utility functions**, that maximize the utility given certain prices and wealth. On the other side of all we've seen in this lecture so far, we've got the **Expenditure Minimization Problem(EMP)**. As the name implies, this problem seeks to find the minimum a consumer can spend in order to achieve a certain level of utility. Just as we have the Walrasian Demand Correspondence for the UMP, for the EMP we have the **Hicksian Demand Correspondence**. We advance some concepts and find out some (obvious) ideas like when prices go up, demand for the product goes down. Then we advance to some technical stuff like Slutsky's matrix and Roy's Identity.
+
+3) On our third lecture we will put consumer to work by tackling how it deals with 7 main ideas:
+
+    i) Price changes and welfare: when prices changes, what happens to the welfare of people? If the utility lowers $\rightarrow$ the consumer is worse off. But how do we **measure welfare**? There are 2 main ways: 1) **Equivalent Variation**(EV): how much money would compensate the change in utility?; 2) **Compensating Variation(CV)**: given that the prices have changed, how much the consumer would need to be paid to be as well off?
+    
+    ii) Welfare from new goods: what happens if a new good comes in or an old one is gone? 3 scenarios: 1) no income effects on demand; 2) Non-parametrically go from Marshallian to Hicksian; 3) Convert from Marshallian to Hicksian via functional form assumption. 
+    
+    iii) Price indexes: is an important measure of welfare change. Two most common: 1) **Laspeyres**: holds consumption from the first period; 2) **Paasche**: holds consumption from the second period.
+    
+    iv) Choosing functional forms: we choose simples functions! 1) **Restrict preferences**: maes the demand within a group of goods to be independent of prices outside of that group; 2) **Restrict price movements**: assumes that the prices within a group move proportionally. 
+    
+    v) Integrability: allows us to make sure the consumer demand corresponds to a particular utility maximization.
+    
+    vi) Estimating demand: there are two main ways to estimate demand: 1) **Products as primitives**: Audi ≠ Toyota ≠ Honda; 2) **Characteristics as primitives**: size ≠ horse power. This goes deep, please see the lecture notes below.
+    
+    vii) Demand aggregation: we're not talking about a single consumer anymore, but about the aggregate demand. This is when the **representative consumer** comes into play. When aggregate demand is independent of the wealth distribution, we can use the **Gorman Form**.
+    
+4) After three lectures looking into the consumer's side, let's turn our attention to the Producer. Analogously to the consumer, the firm faces the **Profit Maximization Problem** and the **Cost Minimization Problem**. We get a grasp of the main concepts regarding the firm's side. The **production set** is the set of all possible production activities a firm can undertake. The **Marginal Rate of Transformation** calculates how much more of a good L you can produce when you produce one less unit of product K. The **Marginal Rate of Substitution** calculates how much more of a good K you need to maintain the level of output given that you are producing one less unit of good L. Then we approach subjects like **Increasing Differences** and **Supermodularity**. The fun part is that there are some applications to producer theory. For example: 1) How does the capital choice relate to prices in cost minimization problems? 2) What are the cross price effects in the PMP? When are goods substitutes? When are they complements? Going forward, we also study the **Cobb-Douglas function**. Also, we address Statics(please see more below). One (maybe) assumption we make is that prices are uncorrelated to the quantity produced. Let's change to a **monopolistic** setting in which this is not true. How can we correlate this to the **Law of Supply**? $\rightarrow$ quantitites respond in the same direction as price changes. 
+
+5) We've studied so far the two sides of the market: Supply(Producer) and Demand(Consumer). Now let's look to the outsiders: Externalities. This happens when the well-being of a consumer/producer is affected directly by another agent in the economy. When these are present, **market failures** may arise and we will need government intervention. The lecture is separated in 4 parts:
+
+    1) Simple Model of Externalities: two-agents, the first plays music loud and disturbs the second. How do we allocate their indirect utilities in order to maximize them, given that one interferes with the other? Let's think this from a **Pareto Optimal** perspective: how can we allocate things such that no agent can be better off without hurting the other? The PO maximize the joint surplus of both consumers, which doesn't mean that the externality is eliminated $\implies$ the benefit of an extra unit of the externality to agent 1 is equal to the cost of an extra unit of it to agent 2. What if the way to restore efficiency is through **government intervention**? This can be done through a **quota** or a **tax**(👎). [**Coase**](https://en.wikipedia.org/wiki/Ronald_Coase) pointed how an externality arose from two factors: 1) lack of clearly specified property rights; 2) transaction costs. This was stated in the following theorem: if property rights are clearly specified and there are no transaction costs, bargaining will lead to an efficient outcome no matter how the rights are allocated. However, we have the [**Anti-Coase Theorem**](https://en.wikipedia.org/wiki/Myerson%E2%80%93Satterthwaite_theorem), proposed by [**Myerson**](https://en.wikipedia.org/wiki/Roger_Myerson)-[**Satterthwaite**](https://en.wikipedia.org/wiki/Mark_Satterthwaite): *no bargaining procedure can lead to an efficient outcome for all values of b and s when they are private information and independently distributed*.
+    
+    
+    2) 
+    
+    
+    3) 
+    
+    
+    4) 
+
+
+
+6) 
+
+
+
+7) 
+
+
+### **1) Utility And Revealed Preferences**
+
+
+
+### **2) Demand Theory**
+
+Having constructed these basic notions we advance to **Demand Theory**, our second lecture. We assume that the consumer is trying to **maximize his utility**. In order to do that, he defines his **budget set** $B_{p,w}$ given his wealth **w**. 
+
+So the problem can be stated as:
+
+\[ max_{x \in B_{p,w}} u(x) \]
+
+**Marshallian Demand Function(Walrasian Demand Correspondence)**: what which consumer would buy in each price and wealth circumstance: **x(p,w)** = $\{z \in B_{p,w} | u(z) = max_{x \in B_{p,w}} u(x) \}$. 
+
+### **3) Putting Consumer Theory to Work**
+
+### **4) Producer Theory and Monopoly**
+
+### **5) Externalities**
+
+### **6) Introduction to General Equilibrium**
+
+### **7) General Equilibrium Existence and Other Properties**
+
+
+
+
 ## **1) Utility and Revealed Preferences**
 
 Materials: [**class**](https://gabrielvoelcker.netlify.com/mit/14.121lecture1.pdf), [**recitation**](https://gabrielvoelcker.netlify.com/mit/recitation1_debreu.pdf) and [**Debreu's Proof**](https://gabrielvoelcker.netlify.com/mit/debreu_continuityproof.pdf).
@@ -726,7 +801,7 @@ Two approaches:
 
 ### 7) Demand aggregation
 
-
+This is when **Chapter 4** starts.
 
 
 
