@@ -679,7 +679,9 @@ or
 
 \[ F(x_1,y_2) - F(y_1,y_2) ≥ F(x_1,x_2) - F(y_1,x_2) \]
 
-The change($\Delta$) from increasing first argument from $y_1$ to $x_1$ can only go up when the second argument goes up from $x_2$ to $y_2$. For more on this, see [**Problem Set 4, Question 4**](https://gabrielvoelcker.netlify.com/mit/14121.ps4_2019.pdf)(answer [**here**](https://gabrielvoelcker.netlify.com/mit/14.121 ps4sol_2018.pdf)).
+The change($\Delta$) from increasing first argument from $y_1$ to $x_1$ can only go up when the second argument goes up from $x_2$ to $y_2$. From all we've discussed thus far, we can say that **Increasing Differences imply Supermodularity**.
+
+Roll up your sleeves and let's work this on [**Problem Set 4, Question 4**](https://gabrielvoelcker.netlify.com/mit/14121.ps4_2019.pdf)!( Don't despair, the answer is [**here**](https://gabrielvoelcker.netlify.com/mit/14.121 ps4sol_2018.pdf)).
 
 [**Theorem Topkis' Monotonicity Theorem**](https://en.wikipedia.org/wiki/Topkis%27s_theorem): The theorem allows researchers to understand how the optimal value for a choice variable changes when a feature of the environment changes. The result states that if f is supermodular in (x,$\theta$), and D is a lattice, then $x^\ast (\theta)$ = arg $max_{x \in D}$ f(x,$\theta$) is nondecreasing in $\theta$. The result is especially helpful for establishing comparative static results when the objective function is **not differentiable**.
 
@@ -733,406 +735,387 @@ But now, both variables are chosen simultaneously, there is no holding the other
 
 The definiton used in the slides for **sublattice** is very intuitive: when X $\subset \mathbb{R}^2$, this property means that if you take two non-ordered corners of a rectangle whose edges are parallel to the axes in X, then the other two corners are also in X. More generally, a sublattice is a subset of a lattice(shocking!). Example: any product set X = $X_1 \times \dots \times X_n$.
 
+Given that we've arrived not following 100\% chronologically the lecture slides order, I now intend to turn to slide 28/44 and move forward knowing that we've stated that **ID $\implies$ supermodularity**. Now that we're dealing with multivariate analysis, we can state a broader notion of Topkis' theorem, the multivariate one:
 
+If *X* is a sublattice, T $\subset \mathbb{R}$ and F: X $\times$ T $\rightarrow$ $\mathbb{R}$ is supermodular, then $\forall$ t,t' $\in$ T such that t' > t, and all x $\in$ $X^\ast$(t), x' $\in$ $X^\ast$(t'):
 
-**Le Chatelier Principle**: 
+\[ x \wedge x' \in X^\ast (t) \text{ and } x \vee x' \in X^\ast(t')\]
 
-**Monopoly Pricing**: what if q impacts p?
+Ok, but try to translate this equation into words/economics concept. Let me try: the first part of the equation states that the conjunction of all x and x' are contained in t. Their disjunction is in t', remembering that t' > t.(?)
 
-After three lectures looking into the consumer's side, let's turn our attention to the Producer. Analogously to the consumer, the firm faces the **Profit Maximization Problem** and the **Cost Minimization Problem**. We get a grasp of the main concepts regarding the firm's side. The **production set** is the set of all possible production activities a firm can undertake. The **Marginal Rate of Transformation** calculates how much more of a good L you can produce when you produce one less unit of product K. The **Marginal Rate of Substitution** calculates how much more of a good K you need to maintain the level of output given that you are producing one less unit of good L. Then we approach subjects like **Increasing Differences** and **Supermodularity**. The fun part is that there are some applications to producer theory. For example: 1) How does the capital choice relate to prices in cost minimization problems? 2) What are the cross price effects in the PMP? When are goods substitutes? When are they complements? Going forward, we also study the **Cobb-Douglas function**. Also, we address Statics(please see more below). One (maybe) assumption we make is that prices are uncorrelated to the quantity produced. Let's change to a **monopolistic** setting in which this is not true. How can we correlate this to the **Law of Supply**? $\rightarrow$ quantitites respond in the same direction as price changes. 
+**Le Chatelier Principle**: so economics started as a philosophical study(thanks, Adam Smith!) and in the beginning of the XX Century started to lay its foundations as a science. In order to help legitimize economics as a science, this [**guy**](https://en.wikipedia.org/wiki/Paul_Samuelson) decided to use a [**concept of Chemistry**](https://en.wikipedia.org/wiki/Le_Chatelier%27s_principle) in economics. It basically suggests that *a firm's reaction to input price changes is bigger on the longer term than in the short term*. 
 
+This concept is interesting because we model long-term responses as larger than short term responses. Let's think about this in steps when factors are **substitutes**: 1)Start with f(k,l) where inputs are substitutes ($f_{kl}≤0$); 2) If capital(k) is fixed and wage(l) increases, what is natural thing you do if you ran the business? You would use less labor in your production; 3) Since the factors are substitutes, thatn increased wage implies an **increased** use of capital in the long-run; 4) Since $f_{kl}$ ≤ 0, additional capital used in long-run reduces marginal product of labor, so in the long run the firm will eventually use less labor. To sum up: **in the SR the firm only responds to the more expensive labor, in the LR it also responds to the increased capital stock that reduces marginal product of labor**. 
 
+What if the two factors are **complements**, not substitutes? 1) $f_{kl}$ ≥ 0; 2) As $\uparrow$ w, firms use $\downarrow$ l in the SR and LR; 3) The $\Delta$ here is: **since inputs are complements, increased wage will lead to a reduced use of capital in LR**; 4) given $f_{kl}≥0$, reduced capital in long run will reduce marginal product of labor, so in the LR firm uses less labor.
+
+**Proposition using Le Chatelier Principle**: suppose production is f(k,l) and that there will be a wage increase(w > $w_0$):
+
+  a) if k and l are **complements**: $l_{LR}(w) ≤ l_{SR}(w_0,w) ≤ l_{LR}(w_0)$;
+  
+  b) if k and l are **substitutes**: $l_{LR}(w) ≤ l_{SR}(w_0,w) ≤ l_{LR}(w_0)$.
+  
+Honestly, what the difference between the two math parts above?
+
+#### **Monopoly Pricing**: 
+
+**What if q impacts p?** Let's assume a monopolistic setting to start thinking how quantities and price relate to each other. Setting: $\pi(q)$ is differentiable, concave and has an interior solution.
+
+\[ max_{q}q \times P(q) - c(q) \]
+
+The FOC for profit maximization: marginal revenue = marginal cost:
+
+\[ q^m \times P'(q^m) + P(q^m) = c'(q^m) \]
+
+**Proposition**: the percentage markup in the monopoly model is given by the [**Lerner Index**](https://en.wikipedia.org/wiki/Lerner_index):
+
+\[ \frac{P(q^m) - c'(q^m)}{P(q^m)} = - \frac{1}{\varepsilon}  \]
+
+$\varepsilon$: is the price elasticity of demand ($\frac{dQ}{dP} \frac{P}{Q}$). This basically describes the firm's market power. If a firm could raise its price indefinitely without losing demand, it would! But realistically speaking, people would stop consuming. Now, imagine that consumer price increase from $p^c$ to $p^m$. The loss to the consumer would be:
+
+\[ CV = - \int_{p^c}^{p^m} x_i^h (p,u_0)dp \]
+
+This depends on the **Hicksian demand**, not the Marshallian. So let's make a proposition about the quantity to be sold: Given any demand curve P(q) and cost function c($q,\theta$), define:
+
+\[ q^m = sup \, arg max_{x} qp(q) - c(q,\theta) \]
+
+If c($q,\theta$) has ID, then $q^m$ is weakly decreasing in $\theta$.
+
+Another thing we worry about monopoly is quality, not only price. Suppose *s* denotes quality:
+
+\[ W(q,s) = \int_0^q P(x,s)dx - c(q,s) \]
+
+\[ \pi(q,s) = qP(q,s) - c(q,s) \]
+
+If P(q,s) has decreasing differences, then the value of quality is less on the marginal unit sold then on the average unit. And the monopolist **only cares about the price of the marginal unit**. This gives rise about why the monopoly quality is too low. 
 
 ### **5) Externalities**
 
+#### Introduction
+
 This fifth [**lecture**](https://gabrielvoelcker.netlify.com/mit/14121lecture5.pdf) deals with externalities. The readings are MWG's 10th and 11th chapters. 
+
+So far we've dealt with the two sides of the market: Supply(Producer) and Demand(Consumer). Now let’s look to the outsiders: Externalities.
+
+**Externality**: is something that affects directly the well-being of the consumer(demand) and/or producer(supply). They can be either good or bad and may give rise to market failures. The objective of the lecture is divided in 4 steps: 1) Outline a simple model with an externality to illustrate why they cause market failure; 2) Discuss the Coase Theorem; 3) Discuss the difference between price and quantity regulations to deal with externalities; 4) Discuss a particular class of externality problems arising from common property resources.
+
+#### Simple Model
+
+Setting: two agents (i=1,2) price-takers. Wealth = $w_i$. L goods ($x_{1i},...,x_{Li}$). Then! Consumer 1 takes some action **h** $\in \mathbb{R}_+$ that directly affects Consumer 2! (ex: plays loud music late at night). Given that **h** represents the externality, let's assume quasi-linear utility with indirect utilities:
+
+\[ v_i(p,w_i,h) = \phi_i(h) + w_i \]
+
+Where we suppress dependence on *p*. We assume that $\phi$ is twice differentiable and $\phi_i''(.)$ ≤ 0. An allocation is represented by: ((x_i)$_{i=1,2},h$). At a competitive(Walrasian) equilibrium with prices *p*, each of the two consumers maximizes her utility given prices and wealth. But in order to maximize his utility, Consumer 1 chooses h ≥ 0, creating the externality. The equilibrium then:
+
+\[ \phi_1' (h^\ast) ≤ 0 \]
+
+[**Pareto Optimal**](https://en.wikipedia.org/wiki/Pareto_efficiency) states that an allocation that optimality is achieved when you can't improve a consumer's utility without decreasing some other consumer's utility. Let's denote *T* as a re-allocation of wealth from consumer 1 to 2. If $h^{PO}$ is the Pareto optimal level of h, then it must be that when T = 0 and h = $h^{PO}$ we have a solution of the following:
+
+\[ max_{h,T}\phi_1 (h) + w_1 - T \text{ s.t. } \phi_2(h) + w_2 + T ≥ \overline{\rm u}_2 \]
+
+The constraint must hold with equality (if not, we could lower T to improve the value of the program), so substituting for T:
+ 
+\[ max_h \phi_1(h) + w_1 + \phi_2(h) + w_2 - \overline{\rm u}_2 = max_h \phi_1(h) + \phi_2(h)\]
+
+The Pareto Optimal aims to maximize the joint surplus of the two consumers, which **doesn't mean the externality is eliminated**. Rather, the externality’s level is adjusted to the point that the marginal benefit of an extra unit of the externality $(\phi_1'(h^{PO}))$ to consumer 1 is equal to the marginal cost to the consumer 2, $-\phi_2'(h^{PO})$. If we assume an interior solution, the last two terms are equal to each other and $\phi_1'(h^\ast)$ = 0. If there are no external factors, then $\phi_2'(h^{PO})$ = 0 for all *h* $\implies$ $\phi_1'(h^\ast)$ = 0. So $h^{PO} = h^\ast$ and the Pareto Optimal level of *h* is the same as the competitive equilibrium. But if $\phi_2'(h^{PO})$ ≠ 0, then there are externalities! They can be:
+
+1) Negative externality: $\phi_2'()$ < 0 $\implies$ $\phi_1'(h^{PO})$ = $-\phi_2'(h^{PO})$ > 0.
+
+2) Positive externality: $\phi_2'()$ > 0 $\implies$ $\phi_1'(h^{PO})$ = $-\phi_2'(h^{PO})$ < 0 $\implies$ $h^\ast$ < $h^{PO}$.
+
+#### Government Intervention
+
+Given that there is a market failure, how can this situation be improved/corrected? Through Government Intervention? If so, there are two ways they can act:
+
+**1) Quota**: government mandates that *h* be no larger than $h^{PO}$ $\implies$ consumer is obligated to fix his level of externality at $h^{PO}$.
+
+**2) Taxes**: government can tax Consumer 1 on his consumption of 1 or subsidize the reduction of h. Imagine a tax per unit of $t_x$, so Consumer 1's maximization problem is now:
+
+\[ max_{h}\phi_1 (h) - t_h h \]
+
+If $t_h$ = - $\phi_2'(h^{PO})$ > 0, then the competitive equilibrium of *h* is now: $\phi_1'(h) = t_h$, or $\phi_1'(h) = - \phi_2'(h^{PO})$, and we know that h $h^{PO}$ satisfiest his condition. This type of intervention is called [**Pigouvian Tax**](https://en.wikipedia.org/wiki/Pigovian_tax).
+
+This tax makes Consumer 1 internalize the externality the was being imposed on Consumer 2. 
+
+**Subsidy**: but what if instead of a tax the government decided to pay a subsidy($s_h$) for each externality produced by Consumer 1? The problem now turns to be:
+
+\[ max_h  \phi_1(h) + s_h (h^\ast - h) \]
+
+Subsidy can be thought of as a tax per unit of $s_h$ per unit plus a lump-sum transfer of $s_hh^\ast$.
+
+**Direct vs indirect taxation**: if a plant produces pollution(which is bad, btw), what is more interesting: taxing the output of the plant or the pollution itself? Taxing the former wouldn't help restore optimality. But when there is a **monotonic** relation between the two of them, then taxing output is equivalent to taxing emissions. 
+
+If government pays a subsidy of $s_h$ = -$\phi_2'(h^{PO})$ > 0 for each unit that consumer 1's choice of h is below $h^\ast$, then the maximization problem is: 
+
+#### [**Coase Theorem**](https://en.wikipedia.org/wiki/Ronald_Coase)
+
+Coase pointed how an externality arose from two factors: **1)** lack of clearly specified property rights; **2)** transaction costs. This was stated in the following theorem: *if property rights are clearly specified and there are no transaction costs, bargaining will lead to an efficient outcome no matter how the rights are allocated*. 
+
+Let's look the bargaining approach from two sides: 1) C1 has to pay C2 for the right to cause h; and 2) C2 pays C1 to generate less h than what C1 would like to.
+
+1) imagine an environment in which C1 can only cause an externality with permission from C2. C2 then makes a one-time offer to C1 demanding payment T in exchange for permission to cause h. C1 agrees iff: $\phi_1(h) - T ≥\phi(0) \rightarrow$ obviously the amount paid has to be inferior than what he stands to gain from being able to cause the externality. So how does C2 choose T? It has to max her utility, given the gains from T and the losses from the externality: $max_{h,T} \phi_2(h) + T \text{ s.t.} \phi_1(h) - T ≥ \phi_1(0)$. The constraint must be binding(after all why would C1 not maximize as much as possible h?): T = $\phi_1(h) - \phi_1(0)$. Plugging this into the maximizing function, we find the socially optima level: $max_{h}\phi_2(h) + \phi_1(h) - \phi(0)$. In this case, C1 pays $\phi_1(h^{PO}) - \phi_1(0) > 0$ to be allowed to set $h^{PO}$.
+
+2) If C1 can generate h as much as he wants($h^\ast$), C2 would pay C1 to generate h < $h^\ast$. For C1 to agree to that, $\phi_1(h) - T$ has to be bigger than $\phi_1'(h^\ast)$. Now the problem is: $max_{h,T}\phi_2(h)+T = max_{h}\phi_2(h) + \phi_1(h) - \phi_1(h^\ast)$. In this case C1 gains $\phi_1(h^{PO}) - \phi_1(h^\ast) < 0$ in return for setting $h^{PO}$. 
+
+The conclusion is that the negotiated level of *h* should be efficient:
+
+**Coase Theorem**: *If property rights are clearly specified and there are no transaction costs, bargaining will lead to an efficient outcome no matter how the rights are allocated*. Some thoughts on that: **i)** we assumed a particular bargaining solution - take-it-or-leave it. Many other complete information bargaining solutions would generate the same prediction in this problem; **ii)** In special case where two parties are firms, another solution to let the two firms merge. The resulting firm would fully internalize the externality when maximizing profits. iii) Sometimes we refer to Coase as a decentralization result given that Coasians point to the absence of legal institutions as a central impediment to optimality; iv) Transaction costs Coase had in mind: 1) If large number of citizens impacted by externality, then there will be significant transaction costs to bring everybody to the table and start negotiating; 2) If participants have to pay an ex ante cost in order for an agreement to be reached (such as showing up to a meeting) then this can lead to inefficiencies arising for strategic reasons; v) Unlike the tax and quota schemes, Coase’s approach only requires that the consumers know each others preferences, and not government.
+
+**Information Asymmetries**: but since we're talking about consumers know about each other, let's point out another difficulty: IA. I'll skip the algebra here(refer to slides 22-24 of Lecture 5), but given IA, then there will be positive probability of inefficiency, even though the efficient externality the efficient externality level is optimal when the externality is present. This happens because of the realistic setting that consumers may have information asymmetries. 
+
+However, we have the [**Anti-Coase Theorem**](https://en.wikipedia.org/wiki/Myerson%E2%80%93Satterthwaite_theorem), proposed by [**Myerson**](https://en.wikipedia.org/wiki/Roger_Myerson)-[**Satterthwaite**](https://en.wikipedia.org/wiki/Mark_Satterthwaite): *no bargaining procedure can lead to an efficient outcome for all values of b and s when they are private information and independently distributed*. Anyway, there's a lot of discussion in whether we should regulate externalities or not, but that depends on a lot of factors. Are there market for externalities? Can we directly measure them? Should we regulate on price or quantity? Can market economies can generate efficient outcomes, if we think private information pervasive?
+
+Let's go a little bit further: if we can define property rights on an externality, why isn't there a **market for the externality**? Suppose that there is a competitive market for the externality, and let $p_h$ be the price of the right to engage in one unit of the activity. In choosing how many of these rights to purchase, $h_1$, C1 solves $max_{h_1}\phi_1 (h_1) - p_h h_1$; C2 decides to sell rights, $h_2$: $\max_{h_2}\phi_1 (h_2) + p_h h_2$. Two FOCs are: $\phi_1'(h_1) = p_h$ and $\phi_2'(h_2) = - p_h$. Since $h_1$ must equal $h_2$, we have that the PO is: $\phi_1'(h^{**})$ = - $\phi_2'(h^{**})$
+
+But externalities are inherently tied to absence of certain competitive markets(?).
+
+#### Price vs Quantity Regulations
+
+Coming back to what we talked about government intervention: how does intervention should take form? There is a [**difference**](https://www.jstor.org/stable/2296698?seq=1#page_scan_tab_contents) between price and quantity regulation: “*I think it is a fair generalization to say that the average economist in the Western marginal tradition has at least a vague preference towards indirect control by prices, just as the typical noneconomist leans toward the direct regulation of quantities.*” Weitzman's analysis is about pollution reduction. The government can achieve $q^\ast$ either by:
+
+  i) quantity regulation: order firms or industry to do $q^\ast$ units of reduction.
+
+  ii) pay firms a price $p^\ast$ for each unit of reduction undertaken (this price could be avoiding a tax)- firms would then choose q to maximize profits): q = arg max{p$^\ast$q - C(q)}. So the government just needs to set the price equal to $p^\ast$ = B'(q$^*$). 
+
+This 1974 paper goes deep into the maths of this decision, incorporating Uncertainty, first-best and second-best solutions, optimal quantity and optimal price concepts, and arrive at a formula for the benefit of price regulation over quantity regulation. For more on this, read the already linked paper and slides 29-37 of Lecture 5.
+
+#### Common Property Externalities
+
+This type of externality arises whenever there is a commonly owned resource(fish in the ocean, forests). Also known as the [**Problem of the Commons**](https://www.investopedia.com/terms/t/tragedy-of-the-commons.asp). Imagine a lot of fishermen fishing on their own boats. The more people go out to fish, the less the average catch per boat will be. So what is the Optimal Number of Boats? It's the number of boats that maximize consumer surplus + fisherman surplus: $max_b \int_0^{y(s,b)} p(x)dx - wb$. Let's take FOC: p(y(s,$b^O$))$\frac{\partial y}{\partial b}(s,b^O) = w$. Social marginal benefit of boats is equalized with the social marginal cost The equilibrium has price of fish $p^\ast$ and number of boats $b^\ast$ such that Demand = Supply and fisherman make 0 profits: i) x($p^\ast$) = y($s,b^\ast$) $\iff$ $p^\ast$ = p($y(s,b^\ast)$); ii) $p^\ast (\frac{y(s,b^\ast)}{b^\ast}) = w$.
+
+In a **free access equilibrium**, each fisherman's catch per boat times the price must equal the price of operating the boat. If we do the math, we'll arrive that average product > marginal product, which will lead to having too many boats.
+
+For more on this, let's do exercise [**3 of Problem Set 5(originally from MWG 11.D.5**](https://gabrielvoelcker.netlify.com/mit/14121.ps5_2019.pdf)!( Don't despair, the answer is [**here**](https://gabrielvoelcker.netlify.com/mit/14.121 ps5sol_2018.pdf)).
+
+
 
 ### **6) Introduction to General Equilibrium**
 
+#### Introduction
+
 In this sixth [**lecture**](https://gabrielvoelcker.netlify.com/mit/14121lecture6.pdf) we deal with General Equilibrium. For more, read MWG's chapters 15 and 16. 
 
-In math terms, Pareto Optimal Allocations are those on the "northeast" frontier of the UPS.
+So far we've dealt with consumers, producers and externalities. How do they interact with each other? Can they get to a state of equilibrium? That's what General Equilibrium is all about. General Equilibrium deals with 6 main issues:
+
+1) Welfare Theorems.
+
+2) Existence of GE.
+  
+3) Properties of Equilibrium
+  
+4) Justifying Price-Taking assumption and Walrasian mechanism.
+  
+5) Indivisibilities.
+  
+6) Uncertainty.
+  
+I won't divide the lecture in these exact 6 categories in order to try to keep a narrative that flows better
+
+#### Welfare
+
+Setting: **Agents**: finite number(i $\in \mathcal{I}$ = {1,...,I}); **Commodities**: finite number l $\in$ $\mathbb{L}$ = {1,...,L}, and commodities are allocated such that x $\in \mathbb{R}_+^L$; **Endowment**: $\omega^i \in \mathbb{R}_+^L$; **Utility**: $u^i$ : $\mathbb{R}_+ \rightarrow \mathbb{R}$. So the GE depends on utility and wealth of each agent:$\mathcal{E}$ = ($(u^i,\omega^i)_{i \in \mathcal{I}}$). In order to choose consumption each agent has a budget constraint:
+
+\[ max_{ \in \mathbb{R}_+^L} u^i(x) \text{ s.t. } p x ≤ p \omega^i   \]
+
+It's **not** the same as the UMP! Now the consumer's wealth is $p \omega^i \rightarrow$ the amount she could obtain if she sold her entire endowment. In a **Walrasian Equilibrium** for economy $\mathcal{E}$ is a pair ($p,(x^i)_{i \in \mathcal{I}}$) such that 3 things hold:
+
+1) Agents are maximizing utilities $\forall i \in \mathcal{I}$: $x^i \in arg \, max_{x \in B^i(p)} u^i(x)$.
+
+2) Markets clear $\forall$ l $\in \mathcal{L}$,
+
+\[ \sum_{i \in \mathcal{I} }x_l^i = \sum_{i \in \mathcal{I}}\omega_l^i \]
+
+3) An allocation $(x^i)_{i \in \mathcal{I}} \in \mathbb{R}_+^{I \times L}$ is **feasible** if $\forall$ l $\in \mathcal{L}$: 
+
+\[ \sum_{i \in \mathcal{I} }x_l^i ≤ \sum_{i \in \mathcal{I}}\omega_l^i \]
+
+**Properties**: given economy $\mathcal{E}$, a feasible allocation x is **Pareto Optimal** if there is no other feasible allocation $\hat{x}$ such that either: i) $u^i(\hat{x}^i)$ ≥ $u^i$($x^i$) $\forall$ $i \in \mathcal{I}$(the total utility can be increased/equal for all agents); or $u^i(\hat{x}^i)$ > $u^i$($x^i$) for some $i \in \mathcal{I}$ (you can strictly increase utility of someone without hurting someone else). Is this fair? Pareto efficiency says nothing about distributional justice or equity! Let's now make some assumptions on preferences: 
+
+**A1)** $\forall$ agents i $\in \mathcal{I}$, $u_i$ is continuous.
+
+**A2)** $\forall$ agents i $\in \mathcal{I}$, $u_i$ is increasing, i.e.$u^i$(x′) > $u^i$(x) whenever x′ $\gg$ x.
+
+**A3)** $\forall$ agents i $\in \mathcal{I}$, $u_i$ is concave.
+
+**A4)** $\forall$ agents i $\in \mathcal{I}$, $\omega^i \gg 0$.
+
+We’ll call these the *four assumptions*. 
+
+#### 2 x 2 Economy
+
+Let's expand to a new analysis. Setting: **Consumers**: i = 1,2. **Commodities**: l = 1,2. **Consumption vector** $x^i = (x_1^i,x_2^i)$. **Endowment**: $\omega^i$ = ($\omega_1^i, \omega_2^i$) $\in \mathbb{R}_+^2$; $\omega_l^i$ is the *i* endowment of commodity *l*. The **aggregate endowment**: $\omega = \omega^1 + \omega^2$; **aggregate endowment of good l**: $\omega_l = \omega_l^1 + \omega_l^2$. **Exchange economy**: is an economy in which no production is possible and the commodities that are ultimately consumed are those that individuals possess as *endowments*. In math terms: $\mathcal{E}$ = ($u_i,\omega^i$)$_{i=1,2}$. The subscripts represent the goods, the superscripts $\rightarrow$ the consumer.
+
+#### Edgeworth Box
+
+Given we have two consumers and two goods, we have 4 dimensions to work with! An allocation x $\in \mathbb{R}^4$ assigns a non-negative consumption vector to each consumer:
+
+\[ x = (x^1,x^2) = ((x_1^1,x_2^1),(x_1^2,x_2^2)) \]
+
+Having established how consumption occurs, we now turn to the next question: **when is the consumption feasible**? When:
+
+\[ x_l^1 + x_l^2 ≤ \omega_l^1 + \omega_l^2, \forall l    \]
+
+Allocation is **non-wasteful** if the relation holds as an equality: $x^1 + x^2 = \omega$. Given the price vector p = $(p_1,p_2)$: $p \times \omega^i = p_1\omega_1^i + p_2\omega_2^i$. When the allocation is non-wasteful, they can be depicted by means of an [**Edgeworth Box**](https://en.wikipedia.org/wiki/Edgeworth_box). 
+
+In an Edgeworth Box, C1's quantities are measured the usual way (SW corner = origin), while C2's quantities are measured using the northeast corner. For both consumers, the **vertical dimensions** measure quantities of **good 2**. Obviously, **the horizontal dimensions** measure the quantities of **good 1**. The size of the Edgeworth Box relates to the endowment of the economy: the length is the total endowment for good 1: $\hat{\omega}_1$. The same for height and endowment of good 2. As it is common when we study GE the wealth of a consumer is not given exogenously. Instead, for p = ($p_1,p_2$), consumer's *i*'s wealth equals the market value of his endowments of commodities: $p \omega_i  = p_1\omega_{1i} + p_2\omega_{2i}$. Hence, **wealth is determined by the values of prices**. So, for consumer's *i* endowment vector $\omega_i$ the budget set is:
+
+\[ B_i(p) = \{ x_i \in \mathbb{R}^2_+ : p x_i ≤ p \omega_i \} \]
+
+To use the Edgeworth Box to represent the budget sets of two consumers: we draw the budget line through the endowment point $\omega$ with slope -($\frac{p_1}{p_2}$) as shown in figure below:
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("26.png")
+ grid.raster(img)
+```
+
+C1's budget set all nonnegative vectors below the line. C2's budget set are above the line. Only allocations on the budget line are affordable to both consumers simultaneously at prices $(p_1,p_2)$.
+
+**Offer Curve**: when the prices vary, the budget constraint changes. At each point on offer curve, the BC is tangent to indifference curve.
+
+**Excess Demand**: total agent demand for a commodity minus what is available in the economy. 
+
+**Pareto set**: allocations where indifference curves are tangent. If utilities are differentiable, Pareto allocations are characterized by: $\frac{\frac{\partial u^1}{\partial x_1}}{\frac{\partial u^1}{\partial x_2}}(x^1)$ = $\frac{\frac{\partial u^2}{\partial x_1}}{\frac{\partial u^2}{\partial x_2}}(\omega - x^1)$.
+
+**Contract curve**: part of Pareto set where consumers do at least as well as initial endowment.
+
+[**First Welfare Theorem**](https://en.wikipedia.org/wiki/Fundamental_theorems_of_welfare_economics#Implications_of_the_first_theorem): when markets are complete, any competitive equilibrium is necessarily Pareto optimal(in other words: once we find an efficient allocation, we could support it with a price equilibrium $\rightarrow$ any Walrasian Equilibrium is Pareto Optimal). Formally: let (p,($x^i$)$_{i\in \mathcal{I}}$) be a Walrasian equilibrium for economy $\mathcal{E}$. If utility is increasing, then allocation $(x^i)_{i \in \mathcal{I}}$ is Pareto optimal. Some consequences of this theorem: **i)** even without explicit coordination, decentralized markets where agents simply maximize their utilities given prices are efficient; **ii)** Provides formal support for Adam Smith’s claim that individuals acting in their own interest result in efficient allocation from a societal standpoint; **iii)** only needed utility is increasing (could get away with LNS); **iv)** Should be emphasized that the model has a number of heroic assumptions; e.g., agents face the same prices, agents are price takers, markets exist for all goods, and we haven’t said where prices come from (maybe a little unrealistic). 
+
+[**Second Welfare Theorem**](https://en.wikipedia.org/wiki/Fundamental_theorems_of_welfare_economics#Proof_of_the_second_fundamental_theorem): any Pareto optimal can be achieved as a competitive equilibrium if appropriate lump-sum transfers of wealth are arranged. Formally: let economy $\mathcal{E}$ satisfy our four assumptions. If $(\omega^i)_{i \in \mathcal{I}}$ is Pareto Optimal, then there exists a price vector p $\in$ $\mathbb{R}^L_+$ such that (p,($\omega^i$)$_{i \in \mathcal{I}}$) is a Walrasian equilibrium for $\mathcal{E}$. Again, some consequences: **i)** Does not say that starting from a given endowment, every
+Pareto optimal allocation is a Walrasian equilibrium; **ii)** Rather, says if we start from a given endowment, then for any Pareto optimal allocation, there is a way to redistribute resources and prices that makes the allocation a Walrasian equilibrium outcome; **iii)** Unlike the FWT, convexity plays a role here; **iv)**􏰀 Need strictly positive endowments; **v)** SWT’s economic significance more limited than FWT – I’d say that the SWT is an over-rated theorem. What the SWT actually says is: **once we find an efficient allocation, we could support it with a price equilibrium**. 
+
+But after all, **how do we find an efficient allocation**? 
+
+- SWT has been used to say that any redistributional goals can be achieved from lump-sum reallocations of endowments and letting the market play out: **i)** Price equilibrium resulting from initial endowments may have undesirable distributional effects, even though it is Pareto optimal; **ii)** SWT says we can redistribute some endowments to disadvantaged agents so that the price equilibrium with new endowments gets us to a more favorable allocation.
+
+Problem is most characteristics we’d want to base redistribution on are choice variables or are private information: how do we determine redistribution? Tough task.
+
+#### Separating and Supporting Hyperplane Theorems
+
+[**Separating Hyperplane Theorem**](https://en.wikipedia.org/wiki/Hyperplane_separation_theorem): if B,C are convex and non-empty subsets of $\mathbb{R}^L$, and their don't share any elements then $\exists$ p $\in \mathbb{R}^L$ such that: $sup \, p B ≤ inf \, p C$.
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("27.png")
+ grid.raster(img)
+```
+
+[**Supporting Hyperplane Theorem**](https://en.wikipedia.org/wiki/Supporting_hyperplane): B $\subseteq \mathbb{R}^L$ is convex and that x is not an element of the interior of the set B. Then there is a p $\in \mathbb{R}^L$ with p ≠ 0 such that px ≥ py $\forall$ y $\in$ B. 
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("28.png")
+ grid.raster(img)
+```
+
+Moving forward, how do we **characterize efficiency?** We use the the four assumptions to characterize Pareto Optimal allocations. We'll work with our four assumptions and for simplicity we also assume that $\forall$ x, $\triangledownu^i(x^i)$ > 0, and we normalize $u^i$(0) = 0. Let's define the **Utility Possibility Set**: $\mathcal{U}$ = {$u^1(x^1),...,u^l(x^l): x^1,...,x^l \in \mathbb{R}_+^L \sum_i x^i ≤ \omega $}. Pareto optimal allocations are on the northeast border of the UPS. Let's advance to the following problem:
+
+\[ max_{x \in \mathbb{R}_+^{L \times I}} u^1(x_1^1,...,x_L^1) \]
+
+s.t.
+
+\[ u^i(x_1^i,...,x_L^i) ≥ \overline{u}^i, \text{ i = 2,...,I} \]
+and
+\[ \sum_i x_l^i ≤ \sum_{i} \omega_l^i, \text{ l = 1,...,L} \]
+
+PO allocations x = ($x^1,...,x^I$) solve this program for different values of positive utility ($\overline{u}^2,...,\overline{u}^I$) ≥ 0. We maximize utility of the first consumer subject to feasibility and to other consumers getting at least some pre-specified level of utility. By **varying** the level of required utility for consumers 2,...,I we can recover the full set of PO allocations under monotonicity. 
+
+Moving forward: suppose $x^i$ ≠ 0 $\forall$ *i*, $\implies$ ($\overline{u}^2,...,\overline{u}^I$) $\gg$ 0. Under A1,A2,A3, all the constraints must be binding $\rightarrow$ if the utility constraint for *i* were slack, we could reduce $x^i$ a little and increase $x^1$ the same amount; if the resource constraint were slack, we could increase $x^1$. Then we verify that Kuhn-Tucker theorem is applicable: $\lambda^i$ denotes the multiplier on the agent *i*'s constraint; $\mu_l$ be the constraint on commodity *l*. The Lagrangian is:
+
+\[ \sum_i \lambda^i u^i (x^i) + \mu (\sum_i \omega^i - \sum_i x^i)    \]
+
+Where we adopt the convention that $\lambda^1$ = 1. Since all constraints bind, $\lambda^i$ > 0, and $\mu_l$ > 0:
+
+\[ \lambda^i \frac{\partial u^i}{\partial x_l^i} - \mu_l ≤ 0, \, x_l^i ≥ 0, \, (\lambda^i \frac{\partial u^i}{\partial x_l^i} - \mu_l)x_l^i = 0  \]
+ 
+Plus: $\sum_i x^i = \sum_i \omega^i$. Can also interpret the Lagrangian as arising from maximizing a social welfare function: W(u) = $\sum_i \lambda^i u^i (x^i)$, subject to resource constraints.
+
+Now, imagine we have every consumer consuming a positive quantity of every good: $x_l^i$ > 0, $\forall i,l$. KT conditions simplify to: $\frac{\partial u^i(x^i)}{\partial x_l^i} = \frac{\mu_l}{\lambda^i}$
+
+Or: $MRS_{kl}^i = \frac{\partial u^i / \partial x_k^i}{\partial u^i / \partial x_l^i} = \frac{\partial u^j / \partial x_k^j}{\partial u^j / \partial x_l^j} = MRS_{kl}^j = \frac{\mu_k}{\mu_l}$ For every agent and commodity pair, MRS must be equal to each other and the ratio fof shadow prices $\mu_k$ and $\mu_l$.
+
+All this FOC characterization is useful: we can link Pareto Optimal Allocations and Walrasian Equilibrium. Given utility maximization: 
+
+\[ max_{x^i} u^i (x^i) \text{ s.t. } p x^i ≤ p \omega^i\]
+
+Let $\gamma^i$ be the multiplier of the BC. Then to solve $UMP^i$ at given prices, we have $\forall i,l$: 
+\[ \frac{\partial u^i(x^i)}{\partial x_l^i} - \gamma^i p_l ≤ 0, x_l^i ≥ 0, (\frac{\partial u^i(x^i)}{\partial x_l^i} - \gamma^i p_l)x_l^i = 0 \]
+
+x can be supported as a price equilibrium $\iff$ we can find a price vector p and some multiplier vector $\gammma \gg$ 0 s.t. the KT conditions hold. Endowments can be taken to be $\omega^i = x^i$. **These UMP KT conditions are exactly the same as the KT conditions for PO**. 
+
+#### [**Robinson**](https://us.sportsdirect.com/wilson-mr-wilson-castaway-volleyball-800130) [**Crusoe**](https://en.wikipedia.org/wiki/Robinson_Crusoe) Model
+
+Let's incorporate production into the picture! Setting: **Consumer**: 1(Mr. Crusoe). **Firm**: 1(Mr. Crusoe). Both the consumer and firm act as price-takers. **Goods**: 2(leisure $x_1$, which is endowed $\overline{L}$ with (24 hours a day), and good $x_2$, that can be consumed and has 0 endowment). **Price of output**: p. **Wage rate**: w(price of labor). Production function f(z), strictly concave. 
+
+**Firm's profit**: pf(z) - wz.  
+
+Maximizing profit, taking prices as given, we have the following problem:
+
+\[ z(p,w) = arg \, max_{\tilde{z}} pf(\tilde{z}) - w \tilde{z} \]
+
+FOC: pf'(z) - w = 0. 
+
+**Output**: q(p,w) = f(z(p,w))z; **Profit**: $\pi$(p,w) = pq(p,w) - wz(p,w). Since Robinson is the consumer and owns the firm, he receives the profit. The BC is: $px_2 ≤ w(\overline{L} - x_1) + \prod (p,w)$. Walrasian equilibrium prices ($p^\ast,w^\ast$) clear the markets:
+
+\[ x_2(p^\ast,w^\ast) = q(p^\ast,w^\ast) \text{ [product market]} \]
+
+\[ z(p^\ast,w^\ast) = \overline{L} - x_1(p^\ast,w^\ast) \text{ [labor market]}   \]
+
+#### 2x2 Production Economy
+
+Now we advance to a 2x2 economy in which there is production! Setting: **Goods**: 2. **Factors**: 2(labor and capital, input prices w and r). **Total Endowment**: L and K. The factors are produced by constant returns to scale technology. Our PMP when we have CRS is: $max pf(k,l) - c(w,r,q)$. Since $q = f(\lambda k, \lambda l)$ = $\lambda f(k,l)$ and c(w,r,q) = qc(w,r,1), if p is large we'd have unbounded profits. So since with CRS the FOC of PMP doesn't yield a level of output, it motivates us to work with "per unit" cost and factor demand. So we arrive at an equation that is: Total Cost = Unit Cost $\times$ Quantity. To denote the demands for each factor, we use: $a_l^j(w,r)$ and $a_k^j(w,r)$. 
+
+We have arrived at [**Shepard's Lemma**](https://en.wikipedia.org/wiki/Shephard%27s_lemma): a consumer will buy a unique ideal amount of each item to minimize the price for obtaining a certain level of utility given the price of goods in the market. If indifference curves of the expenditure or cost function are convex, then the cost minimizing point of a given good *i* with price $p_i$ is unique. Formally: $\frac{\partial c^j(w,r)}{\partial w}$ = $a_l^i(w,r)$ for labor, and $\frac{\partial c^j(w,r)}{\partial r}$ = $a_k^i(w,r)$ for capital. The total amount of labor for producing $q^j$ is $a_l^jq^j$, similar rationale for capital. This is known as "full employment conditions" for economy. But what if only one good is produced? Than we have an *specialized* economy. If both goods are produced(interior solutions), then given goods prices, factor prices ($w^\ast,r^\ast$) determined by FOC:
+
+\[ p^1 = c^1(w,r) \text{ and } p^2 = c^2(w,r) \]
+
+We say production of good is **relatively more intensive** in labor than that of good 2 if:
+
+\[ \frac{a_l^1(w,r)}{a_l^2(w,r)} > \frac{a_k^1(w,r)}{a_k^2(w,r)}, \forall(w,r)  \]
+
+Now let's do what we've done a lot so far and entertain the idea of shocks to the situation we've created thus far. Let's deal with 3 scenarios:
+
+[**1)**](https://en.wikipedia.org/wiki/Stolper%E2%80%93Samuelson_theorem) If output prices change, how do factor prices change? If $p_j$ increases, then the equilibrium price of the factor more intensively used in the production of good *j* increases, while the price of the other factor decreases.
+
+[**2)**](https://en.wikipedia.org/wiki/Rybczynski_theorem): if endowments change, how do outputs change? If the endowment of a factor increases, then the production of the good that uses this factor relatively more intensively increases and the production of the other good decreases.
+
+[**3)**](https://www.jstor.org/stable/2225933?seq=1#page_scan_tab_contents) Factor prices are determined by goods prices? Two countries with identical technologis facing same product prices will have same factor prices even if factor endowment differ.
+
+#### Public Goods
+
+Let's talk about a different type of good: **Public Goods**. This is a good that when an agent consumes it, another agent's consumption of it is not affected. They can be of two kinds: i) **excludable**: a public good that it is not costly to prevent consumption of it(ex: pay per view tv broadcasts); and ii) **non-excludable**: it is (near)impossible to prevent others from consuming it(ex: national defense). Public Goods are studied because common sense suggests that they will be under-provided by the usual market mechanism. 
+
+**Neo-classical Theory of Public Goods**: Setting: **consumers**: i = 1,...,n. **Goods**: numeraire good and the Public Good. Each consumer *i* has utility given by $u^i(x^i,G)$. This function is differentiable, increasing in both arguments, quasi-concave and $u^i'(x^i,0) > 0$(which guarantees an interior solution). Each consumer has an endowment for the numeraire good $w^i$, so total endowment of private good is W = $\sum_i w^i$. **Public Good endowment is zero**. The **allocation** for this scenrio consists of a level of public good G and allocation of the private goods. This allocation is **feasible** if there is some z ≥ 0 s.t. i) $\sum_i x^i + z ≤ W$; ii) G ≤ f(z). The allocation of (x,G) is PO if there exists no other feasible allocation(x',G') such that: 
+
+\[ u^i(x^i',G') ≥ u^i(x^i,G), \text{ for all i} \]
+
+\[ u^i(x^i',G') > u^i(x^i,G), \text{ for some i} \]
+
+[**Samuelson Condition**](https://en.wikipedia.org/wiki/Samuelson_condition): implies that further substituting public for private goods (or vice versa) would result in a decrease of social utility.
+An allocation (x,G) is pareto efficient $\iff$ 
+
+\[ \sum_{i=1}^n \frac{\partial u^i (x^i,G) / \partial G}{ \partial u^i (x^i,G) / \partial x^i} = \frac{1}{f'(z)}\]
+
+**Market Provision of Public Good**: How much of the public good would each consumer choose to buy? The key issue is that the amount demanded by an individual consumer depends on what he expects the other consumers to demand. So this means we have a strategic problem, as opposed to a decision-theoretic problem. A **competitive equilibrium** consists of a $p^\ast$ and $G^\ast$ = ($g^{1\ast},...,g^{n\ast}$) such that: **i)** each agent's choice of $g_i$ maximizes utility given $p^\ast$ and $g_{-i}^\ast$; **ii)** the firm optimizes given p. 
+
+**Proposition**: in the competitive equilibrium, there is under-provision of the public good relative to the level prescribed by the Samuelson condition. Intuition: each agent when deciding how much to purchase, does not consider the benefit to other agents of the output he purchased. Since this is true for each agent, the group of agents purchase less than the amount desirable for Pareto optimality. This leads to **free-riding**. How can we solve this? With...
+
+[**Lindahl Equilibrium**](https://www.investopedia.com/terms/l/lindahl-equilibrium.asp): proposes that the individual pays for a personalized price to determine an efficient level of provision for public goods. Since market mechanisms are unlikely to provide public goods efficiently we have reason to have government involvement. The logic of Lindahl equilibrium is that each consumer faces personalized prices which induces him to choose the same level of public good. However, the Lindahl equilibrium is unrealistic in the sense that everybody faces a personalized price, which makes them demand the same level of public good - this is like perfect price discrimination.
+
+**Conclusion of the Public Goods situation**: market mechanisms are unlikely to provide public goods efficiently; this provides a rationale for government involvement.
+
+
+
 
 ### **7) General Equilibrium Existence and Other Properties**
 
 We've arrived at the final [**lecture**](https://gabrielvoelcker.netlify.com/mit/14121lecture7.pdf) of the course!
-
-
-
-## **1) Utility and Revealed Preferences**
-
-Materials: [**class**](https://gabrielvoelcker.netlify.com/mit/14.121lecture1.pdf), [**recitation**](https://gabrielvoelcker.netlify.com/mit/recitation1_debreu.pdf) and [**Debreu's Proof**](https://gabrielvoelcker.netlify.com/mit/debreu_continuityproof.pdf).
-
-### Utility Theory
-
-The first class of the semester covers basic Microeconomic topics such as Utility Theory and Revealed preferences. We use an axiomatic approach to the utility theory to find less obvious asumptions of utility theory. It was recognized that utility could not be measured or observed directly, so instead economists devised a way to infer underlying relative utilities from observed choice. 
-
-#### [**Utility Theory**](https://en.wikipedia.org/wiki/Utility): 
-
-In Economics, the concept of **utility** is used to model worth/value. In most economic models, agents are assumed to have a utility function that they maximize. The utility function approach usually serves [**two purposes**](https://www.investopedia.com/ask/answers/12/difference-between-positive-normative-economics.asp):
-
-1) Model for predicting behavior (positive); i.e. agent will maximize utility. This is the "what is" approach. This is most commonly used (95%).
-    
-2) Framework for welfare analysis (normative); i.e. utility is "good". This is the "what should happen" approach.
-
-If we reflect about this utility approach, we have an opportunity to introduce one useful economic methodology: the **axiomatic approach**.
-    
-#### [**Axiomatic Approach**](https://en.wikipedia.org/wiki/Axiomatic_system): 
-
-The idea is to *find simple axioms which together are equivalent to
-less obvious assumptions of utility theory*.  Any set of axioms from which some or all axioms can be used in conjunction to logically derive theorems exemplify an axiomatic approach. A theory consists of an axiomatic system and all its derived theorems. An axiomatic system that is completely described is a special kind of formal system. A formal theory typically means an axiomatic system, for example formulated within model theory. A formal proof is a complete rendition of a mathematical proof within a formal system.
-
-#### [**Utility Function**](https://en.wikipedia.org/wiki/Utility#Utility_function):
-
-A utility function represents a consumer's preference ordering over a choice set.  Consider a set of alternatives facing an individual, and over which the individual has a preference ordering. A **utility function** is able to represent those preferences if it is *possible to assign a real number to each alternative*, in such a way that alternative a is assigned a number greater than alternative b if, and only if, the individual prefers alternative a to alternative b. In this situation an individual that selects the most preferred alternative available is necessarily also selecting the alternative that maximises the associated utility function. In general economic terms, a utility function measures preferences concerning a set of goods and services. Often, utility is correlated with words such as happiness, satisfaction, and welfare, and these are hard to measure mathematically. Thus, economists utilize consumption baskets of preferences in order to measure these abstract, non quantifiable ideas. 
-
-Gérard Debreu precisely defined the conditions required for a preference ordering to be representable by a utility function. For a finite set of alternatives these require only that the preference ordering is complete (so the individual is able to determine which of any two alternatives is preferred, or that they are equally preferred), and that the preference order is transitive.
-
-##### **Utility Function Definition**: 
-A **utility function** u defined on X is a real-valued function u: X -> $\mathbb{R}$. A more foundational place to start to think about assumptions inherent in utility theory is treating preferences as a primitive.
-
-##### **Preference Definition**: 
-
-*P* is a subset of X x X, where we write x $\succeq_P$ *y* if (x,y) $\in$ *P*. Interpretation of x $\succeq_P$ y: agent thinks "*x* is **at least as good as** *y*".
-
-So the utility function *u*: X -> $\mathbb{R}$ **represents** the preference P if:
-
-  u(x) ≥ u(y) $\iff$ x $\succeq_P$ y.
-
-Note: many different utility functions can represent the same set of
-preferences. e.g., if X = {x, y, z}, and P = {(x, y),(x, z),(y, z)}
-(i.e x $\succeq_P$ y, x $\succeq_P$ z, y $\succeq_P$ z).
-
-In general if u represents P, then so does *f* $\circ$ *u*, for any *strictly* increasing function *f*.
-
-##### **Properties of Preferences**:
-
-- The preference relation $\succeq_P$ is **complete** on *X* if $\forall$*x*, *y* $\in$ *X*, either *x* $\succeq_P$ *y* or *y* $\succeq_P$ *x*.
-
-- The preference relation $\succeq_P$ is **reflexive** on *X* if $\forall$*x* $\in$ *X*, *x* $\succeq_P$ *x*.
-
-- The preference relation $\succeq_P$ is **transitive** on *X* if *x* $\succeq_P$ *y* and *y* $\succeq_P$ *z* $\implies$ *x* $\succeq_P$ *z*.
-
-Our first result is the following **proposition**: if $\succeq_P$ is represented by *u* on *X*, then $\succeq_P$ is complete, reflexive and transitive.
-
-**Proof**:
-
-- Complete: given any *x,y* $\in$ *X*, either u(x) ≥ u(y) or u(y) ≥ u(x) (property of real numbers). This implies x $\succeq_P$ y or y $\succeq_P$ x(by representation assumption). Indifference between two goods doesn't violate completeness.
-
-- Reflexive: given any x $\in$ X, u(x) ≥ u(x) $\implies$ x $\succeq_P$ x.
-
-- Transitive: if x $\succeq_P$ y and y $\succeq_P$ z, then u(x) ≥ u(y) and u(y) ≥ u(z). Transitivity of ≥ on $\mathbb{R}$ implies that u(x) ≥ u(z) $\implies$ x $\succeq_P$ z.
-
-Usually we leave out preferences that do not satisfy these 3 assumptions. Now let's consider the other way around: if $\succeq_P$ is complete, reflexive and transitive, then can it be described by some utility function? It depends on whether the X is **finite**. 
-
-**Proposition**:
-
-Let X be a finite set. Let P be a preference on X. Assume $\succeq_p$ is complete on X, reflexive on X, and transitive on X. Then there exists a utility function *u* which represents P.
-
-**Proof by construction**: B(x) {z $\varepsilon$ X | x $\succeq_p$ z} $\implies$ z is "below" x. Let u(x) = |B(x)| -> count of itens "below" x.
-
-1) u(x) ≥ u(y) $\implies$ x ≥ y
-
-2) x $\succeq_p$ y $\implies$ u(x) ≥ u(y)
-
-Transitivity: a $\succeq_p$ b $\succeq_p$ c.
-
-Ex: u(c) = 1, u(b) = 2, u(a) = 3.
-
-1) u(x) ≥ u(y) $\implies$ |B(x)| ≥ |B(y)|
-
-By definition: y $\varepsilon$ B(x) x $\succeq_p$ y
-
-y $\nexists$ B(x) |B(y)| - 1 = |B(y) - {y}|
-
-Since |B(x)| ≥ |B(y)|
-
-|B(x)| ≥ |B(y)| - 1
-
-|B(x) - {y}| > |B(y) - {y}|
-
-$\exists$ z $\varepsilon$ X - {y}
-
-x $\succeq_p$ z but y $\succeq_p$ z
-
-Completeness: z $\succeq_p$ y
-
-Transitivity: x $\succeq_p$ y, y $\varepsilon$ B(x) ***-><-**. We started from: |B(x)| ≥ |B(y)|
-
-2) x $\succeq_p$ y $\implies$ u(x) ≥ u(y)
-
-z $\varepsilon$ B(y)
-
-x $\succeq_p$ y; y $\succeq_p$ z
-
-x $\succeq_p$ z $\implies$ z $\varepsilon$ B(x)
-
-B(y) $\subset$ B(x) $\implies$ |B(x)| ≥ |B(y)| -> u(x) ≥ u(y)
-
-Some comments:
-
-1) With finite sets, apparently assuming utility maximization is exactly the same as assuming preferences are complete, reflexive and transitive.
-
-2) Any critique of utility theory is a critique of one of these assumptions (or our notion of preferences). If we are happy with these, then we are happy with utility functions.
-
-3) To turn preferences into *predictive* or *welfare tool*, we need to explicitly state that people will do what they prefer.
-
-##### [**Criticisms of Utility Theory**](https://en.wikipedia.org/wiki/Utility#Discussion_and_criticism):
-
-Some main criticisms of the UT:
-
-1) **Realism**: people don't really act *as-if* they maximize utility, which is not necessarily true: no one chooses objects after consulting some numerical index of goodness. So, what can we **falsify**?
-
-2) **Inconsistent or probabilistic choice**: the individual may choose an object with lower utility for some random reason. But the standard model assumes choices are innate and unchanging. This is the notion of [**random utility**](https://www.sciencedirect.com/topics/social-sciences/random-utility-theory).
-
-3) **Origin of preferences**: tastes change, or [**De Gustibus Non Est Disputandum**](https://www.jstor.org/stable/1807222?seq=1#page_scan_tab_contents).
-
-4) **Procedural vs consequentialist aspects of choice**: If x is chosen from set A, individual is just as well off if given a choice from A vs simply given x without opportunity to choose. But maybe individuals value the freedom to choose, while at the same time too many options can be bad(choice overload).
-
-Despite the criticism, the standard model still remains the workhorse model and remains useful, but important to remember it is **based on assumptions on human behavior** and not laws of nature.
-
-#### Not clear how the content before here is bridged to the next part
-
-**Monotone Definition**: the preference relation $\succeq$ on X is **monotone** if x $\in$ X and y ≥ x implies y $\succeq$ x. If y ≠ x and y ≥ x, then **strictly monotone**. ("goods are goods"???)
-
-[**Locally non-satiated definition**](https://en.wikipedia.org/wiki/Local_nonsatiation): states that for any bundle of goods there is always another bundle of goods arbitrarily close that is preferred to it. Formally, if $\forall$x $\in$ X and all $\delta$ > 0, $\exists$y s.t. ||y - x|| < $\delta$ and y $\succeq$ x. 
-
-Some things to note:
-
-1) Local nonsatiation is implied by **monotonicity of preferences**. Because the converse isn't true, local nonsatiation is a weaker condition.
-
-2) There is no requirement that the preferred bundle y contain more of any good – hence, some goods can be "bads" and preferences can be non-monotone.
-
-3) It rules out the extreme case where all goods are "bads", since the point x = 0 would then be a bliss point.
-
-4) Local nonsatiation can only occur either if the consumption set is unbounded (open) (in other words, it cannot be compact) or if x is on a section of a bounded consumption set sufficiently far away from the ends. Near the ends of a bounded set, there would necessarily be a bliss point where local nonsatiation does not hold.
-
-[**Convex preferences definition**](https://en.wikipedia.org/wiki/Convex_preferences): are an individual's ordering of various outcomes, typically with regard to the amounts of various goods consumed, with the property that, roughly speaking, "averages are better than the extremes". The concept roughly corresponds to the concept of diminishing marginal utility without requiring utility functions. Formally, the preference relation $\succeq$ on X is **convex** if $\forall$x, y $\succeq$ x, z $\succeq$ x and y ≠ z implies that for all $\alpha$ $\in$ (0,1): $\alpha$y + (1 - $\alpha$)z $\succeq$ x. This leads to "moderation in all things".
-
-[**Continuous preference definition**](https://en.wikipedia.org/wiki/Preference_(economics)#Meaning_in_decision_sciences): Continuity simply means that there are **no ‘jumps’** in people's preferences. In mathematical terms, if we prefer point A along a preference curve to point B, points very close to A will also be preferred to B. This allows preference curves to be differentiated. The continuity assumption is "stronger than needed" in the sense that it indeed guarantees the existence of a continuous utility function representation and it is useful because **it does not require the set of preferences to be finite**. Continuity is, therefore, a sufficient condition, but not a necessary one, for a system of preferences. Formally, the preference relation $\succeq$ on X is **continuous** if it is preserved under limits: for any sequence{($x^n,y^n$)}$_{n=1}^{\infty}$ with $x^n$ $\succeq$ $y^n$ for all *n*, x $\succeq$ y, where x and y are limit points of the sequence, respectively.
-
-**The continuity assumption is assumed in order to extend the earlier representation theorem to commodity space X which is not countable.** For continuity proof, see [**here**](https://gabrielvoelcker.netlify.com/mit/debreu_continuityproof.pdf).
-
-[**Debreu's Theorem**](https://en.wikipedia.org/wiki/Debreu_theorems): the Debreu theorems come to answer the following basic question: what conditions on the preference relation of the agent guarantee that such representative utility function can be found? So, his 1954 theorems state that for every preference relation which is complete, transitive and continuous, this relation can be represented by a [**continuous ordinal utility function**](https://en.wikipedia.org/wiki/Ordinal_utility#Continuity). **Slide definition**: supposte the rational preference relation is $\succeq$ on X is continuous. Then there is a continuous utility function u(x) that represents $\succeq$. See p 47 of [**MWG**](https://gabrielvoelcker.netlify.com/mit/Mas-Colell,%20Whinston%20&%20Green%20-%20Microeconomic%20Theory.pdf).
-
-**Choices as primitive**: So far we have taken preferences as a primitive.
-Another approach is to take treat choice behavior as the primitive. Let $\mathcal{B}$ be a set of nonempty subsets of X and Ch($\circ$) be a choice rule that assigns a nonempty set of chosen elements Ch(B) $\subset$ B for each B $\in$ $\mathcal{B}$. A lot of modern literature begins this way, more [**here**](https://www.taylorfrancis.com/books/9780429498619).
-
-#### **Recap**
-
-1) Axiomatic method is a useful way to think about complex
-assumptions we make.
-
-2) With finite choice sets, the assumption of a utility representation is equivalent requiring preferences to be complete, reflexive, and transitive. Continuity yields utility representation when choice set not finite.
-
-### **Revealed Preferences**
-
-[**Revealed Preferences Theory**](https://en.wikipedia.org/wiki/Revealed_preference):  is a method of analyzing choices made by individuals, mostly used for comparing the influence of policies on consumer behavior. Revealed preference models assume that the preferences of consumers can be revealed by their purchasing habits.
-
-In terms of choice experiment, suppose a consumer is repeatedly asked to choose a consumption bundle x $\in$ $\mathbb{R}^{L+}$. The consumer r is confronted with different prices and we observe resulting choices C = {($p^1,x^1$),($p^2,x^2$),...}. What can we say about preferences and what axioms they satisfy? Need some **structure on preferences**, otherwise indifference could rationalize any behavior.
-
-So, we turn back to the **local nonsatiation condition**: the utility function u: X -> $\mathbb{R}$ satisfies local nonsatiation if $\forall$x $\in$ X, and all $\varepsilon$ > 0, $\exists$y $\in$ X with || y - x || < $\varepsilon$ such that u(y) > u(x). Observe: x,y at price p and p$\circ$x ≥ p$\circ$y. If x chosen when y could have been chosen, x is **directly revealed preferred** to y. The notation for this is **$xR^Dy$**. 
-
-If there is a sequence of preferences such as: $xR^Dz_1$, $z_1R^Dz_2$, ..., $z_nR^Dy$, we can say that x is (indirectly) **revealed preferred** to y and write xRy. Denote strict counterparts with $P^D$ and P, respectively: $xP^Dy$ $\iff$ p$\circ$x > p$\circ$y.
-
-**General Axiom of Revealed Preferences(GARP)**: a set of consumption choices {($p^1,x^1$),($p^2,x^2$),...,($p^n,x^n$)} satisfies the general axiom of revealed preferences if and only if:
-
-$x^iRx^j$ $\implies$ $p^j\circ x^j$ ≤ $p^i\circ x^i$, $\forall i,j$. 
-
-If $x^i$ is revealed preferred to $x^j$, then $x^i$ is only weakly affordable at $x^j$'s prices.
-
-Put differently: if $x^i$ is indirectly revealed preferred to $x^j$, then $x^j$ cannot be strictly directly revealed preferred to $x^i$. That is,
-
-$x^iRx^j$ $\implies$ not $x^jP^Dx^i$
-
-Some textbooks have other axioms of revealed preferences. 
-
-1) [**The Weak Axiom of Revealed Preference(WARP)**](https://en.wikipedia.org/wiki/Revealed_preference#The_Weak_Axiom_of_Revealed_Preference_(WARP)): is one of the criteria which needs to be satisfied in order to make sure that the consumer is consistent with his preferences. If a bundle of goods a is chosen over another bundle b when both are affordable, then the consumer reveals that they prefer a over b. WARP says that when preferences remain the same, there are no circumstances (budget set) where the consumer strictly prefers b over a. By choosing a over b when both bundles are affordable, the consumer reveals that their preferences are such that they will never choose b over a, while prices remain constant. Put simply: if $x^iR^Dx^j$ and $x^i$ ≠ $x^j$, then it is not the case that $x^jR^Dx^i$.
-
-2) [**The Strong Axiom of Revealed Preference(WARP)**](https://en.wikipedia.org/wiki/Revealed_preference#Completeness:_The_Strong_Axiom_of_Revealed_Preferences_(SARP)): The strong axiom of revealed preferences is equivalent to the weak axiom of revealed preferences, except that the consumer is not allowed to be indifferent between the two bundles that are compared. That is, if WARP concludes a $\succeq$ b, SARP goes further and concludes that a $\succ$ b. Put simply: if $x^iRx^j$ and $x^i$ ≠ $x^j$, then it is not the case that $x^jRx^i$.
-
-**Afriat's Proposition**: the central result of consumer theory is Let {($p^1,x^1$),...,($p^n,x^n$)} be a finite set of consumption choices. If a finite set of demand data violates GARP, then these data are inconsistent with choice according to locally nonsatiated, complete, and transitive preferences. Conversely, if a finite set of demand data satisfies GARP, then these data are consistent with choice according to strictly increasing, continuous, convex, complete and transitive preferences.
-
-[**Kreps**](https://gabrielvoelcker.netlify.com/mit/David%20M.%20Kreps-Microeconomic%20Foundations%20I_%20Choice%20and%20Competitive%20Markets-Princeton%20University%20Press%20(2013).pdf): shows the equivalence of GARP and the existence of a solution to a set of linear inequalities. From this  solution, we can construct a utility function rationalizing the choices of the consumer. Chapter 4 of Kreps for complete proof.
-
-- Kreps and Varian emphasize that with finite data on (p, x), strictly increasing or continuous or convex adds no testable restrictions (if satisfy GARP, can construct a utility function satisfying these extra conditions)
-
-GARP is discussed in fields where people are interested in whether some utility function can explain things. Examples: 1) Behavioral: can we explain altruism etc. with utility?; 2) Family/household: are interfamily dynamics causing inefficiency or do families act like they have some common goal?
-
-Then the slides turn to some examples of choices:
-
-1) [**Giving According to GARP: An Experimental Test of the Consistency of Preferences for Altruism**](https://www.jstor.org/stable/2692289?seq=1#page_scan_tab_contents)
-
-2) [**Grandmothers and Granddaughters: Old-Age Pensions and Intrahousehold Allocation in South Africa**](https://www.jstor.org/stable/3990043?seq=1#page_scan_tab_contents)
-
-3) [**Choices, Values, and Frames**](https://www.worldscientific.com/doi/abs/10.1142/9789814417358_0016)
-
-### MWG 1) Preference and Choice
-
-The starting point for any individual decision problem is a set of possible (mutually exclusive) alternatives from which the individual must choose. This set is denoted by X.
-
-There are two approaches to modeling individual choice behavior:
-
-#### 1) *Preference relation*: 
-The theory is developed by first imposing rationality axioms on the decision maker's preferences and then analyzing the consequences of these preferences for her choice behavior. The objectives of the decision maker are summarized in a *preference relation*, which we denote by $\succeq$. This is a binary relation on the set of alternatives X, allowing the comparison of pairs of alternatives x,y $\in$ X. x $\succeq$ y can be read as "x is at least as good as y". From $\succeq$ we can derive two other important relations on X:
-
-  a) the **strict preference** relation: $\succ$, defined by x $\succ$ y $\iff$ x $\succeq$ y but not y $\succeq$ x, and it is read as "x is preferred to y".
-  
-  b) The **indifference** relation, ~, defined by x ~ y $\iff$ x $\succeq$ y and y $\succeq$ x, and read "x is indifferent to y".
-  
-$\succeq$ is called rational if it possesses the following properties:
-
-- **Completeness**: $\forall$ x,y $\in$ X, we have that x $\succeq$ y or y $\succeq$ x, or both.
-
-- **Transitivity**: $\forall$ x,y,z $\in$ X, if x $\succeq$ y and y $\succeq$ z, then x $\succeq$ z.
-
-Some implications about $\succeq$'s rationality: 
-
-- $\succ$ is both **irreflexive** (x $\succ$ y never holds) and **transitive** (if x $\succ$ y and y $\succ$ z, then x $\succ$ z).
-
-- ~ is **reflexive** (x ~ x for all x), **transitive** (if x ~ y and y ~ z, then x ~ z), and **symmetric** (if x ~ y, then y ~ x). 
-
-- if x $\succ$ y $\succeq$ z, then x $\succ$ z.
-
-#### 2) *Choice rules*: 
-Treats the individual's choice behavior as the primitive feature and proceeds by making assumptions directly concerning this behavior. It imposes an element of consistency on choice behavior, paralleling the rationality assumptions of the preference-based approach. Formally, the choice behavior is represented by means of a *choice structure*. A choice structure ($\mathcal{B}$, C($\circ$)) consists of two ingredients: 
-
-a) $\mathcal{B}$ is a family of nonempty sets of X; that is, every element of $\mathcal{B}$ is a set B $\subset$ X. We call the elements B $\in$ $\mathcal{B}$ *budget sets*. The budget sets should be thought of as an exhaustive listing of all the choice experiments that the institutionally, physically or otherwise restricted social situation can conceivably pose to the decision maker.
-
-b) C($\circ$) is a *choice rule* (technically, it is a correspondence) that assigns a nonempty set of chosen elements C(B) $subset$ B for every budget B $\in \mathcal{B}$. The set C(B) may contain one or more than one element. If it contains just one element, that element is the individual's choice from among the alternatives in B. If it contains more than a single element, the elements of C(B) are the alternatives that the decision maker *might* choose, that is, his/her *acceptable alternatives*.
-
-The choice structure ($\mathcal{B}$, C($\circ$)) satisfies the weak axiom of revealed preference if the following property holds:
-
-If x is ever chosen when y is available, then there can be no budget set containing both alternatives for which y is chosen and x is not. If for some B $\in$ $\mathcal{B}$ with x,y $\in$ B we have x $\in$ C(B), then for any B' $\in$ $\mathcal{B}$ with x,y $\in$ B' and y $\in$ C(B'), we must also have x $\in$C(B'). 
-
-A somewhat simpler statement of the weak axiom can be obtained by defining a *revealed preference relation* $\succeq \ast$ from the observed choice behavior in C($\circ$). Given a choice structure ($\mathcal{B}$,C($\circ$)) the revealed preference relation $\succeq \ast$ is defined by x $\succeq \ast$ y $\iff$ there is some B $\in$ $\mathcal{B}$ such that x,y $\in$ B and x $\in$ C(B). We read x $\succeq \ast$ y as "x is revealed at least as good as y". Informally,  we might also say that "x is revealed preferred to y" if there is some B $\in$ $\mathcal{B}$ such that x,y $\in$ B, x $\in$ C(B) and y $\nexists$ C(B), that is, if x is ever chosen over y when both are feasible. Put simply: *if x is revealed at least as good as y, then y can't be revealed preferred to x*.
-
-**Utility functions**: in economics we often describe preference relations by means of a **utility function**. A utilitiy function u(x) assigns a numerical value to each element in X, ranking the elements of X in accordance with the individual's preferences. A function u: X -> $\mathbb{R}$ is a *utility representing preference relation* $\succeq$ if, $\forall$ x,y $\in$ X, x $\succeq$ y $\iff$ u(x) ≥ u(y). A preference relation can only be represented by a function if it is rational.
-
-#### 3) Relationship between Preference Relations and Choice Rules
-
-Consider the following questions: 
-
-**1)** If a decision maker has a rational preference ordering $\succeq$, do her decisions when facing choices from budget sets in $\mathcal{B}$ necessarily generate a choice structure that satisfies the weak axiom?
-
-Yes! Proof: suppose that an individual has a rational preference relation $\succeq$ on X. If this individual faces a nonempty subset of alternatives B $\subset$ X, her preference-maximizing behavior is to choose any one of the elements in the set: C$\ast$(B,$\succeq$) = {x $\in$ B: x $\succeq$ y for every y $\in$ B}
-
-The elements of C$\ast$(B,$\succeq$) are the decision maker's most preferred alternatives in B. In principle, we could have C$\ast$(B, $\succeq$) = $\varnothing$ for some B; but if X is finite, or if suitable(continuity) conditions hold, then C$\ast$(B,$\succeq$) will be nonempty. From now on, we will consider only preferences $\succeq$ and families of budget sets $\mathcal{B}$ such that C$\ast$(B,$\succeq$) is nonempty for all B $\in$ $\mathcal{B}$. We say that the rational preference relation $\succeq$ *generates* the choice structure ($\mathcal{B}$,C$\ast$($\circ,\succeq$)).
-
-Proposition 1.D.1: suppose that $\succeq$ is a rational preference relation. Then the choice structure generated by $\succeq$ ($\mathcal{B}$,C$\ast$($\circ$,$\succeq$)), satisfies the weak axiom. Proof: suppose that for some B $\in$ $\mathcal{B}$, we have x,y $\in$ B and x $\in$C$\ast$(B,$\succeq$). By the definition of C$\ast$(B,$\succeq$), this implies x $\succeq$ y. To check whether the weak axiom holds, suppose that for some B' $\in$ $\mathcal{B}$ with x,y $\in$ B' we have y $\in$ C$\ast$(B',$\succeq$). This implies that y $\succeq$ z $\forall$ z $in$ B'. But we already know that x $\succeq$ y. Hence, by transitivity, x $\succeq$ z for all z $\in$ B', and so x $\in$ C$\ast$(B',$\succeq$). This is precisely the conclusion the weak axiom demands. So, if the behavior is generated by rational preferences, then it satisfies the consistency requirements of the weak axiom.
-
-**2)** If an individual's choice behavior for a family of budget sets $\mathcal{B}$ is captured by a choice structure ($\mathcal{B}$, C($\circ$)) satisfying the weak axiom, is there necessarily a rational preference relation that is consistent with these choices?
-
-Maybe! Given a choice structure ($\mathcal{B},C(\circ$)), we say that the rational preference relation $\succeq$ rationalizes C($\circ$) relative to $\mathcal{B}$ if **C(B) = C$\ast$(B,$\succeq$)** for all B $\in$ $\mathcal{B}$, that is, if $\succeq$ generates the choice structure ($\mathcal{B},C(\circ)$). In words the rational preference $\succeq$ rationalizes the choice rule C($\circ$) on $\mathcal{B}$ if the optimal cnoices generated by $\succeq$(captured by C$\circ$($\circ$,$\succeq$)) coincide with C($\circ$) for all budget sets in $\mathcal{B}$. In a sense, preferences explain behavior; we can interpret the decision maker's choices as if she were a preference maximizer. Note that in general, there may be more than one rationalizing preference relation $\succeq$ for a given choice structure ($\mathcal{B},C(\circ)$).
-
-The proposition above (1.D.1) implies that the weak axiom must be satisfied if there is to be a rationalizing preference relation. In particular, since C$\ast$($\circ$,$\succeq$) satisfies the weak axiom for any $\succeq$, only a choice rule that satisfies the weak axiom can be rationalized. It turns out that the weak axiom is not sufficient to ensure the existence of a rationalizing preference relation.
-
-### **Recitation: Debreu's Theorem**
-
-#### 1)  What is Debreu’s theorem? Why should we care?
-
-[**Debreu's Theorems**](https://en.wikipedia.org/wiki/Debreu_theorems): In economics, the Debreu theorems are several statements about the representation of a preference ordering by a real-valued function. Any rational and continuous preference relation $\succeq$ on a (separable,
-connected) space X can be represented by a continuous utility
-function u : X -> $\mathbb{R}$.
-
-This theorem provides (one) justification for using utility functions
-when thinking about choice because: a) it links utility function to appealing and simple axioms; b) Much easier, mathematically, to work with utility functions than preference relations.
-
-#### Proof
-
-Considering the special case:
-
-1) X = $\mathbb{R}_+^n$ for some n $\in$ $\mathbb{N}$.
-
-2) $\succeq$ is strictly monotone.
-
-Some definitions:
-
-1) **Rational**: Complete, transitive and reflexive.
-
-2) **Continuous**: the sets U(x) := {y $\in$ X: y $\succeq$ x} and L(x) := {y $\in$ X : x $\succeq$ y} are closed (contain all their limit points).
-
-3) **Strictly monotone**: y ≥ x $\implies$ y $\succ$ x (actually, we only need y ≥ x $\implies$ y $\succeq$ x and y $\gg$ x $\implies$ y $\succ$ x)
-
-#### 2) Overview of proof, and key intuitions
-
-See the proof [**here**](https://gabrielvoelcker.netlify.com/mit/debreu_continuityproof.pdf).
-
-#### 3) Details of proof
-
-#### 4) Concluding thoughts
-
-
-## **3) Putting Consumer Theory to Work**
-
-### 1) Price Changes and Welfare
-
-Central question in applied micro: how do price changes affect welfare? This comes up in various ways:
-
-  1) effects of taxes or subsidies 
-  
-  2) effects of inflation, e.g. Social Security cost of living increase
-  
-  3) loses due to monopoly pricing
-  
-  4) distributional national accounting: do the poor pay more?
-  
-  5) welfare benefits of innovation
-  
-**Equivalent variation**
-  
-**Compensating variation**
-
-### 2) Welfare from new goods
-
-**virtual price**
-
-### 3) Price Indexes
-
-**Laspeyres price index**
-
-**Paasche price index**
-
-**Fisher Ideal Index**
-
-### 4) Choosing functional forms
-
-Usually consumers have demand over many goods, but we want to work with simpler functions. Why?
-
-**Restrict preferences**
-
-**Restrict price movements**
-
-**Restricting price movements:**
-
-### 5) Integrability
-
-Following our earlier discussion of GARP and preferences, one might want to know if a set of demand functions corresponds to utility maximization.
-
-### 6) Estimating demand
-
-So far we’ve studied the properties of a demand functions. Now we are going to provide an overview on how modern applied microeconomists estimate demand.
-
-Two approaches:
-
-- Treat products as primitives
-
--􏰅 Treat product characteristics as primitives
-
-
-### 7) Demand aggregation
-
-This is when **Chapter 4** starts.
-
-
-
-
-
-
-
-
-
-
 
 
 
