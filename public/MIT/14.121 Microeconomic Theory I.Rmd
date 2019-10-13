@@ -943,7 +943,7 @@ We’ll call these the *four assumptions*.
 
 #### 2 x 2 Economy
 
-Let's expand to a new analysis. Setting: **Consumers**: i = 1,2. **Commodities**: l = 1,2. **Consumption vector** $x^i = (x_1^i,x_2^i)$. **Endowment**: $\omega^i$ = ($\omega_1^i, \omega_2^i$) $\in \mathbb{R}_+^2$; $\omega_l^i$ is the *i* endowment of commodity *l*. The **aggregate endowment**: $\omega = \omega^1 + \omega^2$; **aggregate endowment of good l**: $\omega_l = \omega_l^1 + \omega_l^2$. **Exchange economy**: is an economy in which no production is possible and the commodities that are ultimately consumed are those that individuals possess as *endowments*. In math terms: $\mathcal{E}$ = ($u_i,\omega^i$)$_{i=1,2}$. The subscripts represent the goods, the superscripts $\rightarrow$ the consumer.
+Let's expand to a new analysis. Setting: **Consumers**: i = 1,2. **Commodities**: l = 1,2. **Consumption vector** $x^i = (x_1^i,x_2^i)$. **Endowment**: $\omega^i$ = ($\omega_1^i, \omega_2^i$) $\in \mathbb{R}_+^2$; $\omega_l^i$ is the *i* endowment of commodity *l*. The **aggregate endowment**: $\omega = \omega^1 + \omega^2$; **aggregate endowment of good l**: $\omega_l = \omega_l^1 + \omega_l^2$. **Exchange economy**: is an economy in which no production is possible and the commodities that are ultimately consumed are those that individuals possess as *endowments*. In math terms: $\mathcal{E}$ = ($u_i,\omega^i$)$_{i=1,2}$. The subscripts represent the gcommodity the superscripts $\rightarrow$ the cconsumer
 
 #### Edgeworth Box
 
