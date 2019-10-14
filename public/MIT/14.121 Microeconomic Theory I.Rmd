@@ -6,7 +6,7 @@ output: html_document
 
 ## **The Course**{.tabset}
 
-### **Overview of The Course**
+### **Overview**
 
 14.121 is structured in 7 Lectures:
 
