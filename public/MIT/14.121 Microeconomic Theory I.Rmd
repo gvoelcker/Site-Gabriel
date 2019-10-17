@@ -2122,11 +2122,7 @@ A third sort of coherence involves a *preference relation* over X. A preference 
 
 #### 2 Structutal Properties of Preferences and Utility Functions
 
-
-
 ##### 2.1 Monotonicity
-
-
 
 ### 3
 

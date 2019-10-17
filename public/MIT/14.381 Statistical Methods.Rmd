@@ -786,15 +786,6 @@ This is the famous t-statistic.We reject the null at 5\% if |t| > 1.96 and p-val
 What if it is impossible to get a pivotal statistic? Imagine we don't have the normality assumption of the exact distribution of $s^2$ or we are too lazy to find out the asymptotic variance of it. We may do bootstrap then! For b = 1,...,B, the steps are: 1) draw i.i.d. sample $X_b^\ast$ = ($X_{1b}^\ast,...,X_{nb}^\ast$) from a set of initial observations {$X_1,...,X_n$} with replacement; 2) calculate $s_b^2$ to be a sample variance of $X_b^\ast$; 3) calculate $z_b$ = $\sqrt{n}(s_b^2 - s^2)$; 4) order $z_b$ in ascending order(because we want to cut the tail); 5) for test of size $\alpha$, if $z_{([\frac{\alpha}{2}B])} < z < z_{([(1-\frac{\alpha}{2})B])}$ accept the null, otherwise reject. 
 
 
-
-
-
-
-
-
-
-
-
 ### **9 - Uniformly Most Powerful Sets**
 
 #### 1) Some more on bootstrap in testing.
