@@ -884,21 +884,130 @@ where $\lambda \equiv [\lambda_1;...;\lambda_K]$ and $\lambda_k = - \mathbb{E}^\
 
 **Factor Portfolio Theorem**: for each factor Fk, k = 1, . . . , K, there exists a factor portfolio $\theta$k.
 
-The expected excess return on the factor portfolio gives the factor premium: $\overline{R}_k - R_F = \overline{r}_k - r_F = \lambda_k$. We then have the following exact APT: $\overline{r}_n - r_F = \sum_k \beta_{nk} (\overline{r}_k - r_F)$, n = 1,..., N
-
-
+The expected excess return on the factor portfolio gives the factor premium: $\overline{R}_k - R_F = \overline{r}_k - r_F = \lambda_k$. We then have the following exact APT: $\overline{r}_n - r_F = \sum_k \beta_{nk} (\overline{r}_k - r_F)$, n = 1,..., N.
 
 ### **9) Arbitrage Pricing Theory Part 2**
 
-The [**ninth**](15470_L9.pdf) 
+The [**ninth**](15470_L9.pdf) lecture advances on what we've just seen on Arbitrage Pricing Theory. The content is divided in 4 parts:
 
-### **10) **
+#### 1) Factors and Diversification
 
-The [**tenth**](15470_L10.pdf) 
+
+Last time, we derived an APT result which held when returns followed an exact factor structure:
+
+\[ \overline{r}_n - r_F = \sum_k \beta_{nk} (\overline{r}_k - r_F) \equiv \sum_k \beta_{nk} \lambda_k \text{, n = 1,...,N} \]
+
+Where $\lambda_k = \overline{r}_k - r_F$ is the risk premium of the $k^{th}$ factor-mimicking portfolio. 
+
+Today's lecture derives a similira pricing result when a *large number of returns follow an approximate factor structure*. 
+
+**Factor Model For Returns**: we work with a generalized model for security returns. In a factor model, security returns are given as follows: 
+
+\[ \r_n = \overline{r}_n + \sum_{k=1}^K \beta_{nk} F_k + \varepsilon_n \text{, n = 1,...,N,}  \]
+
+where:
+
+1) $\mathbb{E}[F_k] = \mathbb{E}[\varepsilon_n] = \mathbb{E} [\varepsilon_n | F_k]\text{ = 0 } \forall k,n$
+
+2) $\mathbb{E} [\varepsilon_n^2] = \sigma^2_n$ < v < $\infty$, $\mathbb{E}[\varepsilon_n, \varepsilon_{n'}]$ = 0 $\forall n ≠ n'$.
+
+Our setting: i) **Risk Factors**: are given by $F_1,...,F_K$ for all the securities; ii) **Idiosyncratic risks**: are given by $\varepsilon_1,..., \varepsilon_N$; iii) Setting $\varepsilon_n = 0 \forall n$, we return to the **exact factor model**; iv) We assume *N* very large($\rightarrow \infty$) while *K* small. Also, we can express the factor model in a matrix form by creating vectors for *r*, $\overline{r}$, $F$, $\beta_n$, $\beta$ and $\varepsilon$. We can then express the factor model for returns as follows: $r = \overline{r} + F \beta + \varepsilon$. Moving forward, we can generalize our variance decomposition into a set of *K* independent factors and residuals uncorrelated with the factors.
+
+**Diversification**: how much do the idiosyncratic risks impact pricing? Less if we **diversify**. A portfolio $\theta$ is called *well diversified* if $\theta_n = O(\frac{1}{n})$, where $O(\frac{1}{n})$ means of order 1/n, so as $\n \rightarrow \infty$, n ||$\theta$||$^\infty$ is bounded. For a **sequence of portfolios**, for them to be called well diversified with $1_n^T \theta = 1$ and $\exists$ 0 < k < $\infty$ such that $\forall$ n and i = 1,...,n we have: $\theta_{ni}^2 < \frac{k}{n^2}$. The definition applies to a sequence of portfolios, not a single portfolio. Example: the portfolio $\theta = [\frac{1}{n};...; \frac{1}{n}]$ is well diversified; portfolio $\theta = [0;...;1;...;0]$ is concentrated. Then we advance to a math-heavy example of the variance of an equally weighted portfolio. 
+
+**Systematic vs Idiosyncratic Risk**: an asset pricing model splits an asset’s return variance into 2 types of risk: i) **Diversifiable(idiosyncratic)**: Firm-specific or idiosyncratic risk, can be eliminated by holding a well-diversified portfolio; and ii) **Non diversifiable(systematic)**: Common sources of risk that cannot be eliminated through portfolio selection (ex: in a macroeconomic crisis, there is nowhere to hide). Asset pricing try to identify sources of systematic priced risk.
+
+**Diversification Theorem**: for a sequence of well diversified portfolios $\theta_n$: $\mathbb{V} [\varepsilon_{\theta_\n}] = \mathbb{V} [ \sum_i \theta_{ni}\varepsilon_i] \rightarrow 0$ of order 1/n, which means that as $n \rightarrow \infty$, $\theta_i$ is bounded above by a constant (you limit how much variance you have in your portfolio).
+
+#### 2) APT
+
+**Asymptotic Arbitrage**: is a sequence of portfolios $\theta_n$ that are self-financed ($1_n^T \theta_n = 0$) such that as $n \rightarrow \infty$, we have: 1) $\mathbb{E}[r_{\theta_n} ]\rightarrow \alpha > 0$; 2) $\mathbb{V}[r_{\theta_n}] \rightarrow 0$. Asymptotic arbitrage is an **arbitrage in the limit**. It means you don't put money in at the beginning, you are exposed to no risks, and in the future you're going to get some money. 
+
+**General Version of the APT**: given a K-factor model for security returns, if there is no asymptotic arbitrage then there exists a scalar, $r_F$, a K-vector, $\lambda = [\lambda_1;...;\lambda_K]$, and a positive constant A, such that: $\sum_{i=1}^n [\overline{r}_i - (r_F + \lambda^T \beta_i)]^2 = \sum_{i=1}^n [\overline{r}_i - (r_F + \sum_k \lambda_k \beta_{ik})]^2 < A < \infty$. The APT states that in a factor model of returns, **no asymptotic arbitrage (NAA) yields approximate factor pricing**: $\overline{r}_i - r_F \approx \sum_{k=1}^K \lambda_k \beta_{ik}$, $\forall i$. The **pricing error**($\delta_i$) for security *i*, is "non-trivial" only for a small number of securities: $\sum_i |\delta_i|^2 < A < \infty$. The logic of the APT is that the price will adjust, i.e. investors trade, in order to eliminate the asymptotic arbitrage opportunities $\prices$ adjust until all expected returns line up with $\beta$. What are the implications of the APT? Given N is large and risk factors are small:
+
+\[ \overline{r}_i - r_F = \sum_{k=1}^K \beta_{ik} (\overline{r}_k - r_F) = \sum_{k = 1}^K \beta_{ik} \lambda_k, \forall i \]
+
+Where:
+
+- $\beta_{ik}$ is the **factor loading** of security *i* on factor *k*. 
+
+- $\overline{r}_k - r_F = \lambda_k$ is the risk premium of the traded portfolio that mimics factor k. 
+
+- The main prediction of APT is equivalent to a model of the SDF which is the affine in the factors: $\eta = a + Fb$. 
+
+#### 3) Testing the Theory
+
+But APT may not apply to all securities given the market value of public firms is extremely concentrated among a small number of stocks. How can we **test the APT**? Suppose we have an empirical proxy for the factors and we want to test whether the expected returns lie on the Securities Market Line (hyperplane with > 1 factor) implied by the expected return of the factors. Two approaches are: 1) **time series**: is alpha zero in a regression of excess asset returns on the factors? Only applicable w/ traded factors (or factor-mimicking portfolios). APT predicts that $\alpha_i$ = 0, we test whether our $\hat{\alpha}_i$ indeed equals 0; 2) **cross-sectional**: do estimates of beta explain average returns? Make an empirical counterpart to the SML. Refer to Campbell 3.3. When we empirically test the APT we have to take practical considerations into account such as: characterize all sources of systematic risk, find data on the factors, estimate $\beta$ and $\lambda$. 
+
+#### 4) Some evidence
+
+The main approach(Fama-French) envolves using observable characteristics of individual stocks to form portfolios and then test the ability of a given factor model to explain variation in expected returns across portfolios in the data. Sometimes it doesn't explain $\rightarrow$ anomalies! We then go over a lot empirical evidence (always remember: practitioner's field!) about how the market behaves and how well can we model/explain it.
+
+### **10) Cross-sectional asset pricing empirics and expected utility**
+
+The [**tenth**](15470_L10.pdf) lecture deals with the empirics of cross-sectional asset pricing and then takes a turn into micro to talk about expected utility and risk-aversion. The lecture is divided in 4 parts, but the last two were supposed to be covered in last week's class and so I already included these two parts in Lecture 9:
+
+#### 1) Testing the APT/CAPM Theory
+
+Refer to Lecture 9.
+
+#### 2) Some evidence
+
+Refer to Lecture 9. 
+
+#### 3) Expected Utility Theory
+
+We've already concluded the "reduced-form" part of the course. Next, we will start working from the bottom up to build a **micro-founded** model. This means we're going to understand how the agents choose! The data we (can) use are highly informative about models and investors’ expectations. We now start to explore the connection between **asset prices and the economic activities** of the agents in the economy. Let's micro this up!
+
+**Preference**: binary relation represented by $\succeq$ on consumption set C that satisfies **completeness** and **transitivity**. Preferences have many axioms:
+
+**Continuity**: two close consumption plans should also be “close” in their rankings. Formal: $\forall c \in C$, the sets {$a \in C : a \succeq c$} and {$b \in C: b \succeq c$} are closed.
+
+**Insatiability**: the more the merrier! Formally: $a \succ b$ if a > b.
+
+**Convexity**: the sets of preferred bundles are convex(diversification is good!). Formally: $\forall a,b,c \in C$ and $\alpha \in (0,1)$, if a $\succeq$ b and c $\succeq$ b, then $\alpha a + (1 - \alpha) c \succeq b$. 
+
+Knowing this about the agent's preferences, we advance to the [**Utility Function**](https://en.wikipedia.org/wiki/Utility). The UF tries to represent a preference relation and give mathematical values to it. So a utility function for a preference relation $\succeq$ is a function u from C to R: $u: C \rightarrow R$ such that $\forall a,b \in C, u(a) ≥ u(b)$.
+
+**Debreu Theorem**: for a preference $\succeq$ defined on a closed and convex consumption set C satisfying the Continuity Axiom, there exist a continuous utility function u(.) on C such that: $\forall a,b, \in C$, a$\succeq$b if and only if u(a) ≥ u(b). All we defined in this section will be useful in the sense that since that preferences can be fully defined by a utility function, going forward we will start with the **utility function when describing an agent’s preference**. I won't go over much of the utility function and consequences since I've already seen that in [**Micro**](https://gabrielvoelcker.netlify.com/mit/14.121-microeconomic-theory-i). Some important concepts I'll address:
+
+**Continuity Axiom**: for all consumption c, probabilities $p_a, p_b$ and $p_c$: $ [c;p_a] \succeq [c;p_b] \succeq [c; p_c] \implies \exists \alpha \in (0,1) : [c; (1 - \alpha)p_a + \alpha p_c] ~ [c;p_b]$
+
+**Independence Axiom**: if A is preferred to B, then a compound lottery that mixes A and B with C with probability $\alpha$ has the same preference ordering. Formally: for all consumption c, probabilities $p_a$, $p_b$ and $p_c$ and $\alpha \in (0,1)$: $[c;p_a] \succeq [c;p_b] \implies [c;(1 - \alpha)p_a + \alpha p_c] \succeq [c; (1 - \alpha) p_b + \alpha p_c]$.
+
+The lecture then adds some concepts/simplifications of the expected utility so it;s easier to work with it. Go to the slides for: **state independence**, **time additivity**, **complements or substitutes**, **marginal utility**. And lastly, exposes some criticisms about Utility Theory.
+
+#### 4) Risk Aversion
+
+This section briefly addresses how the utility function relates to the agents' risk aversion. This is given by:
+
+**Convexity of Preferences**: convexity of preferences $\implies$ the sets of preferred bundles {$a \in$ C: a $\succeq$ c} are convex. **Strict convexity** replaces $\succeq$ with $\succ$. Formally: $\forall a,b,c \in C$ and $\alpha \in$ (0,1), if a $\succeq$ b and c $\succeq$ b, then $\alpha a + (1 - \alpha)c \succeq b$. 
+
+**Concave Definition**: a function u(.) is **concave** if $\forall x,x'$ and $\alpha \in [0,1]$, u($\alpha$ x + (1 - $\alpha$)x') ≥ $\alpha$u (x) + (1 - $\alpha$)u(x').
+
+**Concavity Theorem**: If a preference satisfies the Continuity, Independence and Convexity axioms, and can be represented by a discounted expected utility function of the form: $u(c_0) + \rho \sum_{\omega \in \Omega} p_\omega u(c_{1 \omega}) \text{, }\rho > 0$, then u(.) is a concave function.
+
+**Decreasing Marginal Utility**: if a concave utility function is twice differentiable, then u'' ≤ 0. Negative second order derivative for u(.) means **decreasing marginal utility**. 
 
 ### **11) Expected Utility**
 
-The [**eleventh**](15470_L11.pdf) 
+The [**eleventh**](15470_L11.pdf) will advance our study into risk aversion.
+
+#### 1) Risk Aversion
+
+**Risk Aversion Definition**: a random number *x* is a fair gamble if $\mathbb{E}[x]$ = 0. An agent with expected utility u(.) is **risk averse** if $\mathbb{E}[u(w + x)]$ ≤ $\mathbb{E}[u(w)] \forall \mathbb{E}[x] = 0$ and strictly risk averse if the inequality is strict. A risk-averse agent always prefers a sure payoff over a risky payoff with the same mean. Formally: An agent is (strictly) risk averse if and only if u(·) is (strictly) concave. Let's relate the risk-aversion concept to what we've seen in previous classes. 
+
+Risk Premium and Risk Aversion: let x be a fair gamble, u(.) be an agent's utility function with wealth *w*. The risk premium $\pi$ required by the agent to take the gamble is given by: $\mathbb{E}[u(w + x)] = u(w - \pi)$. The risk premium(also called **certainty equivalent** of the risky gamble) represents the *amount of wealth an agent is willing to give up in order to get rid of the risk*. We can measure risk aversion in many different ways. For example, there is the [**Arrow-Pratt**](https://policonomics.com/arrow-pratt-measure/) measure of risk aversion. The **inverse** of risk aversion is called **risk tolerance** T(w): T(w) $ \equiv \frac{1}{A(w)} = - \frac{u'(w)}{u''(w)}$ For more and examples, refer to slides and Campbell's 1.2.3. 
+
+**Pratt's Theorem**: given the setting: $u_1(.)$ and $u_2(.)$ denote the utility functions of two agents, 1 and 2, and $A_1(w)$ and $A_2(w)$ their absolute risk aversion, respectively, then the following statements are equivalent:
+
+- $A_1(w) ≥ A_2(w) \forall w$,
+
+- $u_1(u_2^{-1}(.))$ is concave,
+
+- $\exists f(.)$ with $f'(.) > 0$ and $f''(.) ≤ 0$ such that $u_1(w) = f(u_2(w))$,
+
+- $\pi_1 ≥ \pi_2$ for all w and fair gambles.
 
 ### **12) Portfolio Choice**
 
