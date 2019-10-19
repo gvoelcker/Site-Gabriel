@@ -1378,12 +1378,3 @@ Where $S_0$ is the current price of the asset and *r* is the riskless rate.
 
 
 
-## Symbols and Formulas
-
-### Symbols
-
-
-
-### Formulas
-
-

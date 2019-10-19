@@ -1018,7 +1018,12 @@ When we estimate two parameters at the same time, their confidence intervals are
 
 Space destined to deal with all the math symbols and greek letters dealt in the course, for reference:
 
-## **Useful Info**{.tabset}
+## 
+### **12 - Bayesian Inference**
+
+To be completed..
+
+**Useful Info**{.tabset}
 
 ### Schedule
 
@@ -1074,3 +1079,478 @@ Where the same parameter value $\theta$ is used in each of the terms. Sometimes 
 
 
 
+
+## **Symbols and Formulas** {.tabset}
+
+### Symbols {.tabset}
+
+#### Lecture 1
+
+##### 1) Random Variables 
+
+- Random variable: **X**. 
+
+- **cdf**: cumulative distribution function.
+
+- ~ : used as in variable X has cdf $F_X$: X ~ $F_X$. 
+
+- $p_i$: the probability that X will take value $x_i$ given the possible values of $\mathcal{X}$ = ($x_1,...,x_n$). $\sum_{i = 1}^n p_n$ = 1.
+
+- **pdf**: characterizes the **continuous X** such that P{a < Y ≤ b} = $\int_{a}^b f_Y$ (s)ds. Note: $\int_{-\infty}^\infty f_Y (s)ds = 1$. The **cdf of Y** is given by $F_Y(t) = \int_{-\infty}^t f_Y (s)ds$. 
+
+- q(x) = $F^{-1}$(x) $\leftarrow$ possible when cdf F(X) is strictly increasing and continuous. Note that: P{X ≤ q(x)} = P{X ≤ $F^{-1}$(x)} = F($F^{-1}(x)$) = x.
+
+- **Expected Value**: the average! For discrete r.v.: E[g(x)] = $\sum_i g(x_i)p_i$. For continuous r.v.: E[g(X)] = $\int_{- \infty}^\infty g(x) f_X (x)dx$.
+
+- **Mean**: g(x) = x, E[X].
+
+- **Variance**: g(x) = (x - E[X])$^2$, E[(X - E[X])$^2$], also denoted by: V(X).
+
+- **Second moment**: g(x) = $x^2$, E[$X^2$].
+
+- **k-th moment**: g(x) = $x^k$ E[$X^k$].
+
+- **k-th central moment**: E[(X - EX)$^k$].
+
+Discrete r.v.:
+
+- **Bernoulli**: E[X] = 1p + 0 (1-p) = p. E[$X^2$] = $1^2 p + 0^2 (1-p)$. V(X) = p - $p^2$ = p(1-p). *Notation*: X ~ Bernoulli(p).
+
+- **Poisson**: X = {0,1,2,...}. P{X = j} = $e^{-\lambda} \lambda^j / j!$. E[X] = $\lambda$. V(X) = $\lambda$. *Notation*: X ~ Poisson{$\lambda$}. 
+
+Continuous r.v.: 
+
+- **Uniform** (a,b): density: $f_X$(x) = $\frac{1}{b-a}$ for x $\in$ (a,b) and $f_X$(x) = 0 otherwise. *Notation*: X ~ U(a,b).
+
+- **Normal** ($\mu, \sigma^2$): density: $f_X(x)$ = $exp(\frac{-(x-\mu)^2)}{2 \sigma^2}$/($\sqrt{2 \pi}\sigma$) $\forall x \in \mathbb{R}$. E[X] = $\mu$ and V(X) = $\sigma^2$. *Notation*: X ~ N($\mu, \sigma^2$). 
+
+##### 2) Bivariate (multivariate) distributions
+
+**Joint PDF**: $f_{X,Y}(x,y) = \frac{\partial^2 F_{X,Y}(x,y)}{\partial x \partial y} \rightarrow \text{ use it calculate the pdf of X: } F_X(x) = P \{ X ≤ x \} = \int_{- \infty}^x \int_{-\infty}^\infty f(s,t)dtds$. 
+
+- **Conditional PDF**: $f_{Y|X} (y|x) = f_{X,Y} (x,y)/f_X(x)$. 
+
+- **Law of iterated expectations**: E[E[Y|X = $x$]] = E[Y].
+
+- **Independence**: $f_{Y|X}(y|x) = f_Y(y)$.
+
+- **Covariance**: cov(X,Y) = E[(X - E[X])(Y - E[Y])].
+
+- *T* = transposition.
+
+##### 3) Normal Random Variables
+
+- **Multivariate normal distribution**: $f_X(x) = \frac{exp(-(x-\mu)^T \sum^{-1}(x - \mu)/2)}{(2 \pi)^{n/2} \sqrt{det(\sum)}}$ 
+
+- **Conditional distribution**: the conditional pdf of $X_1$ given $X_2$ = $x_2$ is: $f_{X_1|X_2}(x_1| X_2 = x_2) = \frac{exp \{-(x_1 - \tilde{u})^2/(2\tilde{\sigma})\}}{\sqrt{2 \pi} \sqrt{\tilde{\sigma}}}$.
+
+#### Lecture 2
+
+##### 1) Useful Inequalities:
+
+- **Markov's Inequality**: P{X ≥ t} ≤ E[X]/t.
+
+- **Chebyshev's Inequality**: P{|X - $\mu$| ≥ t} ≤ Var(X)/$t^2$.
+
+- **Hölder's Inequality**: E|XY| ≤ (E|X|$^{p}$)$^{1/p}$ (E|Y|$^q$)$^{1/q}$.
+
+##### 2) Convergence in probability and Law of Large Numbers
+
+- **Convergence in Probability**: $\forall \varepsilon > 0$, P{|$X_n$ - X| > $\varepsilon$}$\rightarrow$ 0 as n $\rightarrow \infty$. Denote by: $X_n \rightarrow^p X$. 
+
+- **Theorem 5**: E$(X_n - X)^2 \rightarrow$ 0, $\implies$ $X_n \rightarrow_p X$.
+
+- **Theorem 6**: given E[$X_i$] = $\mu$ and Var($X_i$) = $\sigma^2 < \infty$, then $\overline{X}_n$ = $\sum_{i=1}^n X_i/n \rightarrow^p \mu$. 
+
+- **Theorem 7**: $\overline{X}_n \rightarrow_p \mu$ if $EX_n = \mu$ and E|$X_n$| < $\infty$. 
+
+##### 3) Weak convergence and Central Limit Theorem
+
+- **Convergence in Distribution**: happens when $lim_{n \rightarrow \infty} F_{X_n} (x) = F_X (x)$. Denote: $X_n \implies X$.
+
+- **Theorem 9**: if $X_n \rightarrow_p X$, then $X_n \implies X$. 
+
+- **Central Limit Theorem**: given mean $\mu$ and variance $\sigma^2$: $\sum_{i=1}^n (X_i - \mu)/\sqrt{n} \implies N(0,\sigma^2)$. 
+
+- **Theorem 11/Linderberg condition**: difference from the above theorem: not identically distributed random variables. Given $EX_i = \mu_i$ and V($X_i$) = $\sigma_i^2$, denote $c_n^2 = V(\sum_{i=1}^n X_i) = \sum_{i=1}^n \sigma_i^2$. Main result: $\frac{\sum_{i=1}^n (X_i - \mu_i)}{c_n} \implies N(0,1)$. 
+
+##### 4) Asymptotic statements derived from basic limit theorems
+
+- **Theorem 12/ Slustky's 1**: if $X_n \rightarrow_p X$ and $Y_n \rightarrow_p Y$, then $X_n + Y_n \rightarrow_p X + Y$ and $X_nY_n \rightarrow_p XY$.
+
+- **Theorem 13/ Slustky's 2**: if $X_n \implies X$ and Y $\rightarrow_p c$, then $X_n + Y_n \implies X + c$ and $X_n Y_n \implies cX$. 
+
+- **Theorem 14/ Continuous Mapping's 1**: If $X_n \rightarrow_p X$, then g($X_n$) $\rightarrow_p g(X)$.
+
+- **Theorem 15/ Continuous Mapping's 2**: If $X_n \implies X$, then g($X_n$) $\implies g(X)$.
+
+- **Small o**: $x_n = o(b_n)$ when $lim_{n \rightarrow \infty} \frac{x_n}{b_n} = 0$. Ex: $x_n = o(1)$ means $x_n \rightarrow 0$.
+
+- **Big O**: $x_n = O(b_n)$ when $sup_n |\frac{x_n}{b_n}| < \infty$. Ex: $x_n = O(1)$ means that $x_n$ is a **bounded** sequence.
+
+**Definition 13**: $X_n = o_p(b_n) \iff \frac{X_n}{b_n} \rightarrow_p 0$.
+
+##### 5) Delta Method
+
+- For r.v.s $X_n$ and constants $\mu$ and $\sigma$ we have $\sqrt{n}(X_n - \mu) \implies N (0,\sigma^2)$. If g'($\mu$) ≠ 0 $\implies$ $\sqrt{n}(g(X_n) - g(\mu)) \implies N(0, \sigma^2(g'(\mu))^2)$. 
+
+
+
+
+#### Lecture 3
+
+##### 1) Basic Concepts
+
+- **Population**: distribution $F_X$ of vector $\mathcal{X}$.
+
+- **Cross-section data**: $F_X (x) = \prod_{i=1}^n F(x_i)$. 
+
+- **Panel data**: $\mathcal{X} = \{ X_{it}, i = 1,...,n, t = 1, ..., T\}$.
+
+- **Parameter**: $\theta$, it's a population concept .
+
+- **Inference**: judgement about a parameter.
+
+- **Statistic**: Y = g($\mathcal{X}$) = g($X_1,...,X_n$). Ex: sample mean($\overline{X}_n = \sum_{i = 1}^n X_i / n$), sample variance ($s^2 = \sum_{i=1}^n (X_i - \overline{X}_n)^2/(n-1)$).
+
+- **Empirical Distribution of Data**: $ \hat{F}_n = \sum_{i=1}^n I(X_i ≤ x)/n$. I(.) is the *indicator function* (true = 1, false = 0). 
+
+- **Theorem 3/Glivenko-Cantelli**: $sup_{x \in \mathbb{R}} |\hat{F}_n (x) - F(x)| \rightarrow_p 0$.  
+
+##### 2) Ways to find the distribution of a statistic
+
+- **Monte-Carlo Method**: $f(x;\mu, \sigma^2, \gamma)$ = $(2 \pi \sigma^2)^{-1/2}(x-\gamma)^{-1}e^{- \frac{(log(x - \gamma)\mu)^2}{2 \sigma^2}} \mathbb{I} \{ x > \gamma \}$
+
+- **Closed Form Exact Distribution**: $Y_1 = \frac{1}{n} \sum_{i=1}^n X_i$. Not easy to do, **do Monte-Carlo** for given ($\mu, \sigma^2, \gamma$): **1)** b = 1,...,B, simulate $\mathcal{X}_b^\ast = (X_{1b}^\ast,...,X_{nb}^\ast)$ where $X_{ib}^\ast$ are independently drawn; **2)** $Y_b^\ast = g(\mathcal{X}_b^\ast)$, in our case $\frac{1}{n}\sum_{i=1}^n X_{ib}^\ast$; 3) Infos we can find using MC: *i)* **cdf** of Y: $F_Y(s) \approx \frac{1}{B} \sum_{b=1}^B \mathbb{I} \{ Y_b^\ast ≤ s\}$; *ii)* **prob** Y gets into set A: P{$Y \in A$} $\approx$ $\frac{1}{B}\sum_{b=1}^B \mathbb{I} \{ Y_b^\ast \in A \}$; *iii)* $\alpha$-quantile of Y: $q_Y(\alpha) \approx Y^\ast_{(\alpha B)}$ where (.) stands for order statistics; *iv)* **mean** of Y: EY $\approx \frac{1}{B}\sum_{b=1}^B Y_b^\ast$; *v)* **variance** is V(Y) = $\approx \frac{1}{B - 1} \sum_{b=1}^B (Y_B^\ast - \frac{1}{B} \sum_{s = 1}^B Y_s^\ast)^2$.
+
+- **Asymptotic Approximation**: we assume we don't know the distribution of $X_i$ but assume it has **finite variance**: $\sqrt{n}(\frac{1}{n} \sum_{i=1}^n X_i - EX_i) \implies N(0,V(X_i))$. Distribution of $Y_1$ = $\sum_{i=1}^n X_i$ is approximately gaussian with mean $EX_i$ and variance $V(X_i)/n$. 
+
+- **Bootstrap**: = MC simulation but simulate $X_{ib}^\ast$ from distribution $\hat{F}_n(x)$ rather than from an unknown F.
+
+
+##### 3) Plug-in estimators
+
+- **Population mean**: the pluc-in estimator of the population mean $\hat{\mu}$ = $\overline{X}_n \rightarrow$ the sample average.
+
+- **Variance**: $\hat{\sigma}^2 = \sum_{i=1}^n (X_i - \overline{X}_n)^2/2$.
+
+##### 4) Parametric Families: Normal
+
+- $\theta$: parameter. 
+
+- $\Theta$: parameter family, finite-dimensional set. 
+
+- **cdf**F of a parametric family: F(x|$\theta$).
+
+- **pdf**F of a parametric family: $f(x|\theta)$. Joint pdf: $f(x_1,...,x_n|\theta) = \prod_{i=1}^n f(x_i|\theta)$. 
+
+- **Likelihood function**: $f(x_1,...,x_n|\theta)$ as function of $\theta$, given fixed $x_1,...,x_n$.
+
+- **Normal family**: $\theta = (\mu,\sigma^2)$ and the population distribution is N($\mu, \sigma^2$).
+
+- R.v. $X_n^2$ = $\sum_{i=1}^n _i^2$ is called a $X^2$ random variable with *n* degrees of freedom. Distribution is known as a $X^2$ distribution with *n* degrees of freedom. Its pdf: $f(x) = x^{(p/2)-1}e^{-x/2} \Gamma(p/2)2^{p/2})$ if x > 0. The values of $\gamma(x)$ function are found on special tables.
+
+- **Student distribution**: if $X_0$ is N(0,1) and independent of $X_1,...,X_n$, then $t_n = X_0/\sqrt{X_n^2/n} \implies$ t r.v. with *n* degrees of freedom. 
+
+- **Fisher r.v.**: if $X_n^2$ and $X_m^2$ are independent $X^2$ r.v. with *n* and *m* degrees of freedom correspondingly, then $F_{n,m} = (\frac{X_n^2}{n})/(\frac{X_m^2}{m})$. 
+
+#### Lecture 4
+
+##### 1) Sufficient Statistics
+
+- **Parametric Family**: f(x|$\theta$). 
+
+- **Parameter**: $\theta$. 
+
+- **Sufficient Statistic**: $T(X)$ is sufficient for $\theta$ if the conditional distribution of X given T(X) does not depend on $\theta$. 
+
+- **Conditional distribution of X given T(X)** = t. $\sum_{i=1}^n (x_i - \mu)^2 - n(\overline{x}_n - \mu)^2$ = $\sum_{i=1}^n (x_i - \overline{x}_n)^2$. So: $f_{X|T(X)}(x|T(X) = T(x))$ = $\frac{f_X(x)}{f_T(T(x))} = exp \{ - \sum_{i=1}^n (x_i - \overline{x}_n)^2 / (2\sigma^2) \}/ ((2\pi)^{(n-1)/2}\sigma^{n-1}/n^{1/2}$
+
+##### 2) Factorization Theorem
+
+- **Factorization/Sufficiency**: T(X) is a sufficient statistic $\iff$ $\exists$ g(t|$\theta$) and h(x) s.t. f(x|$\theta$) = g(T(x)|$\theta$)h(x). 
+
+##### 3) Minimal Sufficient Statistics
+
+- $\forall$ x,y, statement {$f(x|\theta)/f(y|\theta)$ does not depend on $\theta$}.
+
+##### 4) Estimators, Properties of Estimators
+
+- **Estimator**: function of the data(statistic). The estimator for the parametric family with parameter $\theta$ is $\hat{\theta}$. 
+
+- **Bias**: Bias($\hat{\theta}$) = $E_\theta [\hat{\theta}] - \theta$.
+
+- **Mean Squared Error(MSE)**: MSE($\hat{\theta}$) = $E_\theta [(\hat{\theta} - \theta)^2]$. T5 states: MSE($\hat{\theta}$) = $Bias^2(\hat{\theta})$ + V($\hat{\theta}$) ($\downarrow$ MSE = better).
+
+- **Rao-Blackwell**: MSE($\hat{\theta}_2$) < MSE ($\hat{\theta}$). 
+
+#### Lecture 5
+
+##### 1) Estimators. Properties of estimators
+
+- **Unbiased**: $E_\theta [T(X)] = \theta$. 
+
+- **Consistency**: $\hat{\theta}_n \rightarrow_p \theta$.
+
+- **Asymptotic Normality**: sequences {$a_n$}$^\infty_{n=1}$ and {$r_n$}$^\infty_{n=1}$ and constant $\sigma^2$ s.t. $r_n(\hat{\theta} - a_n) \implies N(0,\sigma^2)$.
+
+- **Rate of convergence**: $r_n$ above.
+
+- **Asymptotic mean**: $a_n$ above.
+
+- **Asymptotic variance**: $\sigma^2$ above. 
+
+#### Lecture 6
+
+##### 1) Common methods for constructing an estimator
+
+- **Plug-in**: estimate $\hat{\theta} = \theta(\hat{F})$. Example of analog estimator: $\hat{\mu} = \int xd \hat{F}(x) = \overline{X}$.
+
+- **Method of moments estimator**: $\hat{\theta}_{MM}$ is the solution for the system of equations: E[$X_i$] = $m_1 (\theta)$, E[$X_i^2] = m_2(\theta)$,...,E[$X_i^k$] = $m_k(\theta)$, where $m_k$ are known functions. The estimator $\hat{\theta}_{MM}$ is the solution of the system when we substitute $\sum_{i=1}^n \frac{X_i}{n}$, $\sum_{i=1}^n \frac{X_i^2}{n}$,...,$\sum_{i=1}^n \frac{X_i^k}{n}$ for $E[X_i]$, $E[X_i^2]$,...,$E{X_i^k}$, in other words, $\hat{\theta}_{MM}$ solves $\sum_{i=1}^n \frac{X_i}{n} = m_1(\hat{\theta})$, $\sum_{i=1}^n \frac{X_i^2}{n} = m_2(\hat{\theta})$,..., $\sum_{i=1}^n \frac{X_i^k}{n} = m_k(\hat{\theta})$.
+
+- **Maximum Likelihood estimator**: **we have a parametric estimation problem when we know the distribution of the data up to a finite-dimensional parameter** $\theta$(which is the only unknown part). The MLE $\hat{\theta}_{ML}$ is the value that maximizes f(x|$\theta$): $\hat{\theta}_{ML}$ = arg max$_{\theta \in \Theta}$ $f(x_1,...,x_n|\theta)$. The function $f(x|\theta)$ is called the **likelihood function**, denoted by $\mathcal{L}(\theta|x)$. Since log(x) is increasing in x, $\hat{\theta}_{ML}$ also maximizes $\ell(\theta | x_1,...,x_n)$ = log $\mathcal{L}(\theta| x_1,...,x_n)$. Function $\ell (\theta| x_1,...,x_n)$ is called the log-likelihood. If the log-likelihood is differentiable, then $\hat{\theta}_{ML}$ satisfies the FOC: $\frac{\partial \ell }{\partial \theta}(\hat{\theta}_{ML}|x_1,...,x_n)$ = 0.
+
+- **The Score**: S($\theta$|x) = $\partial$ log $f(x|\theta)/ \partial \theta$. $\hat{\theta}_{ML}$ solves the equation $S(\theta | x) = 0$. 
+
+- **Ex: Log-likelihood for a normal**: given $X_1,...,X_n$ random sample from N$(\mu, \sigma^2)$, then: log $f_1(\theta|x_i) = -log \sqrt{2 \pi} - (\frac{1}{2})log \sigma^2 - \frac{(x_i - \mu)^2}{(2 \sigma^2)}$. Here, $\theta = (\mu, \sigma^2)$. So: $\ell (\theta | x_1,...,x_n) = -n log \sqrt{2 \pi} - (\frac{n}{2}) log \sigma^2 - \sum_{i=1}^n \frac{(x_i - \mu)}{2 \sigma^2}$. FOCs: $\frac{\partial \ell}{\partial \mu} = \sum_{i=1}^n (x_i - \mu)/\sigma^2 = 0$ and $\frac{\partial \ell}{\partial \sigma^2} = \frac{-n}{2 \sigma^2} + \sum_{i=1}^n \frac{(x_i - \mu)^2}{2 \sigma^4}$. This gives us $\hat{\mu}_{ML} = \overline{X}_n$ and $\hat{\sigma}_{ML}^2 = \sum_{i=1}^n (X_i - \overline{X}_n)^2/n$. 
+
+##### 2) Fisher Information.
+
+- **Support of Distribution f(x|$\theta$)**: $Supp_\theta = \{ x : f(x|\theta) > 0 \}$. Assume that $Supp_\theta$ does not depend on $\theta$. Assume that $\frac{\partial^2 \ell (\theta | x)}{\partial \theta^2}$ is bounded above by some function g(x) such that Eg(X) < $\infty$ for r.v. X with distribution $f(x|\theta)$. Then: 
+
+- **Fisher Information**: $E_\theta [(\partial \ell(\theta|X)/\partial \theta)^2]$. Very important in MLE. We also have that: **i)** $E_\theta [\partial \ell (\theta | X)/\partial \theta] = 0$; **ii)** $I(\theta) = - E_\theta[\partial^2 \ell (\theta | X)/ \partial \theta^2]$. 
+
+- **Fisher Information example**: given joint log-likelihood $l(x,\theta) = \sum_{i=1}^n l^1 (x_i, \theta)$, the FI for the sample is:
+
+\[ I(\theta) = - E_\theta [\frac{\partial^2 l_n (\theta | X)}{\partial \theta^2}] = - E_\theta \sum_{i=1}^n [\frac{\partial^2 \ell_1 (\theta | X_i)}{\partial \theta^2}] = n I_1(\theta) \]
+
+Where $I_1(\theta)$ denotes the FI for one random draw from the distribution $f_1(x_i | \theta)$. 
+
+##### 3) Rao-cramer bound
+
+- Let W(X) be an estimator of $\theta$ such that: **i)** $\frac{d}{d\theta} E_\theta[W(X)] = \int W(x) \frac{\partial f(x|\theta)}{\partial \theta} dx$, where x = $(x_1,...,x_n)$; and **ii)** Var(W) < $\infty$; then: Var(W) ≥ ($\frac{d}{d \theta}$ $E_\theta [W(X)]$)$^2 \frac{1}{I(\theta)}$. And if **W is unbiased** for $\theta$, then Var(W) ≥ $\frac{1}{I (\theta)} = \frac{1}{n I_1 (\theta)}$
+
+#### Lecture 7
+
+##### 1) MLE
+
+- **ML estimator**: $\hat{\theta}_{ML} = arg max_{\theta \in \Theta} \ell(\theta | x)$. The FOC is: $\frac{1}{n} \sum_{i=1}^n \frac{\partial \ell_1 (\hat{\theta}_{ML}|x_i)}{\partial \theta} = 0$. The **first information equality** is: E[$\partial \ell_1 (\theta_0 | X_i)]$ = 0. Thus, MLE is the method of moments estimator corresponding to the first information equality $\implies$ MLE is **consistent**. In other words: $\hat{\theta}_{ML} \rightarrow_p \theta_0$ if: **i)** $\theta_0$ is identifiable(that is, $\forall \theta \neq \theta_0 \exists$ x s.t. $f(x|\theta) ≠ f(x|\theta_0)$); **ii)** the support of f(.|$\theta$) does not depend on $\theta$; and **iii)** $\theta_0$ is an interior point of parameter space $\Theta$. **Once the estimator is consistent** $\rightarrow$ think the asymptotic distribution of the estimator:
+
+- **Asymptotic Distribution of the MLE**: the conditions above hold + **iv)** $f_1(x_i |\theta)$ is thrice differentiable with respect to $\theta$ and we can interchange integration with respect to *x* and differentiation with respect to $\theta$; and **v)** [$\partial^3 log f_1 (x_i | \theta)/\partial \theta^3] ≤ M(x)$ and $E[M(X_i)] < \infty$. Then: $\sqrt{n} (\hat{\theta}_{ML} - \theta_0) \implies N(0,I_1^{-1}(\theta_0))$.
+
+##### 2) Inference using MLE
+
+- $I_1(\theta)$ is a continuous function in $\theta$ (needed for asymptotic results), then given that $\hat{\theta}_{ML}$ is consistent for $\theta_0$, the quantity ($I_1(\hat{\theta}_{ML}))^{-1}$ is consistent for $(I_1^{-1}(\theta_0))^{-1}$. 
+
+- $\hat{I} = - \frac{1}{n} \sum_{i=1}^n \frac{\partial^2 \ell_1 (\hat{\theta}|X_i)}{\partial \theta^2}$. 
+
+- We can use bootstrap to approximate $(nI_1(\theta_0))^{-1}$. 
+
+##### 3) When MLE asymptotic theory fails us...
+
+##### 4) Pseudo-MLE
+
+- **Wrongly** assuming the parametric family! Most parts about the normality would hold, but for **information equality** it would fail. What happens is that $\sum_1 \neq \sum_2$:
+
+\[ \sum_1 = E[(\frac{\partial log f_1(X_i | \theta_0)}{\partial \theta_0})^2]  \]
+
+\[ \sum_2 = E[(\frac{\partial log f_1(X_i | \theta_0)}{\partial \theta_0^2})]  \]
+
+Using logic of the proof we would have: $\sqrt{n}(\hat{\theta}_{ML} - \theta_0) \implies N(0, \sum_2^{-1}, \sum_1, \sum_2^{-1})$, and this variance is called White's, giving rise to White's standard errors. 
+
+#### Lecture 8
+
+##### 1) Hypotheses
+
+- $H_0$: null hypothesis.
+
+- $H_1$: alternative hypothesis.
+
+##### 2) Testing
+
+- **Critical Region**: accept if $X \in C$ and reject if $X \notin C$. Ex: given data X = ($X_1,...,X_n$), C = {$\sum_{i=1}^n X_i < \delta$} for some $\delta \in \mathbb{R}$. 
+
+- Types of errors: **type-1 error**: $H_0$ is true but we reject. **Type-2 error**: $H_0$ is false but we accept. 
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("30.png")
+ grid.raster(img)
+```
+
+- **Size**: probability of type-1 error: 1 - $\Phi (\sqrt{n}(\delta / n - \mu_0)/\sigma)$.
+
+- **Probability of type-2 error**: $\Phi (\sqrt{n}(\delta / n - \mu)/\sigma)$.
+
+- **Power**: probability of correctly rejecting the null-hypothesis. Defined as: 1 - probability of type-2 error. 
+
+- The **level** defines a value $\alpha$ for which any true parameter value in the null hypothesis can not be greater than this $\alpha$. We say that the test has *level* $\alpha$ if for any true parameter value in the null hypothesis, the size is not greater than $\alpha$. $\alpha$ usually = 10\%, 5\% or 1\%.
+
+- **Z-statistic**: Z = Z($X,\mu_0$) = $\frac{\sqrt{n}}{\sigma}(\overline{X} - \mu_0) ~ N(0,1)$ under the null. Let $Z_{0.95}$ denote the 95\%-quantile of a standard normal distribution. Then $\sqrt{n}(\delta / n - \mu_0)/\sigma$ = $Z_{0.95}$, our test will accept the null if Z < $Z_{0.95}$. 
+
+- **P-value**: is the probability (calculated under the null) of **obtaining test results at least as adverse/extreme** to the null hypothesis as the ones we observed in our test. The smaller the p-value, the more sure we can be that the $H_0$ will not hold. P-value = P{N(0,1)>z} = 1 - $\Phi$ (z). 
+
+##### 3) Pivotal statistics
+
+- **Pivotal statistics**: don't depend on unknown parameters. 
+
+- **Asymptotically pivotal statistical**: it may be impossible to find the exact distribution of the test statistic, but possible to find an APS $\rightarrow$ a test statistic with an asymptotic distribution that does not depend on any unknown parameter.
+
+- **t-statistic** = $\frac{(\overline{X}_n - \mu_0)}{\sqrt{s^2/n}} \implies N(0,1)$ if the null is true. We reject the null at 5\% if |t| > 1.96 and p-value = 2$\Phi$(-|t|). 
+
+#### Lecture 9
+
+##### 1) Some more on bootstrap in testing
+
+- **Example**: $H_0: h(\mu, \sigma^2) = 0$ vs $H_1 : h (\mu, \sigma^2) \neq 0$, given $\mu = EX_i$ and $\sigma^2 = Var(X_i)$. Let's define a new parameter $\gamma = h(\mu, \sigma^2)$ for which we have a consistent estimate: $\hat{\gamma} = h(\overline{X}, s^2)$. We can prove asymptotic normality via the delta-method:
+
+\[ \sqrt{n}(\hat{\gamma} - \gamma) \implies N(0,(\triangledown h)' V \triangledown h) \]
+
+where $\sqrt{n}(\overline{X} - \mu, s^2 - \sigma^2)' \implies N(0,V)$ and $\triangledown h$ = ($\frac{\partial h (\mu, \sigma^2)}{\partial \mu}, \frac{\partial h(\mu, \sigma^2)}{\partial \sigma^2}$)'. This works to get a natural estimate of the asymptotic variance of $\hat{\gamma}$ and then construct a regular t-statistic to conduct a test.
+
+- Or we can employ a **parametric bootstrap** by approximating an unknown, finite-sample distribution of a statistic z = $\sqrt{n}(\hat{\gamma} - 0)$ with $z^\ast$ = $\sqrt(h(\overline{X}^\ast, s^{\ast^2}) - \hat{\gamma})$. 
+
+- **Bootstrap to calculate standard errors**: imagine we construct a natural consistent estimator $\hat{V}$ for V and considered t-statistic: $t = \sqrt{n} \frac{\hat{\gamma} - 0}{\sqrt{(\triangledown \hat{h})'\hat{V} \triangledown \hat{h}}}$ where $\triangledown \hat{h}$ is the corresponding derivative evaluated at $\overline{X}$, $s^2$. Under the $H_0 : t\implies N(0,1)$. The bootstrapped statistic is analogous $t^\ast \implies N(0,1)$.
+
+##### 2) Uniformly Most Powerful Test
+
+- Test based on C is more powerful than that based on C' if $\beta(\theta) ≥ \beta'(\theta) \forall \theta \in \Theta_1$. If a test is more powerful than any other, than it is called UMP test. **Neyman Pearson Lemm**: let f(x|$\theta$) with $\Theta = ${$\theta_0,\theta_1$} be some parametric family. $H_0: \theta = \theta_0$ vs $H_1: \theta = \theta_1$. Assume some critical set C satisfies: **i)** $x \in C$ if kf(x|$\theta_0$) > $f(x|\theta_1)$; **ii)** x $\notin$ C if $kf(x|\theta_0)$ < $f(x|\theta_1)$ where k ≥ 0 is chosen so that $\alpha = P_{\theta_0} (X \notin C)$. Then the test based on C is the UMP among all tests of level $\alpha$. 
+
+##### 3) UMP tests with composite hypotheses
+
+- **Neyman Pearson lemma** consider an optimization problem: $\int \phi (x) f(x| \theta_1)dx \rightarrow max$ subject to $\int \phi (x)f(x| \theta_0)dx ≤ \alpha$ and 0 ≤ $\phi$ ≤ 1. The solution to this problem gives the UMP test of level $\alpha$. 
+
+##### 4) Likelihood Ratio Test
+
+- $H_0: \theta \in \Theta_0$ vs $H_1: \theta \in \Theta_1$. Denote $\Theta = \Theta_0 \cup \Theta_1$. Likelihood function is: $\mathcal{L}(\theta |x)$. A LRT statistic is: $\lambda(x) = \frac{sup_{\theta \in \Theta_0} \mathcal{L}(\theta|x)}{sup_{\theta \in \Theta}\mathcal{L}(\theta|x)}$. Small LRT implies that there is a value $\theta$ in the $H_1$ which gives much greater likelihood than all values in the $H_0$. The test rejects the $H_0$ $\iff$ $\lambda(x) ≤ c$ for some c. The constant *c* is chosen according to the desired level of the test. 
+
+- **ML estimator of the restricted model**: $\hat{\theta}_r$ = argmax$_{\theta \in \Theta_0} \mathcal{L}(\theta | x)$.
+
+- **ML estimator of the unrestricted model**: $\hat{\theta}_{ur}$ = argmax$_{\theta \in \Theta_0} \mathcal{L}(\theta | x)$.
+
+- Equivalent definition of the LRT: $\lambda(x) = \frac{\mathcal{L}(\hat{\theta}_r|x)}{\mathcal{L}(\hat{\theta}_{ur}|x)}$.
+
+- **Example**: $H_0 : \theta = \theta_0$ vs $H_1 : \theta \neq \theta_0$. Then $\hat{\theta}_r = \theta_0$ and $\hat{\theta}_{ur} = \hat{\theta}_{MLE}$ = $\overline{X}_n$. The LRT statistic is:
+
+- \[ \lambda(x) = \frac{\mathcal{L}(\theta_0|x)}{\mathcal{L}(\hat{\theta}_{MLE}|x)} = exp \{ -(n/2)(\overline{X}_n - \theta_0)^2 \} \]. 
+
+- The LRT **rejects the $H_0$** $\iff |\overline{X}_n - \theta_0|$ > c. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Lecture 10
+
+##### 1) Likelihood Ratio Test
+
+- **LRT**: $\lambda (x) = \frac{\mathcal{L}(\theta_0 | x)}{\mathcal{L}(\hat{\theta}_{ML}|x)}$. Where $x = (x_1,...,x_n)$ is the realization of the data set and $\hat{\theta}_{ML}$ the ML estimator. Then, under some regularity conditions, we have(T1): -2log$\lambda$(X)$\implies X_1^2$. From this T1 we have that the large sample LR test of level $\alpha$ rejects the $H_0$ $\iff$ -2log$\lambda$(x) > $X_1^2 (1-\alpha)$, where $X_1^2(1 - \alpha)$ denotes 1 - $\alpha$-quantile of $X_1^2$. 
+
+- **Multi-dimensional case**: -2log$\lambda$(X) = 2($max_{\theta \in \Theta} \ell (\theta | X) - max_{\theta \in \Theta_0} \ell (\theta | X)) \implies X_p^2$ under the null. Large sample LR test of level $\alpha$ rejects $H_0 \iff$ -2log$\lambda$(X) > $X_p^2(1 - \alpha)$. We often denote LR = -2log $\lambda$(X), LR is the **likelihood ratio statistic**. By denoting $\hat{\theta}_0$ = arg max$_{\theta \in \Theta_0} \ell (\theta | X)$ as the restricted estimate, then: LR = 2($\ell(\hat{\theta}_{ML}|X)- \ell (\hat{\theta}_0 | X)$). The **LRT statistic** is: $\lambda(x) = (\lambda_0 / \hat{\lambda}_{ML})^{\sum_{i=1}^n X_I}e^{-n (\lambda_0 - \hat{\lambda}_{ML})}$
+
+##### 2) Large Sample Tests: Wald
+
+Once known the asymptotic distribution of some statistic, say $\delta(X_1,...,X_n)$, we can construct a large sample test based on this asymptotic distribution. We can show that: $\sqrt{n}(\delta(X_1,...,X_n)- \tau) \implies N(0,\sigma^2)$. Given that $\tau$ is 1-dimensionl and that $\tau = \t_o$ agains the two-sided alternatie, we have $\sqrt{n}(\delta(X_1,...,X_n)- \tau_0) \implies N(0,1)$. A test of level $\alpha$ will reject the $H_0$ if t = $\sqrt{n} \frac{\delta (X_1,...,X_n) - \tau_0}{\hat{\sigma}}$ is smaller than $z_{\alpha /2}$ or larger than $z_{1-\alpha /2}$. Equivalent to calculating the Wald statistic:
+
+- **Wald statistic**: W = $n (\frac{\delta (X) - \tau_0}{\hat{\sigma}})^2$.
+
+- **Multi-dimensional Wald**: now $\tau$ is p-dimensional and: $\sqrt{n}(\delta(X)- \tau) \implies N(0,\sum)$. So we can construct a consistent estimate $\hat{\sum}$ of the covariance matrix $\sum(\hat{\sum} \rightarrow^p \sum)$ then: W = n($\delta(X)- \tau_0)' \hat{\sum}^{-1} (\delta(X)- \tau_0) \implies X_p^2$ if $H_0: \tau = \tau_0$. 
+
+- W - LR $\rightarrow_p$ 0.
+
+##### 3) Score test: 
+
+- The **Score** is: $S(\theta) = \frac{\partial \ell}{\partial \theta}(\theta | X) = \frac{\partial log \mathcal{L}}{\partial \theta}(\theta | X) = \sum_{i=1}^n \frac{\partial log f(X_i | \theta)}{\partial \theta}$. We know that FOC for the MLE says that S($\hat{\theta}_{ML}$) = 0. By the first information equality we have $E[S(\theta_0)]$ = $\sum_{i=1}^n E [\frac{\partial log f(X_i | \theta)}{\partial \theta}] = 0$. By Fisher Information definition: E[($\frac{\partial log f(X_i|\theta)}{\partial \theta}$)$^2$] = $I_1(\theta_0)$. By the CLT: $\frac{1}{\sqrt{n}} \sqrt{S(\theta_0)}{\sqrt{I_1(\theta_0)}} \implies N(0,1)$. By continuous mapping: LM = $S(\theta_0)^2 / (nI_1(\theta_0)) \implies X_1^2$. LM is called the **Lagrange Multiplier** statistic. The name comes from the constrained optimization problem, for ex: given log$\mathcal{L}(\theta | x) \rightarrow max s.t. \theta = \theta_0$. The lagrangian is H = log$\mathcal{L}(\theta|x)- \lambda(\theta - \theta_0)$. The FOC is $S(\theta_0) = \lambda$. So indeed the score is connected to the lagrange multiplier. LM - LR $\rightarrow_p$ 0.
+
+- Multidimensional LM: $LM = \frac{1}{n}S(\hat{\theta}_0)I_1 (\hat{\theta}_0)^{-1}S(\hat{\theta}_0) \implies X_p^2$.
+
+##### 4) Generalizations and Summary
+
+- **LR** = $2(\ell(\hat{\theta}_{ML}|X)-\ell(\hat{\theta}_0|X)) \implies X_p^2$.
+
+- **W** = $(g(\hat{\theta}_{ML})-0)\hat{\sum}^{-1} (g(\hat{\theta})_{ML} - 0) \implies X_p^2$.
+
+- **LM** = $S(\hat{\theta}_0)I_n^{-1}(\hat{\theta}_0) S(\hat{\theta}_0) \implies X_p^2$
+
+- Here, $\hat{\sum}$ = $(\frac{\partial g}{\partial \theta}(\hat{\theta}_{ML}))' I_1^{-1}(\hat{\theta}_{ML})(\frac{\partial g}{\partial \theta}(\hat{\theta}_{ML}))$ is a natural delta-method inspired estimate of asymptotic variance. Under proper regularity conditions all of these tests are asymptotically equivalent to each other. 
+
+
+
+
+
+
+
+
+
+
+#### Lecture 11
+
+##### 1) Introduction
+
+- Constructing a data-dependent interval [$l(X),r(X)$] so that it contains the $\theta$ with large probability. 
+
+
+- **Coverage Probability**: of the set C(X)$\subset \Theta$ is the probability (assuming the true value is $\theta$) that **confidence set C(X)** contains $\theta$, i.e., Coverage Probability($\theta$) = $P_\theta$ {$\theta \in C(X)$}. 
+
+- **Confidence Level**: minimum of coverage probabilities over the set of possible parameter values, CL = $inf_{\theta \in \Theta}P_\theta${$\theta \in C(X)$}. We say that confidence set C(X) has confidence level $\alpha$ if $inf_{\theta \in \Theta} P_\theta \{ \theta \in C(X) \} ≥ \alpha$. 
+
+##### 2) Test Inversion
+
+- **Test Inversion**: To obtain the **Confidence Set C(X)**: $H_0 : \theta = \theta_0$ vs $H_1: \theta \neq \theta_0$ $\forall$ possible parameter value $\theta_0 \in \Theta$. We test for each hypothesis a text of size $\alpha$. Then C(X) = {$\theta_0 \in \Theta:\text{ the }H_0 \text{ that } \theta = \theta_0$} is of confidence level $1 - \alpha$. $P_{\theta_0} \{\text{ the test rejects } \theta = \theta_0 \} ≤ \alpha$. So with probability of at least 1 - $\alpha$, $\theta_0 \in C(X)$. In other words, $P_{\theta_0}$ {$\theta_0 \in C(X)$} ≥ 1 - $\alpha$. 
+
+##### 3) Pratt's Theorem
+
+- If we use a UMP test $\implies$ the length of the confidence set will be the shortest among all confidence sets of a given level: let X ~ $f(x|\theta)$ be the data and C(X) the confidence set for $\theta$. Under some regularity conditions, for any $\theta_0$: $E_{\theta_0} [\text{ length of C(X) }] = \int P_{\theta_0} \{ \theta \in C(X) \}d\theta$. If C(X) is constructed by *inverting a UMP test of size* $\alpha$, then C(X) has the shortest expected length among all confidence sets of level 1 - $\alpha \forall \theta_0$.
+
+##### 4) Asymptotic Theory for Interval Construction
+
+- If $X_1,...,X_n$ is a random sample from distribution $f(x|\theta)$ with $\theta \in \Theta$. Under some regularity conditions, $\sqrt{n}(\hat{\theta}_{ML} - \theta) \implies N(0,I^{-1}(\theta))$. For any function $h: \Theta \rightarrow \mathbb{R}$ under some regularity conditions and using delta-method, Slutsky's theorem and some math, we can construct a confidence interval for $h(\theta)$ as: [$h (\hat{\theta}_{ML} + z_{\alpha / 2}\sqrt{\hat{V}h(\hat{\theta}_{ML})}, h(\hat{\theta}_{ML} + z_{1 - \alpha /2} \sqrt{\hat{V}(h(\hat{\theta}_{ML}))}]$. This CS is essentially based on the Wald statistic. 
+
+- What if we want to construct them based on LM and LR tests? 
+
+- **CS based on LM**: LM = $(\frac{\sum X_i - np}{\sqrt{np(1-p)}})^2$, so the confidence set based on inverting the LM test is: {$p\in (0,1): |\frac{\sum X_i - np}{\sqrt{np(1-p)}}| ≤ z_{1-\alpha /2}$} which is the solution to a quadratic inequality. 
+
+- **CS based on LR**: $l_n^{ur} - l_n^r = \sum X_i log(\hat{p}/p_0) + (n - \sum X_i)log((1-\hat{p})/(1-p_0))$. So the CS based on inverting the LR test is: {$p\in(0,1):  2(\sum X_i log (\hat{p}/p)+ (n - \sum X_i) log (1 - \hat{p})/(1-p)) ≤ X_{1-\alpha}^2(1)$}. 
+
+##### 5) Bootstrap confidence sets
+
+- Creating a CS for $\theta$ for which one has a consistent estimator $\hat{\theta} = \delta (X)$ where X is a random draw from unknown distribution F. We can bootstrap the statistic T($\theta_0$) = $\hat{\theta} - \theta_0$ whenever testing $H_0: \theta = \theta_0$. We would draw a bootstrapped sample $X^\ast$ from an approximating distribution $\hat{F}$ and calculate $T^\ast$ = $\delta(X^\ast) - \hat{\theta}$, then quantiles of $T^\ast$ serve as critical values for the corresponding test. This works when the difference between distributions of T and $T^\ast$ converge almost surely to 0 as $n \uparrow$. 
+
+
+
+
+
+
+
+
+#### Lecture 12
+
+##### 1) Frequentists and Bayesian Paradigms
+
+##### 2) Bayesian Updating
+
+- $\pi (\theta)$: the prior $\rightarrow$ ex ante known distribution derived from past experience.
+
+- Given **prior distribution** = $N(\mu_0, \tau^2)$ and the **posterior distribution** is $\pi (\mu | X = x) = \pi (\mu)f(x|\mu)/m(x)$ where: $\pi(\mu)$ denotes the prior distribution and $m(x)$ denotes the prior predictive distribution. given that $m(x)$ does not depend on $\mu$, $m(x)$ is a contant that normalizes $\int \pi(\mu | X = x)d \mu$ to 1. When we calculate $\pi(\mu) f(x | \mu)$, all terms that don't contain $\mu$ can be denoted by a constant C when being multiplied. Once we have an expression for $\pi(\mu) f(x| \mu)$ as a function of $\mu$, we can integrate it in order to find the normalizing constant $m(x)$. In our case:
+
+\[ \pi(\mu | X = x) = C \pi (\mu)f(x| \mu) = C exp \{ - \frac{\sum_{i=1}^n (x_i - \mu)^2}{2 \sigma^2} - \frac{(\mu - \mu_0)^2}{2 \tau^2}\}   \]
+
+### Formulas
+
+- *P{X ≤ t}*: denotes the probability that X ≤ t.
+
+- The *cdf* of *discrete X* is given by: $F_X (t) = \sum_{j=1,...,n:x_j ≤ t}p_j$.
+
+- The *cdf* of *continuous X* is given by: $F_Y(t) = \int_{-\infty}^t f_Y(s)ds$.
+
+- Suppose Y = g(X). The cdf of Y: $F_Y(t)$ = P{Y ≤ t} = P{g(X) ≤ t} = P{X $\in g^{-1}$(-$\infty ,t]$}.
