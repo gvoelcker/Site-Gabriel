@@ -8,7 +8,7 @@ output: html_document
 
 ### **Overview**
 
-14.121 is structured in 7 Lectures:
+14.121 is structured in 9 Lectures:
 
 1) The first lecture deals with **utility** and **revealed preferences**. This is useful for modelling how individuals make decisions. We use a **utility function** to model the preferences of a consumer. This utility implies that preferences are complete, reflexive and transitive. **Revealed preferences** are the choices a consumer makes when confronted with different bundles. If x is chosen when y could have been chosen, then x is **directly revealed preferred** to y. 
 
@@ -36,7 +36,14 @@ output: html_document
 
 6) How do these market players interact? Let's try and draw the big picture: [**General Equilibrium**](https://en.wikipedia.org/wiki/General_equilibrium_theory). A **Walrasian Equilibrium** depends on 3 factors: 1) are the agents maximizing their utilities?; 2) are markets clearing? 3) is the allocation feasible? In terms of welfare, we care if the GE is Pareto Optimal, such that no agent can be better off without hurting another. We use a 2x2 economy as the setting. Given the number of agents(2), commodities (2), the consumption vector and the endowments, we use the [**Edgeworth Box**](https://en.wikipedia.org/wiki/Edgeworth_box) to represent the distribution of resources. This deals with budget set, offer curve, excess demand, pareto set and contract curve. From that we evolve to the [**First Welfare Theorem**](https://en.wikipedia.org/wiki/Fundamental_theorems_of_welfare_economics#Implications_of_the_first_theorem): when markets are complete, any competitive equilibrium is necessarily Pareto optimal(in other words: once we find an efficient allocation, we could support it with a price equilibrium $\rightarrow$ any Walrasian Equilibrium is PAreto Optimal). Then the [**Second Welfare Theorem**](https://en.wikipedia.org/wiki/Fundamental_theorems_of_welfare_economics#Proof_of_the_second_fundamental_theorem): any Pareto optimal can be achieved as a competitive equilibrium if appropriate lump-sum transfers of wealth are arranged. We use the Kuhn-Tucker FOC to find equilibrium(?). And also the FOC can provide a way to link Pareto optimal allocations to Walrasian equilibria. Then we incorporate production into the picture: the Robinson Crusoe model. After that, we advance to a 2x2 Production Economy. Then, we talk about **Public Goods**: when an agent consumes them, another's consumption of them is not affected. **Free-riding** problem: given that there is under-provision of the good, people rides on every else's provision. [**Lindahl Equilibrium**](https://www.investopedia.com/terms/l/lindahl-equilibrium.asp): proposes that the individual pays ofor a personalized price to determine an efficient level of provision for public goods. Since market mechanisms are unlikely to provide public goods efficiently we have reason to have government involvement.  
 
-7) We have arrived on the final lecture of the course: Existence and Other Properties! We check for the existence of a Walrasian Equilibrium using Brouwer's Theorem. We also use Kakutani's Fixed Point theorem to test for the existence of equilibrium. Walras' Law allows us to check market clearing in L - 1 markets. Also, in GE we have some properties of the set of equilibrium prices: z(p) = 0: i) relative prices are determined; ii) only need to check market clearing in L - 1 markets; iii) z is homogeneous of degree 0. In equilibrium, the price vector is **regular** if the Jacobian Matrix has rank L - 1. This regularity condition is key for **comparative statics**. This leads us to questions such as: how do price changes with changes in endowment? In Walrasian Equilibrium, we look for a price vector that is **locally unique** such that: i) any regular equilibrium is locally unique; ii) a regular economy has a finite number of equilibria; iii) for almost every vector of initial endowments, the exchange economy is regular. We then advance to the Sonnenschein-Mantel-Debreu Theorem. How do we interpret that? 1) "Too much freedom"; 2) Why look only at excess demand functions?
+7) We have arrived on the seventh lecture of the course: Existence and Other Properties! We check for the existence of a Walrasian Equilibrium using Brouwer's Theorem. We also use Kakutani's Fixed Point theorem to test for the existence of equilibrium. Walras' Law allows us to check market clearing in L - 1 markets. Also, in GE we have some properties of the set of equilibrium prices: z(p) = 0: i) relative prices are determined; ii) only need to check market clearing in L - 1 markets; iii) z is homogeneous of degree 0. In equilibrium, the price vector is **regular** if the Jacobian Matrix has rank L - 1. This regularity condition is key for **comparative statics**. This leads us to questions such as: how do price changes with changes in endowment? In Walrasian Equilibrium, we look for a price vector that is **locally unique** such that: i) any regular equilibrium is locally unique; ii) a regular economy has a finite number of equilibria; iii) for almost every vector of initial endowments, the exchange economy is regular. We then advance to the Sonnenschein-Mantel-Debreu Theorem. How do we interpret that? 1) "Too much freedom"; 2) Why look only at excess demand functions?
+
+8) 
+
+
+
+
+9)
 
 ### **1) Utility And Revealed Preferences**
 
@@ -1115,9 +1122,54 @@ An allocation (x,G) is pareto efficient $\iff$
 
 ### **7) General Equilibrium Existence and Other Properties**
 
-We've arrived at the final [**lecture**](https://gabrielvoelcker.netlify.com/mit/14121lecture7.pdf) of the course!
+We've arrived at the seventh [**lecture**](https://gabrielvoelcker.netlify.com/mit/14121lecture7.pdf) of the course!
 
+### **8) Microfoundations for GE**
 
+We've arrived at the eighth [**lecture**](https://gabrielvoelcker.netlify.com/mit/14121lecture8.pdf) of the course! This eighth lecture deals with Microfoundations for General Equilibrium. 
+
+If individuals have private information about their preferences, endowments, technologies, etc, this information is too enormous to be communicated to a central planner. **Market mechanism** works by using prices to give people concise sufficient statistics allowing them to make coordinated choices and arrive at a socially optimal allocation. So what are the merits of alternative economic systems? We briefly review Hurwicz(1960) $\rightarrow$ formalization of informational role of prices(t it is impossible to have a mechanism verifying a Pareto optimal allocation without revealing a supporting Walrasian equilibrium). We have many formulations: **core**, **Ostroy's no surplus condition**, **bargaining set**, **Shapley-Shubik market games**. 
+
+**Core**: is the set of all allocations such that no coalition(set of agents) can improve on or block the allocation (make all of its members better off) by seceding from the economy and only trading among its members. This concept doesn't mention prices! **Central result**: "core convergence" $\implies$ for economies with a large number of agents, core allocations are "approximately Walrasian".
+
+**Blocks/improves Definition**: in an exchange economy, a **coalition** is a set S $\subset$ $\{ 1,...,I \}$. A coalition S *blocks* or *improves on* allocation x by $\hat{x}$ if $\sum_{i \in S} \hat{x}^i = \sum_{i \in S} \omega^i$, and $\forall$ i: $\hat{x}^i \succeq_i x^i$ with at least one preference strict.
+
+**Core definition**: is the set of all allocations which cannot be improved on by any coalition. Results: *i)* in an exchange economy, every core allocation is Pareto optimal; *ii)* in an exchange economy, every Walrasian Equilibrium lies in the core. Remarks: a) Walrasian Equilibrium + Core definiton $\implies$ the core is not empty; b) in a walrasian equilibrium, each consumer acts independently **vs** in the core consumers can get together and exploit potential gains(hard to coordinate; harder without central authority).
+
+**Core convergence**: the set of *types* of consumers is $\mathcal{I}$ = $\{ 1,...,I \}$. The *R-replica economy* $\mathcal{E}_R$ is one with R consumers of each type. Total number of consumers is RI $\rightarrow$ use this setting to construct a sequence of economies. Typical allocation in an R-replica economy is: 
+
+\[ x = (x^{i,r}) = (\underbrace{x^{1,1},...,x^{I,1}}_\text{1st economy},..., \underbrace{x^{1,R},...,x^{I,R}}_\text{R-th economy} ) \in \mathbb{R}_+^{LRI} \]
+
+where $x^{i,r}$ is bundle of the *r*th consumer of type *i*. Note that: $\sum_{i \in \mathcal{I}} \sum_{r=1}^R x^{i,r} = R \sum_{i \in \mathcal{I}}\omega^i$
+
+**Equal treatment property**: suppose consumers have strictly convex preferences. If x is a core allocation in $\mathcal{E}_R$, then $x^{i,r}$ = $x^{i,r'}$  $\forall r,r'$, that is, consumers of the same type consume the same bundle. Given ET, we can treat the core allocations as vectors of fixed size LI, regardless of the replica we are concerned with. **Type allocation**: the vector ($x_1,...,x_I$) $\in \mathbb{R}_+^{LI}$, being interpreted as the ET allocations where each consumer *i* gets $x^i$. We should note that the core allocations of an R-replica economy are in $\mathbb{R}^{LIR}$, which means that we can't compare core allocations of an R replica with those of an R' replica. But ET results provides a way to doing so: we can represent in $\mathbb{R}^{LI}$ the core allocations of an R-replica economy, or an R'-replica economy, just by looking at type allocations. $C_R \subset \mathbb{R}^{LI}_+$: set of type allocations corresponding to the (equal treatment) core allocations of the R-replica economy. $W_R \subset \mathbb{R}_+^{LI}$: type allocations corresponding to the (ET) Walrasian allocations of the R-replica economy. **Obs 1**: assume coalition S has an objection against a type allocation *x* in the R-replica. Then the same is true in the R + 1 replica $\implies$ $C_{R+1} \subseteq C_R \forall R$. **Obs 2**: if a type allocation *x* is Walrasian in the R-replica, it is also Walrasian in the R+1-replica and vice-versa: $W_R = W_{R+1} = W \forall R$. **Obs 3**: by our earlier result: $W \subset C_R \forall R$. If we put the three observations together: $W \subseteq ... \subseteq C_{R+1} \subseteq C_R \subseteq ... \subseteq C_1$. 
+
+[**Debreu-Scarf theorem**](https://www.jstor.org/stable/2525306?seq=1#page_scan_tab_contents): $\cap_R C_R = W$, which means if $x^\ast \in C_R \forall R$, then $x^\ast$ is Walrasian. 
+
+### **9) GE with Indivisibilities**
+
+We've arrived at the ninth and last [**lecture**](https://gabrielvoelcker.netlify.com/mit/14121lecture9.pdf) of the course! How do we model GE with indivisible goods?
+
+- Ex: housing market is a list ($(a_k,h_k)_{k= \in\{1,...,n\}}P$) such that: $a_k$ is the set of agents; $h_n$ is the set of houses that each agent $a_k$ owns. Each agent has strict preferences over houses ($P_a$). $R_a$ is the weak-preference relation associated with $P_a$. Let P = ($P_a$)$_{a \in A}$. An allocation in a housing market can be described as a **matching** $\mu$: A $\rightarrow$ H, one-to-one housing function. House $\mu(a)$ is the assigned house of agent *a* under $\mu$. A matching is **Pareto-efficient** if there is no other matching $\mathcal{v}$ such that $\mathcal{v}(a)R_{a}\mu(a)$ for all $a \in A$ and $\mathcal{v}(a)P_a \mu(a)$ for some agent a $\in$ A. The **core** is the set of matchings $\mu$ such that there exists no coalition B $\subset$ A and a matching $\mathcal{v}$ such that: a) $\forall a \in B$, $\mathcal{v}(a) = h_\ell$ for some $a_\ell \in B$; and b) $\forall a \in B$, $\mathcal{v}(a)R_a \mu(a)$ and for some b $\in$ B, $\mathcal{v}(b)P_b \mu(b)$ ($\mathcal{v}$ weakly dominates $\mu$ through B). 
+
+- Given the example above: a matching is **individually rational** if every agent receives a house at least as good as her initial house. i) A core mathcing is individually rational (take B all |A| singletons, one by one in the definition of core). ii) a core matching is Pareto efficient (take B = A in the definition of core). 
+
+- But is the core non-empty in the housing market? Yes! Non-empty and unique. Pf: use Gale's top trading cycles algorithm. Steps: 1) agents point to first choice and house points to the owner.....; 2) each remaining agent keeps pointing...
+
+- **Competitive Equilibrium**: the price mechanism also achieves core matching. Given house prices: p=($p_1,...,p_n$). A house $h_m$ is affordable for agent $a_\ell$ at p if $p_m ≤ p_\ell$(budget set). A matching $\mu$ and price vector *p* is a competitive equilibrium if $\forall a, \text{ } \mu(a)$ is the best house she can afford at prices p.
+
+- **Theorem**: there is a competitive equilibrium matching for a housing market which is given by the core matching. Pf: slides. 
+
+- **House allocation problem: serial dictatorship**: A **serial dictatorship** is defined through a priority ordering of agents. A priority ordering is a function f : $\{1, 2, ..., n\} \rightarrow$ *A* that is one-to-one and onto. The allocation $\varphi^f$[*P*] is found as: f(1) gets first choice, f(2) gets first choice except for the choice of f(1).... f(k) gets first choice excluding the house assigned to the house all agents before f(k) chose.
+
+- **Theorem**: A serial dictatorship is Pareto-efficient.
+
+- **Welfare Theorems**: we can also use the core mechanism for a house allocation problem, by simply starting with an arbitrary assigned endowment, and running the core mechanism: **Core from assigned endowments**. How are these two mechanisms related? **Theorem**: for any ordering *f*, and any matching $\mu$, simple serial dictatorship induced by *f* and core from assigned endowments $\mu$ both yield Pareto efficient matchings. Moreover, for any Pareto efficient matching $\eta$, there is a simples serial dictatorship and a core from assigned endowments that yields it. Why are these welfare theorems? Refer to slides for proof. 
+
+- **Lottery Systems**: a lottery is a probability distribution over matchings. This is a systematic procedure to select a lottery for each problem. Ex: i) *random serial dictatorship*: Randomly select an
+ordering with uniform distribution and use the induced simple serial dictatorship; ii) *core from random endowments*: Randomly select a matching (to be interpreted as initial endowment) and select the core of the induced housing market. Both mechanims produce the same outcome!
+
+[**Theorem**](https://onlinelibrary.wiley.com/doi/pdf/10.3982/TE816): The random serial dictatorship is equivalent to the core from random endowments. That is, for each problem they choose the same lottery. 
 
 ## **Useful**{.tabset}
 

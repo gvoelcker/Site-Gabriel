@@ -637,10 +637,7 @@ $\frac{d}{d\theta}E_\theta [W(X)] = \int W(x) \frac{\partial f(x | \theta)}{\par
 
 Then we have
 
-Var(W) ≥ $(\frac{d}{d\theta}E_\theta [W(X)])^2 \frac{1}{I(\theta)}$. In particular, if W is unbiased for $\theta$, then Var(W) ≥ $\frac{1}{I(\theta)}$ = $\frac{1}{n I_1(\theta)}$.
-
-
-
+Var(W) ≥ $(\frac{d}{d\theta}E_\theta [W(X)])^2 \frac{1}{I(\theta)}$. In particular, if W is unbiased for $\theta$, then Var(W) ≥ $\frac{1}{I(\theta)}$ = $\frac{1}{n I_1(\theta)}$. 
 
 ### **7 - Maximum Likelihood Estimation**
 
@@ -786,7 +783,7 @@ This is the famous t-statistic.We reject the null at 5\% if |t| > 1.96 and p-val
 What if it is impossible to get a pivotal statistic? Imagine we don't have the normality assumption of the exact distribution of $s^2$ or we are too lazy to find out the asymptotic variance of it. We may do bootstrap then! For b = 1,...,B, the steps are: 1) draw i.i.d. sample $X_b^\ast$ = ($X_{1b}^\ast,...,X_{nb}^\ast$) from a set of initial observations {$X_1,...,X_n$} with replacement; 2) calculate $s_b^2$ to be a sample variance of $X_b^\ast$; 3) calculate $z_b$ = $\sqrt{n}(s_b^2 - s^2)$; 4) order $z_b$ in ascending order(because we want to cut the tail); 5) for test of size $\alpha$, if $z_{([\frac{\alpha}{2}B])} < z < z_{([(1-\frac{\alpha}{2})B])}$ accept the null, otherwise reject. 
 
 
-### **9 - Uniformly Most Powerful Sets**
+### **9 - Uniformly Most Powerful Tests**
 
 #### 1) Some more on bootstrap in testing.
 
@@ -812,7 +809,7 @@ v) On the above example we used bootstrap and avoided calculating the standard e
 
 #### 2) Uniformly Most Powerful Test
 
-[**Uniformly Most Powerful Sets**](https://en.wikipedia.org/wiki/Uniformly_most_powerful_test) is a hypothesis test which has the *greatest power* 1 - $\beta$ among all possible tests of a given size $\alpha$. So for example: suppose we want to the the $H_0$ : $\theta \in \Theta_0$ vs $H_1$ : $\theta \in \Theta_1$. Let *C* be some critical set such that the probability of rejecting $H_0$ is given by $\beta (\theta) = P_\theta$ {$X \notin C$}. The rest based on C is of level $\alpha$ if $\alpha ≥ sup_{\theta \in \Theta_0} \beta(\theta)$. The restriction of of $\beta$(.) on $\Theta_1$ is known as the *power* of the test. Let C' be another critical set. Denote the power of the test based on C' by $\beta '(\theta)$. Suppose that both tests are of level $\alpha$. Then the test based on **C is more powerful than the test based on C''** if $\beta (\theta)$ ≥ $\beta '(\theta)$ $\forall \theta \in \Theta_1$. So, if we have a test that is more powerful than all other tests of a group/class, then we say that this is the UMP test in the class. 
+[**Uniformly Most Powerful Sets**](https://en.wikipedia.org/wiki/Uniformly_most_powerful_test) is a hypothesis test which has the *greatest power* 1 - $\beta$ among all possible tests of a given size $\alpha$. So for example: suppose we want to the the $H_0$ : $\theta \in \Theta_0$ vs $H_1$ : $\theta \in \Theta_1$. Let *C* be some critical set such that the probability of rejecting $H_0$ is given by $\beta (\theta) = P_\theta$ {$X \notin C$}. The test based on C is of level $\alpha$ if $\alpha ≥ sup_{\theta \in \Theta_0} \beta(\theta)$. The restriction of of $\beta$(.) on $\Theta_1$ is known as the *power* of the test. Let C' be another critical set. Denote the power of the test based on C' by $\beta '(\theta)$. Suppose that both tests are of level $\alpha$. Then the test based on **C is more powerful than the test based on C'** if $\beta (\theta)$ ≥ $\beta '(\theta)$ $\forall \theta \in \Theta_1$. So, if we have a test that is more powerful than all other tests of a group/class, then we say that this is the UMP test in the class. 
 
 [**Neyman-Pearson Lemma**](https://en.wikipedia.org/wiki/Neyman%E2%80%93Pearson_lemma): let f(x|$\theta$) with $\Theta$ = {$\theta_0 , \theta_1$} be some parametric family. We test $H_0: \theta = \theta_0$ vs $H_1: \theta = \theta_1$. Let's assume that some critical set C satisfies: i) x $\in$ C if kf(x|$\theta_0$) > f(x|$\theta_1$); ii) x $\notin$ C if kf(x|$\theta_0$) < f(x|$\theta_1$) where k ≥ 0 is chosen so that $\alpha = P_{\theta_0}(X \notin C)$. The, the test based on C is the UMP among all tests of level $\alpha$. In addition, any UMP test of level $\alpha$ satisfies i) and ii). This holds for simple hypothesis. 
 
@@ -1011,19 +1008,11 @@ This works when |T - $T^\ast$| tends to 0 as sample increases.
 
 When we estimate two parameters at the same time, their confidence intervals are not jointly valid. To get a joint confidence set, we must invert the test for joint hypothesis. 
 
-
-
-
-**Symbology**
-
-Space destined to deal with all the math symbols and greek letters dealt in the course, for reference:
-
-## 
 ### **12 - Bayesian Inference**
 
 To be completed..
 
-**Useful Info**{.tabset}
+## **Useful Info**{.tabset}
 
 ### Schedule
 
@@ -1460,7 +1449,7 @@ where $\sqrt{n}(\overline{X} - \mu, s^2 - \sigma^2)' \implies N(0,V)$ and $\tria
 
 ##### 2) Large Sample Tests: Wald
 
-Once known the asymptotic distribution of some statistic, say $\delta(X_1,...,X_n)$, we can construct a large sample test based on this asymptotic distribution. We can show that: $\sqrt{n}(\delta(X_1,...,X_n)- \tau) \implies N(0,\sigma^2)$. Given that $\tau$ is 1-dimensionl and that $\tau = \t_o$ agains the two-sided alternatie, we have $\sqrt{n}(\delta(X_1,...,X_n)- \tau_0) \implies N(0,1)$. A test of level $\alpha$ will reject the $H_0$ if t = $\sqrt{n} \frac{\delta (X_1,...,X_n) - \tau_0}{\hat{\sigma}}$ is smaller than $z_{\alpha /2}$ or larger than $z_{1-\alpha /2}$. Equivalent to calculating the Wald statistic:
+Once known the asymptotic distribution of some statistic, say $\delta(X_1,...,X_n)$, we can construct a large sample test based on this asymptotic distribution. We can show that: $\sqrt{n}(\delta(X_1,...,X_n)- \tau) \implies N(0,\sigma^2)$. Given that $\tau$ is 1-dimensionl and that $\tau = t_o$ agains the two-sided alternatie, we have $\sqrt{n}(\delta(X_1,...,X_n)- \tau_0) \implies N(0,1)$. A test of level $\alpha$ will reject the $H_0$ if t = $\sqrt{n} \frac{\delta (X_1,...,X_n) - \tau_0}{\hat{\sigma}}$ is smaller than $z_{\alpha /2}$ or larger than $z_{1-\alpha /2}$. Equivalent to calculating the Wald statistic:
 
 - **Wald statistic**: W = $n (\frac{\delta (X) - \tau_0}{\hat{\sigma}})^2$.
 
@@ -1483,15 +1472,6 @@ Once known the asymptotic distribution of some statistic, say $\delta(X_1,...,X_
 - **LM** = $S(\hat{\theta}_0)I_n^{-1}(\hat{\theta}_0) S(\hat{\theta}_0) \implies X_p^2$
 
 - Here, $\hat{\sum}$ = $(\frac{\partial g}{\partial \theta}(\hat{\theta}_{ML}))' I_1^{-1}(\hat{\theta}_{ML})(\frac{\partial g}{\partial \theta}(\hat{\theta}_{ML}))$ is a natural delta-method inspired estimate of asymptotic variance. Under proper regularity conditions all of these tests are asymptotically equivalent to each other. 
-
-
-
-
-
-
-
-
-
 
 #### Lecture 11
 
@@ -1526,13 +1506,6 @@ Once known the asymptotic distribution of some statistic, say $\delta(X_1,...,X_
 
 - Creating a CS for $\theta$ for which one has a consistent estimator $\hat{\theta} = \delta (X)$ where X is a random draw from unknown distribution F. We can bootstrap the statistic T($\theta_0$) = $\hat{\theta} - \theta_0$ whenever testing $H_0: \theta = \theta_0$. We would draw a bootstrapped sample $X^\ast$ from an approximating distribution $\hat{F}$ and calculate $T^\ast$ = $\delta(X^\ast) - \hat{\theta}$, then quantiles of $T^\ast$ serve as critical values for the corresponding test. This works when the difference between distributions of T and $T^\ast$ converge almost surely to 0 as $n \uparrow$. 
 
-
-
-
-
-
-
-
 #### Lecture 12
 
 ##### 1) Frequentists and Bayesian Paradigms
@@ -1543,7 +1516,7 @@ Once known the asymptotic distribution of some statistic, say $\delta(X_1,...,X_
 
 - Given **prior distribution** = $N(\mu_0, \tau^2)$ and the **posterior distribution** is $\pi (\mu | X = x) = \pi (\mu)f(x|\mu)/m(x)$ where: $\pi(\mu)$ denotes the prior distribution and $m(x)$ denotes the prior predictive distribution. given that $m(x)$ does not depend on $\mu$, $m(x)$ is a contant that normalizes $\int \pi(\mu | X = x)d \mu$ to 1. When we calculate $\pi(\mu) f(x | \mu)$, all terms that don't contain $\mu$ can be denoted by a constant C when being multiplied. Once we have an expression for $\pi(\mu) f(x| \mu)$ as a function of $\mu$, we can integrate it in order to find the normalizing constant $m(x)$. In our case:
 
-\[ \pi(\mu | X = x) = C \pi (\mu)f(x| \mu) = C exp \{ - \frac{\sum_{i=1}^n (x_i - \mu)^2}{2 \sigma^2} - \frac{(\mu - \mu_0)^2}{2 \tau^2}\}   \]
+\[ \pi(\mu | X = x) = C \pi (\mu)f(x| \mu) = C exp \{ - \frac{\sum_{i=1}^n (x_i - \mu)^2}{2 \sigma^2} - \frac{(\mu - \mu_0)^2}{2 \tau^2}\} \]
 
 ### Formulas
 
