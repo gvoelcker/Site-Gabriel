@@ -443,7 +443,7 @@ We saw how h(p, u) is the derivative with respect to p of the EMP’s value func
 
 Do not have exact same statement for UMP because Walrasian demand is an ordinal concept.
 
-[**Roy's Identity**](https://en.wikipedia.org/wiki/Roy%27s_identity): is a major result in microeconomics having applications in consumer choice and the theory of the firm. The lemma relates the ordinary (Marshallian) demand function to the derivatives of the indirect utility function. Specifically, denoting the indirect utility function as v(p,w),} the Marshallian demand function for good i can be calculated as 
+[**Roy's Identity**](https://en.wikipedia.org/wiki/Roy%27s_identity): is a major result in microeconomics having applications in consumer choice and the theory of the firm. The lemma relates the ordinary (Marshallian) demand function to the derivatives of the indirect utility function. Specifically, denoting the indirect utility function as v(p,w), the Marshallian demand function for good i can be calculated as 
 
 <center> $x_i^m$ = $\frac{\frac{\partial v}{\partial p_i}}{\frac{\partial v}{\partial w}} </center>
 
@@ -2178,4 +2178,61 @@ A third sort of coherence involves a *preference relation* over X. A preference 
 
 ### 3
 
+
+
+## **Symbols**:
+#### references:
+
+- **Complete**: $\succeq$ is complete on X if $\forall x,y \in X$, either $x \succeq y$ or $y \succeq x$, or both (you have to have a preference!).
+
+- **Reflexive**: $\succeq$ is reflexive if $\forall x,y \in X$, x $\succeq$ x.
+
+- **Transitive**: $\succeq$ is transitive on X if x $\succeq$ y, y $\succeq$ z $\implies$ x $\succeq$ z. 
+
+- **Monotone**: $\succeq$ is monotone if x $\in$ X and y ≥ x implies y $\succeq$ x. If x ≠ y and y ≥ x $\implies$ y $\succ$ x, then **strictly monotone** (goods are goods $\implies$ since a good is a good thing, you'll always prefer to have more of it than less of it).
+
+- **Locally non-satiated**: if $\forall$ x and $\delta$>0, $\exists$y such that: ||y - x|| < $\delta$ and y $\succ$ x (you can always consume a little bit more of the good, not reaching the limit $\implies$ never attains a maximum).
+
+- **Convex**: $\forall x$, y $\succeq$ x and z $\succeq$ x and z ≠ y $\implies$ that $\forall \alpha \in (0,1)$ we have: $\alpha y + (1 - \alpha)z \succeq x$ (agents prefer to diversify/moderation in all things).
+
+- **Continuous**: it is preserved under limits: $\forall$ sequences $\{(x^n, y^n)\}^\infty_{n=1}$ with $x^n \succeq y^n$ $\forall$ n, x $\succeq$ y, where x and y are limit points of the sequence. This means we don't have "jumps" on preferences.
+
+- **Debreu's Theorem**: if the rational preference $\succeq$ on X is continuous $\implies$ $\exists$ a continuous utility function u(x) that represents $\succeq$. 
+
+## Revealed preferences
+
+- **Directly revealed preferred**: if x is chosen when y could have been chosen, **x is directly revealed preferred to y**. Notation: $xR^Dy$. 
+
+- **Local nonsatiation**: the utility function is LNS if $\forall x \in X$, and all $\varepsilon$ > 0, $\exists y \in X$ with ||y = x|| < $\varepsilon$ such that u(y) > u(x). 
+
+#### emand Theory
+
+- **x(p,w)**: is the **Walrasian demand correspondence**. It's the solution to the Consumer's Problem: what he chooses when maximizing utility. 4 implications:
+
+    a) It is homogeneous of degree 0.
+    
+    b) compact if prices $\gg 0$. 
+
+    c) Walras' Law: if preferences are LNS $\implies$ $\forall$(p,w) and $\forall$ $x \in x(p,w)$ we have px = w. All the wealth is spent.
+
+    d) if u is strictly-quasiconcave, each x(p,w) contains a single bundle.
+    
+- **Kuhn-Tucker** necessary conditions: used to obtain the solutin to maximization/minimization problems. if *u* is continuously differentiable. If *x* $\in x(p,w)$ is a solution to the UMP, then $\exists$ a constant $\lambda$ ≥ 0 such that $\frac{du}{dx_i} = \lambda p_i \forall \in {1,2,...,L}$ with $x_i^\ast$ > 0; and $\frac{du}{dx_i} ≤ \lambda p_i \forall i \in \{ 1,2,...,L \}$ with $x_i^\ast$ = 0. The constand $\lambda$ is the "lagrange multiplier". 
+
+- **Elasticity** of demand with income
+
+: how the demand changes when there is a unit change in income: $\eta_i = \frac{\partial x_i}{\partial w} \times \frac{w}{x_i} = \frac{\partial log x_i}{\partial log w}$.
+
+- **Elasticity of demand with price**:  how the demand changes when there is a unit change in price: $\epsilon_{ij} = \frac{\partial x_i}{\partial p_j} \frac{p_j}{x_i} = \frac{\partial log x_i}{\partial log p_j}$
+-- **Engel Aggregation**: total expenditure must change by an amount equal to any wealth change. 
+
+-  
+
+v(p,w): 
+
+- e(p,u): 
+
+- h(p,u):
+
+- 
 
