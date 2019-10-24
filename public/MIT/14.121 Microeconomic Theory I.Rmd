@@ -445,7 +445,7 @@ Do not have exact same statement for UMP because Walrasian demand is an ordinal 
 
 [**Roy's Identity**](https://en.wikipedia.org/wiki/Roy%27s_identity): is a major result in microeconomics having applications in consumer choice and the theory of the firm. The lemma relates the ordinary (Marshallian) demand function to the derivatives of the indirect utility function. Specifically, denoting the indirect utility function as v(p,w), the Marshallian demand function for good i can be calculated as 
 
-<center> $x_i^m$ = $\frac{\frac{\partial v}{\partial p_i}}{\frac{\partial v}{\partial w}} </center>
+<center> $x_i^m$ = $\frac{\frac{\partial v}{\partial p_i}}{\frac{\partial v}{\partial w}}$ </center>
 
 where p is the price vector of goods and *w* is income. So, it provides analogous result when we normalize utility by marginal utility of wealth.
 
@@ -2180,8 +2180,9 @@ A third sort of coherence involves a *preference relation* over X. A preference 
 
 
 
-## **Symbols**:
-#### references:
+## **Symbols**
+
+### Preferences:
 
 - **Complete**: $\succeq$ is complete on X if $\forall x,y \in X$, either $x \succeq y$ or $y \succeq x$, or both (you have to have a preference!).
 
@@ -2198,14 +2199,13 @@ A third sort of coherence involves a *preference relation* over X. A preference 
 - **Continuous**: it is preserved under limits: $\forall$ sequences $\{(x^n, y^n)\}^\infty_{n=1}$ with $x^n \succeq y^n$ $\forall$ n, x $\succeq$ y, where x and y are limit points of the sequence. This means we don't have "jumps" on preferences.
 
 - **Debreu's Theorem**: if the rational preference $\succeq$ on X is continuous $\implies$ $\exists$ a continuous utility function u(x) that represents $\succeq$. 
-
-## Revealed preferences
+**Revealed Preferences**: 
 
 - **Directly revealed preferred**: if x is chosen when y could have been chosen, **x is directly revealed preferred to y**. Notation: $xR^Dy$. 
 
 - **Local nonsatiation**: the utility function is LNS if $\forall x \in X$, and all $\varepsilon$ > 0, $\exists y \in X$ with ||y = x|| < $\varepsilon$ such that u(y) > u(x). 
 
-#### emand Theory
+### Demand Theory
 
 - **x(p,w)**: is the **Walrasian demand correspondence**. It's the solution to the Consumer's Problem: what he chooses when maximizing utility. 4 implications:
 
@@ -2219,20 +2219,251 @@ A third sort of coherence involves a *preference relation* over X. A preference 
     
 - **Kuhn-Tucker** necessary conditions: used to obtain the solutin to maximization/minimization problems. if *u* is continuously differentiable. If *x* $\in x(p,w)$ is a solution to the UMP, then $\exists$ a constant $\lambda$ ≥ 0 such that $\frac{du}{dx_i} = \lambda p_i \forall \in {1,2,...,L}$ with $x_i^\ast$ > 0; and $\frac{du}{dx_i} ≤ \lambda p_i \forall i \in \{ 1,2,...,L \}$ with $x_i^\ast$ = 0. The constand $\lambda$ is the "lagrange multiplier". 
 
-- **Elasticity** of demand with income
-
-: how the demand changes when there is a unit change in income: $\eta_i = \frac{\partial x_i}{\partial w} \times \frac{w}{x_i} = \frac{\partial log x_i}{\partial log w}$.
+- **Elasticity of demand with income**: how the demand changes when there is a unit change in income: $\eta_i = \frac{\partial x_i}{\partial w} \times \frac{w}{x_i} = \frac{\partial log x_i}{\partial log w}$.
 
 - **Elasticity of demand with price**:  how the demand changes when there is a unit change in price: $\epsilon_{ij} = \frac{\partial x_i}{\partial p_j} \frac{p_j}{x_i} = \frac{\partial log x_i}{\partial log p_j}$
--- **Engel Aggregation**: total expenditure must change by an amount equal to any wealth change. 
 
--  
+- **Engel Aggregation**: total expenditure must change by an amount equal to any wealth change: $\sum_{i=1}^n s_i \eta_i = 1$.
 
-v(p,w): 
+- **Cournot Aggregation**: total expenditure cannot change in response to a change in price: $\sum_{i=1}^n s_i \epsilon_{ij} = -s_j$. 
 
-- e(p,u): 
+- v(p,w): **indirect utility function** is the value of the CP: the **welfare of a consumer facing prices p with income w**. Properties:
 
-- h(p,u):
+    a) Homogeneity of degree 0: v($\alpha p, \alpha w$) = v(p,w).
+    
+    b) Strictly increasing in w and non-increasing in $p_i \forall i$.
+    
+    c) Quasi-convex: {(p,w)|v(p,w) ≤ v} is convex for any v.
+    
+    d) Continuous in p and w.
+    
+- **Theorem of the Maximum(Berge's)**: provides conditions for the continuity of an optimized function and the set of its maximizers with respect to its parameters. Formal definition: given A $\subset$ $\mathbb{R}^N$ and the closed set Y $\subset$ $\mathbb{R}^K$, the correspondence f: A $\rightrightarrows$ Y is *upper hemicontinuous* if it has a closed graph and images of compact sets are bounded.
 
-- 
+- **Upper/Lower Hemicontinuity**: the notion of continuous is not immediately extensible to multivalued mappings or correspondences between two sets A and B. a function is upper hemicontinuous when (1) a convergent sequence of points in the domain maps to a sequence of sets in the range which (2) contain another convergent sequence, then the image of limiting point in the domain must contain the limit of the sequence in the range. Lower hemicontinuity essentially reverses this, saying if a sequence in the domain converges, given a point in the range of the limit, then you can find a sub-sequence whose image contains a convergent sequence to the given point. 
+
+- **Closed graph**: for any two sequences $x^m \rightarrow x$ and $y^m \rightarrow y$ with $x^m \in A$ and $y^m \in f(x^m)$ $\forall$ m, then $y \in f(x)$. 
+
+- Images of compact sets are bounded: $\forall$ compact set B $\subset$ A, the set f(B) = {$y \in Y: y \in f(x)$ for some $x \in B$} is bounded.
+
+- **Expenditure Minimization Problem**: it is the minimal level of wealth required to achieve utility $u_0$: $min_{x \in \mathbb{R}^{L+}}$px s.t. u(x) ≥ $u_0$. 
+
+- **Duality**: relation between UMP and EMP: suppose u(x) is a continuous utility function satisfying local nonsatiation and p $\gg$ 0. Then: a) if $x^\ast$ is a solution to the UMP with wealth w, then $x^\ast$ is a solution to the EMP with utility u($x^\ast$); b) if $x^\ast$ is a solution to the EMP with utility $u_0$, then $x^\ast$ is a solution to the UMP with wealth $px^\ast$. 
+
+Given the EMP, we define two functions:
+
+- e(p,u): **Expenditure function** = $min_{x \in \mathbb{R}^{L+}, s.t. u(x) ≥ u}$ px or $min_{x \in C_u}px$. 
+
+- h(p,u): **Hicksian demand correspondence**: solves EMP at price *p* and utility *u*. h(p,u) $\equiv$ {$z \in \mathbb{R}^{L+}|$ pz = e(p,u) and u(z) ≥ u} or h(p,u) $\equiv$ argmin$_{z \in C_u}$ pz. It is used to answer: how would demand change if we change prices from p to p' **and** give whatever compensation is necessary so the utility level is unchanged. Properties:
+
+    a) homogeneous of degree 0 in p, i.e. h($\alpha p,u$) = h(p,u), $\forall \alpha p,u$.
+    
+    b) No excess utility: u(x) = u $\forall x \in h(p,u)$.
+    
+    c) If u is strictly quasi-concave, then each h(p,u) contains a single element, i.e. h(p,u) is a function. 
+
+- **Compensated Demand**: another name for the HDC given that: h(p,u) = x(p,e(p,u)). 
+
+- FOC HCD: $p_i = \lambda \frac{du}{dx_i}(h(p,u))$ if $h_i(p,u)$ > 0; $p_i ≥ \lambda \frac{du}{dx_i}(h(p,u))$ if $h_i$(p,u) = 0.
+
+- **Envelope Theorem**: shows that, in a certain sense, changes in the optimizer of the objective do not contribute to the change in the objective function. Important for comparative statics and optimization models. 
+
+- **Slutsky Substitution**: given change in prices, the consumer is given enough money to purchase her old bundle at the new prices, and her choice changes are seen. We can use Slutsky to go from Marshallian to derivatives of the Hicksian. The **Slutsky substitution matrix** S(p,w) is the L x L matrix with $S_{ij} = \frac{\partial x_i}{\partial p_j} + \frac{\partial x_i}{\partial w}x_j$. This means that given the change in $x_i$ resulting from the change in $p_j$ and giving consumer wealth $x_j dp_j$ to make the old bundle affordable, the rise of price of the good i influences the consumption of good j: 1) change in relative price of the k goods(substitution effect); and 2) reduction of real income of consumer(income effect). The Slutsky equation allows the desired decomposition of price comparative statics into income and substitution effects: $\underbrace{\frac{\partial x_i (p,w)}{\partial p_j}}_\text{total effect} = \underbrace{\frac{\partial h_i (p,u)}{\partial p_j}}_\text{substitution effect} - \underbrace{\frac{\partial x_i (p,w)}{\partial p_w}x_j(p,w)}_\text{income effect}$. So the intuition is: **when the price of good j increases**, there are two effects on demand for good *i*: 1) substitution effect captured by the movement on the consumer's original indifference curve; 2) income effect moving from one indifference curve to the other. We have to take into account:
+
+- **Regular good**: $x_i(p,w)$ is decreasing in $p_i$. It is a **Giffen good** if $x_i(p,w)$ is increasing in $p_i$.
+
+- **Substitute good**: *i* substitutes for *j* if $h_i$(p,u)(Hicksian demand correspondence) is increasing $p_j$. It is a complement if $h_i (p,u)$ is decreasing in $p_j$.
+
+- **Gross substitute**: *i* is a gross substitute for *j* if $x_i$(p,w)(Walrasian Demand Correspondence) is increasing in $p_j$. It is a gross complement if $x_i$(p,w) is decreasing in $p_j$.
+
+- **Roy's Identity**: the lemma relates the ordinary (Marshallian) demand function to the derivatives of the indirect utility function. Specifically, denoting the indirect utility function as v(p,w), the Marshallian demand function for good i can be calculated as: $x_i^m$ = $\frac{\frac{\partial v}{\partial p_i}}{\frac{\partial v}{\partial w}}$ where p is the price vector of goods and w is income. Proposition: 
+
+Suppose that u($\circ$) is continuous utility function and preferences are locally nonsatiated and strictly convex. Suppose that the indirect utility function is differentiable at ($p^{\ast},w^{\ast}$) $\gg$ 0. Then for every i = 1, ..., L,
+
+<center>$x_i(p^{\ast},w^{\ast})$ = -$\frac{\partial v (p^{\ast},w^{\ast})}{\partial p_i}$ / $\frac{\partial v (p^{\ast},w^{\ast})}{\partial w}$ </center>
+
+### Putting Consumer Theory to Work
+
+- **Equivalent Variation**; how much money would compensate the change in utility? This is formally denoted by: $EV(p_0, p_1, w) = e(p^0,u_1) - e(p^0, u_0) = e(p^0,u_1) - w $.
+
+- **Compensating Variation(CV)**: given that the prices have changed, how much the consumer would need to be paid to be as well off? This is formally denoted by:$ CV(p_0,p_1,w) = e(p^1, u_1) - e(p^1,u_0) = w - e(p^1,u_0) $. 
+
+- **Laspeyres Price Index**: overstates inflation: $\frac{p^1 x^0}{p^0 x^0}$.
+
+- **Paasche Price Index**: understates inflation: $\frac{p^1 x^1}{p^0 x^1}$. 
+
+- **Fisher Ideal Index**: $\sqrt{\text{Paasche x Laspeyres}}$. 
+
+- **Restric preferences**: simpler function, takes into account only what we think is relevant for our analysis.
+
+- **Restrict price movements**: considering only the $\Delta$prices in the goods we are evaluating.
+
+- **Integrability**: ensures x corresponds to a particular u. A set of continuously differentiable functions $x_i$ are the demand functions generated by some increasing, quasi-concave utility function u if they satisfy Walras' Law and have a symmetric semidefinite Slutsky substitution matrix.
+
+- **Homothetic preferences**: each indifference curve is a magnified/reduced version of the other: $\forall x,y,\alpha >0$: $x \succeq y \implies \alpha x \succeq \alpha y$. This means demand is homogeneous of degree 1 in income. 
+
+- **Gorman(quasi-homothetic)**: the class of preferences in which aggregate demand depends only on aggregate wealth. Defined by: v(p,w) = a(p) + b(p)w. This happens when aggregate demand is not affected by any redistribution of wealth $\implies$ wealth effects are the same accross individuals and accross wealth levels. An indirect utility function is $v(p,w) = (w-a(p))/b(p)$. Parag says: Gorman is a special case where we can do aggregation independently of the wealth distribution and maximize V(p,w) = $\sum_k a^k(p) + b(p)w$. This means the representative consumer's utility is the utilitarian social welfare function W($u^1,...,u^K$) = $\sum u^k$. 
+
+- **Quasi-linearity**: class of preferences for which aggregate demand depends only on aggregate wealth is quasilinear preferences, assuming that some income is spent on the **numeraire good**. With these preferences, the indirect utility function takes the form v(p,w) = a(p) + w. 
+
+- **Demand aggregation**: the demand of the whole market, derived from a "representative consumer". Two classic cases: 1) identical homothetic preferences: $x^k(p,w^k) = w^k \beta(p)$; 2) if individual preferences are homothetic but not identical and incomes are proportional $\implies \exists$ single preference ordering that generates aggregate demand. The question now is: *can we write aggregate demand as equal to the total wealth*? Depends! Only if the wealth effects are the same accross individuals and accross wealth levels. **Proposition**: demand is a function of aggregate wealth $\iff$ the preferences are represented by indirect utility functions of the form: $v^k (p,w^k) = a^k(p) + b(p)w^k$. 
+
+### Producer Theory and Monopoly
+
+- **Producer Theory** is very similar to the Consumer Theory: now firms want to maximize profits while minimizing costs.
+
+- **Profit maximization problem**: $\pi(p) = max_{y \in Y}y p$. 
+
+- c(p,q): **the cost minimization problem**: c(p,q) $\equiv min_{z \in \mathbb{R}^{L+1}} pz$ such that $f(z_1,...,z_{L-1})= q$. 
+
+- **FOC Approach to Comparative Statics**: economists usually are concerned about comparative statics: ex: if we change wealth, what's the effect in consumption? 
+
+- **Increasing Differences**: f(x,$\theta$) satisfies **increasing differences** if $\forall x', x''$ with x' < x'', f(x'',$\theta$) - f(x',$\theta$) is weakly increasing in $\theta$. This means that the incremental gain from choosing x'' over x' (choosing the higher x) is higher when $\theta$ is higher.
+
+- **Topkis Monotonicity Theorem**: let $x^\ast(\theta)$ be as defined in the slides. If f(x,$\theta$) has ID, then $x^\ast (\theta)$ is weakly increasing in $\theta$. 
+
+- **Cobb-Douglas**: f(k,l) = $k^\alpha l^\beta$. Derive: $\frac{\partial^2 f}{\partial k \partial l} = \alpha \beta k^{\alpha - 1}l^{\beta -1} > 0$. 
+
+- **Cross-Price effects**: a) if *k* and *l* are *complements*, then k$^\ast$(r,w) is weakly decreasing in w and $l^\ast(r,w)$ is weakly decreasing in r(rental rate of capital); b) if *k* and *l* are *substitutes*, then $k^ast(r,w)$ is weakly increasing in w and $l^ast(r,w)$ is weakly increasing in r.
+
+- **Single crossing**: weaker condition we can use to characterize a function: a function is SC if $\forall x'>x$ and $\theta' > \theta$: i) f(x',$\theta$) - f(x,$\theta$) ≥ 0 $\implies$ that f(x',$\theta$') - f(x,$\theta$') ≥ 0; ii) f(x',$\theta$) - f(x,$\theta$) > 0 $\implies$ that f(x',$\theta$') - f(x,$\theta$') > 0.
+
+- **Monotonic Selection Theorem(Milgrom-Shannon)**: if f is strict single-crossing in (x,$\theta$), then $x^\ast$($\theta, \overline{X}$) is weakly increasing in $\theta \forall \overline{X} \subset X$. Moreover, if $x^\ast$($\theta,\overline{X}$) is non-decreasing in $\theta$ for all finite sets $\overline{X} \subset \mathbb{R}$, then f is single-crossing in (x,$\theta$). 
+
+- **Multivariate Comparative Statistics**: dealing with more than one variable: $max_{(x_1,x_2)\in X\subset \mathbb{R}^2}F(x_1,x_2,t)$. If F has ID in $(x_1,t)$, then the optimal value of $x_1$ holding $x_2$ constant is non-decreasing in t. The same counts for $x_2$ holding $x_1$ constant. 
+
+- **Supermodularity**: given x,y $\in \mathbb{R}^n$, define operations **meet** and **join** as follows: x $\wedge$ y = $(min,\{x_1,y_1\},...,min\{x_1,y_1\})$ and $x \vee y$ = $ (max,\{x_1,y_1\},...,max\{x_1,y_1\})$. 
+
+- **Sublattice**: a set X $\subset \mathbb{R}^n$ if $\forall x,y \in X$ we have $x \wedge y \ in X$ and x $\vee$ y $\in X$. 
+
+- **LeChatelier Principle**: a firm reacts more input prices in the long-run than in the short-run because it has more inputs it can adjust. For ex: an increase in wage implies an increased use in capital in the long run. Since in the short run the increase in wage makes the firm use less labor, the marginal productivity of labor will decrease and in the long run the firm will use less labor. If inputs are complements, the lesser use of wage will lead to reduced use of capital in the long run. 
+
+- **Monopoly Pricing**: the profit-maximization problem in producer theory is usually unrealistic in that *p* is taken to be independent of *q*. The monopolist os more wary of the perverse effect of high price on demand when consumers react to a price increase by greatly reducing their demand. 
+
+### **Externalities**
+
+- **Externalities** are present when market failures arise. 
+
+- **Pareto Optimal allocation**: there is no other allocation that can make one consumer better off without hurting another. 
+
+- In order to rebalance the welfare given the harm produced by the externality, the government can intervene: **quotas** or **taxes**. 
+
+- **Coase Theorem**: externality problems arise because: 1) lack of clearly specified property rights; 2) transaction costs. He states *if property rights are clearly specified and there are no transaction costs, bargaining will lead to an efficient outcome no matter how the rights are allocated*. 
+
+- **Anti-Coase Theorem**: *no bargaining procedure can lead to an efficient outcome for all values of b and s when they are private information and independently distributed*. So, bargaining won't lead to equilibrium because information asymmetries exist. 
+
+- **Missing Markets**: if we can define the property rights on an externality, why isn't there a market for it? 
+
+- **Price vs Quantity**: how should the government intervene: taxing prices or quantities? 
+
+- **Optimal Number**: the optimal number of equilibrium is the one that **maximizes aggregate surplus**. 
+
+_ **Equilbrium Number**: demand equals supply and there are no profits(free-access). 
+
+### Introduction to General Equilibrium
+
+- **Walrasian Equilibrium**: need 3 things: 1) agents maximize utilities; 2) markets clear; 3) firms choose production to maximize profit. For now, everyone takes prices as given. We evaluate *relative* prices, not absolute ones.
+
+- We start from a 2x2 exchange economy, no production. 2 consumers(i) and 2 goods($\ell$). Consumption vector is $x^i = (x^i_1,x^i_2)$. Each agent is initially endowed with $\omega^i = (w_1^i, \omega_2^i) \in \mathbb{R}^2_+$ where $\omega_\ell^i$ is $i$ endowment of commodity $\ell$. Aggregate endowment is $\omega = \omega_1 + \omega_2$. Agg endowment for good $\ell$ is $\omega_\ell = \omega_ell^1 + \omega_\ell^2$. The **exchange economy** is then: $\mathcal{E}= (u_i,\omega^i)_{i=1,2}$. 
+
+- **Edgeworth Box**: the best visual tool we have to analyze this 2x2 economy. 
+
+- **Budget Set**: may extend to outside the Edgeworth box.
+
+- **Offer curve**: vary the price $\rightarrow$ the budget constraint changes. At each point on offer curve, budget constraint is tangent to indifference curve.
+
+- **Excess demand**: total agent demand for a commodity minus what is available in the economy.
+
+- **Pareto Set**: allocations where indifference curves are tangent. If utilities are differentiable, Pareto allocations are characterized by: $\frac{\partial u^1}{\partial x_1} / \frac{\partial u^1}{\partial x_2}(x^1) = \frac{\partial u^2}{\partial x_1} / \frac{\partial u^2}{\partial x_2} (\omega - x^1)$.
+
+- **Contract curve**: part of Pareto set where consumers do at least as well as initial endowment.
+
+- **First Welfare Theorem**: If utility is increasing, then allocation ($x^i)_{i \in \mathcal{I}}$ is Pareto optimal. Support for Adam Smith's invisible hand. If $\omega$ and *p* are given and each agent maximizes utility, at the solution the consumption bundles $x^1,...,x^l$, the UMP KT conditions hold and each consumer's budget constraint is satisfied. 
+
+- **Second Welfare Theorem**: If ($\omega^i)_{i \in \mathcal{I}}$ is Pareto optimal, then there exists a price vector $p \in \mathbb{R}_+^{L}$ such that (p,($\omega^i)_{i \in \mathcal{I}})$ is a Walrasian equilibrium in $\mathcal{E}$. In other words, once we find an efficient allocation of wealth, we could support it with a price equilibrium. Also been used to say that any redistributional goals can be achieved from lump-sum reallocations of endowments and letting the market play out. If the KT conditions for the Pareto program are satisfied, then define prices $p_\ell = \mu_\ell$ and Lagrange multipliers $\gamma^i = \frac{1}{\lambda^i}$. 
+
+- **Separating Hyperplane Theorem**: there exists a price vector that separates the convex and non-empty subsets of $\mathbb{R}^L$ B,C such that none element of B is in C and vice-versa. Formally: sup p B ≤ inf p C.
+
+- **Supporting Hyperplane Theorem**: there exists a price vector such that touches the limit of the convex set B. 
+
+- **Robinson Crusoe Model**: we now incorporate production while considering only one consumer and one firm(owned by that consumer). We incorporate some useful insights before we advance to the more realistic model:
+
+- **2x2 Production Economy**: 2 goods and 2 factors. We work with per unit cost and factor demands. I find the most useful way to get insights to this is to do the exercises.
+
+- **Public Goods**: a good for which the use of a unit by one consumer does not preclude its use by others. Can be non-excludable(lighthouse) and excludable(pay-per-view TV). Its market provision depends on what the consumers think that the other consumers will demand, which leads to a strategic problem. In a competitive equilibrium there is under-provision of the public good relative to the level prescribed by the Samuelson condition. **Free-riding** arises. 
+
+- **Personalized prices**: Lindahl suggested that the amount purchsaed by each agent should be accountable so that each agent face a **personalized price** $p^i$. The proposition is that in this Lindahl equilibrium the market would be in a Pareto optimal. However, this is a unrealistic premise. Market mechanisms are unlikely to provide public goods efficiently $\rightarrow$ government should get involved. 
+
+### GE Existence and Other Properties
+
+For Walrasian Equilibrium, let's consider:
+
+- **Brouwer's Theorem**: existence of Walrasian Equilibrium. Suppose A $\subset \mathbb{R}^L$ is nonempty, convex, compact and f: $A \rightarrow A$ is continuous. Then *f* has a fixed point: $\exists x^\ast \in A$ such that f($x^\ast$) = $x^\ast$. 
+
+- **Kakutani's Fixed Point Theorem**: suppose A $\subset \mathbb{R}^L$ is nonempty, compact, convex and f: A $\rightarrow$ A is a correspondence such that: i) f is non-empty; ii) f is convex valued; iii) f is upper hemi-continuous. Thne f has a fixed point: $\exists x^\ast \in A$ such that $x^\ast \in f(x^\ast)$. 
+
+- In a Walrasian model what matters are the relative prices: so we can normalize to simples. We focus on a pure exchange economy with our four assumptions + strong monotonicity. **excess demand of consumer** i: $z^i (p) = x^i(p,p \omega^i) - \omega^i$; **aggregate excess demand**: z(p) = $\sum_i z^i(p)$. 
+
+- z(p): aggregate excess demand. Properties:
+
+    a) z is a continuous function.
+    
+    b) homogeneity of degree 0. 
+    
+    c) walras' law: pz(p) = 0 $\forall p$.
+    
+    d) bounded below: z(p) ≥ - $\overline{\omega}$.
+    
+    e) boundary condition: $p^n \rightarrow p$ when p ≠ 0 but $p_\ell = 0$ for some $\ell$, then max{$z_1(p^n),...,z_L(p^n)$} $\rightarrow \infty$. 
+    
+- **Jacobian Matrix**: represents the first-order partial derivatives of a vector-valued function with several variables. 
+
+- **Properties of Walrasian equilibrium**:
+
+    a) any regular equilibrium is locally unique.
+    
+    b) a regular economy has a finite number of equilibria.
+    
+    c) for almost every vector of initial endowments, the exchange economy is regular.
+    
+- **Sonnenschein-Mantel-Debreu Theorem**: anything goes: any potential excess demand function can be in fact a demand function. Now we're not restricted by the rationality restrictions of individual demand that were equivalent to Slutsky symmetry and negative semi-definiteness.
+
+### Microfoundations for GE
+
+- **The core**: is the set of all allocations which cannot be improved on by any coalition. The set of all allocations such that no coalition(set of agents) can improve on or block the allocation by seceding from the economy and trade only among its members. The central result is: "core convergence" $\implies$ for economies with a large number of agents(or with agents with low power), core allocations are "approximately Walrasian". Every core allocation in an exchange economy is Pareto optimal. Every Walrasian equilibrium lies in the core. 
+
+- **Coalition**: is a set S $\subset$ {1,...,I}. A coalition S blocks or improves on allocation x by $\hat{x}$ if $\sum_{i \in S} \hat{x}^i = \sum_{i \in S}\omega^i$ and for all agents i, $\hat{x}^i \succeq_i x^i$ with at least one preference strict. 
+
+##### **Core Convergence**
+
+- The set of types of consumers is $\mathcal{I} = ${1,...,I}. 
+
+- R-replica economy $\mathcal{E}_R$ is one with R consumers of each type.
+
+- Total number of consumers is RI. 
+
+- **Equal Treatment Proposition**: assume consumers have strictly convex preferences. If x is a core allocation in $\mathcal{E}_R$, then $x^i,r'$ $\forall$ r,r' $\rightarrow$ consumers of the same type consume the same bundle. 
+
+- **Debreu Scarf Theorem**: $\cap_R C_R = W$, that is: if $x^\ast \in C_R \forall R$, then $x^\ast$ is Walrasian. 
+
+### GE with indivisibilities
+
+- Some simple models with indivisible goods(housing market).
+
+- **Individually Rational matching**: every agent receives a house at least as good as her initial house. 
+
+- **Theorem**: there is a competitive equilibrium matching for a housing market which is given by the core matching. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
