@@ -1021,7 +1021,7 @@ img <- readPNG("28.png")
  grid.raster(img)
 ```
 
-Moving forward, how do we **characterize efficiency?** We use the the four assumptions to characterize Pareto Optimal allocations. We'll work with our four assumptions and for simplicity we also assume that $\forall$ x, $\triangledownu^i(x^i)$ > 0, and we normalize $u^i$(0) = 0. Let's define the **Utility Possibility Set**: $\mathcal{U}$ = {$u^1(x^1),...,u^l(x^l): x^1,...,x^l \in \mathbb{R}_+^L \sum_i x^i ≤ \omega $}. Pareto optimal allocations are on the northeast border of the UPS. Let's advance to the following problem:
+Moving forward, how do we **characterize efficiency?** We use the the four assumptions to characterize Pareto Optimal allocations. We'll work with our four assumptions and for simplicity we also assume that $\forall$ x, $\triangledown u^i(x^i)$ > 0, and we normalize $u^i$(0) = 0. Let's define the **Utility Possibility Set**: $\mathcal{U}$ = {$u^1(x^1),...,u^l(x^l): x^1,...,x^l \in \mathbb{R}_+^L \sum_i x^i ≤ \omega $}. Pareto optimal allocations are on the northeast border of the UPS. Let's advance to the following problem:
 
 \[ max_{x \in \mathbb{R}_+^{L \times I}} u^1(x_1^1,...,x_L^1) \]
 
@@ -2462,6 +2462,33 @@ For Walrasian Equilibrium, let's consider:
 
 
 
+
+
+
+
+
+
+## **Hard Stuff**
+
+- [**Envelope theorem**](https://en.wikipedia.org/wiki/Envelope_theorem): 
+
+- [**Shepard's Lemma**](https://en.wikipedia.org/wiki/Shephard%27s_lemma):  if indifference curves of the expenditure or cost function are convex, then the cost minimizing point of a given good $i$ with price $p_i$ is unique. The idea is that a consumer will buy a unique ideal amount of each item to minimize the price for obtaining a certain level of utility given the price of goods in the market.
+
+- [**Cobb-Douglas utility function**](https://en.wikipedia.org/wiki/Cobb%E2%80%93Douglas_production_function): is a particular form of the **production function**, used to represent the relationship between two or more inputs(usually capital and labor). The standard form: Y = AL$^\beta$K$^\alpha$, where: **Y** = total production; **L** = labor input; **K** = capital input; **A** = total factor productivity; $\alpha$ and $\beta$ are the output elasticities of capital and labor, respectively. These values are constants determined by available technology. In terms of return to scale: if $\alpha + \beta$ > 1, increasing returns to scale; = 1, constant returns to scale; < 1 decreasing returns to scale. 
+
+- Jensen's Inequality: generalizes the statement that the secant line of a convex function lies above the graph of the function, which is in Jensen's Inequality for two points: the secant line consists of weighted means of the convex function for t $\in$ [0,1]. Represented by: $af(x_1) + (1 - a)f(x_2) ≥ f(ax_1 + (1 - a)x_2)$.
+
+- [**Theorem of the maximum**](https://en.wikipedia.org/wiki/Maximum_theorem): if the elements of an optimization problem are sufficiently continuous, then some but not all of that continuity is preserved in the solutions. Let's organize the setting: i) **parameter space**: $\Theta$; ii) **function to be maximized**: $f(x,\theta)$; iii) **constraint set that f(x|$\theta$) will be maximized over**: C($\theta$). $\rightarrow$ $f^\ast(\theta)$ is the maximized value of the function and $C^\ast$ is the set of points that maximize $f$. 
+
+    - Formally: let X and $\Theta$ be topological spaces, $f: X \times \Theta \rightarrow \mathbb{R}$ be a continuous function on the product X $\times \Theta$, and C : $\Theta \rightrightarrows X$ be a compact-valued correspondence such that C($\theta$) = $\varnothing \forall \theta \in \Theta$. The marginal/value function $f^\ast: \Theta \rightarrow \mathbb{R}$ by: $f^\ast (\theta) = sup \{f(x,\theta): x \in C(\theta)\}$ and the set of maximizers $C^\ast: \Theta \rightrightarrows X$ by $C^\ast (\theta) = arg sup \{f (x,\theta): x \in C(\theta)\}$ = {$x \in C(\theta): f(x,\theta) = f^\ast (\theta)$}. If C is continuous (both upper and lower hemicontinuous) at $\theta$, then $f^\ast$ is continuous and $C^\ast$ is upper hemicontinuous with nonempty and compact values. As a consequence, the sup may be replaced by max and the arg sup by arg max. 
+
+- [**Hemicontinuous function**](https://en.wikipedia.org/wiki/Hemicontinuity): In mathematics, the notion of the continuity of functions is not immediately extensible to multivalued mappings or **correspondences** between two sets A and B. The dual concepts of upper hemicontinuity and lower hemicontinuity facilitate such an extension. A correspondence that has both properties is said to be continuous in an analogy to the property of the same name for functions. **Upper continuity** implies that when a convergent sequence of points in the domain maps to a sequence of sets in the range which contain another convergent sequence, then the image of limiting point in the domain must contain the limit of the sequence in the range. **Lower hemicontinuity** reverses this: if a sequence in the domain converges, given a point in the range of the limit, then you can find a sub-sequence whose image contains a convergent sequence to the given point. 
+
+- [**Gorman**](https://en.wikipedia.org/wiki/Gorman_polar_form): the class of preferences in which aggregate demand depends only on aggregate wealth.
+
+- FWT Proof:
+
+- [**Separating Hyperplanes**](https://en.wikipedia.org/wiki/Hyperplane_separation_theorem): theorem about disjoint sets that comes into play when we're talking about allocation efficiency. If B,C are convex and non-empty subsets of $\mathbb{R}^L$ and don't share any elements $\implies \exists$ p $\in \mathbb{R}^L$ such that *sup pB ≤ inf pC*. The **Supporting Hyperplane** states something similar: if B $\subseteq$ $\mathbb{R}^L$ is convex and that x is not an element of the interior of the set B $\implies \exists$ p $\in \mathbb{R}^L$ with p ≠ 0 such that px ≥ py $\forall y \in$ B. 
 
 
 
