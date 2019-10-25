@@ -2283,9 +2283,9 @@ Suppose that u($\circ$) is continuous utility function and preferences are local
 
 ### Putting Consumer Theory to Work
 
-- **Equivalent Variation**; how much money would compensate the change in utility? This is formally denoted by: $EV(p_0, p_1, w) = e(p^0,u_1) - e(p^0, u_0) = e(p^0,u_1) - w $.
+- **Equivalent Variation**; how much money would compensate the change in utility? This is formally denoted by: $EV(p_0, p_1, w) = e(p^0,u_1) - e(p^0, u_0) = e(p^0,u_1) - w$.
 
-- **Compensating Variation(CV)**: given that the prices have changed, how much the consumer would need to be paid to be as well off? This is formally denoted by:$ CV(p_0,p_1,w) = e(p^1, u_1) - e(p^1,u_0) = w - e(p^1,u_0) $. 
+- **Compensating Variation(CV)**: given that the prices have changed, how much the consumer would need to be paid to be as well off? This is formally denoted by:$C V(p_0,p_1,w) = e(p^1, u_1) - e(p^1,u_0) = w - e(p^1,u_0)$. 
 
 - **Laspeyres Price Index**: overstates inflation: $\frac{p^1 x^0}{p^0 x^0}$.
 
