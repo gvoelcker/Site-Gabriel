@@ -445,15 +445,15 @@ summary {
 <div id="introduction-1" class="section level4">
 <h4>1) Introduction</h4>
 <p>Some interesting, and very recurring concepts, we’re going to work with:</p>
-<p><strong>Security(N)</strong>: a security is an asset of the market. It is considered <strong>redundant</strong> if its payoff can be <strong>replicated</strong> by a portfolio of other traded securities. This can be represented by <span class="math inline">\(\exists \theta_{\n}\)</span> s.t. <span class="math inline">\(D_{\n}\theta_{\n}\)</span> = <span class="math inline">\(D_n\)</span>.</p>
+<p><strong>Security(N)</strong>: a security is an asset of the market. It is considered <strong>redundant</strong> if its payoff can be <strong>replicated</strong> by a portfolio of other traded securities. This can be represented by <span class="math inline">\(\exists \theta_{n}\)</span> s.t. <span class="math inline">\(D_{n}\theta_{n}\)</span> = <span class="math inline">\(D_n\)</span>.</p>
 <p><strong>Portfolio of securities (<span class="math inline">\(\theta\)</span>)</strong>: represents a combination of securities.</p>
-<p><strong>States of the market(M)</strong>: all the different combinatios of payoffs possible in that market.</p>
+<p><strong>States of the market(M)</strong>: all the different combinations of payoffs possible in that market.</p>
 <p><strong>Payoff Matrix(D)</strong>: denote the market structure with N securities. Example: <span class="math inline">\(D_n\)</span> is the payoff vector of security <em>n</em>, <span class="math inline">\(D_{\n}\)</span> is the payoff matrix excluding <span class="math inline">\(D_n\)</span>. <strong>D</strong> includes only securities with linearly independent payoffs <span class="math inline">\(\implies\)</span> rank(D) = N ≤ M. Given D, the set <span class="math inline">\(C_1(D)\)</span> = <span class="math inline">\(\{c_1 = D \theta : \theta \in R^n \}\)</span> is called the <strong>payoff space</strong>. The set of securities in D is said to <strong>span</strong><span class="math inline">\(C_1\)</span>(D).</p>
 <p>Any payoff vector in <span class="math inline">\(c_1 \in C_1\)</span>(D) can be delivered by a portfolio <span class="math inline">\(\theta\)</span>. It is said then that <span class="math inline">\(c_1\)</span> is to be replicated or financed by <span class="math inline">\(\theta\)</span>.</p>
 <p><strong>Market Completeness</strong>: a securities market is complete if any payoff at t = 1 can be achieved from the payoff of a portfolio of traded securities. If N &lt; M, the market cannot be complete. A **sufficient condition for market completeness* is that when the rank of D equals the number of States(rank(D) = M), the market is complete.</p>
 <p><strong>State-Contingent Claims</strong>: a state-<span class="math inline">\(\omega\)</span> contingent claim pays 1 in state <span class="math inline">\(\omega\)</span> and nothing otherwise. Also called an <a href="https://en.wikipedia.org/wiki/State_prices"><strong>Arrow-Debreu security</strong></a>.</p>
 <p><a href="https://en.wikipedia.org/wiki/Arrow%E2%80%93Debreu_model"><strong>Arrow Debreu Market</strong></a>: is the type of market with a complete set of state-contingent/Arrow-Debreu securities. Its structure is given by the following matrix:</p>
-$ D^{A - D}
+D^{A - D}
 <span class="math display">\[\begin{bmatrix}
     1 &amp; \dots &amp; 0 &amp; \dots &amp; 0 \\
     \vdots &amp; \ddots &amp; \vdots &amp; \ddots  &amp; \vdots \\
@@ -461,7 +461,7 @@ $ D^{A - D}
     \vdots &amp; \ddots &amp; \vdots &amp; \ddots &amp; \vdots \\
     0 &amp; \dots &amp; 0 &amp; \dots  &amp; 1
 \end{bmatrix}\]</span>
-<p>= I$</p>
+<p>= I</p>
 <p>Which is basically an Identity matrix. We also have here that N = M, <strong>which denotes a complete market</strong>. That is actually a theorem: The Arrow-Debreu securities market is complete.</p>
 </div>
 <div id="state-prices" class="section level4">
@@ -483,7 +483,7 @@ $ D^{A - D}
 <p>A: Price 1, payoffs in scenarios a and b: 1,1.</p>
 <p>B: Price 1, payoffs in scenarios a and b: 2,1.</p>
 <p>Here we have P = [1;1] and D = [1,2;1,1]. If we create a portfolio that sells 1 of A and buys 1 of B, what’s gonna be the outcome? It yields payoff:</p>
-<p><span class="math display">\[ -P^\T = -(-1+1) = 0  \]</span></p>
+<p><span class="math display">\[ -P^T = -(-1+1) = 0  \]</span></p>
 <p>We have:</p>
 <p><span class="math display">\[ (D\theta)_1 = -1 + 2 = 1\]</span></p>
 <p>and</p>
@@ -495,7 +495,7 @@ $ D^{A - D}
 <p>Let’s steer our conversation towards reality: there are limits to arbitrage! Let’s see some of the difficulties that may arise:</p>
 <ol style="list-style-type: lower-roman">
 <li><p>In its purest form, arbitrage requires <strong>no capital</strong> and is <strong>risk free</strong>. By selling and purchasing identical securities at favorably different prices, arbitrageur captures an immediate payoff with no up-front capital. No short sale constraints <span class="math inline">\(\implies\)</span> <em>infinite profits</em>!</p></li>
-<li><p><strong>Pure arbitrage</strong>: it only exists in perfect capital markets! Requires capital and posting posting collateral; people are worried about others keeping promises <span class="math inline">\(\implies\)</span> shorting is costly.</p></li>
+<li><p><strong>Pure arbitrage</strong>: it only exists in perfect capital markets! Requires capital and posting collateral; people are worried about others keeping promises <span class="math inline">\(\implies\)</span> shorting is costly.</p></li>
 <li><p>In practice, arbitrage is associated with <strong>opportunity costs</strong>.</p></li>
 <li><p><strong>Imperfect information</strong> and <strong>market frictions</strong> make arbitrage strategies both capital intensive and risky.</p></li>
 <li><p>Arbitrageurs often use leverage to invest more than their own money. Problems: <strong>a)</strong> Face possibility that price gaps will become larger before they converge; <strong>b)</strong> even though most financial assets have limited liability (non-negative payoffs), losses from short-selling can be infinite; <strong>c)</strong> If strategy has lost money, may receive a margin call: post additional collateral or close the position at a loss.</p></li>
@@ -526,7 +526,7 @@ $ D^{A - D}
 <p>This pricing equation is also known as the <strong>Discounted Cash Flow</strong>(DCF) or <strong>Present Value</strong>(PV) formula. This concept is extensively studied in finance as it relates the cash flow in a future state to prices in the present. Formally: DCF formula expresses current price as the sum of the present value, i.e., market value at t = 0, of all future payoffs, using appropriate state prices. State-price <span class="math inline">\(\phi_\omega\)</span>: price of hypothetical Arrow-Debreu security whose payoff may or may not be achievable. <span class="math inline">\(\phi \gg 0 \implies\)</span> all A-D prices are arbitrage-free. Knowing <span class="math inline">\(\phi\)</span> we can <strong>price all traded securities</strong>, without relying on the physical probability measure (<span class="math inline">\(\mathbb{P}\)</span>).</p>
 <p>To understand state prices, Larry wants to get the intuition that the <strong>context</strong> matters(which relates to the concept he extensively uses of “pain”: depending how much pain people feel, they will allocate resources differently through time). When we are deciding among different payoffs, we have to account for variance(risk) and how much the investor is willing to invest in each security. Slides 9/10 exercise some intuition on state-prices, comparing a state in which you lose a job and one in which you get a raise.</p>
 <p>So how do we construct <span class="math inline">\(\phi\)</span> in the payoff space? We showed that <span class="math inline">\(\phi^T\)</span> = <span class="math inline">\(P^TD^{-1}\)</span> in a complete market case. In general, NA <span class="math inline">\(\implies\)</span> we can find <span class="math inline">\(\phi\)</span> as a <strong>linear combination of traded assets</strong>.</p>
-<p><strong>Theorem</strong>: if rank(D) = N, there exists a unique <span class="math inline">\(\phi^ast \in \mathbb{R}^M\)</span> such that <span class="math inline">\(P^T\)</span> = <span class="math inline">\(\phi^{\astD}D\)</span>, where <span class="math inline">\(\phi^\ast\)</span> = D<span class="math inline">\(\theta\)</span> for some portfolio <span class="math inline">\(\theta\)</span>.</p>
+<p><strong>Theorem</strong>: if rank(D) = N, there exists a unique <span class="math inline">\(\phi^ast \in \mathbb{R}^M\)</span> such that <span class="math inline">\(P^T\)</span> = <span class="math inline">\(\phi^{\ast}D\)</span>, where <span class="math inline">\(\phi^\ast\)</span> = D<span class="math inline">\(\theta\)</span> for some portfolio <span class="math inline">\(\theta\)</span>.</p>
 <p><strong>Stiemke’s Lemma</strong>: let D be an m <span class="math inline">\(\times\)</span> n matrix and P, <span class="math inline">\(\theta\)</span>, <span class="math inline">\(\phi \in R^m\)</span>. No portfolio <span class="math inline">\(\theta\)</span> exists such that:</p>
 <ol style="list-style-type: decimal">
 <li><p><span class="math inline">\(P^T\theta ≤ 0\)</span>.</p></li>
@@ -1085,87 +1085,6 @@ risk premium = - risk free rate x comovement of return with SDF
 <p><span class="math display">\[ \frac{K}{1+r} + C(S_o,K) = S_o + P(S_0,K) \]</span></p>
 <p>Where <span class="math inline">\(S_0\)</span> is the current price of the asset and <em>r</em> is the riskless rate.</p>
 </div>
-</div>
-</div>
-<div id="symbols-and-formulas" class="section level2 tabset">
-<h2>Symbols and Formulas</h2>
-<div id="symbols" class="section level3 tabset">
-<h3>Symbols</h3>
-<div id="lecture-1" class="section level4">
-<h4>Lecture 1:</h4>
-<div id="random-variables" class="section level5">
-<h5>1) Random Variables</h5>
-<ul>
-<li><p>Random variable: <strong>X</strong>.</p></li>
-<li><p><strong>cdf</strong>: cumulative distribution function.</p></li>
-<li><p>~ : used as in variable X has cdf <span class="math inline">\(F_X\)</span>: X ~ <span class="math inline">\(F_X\)</span>.</p></li>
-<li><p><span class="math inline">\(p_i\)</span>: the probability that X will take value <span class="math inline">\(x_i\)</span> given the possible values of <span class="math inline">\(\mathcal{X}\)</span> = (<span class="math inline">\(x_1,...,x_n\)</span>). <span class="math inline">\(\sum_{i = 1}^n p_n\)</span> = 1.</p></li>
-<li><p><strong>pdf</strong>: characterizes the <strong>continuous X</strong> such that P{a &lt; Y ≤ b} = <span class="math inline">\(\int_{a}^b f_Y\)</span> (s)ds. Note: <span class="math inline">\(\int_{-\infty}^\infty f_Y (s)ds = 1\)</span>. The <strong>cdf of Y</strong> is given by <span class="math inline">\(F_Y(t) = \int_{-\infty}^t f_Y (s)ds\)</span>.</p></li>
-<li><p>q(x) = <span class="math inline">\(F^{-1}\)</span>(x) <span class="math inline">\(\leftarrow\)</span> possible when cdf F(X) is strictly increasing and continuous. Note that: P{X ≤ q(x)} = P{X ≤ <span class="math inline">\(F^{-1}\)</span>(x)} = F(<span class="math inline">\(F^{-1}(x)\)</span>) = x.</p></li>
-<li><p><strong>Expected Value</strong>: the average! For discrete r.v.: E[g(x)] = <span class="math inline">\(\sum_i g(x_i)p_i\)</span>. For continuous r.v.: E[g(X)] = <span class="math inline">\(\int_{- \infty}^\infty g(x) f_X (x)dx\)</span>.</p></li>
-<li><p><strong>Mean</strong>: g(x) = x, E[X].</p></li>
-<li><p><strong>Variance</strong>: g(x) = (x - E[X])<span class="math inline">\(^2\)</span>, E[(X - E[X])<span class="math inline">\(^2\)</span>], also denoted by: V(X).</p></li>
-<li><p><strong>Second moment</strong>: g(x) = <span class="math inline">\(x^2\)</span>, E[<span class="math inline">\(X^2\)</span>].</p></li>
-<li><p><strong>k-th moment</strong>: g(x) = <span class="math inline">\(x^k\)</span> E[<span class="math inline">\(X^k\)</span>].</p></li>
-<li><p><strong>k-th central moment</strong>: E[(X - EX)<span class="math inline">\(^k\)</span>].</p></li>
-</ul>
-<p>Discrete r.v.:</p>
-<ul>
-<li><p><strong>Bernoulli</strong>: E[X] = 1p + 0 (1-p) = p. E[<span class="math inline">\(X^2\)</span>] = <span class="math inline">\(1^2 p + 0^2 (1-p)\)</span>. V(X) = p - <span class="math inline">\(p^2\)</span> = p(1-p). <em>Notation</em>: X ~ Bernoulli(p).</p></li>
-<li><p><strong>Poisson</strong>: X = {0,1,2,…}. P{X = j} = <span class="math inline">\(e^{-\lambda} \lambda^j / j!\)</span>. E[X] = <span class="math inline">\(\lambda\)</span>. V(X) = <span class="math inline">\(\lambda\)</span>. <em>Notation</em>: X ~ Poisson{<span class="math inline">\(\lambda\)</span>}.</p></li>
-</ul>
-<p>Continuous r.v.:</p>
-<ul>
-<li><p><strong>Uniform</strong> (a,b): density: <span class="math inline">\(f_X\)</span>(x) = <span class="math inline">\(\frac{1}{b-a}\)</span> for x <span class="math inline">\(\in\)</span> (a,b) and <span class="math inline">\(f_X\)</span>(x) = 0 otherwise. <em>Notation</em>: X ~ U(a,b).</p></li>
-<li><p><strong>Normal</strong> (<span class="math inline">\(\mu, \sigma^2\)</span>): density: <span class="math inline">\(f_X(x)\)</span> = <span class="math inline">\(exp(\frac{-(x-\mu)^2)}{2 \sigma^2}\)</span>/(<span class="math inline">\(\sqrt{2 \pi}\sigma\)</span>) <span class="math inline">\(\forall x \in \mathbb{R}\)</span>. E[X] = <span class="math inline">\(\mu\)</span> and V(X) = <span class="math inline">\(\sigma^2\)</span>. <em>Notation</em>: X ~ N(<span class="math inline">\(\mu, \sigma^2\)</span>).</p></li>
-</ul>
-</div>
-<div id="bivariate-multivariate-distributions" class="section level5">
-<h5>2) Bivariate (multivariate) distributions</h5>
-<p><strong>Joint PDF</strong>: <span class="math inline">\(f_{X,Y}(x,y) = \frac{\partial^2 F_{X,Y}(x,y)}{\partial x \partial y} \rightarrow \text{ use it calculate the pdf of X: } F_X(x) = P \{ X ≤ x \} = \int_{- \infty}^x \int_{-\infty}^\infty f(s,t)dtds\)</span>.</p>
-<ul>
-<li><p><strong>Conditional PDF</strong>: <span class="math inline">\(f_{Y|X} (y|x) = f_{X,Y} (x,y)/f_X(x)\)</span>.</p></li>
-<li><p><strong>Law of iterated expectations</strong>: E[E[Y|X = <span class="math inline">\(x\)</span>]] = E[Y].</p></li>
-<li><p><strong>Independence</strong>: <span class="math inline">\(f_{Y|X}(y|x) = f_Y(y)\)</span>.</p></li>
-<li><p><strong>Covariance</strong>: cov(X,Y) = E[(X - E[X])(Y - E[Y])].</p></li>
-<li><p><em>T</em> = transposition.</p></li>
-</ul>
-</div>
-<div id="normal-random-variables" class="section level5">
-<h5>3) Normal Random Variables</h5>
-<ul>
-<li><p><strong>Multivariate normal distribution</strong>: <span class="math inline">\(f_X(x) = \frac{exp(-(x-\mu)^T \sum^{-1}(x - \mu)/2)}{(2 \pi)^{n/2} \sqrt{det(\sum)}}\)</span></p></li>
-<li><p><strong>Conditional distribution</strong>: the conditional pdf of <span class="math inline">\(X_1\)</span> given <span class="math inline">\(X_2\)</span> = <span class="math inline">\(x_2\)</span> is: <span class="math inline">\(f_{X_1|X_2}(x_1| X_2 = x_2) = \frac{exp \{-(x_1 - \tilde{u})^2/(2\tilde{\sigma})\}}{\sqrt{2 \pi} \sqrt{\tilde{\sigma}}}\)</span>.</p></li>
-</ul>
-</div>
-</div>
-<div id="lecture-2" class="section level4">
-<h4>Lecture 2:</h4>
-<div id="useful-inequalities" class="section level5">
-<h5>1) Useful Inequalities:</h5>
-<ul>
-<li><p><strong>Markov’s Inequality</strong>: P{X ≥ t} ≤ E[X]/t.</p></li>
-<li><p><strong>Chebyshev’s Inequality</strong>: P{|X - <span class="math inline">\(\mu\)</span>| ≥ t} ≤ Var(X)/<span class="math inline">\(t^2\)</span>.</p></li>
-<li><p><strong>Hölder’s Inequality</strong>: E|XY| ≤ (E|X|<span class="math inline">\(^{p}\)</span>)<span class="math inline">\(^{1/p}\)</span> (E|Y|<span class="math inline">\(^q\)</span>)<span class="math inline">\(^{1/q}\)</span>.</p></li>
-</ul>
-</div>
-<div id="convergence-in-probability-and-law-of-large-numbers" class="section level5">
-<h5>2) Convergence in probability and Law of Large Numbers</h5>
-<ul>
-<li><p><strong>Convergence in Probability</strong>: <span class="math inline">\(\forall \varepsilon &gt; 0\)</span>, P{|<span class="math inline">\(X_n\)</span> - X| &gt; <span class="math inline">\(\varepsilon\)</span>}<span class="math inline">\(\rightarrow\)</span> 0 as n <span class="math inline">\(\rightarrow \infty\)</span>. Denote by: <span class="math inline">\(X_n \rightarrow^p X\)</span>.</p></li>
-<li><p><strong>Theorem 5</strong>: E<span class="math inline">\((X_n - X)^2 \rightarrow\)</span> 0, <span class="math inline">\(\implies\)</span> <span class="math inline">\(X_n \rightarrow_p X\)</span>.</p></li>
-</ul>
-</div>
-</div>
-</div>
-<div id="formulas" class="section level3">
-<h3>Formulas</h3>
-<ul>
-<li><p><em>P{X ≤ t}</em>: denotes the probability that X ≤ t.</p></li>
-<li><p>The <em>cdf</em> of <em>discrete X</em> is given by: <span class="math inline">\(F_X (t) = \sum_{j=1,...,n:x_j ≤ t}p_j\)</span>.</p></li>
-<li><p>The <em>cdf</em> of <em>continuous X</em> is given by: <span class="math inline">\(F_Y(t) = \int_{-\infty}^t f_Y(s)ds\)</span>.</p></li>
-<li><p>Suppose Y = g(X). The cdf of Y: <span class="math inline">\(F_Y(t)\)</span> = P{Y ≤ t} = P{g(X) ≤ t} = P{X <span class="math inline">\(\in g^{-1}\)</span>(-<span class="math inline">\(\infty ,t]\)</span>}.</p></li>
-</ul>
 </div>
 </div>
 </div>

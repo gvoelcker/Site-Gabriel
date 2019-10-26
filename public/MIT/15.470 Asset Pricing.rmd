@@ -353,11 +353,11 @@ In our [**third**](15470_L3.pdf) lecture we start our analysis with the general 
 
 Some interesting, and very recurring concepts, we're going to work with:
 
-**Security(N)**: a security is an asset of the market. It is considered **redundant** if its payoff can be **replicated** by a portfolio of other traded securities. This can be represented by $\exists \theta_{\n}$ s.t. $D_{\n}\theta_{\n}$ = $D_n$. 
+**Security(N)**: a security is an asset of the market. It is considered **redundant** if its payoff can be **replicated** by a portfolio of other traded securities. This can be represented by $\exists \theta_{n}$ s.t. $D_{n}\theta_{n}$ = $D_n$. 
 
 **Portfolio of securities ($\theta$)**: represents a combination of securities.
 
-**States of the market(M)**: all the different combinatios of payoffs possible in that market.
+**States of the market(M)**: all the different combinations of payoffs possible in that market.
 
 **Payoff Matrix(D)**: denote the market structure with N securities. Example: $D_n$ is the payoff vector of security *n*, $D_{\n}$ is the payoff matrix excluding $D_n$. **D** includes only securities with linearly independent payoffs $\implies$ rank(D) = N ≤ M. Given D, the set $C_1(D)$ = $\{c_1 = D \theta : \theta \in R^n \}$ is called the **payoff space**. The set of securities in D is said to  **span**$C_1$(D). 
 
@@ -369,13 +369,13 @@ Any payoff vector in $c_1 \in C_1$(D) can be delivered by a portfolio $\theta$. 
 
 [**Arrow Debreu Market**](https://en.wikipedia.org/wiki/Arrow%E2%80%93Debreu_model): is the type of market with a complete set of state-contingent/Arrow-Debreu securities. Its structure is given by the following matrix:
 
- $ D^{A - D}\begin{bmatrix}
+D^{A - D}\begin{bmatrix}
     1 & \dots & 0 & \dots & 0 \\
     \vdots & \ddots & \vdots & \ddots  & \vdots \\
     0 & \dots & 1 & \dots & 0 \\
     \vdots & \ddots & \vdots & \ddots & \vdots \\
     0 & \dots & 0 & \dots  & 1
-\end{bmatrix} = I$
+\end{bmatrix} = I
 
 Which is basically an Identity matrix. We also have here that N = M, **which denotes a complete market**. That is actually a theorem: The Arrow-Debreu securities market is complete.
 
@@ -413,7 +413,7 @@ B: Price 1, payoffs in scenarios a and b: 2,1.
 
 Here we have P = [1;1] and D = [1,2;1,1]. If we create a portfolio that sells 1 of A and buys 1 of B, what's gonna be the outcome? It yields payoff: 
 
-\[ -P^\T = -(-1+1) = 0  \]
+\[ -P^T = -(-1+1) = 0  \]
 
 We have:
 
@@ -435,7 +435,7 @@ Let's steer our conversation towards reality: there are limits to arbitrage! Let
 
 i) In its purest form, arbitrage requires **no capital** and is **risk free**. By selling and purchasing identical securities at favorably different prices, arbitrageur captures an immediate payoff with no up-front capital. No short sale constraints $\implies$ *infinite profits*! 
 
-ii) **Pure arbitrage**: it only exists in perfect capital markets! Requires capital and posting posting collateral; people are worried about others keeping promises $\implies$ shorting is costly. 
+ii) **Pure arbitrage**: it only exists in perfect capital markets! Requires capital and posting collateral; people are worried about others keeping promises $\implies$ shorting is costly. 
 
 iii) In practice, arbitrage is associated with **opportunity costs**. 
 
@@ -484,7 +484,7 @@ To understand state prices, Larry wants to get the intuition that the **context*
 
 So how do we construct $\phi$ in the payoff space? We showed that $\phi^T$ = $P^TD^{-1}$ in a complete market case. In general, NA $\implies$ we can find $\phi$ as a **linear combination of traded assets**.
 
-**Theorem**: if rank(D) = N, there exists a unique $\phi^ast \in \mathbb{R}^M$ such that $P^T$ = $\phi^{\astD}D$, where $\phi^\ast$ = D$\theta$ for some portfolio $\theta$. 
+**Theorem**: if rank(D) = N, there exists a unique $\phi^ast \in \mathbb{R}^M$ such that $P^T$ = $\phi^{\ast}D$, where $\phi^\ast$ = D$\theta$ for some portfolio $\theta$. 
 
 **Stiemke's Lemma**: let D be an m $\times$ n matrix and P, $\theta$, $\phi \in R^m$. No portfolio $\theta$ exists such that:
 
@@ -596,7 +596,7 @@ Now that we've talked about returns over time, let's compare returns to another 
 
 Let's derive an expression for the risk premium of any asset. Let $r_n$ denote the **return realization**(return for the specific $\omega$ which realizes in the data). Divide both sides of the valuation formula with the SPD by price and get: 1 = $\mathbb{E}^\mathbb{P}[\eta(1 + r_n)]$. Rearranging, we get: $\mathbb{E}^\mathbb{P} [r_n - r_f] = -(1 + r_f)Cov^\mathbb{P}[\eta, r_n - r_f]$.
 
-Let's move forward to talk about [**idiosyncratic risk**](https://www.investopedia.com/terms/i/idiosyncraticrisk.asp): a type of investment risk, uncertainties and potential problems that are endemic to an individual asset. So, this risk is particular to the stock/security it is associated to. Considering that a risky asset's payoff is uncorrelated with the discount factor $\eta$, a singlue decomposition is suggested:
+Let's move forward to talk about [**idiosyncratic risk**](https://www.investopedia.com/terms/i/idiosyncraticrisk.asp): a type of investment risk, uncertainties and potential problems that are endemic to an individual asset. So, this risk is particular to the stock/security it is associated to. Considering that a risky asset's payoff is uncorrelated with the discount factor $\eta$, a single decomposition is suggested:
 
 \[D_n = \underbrace{prof(D_n|\eta)}_\text{"priced cash flow component"} + \underbrace{e_n}_\text{"unpriced cash flow component"}  \]
 
@@ -714,7 +714,7 @@ Let's start with a basic security: default-free securities (e.g., US Treasuries)
 
 \[ \text{bond price = } \sum_{j = 1}^N \underbrace{CF_{t+j}}_\text{known coupon payment} + P_{j,t}  \]
 
-so we can mostly restrict our attention to zero coupon bonds. What is the link between zero coupon bonds and the SDF? SDF $\eta$(s) at time t depends on $s_t$ $\in$ {1,...,S}. The probability that $s_{t+1} = s$ just depends on st, doesn’t change over time. Under this structure, prices will depend on maturity and state variable. Notation $P_{N,t} ≡ P_{N}[s_t]$. Given NA: price = discounted payoff. If k = 1 and $s_t = j$, we do a lot of math (slides 18/19) to get to $P_2$[$s_t$]. But in general, the formula is: $P_{N,t} = E_t[\eta_{t+1} P_{N-1,t+1}] = E_t[\eta_{t+1} \times \dots \times \eta_{t+N}] \equi E_t[\eta_{t:t+N}]$.
+so we can mostly restrict our attention to zero coupon bonds. What is the link between zero coupon bonds and the SDF? SDF $\eta$(s) at time t depends on $s_t$ $\in$ {1,...,S}. The probability that $s_{t+1} = s$ just depends on st, doesn’t change over time. Under this structure, prices will depend on maturity and state variable. Notation $P_{N,t} ≡ P_{N}[s_t]$. Given NA: price = discounted payoff. If k = 1 and $s_t = j$, we do a lot of math (slides 18/19) to get to $P_2$[$s_t$]. But in general, the formula is: $P_{N,t} = E_t[\eta_{t+1} P_{N-1,t+1}] = E_t[\eta_{t+1} \times \dots \times \eta_{t+N}] \equiv E_t[\eta_{t:t+N}]$.
 
 The **yield to maturity** for a zero coupon bond is the geometric mean of the gross return that investor gets if holding bond to maturity: $[\frac{Payoff}{Price}]^{\frac{1}{N}} = [\frac{1}{P_{Nt}}]^\frac{1}{N} \equiv Y_{NT} \iff P_{Nt} = [\frac{1}{Y_{Nt}}]^N$. The important intuition here is that: prices and yields (returns) move in opposite directions! If investor buys and holds the bond to maturity, its cumulative return is known and has an geometric mean of $Y_{Nt}$. When we take logs from zero coupon bonds, they are easier to work with. And another intuition that is important: longer maturity bonds are more responsive to the same change in yield (can we link this to the LeChatelier principle?).
 
@@ -802,7 +802,7 @@ We now consider how derivative securities can help to complete markets(my quick 
 
 1) State price of $\omega$: 
 
-2) The price of the security with payoff {$D_\omega , \omega \in \Omega $}:
+2) The price of the security with payoff $D_\omega  \omega \in \Omega $:
 
 3) The aggregate payoff of the stock and of the riskless bond:
 
