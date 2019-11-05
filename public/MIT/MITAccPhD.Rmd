@@ -4,7 +4,8 @@ author: "Gabriel Voelcker"
 date: "8/29/2019"
 output: html_document
 ---
-#{.tabset}
+# Intro {.tabset}
+
 Welcome! The material you now have access to covers all the classes I've had on my PhD in Accounting at MIT. Feel free to send any questions/comments to gmv@mit.edu
 
 ## 2019/2:
@@ -14,6 +15,8 @@ Welcome! The material you now have access to covers all the classes I've had on 
 [**14.121 - Microeconomic Theory I**](https://gabrielvoelcker.netlify.com/mit/14.121-microeconomic-theory-i)
 
 [**14.381 - Statistical Methods**](https://gabrielvoelcker.netlify.com/mit/14.381-statistical-methods)
+
+[**14.381 - Applied Econometrics**](https://gabrielvoelcker.netlify.com/mit/14.381-applied-econometrics)
 
 [**15.470 - Asset Pricing**](https://gabrielvoelcker.netlify.com/mit/15.470-asset-pricing)
 

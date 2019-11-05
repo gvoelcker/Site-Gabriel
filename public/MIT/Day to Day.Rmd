@@ -1,9 +1,12 @@
 ---
-title: "Day-to-Day"
 output: html_document
 ---
 
-### To do's:
+## **Day to Day {.tabset}**
+
+[**MIT PhD Accounting**](https://gabrielvoelcker.netlify.com/mit/mitaccphd)
+
+### **To do's:**
 
 - Install Stata.
 
@@ -17,7 +20,7 @@ output: html_document
 
 - Understand and explain step-by-step [**PS5**](https://www.overleaf.com/project/5dc1d3319fda550001327bd5) Asset Pricing.
 
-### Personal stuff:
+### **Personal stuff:**
 
 - Buy winter coat. ✅
 
