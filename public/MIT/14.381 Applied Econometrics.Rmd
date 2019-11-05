@@ -1,0 +1,147 @@
+---
+output: html_document
+---
+
+# 14.381 - Applied Econometrics{.tabset}
+
+## **Mostly Harmless Econometrics** {.tabset}
+
+### 1) Questions About Questions
+
+4 Frequently Asked Questions about the relationship of interest, the ideal experiment, the identification strategy and the mode of inference.
+
+  *i) What is the causal relationship of interest?* Useful for making predictions about the consequences of changing circumstances/policies. 
+  
+  *ii) what experiment that could ideally be used to capture the causal effect of interest?* What should the treatment be?
+  
+Fundamentally unindentified questions: FUQs. Questions that cannot be answererd by any experiment. 
+
+  *iii) What is your identification strategy?* Identification is the way the researcher uses his data. 
+  
+  *iv) What is the mode of statistical inference?* it describes tge population, the sample and the assumptions made when constructing standard errors. How straightforward is your inference?
+
+### 2) The Experimental Ideal
+
+- Importance of Random assignment: eliminate selection bias. Has the randomization successfully balanced the characteristics across groups?
+
+- Regression: constant treatment effects: the impact of the treatment is the same for everyone. Regressions are important, let's review some facts and properties about them:
+
+### 3) Making Regression Make Sense
+
+#### 3.1) Regression Fundamentals
+
+- Without randomness there is no causality.
+
+- Conditional Expectation Function: 
+
+- Law of iterated expectations: 
+
+#### 3.2) Regression and Causality
+
+##### 3.2.1) The Conditional Independence Assumption (CIA)
+
+A regression is causal when the Conditional Expectation Function it approximates is causal. The CEF is causal when it describes differences in average potential outcomes for a fixed reference population. As discussed in chapter 2: **experiments ensure that the causal variable of interest is independent of potential outcomes so that the groups being compared are truly comparable**. We want to generalize this to causal variables that take on more than two values and to more complicated situations where we must hold a variety of control variables fixed for causal inferences to be valid. This leads to the **Conditional Independence Assumption**: the assumption that provides justification for the causal interpretation of regression estimates. Also called **Selection on Observables** because the *covariates are held fixed since they are assumed to be known and observed*. The question is: *what these control variables are?* We call them *covariates* $X_i$ (in the schooling case, $X_i$ is a vector of abilities and family background). 
+
+Suppose we want to know the difference in earnings ($Y_{1i} - Y_{0i}$) if Angrist goes to college($C_i = 1$) versus not going to college ($C_i = 0$). The observed outcome, $Y_{i}$ can be written in terms of potential outcomes as:
+
+\[ Y_i = Y_{0i} + (Y_{1i} - Y_{0i})C_i   \]
+
+We get to see one of $Y_{1i}$ or $Y_{0i}$, but never both. We therefore hope to measure the average of $Y_{1i} - Y_{0i}$, or the average for some group, such as those who went to college. This is E[$Y_{1i} - Y_{0i}|C_i = 1$]. But in general, comparisons of those who attend college vs those who don't are a poor measure of the causal effect of college attendance. We have to take more into consideration, given what we talked about on chapter 2:
+
+\[  \underbrace{E[Y_i|C_i = 1] - E[Y_i|C_i = 0]}_\text{Observed difference in earnings} = \underbrace{E[Y_{1i} - Y_{0i}|C_i = 1]}_\text{ATE on the treated} + \underbrace{E[Y_{0i}|C_i = 1] - E[Y_{0i}|C_i = 0]}_\text{Selection Bias}  \]
+
+It seems likely that those who go to college would have earned more anyway, right? So, the Selection Bias is positive and the naive comparison, $E[Y_i|C_i = 1] - E[Y_i | C_i = 0]$ exaggerates the benefits of college attendance(given the value of the Selection Bias, the observed difference in outcome may be misinterpreted).
+
+The Conditional Independence Assumption asserts that **conditional on observed characteristics**, $X_i$, the Selection Bias disappears. Formally:
+
+\[\{Y_{0i},Y_{1i} \} \indep C_i|X_i  \]
+
+Where the symbol $\indep$ denotes the independence relation; the random variables to the right of $|$ are the **conditioning set**. Given the **Conditional Independence Assumption (CIA)**, conditional on $X_i$, comparisons of average earnings across schooling levels have a causal interpretation. In other words:
+
+\[  E[Y_i|X_i,C_i = 1]  - E[Y_i|X_i,C_i = 0] = E[Y_{1i} - Y_{0i}|X_i]\]
+
+This was established for two possible outcomes: $C_i = 1$ and $C_i = 0$(going to college vs not). Let's expand that to variables that can take on **more than two values**. 
+
+The causal relationship between schooling and earnings is likely to be different for each person, so let's use the individual-specific notation: $Y_{si} \equiv f_i(s)$. This denotes the potential earnings of a person after receiving $s$ years of education. $f_i(s)$ answers causal "what if" questions. In the context of theoretical models of the relationship between human capital and earnings, the form of $f_i(s)$ may be determined by aspects of individual behavior, by market forces, or both. The CIA in this general setup becomes:
+
+\[ Y_{si} \indep s_i|X_i\text{, }\forall s \]
+
+In an observational study, the CIA means that $s_i$ can be said to be "as good as randomly assigned", conditional on $X_i$. Conditional on $X_i$, the **average causal effect** of a one-year increase in schooling is E[$f_i(s) - f_i(s-1)|X_i$], while the ACE of a four-year increase in schooling is E[$f_i(s) - f_i(s-4)|X_i$]. The data reveal only $Y_i$ = $f_i(s_i)$, that is, $f_i(s)$ for $s = s_i$. But given the CIA, conditional on $X_i$ comparisons of average earnings across schooling levels have a causal interpretation:
+
+\[ E[Y_i | X_i,s_i = s] - E[Y_i | X_i,s_i = s - 1] =  E[f_i(s) - f_i(s-1)|X_i], \forall s\]
+
+If we were to compare the difference between 12 and 11 years, we would learn about the average causal effect of high school graduation. The selection bias comes from differences in the potential dropout earnings of high school graduates and non-graduates. However, given the CIA, high school graduation is independent of potential earnings conditional on $X_i$, so the selection bias vanishes. 
+
+So far, we've constructed separate causal effects for each value taken on by the conditioning variables. This leads to as many causal effects as there are values of $X_i$, given that every observation could lead to a unique combination of characteristics. So, Empiricists almost always find it useful to boil a set of estimates down to a single summary measure, for ex: the **unconditional** or **overall average causal effect**. By the law of iterated expectations, the unconditional average causal effect of high school graduation is: 
+
+\[  E\{E[Y_i|X_i,s_i = 12] - E[Y_i|X_i, s_i = 11] \}  \]
+
+\[  = E\{E[f_i(12)-f_i(11)|X_i] \}\]
+
+\[ = E[f_i(12) - f_i(11)] \]
+
+Just as well, how much have high school graduates gained by virtue of having graduated? The average causal effect of high school graduation on high school graduates is:
+
+\[ E\{E[Y_i|X_i,s_i = 12] - E[Y_i|X_i,s_i = 11]|s_i = 12\}   \]
+
+\[ = E \{ E[f_i(12) - f_i (11)|X_i]|s_i = 12\}   \]
+
+\[ E[f_i(12) - f_i(11)| s_i = 12]  \]
+
+The **unconditional average effect** can be computed by averaging all the X-specific effects weighted by the marginal distribution of $X_i$. So the empirical **counterpart** is a **matching estimator**: we make comparisons across different schooling groups for individuals with the same covariate values, compute the difference in their average earnings and then average these difference in some way. 
+
+**Regression** provides an easy-to-use empirical strategy that automatically turns the CIA into causal effects. Two routes can be traced from the CIA to regression: **1)** $f_i(s)$ is both linear in $s$ and the same for everyone except for an additive error term, so we can use a linear regression to estimate the features of $f_i(s)$; **2)** recognizing that $f_i(s)$ almost certainly differs for different people and does not need to be linear in $s$. Even so, allowing for random variation in $f_i(s)$ across people and for nonlinearity for a given person, regression can be thought of as a strategy for the estimation of a weighted average of the individual-specific difference $f_i(s) - f_i(s-1)$. 
+
+Now we want to focus on the **conditions required for the regression to have a causal interpretation**. Let's consider a linear constant effects causal model:
+
+\[ f_i(s) = \alpha + \rho s + \eta_i   \]
+
+This equation is linear and says that the functional relationship of interest is the same for everyone. If we were to compute the realized value of s: $s_i$, we would have:
+
+\[ Y_i = \alpha + \rho s_i + \eta_i \]
+
+The penultimate equation explicitly associates the coefficients above with a causal relationship. Since this penultimate equation is a causal model, $s_i$ may be correlated with the potential outcomes $f_i(s)$, or, in this case, the residual term above, $\eta_i$. 
+
+We can decompose $\eta_i$ into a linear function of observable characteristics $X_i$ and an error term $v_i$: $\eta_i = X_i'\gamma + v_i$, where $\gamma$ is a vector of population regression coefficients that is assumed to satisfy E[$\eta_i | X_i$] = $X_i' \gamma$. By virtue of the CIA, we have:
+
+\[ E[f_i(s)|X_i,s_i] = E[f_i(s)|X_i] = \alpha + \rho s + E[\eta_i | X]   \]
+
+\[ = \alpha + \rho s + X_i' \gamma  \]
+
+The residual in the linear causal model: $Y_i = \alpha + \rho s_i + X_i' \gamma + v_i$ is therefore uncorrelated with the regressors $s_i$ and $X_i$, and the regression coefficient $rho$ is **the causal effect of interest**. 
+
+##### 3.2.3) Bad Controls
+
+Not always more control is better. **Bad Controls** are variables that themselves are outcome variables in the notional experiment at hand.  
+
+
+#### 3.3) Heterogeneity and Nonlinearity
+
+The assumption of a linear **Conditional Expectation Function(CEF)** is not really necessary for a causal interpretation of regression. Section 3.1.2. showed how the regression of $Y_i$ on $X_i$ and $s_i$ can be thought as as providing the best linear approximation to the underlying CEF, regardless of its shape. If the CEF is causal, the fact that a regression approximates it gives regression coefficients a causal flavor. To explore the link between regression and CEF we dive into the understanding of regression as a computationally attractive **matching estimator**.
+
+##### 3.3.1) Regression Meets Matching
+
+**Matching** is a useful strategy to control for *covariates*, motivated by the Conditional Independence Assumption. Military ex: conditional on the individual characteristics the military uses to select soldiers, veteran status is **independent** of potential earnings. The **appeal** of matching is: matching amounts to covariate-specific treatment-control comparisons, weighed together to produce a **single overall average treatment effect**.
+
+An attractive feature of matching strategies is that they are typically accompanied by an explicit statement of the conditional independence assumption required to give matching estimates a causal interpretation. 
+
+
+**Matching requires two-steps: matching and then averaging**
+
+
+
+
+That is: CIA assumes that once you have certain characteristics sorted out, a certain outcome does not depend on them.
+
+CIA Conditional Independence Assumption
+
+
+
+
+
+
+
+
+
+
+

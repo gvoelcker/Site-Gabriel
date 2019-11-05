@@ -802,7 +802,7 @@ We now consider how derivative securities can help to complete markets(my quick 
 
 1) State price of $\omega$: 
 
-2) The price of the security with payoff $D_\omega  \omega \in \Omega $:
+2) The price of the security with payoff $D_\omega  \omega \in \Omega$:
 
 3) The aggregate payoff of the stock and of the riskless bond:
 
@@ -868,7 +868,7 @@ Then we give a binomial example.
 
 **Lemma**: the value of any gross return is 1.
 
-**Lemma**: the value of the sure gross return $R_F \equiv$ 1 + $\r_F$ is 1. 
+**Lemma**: the value of the sure gross return $R_F \equiv$ 1 + $r_F$ is 1. 
 
 **Lemma**: under the risk-neutral measure, all securities yield the riskless gross return: $\mathbb{E}^\mathbb{Q}[R_n] = R_F$ or $\mathbb{E}^\mathbb{Q}[R_n] - R_F = 0$, n = 1,...,N,
 
@@ -892,18 +892,17 @@ The [**ninth**](15470_L9.pdf) lecture advances on what we've just seen on Arbitr
 
 #### 1) Factors and Diversification
 
-
 Last time, we derived an APT result which held when returns followed an exact factor structure:
 
 \[ \overline{r}_n - r_F = \sum_k \beta_{nk} (\overline{r}_k - r_F) \equiv \sum_k \beta_{nk} \lambda_k \text{, n = 1,...,N} \]
 
 Where $\lambda_k = \overline{r}_k - r_F$ is the risk premium of the $k^{th}$ factor-mimicking portfolio. 
 
-Today's lecture derives a similira pricing result when a *large number of returns follow an approximate factor structure*. 
+Today's lecture derives a similar pricing result when a *large number of returns follow an approximate factor structure*. 
 
 **Factor Model For Returns**: we work with a generalized model for security returns. In a factor model, security returns are given as follows: 
 
-\[ \r_n = \overline{r}_n + \sum_{k=1}^K \beta_{nk} F_k + \varepsilon_n \text{, n = 1,...,N,}  \]
+\[ r_n = \overline{r}_n + \sum_{k=1}^K \beta_{nk} F_k + \varepsilon_n \text{, n = 1,...,N,}  \]
 
 where:
 
@@ -913,7 +912,7 @@ where:
 
 Our setting: i) **Risk Factors**: are given by $F_1,...,F_K$ for all the securities; ii) **Idiosyncratic risks**: are given by $\varepsilon_1,..., \varepsilon_N$; iii) Setting $\varepsilon_n = 0 \forall n$, we return to the **exact factor model**; iv) We assume *N* very large($\rightarrow \infty$) while *K* small. Also, we can express the factor model in a matrix form by creating vectors for *r*, $\overline{r}$, $F$, $\beta_n$, $\beta$ and $\varepsilon$. We can then express the factor model for returns as follows: $r = \overline{r} + F \beta + \varepsilon$. Moving forward, we can generalize our variance decomposition into a set of *K* independent factors and residuals uncorrelated with the factors.
 
-**Diversification**: how much do the idiosyncratic risks impact pricing? Less if we **diversify**. A portfolio $\theta$ is called *well diversified* if $\theta_n = O(\frac{1}{n})$, where $O(\frac{1}{n})$ means of order 1/n, so as $\n \rightarrow \infty$, n ||$\theta$||$^\infty$ is bounded. For a **sequence of portfolios**, for them to be called well diversified with $1_n^T \theta = 1$ and $\exists$ 0 < k < $\infty$ such that $\forall$ n and i = 1,...,n we have: $\theta_{ni}^2 < \frac{k}{n^2}$. The definition applies to a sequence of portfolios, not a single portfolio. Example: the portfolio $\theta = [\frac{1}{n};...; \frac{1}{n}]$ is well diversified; portfolio $\theta = [0;...;1;...;0]$ is concentrated. Then we advance to a math-heavy example of the variance of an equally weighted portfolio. 
+**Diversification**: how much do the idiosyncratic risks impact pricing? Less if we **diversify**. A portfolio $\theta$ is called *well diversified* if $\theta_n = O(\frac{1}{n})$, where $O(\frac{1}{n})$ means of order 1/n, so as $n \rightarrow \infty$, n ||$\theta$||$^\infty$ is bounded. For a **sequence of portfolios**, for them to be called well diversified with $1_n^T \theta = 1$ and $\exists$ 0 < k < $\infty$ such that $\forall$ n and i = 1,...,n we have: $\theta_{ni}^2 < \frac{k}{n^2}$. The definition applies to a sequence of portfolios, not a single portfolio. Example: the portfolio $\theta = [\frac{1}{n};...; \frac{1}{n}]$ is well diversified; portfolio $\theta = [0;...;1;...;0]$ is concentrated. Then we advance to a math-heavy example of the variance of an equally weighted portfolio. 
 
 **Systematic vs Idiosyncratic Risk**: an asset pricing model splits an asset’s return variance into 2 types of risk: i) **Diversifiable(idiosyncratic)**: Firm-specific or idiosyncratic risk, can be eliminated by holding a well-diversified portfolio; and ii) **Non diversifiable(systematic)**: Common sources of risk that cannot be eliminated through portfolio selection (ex: in a macroeconomic crisis, there is nowhere to hide). Asset pricing try to identify sources of systematic priced risk.
 
@@ -923,7 +922,7 @@ Our setting: i) **Risk Factors**: are given by $F_1,...,F_K$ for all the securit
 
 **Asymptotic Arbitrage**: is a sequence of portfolios $\theta_n$ that are self-financed ($1_n^T \theta_n = 0$) such that as $n \rightarrow \infty$, we have: 1) $\mathbb{E}[r_{\theta_n} ]\rightarrow \alpha > 0$; 2) $\mathbb{V}[r_{\theta_n}] \rightarrow 0$. Asymptotic arbitrage is an **arbitrage in the limit**. It means you don't put money in at the beginning, you are exposed to no risks, and in the future you're going to get some money. 
 
-**General Version of the APT**: given a K-factor model for security returns, if there is no asymptotic arbitrage then there exists a scalar, $r_F$, a K-vector, $\lambda = [\lambda_1;...;\lambda_K]$, and a positive constant A, such that: $\sum_{i=1}^n [\overline{r}_i - (r_F + \lambda^T \beta_i)]^2 = \sum_{i=1}^n [\overline{r}_i - (r_F + \sum_k \lambda_k \beta_{ik})]^2 < A < \infty$. The APT states that in a factor model of returns, **no asymptotic arbitrage (NAA) yields approximate factor pricing**: $\overline{r}_i - r_F \approx \sum_{k=1}^K \lambda_k \beta_{ik}$, $\forall i$. The **pricing error**($\delta_i$) for security *i*, is "non-trivial" only for a small number of securities: $\sum_i |\delta_i|^2 < A < \infty$. The logic of the APT is that the price will adjust, i.e. investors trade, in order to eliminate the asymptotic arbitrage opportunities $\prices$ adjust until all expected returns line up with $\beta$. What are the implications of the APT? Given N is large and risk factors are small:
+**General Version of the APT**: given a K-factor model for security returns, if there is no asymptotic arbitrage then there exists a scalar, $r_F$, a K-vector, $\lambda = [\lambda_1;...;\lambda_K]$, and a positive constant A, such that: $\sum_{i=1}^n [\overline{r}_i - (r_F + \lambda^T \beta_i)]^2 = \sum_{i=1}^n [\overline{r}_i - (r_F + \sum_k \lambda_k \beta_{ik})]^2 < A < \infty$. The APT states that in a factor model of returns, **no asymptotic arbitrage (NAA) yields approximate factor pricing**: $\overline{r}_i - r_F \approx \sum_{k=1}^K \lambda_k \beta_{ik}$, $\forall i$. The **pricing error**($\delta_i$) for security *i*, is "non-trivial" only for a small number of securities: $\sum_i |\delta_i|^2 < A < \infty$. The logic of the APT is that the price will adjust, i.e. investors trade, in order to eliminate the asymptotic arbitrage opportunities $prices$ adjust until all expected returns line up with $\beta$. What are the implications of the APT? Given N is large and risk factors are small:
 
 \[ \overline{r}_i - r_F = \sum_{k=1}^K \beta_{ik} (\overline{r}_k - r_F) = \sum_{k = 1}^K \beta_{ik} \lambda_k, \forall i \]
 
@@ -997,7 +996,7 @@ The [**eleventh**](15470_L11.pdf) will advance our study into risk aversion.
 
 **Risk Aversion Definition**: a random number *x* is a fair gamble if $\mathbb{E}[x]$ = 0. An agent with expected utility u(.) is **risk averse** if $\mathbb{E}[u(w + x)]$ ≤ $\mathbb{E}[u(w)] \forall \mathbb{E}[x] = 0$ and strictly risk averse if the inequality is strict. A risk-averse agent always prefers a sure payoff over a risky payoff with the same mean. Formally: An agent is (strictly) risk averse if and only if u(·) is (strictly) concave. Let's relate the risk-aversion concept to what we've seen in previous classes. 
 
-Risk Premium and Risk Aversion: let x be a fair gamble, u(.) be an agent's utility function with wealth *w*. The risk premium $\pi$ required by the agent to take the gamble is given by: $\mathbb{E}[u(w + x)] = u(w - \pi)$. The risk premium(also called **certainty equivalent** of the risky gamble) represents the *amount of wealth an agent is willing to give up in order to get rid of the risk*. We can measure risk aversion in many different ways. For example, there is the [**Arrow-Pratt**](https://policonomics.com/arrow-pratt-measure/) measure of risk aversion. The **inverse** of risk aversion is called **risk tolerance** T(w): T(w) $ \equiv \frac{1}{A(w)} = - \frac{u'(w)}{u''(w)}$ For more and examples, refer to slides and Campbell's 1.2.3. 
+Risk Premium and Risk Aversion: let x be a fair gamble, u(.) be an agent's utility function with wealth *w*. The risk premium $\pi$ required by the agent to take the gamble is given by: $\mathbb{E}[u(w + x)] = u(w - \pi)$. The risk premium(also called **certainty equivalent** of the risky gamble) represents the *amount of wealth an agent is willing to give up in order to get rid of the risk*. We can measure risk aversion in many different ways. For example, there is the [**Arrow-Pratt**](https://policonomics.com/arrow-pratt-measure/) measure of risk aversion. The **inverse** of risk aversion is called **risk tolerance** T(w): T(w) $\equiv \frac{1}{A(w)} = - \frac{u'(w)}{u''(w)}$ For more and examples, refer to slides and Campbell's 1.2.3. 
 
 **Pratt's Theorem**: given the setting: $u_1(.)$ and $u_2(.)$ denote the utility functions of two agents, 1 and 2, and $A_1(w)$ and $A_2(w)$ their absolute risk aversion, respectively, then the following statements are equivalent:
 
