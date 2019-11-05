@@ -2,7 +2,7 @@
 output: html_document
 ---
 
-## **Day to Day {.tabset}**
+## **Day to Day** {.tabset}
 
 [**MIT PhD Accounting**](https://gabrielvoelcker.netlify.com/mit/mitaccphd)
 
@@ -20,14 +20,28 @@ output: html_document
 
 - Understand and explain step-by-step [**PS5**](https://www.overleaf.com/project/5dc1d3319fda550001327bd5) Asset Pricing.
 
+### **Deadlines:**
+
+- Asset Pricing: Dec 1X.
+
+- Applied Econometrics: Dec 1X.
+
+- Micro 2: Dec 1X. 
+
 ### **Personal stuff:**
-
-- Buy winter coat. ✅
-
-- Buy winter boots. ✅
 
 - Mileage programs.
 
 - NBA tickets.
 
 - Organize thanksgiving agenda. 
+
+- GoPro Max?
+
+- iPad?
+
+### **Done**
+
+- Buy winter coat. ✅
+
+- Buy winter boots. ✅
