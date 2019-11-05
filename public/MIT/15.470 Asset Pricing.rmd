@@ -1377,3 +1377,58 @@ Where $S_0$ is the current price of the asset and *r* is the riskless rate.
 
 
 
+
+
+### **The Capital Asset Pricing Model(CAPM)**
+
+- **CAPM** is the workhorse model of equilibrium in the capital markets: it is a complete equilibrium model and the source of some of the most important intuitions about the interplay between *risk and return*. 
+
+We need some assumptions to yield some testable hypotheses for the general n-asset portfolio choice problem. To obtain the CAPM, restrictions are imposed that reduce the analysis to a *choice between return as measured by the expected return and risk as measured by the variance or the standard deviation*. The basic setup is one in which the individual **finds an optimal portfolio by trading off the expected return on the portfolio against its standard deviation**.
+
+The individual maximizes expected utility: E[U(x)] = $\int U(x) dF_x (x)$. We would like this to be a function of solely the mean and the variance/standard deviation of x:
+
+\[ E[U(x)] = \int U(x)dF_x(x) = G(\mu, \sigma) \]
+
+Where for any x: 
+
+\[ \mu = E[x] = \int xdF_x(x) \]
+
+and
+
+\[ \sigma^2 = E[(x - \mu)^2] = E[x^2] - \mu^2 = \int (x - \mu)^2 dF_x(x) \]
+
+This illustrates the aforementioned interplay between risk and return. We start by *restricting preferences*:
+
+- Quadratic utility: by restricting the utility function to be quadratic, then, given its uniqueness up to an affine transform, the general form is: $U(w) = w - \frac{c}{2}w^2$. This is graphed by:
+
+```{r, echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("33.png")
+grid.raster(img)
+```
+
+Interpretations: 
+
+- If c = 0, we have a risk neutral utility function.
+
+- The range can never be w > 1/c. 
+
+- The coefficient of Absolute Risk Aversion is: A(w) = $- \frac{U''(w)}{U'(w)} = \frac{c}{1 - cw}$. It rises in the relevant range (i.e. w < 1/c). 
+
+These interpretations allow us to write the expected utility as a function of mean and variance:
+
+\[ E[U(x)] = \int U(x) dF_w (x) \]
+
+\[ E[U(x)] = \int [x - \frac{c}{2} x^2] dF_w (x)  \]
+
+\[ \int dF_W(x) - \int\frac{c}{2}x^2 dF_w (x)  \]
+
+\[ = \mu - \frac{c}{2}[\mu^2 + \sigma^2]  \]
+
+\[ = G(\mu, \sigma)\]
+
+
+
+

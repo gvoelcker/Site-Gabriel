@@ -1,0 +1,30 @@
+---
+title: "Day-to-Day"
+output: html_document
+---
+
+### To do's:
+
+- Install Stata.
+
+- Install SAS.
+
+- Understand databases.
+
+- Read Ross' notes.
+
+- Read Angrist's books.
+
+- Understand and explain step-by-step [**PS5**](https://www.overleaf.com/project/5dc1d3319fda550001327bd5) Asset Pricing.
+
+### Personal stuff:
+
+- Buy winter coat. ✅
+
+- Buy winter boots. ✅
+
+- Mileage programs.
+
+- NBA tickets.
+
+- Organize thanksgiving agenda. 

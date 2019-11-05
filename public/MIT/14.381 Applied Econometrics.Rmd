@@ -114,7 +114,6 @@ The residual in the linear causal model: $Y_i = \alpha + \rho s_i + X_i' \gamma 
 
 Not always more control is better. **Bad Controls** are variables that themselves are outcome variables in the notional experiment at hand.  
 
-
 #### 3.3) Heterogeneity and Nonlinearity
 
 The assumption of a linear **Conditional Expectation Function(CEF)** is not really necessary for a causal interpretation of regression. Section 3.1.2. showed how the regression of $Y_i$ on $X_i$ and $s_i$ can be thought as as providing the best linear approximation to the underlying CEF, regardless of its shape. If the CEF is causal, the fact that a regression approximates it gives regression coefficients a causal flavor. To explore the link between regression and CEF we dive into the understanding of regression as a computationally attractive **matching estimator**.
@@ -128,12 +127,15 @@ An attractive feature of matching strategies is that they are typically accompan
 
 **Matching requires two-steps: matching and then averaging**
 
-
-
-
 That is: CIA assumes that once you have certain characteristics sorted out, a certain outcome does not depend on them.
 
-CIA Conditional Independence Assumption
+##### 3.3.2) Control for Covariates using Propensity Score
+
+**Theorem**: if potential outcomes are independent of treatment status conditional on a multivariate covariate vector $X_i$, then potential outcomes are independent of treatment status conditional on a scalar function of covariates $\rightarrow$ **the propensity score**. It is defined as $p(X_i) = E[D_i|X_i] = P[D_i = 1|X_i]$. It says that you only need to control for covariates that affect the probability of treatment itself. Also: the only covariate you really need to control for is the probability treatment itself. What it is done: **1)** $p(X_i)$ is estimated using some kind of parametric model (logit/probit); **2)** estimates of the effect of treatment are computed either by matching on the estimated score from this first step or using a weighting scheme. 
+
+Example of weighting scheme: **we match on score** instead of the covariates directly. 
+
+
 
 
 
