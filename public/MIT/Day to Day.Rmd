@@ -8,25 +8,31 @@ output: html_document
 
 ### **To do's:**
 
+#### Asset Pricing
+
+- Read Ross' notes.
+
+- [**PS5**](https://www.overleaf.com/project/5dc1d3319fda550001327bd5) Asset Pricing. Understand and map steps.
+
+  - Understand orthogonality on 3B.
+  
+  - [**Euler's Equation**](https://www.khanacademy.org/science/electrical-engineering/ee-circuit-analysis-topic/ee-ac-analysis/v/ee-eulers-formula): according to PS5 3B of asset pricing, we are supposed to dominate Euler's equation.
+
+  - [**Intro to Portfolio Risk Management in Python**](https://campus.datacamp.com/courses/intro-to-portfolio-risk-management-in-python/factor-investing?ex=1). 
+
+#### Econometrics
+
+- Read Angrist's books.
+
+#### Microeconomics II
+
+- Read Game Theory. 
+
 - Install Stata.
 
 - Install SAS.
 
 - Understand databases.
-
-- Read Ross' notes.
-
-- Read Angrist's books.
-
-- Understand and explain step-by-step [**PS5**](https://www.overleaf.com/project/5dc1d3319fda550001327bd5) Asset Pricing.
-
-### **Deadlines:**
-
-- Asset Pricing: Dec 1X.
-
-- Applied Econometrics: Dec 1X.
-
-- Micro 2: Dec 1X. 
 
 ### **Personal stuff:**
 
