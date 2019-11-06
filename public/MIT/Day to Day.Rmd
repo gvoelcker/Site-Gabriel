@@ -6,6 +6,20 @@ output: html_document
 
 [**MIT PhD Accounting**](https://gabrielvoelcker.netlify.com/mit/mitaccphd)
 
+### Today
+
+Nov/6th.
+
+- Cover all Angrist's class.
+
+- Cover all Propensity Score Matching from MHE.
+
+- Skim papers of Angrist's tomorrow's class.
+
+- Read introductions of all 5 papers of JAE conference.
+
+- Python Finance at DataCamp.
+
 ### **To do's:**
 
 #### Asset Pricing
