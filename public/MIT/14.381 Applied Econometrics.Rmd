@@ -6,7 +6,7 @@ output: html_document
 
 ## **Mostly Harmless Econometrics** {.tabset}
 
-### 1) Questions About Questions
+### **1) Questions About Questions**
 
 4 Frequently Asked Questions about the relationship of interest, the ideal experiment, the identification strategy and the mode of inference.
 
@@ -20,13 +20,13 @@ Fundamentally unindentified questions: FUQs. Questions that cannot be answererd 
   
   *iv) What is the mode of statistical inference?* it describes tge population, the sample and the assumptions made when constructing standard errors. How straightforward is your inference?
 
-### 2) The Experimental Ideal
+### **2) The Experimental Ideal**
 
 - Importance of Random assignment: eliminate selection bias. Has the randomization successfully balanced the characteristics across groups?
 
 - Regression: constant treatment effects: the impact of the treatment is the same for everyone. Regressions are important, let's review some facts and properties about them:
 
-### 3) Making Regression Make Sense
+### **3) Making Regression Make Sense**
 
 #### 3.1) Regression Fundamentals
 
@@ -54,9 +54,9 @@ It seems likely that those who go to college would have earned more anyway, righ
 
 The Conditional Independence Assumption asserts that **conditional on observed characteristics**, $X_i$, the Selection Bias disappears. Formally:
 
-\[\{Y_{0i},Y_{1i} \} \indep C_i|X_i  \]
+\[\{Y_{0i},Y_{1i} \} \perp \perp C_i|X_i  \]
 
-Where the symbol $\indep$ denotes the independence relation; the random variables to the right of $|$ are the **conditioning set**. Given the **Conditional Independence Assumption (CIA)**, conditional on $X_i$, comparisons of average earnings across schooling levels have a causal interpretation. In other words:
+Where the symbol $\perp \perp$ denotes the independence relation; the random variables to the right of $|$ are the **conditioning set**. Given the **Conditional Independence Assumption (CIA)**, conditional on $X_i$, comparisons of average earnings across schooling levels have a causal interpretation. In other words:
 
 \[  E[Y_i|X_i,C_i = 1]  - E[Y_i|X_i,C_i = 0] = E[Y_{1i} - Y_{0i}|X_i]\]
 
@@ -64,7 +64,7 @@ This was established for two possible outcomes: $C_i = 1$ and $C_i = 0$(going to
 
 The causal relationship between schooling and earnings is likely to be different for each person, so let's use the individual-specific notation: $Y_{si} \equiv f_i(s)$. This denotes the potential earnings of a person after receiving $s$ years of education. $f_i(s)$ answers causal "what if" questions. In the context of theoretical models of the relationship between human capital and earnings, the form of $f_i(s)$ may be determined by aspects of individual behavior, by market forces, or both. The CIA in this general setup becomes:
 
-\[ Y_{si} \indep s_i|X_i\text{, }\forall s \]
+\[ Y_{si} \perp \perp s_i|X_i\text{, }\forall s \]
 
 In an observational study, the CIA means that $s_i$ can be said to be "as good as randomly assigned", conditional on $X_i$. Conditional on $X_i$, the **average causal effect** of a one-year increase in schooling is E[$f_i(s) - f_i(s-1)|X_i$], while the ACE of a four-year increase in schooling is E[$f_i(s) - f_i(s-4)|X_i$]. The data reveal only $Y_i$ = $f_i(s_i)$, that is, $f_i(s)$ for $s = s_i$. But given the CIA, conditional on $X_i$ comparisons of average earnings across schooling levels have a causal interpretation:
 
@@ -129,12 +129,33 @@ An attractive feature of matching strategies is that they are typically accompan
 
 That is: CIA assumes that once you have certain characteristics sorted out, a certain outcome does not depend on them.
 
+**REREAD PG 74 FORWARD MHE**
+
 ##### 3.3.2) Control for Covariates using Propensity Score
+
+What happens if the covariates $X_i$ are many/multi/continuous? Matching now requires grouping or parametric assumptions, a fact that induces bias. The **Propensity Score Theorem** extends the regression OVB idea to nonparametric conditioning.
 
 **Theorem**: if potential outcomes are independent of treatment status conditional on a multivariate covariate vector $X_i$, then potential outcomes are independent of treatment status conditional on a scalar function of covariates $\rightarrow$ **the propensity score**. It is defined as $p(X_i) = E[D_i|X_i] = P[D_i = 1|X_i]$. It says that you only need to control for covariates that affect the probability of treatment itself. Also: the only covariate you really need to control for is the probability treatment itself. What it is done: **1)** $p(X_i)$ is estimated using some kind of parametric model (logit/probit); **2)** estimates of the effect of treatment are computed either by matching on the estimated score from this first step or using a weighting scheme. 
 
-Example of weighting scheme: **we match on score** instead of the covariates directly. 
+From Angrist's class *Labor Economists Know The Score*: - Propensity Score Theorem? Suppose the CIA holds for $Y_{ij}$ (j=0,1) $\implies Y_{ji} \perp \perp D_i|p(X_i)$.
 
+**Proof for the Propensity-Score Theorem**: the claim is true if $P[D_i = 1| Y_{ji}, p(X_i)]$ does not depend on $Y_{ji}$:
+
+<center>
+```{r, echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("34.png")
+grid.raster(img)
+```
+</center>
+
+We use the score to match, similarly as Covariate matching, except that we match on the score-as-covariate. By the propensity score theorem and the CIA, $E[Y_{1i} - Y_{0i}|D_i = 1]$ is equal to:
+
+\[ E\{E[Y_i|p(X_i),D_i = 1] - E[Y_i|p(X_i),D_i = 0]|D_i=1 \} \]
+
+Example of weighting scheme: **we match on score** instead of the covariates directly. 
 
 
 
