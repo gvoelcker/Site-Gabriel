@@ -8,7 +8,7 @@ output: html_document
 
 ### Today
 
-Nov/6th.
+#### Nov/6th.
 
 - Cover all Angrist's Labor Economists Know The Score class.
 
@@ -22,13 +22,15 @@ Nov/6th.
 
 - Cover all Propensity Score Matching from MHE.
 
-- Skim papers of Angrist's tomorrow's class.
+- Skim Angrist's papers for tomorrow's class.
 
-- Read introductions of all 5 papers of JAE conference.
+- Read introductions of all 5 papers of JAE conference. ✅
+
+    - Impairment and charge off.
 
 - Python Finance at DataCamp.
 
-- Learn how to access databases.
+- Learn how to access databases. ✅
 
 ### **To do's:**
 

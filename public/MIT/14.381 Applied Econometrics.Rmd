@@ -4,6 +4,40 @@ output: html_document
 
 # 14.381 - Applied Econometrics{.tabset}
 
+## **Useful Stuff** {.tabset}
+
+### **Basic Info**
+
+#### **Documents with basic information about how the course works**
+
+[**2019 Syllabus**](https://gabrielvoelcker.netlify.com/mit/syl381fa19.pdf)
+
+[**2019 Agenda**](https://gabrielvoelcker.netlify.com/mit/agenda381fa19+(new).pdf)
+
+[**2019 Schedule**](https://gabrielvoelcker.netlify.com/mit/sched381fa19+(new).pdf)
+
+### **Class Materials**
+
+#### **Class Materials**
+
+[**1) Mastering Mostly Harmless Metrics**](https://gabrielvoelcker.netlify.com/mit/Intro381fall2019flat.pdf)
+
+[**2) Mastering Regression**](https://gabrielvoelcker.netlify.com/mit/Intro381fall2019flat.pdf)
+
+[**3) Labor Economists Know The Score**](https://gabrielvoelcker.netlify.com/mit/Pscore381fall2019handout.pdf)
+
+
+
+
+
+
+
+### **PSets**
+
+#### **The PSets for the semester are:**
+
+[**Qualifying PS**](https://gabrielvoelcker.netlify.com/mit/Review+problem+set.pdf)
+
 ## **Mostly Harmless Econometrics** {.tabset}
 
 ### **1) Questions About Questions**
@@ -124,7 +158,6 @@ The assumption of a linear **Conditional Expectation Function(CEF)** is not real
 
 An attractive feature of matching strategies is that they are typically accompanied by an explicit statement of the conditional independence assumption required to give matching estimates a causal interpretation. 
 
-
 **Matching requires two-steps: matching and then averaging**
 
 That is: CIA assumes that once you have certain characteristics sorted out, a certain outcome does not depend on them.
@@ -135,9 +168,9 @@ That is: CIA assumes that once you have certain characteristics sorted out, a ce
 
 What happens if the covariates $X_i$ are many/multi/continuous? Matching now requires grouping or parametric assumptions, a fact that induces bias. The **Propensity Score Theorem** extends the regression OVB idea to nonparametric conditioning.
 
-**Theorem**: if potential outcomes are independent of treatment status conditional on a multivariate covariate vector $X_i$, then potential outcomes are independent of treatment status conditional on a scalar function of covariates $\rightarrow$ **the propensity score**. It is defined as $p(X_i) = E[D_i|X_i] = P[D_i = 1|X_i]$. It says that you only need to control for covariates that affect the probability of treatment itself. Also: the only covariate you really need to control for is the probability treatment itself. What it is done: **1)** $p(X_i)$ is estimated using some kind of parametric model (logit/probit); **2)** estimates of the effect of treatment are computed either by matching on the estimated score from this first step or using a weighting scheme. 
+**Theorem**: if potential outcomes are independent of treatment status conditional on a multivariate covariate vector $X_i$, then potential outcomes are independent of treatment status conditional on a scalar function of covariates $\rightarrow$ **the propensity score**. It is defined as $p(X_i) = E[D_i|X_i] = P[D_i = 1|X_i]$. Like the OVB formula for regression, the propensity score theorem says that you only need to control for covariates that affect the probability of treatment itself. Also: the only covariate you really need to control for is the probability treatment itself. What it is done: **1)** $p(X_i)$ is estimated using some kind of parametric model (logit/probit); **2)** estimates of the effect of treatment are computed either by matching on the estimated score from this first step or using a weighting scheme. 
 
-From Angrist's class *Labor Economists Know The Score*: - Propensity Score Theorem? Suppose the CIA holds for $Y_{ij}$ (j=0,1) $\implies Y_{ji} \perp \perp D_i|p(X_i)$.
+- From Angrist's class *Labor Economists Know The Score*: - Propensity Score Theorem? Suppose the CIA holds for $Y_{ij}$ (j=0,1) $\implies Y_{ji} \perp \perp D_i|p(X_i)$.
 
 **Proof for the Propensity-Score Theorem**: the claim is true if $P[D_i = 1| Y_{ji}, p(X_i)]$ does not depend on $Y_{ji}$:
 
@@ -155,12 +188,17 @@ We use the score to match, similarly as Covariate matching, except that we match
 
 \[ E\{E[Y_i|p(X_i),D_i = 1] - E[Y_i|p(X_i),D_i = 0]|D_i=1 \} \]
 
-Example of weighting scheme: **we match on score** instead of the covariates directly. 
+- Back to MHE pg 81: 
 
+Example of weighting scheme: **we match on score** instead of the covariates directly. By the PST and the CIA:
 
+\[ E[Y_{1i} - Y_{0i}|D_i = 1]  \]
 
+\[ E\{E[Y_i|\rho (X_i), D_i = 1] - E[Y_i|\rho(X_i),D_i = 0]|D_i = 1\} \]
 
+Estimates of the effect of treatment on the treated can therefore be obtained by: **1)**  stratifying on an estimate of p($X_i$); and **2)** substituting conditional sample averages for expectations or **2)** by matching each treated observation to controls with similar values of the propensity score(used by the paper we review in class: [**Dehejia and Wahba(1999)**](https://www.tandfonline.com/doi/pdf/10.1080/01621459.1999.10473858). 
 
+Another approach one could apply a model-based or nonparametric estimate of E$[Y_i|\rho(X_i),D_i]$ can be substituted for these conditional mean functions and the outer expectation replaced wih a sum(this was done [**here**]())
 
 
 
