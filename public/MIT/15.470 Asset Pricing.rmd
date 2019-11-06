@@ -1369,16 +1369,6 @@ Where $S_0$ is the current price of the asset and *r* is the riskless rate.
 
 
 
-
-
-
-
-
-
-
-
-
-
 ### **The Capital Asset Pricing Model(CAPM)**
 
 - **CAPM** is the workhorse model of equilibrium in the capital markets: it is a complete equilibrium model and the source of some of the most important intuitions about the interplay between *risk and return*. 
@@ -1428,6 +1418,15 @@ These interpretations allow us to write the expected utility as a function of me
 \[ = \mu - \frac{c}{2}[\mu^2 + \sigma^2]  \]
 
 \[ = G(\mu, \sigma)\]
+
+Given the expected utility depends only on the mean and the variance, we can draw indifference curves for this utility function. 
+
+
+#### **Multivariate Normality**
+
+Asset returns, *x*, follow a multivariate normal distribution. Basic portfolio problem is: (pg 191)
+
+
 
 
 

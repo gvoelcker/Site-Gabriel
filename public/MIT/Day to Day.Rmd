@@ -28,6 +28,10 @@ output: html_document
 
 - Read Game Theory. 
 
+#### Misc
+
+- **Read JAE 2019 Conference Papers**.
+
 - Install Stata.
 
 - Install SAS.
