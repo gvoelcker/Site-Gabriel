@@ -67,6 +67,32 @@ Fundamentally unindentified questions: FUQs. Questions that cannot be answererd 
 
 - Law of iterated expectations: 
 
+##### 3.1.2) Linear Regression and The CEF
+
+The link between the CEF and regression functions can be explained in three ways. To start, let the K x 1 regression coefficient vector $\beta$ be defined by solving
+
+\[ \beta = arg min_{(b)} E[(Y_i - X_i'b)^2] \]
+
+Using FOC:
+
+\[ E[X_i (Y_i - X_i'b)] = 0 \]
+
+Where the solution can be written as $\beta$ = E$[X_iX_i']^{-1}E[X_iY_i]$. The population residual, which we define as $Y_i - X_i'\beta = e_i$ is uncorrelated with the regressors $X_i$. For the multivariate case, the regression anatomy is:
+
+\[ \beta_k = \frac{Cov(Y_i, \tilde{x}_{ki})}{V(\tilde{x}_{ki})} \]
+
+Where $\tilde{x}_{ki}$ is the residual from a regression of $x_{ki}$ on all the other covariates. This formula is important because it shows that each coefficient in a multivariate regression is the bivariate slope coefficient for the corresponding regressor after partialing out all the other covariates. $\tilde{x}_{ki}$ is uncorrelated with $e_i$ since it is a **linear combination of the regressors**. Also, since $\tilde{x}_{ki}$ is a residual from a regression on all other covariates in the model, it must be uncorrelated with these covariates. For the same reason, the Cov($\tilde{x}_{ki}$,$x_{ki}$) is just the V($\tilde{x}_{ki}$). Hence: Cov($Y_i, \tilde{x}_{ki}$) = $\beta_k V(\tilde{x}_{ki})$
+
+- **Linear CEF Theorem (3.1.4.)(Regression Justification 1)**: suppose the CEF is linear $\implies$ the population regression function is it. So what makes the CEF linear? Classic scenario: joint normality $\implies$ vector ($Y_i, X_i'$) has a multivariate normal distribution(few empirical validity given the regressors and variables are often discrete). 
+**Saturated regression model**: has a separate parameter for every possible combination of values that the set of regressors can take on. 
+
+- **Best Linear Predictor Theorem(3.1.5.)(Regression Justification 2)**: the function $X_i'\beta$ is the best linear predictor of $Y_i$ given $X_i$ in a MMSE sense. $E[Y_i|X_i]$ is the best (MMSE) predictor of $Y_i$ given $X_i$ in the class of *all* functions of $X_i$, the population regression function is the best we can do in the class of *linear* functions. 
+
+-  **The Regression CEF Theorem(3.1.6)(Regression Justification 3)**: the function $X_i'\beta$ provides the MMSE linear approximation to E[$Y_i|X_i$], that is: 
+
+\[ \beta = argmin_{b} E\{(E[Y_i|X_i] - X_i'b)^2\} \]
+
+
 #### 3.2) Regression and Causality
 
 ##### 3.2.1) The Conditional Independence Assumption (CIA)

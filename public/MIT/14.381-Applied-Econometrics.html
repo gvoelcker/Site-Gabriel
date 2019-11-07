@@ -423,6 +423,22 @@ summary {
 <li><p>Conditional Expectation Function:</p></li>
 <li><p>Law of iterated expectations:</p></li>
 </ul>
+<div id="linear-regression-and-the-cef" class="section level5">
+<h5>3.1.2) Linear Regression and The CEF</h5>
+<p>The link between the CEF and regression functions can be explained in three ways. To start, let the K x 1 regression coefficient vector <span class="math inline">\(\beta\)</span> be defined by solving</p>
+<p><span class="math display">\[ \beta = arg min_{(b)} E[(Y_i - X_i'b)^2] \]</span></p>
+<p>Using FOC:</p>
+<p><span class="math display">\[ E[X_i (Y_i - X_i'b)] = 0 \]</span></p>
+<p>Where the solution can be written as <span class="math inline">\(\beta\)</span> = E<span class="math inline">\([X_iX_i']^{-1}E[X_iY_i]\)</span>. The population residual, which we define as <span class="math inline">\(Y_i - X_i'\beta = e_i\)</span> is uncorrelated with the regressors <span class="math inline">\(X_i\)</span>. For the multivariate case, the regression anatomy is:</p>
+<p><span class="math display">\[ \beta_k = \frac{Cov(Y_i, \tilde{x}_{ki})}{V(\tilde{x}_{ki})} \]</span></p>
+<p>Where <span class="math inline">\(\tilde{x}_{ki}\)</span> is the residual from a regression of <span class="math inline">\(x_{ki}\)</span> on all the other covariates. This formula is important because it shows that each coefficient in a multivariate regression is the bivariate slope coefficient for the corresponding regressor after partialing out all the other covariates. <span class="math inline">\(\tilde{x}_{ki}\)</span> is uncorrelated with <span class="math inline">\(e_i\)</span> since it is a <strong>linear combination of the regressors</strong>. Also, since <span class="math inline">\(\tilde{x}_{ki}\)</span> is a residual from a regression on all other covariates in the model, it must be uncorrelated with these covariates. For the same reason, the Cov(<span class="math inline">\(\tilde{x}_{ki}\)</span>,<span class="math inline">\(x_{ki}\)</span>) is just the V(<span class="math inline">\(\tilde{x}_{ki}\)</span>). Hence: Cov(<span class="math inline">\(Y_i, \tilde{x}_{ki}\)</span>) = <span class="math inline">\(\beta_k V(\tilde{x}_{ki})\)</span></p>
+<ul>
+<li><p><strong>Linear CEF Theorem (3.1.4.)(Regression Justification 1)</strong>: suppose the CEF is linear <span class="math inline">\(\implies\)</span> the population regression function is it. So what makes the CEF linear? Classic scenario: joint normality <span class="math inline">\(\implies\)</span> vector (<span class="math inline">\(Y_i, X_i'\)</span>) has a multivariate normal distribution(few empirical validity given the regressors and variables are often discrete). <strong>Saturated regression model</strong>: has a separate parameter for every possible combination of values that the set of regressors can take on.</p></li>
+<li><p><strong>Best Linear Predictor Theorem(3.1.5.)(Regression Justification 2)</strong>: the function <span class="math inline">\(X_i'\beta\)</span> is the best linear predictor of <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i\)</span> in a MMSE sense. <span class="math inline">\(E[Y_i|X_i]\)</span> is the best (MMSE) predictor of <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i\)</span> in the class of <em>all</em> functions of <span class="math inline">\(X_i\)</span>, the population regression function is the best we can do in the class of <em>linear</em> functions.</p></li>
+<li><p><strong>The Regression CEF Theorem(3.1.6)(Regression Justification 3)</strong>: the function <span class="math inline">\(X_i'\beta\)</span> provides the MMSE linear approximation to E[<span class="math inline">\(Y_i|X_i\)</span>], that is:</p></li>
+</ul>
+<p><span class="math display">\[ \beta = argmin_{b} E\{(E[Y_i|X_i] - X_i'b)^2\} \]</span></p>
+</div>
 </div>
 <div id="regression-and-causality" class="section level4">
 <h4>3.2) Regression and Causality</h4>
