@@ -8,9 +8,9 @@ output: html_document
 
 ### **Overview**
 
-14.381 Statistical Methods is a half semester course that introduces us to the core concepts of statistics. Two quick notes: 1) I highly advise you to read the [**syllabus**](https://gabrielvoelcker.netlify.com/mit/14_380_syl2019.pdf) before studying: when you play a game you should know all the rules about it!; and 2) I have no idea why sometimes this course is referenced as 14.380 and others as 14.381! Henceforth, I'll use 14.381. Let's start!
+14.381 Statistical Methods is a half semester course that introduces us to the core concepts of statistics. Two quick notes: 1) I highly advise you to read the [**syllabus**](https://gabrielvoelcker.netlify.com/mit/14_380_syl2019.pdf) before studying: when you play a game you should know all the rules about it!; and 2) I have no idea why sometimes this course is referenced as 14.380 and others as 14.381! Henceforth, I'll use 14.380(I used 14.381 for a while, so forgive-me for possible contradictions!). Let's start!
 
-14.381 is structured in 12 Lectures:
+14.380 is structured in 12 Lectures:
 
 **1)** We start with a review of some basic concepts to establish a common starting point for all students. The first lecture deals ith **distributions** and **random variables**. It starts by describing **basic definitions** about random variables like, for example, types of random variables. Then we proceed to **functions** of random variables, which is the transformation of an X into an Y. We move forward to **Expected Value**, denoting some special cases like *mean*, *second moment* *variance*, *k-th moment* and *k-th central moment*. We go a little bit deeper and talk about properties of expectation, and then give some famous examples of r.v.s. So far we've dealt only with univariate distributions. On the 2nd part of the lecture we advance to **bivariate/multivariate distributions**. They can be **joint**, **marginal**, **conditional**. This leads us to interesting concepts such as **independence** and **covariance**. The last part of the lecture tackles **normal random variables** and their properties. Lastly, we talk about **conditional distribution**.
 
