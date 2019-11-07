@@ -27,16 +27,13 @@ output: html_document
 [**3) Labor Economists Know The Score**](https://gabrielvoelcker.netlify.com/mit/Pscore381fall2019handout.pdf)
 
 
-
-
-
-
-
 ### **PSets**
 
 #### **The PSets for the semester are:**
 
 [**Qualifying PS**](https://gabrielvoelcker.netlify.com/mit/Review+problem+set.pdf)
+
+[**PS 1**](https://gabrielvoelcker.netlify.com/mit/psetI_381fa19.pdf)
 
 ## **Mostly Harmless Econometrics** {.tabset}
 

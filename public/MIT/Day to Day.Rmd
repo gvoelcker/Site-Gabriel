@@ -88,6 +88,8 @@ output: html_document
 
 - Organize thanksgiving agenda. 
 
+    - Call restaurant.
+
 - GoPro Max?
 
 - iPad?
