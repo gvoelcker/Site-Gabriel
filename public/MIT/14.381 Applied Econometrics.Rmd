@@ -170,6 +170,9 @@ What happens if the covariates $X_i$ are many/multi/continuous? Matching now req
 
 **Theorem**: if potential outcomes are independent of treatment status conditional on a multivariate covariate vector $X_i$, then potential outcomes are independent of treatment status conditional on a scalar function of covariates $\rightarrow$ **the propensity score**. It is defined as $p(X_i) = E[D_i|X_i] = P[D_i = 1|X_i]$. Like the OVB formula for regression, the propensity score theorem says that you only need to control for covariates that affect the probability of treatment itself. Also: the only covariate you really need to control for is the probability treatment itself. What it is done: **1)** $p(X_i)$ is estimated using some kind of parametric model (logit/probit); **2)** estimates of the effect of treatment are computed either by matching on the estimated score from this first step or using a weighting scheme. 
 
+- **PSM definition from** [**Dehejia and Wahba(1999)**](https://www.tandfonline.com/doi/pdf/10.1080/01621459.1999.10473858): 
+The propen-sity score is defined as the probability of assignment to treatment, conditional on covariates.
+
 - From Angrist's class *Labor Economists Know The Score*: - Propensity Score Theorem? Suppose the CIA holds for $Y_{ij}$ (j=0,1) $\implies Y_{ji} \perp \perp D_i|p(X_i)$.
 
 **Proof for the Propensity-Score Theorem**: the claim is true if $P[D_i = 1| Y_{ji}, p(X_i)]$ does not depend on $Y_{ji}$:
@@ -198,7 +201,38 @@ Example of weighting scheme: **we match on score** instead of the covariates dir
 
 Estimates of the effect of treatment on the treated can therefore be obtained by: **1)**  stratifying on an estimate of p($X_i$); and **2)** substituting conditional sample averages for expectations or **2)** by matching each treated observation to controls with similar values of the propensity score(used by the paper we review in class: [**Dehejia and Wahba(1999)**](https://www.tandfonline.com/doi/pdf/10.1080/01621459.1999.10473858). 
 
-Another approach one could apply a model-based or nonparametric estimate of E$[Y_i|\rho(X_i),D_i]$ can be substituted for these conditional mean functions and the outer expectation replaced wih a sum(this was done [**here**]())
+Another approach one could apply a model-based or nonparametric estimate of E$[Y_i|\rho(X_i),D_i]$ can be substituted for these conditional mean functions and the outer expectation replaced wih a sum(this was done [**here**](https://watermark.silverchair.com/65-2-261.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAnAwggJsBgkqhkiG9w0BBwagggJdMIICWQIBADCCAlIGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMdjtaBMX_bvz4Op8tAgEQgIICI2z4QA0M_9j0_jXxcnqGUgvt6nl8eYAt1Yupnrf7ET_YcJCbCDV_3WJeLP0I35F-Z-2ZIcJupppgb9FTd7V65b4YT5eWkuQ1SQTBt1DrCyz1qUbW_-DaqgvACuHP2w991HULxqzE8YTLqNp_WVLL2HfmlZJdHewnmP3DYusW_zrhv8i0VepUaTdgYsERy8P6atL422JcMC4XewBtMut-Tu-9uB-Kb4FLZIjt0YwqCmkEZKAB-r2sJZd6T5BzMoPU9quKbcsplhsC3tJHoeo_jGjN9yJA1FZD9PtiIk0ZLcwAdlFKsx4Yak0f4S_7NWKnwIUzqG6jhAA26GNIMNFakSZJhZfT_W7EE-MzpiwMfTOEmQLmhgwKJntdSukNBkQDWNCl3567r-RjtWs7WBUGJFJClTaoQibY-h6VgfolMCQCrhtNvthVZOVHhc3V9o3O-n01pczD3X5Zhs6Bgl7YB_u7eZ49y4LtPca56YUZZ03T_gdabLlYlX2QLhGhL-tXhb_6ffs_TRtgs-xEFnK29D8sAXcvFcxc244BgT7atdeQqNns-NlcxCr6hT9MM3cW4SV6wSZX09gZ_dhMHBX2-Xn0MbBlYZZbNdnJFuLb9OfeSkGssi7RIpvSdacIJWfrVJO-HQHY2cXz1PAEoXs6LPncPukY185gPr5jADYw3klGuhW5Ej7XoPncbu0g2oiThm0PrF40zdK6yxJ49itP8k3QWmA)).
+
+We can calculate the effect of treatment on the treated from the sample analog of:
+
+\[ E[Y_{1i} - Y_{0i}|D_i = 1] = E[\frac{(D_i - \rho(X_i))Y_i}{(1 - \rho(X_i))P(D_i = 1)}]  \]
+
+With a consistent estimator of $\rho(X_i)$ it is possible to **correct for nonrandom sampling** via weighting by the reciprocal of the probability of selection. The first idea for this came from [**Horvitz-Thompson**](http://www.stat.cmu.edu/~brian/905-2008/papers/Horvitz-Thompson-1952-jasa.pdf): in their version of the propensity score approach the estimator is essentially automated, no need for matching. This approach highlights the link between PSM and regression. Consider again(as previously seen in 3.3.1) the regression estimand, $\delta_R$, for the population regression of $Y_i$ on $D_i$, controlling for a saturated model for covariates. This estimand can be written:
+
+\[ \delta_R = \frac{E[(D_i - \rho(X_i))Y_i]}{E[\rho(X_i)(1 - \rho(X_i))]} \]
+
+The two estimators obtained from the last two equations are in the class of weighted average estimands considered by [**Hirano, Imbens and Ridder(2003)**](https://onlinelibrary.wiley.com/doi/pdf/10.1111/1468-0262.00442):
+
+\[ E \{g(X_i) [\frac{Y_iD_i}{\rho(X_i)} - \frac{Y_i(1 - D_i)}{(1 - \rho(X_i))}] \}  \]
+
+Above, $g(X_i)$ is a known weighting function. **So you calculte the effect of the treatment on the treated with an easier less cumbersome approach using weights**. 
+
+Thought-provoking theorems on the efficient use of the propensity score:
+
+i) From the point of view of asymptotic efficiency, **there is usually a cost to matching on the propensity score instead of full covariate matching**. If we investigate the maximal precision of estimates of treatment effects under the CIA, with and without knowledge of the propensity score. A regression analog for this point is the result that even in a scenario with no OVB, the long regression generates more precise estimates of the coefficients on the variables included in a short regression whenever the omitted variables have some predictive power for outcomes. So **why should we use PSM?** It helps the scientist to focus on models for treatment assignment(something he is well-informed of) but not on the typically more complex and mysterious process that determines outcomes. 
+
+ii) Even though there is no **asymptotic efficiency gain** for using the propensity score, there will often be a gain in precision in **finite samples**. Tradeoff: if the covariates omitted from the propensity score explain little of the variation in outcomes, it may be better to ignore them than to bear the statistical burden imposed by the need to estimate their effects. 
+
+iii) [**Hirano, Imbens and Ridder(2003)**](https://onlinelibrary.wiley.com/doi/pdf/10.1111/1468-0262.00442): show that for models with continuous covariates, a Horvitz-Thompson-type weighting estimator is efficient when the weighting scheme uses a *nonparametric* estimate of the score(even though estimates of treatment effects based on a known propensity score are inefficient). 
+
+##### 3.3.3) Propensity Score Methods vs Regression
+
+Propensity score methods shift attention from the estimation of $E[Y_i | X_i, D_i]$ to the estimation of the propensity score: $\rho(X_i) \equiv E[D_i |X_i]$. 
+
+Conclusion(Pg91): the experiments made in this subschapter boost the authors faith in regression. Regression controls for the right covariates does a reasonably good job of eliminating selection bias in the CPS-1 sample despite a huge baseline gap. Restricting the sample using our knowledge of program admissions yields even better results with CPS-3. Systematic **prescreening** to enforce common support seems like a useful adjunct to regression estimation with CPS-1, a large and coarsely selected initial sample. 
+
+
+
 
 
 

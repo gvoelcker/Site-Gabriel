@@ -8,9 +8,21 @@ output: html_document
 
 ### Today
 
+#### Nov/7th.
+
+- Start Econometrics PSet 1.
+
+- Question from Econometrics class.
+
+- Start AP PSet 2.
+
+- Read Ross' notes.
+
+- JAE Conference.
+
 #### Nov/6th.
 
-- Cover all Angrist's Labor Economists Know The Score class.
+- Cover all Angrist's Labor Economists Know The Score class. ✅
 
     - Specification testing? It's when the tester doesn't know how things are structured inside the black box. Initially thought as a possible approach to solve the problem posited at the beginning of the class.
     
@@ -20,9 +32,13 @@ output: html_document
     
     - Omitted Variables Bias Formula? The bias results in the model attributing the effect of the missing variables to the estimated effects of the included variables. The assumed specification is incorrect in that it omits an independent variable that is correlated with both the dependent variable and one or more of the included independent variables
 
-- Cover all Propensity Score Matching from MHE.
+- Cover all Propensity Score Matching from MHE. ✅
 
-- Skim Angrist's papers for tomorrow's class.
+    - What is the difference/similarity between regression and matching?
+
+    - Propensity Score Paradox?
+
+- Skim Angrist's papers for tomorrow's class. ✅
 
 - Read introductions of all 5 papers of JAE conference. ✅
 
