@@ -8,17 +8,29 @@ output: html_document
 
 ### Today
 
+- JAE Conference. ✅
+
+- Econometrics PS1. ✅
+
+#### Nov/8th
+
+- JAE Conference. ✅
+
+- Econometrics PS1. 🔘 
+
 #### Nov/7th.
 
-- Start Econometrics PSet 1.
+- Start Econometrics PSet 1. ✅
 
-- Question from Econometrics class.
+- Questions from Econometrics class. ✅
 
-- Start AP PSet 2.
+- Start AP PSet 2. ✅
 
-- Read Ross' notes.
+- Read Ross' notes. ⛔
 
-- JAE Conference.
+- JAE Conference. ✅
+
+- Python Finance at DataCamp. ⛔
 
 #### Nov/6th.
 
