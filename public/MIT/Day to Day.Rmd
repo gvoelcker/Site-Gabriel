@@ -8,9 +8,23 @@ output: html_document
 
 ### Today
 
+#### Nov 11th
+
+- Econometrics PS1.
+
+- Rodrigo's paper.
+
+- Prepare for Econometrics class.
+
+#### Nov 10th:
+
+- Econometrics PS1. 🔘 
+
+#### Nov 9th
+
 - JAE Conference. ✅
 
-- Econometrics PS1. ✅
+- Econometrics PS1: Exs: 1-2.
 
 #### Nov/8th
 

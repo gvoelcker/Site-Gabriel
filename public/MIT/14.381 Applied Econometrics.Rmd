@@ -81,7 +81,11 @@ Where the solution can be written as $\beta$ = E$[X_iX_i']^{-1}E[X_iY_i]$. The p
 
 \[ \beta_k = \frac{Cov(Y_i, \tilde{x}_{ki})}{V(\tilde{x}_{ki})} \]
 
-Where $\tilde{x}_{ki}$ is the residual from a regression of $x_{ki}$ on all the other covariates. This formula is important because it shows that each coefficient in a multivariate regression is the bivariate slope coefficient for the corresponding regressor after partialing out all the other covariates. $\tilde{x}_{ki}$ is uncorrelated with $e_i$ since it is a **linear combination of the regressors**. Also, since $\tilde{x}_{ki}$ is a residual from a regression on all other covariates in the model, it must be uncorrelated with these covariates. For the same reason, the Cov($\tilde{x}_{ki}$,$x_{ki}$) is just the V($\tilde{x}_{ki}$). Hence: Cov($Y_i, \tilde{x}_{ki}$) = $\beta_k V(\tilde{x}_{ki})$
+Where $\tilde{x}_{ki}$ is the residual from a regression of $x_{ki}$ on all the other covariates. Into the math: E[$X_iX_i'$]$^{-1}$E[$X_iY_i$] is the $K \times 1$ vector with *k*th element $\frac{Cov(Y_i,\tilde{x}_{ki})}{V(\tilde{x}_{ki})}$. This formula describes the anatomy of a multivariate regression coefficient and it reveals much more than the matrix formula $\beta$ = $E[X_iX_i']^{-1}E[X_iY_i]$. It is an important formula because it shows that **each coefficient in a multivariate regression is the bivariate slope coefficient for the corresponding regressor after partialing out all the other covariates**. To verify this, substitute: 
+
+\[ Y_i = \alpha + \beta_1x_{1i} + ... + \beta_kx_{ki} + ... + \beta_k x_{ki} + e_i\]
+
+into the numerator of the Regression Anatomy Formula. Since $\tilde{x}_{ki}$ is uncorrelated with $e_i$, it is a **linear combination of the regressors**. Also, since $\tilde{x}_{ki}$ is a residual from a regression on all other covariates in the model, it must be uncorrelated with these covariates. For the same reason, the Cov($\tilde{x}_{ki}$,$x_{ki}$) is just the V($\tilde{x}_{ki}$). Hence: Cov($Y_i, \tilde{x}_{ki}$) = $\beta_k V(\tilde{x}_{ki})$
 
 - **Linear CEF Theorem (3.1.4.)(Regression Justification 1)**: suppose the CEF is linear $\implies$ the population regression function is it. So what makes the CEF linear? Classic scenario: joint normality $\implies$ vector ($Y_i, X_i'$) has a multivariate normal distribution(few empirical validity given the regressors and variables are often discrete). 
 **Saturated regression model**: has a separate parameter for every possible combination of values that the set of regressors can take on. 
@@ -166,6 +170,21 @@ We can decompose $\eta_i$ into a linear function of observable characteristics $
 \[ = \alpha + \rho s + X_i' \gamma  \]
 
 The residual in the linear causal model: $Y_i = \alpha + \rho s_i + X_i' \gamma + v_i$ is therefore uncorrelated with the regressors $s_i$ and $X_i$, and the regression coefficient $rho$ is **the causal effect of interest**. 
+
+
+##### 3.2.2) The Omitted Variables Bias Formula
+
+In addition to the variable of interest, we now have introduced a set of control variables, $X_i$, into our regression. The **Omitted Variable Bias(OVB) Formula describes the relationship between regression estimates in models with different sets of control variables**. This is motivated by the notion that *a longer regression has a causal interpretation* while a shorter one does not. This means that the coefficients on the variables included in the shoter regression are **biased**. The difference between coefficients in a short and in a long regression are determined by the OVB formula. 
+
+Imagine we are regressing wages on school years: $Y_i = \alpha + \rho s_i + A_i' \gamma + e_i$. What are the consequences of leaving ability ($A_i$) out of the regression? The resulting short regression is related to the long regression as follows:
+
+Ommited Variables Bias Formula:
+
+\[ \frac{Cov(Y_i,S_i)}{V(S_i)} = \rho + \gamma' \delta_{As} \]
+
+Where $\delta_{As}$ is the vector of coefficients from regressions of the elements of $A_i$ on $s_i$. The OVB formula states: *short equals long plus the effect of omitted times the regression of omitted on included*. Both the OVB formula *and* the regression anatomy formula tell us that short and long regression coefficients are the same whenever the omitted and included variables are uncorrelated. 
+
+We use the OVB formula to get a sense of what would happen if we omitted ability for schooling coefficients. Ability variables have positive effects on wages, and these variables are also likely to be positively correlated with schooling $\implies$ the short regression may be "too big" relative to what we want. But some omitted variables may be negatively correlated with schooling, in which case the short regression coefficient may be too small. 
 
 ##### 3.2.3) Bad Controls
 
