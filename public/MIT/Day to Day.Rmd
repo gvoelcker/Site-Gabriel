@@ -8,13 +8,25 @@ output: html_document
 
 ### Today
 
+#### Nov 12th
+
+- Micro2: organize semester.
+
+- Map next psets.
+
+- Read.
+
+- Skype w/ Greg + Elvis. 
+
+- Next paper.
+
 #### Nov 11th
 
 - Econometrics PS1. ✅
 
 - Rodrigo's paper. ✅
 
-- Prepare for Econometrics class.
+- Prepare for Econometrics class.✅
 
 #### Nov 10th:
 
