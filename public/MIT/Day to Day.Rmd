@@ -10,9 +10,9 @@ output: html_document
 
 #### Nov 11th
 
-- Econometrics PS1.
+- Econometrics PS1. ✅
 
-- Rodrigo's paper.
+- Rodrigo's paper. ✅
 
 - Prepare for Econometrics class.
 

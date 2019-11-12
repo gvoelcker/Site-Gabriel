@@ -282,3 +282,20 @@ Conclusion(Pg91): the experiments made in this subschapter boost the authors fai
 
 
 
+
+### **4) Instrumental Variables in Action**
+
+From [**Wikipedia**](https://en.wikipedia.org/wiki/Instrumental_variables_estimation): the method of instrumental variables (IV) is used to estimate causal relationships when controlled experiments are not feasible or when a treatment is not successfully delivered to every unit in a randomized experiment. IVs are used when an explanatory variable of interest is correlated with the error term, in which case ordinary least squares and ANOVA give biased results. A valid instrument **induces changes in the explanatory variable but has no independent effect on the dependent variable**, allowing a researcher to uncover the causal effect of the explanatory variable on the dependent variable.
+
+Instrumental variable methods allow for consistent estimation when the explanatory variables (covariates) are correlated with the error terms in a regression model. Such correlation may occur **1)** when changes in the dependent variable change the value of at least one of the covariates ("reverse" causation), **2)** when there are omitted variables that affect both the dependent and independent variables, or **3)** when the covariates are subject to non-random measurement error. Explanatory variables which suffer from one or more of these issues in the context of a regression are sometimes referred to as endogenous. In this situation, ordinary least squares produces biased and inconsistent estimates.
+
+- What is the **exclusion restriction**?
+
+- What are the **endogenous variables**?
+
+- And the **exogenous variables**?
+
+
+
+
+
