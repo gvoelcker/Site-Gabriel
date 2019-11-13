@@ -1,0 +1,59 @@
+---
+output: html_document
+---
+
+# 14.121 - Microeconomic Theory I{.tabset}
+
+## **The Course**{.tabset}
+
+### **Overview**
+
+### **Part I - Static Games**{.tabset}
+
+#### A. Modeling strategic interaction
+
+Readings: (FT 1.1, 2.1.1, 2.1.2; G 1.1AB)
+
+#### B. Nash Equilibrium
+
+Readings: (FT 1.2; G 1.1C, 1.2)
+
+#### C. Mixed strategies 
+
+Readings: (FT 1.1, 1.2.3; G 1.3)
+
+#### D. Existence theorems, correlated equilibrium 
+
+Readings: (FT 1.3, 12.1, 2.2; G 1.3)
+
+### **Part II - Dynamic Games**{.tabset}
+
+#### A. Extensive form games 
+
+Readings: (FT 3.3, 3.4.2, 3.5; G 2.1, 2.4)
+
+#### B. Subgame perfection 
+
+Readings: (FT 3.5; G 2.2)
+
+#### C. Examples, repeated games, Markov equilibrium 
+
+Readings: (FT 4.2, 4.3, 5.1; G 2.3)
+
+### **Part III - Incomplete Information**{.tabset}
+
+#### A. Types, Bayesian equilibrium, examples 
+
+Readings: (FT 6.1-6.5, 6.7; G 3.1-3.2)
+
+### **Part IV - Dynamic Games with Incomplete Information**{.tabset}
+
+#### A. PBE concept, signalling
+
+Readings: (FT 8.1-8.2; G 4.1-4.2, 4.3C)
+
+#### B. Refinements, cheap talk 
+
+Readings: (FT 8.3.2, 11.2; G 4.4)
+
+

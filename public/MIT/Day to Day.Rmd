@@ -8,17 +8,23 @@ output: html_document
 
 ### Today
 
+#### Nov 13th
+
+- Start Micro PSet 3.
+
+- Next paper: stock fluctuations. 
+
 #### Nov 12th
 
-- Micro2: organize semester.
+- Micro2: organize semester.  ✅
 
-- Map next psets.
+- Map next psets.  ✅
 
 - Read.
 
-- Skype w/ Greg + Elvis. 
+- Skype w/ Greg + Elvis.   ✅
 
-- Next paper.
+- Next paper. ✅
 
 #### Nov 11th
 
@@ -90,6 +96,8 @@ output: html_document
 
 #### Asset Pricing
 
+- PSET 6: Nov 20th.
+
 - Read Ross' notes.
 
 - [**PS5**](https://www.overleaf.com/project/5dc1d3319fda550001327bd5) Asset Pricing. Understand and map steps.
@@ -105,6 +113,8 @@ output: html_document
 - Read Angrist's books.
 
 #### Microeconomics II
+
+- PSET 2: Nov 20th.
 
 - Read Game Theory. 
 
