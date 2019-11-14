@@ -4,7 +4,84 @@ output: html_document
 
 # 14.121 - Microeconomic Theory I{.tabset}
 
-## **The Course**{.tabset}
+## **Lectures**{.tabset}
+
+### **Lecture 1**
+
+- PSNE in discrete games. 
+
+1) Check all boxes. 
+
+2) S is a PSNE $\iff$ $S_i^\ast \in BR_i(S_i^\ast) \forall i$.
+
+3) PSNE $\subset S^\infty$.
+
+### **Lecture 2**
+
+- PSNE in continuous games.
+
+- 1st ex: **Cournot Competition**
+
+2 firms choose $q_1$ and $q_2$, market determines price.
+
+$S_1 = S_2 = \mathbb{R}^+$
+
+$u_1 (q_1,q_2) = q_1 (1- (q_1 + q_2))$
+
+**finish copying from notebook!**
+
+- Will finally arrive at Unique NE
+
+- 2nd ex: Hotelling(1929) competition on a line
+
+- 3rd ex: Price Competition with Logit Demands
+
+### **Lecture 3**
+
+- **Multiple equilibria**: Brexit game.
+
+- Nonexistence and **Mixed Equilibria**.
+
+- **Mixed Strategy**.
+
+### **Lecture 4**
+
+*Nov 4th*
+
+Full Support NE in 3x3 Games:
+
+- Larger games: iterated dominance; clever observation
+
+- Correlated Equilibrium
+
+### **Lecture 5**
+
+*Nov 6th*
+
+- **Theorem: Every finite normal form game has a Nash Equilibrium.**
+
+Pf
+
+- **Kakutani's Theorem**
+
+- **Glicksberg Proposition**
+
+### **Lecture 6**
+
+- **Extensive Form Games**
+
+    - **Firm Entry Game**
+
+    - **Matching Pennies Game**
+
+- **Stackelberg Competition**
+
+- **Subgame Perfect Equilibrium**
+
+- [**Subgame Perfect Nash Equilibrium**](https://en.wikipedia.org/wiki/Nash_equilibrium)
+
+
+## **Game Theory (FT)**{.tabset}
 
 ### **Overview**
 
