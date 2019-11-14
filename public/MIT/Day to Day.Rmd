@@ -140,15 +140,25 @@ output: html_document
 
 ### **Personal stuff:**
 
-- Mileage programs.
-
-- NBA tickets.
-
 - Organize thanksgiving agenda. 
 
     - Call restaurant.
-
-- GoPro Max?
+    
+    - Sunday 24th: arrive. Campus visit + Isabella Stewart Gardner(w/ Max) + MFA(or on Wednesday).
+    
+    - Wednesday 27th:
+    
+    - Thursday 28th: NH + Ski + Thanksgiving Dinner.
+    
+    - Friday 29th: NH.
+    
+    - Saturday 30th: NH + Back to Boston + Hot Pot Dinner.
+    
+    - Sunday 1st: Lunch at Rodrigo. Dinner Moretti.
+    
+    - Monday 2nd: Lunch at Sloan. Dinner anywhere.
+    
+    - Tuesday 3rd: bye. 
 
 - iPad?
 
@@ -157,3 +167,9 @@ output: html_document
 - Buy winter coat. ✅
 
 - Buy winter boots. ✅
+
+- GoPro Max. ✅
+
+- NBA tickets. ✅
+
+- Mileage programs. ✅
