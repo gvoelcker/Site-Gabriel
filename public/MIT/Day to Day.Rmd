@@ -18,6 +18,8 @@ output: html_document
 
 - Step by step Asset Pricing PSet.
 
+- Trocar e destrocar de App store.
+
 #### Nov 13th
 
 - Start Micro PSet 3. ✅
