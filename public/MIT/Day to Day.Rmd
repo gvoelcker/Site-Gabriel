@@ -6,19 +6,27 @@ output: html_document
 
 [**MIT PhD Accounting**](https://gabrielvoelcker.netlify.com/mit/mitaccphd)
 
-### Today
+#### Today
 
-#### Nov 14th
+#### Nov 15th
 
 - Finish Micro PSet 3.
 
-- Plot with 3 info: volume, $\Delta$ price and trending/info indicator.
-
-- Read metrics.
-
 - Step by step Asset Pricing PSet.
 
-- Trocar e destrocar de App store.
+- Inna's brown bag.
+
+#### Nov 14th
+
+- Finish Micro PSet 3. 🔘 
+
+- Plot with 3 info: volume, $\Delta$ price and trending/info indicator.
+  
+- Read metrics.🔘 
+
+- Step by step Asset Pricing PSet.🔘 
+
+- Trocar e destrocar de App store. ✅
 
 #### Nov 13th
 
