@@ -16,11 +16,15 @@ output: html_document
 
 - And the **exogenous variables**? The exogenous variables include the exogenous covariates that are not instrumented and the instruments themselves. In a simultaneous equations model, exogenous variables are determined outside the system. Ex: in Angrist&Krueger(1991) study are dummies for year of birth and state of birth. Exogenous covariates are controls. 
 
+- What is within-cell variance? ?The values the variable of interest can assume?
+
 - WNLS for probit/logit?
 
-- Inverse Milles Ratio?
+- [**Heckman Correction**](https://en.wikipedia.org/wiki/Heckman_correction): imagine the is bias from non-randomly selected samples or incidentally truncated dependent variables(ex: wage). To correct for this: we explicitly model the individual sampling probability of each observation (the so-called selection equation) together with the conditional expectation of the dependent variable(so-called outcome equation). So we have two moments in correcting our problem: selection and outcome. The resulting likelihood function is mathematically similar to a Tobit model for censored dependent variables, a connection first drawn by Heckman in 1976. He estimated a two-step control function to estimate this model. In the first step, a regression for observing the positive outcome of the dependent variable is modeled with a probit model. The Inverse Mill's Ratio must be generated from the estimation of a probit model(logit can't be used). The probit model assumes that the error term follows a standard normal distribution. The estimated parameters are used to calculate the Inverse Mills Ratio, which is then used as an additional explanatory variable in the OLS estimation. 
 
-- What is partialling out? The process of removing a variable (by giving it a fixed value) to identify any correlation between others. 
+- Inverse Milles Ratio? [**Mills Ratio**](https://en.wikipedia.org/wiki/Mills_ratio) is the following ratio: $m(x) = \frac{\overline{F}(x)}{f(x)}$, where: f(x) is the *probability density function*; $\overline{F}(x): = Pr [X> x] = \int_x^{+\infty} f(u)du$ is the *complimentary cumulative distribution function (aka survival function)*. Example: Imagine we have the following model that predicts wage on the observed characteristics of individuals *i*: $y_i^\ast = x_i'\beta + \varepsilon_i$ for $i = 1,...n$. But there are some people that do not work, generating the truncated value of 0 for wages. Let's model the decision to work the following way: $d_i^\ast = z_i' \gamma + v_i$ for $i = 1,...,n$. If $d_i^\ast$ is > 0, we observe $y_i = y_i^\ast$, otherwise we simply don't observe the wage. Heckman(?) tried to account for the *endogeneity* in this selection bias situation: he suggested that first we estimate $\gamma$(coefficient that influences the decision to work) via MLE probit, usually via an exclusion restriction. Then, we estimate an **Inverse Mill's Ratio** that indicates the probability that an agent decides to work over the cumulative probability of an agent's decision: $\lambda_i = \frac{\phi(z_i' \gamma)}{z_i' \gamma}$. Since we're using probit, we're actually estimating $\frac{\gamma}{\sigma_v}$. The estimated value $\hat{\lambda}_i$ is a means for controlling the endogeneity, i.e., the part of the error term for which the decision to work influences the wage earned. So, the second step is actually: $y_i^\ast = x_i'\beta + \mu \hat{\lambda}_i + \varepsilon_i$. How do we interpret the Inverse Mill's Ratio coefficient: $\mu$? It is: $\frac{\sigma_{ev}}{\sigma_v^2}$, which *represents the fraction of the covariance between the decision to work and the wage earned relative to the variation in decision to work*. To test for selection bias: t-test on whether $\mu$ = 0 (sigma of error of the two equations = 0) or cov(e,v) = 0.
+
+- What is **partialling out**? The process of removing a variable (by giving it a fixed value) to identify any correlation between others. 
 
 ## **Useful Stuff** {.tabset}
 
@@ -306,3 +310,70 @@ Conclusion(Pg91): the experiments made in this subschapter boost the authors fai
 From [**Wikipedia**](https://en.wikipedia.org/wiki/Instrumental_variables_estimation): the method of instrumental variables (IV) is used to estimate causal relationships when controlled experiments are not feasible or when a treatment is not successfully delivered to every unit in a randomized experiment. IVs are used when an explanatory variable of interest is correlated with the error term, in which case ordinary least squares and ANOVA give biased results. A valid instrument **induces changes in the explanatory variable but has no independent effect on the dependent variable**, allowing a researcher to uncover the causal effect of the explanatory variable on the dependent variable.
 
 Instrumental variable methods allow for consistent estimation when the explanatory variables (covariates) are correlated with the error terms in a regression model. Such correlation may occur **1)** when changes in the dependent variable change the value of at least one of the covariates ("reverse" causation), **2)** when there are omitted variables that affect both the dependent and independent variables, or **3)** when the covariates are subject to non-random measurement error. Explanatory variables which suffer from one or more of these issues in the context of a regression are sometimes referred to as endogenous. In this situation, ordinary least squares produces biased and inconsistent estimates.
+
+
+## **Mastering Metrics** {.tabset}
+
+### **3) Instrumental Variables**
+
+#### **Instrumental Variables**
+
+**Instrumental Variables** method harnesses partial or incomplete random assignment. 
+
+Ex: charter schools. A charter is the right to operate a public school. But can we compare the effect of these schools to other? How can we employ ceteris paribus to isolate the effect of being at this school?
+
+The decision to attend this school is **not entirely random**. Among applicants, you can be awarded a seat and not enroll, as well as enrolling without being awarded a seat. So we compare those who were offered a seat vs those who weren't. We assume that the only difference created by winning the lottery is the likelihood of charter enrollment(this assumption is called the **exclusion restriction**). So IV turns randomized offer effects into causal estimates of the effect of charter attendance. The estimates of IV capture causal effects on the sort of child who enrolls in KIPP when offered a seat in a lottery. This group is the set of KIPP lottery *compliers*. 
+
+KIPP lotteries randomize the offer of a charter seat, which should balance demographic characteristics. It is important to check for balance in pretreatment outcomes (test scores of lottery applicants prior to KIPP enrollment). These scores have been standardized: subtract the mean and divide by the standard deviation of scores in a reference population. After that, scores are measured in unites defined by the standard deviation of the reference population. The average math score in Lynn is $-0.3\sigma$ compared to the whole population of Massachusetts. The math score for those who were awarded a seat at Lynn is 0.095, an impressive increase when compared to the $-0.3\sigma$ stated above. Those who were not offered a seat had a score of $-0.36\sigma$. 
+
+What does this $-0.36\sigma$ difference tell us? The **IV estimator converts the offer effects into attendance effects**! In this case, the *instrumental variable/instrument is a dummy variable indicating the applicants who receive offers*. In general, an instrument has 3 requirements:
+
+i) **First stage**: the instrument has a causal effect on the variable whose effects we're trying to capture (offered seat has a causal effect on KIPP enrolment). 
+
+ii) **Independence assumption**: The instrument is randomly assigned: unrelated to omitted variables we might want to control for(for example: family background or motivation). 
+
+iii) **Exclusion restriction**: describes a single channel through which the instrument affects outcomes. The exclusion restriction amount to the claim that the $-0.36\sigma$ score differential between winners and losers is attributable solely to the .74 win-loss difference in attendance rates.
+
+The IV method uses these assumptions to characterize the chain reaction leading from the instrument to the outcome. The first link(or the **first stage**) connects randomly assigned offers student performance. The second link(which was the one of interest) is the one comparing treatment(KIPP attendance) with achievement. Thanks to the independence assumption and the exclusion restriction, the product of these two links generates the effect of offers on test scores:
+
+\[ \text{Offers FX on scores = Offers FX on attendance} \times \text{ Effect of attendance on scores} \]
+
+Rearranging:
+
+\[ \text{Attendance FX on scores} = \frac{\text{Offers FX on scores}}{\text{Offer FX on attendance}} \]
+
+The logic is: **KIPP offers are assumed to affect test scores via KIPP attendance alone**. The key point here is related to the third assumption: once offered a KIPP, the only effect on outcome is through KIPP attendance. Offers increase attendance rates by .74, so multiplying Offers FX on scores by about ($\approx 1 / .74$) generates the attendance effect. This adjustment corrects for the facts that roughly a quarter of those who were offered a seat at KIPP chose to go elsewhere and some not offered went anyway. 
+
+We estimate our equation as: [(Average Score of Those Offered a Seat) - (Average score of those not offered a seat)]/[(Proportion of those enrolled at KIPP that were offered a seat) - (Proportion of those enrolled at KIPP that we're not offered a seat)]: (-0,003$\sigma$ - (-0,358$\sigma$))/(0,787 - 0,046) = 0,479$\sigma$. This is an example of an **IV chain reaction**. The direct effect of the instrument on outcomes, which runs the full length of the chain is called the **reduced form**. So we have the first link and the link between instrument and outcome: their difference has got to be the **causal effect of interest**! The second link in the chain is the ratio of reduced form to first-stage estimates. This causal effect is called a **local average treatment effect**(LATE for short). 
+
+These links are made of differences between conditional expectations: comparisons of population averages for different groups. These are, in practice, estimated using sample means, usually with data from random samples. The necessary data are:
+
+- **The instrument $Z_i$**: a dummy variable that equals 1 if the student was offered a KIPP seat.
+
+- **The treatment variable $D_i$**: a dummy that equals 1 if the student attended KIPP(sometimes called the **endogenous variable**).
+
+- **The outcome variable $Y_i$**: fifth-grade math scores. 
+
+The links between in the IV chains are the relationships between those variables: the parameters! 
+
+- **First Stage**: E[$D_i|Z_i = 1$] - E[$D_i|Z_i = 0$]: call this $\phi$. $\phi$ is the difference in KIPP attendance rates between those who were and were not offered a seat in the lottery (=.74).
+
+- **Reduced Form**: E[$Y_i|Z_i = 1$] - E[$Y_i|Z_i = 0$]: call this $\rho$. $\rho$ is the difference in average test scores between applicants who were and were not offered a seat in the lottery. 
+
+- **Local Average Treatment Effect(LATE)**: $\lambda = \frac{\rho}{\phi} = \frac{E[Y_i|Z_i = 1] - E[Y_i|Z_i = 0]}{E[D_i|Z_i = 1] - E[D_i|Z_i = 0]}$. The ratio of the reduced form to the first stage. In the KIPP study, LATE is the difference in scores between winners and losers divided by the difference in KIPP attendance rates between winners and losers. If we substitute the 4 expectation functions by the corresponding sample averages, we get **IV**. In practice, we usually opt for 2SLS(more flexibility).
+
+We've stated how an instrument($Z_i$) changes the variable of interest ($D_i$) and in turn affect outcomes ($Y_i$). LATE can also be denoted as $\lambda = \frac{\rho}{\phi} = E[Y_{1i} - Y_{0i}|C_i = 1]$ ($Y_{1i}$ denotes the outcome for $i$ with treatment, $Y_{0i}$ is the outcome without a treatment). An instrumental variable has **little use** to learn the effects on people whose treatment status can't be changed by manipulating the instrument. 
+
+Researchers and policy makers are sometimes interested also in the average causal effects for the entire treated population, as well as in LATE. This average causal effect is called the **treatment effect on the treated**(TOT): E[$Y_{1i} - Y_{0i} | D_i = 1$]. There are **two ways to be treated: it depends on whether the instrument was switched on, or regardless of the status of the instrument**. In the KIPP study, the threated included always-takers, who were the ones that suffered treatment without being subject of the instrument. Effects on always-takers are not necessarily the same as the effects on compliers. His causal effect may be larger(he really wants to go to KIPP and make the most out of it).
+
+LATE and TOT are usually not the same because the treated population includes always takers. Whether a a particular causal estimate has predictive value for those beyond those represented in the study is a matter of **external validity**. 
+
+
+
+
+
+
+
+
+
+

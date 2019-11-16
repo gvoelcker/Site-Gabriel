@@ -16,7 +16,7 @@ output: html_document
 
 - Step by step Metrics PSet.
  
-- Read Game Theory.
+- Read Game Theory. ✅
 
 #### Nov 15th
 

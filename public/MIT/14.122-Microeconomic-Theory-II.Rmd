@@ -168,7 +168,9 @@ Readings: (FT 8.3.2, 11.2; G 4.4)
 
 - **Empty threat**: if the second player to make a move were to hold his output regardless of the first player's choice, this would be an empty threat becuse the threatened player could simply choose in a way that the second player would end up changing his choice because he would have a better output. This is consistent with the concept of **backward induction**: solving for the optimal choice of the last mover for each possible situation and then work backwards for every move until we get to the starting point.
 
-- **Subgame-perfect equilibrium**: games in which players move simultaneously in several periods. There are several last-movers and each of them must know the moves of the others to compute his own optimal choice. Each path/history generates a simultaneous move game between the two firms and firm 1 forecasts that play in this game will correspond to an equilibrium for the payoffs prevailing under the path/history. 
+- **Subgame-perfect equilibrium**: games in which players move simultaneously in several periods. There are several last-movers and each of them must know the moves of the others to compute his own optimal choice. Each path/history generates a simultaneous move game between the two firms and firm 1 forecasts that play in this game will correspond to an equilibrium for the payoffs prevailing under the path/history. The key feature of a subgame is that it, when seen in isolation, constitutes a game in its own right. When the initial node of a subgame is reached in a larger game, players can concentrate only on that subgame; they can ignore the history of the rest of the game (provided they know what subgame they are playing). 
+
+
 
 
 
