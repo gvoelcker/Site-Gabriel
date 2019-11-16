@@ -12,13 +12,15 @@ output: html_document
 
 - What is the **exclusion restriction**?
 
-- What are the **endogenous variables**?
+- What are the **endogenous variables**? The dependent variable and the independent variable(s) to be instrumented. In a simultaneous equations model, endogenous variables are determined by solving a system of stochastic linear equations(MHE pg 126). To treat an independent variable as endogenous is to instrument it, i.e. replace it with fitted values in the second stage of a 2SLS procedure.
 
-- And the **exogenous variables**?
+- And the **exogenous variables**? The exogenous variables include the exogenous covariates that are not instrumented and the instruments themselves. In a simultaneous equations model, exogenous variables are determined outside the system. Ex: in Angrist&Krueger(1991) study are dummies for year of birth and state of birth. Exogenous covariates are controls. 
 
 - WNLS for probit/logit?
 
 - Inverse Milles Ratio?
+
+- What is partialling out? The process of removing a variable (by giving it a fixed value) to identify any correlation between others. 
 
 ## **Useful Stuff** {.tabset}
 

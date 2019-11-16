@@ -134,3 +134,46 @@ Readings: (FT 8.1-8.2; G 4.1-4.2, 4.3C)
 Readings: (FT 8.3.2, 11.2; G 4.4)
 
 
+
+
+## **Interesting Concepts**
+
+### **Interesting Concepts**
+
+- Strategic-Form Games: have 3 elements: 1) **set of players** $i \in \mathcal{I}$, which we take to be the finite set $\{1,2,...,I\}$; 2) the **pure-strategy space** $S_i$ for each player *i*; 3) **payoff functions** $u_i$ that give player i's utility $u_i(s)$ for each profile s = ($s_1,...,s_I$) of strategies.
+
+- Structure of game: *common knowledge*: all players know the structure of the strategic form and know that their opponents know it, and know that their opponents know that they know. 
+
+- **Pure strategy**: options each player has. Ex: Left or Right.
+
+- **Mixed strategy** $\sigma_i$ is a probability distribution over pure strategies. Space of mixed strategies: $\sum_i$ where $\sigma_i(s_i)$ is the probability that $\sigma_i$ assigns to $s_i$. The **support** of a mixed strategy $\sigma_i$ is the set of pure strategies to which $\sigma_i$ assigns positive probability. 
+
+- **Degenerate pure strategy**: a mixed strategy that assigns probability 1 to $s_i$ and probability 0 to all other strategies of player *i*. 
+
+- **Strictly Dominated**: a strategy whose payoff is always lower than the payoff(s) of other strategy(ies). If we eliminate the strategies that are strictly dominated we have what is called the **iterated (strict) dominance**. A pure strategy may be strictly dominated by a mixed strategy even if it is not strictly dominated by any pure strategy. **Weakly dominated** happens when you have at least one strict dominance in the relation and all the others are at least as good as. 
+
+- **Nash Equilibrium**: a profile of strategies such that each player's strategy is an optimal response to the other players strategies. A mixed-strategy profile $\sigma^\ast$ is a *Nash equilibrium* if, $\forall$ players *i*: $u_i (\sigma_i^\ast, \sigma_{-i}^\ast) ≥ u_i(s_i, \sigma_{-i}^\ast) \forall s_i \in S_i$. A Nash equilibrium is *strict* if each player has a unique best response, so that the last equation is strict. By definition, this is obviously a pure-strategy scenario. 
+
+- Games examples:
+
+    - Cournot model:
+    
+    - Hotelling model:
+    
+    - 3-people voting model: 
+
+- Technical/Proofs: see FT pg 29. 
+
+- **Extensive-form games**: we include the notion of time. It makes explicit the order in which players move and what each player knows when making each of his decisions. 
+
+- **Empty threat**: if the second player to make a move were to hold his output regardless of the first player's choice, this would be an empty threat becuse the threatened player could simply choose in a way that the second player would end up changing his choice because he would have a better output. This is consistent with the concept of **backward induction**: solving for the optimal choice of the last mover for each possible situation and then work backwards for every move until we get to the starting point.
+
+- **Subgame-perfect equilibrium**: games in which players move simultaneously in several periods. There are several last-movers and each of them must know the moves of the others to compute his own optimal choice. Each path/history generates a simultaneous move game between the two firms and firm 1 forecasts that play in this game will correspond to an equilibrium for the payoffs prevailing under the path/history. 
+
+
+
+
+
+
+
+
