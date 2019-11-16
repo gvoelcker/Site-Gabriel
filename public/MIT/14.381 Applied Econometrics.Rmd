@@ -16,6 +16,10 @@ output: html_document
 
 - And the **exogenous variables**?
 
+- WNLS for probit/logit?
+
+- Inverse Milles Ratio?
+
 ## **Useful Stuff** {.tabset}
 
 ### **Basic Info**

@@ -8,13 +8,25 @@ output: html_document
 
 #### Today
 
-#### Nov 15th
+#### Nov 16th
 
 - Finish Micro PSet 3.
 
 - Step by step Asset Pricing PSet.
 
-- Inna's brown bag.
+- Step by step Metrics PSet.
+ 
+- Read Game Theory.
+
+#### Nov 15th
+
+- Finish Micro PSet 3.  🔘 
+
+- Step by step Asset Pricing PSet. 🔘 
+
+- Inna's brown bag. ✅
+
+- Acct Trends. ✅
 
 #### Nov 14th
 
