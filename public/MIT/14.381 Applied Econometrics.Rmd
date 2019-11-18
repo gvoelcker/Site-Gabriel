@@ -10,7 +10,7 @@ output: html_document
 
 - How to obtain log likelihood for probit and logit? (PS1 ex 2a)
 
-- What is the **exclusion restriction**?
+- What is the **exclusion restriction**? It's a requirement for the Instrumental Variables to work. Assuming that the variable of interest is not entirely random, by the exclusion restriction we assume that the **only impact of the instrumental variable is on the variable of interest**. In the MM example: the only impact of offered seats is on whether they will enroll or not. 
 
 - What are the **endogenous variables**? The dependent variable and the independent variable(s) to be instrumented. In a simultaneous equations model, endogenous variables are determined by solving a system of stochastic linear equations(MHE pg 126). To treat an independent variable as endogenous is to instrument it, i.e. replace it with fitted values in the second stage of a 2SLS procedure.
 

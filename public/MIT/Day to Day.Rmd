@@ -8,6 +8,18 @@ output: html_document
 
 #### Today
 
+#### Nov 18th
+
+- Rodrigo's readings.
+
+- Micro PSet 3.
+
+- Step by Step metrics set.
+
+#### Nov 17th
+
+
+
 #### Nov 16th
 
 - Finish Micro PSet 3.
