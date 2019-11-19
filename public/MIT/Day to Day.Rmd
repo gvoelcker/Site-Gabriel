@@ -8,17 +8,23 @@ output: html_document
 
 #### Today
 
+#### Nov 19th
+
+- Micro PSet 3.  ✅
+
+- Asset Pricing PS step-by-step. 🔘  
+
+- Read Metrics.
+
 #### Nov 18th
 
-- Rodrigo's readings.
+- Rodrigo's readings.  ✅
 
-- Micro PSet 3.
+- Micro PSet 3.   🔘 
 
-- Step by Step metrics set.
+- Step by Step metrics set.   🔘 
 
 #### Nov 17th
-
-
 
 #### Nov 16th
 
