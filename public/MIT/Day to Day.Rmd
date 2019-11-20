@@ -8,6 +8,16 @@ output: html_document
 
 #### Today
 
+#### Nov 20th
+
+- Micro PSet 3.  ✅
+
+- Asset Pricing PSet 6.  ✅
+
+- Read Micro. 
+
+- Acct Trends.  🔘
+
 #### Nov 19th
 
 - Micro PSet 3.  ✅
@@ -15,6 +25,8 @@ output: html_document
 - Asset Pricing PS step-by-step. 🔘  
 
 - Read Metrics.
+
+- Acct Trends.  🔘
 
 #### Nov 18th
 
