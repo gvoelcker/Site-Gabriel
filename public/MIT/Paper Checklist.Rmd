@@ -1,0 +1,27 @@
+---
+output: html_document
+---
+## **Paper Checklist** {.tabset}
+
+### Does the study address an important problem?
+
+#### **Does the study address an important problem?**
+
+### Does the study extend prior literature?
+
+#### **Does the study extend prior literature?**
+
+### Is the study's conceptual framework logically consistent and credible?
+
+#### **Is the study's conceptual framework logically consistent and credible?**
+
+### Are the sample/proxies/empirical models appropriate?
+
+#### **Are the sample/proxies/empirical models appropriate?**
+
+### Does the study consider and rule out alternative explanations?
+
+#### **Does the study consider and rule out alternative explanations?**
+
+
+
