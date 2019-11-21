@@ -355,13 +355,94 @@ Summing up: grouped data plots for discrete instruments are often called Visual 
 
 #### **Asymptotic 2SLS Inference**
 
+Let $V_i \equiv [X_i' \hat{s}_i]'$ denote the vector of regressors in the 2SLS second stage. The 2SLS can be written: $\hat{\Gamma}_{2SLS} = [\sum_i V_iV_i']^{-1} \sum_i V_i Y_i$ where $\Gamma \equiv [\alpha ' \rho]'$ is the corresponding coefficient vector. Note that the first-stage residuals ($s_i - \hat{s}_i$[where $\hat{s}_i$ are the fitted values]) are *orthogonal* to $V_i$. So the **asymptotic distributio n of the 2SLS coefficient vector is the asymptotic distribution** of $[\sum_iV_i V_i']^{-1} \sum_i V_i \eta_i$. 
+
+- Problem: by manually estimating the First-stage and then plugging the fitted values into the second-stage eqution and then estimating it by OLS would result in the **wrong standard errors**. Softwares don't recognize you are trying to construct a 2SLS estimate and then end up replacing the coefficients $\alpha$ and $\rho$ with the corresponding second-stage coefficients. **The correct residual variance estimator uses the original endogenous regressor to construct residuals and not the first-stage fitted values**($\hat{s}_i$). 
+
+##### **4.2.2. Overidentification and the 2SLS Minimand**
+
+**Overidentified**: constant effects models with *more instruments than endogenous variables*. These models impose a set of restrictions that can be evaluated as part of a process of specification testing. This process amounts to asking **whether the line plotted in a VIV-type picture fits the relevant conditional means tightly enough**, given the precision with which these means are estimated.  
+
+**Justidentified**: when you have the same number of instruments and endogenous variables. 
+
+2SLS can be understood as a GMM estimator that chooses a value for $\Gamma$ by making $\frac{1}{N} \sum Z_i \eta_i (\Gamma) \equiv m_N (\Gamma)$ as close to 0 as possible. After a lot of math, the quadratic form to be minimized is: $J_N (\hat{g}) \equiv Nm_N (\hat{g})' \Lambda^{-1} m_N(\hat{g})$. When the residuals are conditionally homoskedastic, the minimizer of $J_N(\hat{g})$ is the 2SLS estimator. Without homoskedasticity, the GMM estimator that minimizes is White's (1982) two-stage IV (a generalization of 2SLS), so it makes sense to call $J_N(\hat{g})$ the **2SLS minimand**. 
+
+**The overidentification test statistic is given by the minimized 2SLS minimand.** The intuition is that this test statistic tells us whether the sample moment vector $m_N(\hat{g})$ is close enough to zero for the assumption that E[$Z_i \eta_i$] = 0 to be plausible. Under the $H_0$ that the residuals and instruments are indeed uncorrelated, the minimized $J_N(\hat{g})$ has a $\mathcal{X}^2(Q-1)$ distribution. So, we can compare the empirical value of the 2SLS minimand with the chi-square tables in a formal test for $H_0: E[Z_i \eta_i] = 0$. 
+
+We're especially interested in the 2SLS minimand when the instruments are a full set of mutually exclusive dummy variables, as for the Wald estimators and grouped data estimation strategies discussed above. In this case, 2SLS becomes WLS estimation of a grouped equation, while the 2SLS minimand is the weighted sum of squares being minimized. 
+
+Given that $\hat{J}_N(\hat{g})$ is the GLS minimand for estimation of the regression of $\overline{y}_i$ on $\overline{W}_i$, the efficient two-step IV procedure without homoskedasticity minimizes it. The GLS strcuture of the 2SLS minimand allows us to interpret the overidentification test statistic for dummy instruments as a measure of goodness of fit of the line connecting $\overline{y}_j$ and $\overline{W}_j$. This is the chi-square goodness-of-fit statistic for the regression line in a VIV plot. There are other paths to know the test, see pg 145. It's worth noting, though, that the overidentification idea can be more way to deal with the same econometric problem. In other words, given more than one instrument for the same causal relation, we might construct just-identified IV estimators one at a time and compare them.
+
+**Caveat**: because the test statistic $J_N (\hat{g})$ measures variance-normalized goodness of fit, the overidentification test statistic tends to be low when the underlying estimates are imprecise. Since IV estimates are often imprecise, it doesn't mean much when an estimate is within sampling variance from another, even if the individual estimates appear precise enough to be informative. However, when the IV estimates are very precise, the fact that the overidentification test rejects need not point to an identification failure, but rather this may be evidence of treatment effect heterogeneity. 
+
+#### **4.3. Two-Sample IV and Split-Sample IV**
+
+- How does the plim(probability limit) of each sample behave?
+
+#### **4.4. IV with heterogeneous Potential Outcomes**
 
 
+#### **4.6. IV Details**
 
+##### **4.6.1. 2SLS Mistakes**
 
+##### **4.6.4. The Bias of 2SLS**
 
+OLS is consistent and unbiased. 2SLS is consistent but *biased*. This means that the 2SLS estimator only promises to be close to the causal effect of interest in large samples. In small samples, 2SLS can differ systematically from the target parameter. 
 
+The 2SLS estimator is most biased when: i) the instruments are "weak": the correlation with endogenous regressors is low; and ii) there are many overidentifying restrictions. When the instruments are both many and weak, the 2SLS estimator is biased toward the probability limit of the corresponding OLS estimate. In the worst-case scenario, when the instruments are so weak that there is no first stage in the population, the 2SLS sampling distribution is centered on the plim. The intuition is that the bias in 2SLS estimates is the randomness in estimates of the first-stage fitted values. In practice, the first-stage estimates reflect some of the randomness in the endogenous variable, since the first-stage coefficients come from a regression of the endogenous variable in the instruments. If the population 1st stage is 0, then all randomness in the first stage is due to the endogenous variable. This randomness generates finite-sample correlation between first-stage fitted values and second-stage errors, since the endogenous variable is correlated with the second-stage errors. 
 
+Let's put this more formally: suppose we want to estimate the effect of a single endogenous regressor (x) on a dependent variable (y), with no other covariates. The causal model of interest is:
+
+\[ y = \beta x + \eta  \]
+
+The N $\times$ Q matrix of instrumental variables is Z, with the associated first-stage equation: 
+
+\[ x = Z\pi + \xi\]
+
+OLS estimates of the model of interest are **biased** because $\eta_i$ is correlated with $\xi_i$. The instruments $Z_i$ are uncorrelated with $\xi_i$ by construction and uncorrelated with $\eta_i$ by assumption. The 2SLS estimator is:
+
+\[ \beta_{2SLS} = (x'P_Z x)^{-1} x'P_Z y = \beta + (x' P_Z x)^{-1} x' P_Z \eta\]
+
+Where $P_Z = Z(Z'Z)^{-1}Z'$ is the projection matrix that produces the fitted values from a regression of x on Z. Substituting for x in x'$P_Z \eta$, we get:
+
+\[ \hat{\beta}_{2SLS} - \beta = (x'P_Zx)^{-1} (\pi'Z' + \xi ') P_Z \eta =  (x'P_Zx)^{-1} \pi'Z'\eta + (x' P_Z x)^{-1} \xi ' P_Z \eta\]
+
+The bias in 2SLS comes from the nonzero expectation of terms on the right-hand side. The expectation of this last equation is hard to evaluate because the expectation operator doesn't pass through the inverse $(x'P_Zx)^{-1}$, a nonlinear function. WTS that the expectation of the ratios on the RHS of the last equation can be closely approximated by the ratio of the expectations:
+
+\[ E[\hat{\beta}_{2SLS}- \beta] \approx (E[x'P_Z x])^{-1}E[\pi 'Z'\eta] + (E[x'P_Zx])^{-1}E[\xi'P_Z \eta] \]
+
+This approximation gives us a good measure of the finite-sample behavior of the 2SLS estimator. Also, because E[$\pi'Z'\xi$] = 0 and E[$\pi 'Z' \eta$] = 0, we have
+
+\[ E[\hat{\beta}_{2SLS} - \beta] \approx [E(\pi'Z'Z \pi) + E(\xi' P_Z \xi)]^{-1} E(\xi' P_Z \eta) \]
+
+The approximate bias of 2SLS comes from the fact that E($\xi'P_Z \eta$) is not zero unless $\eta_i$ and $\xi_i$ are uncorrelated. But correlation between $\eta_i$ and $\xi_i$ is what led us to use IV in the first place! 
+
+We manipulate the last equation to generate a useful expression:
+
+\[ E[\hat{\beta}_{2SLS}] \approx \frac{\sigma_{\eta \xi}}{\sigma_{\xi}^2} [\frac{E(\pi 'Z'Z \pi)/Q}{\sigma^2_\xi} + 1]^{-1}  \]
+
+$E(\pi 'Z'Z \pi)/Q$ is the *F-statistic for the joint significance of all regressors in the first-stage regression*. We call this F and write:
+
+\[ E[\hat{\beta}_{2SLS} - \beta] \approx \frac{\sigma_{\eta \xi}}{\sigma_{\xi}^2} \frac{1}{ F + 1 }\]
+
+As F gets small, the bias of 2SLS approaches $\frac{\sigma_{\eta \xi}}{\sigma_{\xi}^2}$. The bias of the OLS estimator is $\frac{\sigma_{\eta \xi}}{\sigma_{x}^2}$, which also equals $\frac{\sigma_{\eta \xi}}{\sigma_{\xi}^2}$ if $\pi$ = 0. Thus we have shown that 2SLS is centered on the same point as OLS when the first stage is zero. We can say that 2SLS estimates are biased toward OLS estimates when there isn't much of a first stage. On the other hand, the bias of 2SLS vanishes when F gets large. 
+
+**When the instruments are weak, the F statistic varies inversely with the number of instruments**. If we add uselesss instruments to the 2SLS model, the sum of squares, E($\pi 'Z'Z \pi$) and the residual variance $\sigma^2_\xi$ will both stay the same while Q goes up. The F-statistic becomes smaller as a result. 
+
+**Intuition**: The bias in 2SLS comes as a consequence of the fact that the first-stage is estimated. If the first stage coefficents were known, we could use $\hat{x}_{pop}$ = $Z\pi$ for the first-stage fitted values. These fitted values are uncorrelated with the second-stage error. In practice, however, we use $\hat{x} = P_Z x = Z\pi + P_Z \xi$, which differs from $\hat{x}_{pop}$ by the term $P_Z \xi$. The bias in 2SLS arises from the fact that $P_Z \xi$ is correlated with $\eta$, so some of the correlation between errors in the first and second stages seeps into our 2SLS estimates through the sampling variability in $\hat{\pi}$. Asymptotically, this correlation disappears, but real life does not play out in asymptotia. 
+
+So we get that we want to have the least number of instruments, to the point that the just identified 2SLS is approximately *unbiased*. Even with weak instruments! So we say that just-identified 2SLS is median-unbiased. But if the first stage is really zero, then even a just-identified estimator is biased and centered on the OLS plim. But *with weak instruments, just-identified estimates tend to be too imprecise to mislead you into thinking you've pinned down a useful causal relation*. 
+
+- **Limited information maximum likelihood(LIML)**: is approximately median-unbiased for overidentified constant effects models, and hence, an attractive alternative to just-identified estimation using one instrument at a time. LIML has the same asymptotic distribution as 2SLS while providing a finite-sample bias reduction. A number of other estimators also reduce the bias in overidentified 2SLS models. Using Monte-Carlo to illustrate, imagine the simulated data are drawn from the following model:
+
+\[  y_i = \beta x_i + \eta_i \]
+
+\[ x_i = \sum_{j=1}^Q \pi_j z_{ij} + \xi_{i} \]
+
+Where $\beta = 1$, $\pi_1 = 0.1$ and $\pi_j = 0$ for j = 2,...,Q. 
+
+- Stopped on pg 210
 
 ## **Mastering Metrics** {.tabset}
 
