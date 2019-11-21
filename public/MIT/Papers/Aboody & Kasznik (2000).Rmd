@@ -1,7 +1,9 @@
 ---
 output: html_document
 ---
-## **Paper Checklist** {.tabset}
+## **Aboody & Kasznik (200)** {.tabset}
+
+**CEO stock option awards and the timing of corporate voluntary disclosures**
 
 ### Does the study address an important problem?
 

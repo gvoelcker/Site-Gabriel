@@ -8,13 +8,27 @@ output: html_document
 
 #### Today
 
+#### Nov 22nd
+
+- Metrics PSet2, Q3, Q5.
+
+- Acct Trends.
+
+#### Nov 21st
+
+- Metrics PSet2, Q1, Q2, Q4.
+
+- Read Aboody & Kasznik (2000).
+
+- Acct Trends - collect Google Scholar data ex: for MIT. 
+
 #### Nov 20th
 
 - Micro PSet 3.  ✅
 
 - Asset Pricing PSet 6.  ✅
 
-- Read Micro. 
+- Read Metrics. ✅
 
 - Acct Trends.  🔘
 

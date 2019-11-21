@@ -422,6 +422,7 @@ We manipulate the last equation to generate a useful expression:
 
 \[ E[\hat{\beta}_{2SLS}] \approx \frac{\sigma_{\eta \xi}}{\sigma_{\xi}^2} [\frac{E(\pi 'Z'Z \pi)/Q}{\sigma^2_\xi} + 1]^{-1}  \]
 
+Where Q = number of instruments. 
 $E(\pi 'Z'Z \pi)/Q$ is the *F-statistic for the joint significance of all regressors in the first-stage regression*. We call this F and write:
 
 \[ E[\hat{\beta}_{2SLS} - \beta] \approx \frac{\sigma_{\eta \xi}}{\sigma_{\xi}^2} \frac{1}{ F + 1 }\]
