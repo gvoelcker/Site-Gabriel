@@ -29,17 +29,17 @@ output: html_document
 
 #### **What to address when presenting**
 
--   Research question
+- **Research question**: do CEOs manage the timing of voluntary disclosures around stock option awards (for personal gain)?
 
--   Intended contribution/importance
+- **Intended contribution/importance**: contributes to the *executive compensation literature* by providing evidence consistent with CEOs managing investor's expectations around scheduled option awards. Also contributes to the literature on *corporate voluntary  disclosure* by suggesting that top executives have compensation-related incentives to delay good news and rush forward bad news motivated by personal monetary gain. 
 
--   Hypotheses
+- **Hypotheses**: CEOs manage investor's expectations around award dates by delaying good news and rushing forward bad news.
 
--   Setting/research design
+- **Setting/research design**: they document changes in share prices/analysts forecasts around option awards for firms with fixed schedule, analyzing 2,039 CEO option awards by 572 firms.
 
--   Main results
+- **Main results**: CEOs make opportunistic voluntary disclosure decisions that maximize their stock option compensation.
 
--   Additional results crucial to the story
+- **Additional results crucial to the story**: provide more direct evidence based on management earnings forecasts issued prior to award dates. 
 
--   Conclusion
+- **Conclusion**:
 

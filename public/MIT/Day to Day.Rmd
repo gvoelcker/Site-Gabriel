@@ -10,9 +10,11 @@ output: html_document
 
 #### Nov 22nd
 
-- Metrics PSet2, Q3, Q5.
+- Metrics PSet2, all but Q3.
 
 - Acct Trends.
+
+- Start PPT paper Rodrigo.
 
 #### Nov 21st
 
