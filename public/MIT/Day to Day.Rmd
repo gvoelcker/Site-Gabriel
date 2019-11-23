@@ -8,11 +8,19 @@ output: html_document
 
 #### Today
 
+#### Nov 23rd
+
+- Finish Metrics PSet2.
+
+- Rodrigo's paper.
+
+- Acct trends.
+
 #### Nov 22nd
 
 - Metrics PSet2, all but Q3.
 
-- Acct Trends.
+- Acct Trends.  ✅
 
 - Start PPT paper Rodrigo.
 
@@ -22,7 +30,7 @@ output: html_document
 
 - Read Aboody & Kasznik (2000).
 
-- Acct Trends - collect Google Scholar data ex: for MIT. 
+- Acct Trends - collect Google Scholar data ex: for MIT.  ✅
 
 #### Nov 20th
 
