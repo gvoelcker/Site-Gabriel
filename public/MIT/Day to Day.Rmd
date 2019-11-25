@@ -8,9 +8,23 @@ output: html_document
 
 #### Today
 
+#### Thanksgiving
+
+- Find winter replication paper.
+
+- Finish Rodrigo's presentation.
+
+#### Nov 25th
+
+- Finish metrics PSet 2.
+
+- Start Micro PSet 4.
+
+- Acct Trends. 
+
 #### Nov 23rd
 
-- Finish Metrics PSet2.
+- Finish Metrics PSet2.  🔘
 
 - Rodrigo's paper.
 
@@ -18,7 +32,7 @@ output: html_document
 
 #### Nov 22nd
 
-- Metrics PSet2, all but Q3.
+- Metrics PSet2, all but Q3.  🔘
 
 - Acct Trends.  ✅
 
@@ -26,9 +40,9 @@ output: html_document
 
 #### Nov 21st
 
-- Metrics PSet2, Q1, Q2, Q4.
+- Metrics PSet2, Q1, Q2, Q4.  🔘
 
-- Read Aboody & Kasznik (2000).
+- Read Aboody & Kasznik (2000).   🔘
 
 - Acct Trends - collect Google Scholar data ex: for MIT.  ✅
 
