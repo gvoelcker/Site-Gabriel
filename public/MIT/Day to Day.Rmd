@@ -14,9 +14,17 @@ output: html_document
 
 - Finish Rodrigo's presentation.
 
+#### Nov 26th
+
+- Micro PSet 4. 
+
+- Read papers.
+
+- Take a look at AP PSet 7.
+
 #### Nov 25th
 
-- Finish metrics PSet 2.
+- Finish metrics PSet 2.   ✅
 
 - Start Micro PSet 4.
 

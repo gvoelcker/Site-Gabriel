@@ -1,7 +1,7 @@
 ---
 output: html_document
 ---
-## **Aboody & Kasznik (200)** {.tabset}
+## **Aboody & Kasznik (2000)** {.tabset}
 
 **CEO stock option awards and the timing of corporate voluntary disclosures**
 
