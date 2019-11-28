@@ -14,13 +14,31 @@ output: html_document
 
 - Finish Rodrigo's presentation.
 
+#### Nov 28th
+
+- Micro PS 4.
+
+- Read Rodrigo's paper.
+
+- Acct Trends.
+
+#### Nov 27th
+
+- Finish Metrics PS 3. ✅
+
+- Acct Trends. 🔘
+
+- Micro PS4.  🔘
+
 #### Nov 26th
 
-- Micro PSet 4. 
+- Micro PSet 4. 🔘
 
 - Read papers.
 
 - Take a look at AP PSet 7.
+
+- Acct trends. 🔘
 
 #### Nov 25th
 
