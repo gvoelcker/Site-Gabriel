@@ -8,6 +8,18 @@ output: html_document
 
 #### Today
 
+#### Dec 2nd
+
+- Finish Micro PSet.
+
+- Read Asset Pricing. 
+
+- Prepare to Angrist.
+
+- Find replication paper.
+
+- Read Rodrigo's papers. 
+
 #### Thanksgiving
 
 - Find winter replication paper.
@@ -16,11 +28,11 @@ output: html_document
 
 #### Nov 28th
 
-- Micro PS 4.
+- Micro PS 4. 🔘
 
-- Read Rodrigo's paper.
+- Read Rodrigo's paper. ✅
 
-- Acct Trends.
+- Acct Trends.✅
 
 #### Nov 27th
 
