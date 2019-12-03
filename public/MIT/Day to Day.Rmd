@@ -8,17 +8,25 @@ output: html_document
 
 #### Today
 
+#### Dec 3rd
+
+- Finish Micro PSet. 
+
+- Read Asset Pricing.
+
+- Finish Webscrapping code.
+
 #### Dec 2nd
 
-- Finish Micro PSet.
+- Finish Micro PSet. 🔘
 
-- Read Asset Pricing. 
+- Read Asset Pricing.  ✅
 
-- Prepare to Angrist.
+- Prepare to Angrist. 
 
-- Find replication paper.
+- Find replication paper. 🔘
 
-- Read Rodrigo's papers. 
+- Read Rodrigo's papers.  ✅
 
 #### Thanksgiving
 
