@@ -81,6 +81,50 @@ Pf
 - [**Subgame Perfect Nash Equilibrium**](https://en.wikipedia.org/wiki/Nash_equilibrium)
 
 
+
+## **Content** {.tabset}
+
+
+### 1.1 Introduction to Games in Strategic Form and Iterated Strict Dominance
+
+
+
+### 1.2 Nash Equilibrium
+
+#### 1.2.3 Nonexistence of a Pure-Strategy Equilibrium
+
+### 1.3 Existence and Properties of Nash Equilibria
+
+#### 2.1.1 Iterated Strict Dominance
+
+#### 2.1.2 An Application of Iterated Strict Dominance
+
+### 2.2 Correlated Equilibrium
+
+### 3.3 Extensive Form
+
+#### 3.4.2 The Strategic-Form Representation of Extensive-Form Games
+
+### 3.5 Backward Induction and Subgame Perfection
+
+### 4.2 The Principle of Optimality and Subgame Perfection
+
+### 4.3 A First Look at Repeated Games
+
+### 5.1 Repeated Games with Observable Actions
+
+### 6.1-6.5 Static Games of Incomplete Information
+
+### 6.7 Using Bayesin Equilibria to Justify Mixed Equilibria
+
+### 8.1 - 8.2 Dynamic Games of Incomplete Information
+
+#### 8.3.2 Sequential Equilibrium
+
+### 11.2 Signaling Games
+
+### 12.1 Generic Properties of Nash Equilibria
+
 ## **Game Theory (FT)**{.tabset}
 
 ### **Overview**
@@ -133,7 +177,7 @@ Where $E_{\sigma}$ denotes the expectation with respect to the distribution over
 
 In this case, a **Nash Equilibrium** of the stage game (a static equilibrium) happens when the strategies "each player *i* plays $\alpha_i^\ast$ from now on" are a SPE. If the game has *m* static equilibria $\{ \alpha^j \} _{j=1}^m$, then for any map j(t) from time periods to indices the strategies "play $\alpha^{j(t)}$ in period t" are a SPE as well. 
 
-##### **5.1.2. The Fol Theorem for Infinitely Repeated Games**
+##### **5.1.2. The Folk Theorem for Infinitely Repeated Games**
 
 If players are sufficiently patient then any feasible, individually rational payoffs can be enforced by an equilibrium. Thus, in the limit of extreme patience, repeated play allows virtually any payoff to be an equilibrium outcome. Player i's reservation utility or minimax value is:
 
@@ -184,11 +228,11 @@ Readings: (FT 8.3.2, 11.2; G 4.4)
 
 - Games examples:
 
-    - Cournot model:
+**Cournot model**: **duopoly model** producing a **homogeneous good**. The **strategies are quantities**. Firms simultaneously choose respective output levels. They sell their output at the **market-clearing price p(q)**. Cost of production is $c_i(q_i)$ and firm i's total profit is: $u_i(q_1,q_2) = q_i p(q) - c_i(q_i)$. Feasible sets $Q_i$ of output levels and the payoff functions $u_i$ determine the strategic form of the game. The **Cournot Reaction Functions** $r_1 : Q_2 \rightarrow Q_1$ and $r_2 : Q_1 \rightarrow Q_2$ specify each firm's optimal output for each fixed output level of its opponent. FOC: $p(q_1 + r_2(q_1)) + p'(q_1 _ r_2(q_1))r_2(q_1) - c_2'(r_2(q_1)) = 0$. The intersections (if $\exists$) of the two reaction functions are the NE of the Cournot game: no firm can gain from changing output given the output of the opponent. For instance, for linear demand (p(q) = max(0,1-q)) and symmetric, linear cost ($c_i(q_i) = cq_i$) where 0 ≤ c ≤ 1), firm 2's reaction function, given above is: $r_2(q_1) = (1 - q_1 - c)/2$, and by symmetry firm 1's reaction function is: $r_1(q_2) = (1 - q_2 - c)/2$. The NE satisfies $q_2^\ast = r_2(q_1^\ast)$ and $q_1^\ast = r_1 (q_2^\ast)$ or $q_1^\ast = q_2^\ast = (1 - c)/3$.
     
-    - Hotelling model:
+**Hotelling model**: 
     
-    - 3-people voting model: 
+**3-people voting model(Brexit example)**: 
 
 - Technical/Proofs: see FT pg 29. 
 

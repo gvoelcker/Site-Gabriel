@@ -8,13 +8,41 @@ output: html_document
 
 #### Today
 
+#### Dec 6th
+
+- Present Rodrigo's paper.
+
+- Get travel signature.
+
+- Prepare to midterms. 
+
+#### Dec 5th
+
+- Rehearse Rodrigo's presentation.
+
+- Prepare to midterms. 
+
+- Hand in Metrics PS3. ✅
+
+- Search for replication paper. 
+
+#### Dec 4th
+
+- Finish Micro PSet.  ✅
+
+- Prepare to midterms. 
+
+- Prepare Rodrigo's presentation. ✅
+
 #### Dec 3rd
 
-- Finish Micro PSet. 
+- Prepare to midterms.  ✅
 
-- Read Asset Pricing.
+- Finish Micro PSet.  🔘 
 
-- Finish Webscrapping code.
+- Read Asset Pricing.  ✅
+
+- Acct trends.  ✅
 
 #### Dec 2nd
 
