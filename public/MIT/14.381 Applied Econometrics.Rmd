@@ -445,6 +445,44 @@ Where $\beta = 1$, $\pi_1 = 0.1$ and $\pi_j = 0$ for j = 2,...,Q.
 
 - Stopped on pg 210.
 
+### **6) Getting a Little Jumpy: Regression Discontinuity Designs**
+
+**Regression discontinuity** research designs exploit precise knowledge of the rules determining treatment. RD identification is based on the idea that in a highly rule-based world, some rules are arbitrary and therefore provide good eperiments. The RD experiments can be divided into:
+
+#### **6.1) Sharp RD**
+
+When treatment status is a deterministic and discontinuous function of a covariate $x_i$. When you have a known threshold/cutoff, you can have a deterministic function of the treatment. For example, once you're 21, you're allowed to drink. A simple model formalizes this:
+
+\[ E[Y_{0i} | x_i] \alpha + \beta x\]
+
+\[ Y_{1i} = Y_{0i} + \rho\]
+
+Which leads to the regression:
+
+\[ Y_i = \alpha + \beta x_i + \rho D_i + \eta_i \]
+
+Where $\rho$ is the causal effect of interest. Key point here: $D_i$ not only is correlated with $x_i$, but is a deterministic function of $x_i$. RD captures causal effects by distinguishing the nonlinear and discontinuous functions 1($x_i ≥ x_0$) from the smooth and (sometimes) linear function $x_i$. What happens if the trent relation, $E[Y_{0i}|x_i]$ is nonlinear? There is still hope! We construct RD estimates by fitting $Y_i = f(x_i) + \rho D_i + \eta_i$, where again $D_i = 1(x_i ≥ x_0)$ is discontinuous in $x_i$ at $x_0$. As long as $f(x_i)$ is continuous in a neighborhood of $x_0$, it should be possible to estimate a model like the one for $Y_i$. 
+
+The validity of RD estimates of causal effects based on turns on whether polynomial models provide an adequate description of E[$Y_{0i}|x_i$]. If not, then what looks like a jump due to treatment might simply be an unaccounted-for nonlinearity in the counterfactual conditional mean function. A sharp turn in E[$Y_{0i}|x_i$] might be mistaken for a jump from one regression line to another. To reduce the likelihood of such mistakes, we can look only at data in a neighborhood around the discontinuity, say the interval [$x_0 - \Delta, x_0 + \Delta$] for some small positive number $\Delta$. We can do the math (6.1.7) to arrive at the conclusion that: comparions of average outcomes in a small enough neighborhood to the left and right of $x_0$ estimate the treatment effect in a way that does not depend on the correct specification of a model for E[$Y_{0i}|x_i$]. 
+
+The nonparametric approach to RD requires good estimates of the mean of $Y_i$ in small neighborhoods to the left and right of $x_0$. This is tricky. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## **Mastering Metrics** {.tabset}
 
 ### **3) Instrumental Variables**
