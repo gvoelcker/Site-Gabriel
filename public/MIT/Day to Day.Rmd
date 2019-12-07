@@ -8,23 +8,30 @@ output: html_document
 
 #### Today
 
-#### Dec 6th
-
-- Present Rodrigo's paper.
-
-- Get travel signature.
+#### Dec 7th
 
 - Prepare to midterms. 
+#- Redo all micro Psets. 
 
+- Copy MHE to Rmarkdown.
+
+### Dec 6th
+
+- Present Rodrigo's paper.  ✅
+
+- Get travel signature.  ✅
+
+- Prepare to midterms. 
+🔘 
 #### Dec 5th
 
-- Rehearse Rodrigo's presentation.
+- Rehearse Rodrigo's presentation.  ✅
 
 - Prepare to midterms. 
 
 - Hand in Metrics PS3. ✅
 
-- Search for replication paper. 
+- Search for replication paper.  ✅
 
 #### Dec 4th
 
