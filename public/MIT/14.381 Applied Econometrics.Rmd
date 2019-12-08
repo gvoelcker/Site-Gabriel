@@ -465,7 +465,13 @@ Where $\rho$ is the causal effect of interest. Key point here: $D_i$ not only is
 
 The validity of RD estimates of causal effects based on turns on whether polynomial models provide an adequate description of E[$Y_{0i}|x_i$]. If not, then what looks like a jump due to treatment might simply be an unaccounted-for nonlinearity in the counterfactual conditional mean function. A sharp turn in E[$Y_{0i}|x_i$] might be mistaken for a jump from one regression line to another. To reduce the likelihood of such mistakes, we can look only at data in a neighborhood around the discontinuity, say the interval [$x_0 - \Delta, x_0 + \Delta$] for some small positive number $\Delta$. We can do the math (6.1.7) to arrive at the conclusion that: comparions of average outcomes in a small enough neighborhood to the left and right of $x_0$ estimate the treatment effect in a way that does not depend on the correct specification of a model for E[$Y_{0i}|x_i$]. 
 
-The nonparametric approach to RD requires good estimates of the mean of $Y_i$ in small neighborhoods to the left and right of $x_0$. This is tricky. 
+The nonparametric approach to RD requires good estimates of the mean of $Y_i$ in small neighborhoods to the left and right of $x_0$. This is tricky because: 1) small neighborhood implies that you don't have much data; 2) the sample average is biased for the CEF in the neighborhood of boundary. By the time MHE was written, the majority of RD work used to be parametric. 
+
+#### **6.2) Fuzzy RD**
+
+Fuzzy RD exploits discontinuities in the *probability* or *expected value* of treatment conditional on a covariate. The result is a research design where the **discontinuity becomes an IV for treatment status**, instead of deterministically switching treatment on or off. 
+
+
 
 
 

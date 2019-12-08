@@ -8,21 +8,89 @@ output: html_document
 
 #### Today
 
+#### Dec 17th
+
+- Asset Pricing Exam: 9am - 12pm - E62-350.
+
+- Microeconomics 2 Exam: 1:30 pm - 4:30 pm: E51-145.
+
+- Start looking at Project.
+
+#### Dec 16th
+
+- Applied Econometrics Exam: 9 am - 12 pm: 50-340.
+
+- Review for AP and Micro Exams.
+
+#### Dec 15th
+
+- Review for Metrics.
+
+
+#### Dec 14th
+
+- Redo 1 Micro Exam.
+
+- Go over Metrics exercises.
+
+#### Dec 13th
+
+- Redo 1 Micro Exam.
+
+- Go over Metrics exercises.
+
+#### Dec 12th
+
+- Redo 1 Micro Exam.
+
+- Go over Metrics exercises.
+
+#### Dec 11th
+
+- Redo 1 Micro Exam.
+
+- Read Leonid's notes.
+
+- Go through AP PSets.
+
+#### Dec 10th
+
+- Redo Metrics PSets.
+
+- Read Leonid's notes.
+
+#### Dec 9th
+
+- Redo Metrics PSets.
+
+- Read Leonid's notes.
+
+#### Dec 8th
+
+- Prepare to midterms.    ✅
+
+- Finish micro PS4.
+
+- MHE into RMarkdown.  🔘 
+
+- Read Leonid's notes.
+
 #### Dec 7th
 
-- Prepare to midterms. 
-#- Redo all micro Psets. 
+- Prepare to midterms.   ✅
 
-- Copy MHE to Rmarkdown.
+- Redo all micro Psets.   ✅
 
-### Dec 6th
+- Copy MHE to Rmarkdown.  🔘 
+
+#### Dec 6th
 
 - Present Rodrigo's paper.  ✅
 
 - Get travel signature.  ✅
 
-- Prepare to midterms. 
-🔘 
+- Prepare to midterms. 🔘 
+
 #### Dec 5th
 
 - Rehearse Rodrigo's presentation.  ✅
