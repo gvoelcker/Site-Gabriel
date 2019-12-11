@@ -49,31 +49,31 @@ output: html_document
 
 - Redo 1 Micro Exam.
 
-- Read Leonid's notes.
+- Read Leonid's notes.  ✅
 
 - Go through AP PSets.
 
 #### Dec 10th
 
-- Redo Metrics PSets.
+- Redo Metrics PSets.  🔘 
 
-- Read Leonid's notes.
+- Read Leonid's notes.   ✅
 
 #### Dec 9th
 
-- Redo Metrics PSets.
+- Redo Metrics PSets.  🔘 
 
-- Read Leonid's notes.
+- Read Leonid's notes.  ✅
 
 #### Dec 8th
 
-- Prepare to midterms.    ✅
+- Prepare to midterms. ✅
 
-- Finish micro PS4.
+- Finish micro PS4. ✅
 
-- MHE into RMarkdown.  🔘 
+- MHE into RMarkdown. ✅
 
-- Read Leonid's notes.
+- Read Leonid's notes.  ✅
 
 #### Dec 7th
 

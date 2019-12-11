@@ -674,6 +674,41 @@ summary {
 </div>
 </div>
 </div>
+<div id="getting-a-little-jumpy-regression-discontinuity-designs" class="section level3">
+<h3><strong>6) Getting a Little Jumpy: Regression Discontinuity Designs</strong></h3>
+<p><strong>Regression discontinuity</strong> research designs exploit precise knowledge of the rules determining treatment. RD identification is based on the idea that in a highly rule-based world, some rules are arbitrary and therefore provide good eperiments. The RD experiments can be divided into:</p>
+<div id="sharp-rd" class="section level4">
+<h4><strong>6.1) Sharp RD</strong></h4>
+<p>When treatment status is a deterministic and discontinuous function of a covariate <span class="math inline">\(x_i\)</span>. When you have a known threshold/cutoff, you can have a deterministic function of the treatment. For example, once you’re 21, you’re allowed to drink. A simple model formalizes this:</p>
+<p><span class="math display">\[ E[Y_{0i} | x_i] \alpha + \beta x\]</span></p>
+<p><span class="math display">\[ Y_{1i} = Y_{0i} + \rho\]</span></p>
+<p>Which leads to the regression:</p>
+<p><span class="math display">\[ Y_i = \alpha + \beta x_i + \rho D_i + \eta_i \]</span></p>
+<p>Where <span class="math inline">\(\rho\)</span> is the causal effect of interest. Key point here: <span class="math inline">\(D_i\)</span> not only is correlated with <span class="math inline">\(x_i\)</span>, but is a deterministic function of <span class="math inline">\(x_i\)</span>. RD captures causal effects by distinguishing the nonlinear and discontinuous functions 1(<span class="math inline">\(x_i ≥ x_0\)</span>) from the smooth and (sometimes) linear function <span class="math inline">\(x_i\)</span>. What happens if the trent relation, <span class="math inline">\(E[Y_{0i}|x_i]\)</span> is nonlinear? There is still hope! We construct RD estimates by fitting <span class="math inline">\(Y_i = f(x_i) + \rho D_i + \eta_i\)</span>, where again <span class="math inline">\(D_i = 1(x_i ≥ x_0)\)</span> is discontinuous in <span class="math inline">\(x_i\)</span> at <span class="math inline">\(x_0\)</span>. As long as <span class="math inline">\(f(x_i)\)</span> is continuous in a neighborhood of <span class="math inline">\(x_0\)</span>, it should be possible to estimate a model like the one for <span class="math inline">\(Y_i\)</span>.</p>
+<p>The validity of RD estimates of causal effects based on turns on whether polynomial models provide an adequate description of E[<span class="math inline">\(Y_{0i}|x_i\)</span>]. If not, then what looks like a jump due to treatment might simply be an unaccounted-for nonlinearity in the counterfactual conditional mean function. A sharp turn in E[<span class="math inline">\(Y_{0i}|x_i\)</span>] might be mistaken for a jump from one regression line to another. To reduce the likelihood of such mistakes, we can look only at data in a neighborhood around the discontinuity, say the interval [<span class="math inline">\(x_0 - \Delta, x_0 + \Delta\)</span>] for some small positive number <span class="math inline">\(\Delta\)</span>. We can do the math (6.1.7) to arrive at the conclusion that: comparions of average outcomes in a small enough neighborhood to the left and right of <span class="math inline">\(x_0\)</span> estimate the treatment effect in a way that does not depend on the correct specification of a model for E[<span class="math inline">\(Y_{0i}|x_i\)</span>].</p>
+<p>The nonparametric approach to RD requires good estimates of the mean of <span class="math inline">\(Y_i\)</span> in small neighborhoods to the left and right of <span class="math inline">\(x_0\)</span>. This is tricky because: 1) small neighborhood implies that you don’t have much data; 2) the sample average is biased for the CEF in the neighborhood of boundary. By the time MHE was written, the majority of RD work used to be parametric.</p>
+</div>
+<div id="fuzzy-rd" class="section level4">
+<h4><strong>6.2) Fuzzy RD</strong></h4>
+<p>Fuzzy RD exploits discontinuities in the <em>probability</em> or <em>expected value</em> of treatment conditional on a covariate. The result is a research design where the <strong>discontinuity becomes an IV for treatment status</strong>, instead of deterministically switching treatment on or off.</p>
+<p>For an example:</p>
+<p><span class="math display">\[\begin{equation}
+     P(D_i = 1| x_i) =
+    \begin{cases}
+      g_1(x_i) &amp; \text{if $x_i \geq x_0$}\\
+      g_0(x_i) &amp; \text{if $x_i &lt; x_0$}
+    \end{cases}       
+\end{equation}\]</span></p>
+<p>Where <span class="math inline">\(g_1(x_0)\)</span> ≠ <span class="math inline">\(g_0(x_0)\)</span>. The functions <span class="math inline">\(g_0\)</span> and <span class="math inline">\(g_1\)</span> can be anything as long as they differ at <span class="math inline">\(x_0\)</span>. The more they differ, the better because the effect of the treatment will be more pronounced. We can write the relation between the probability of treatment and <span class="math inline">\(x_i\)</span> as:</p>
+<p><span class="math display">\[ E[D_i|x_i] = P(D_i = 1|x_i) = g_0(x_i) + [g_1(x_i) - g_0(x_i)] T_i \]</span></p>
+<p>where <span class="math inline">\(T_i = 1(x_i ≥ x_0)\)</span>. The dummy variable <span class="math inline">\(T_i\)</span> indicates the point <strong>where E[<span class="math inline">\(D_i|x_i\)</span>] is discontinuous</strong>. Fuzzy RD leads to a 2SLS estimation, where <span class="math inline">\(T_i\)</span> and the interaction terms can be used as instruments for <span class="math inline">\(D_i\)</span>. The simplest fuzzy RD estimator uses only <span class="math inline">\(T_i\)</span> as an instrument. The resulting just-identified IV estimator has the virtues of transparency and good finite-sample properties. The first stage in this case is:</p>
+<p><span class="math display">\[ D_i = \gamma_0 + \gamma_1 x_i + \gamma_2 x_i^2 + ... + \gamma_p x_i^p + \pi T_i + \xi_{1i} \]</span></p>
+<p>Where <span class="math inline">\(\pi\)</span> is the 1st-stage effect of <span class="math inline">\(T_i\)</span>. The fuzzy RD reduced form is obtained by substituting the above equation into the RD estimates equation(6.1.4).</p>
+<p>The <strong>non-parametric</strong> version of fuzzy RD consists of IV estimation in a small neighborhood around the discontinuity. The reduced-form conditional expectation of <span class="math inline">\(Y_i\)</span> near <span class="math inline">\(x_0\)</span> is:</p>
+<p><span class="math display">\[ E[Y_i|x_0 ≤ x_i &lt; x_0 + \Delta] - E[Y_i | x_0 - \Delta &lt; x_i &lt; x_0 ] \approx \rho \pi \]</span></p>
+<p>Similarly</p>
+</div>
+</div>
 </div>
 <div id="mastering-metrics" class="section level2 tabset">
 <h2><strong>Mastering Metrics</strong></h2>
@@ -764,7 +799,7 @@ summary {
 <p><span class="math display">\[ \overline{M}_a = \alpha + \rho D_a + \gamma a + e_a \text{in a sample such that } a_0 - b ≤ a ≤ a_0 + b\]</span></p>
 <p>The parameter <em>b</em> describes the width of the window and is called a <em>bandwidth</em>. How shall we pick the bandwidth? The goal is to show that the findings generated by any particular choice of bandwidth are not a fluke.</p>
 </div>
-<div id="fuzzy-rd" class="section level4">
+<div id="fuzzy-rd-1" class="section level4">
 <h4><strong>Fuzzy RD</strong></h4>
 <p><strong>Fuzzy RD</strong>: the difference between fuzzy and sharp designs is that, with fuzzy, applicants who cross a threshold are exposed to a more intense treatment while in a sharp design treatment switches cleanly on or off at the cutoff.</p>
 <p>Talking about <em>peer effects</em>, people tend to think that grouping good students influence students to be better. So parents look for better schools so that their kids can become better students. This putative peer effect comes from the model:</p>

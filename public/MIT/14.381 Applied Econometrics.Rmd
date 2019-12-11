@@ -471,13 +471,31 @@ The nonparametric approach to RD requires good estimates of the mean of $Y_i$ in
 
 Fuzzy RD exploits discontinuities in the *probability* or *expected value* of treatment conditional on a covariate. The result is a research design where the **discontinuity becomes an IV for treatment status**, instead of deterministically switching treatment on or off. 
 
+For an example:
 
+\begin{equation}
+     P(D_i = 1| x_i) =
+    \begin{cases}
+      g_1(x_i) & \text{if $x_i \geq x_0$}\\
+      g_0(x_i) & \text{if $x_i < x_0$}
+    \end{cases}       
+\end{equation}
 
+Where $g_1(x_0)$ ≠ $g_0(x_0)$. The functions $g_0$ and $g_1$ can be anything as long as they differ at $x_0$. The more they differ, the better because the effect of the treatment will be more pronounced. We can write the relation between the probability of treatment and $x_i$ as:
 
+\[ E[D_i|x_i] = P(D_i = 1|x_i) = g_0(x_i) + [g_1(x_i) - g_0(x_i)] T_i \]
 
+where $T_i = 1(x_i ≥ x_0)$. The dummy variable $T_i$ indicates the point **where E[$D_i|x_i$] is discontinuous**. Fuzzy RD leads to a 2SLS estimation, where $T_i$ and the interaction terms can be used as instruments for $D_i$. The simplest fuzzy RD estimator uses only $T_i$ as an instrument. The resulting just-identified IV estimator has the virtues of transparency and good finite-sample properties. The first stage in this case is: 
 
+\[ D_i = \gamma_0 + \gamma_1 x_i + \gamma_2 x_i^2 + ... + \gamma_p x_i^p + \pi T_i + \xi_{1i} \]
 
+Where $\pi$ is the 1st-stage effect of $T_i$. The fuzzy RD reduced form is obtained by substituting the above equation into the RD estimates equation(6.1.4). 
 
+The **non-parametric** version of fuzzy RD consists of IV estimation in a small neighborhood around the discontinuity. The reduced-form conditional expectation of $Y_i$ near $x_0$ is:
+
+\[ E[Y_i|x_0 ≤ x_i < x_0 + \Delta] - E[Y_i | x_0 - \Delta < x_i < x_0 ] \approx \rho \pi \]
+
+Similarly 
 
 
 

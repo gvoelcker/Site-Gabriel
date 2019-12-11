@@ -1543,6 +1543,231 @@ We do some algebra to arrive at an **Equivalent Martingale Measure**.
 #### 1.3 The FTAP
 
 
+#### 1.4 Security Prices and State Prices
+
+The state prices incorporate three elements:
+
+1) Investors' (subjective) probability beliefs.
+
+2) Time value of money (i.e. discounting). 
+
+3) Investors'risk-aversion.
+
+In order to separate the three elements we define two concepts:
+
+i) **State-Price Density**: state price / probability, incorporating only discounting and risk-aversion.
+
+ii) **Equivalent Martingale Measure**: incorporates only investors' probability beliefs and risk-aversion. 
+
+#### 1.5 State-Price Density
+
+The FTAP states that NA implies the existence of a strictly increasing linear function $\Psi$ : $\mathcal{L} \rightarrow \mathbb{R}$ such that $\Psi (c) = 0 \forall c \in M$. 
+
+\[ \Psi (c) = K_0 \sum_{t = 0}^T \psi_tc_t = E_0 [\sum_{t=0}^T \pi_t c_t] \]
+
+The last part of the above equation means that the linear function is the expectation as of time 0 of the sum over periods of $c_t$ times an adapted process $\pi_t$. We refer to $\pi$ as a **state-price density**(SPD) process. 
+
+$\Psi (c)$ = the time 0 value of the cash flow *c*, measured at state prices. This can be written as the expectation of the cash flow adjusted by the SPD. We **adjust by the SPD** to account for discounting and risk-aversion. 
+
+From equation 1.5.6 we get that the price adjusted for discounting and risk-aversion is **martingale**. To extend the martingale property to dividends we define the **gain process**:
+
+\[ G_t = S_t + \sum_{s=1}^t \delta_s \]
+
+And if we adjust this by the SPD:
+
+\[ G_t^\pi = \pi_t S_t + \sum_{s=1}^t \pi_s \delta_s \]
+
+#### 1.6 Equivalent Martingale Measure
+
+Now we will adjust for risk-aversion through the probabilities, not through SPD. We define a probability measure Q such that
+
+$ \Psi (c) = E_0^Q [\sum_{t=0}^T \frac{c_t}{B_t}] $
+
+We adjust for discounting by dividing by the price of the riskless security. **Q is the EMM**, a.k.a. the **risk-neutral probability**. 
+
+The difference between SPD and EMM: given both equations:
+
+\[ SPD: \Psi (c) = E_0 [ \sum_{t=0}^T \pi_t c_t ] \]
+
+\[ EMM: \Psi (c) = E_0^Q [\sum_{t=0}^T \frac{c_t}{B_t}] \]
+
+In the SPD equation, probability beliefs work through the expectation, and discounting and risk-aversion through the SPD. In the EMM equation, probability beliefs and risk-aversion work through the EMM, and discounting through the riskless security.
+
+Intuitively the martingale property means that the return on an asset cannot be higher than the riskless rate with probability 1 or there would be an arbitrage.
+
+#### 1.7 Appendix: Mathematical Preliminaries
+
+### Lecture 2 - Applications of FTAP, Dynamic Models
+
+#### 2.1. Arbitrage Pricing
+
+##### 2.1.1. Redundant Securities
+
+A trading strategy $\theta$ replicates a cash flow c $\iff \forall t ≥ 1$ : $c_t = \theta_{t-1}(S_t + \delta_t) - \theta_tS_t$. In other words: $\theta$ replicates c $\iff \forall$ t ≥ 1, *c* coincides with the cash flow financed by $\theta$. 
+
+**Redundant security**: is one which its dividend process $\hat{\delta}$ and price process $\hat{S}$ can have its cash flow *c* ($c_s = \hat{\delta}_s$ for s < T) replicated by a trading strategy $\hat{\theta}$ and $c_T = \hat{\delta}_T + \hat{S}_T$. From NA: the price of a redundant security has to be equal to the value of the replicating strategy. Thus, a redundant security can be priced off the existing securities. 
+
+##### 2.1.2. Complete Markets
+
+**Complete markets**: the ones in which **all** cash flows can be replicated. Thus, all new securities are redundant and can be replicated. Markets are complete $\iff$ state prices are unique. 
+
+##### 2.1.3. Option Pricing
+
+**Strike price(K)**: the prespecified price. The prespecified time is the *maturity* of the option and is denoted by $\tau$. 
+
+#### 2.2 Portfolio Choice
+
+**Consumption Plan**: an adapted process c $\in \mathcal{L}^+$. Consider an investor who consumes over time. His preferences are given by a strictly increasing and continuous utility function $U: \mathcal{L}^+ \rightarrow \mathbb{R}$. We will often assume that U is a time-additive expected utility, i.e.:
+
+\[ U(c) E_0 \sum_{t=0}^T u_t(c_t)\]
+
+The investor has wealth W at t = 0. Given a consumption plan *c*, we denote by c - W the cash flow that is equal to $c_t$ for t ≥ 1 and $c_0 - W$ for t = 0. The cash flow c - W must be marktable, i.e. must belong to M. 
+
+A consumption plan c is **feasible** $\iff$ c - W $\in$ M $\iff c \in M + W$. The investor's problem($\mathcal{P}$) is $max_c U(c)$ such that $c \in \mathcal{L}^+ \cap (M + W)$. The **optimal consumption plan** is the one that solves $\mathcal{P}$. 
+
+There are two approaches to solving $\mathcal{P}$: i) *martingale approach*: based on the FTAP and the existence of state prices; ii) *dynamic programming*: based on stochastic dynamic programming (traditional). 
+
+##### 2.2.1. Martingale Approch; Existence and Characterization
+
+$\mathcal{P}$ has a solution $\iff$ there is NA.  
+
+#### 2.3 Equilibrium Asset Pricing
+
+##### 2.3.1 Contingent Claims Equilibrium
+
+**Contingent claims**: for each node, there exists a security which pays one unit of consumption at that node, and which is traded in period 0. 
+
+A contingent claims equilibrium is a price process $\psi \in \mathcal{L}$ and a vector of consumption plans ($c_1, ..., c_I$)$\in \mathcal{L}_I$ such that:
+
+1) (optimization) $c_i$ is optimal for agent *i*. 
+
+2) (market-clearing) c = e. 
+
+AKA Arrow-Debreu equilibrium. 
+
+##### 2.3.2 Securities Market Equilibrium
+
+**Securities Market Equilibrium**: a price process S $\in \mathcal{L}^N$ and a vector of trading strategies ($\theta_1, ..., \theta_I$) $\in \mathcal{L}^N$ such that:
+
+i) (optimization)$\theta_i$ is optimal for agent *i*. 
+
+ii) (market-clearing) $\sum_{i=1}^I \theta_i = x$, $\sum_{i=1}^I (c_i - e_i) - x \delta = 0$. 
+
+There are some differences in this type of equilibrium. For ex: AD goods cannot be defined. 
+
+But SM Eq implies that agents' maximization problems have a solution. Therefore, there is no arbitrage. 
+
+**To obtain the portfolio choice when the markets are dynamically complete we replace the dynamic budget constraint by a single static constraint.** 
+
+### Lecture 3 - Portfolio Choice Using Dynamic Programming
+
+Portfolio choice is harder when markets are incomplete due to non-tradable risks or constraints. The standard approach to such problems uses dynamic programming. 
+
+#### 3.1 The Value Function
+
+**Dynamic Programming**: decompose the multi-period problem into a sequence of one-period problems and solve by backwards induction. The decomposition is most convenient when the investor has time-additive expected utility:
+
+\[ U(c) = E_0 \sum_{t = 0}^T u_t (c_t) \]
+
+We consider the investor's problem at time *t*. The investor has wealth $W_t$ and chooses a trading strategy $\theta_s$, s ≥ t, to solve:
+
+\[ max_{\theta_s} E_t \sum_{s=t}^T u_s (c_s) \]
+
+such that
+
+\[ c_s = \theta_{s-1} (S_s + \delta_s) - \theta_s S_s \]
+
+and 
+
+\[ c_t = W_t - \theta_t S_t \]
+
+**Value function**: the maximum value of the investor's problem ($\mathcal{P}$), denoted by $V_t(W_t)$. 
+
+**Bellman's principle of optimality**: for a function to be the value function, it has to satisfy $J_T(W_T) = u_T (W_T)$ and has to solve the Bellman equation:
+
+\[ J_t(W_t) = max_{c_t,\theta_t} [u_t (c_t) + E_t (J_{t+1}(W_{t+1}))] \text{ aka }\mathcal{B_t}\]
+
+Subject to $W_{t+1} = \theta_t (S_{t+1} + \delta_{t+1})$ and $c_t = W_t - \theta_t S_t$. 
+
+We can replace the multi-period problem $\mathcal{P}$ by a sequence of one-period problems and solve them by proceeding backwards. Both problems are equivalent in the sense that they have the same maximum value and optimal solution. The one-period problems are obtained by considering "one-period deviations", i.e. follow a non-optimal strategy in one period and the optimal strategy subsequently. The one-period deviations are not optimal $\iff$ no deviations are optimal.
+
+#### 3.2 Properties of the Value Function
+
+The value function is similar to the utility function. 
+
+#### 3.3 Simple Examples with Explicit Solutions
+
+### Lecture 4 - Empirical Facts and Puzzles
+
+**Unconditional Properties (average behavior)**:
+
+- Real stock returns have high mean and variance.
+
+- Average risk-free rate is low.
+
+- Real consumption growth has very low volatility.
+
+- Real consumption growth and stock returns have correlation of approximately 0.3.
+
+- Real dividend growth is more volatile than that of consumption, but much less volatile than stock returns. 
+
+- Correlation between consumption and dividend growth is approximately 25%. 
+
+**Conditional Properties (predictability)**:
+
+- Excess stock returns are forecastable.
+
+- Consumption growth is not well forecast by its own history or by the price-dividend ratio.
+
+- Dividend growth is not well forecasted by the log of the price-dividend ratio.
+
+#### 4.1 A Benchmark Model
+
+#### 4.2 Puzzles
+
+#### 4.3 First Attempt: Recursive Preferences
+
+**Epstein-Zin**: assumes that v(x) = $x^\alpha$, where $\alpha$ is generally different from $\theta$. This model of preferences disentangles risk aversion from elasticity of intertemporal substitution, which helps match quantitative properties of asset prices and consumption data and is often a useful feature to build into a model. 
+
+### Lecture 5 - Excess volatility
+
+#### 5.1 Motivation
+
+#### 5.2 Preferences over Relative Consumption
+
+Goal: generating a time-varying market price of risk. 
+
+#### 5.3 Calibration and Quantitative Performance
+
+#### 5.4 Internal Habit
+
+We take the addictions as internal, not exogenous. Constantinides considers a model in which agent's habit is a linear function of **past consumption**. Finding: **agent's consumption is much smoother than  wealth**. Intuition: when an agent experiences a positive shock to wealth, consumption is not immediately increased as that increase future habit levels and lowers utility. Hence, consumption increases gradually, smoothing shocks to wealth. So consumption smooths shocks to wealth, but wealth is a claim to future cash flows. How is it that wealth is more volatile than consumption? Consumption growth is auto-correlated $\implies$ at long horizons its volatility is much higher than at short horizons. Constantinides(1990) assumes that consumption is chosen endogenously and it comes out autocorrelated: a drawback, given empirical evidence that autocorrelation is weak. 
+
+#### 5.5 Recursive Utility
+
+The price of the long-run growth risk is relatively high if $\phi$ is close to one(shocks to the growth rate are very persistent). With $\psi$ > 1, stock market returns load positively on shocks to consumption growth rate, and these shocks carry a positive market price of risk $\implies$ persistent shocks to consumption growth rate contribute positively to the equity premium. 
+
+### Lecture 6 - Static Competitive Models
+
+#### 6.1 Asymmetric Information
+
+##### 6.1.1 The Model
+
+##### 6.1.3 Rational Expectations Equilibrium
+
+Grossman-Stiglitz paradox: if in the end, the informed and uninformed get the same allocation and information acquisition is costly, why would someone acquire information?
+
+
+### Lecture 7 - Non-Competitive Models
+
+#### 7.1 Introduction
+
+
+
+
+
+
+
 
 
 
