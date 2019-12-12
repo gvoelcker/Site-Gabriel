@@ -45,13 +45,15 @@ output: html_document
 
 - Go over Metrics exercises.
 
+- Look over next semester's courses. 
+
 #### Dec 11th
 
-- Redo 1 Micro Exam.
+- Redo 1 Micro Exam.   🔘 
 
 - Read Leonid's notes.  ✅
 
-- Go through AP PSets.
+- Go through AP PSets.   🔘 
 
 #### Dec 10th
 

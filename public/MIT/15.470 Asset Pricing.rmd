@@ -1757,10 +1757,10 @@ The price of the long-run growth risk is relatively high if $\phi$ is close to o
 
 Grossman-Stiglitz paradox: if in the end, the informed and uninformed get the same allocation and information acquisition is costly, why would someone acquire information?
 
-
 ### Lecture 7 - Non-Competitive Models
 
 #### 7.1 Introduction
+
 
 
 
