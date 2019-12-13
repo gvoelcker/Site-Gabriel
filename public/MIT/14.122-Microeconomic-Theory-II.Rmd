@@ -275,6 +275,7 @@ Readings: (FT 8.3.2, 11.2; G 4.4)
 
 - **Subgame-perfect equilibrium**: games in which players move simultaneously in several periods. There are several last-movers and each of them must know the moves of the others to compute his own optimal choice. Each path/history generates a simultaneous move game between the two firms and firm 1 forecasts that play in this game will correspond to an equilibrium for the payoffs prevailing under the path/history. The key feature of a subgame is that it, when seen in isolation, constitutes a game in its own right. When the initial node of a subgame is reached in a larger game, players can concentrate only on that subgame; they can ignore the history of the rest of the game (provided they know what subgame they are playing). 
 
+- **Public Good Game**: suppose we know the classic payoff matrix for this game. So we know that the u(C) = 1 - $c_1$, and u(D) = 1 p + (1 - p) 0 = p. So we equal both equations: 1 - $c_1$ = p. "p" is the probability that P2 contributes. There is one unique solution: 
 
 
 

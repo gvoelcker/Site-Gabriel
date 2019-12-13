@@ -41,11 +41,11 @@ output: html_document
 
 #### Dec 12th
 
-- Redo 1 Micro Exam.
+- Redo 1 Micro Exam.   ✅
 
-- Go over Metrics exercises.
+- Go over Metrics exercises.  ✅
 
-- Look over next semester's courses. 
+- Look over next semester's courses.     🔘 
 
 #### Dec 11th
 
