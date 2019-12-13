@@ -138,9 +138,9 @@ Fundamentally unindentified questions: FUQs. Questions that cannot be answererd 
 
 - Without randomness there is no causality.
 
-- Conditional Expectation Function: 
+- **Conditional Expectation Function(CEF)**: for a dependent ariable $Y_i$, given a $K \times 1$ vector of covariates $X_i$ (with elements $x_{ki}$) is the expectation(population average) of $Y_i$ holding $X_i$ fixed. CEF is written as $E[Y_i|X_i]$. 
 
-- Law of iterated expectations: 
+- **Law of iterated expectations**: an unconditional expectation can be written as the unconditional average of the CEF: $E[Y_i] = E\{E[Y_i|X_i]\}$, where the outer expectation uses the distribution of $X_i$. The power of LIE comes from it breaking down a r.v. into two pieces: the CEF and a residual with special properties: $Y_i = E[Y_i|X_i] + \epsilon_i$. Where: i) $\epsilon_i$ is mean independent of $X_i$, that is, $E[\epsilon_i |X_i]$ = 0, hence: ii) $\epsilon_i$ is uncorrelated with any function of $X_i$. This can be interpreted as **decomposing** any variable $Y_i$ into a pice that is "explained by $X_i$", that is, the CEF - and a piece left over that is orthogonal to any function of $X_i$. The CEF also has an important **prediction** property: $E[Y_i|X_i] = argmin_{m(X_i)} E[(Y_i - m(X_i))^2]$, so it is the MMSE predictor of $Y_i$ given $X_i$. The last property is the **Anova Theorem**: $V(Y_i) = V(E[Y_i|X_i]) + E[V(Y_i|X_i)]$. This implies that the variance of $Y_i$ is the variance of the CEF plus the variance of the residual, since the residul and $E[Y_i|X_i]$ are uncorrelated. 
 
 ##### 3.1.2) Linear Regression and The CEF
 
@@ -152,7 +152,7 @@ Using FOC:
 
 \[ E[X_i (Y_i - X_i'b)] = 0 \]
 
-Where the solution can be written as $\beta$ = E$[X_iX_i']^{-1}E[X_iY_i]$. The population residual, which we define as $Y_i - X_i'\beta = e_i$ is uncorrelated with the regressors $X_i$. For the multivariate case, the regression anatomy is:
+Where the solution can be written as $\beta$ = E$[X_iX_i']^{-1}E[X_iY_i]$. The population residual, which we define as $Y_i - X_i'\beta = e_i$ is uncorrelated with the regressors $X_i$. For the multivariate case, the **regression anatomy formula** is:
 
 \[ \beta_k = \frac{Cov(Y_i, \tilde{x}_{ki})}{V(\tilde{x}_{ki})} \]
 
@@ -171,6 +171,18 @@ into the numerator of the Regression Anatomy Formula. Since $\tilde{x}_{ki}$ is 
 
 \[ \beta = argmin_{b} E\{(E[Y_i|X_i] - X_i'b)^2\} \]
 
+##### 3.1.3) Asymptotic OLS Inference
+
+- A natural estimator of the first population moment, E[$W_i$] is the sum $\frac{1}{N} \sum_{i=1}^N W_i$. 
+- **Law of Large Numbers**:
+
+- **Central Limit Theorem**:
+
+- **Slutsky's Theorem**: 1) ; and 2) .
+
+##### 3.1.4) Saturated Models, Main Effects, and Other Regression Talk
+
+- **Saturated regression models**: regression models with discrete explanatory variables, where the model includes a separate parameter for **all possible values** taken on by the explanatory variables. They fit the CEF perfectly because the CEF is a linear function of the dummy regressors used to saturate. We also use interaction terms to show how those behave with each other. 
 
 #### 3.2) Regression and Causality
 
@@ -178,7 +190,7 @@ into the numerator of the Regression Anatomy Formula. Since $\tilde{x}_{ki}$ is 
 
 A regression is causal when the Conditional Expectation Function it approximates is causal. The CEF is causal when it describes differences in average potential outcomes for a fixed reference population. As discussed in chapter 2: **experiments ensure that the causal variable of interest is independent of potential outcomes so that the groups being compared are truly comparable**. We want to generalize this to causal variables that take on more than two values and to more complicated situations where we must hold a variety of control variables fixed for causal inferences to be valid. This leads to the **Conditional Independence Assumption**: the assumption that provides justification for the causal interpretation of regression estimates. Also called **Selection on Observables** because the *covariates are held fixed since they are assumed to be known and observed*. The question is: *what these control variables are?* We call them *covariates* $X_i$ (in the schooling case, $X_i$ is a vector of abilities and family background). 
 
-Suppose we want to know the difference in earnings ($Y_{1i} - Y_{0i}$) if Angrist goes to college($C_i = 1$) versus not going to college ($C_i = 0$). The observed outcome, $Y_{i}$ can be written in terms of potential outcomes as:
+Suppose we want to know the difference in earnings ($Y_{1i} - Y_{0i}$) if Angrist goes to college($C_i = 1$) versus not going to college ($C_i = 0$). The observed outcome, $Y_{i}$ can be written in terms of **potential outcomes** as:
 
 \[ Y_i = Y_{0i} + (Y_{1i} - Y_{0i})C_i   \]
 
@@ -249,7 +261,7 @@ The residual in the linear causal model: $Y_i = \alpha + \rho s_i + X_i' \gamma 
 
 ##### 3.2.2) The Omitted Variables Bias Formula
 
-In addition to the variable of interest, we now have introduced a set of control variables, $X_i$, into our regression. The **Omitted Variable Bias(OVB) Formula describes the relationship between regression estimates in models with different sets of control variables**. This is motivated by the notion that *a longer regression has a causal interpretation* while a shorter one does not. This means that the coefficients on the variables included in the shoter regression are **biased**. The difference between coefficients in a short and in a long regression are determined by the OVB formula. 
+In addition to the variable of interest, we now have introduced a set of control variables, $X_i$, into our regression. The **Omitted Variable Bias(OVB) Formula describes the relationship between regression estimates in models with different sets of control variables**. This is motivated by the notion that *a longer regression has a causal interpretation* while a shorter one does not. This means that the coefficients on the variables included in the shorter regression are **biased**. The difference between coefficients in a short and in a long regression are determined by the OVB formula. 
 
 Imagine we are regressing wages on school years: $Y_i = \alpha + \rho s_i + A_i' \gamma + e_i$. What are the consequences of leaving ability ($A_i$) out of the regression? The resulting short regression is related to the long regression as follows:
 
@@ -275,11 +287,14 @@ The assumption of a linear **Conditional Expectation Function(CEF)** is not real
 
 An attractive feature of matching strategies is that they are typically accompanied by an explicit statement of the conditional independence assumption required to give matching estimates a causal interpretation. 
 
-**Matching requires two-steps: matching and then averaging**
+**Matching requires two-steps: matching and then averaging**.
 
-That is: CIA assumes that once you have certain characteristics sorted out, a certain outcome does not depend on them.
+That is: CIA assumes that once you have certain characteristics sorted out, a certain outcome does not depend on them. 
 
-**REREAD PG 74 FORWARD MHE**
+The regression estimand differs from the matching estimands only in the weights used to combine the covariate-specific effects, $\delta_X$, into a single average effect. 
+
+
+**REREAD PG 74-80 MHE**
 
 ##### 3.3.2) Control for Covariates using Propensity Score
 

@@ -615,9 +615,128 @@ summary {
 <li><p>Technical/Proofs: see FT pg 29.</p></li>
 <li><p><strong>Extensive-form games</strong>: we include the notion of time. It makes explicit the order in which players move and what each player knows when making each of his decisions.</p></li>
 <li><p><strong>Empty threat</strong>: if the second player to make a move were to hold his output regardless of the first player’s choice, this would be an empty threat becuse the threatened player could simply choose in a way that the second player would end up changing his choice because he would have a better output. This is consistent with the concept of <strong>backward induction</strong>: solving for the optimal choice of the last mover for each possible situation and then work backwards for every move until we get to the starting point.</p></li>
-<li><p><strong>Subgame-perfect equilibrium</strong>: games in which players move simultaneously in several periods. There are several last-movers and each of them must know the moves of the others to compute his own optimal choice. Each path/history generates a simultaneous move game between the two firms and firm 1 forecasts that play in this game will correspond to an equilibrium for the payoffs prevailing under the path/history. The key feature of a subgame is that it, when seen in isolation, constitutes a game in its own right. When the initial node of a subgame is reached in a larger game, players can concentrate only on that subgame; they can ignore the history of the rest of the game (provided they know what subgame they are playing).</p></li>
+<li><p><strong>Subgame-perfect equilibrium</strong>: games in which players move simultaneously in several periods. There are several last-movers and each of them must know the moves of the others to compute his own optimal choice. Each path/history generates a simultaneous move game between the two firms and firm 1 forecasts that play in this game will correspond to an equilibrium for the payoffs prevailing under the path/history. The key feature of a subgame is that it, when seen in isolation, constitutes a game in its own right. When the initial node of a subgame is reached in a larger game, players can concentrate only on that subgame; they can ignore the history of the rest of the game (provided they know what subgame they are playing). In other words: each history <span class="math inline">\(h^1\)</span> generates a simultaneous-move game between the two firms and firm 1 forecasts that play in this game between the two firms, and firm 1 forecasts that play in this game will correspond to an equilibrium for the payoffs prevailing under <span class="math inline">\(h^1\)</span>. Since all players know the history <span class="math inline">\(h^k\)</span> of moves before stage <span class="math inline">\(k\)</span>, we can view the game from stage <span class="math inline">\(k\)</span> on with history <span class="math inline">\(h^k\)</span> as a game in its own right, which we will denote G(<span class="math inline">\(h^k\)</span>).</p></li>
 <li><p><strong>Public Good Game</strong>: suppose we know the classic payoff matrix for this game. So we know that the u(C) = 1 - <span class="math inline">\(c_1\)</span>, and u(D) = 1 p + (1 - p) 0 = p. So we equal both equations: 1 - <span class="math inline">\(c_1\)</span> = p. “p” is the probability that P2 contributes. There is one unique solution:</p></li>
+<li><p><strong>Discount in repeated games</strong>: the payoff takes the following form: <span class="math inline">\((1 - \delta) \times \text{1st payoff} + \delta \times \text{2nd payoff}\)</span>. If the agents are patient enough (<span class="math inline">\(\delta = 1\)</span>), then any move can be an equilibrium because it will be irrelevant as a 1st payoff.</p></li>
 </ul>
+</div>
+</div>
+<div id="redoing-old-exams" class="section level2 tabset">
+<h2><strong>Redoing old Exams</strong></h2>
+<div id="section" class="section level3">
+<h3><strong>2018</strong></h3>
+<div id="a-wts-all-psne-and-msne." class="section level4">
+<h4>1)a) WTS: all PSNE and MSNE.</h4>
+<p>PSNE is obvious. MSNE: equalling all options using weighted choices. Ex: <span class="math inline">\(1 \times p + 3 \times (1 - p) = 2 \times p + (1 - p) \times 4\)</span> <span class="math inline">\(\implies\)</span> we get the value of p.</p>
+</div>
+<div id="b-wts-kakutanis-fixed-point-theorem" class="section level4">
+<h4>1)b) WTS: Kakutani’s fixed point theorem</h4>
+</div>
+<div id="c-wts-what-is-markov-equivalence" class="section level4">
+<h4>1)c) WTS: what is Markov Equivalence</h4>
+<p>Intuition: relative preferences over future actions are identical. Formally: <span class="math inline">\(h^t \sim (h^t)^{t'} \iff\)</span> for two sequences <span class="math inline">\(\{ \alpha_s \}\)</span> and <span class="math inline">\(\{ \beta_s \}\)</span>, <span class="math inline">\(g_i(h^t, \{ \alpha_s \}) \geq g_i (h^t, \{ \beta_s \}) \iff g_i ((h')^{t'}, \{ \alpha_s \}) \geq g_i ((h^t))^{t'}, \{ \beta \})\)</span>. Example: common resources game.</p>
+</div>
+<div id="d-wts-all-spe" class="section level4">
+<h4>1)d) WTS: all SPE</h4>
+<p>Do it backwards, when 2,3 simultaneously choose, we have (C,AA), (C,AB) as dominant strategies.</p>
+</div>
+<div id="e-wts-correlated-equilibrium-definition." class="section level4">
+<h4>1)e) WTS: correlated equilibrium definition.</h4>
+<p>Given the waste that could be generated by the randomness of a MSNE, Correlated Equilibrium arises as a more broad concept that uses signaling to guide the players to a better outcome. In this particular game, P2 wants (C,C) but then P1 has incentives to deviate. If he does that, P2 should punish him and change to D.</p>
+<p>Formally: Correlated Equilibrium is a different equilbrium from NE in which players avoid wasteful decisions by obeying to a randomized signal. <span class="math inline">\(\forall i, \mathbb{E} [u_i(f_1(\sigma_1),...,f_n(\sigma_n))|\sigma_i] \geq \mathbb{E} [u_i(s_i',f_{-i}(\sigma_{-i}))|\sigma_i]\)</span> where <span class="math inline">\(\sigma_i\)</span> is the signal. The set of inequalities… equation from FT.</p>
+</div>
+<div id="a-wts-classic-cournot-example." class="section level4">
+<h4>2)a) WTS: Classic Cournot example.</h4>
+<p><span class="math display">\[ max_{p_1} = (p_1 - 1) (3 - 3 p_1 + p_2) \implies FOC: 6 - 6p_1 + p_2 \]</span></p>
+<p><span class="math display">\[ max_{p_2} = (p_2 - 2) (4 + p_1 - 2 p_2) \implies FOC: 8 - 4p_2 + p_1 \]</span></p>
+<p>We plug one into the other to isolate <span class="math inline">\(p_1\)</span>, and we get: <span class="math inline">\(p_1^\ast = 32/23\)</span> and <span class="math inline">\(p_2^\ast = 54/23\)</span> as the NE.</p>
+</div>
+<div id="b-wts-strictly-dominated-strategies." class="section level4">
+<h4>2)b) WTS: strictly dominated strategies.</h4>
+<p>For P1: <span class="math inline">\(p_1 &lt; 1\)</span>.</p>
+<p>For P2: <span class="math inline">\(p_2 &lt; 2\)</span>.</p>
+</div>
+<div id="c-relation-between-ne-and-the-sinfty-with-id." class="section level4">
+<h4>2)c) Relation between NE and the <span class="math inline">\(S^\infty\)</span> with ID.</h4>
+<p>Result: Let G be a two-player game. Suppose <span class="math inline">\(S_i \subseteq R\)</span> is compact and <span class="math inline">\(u_i\)</span> is continuous <span class="math inline">\(\rightarrow\)</span> has ID in <span class="math inline">\(S_i, S_{-i}\)</span> let <span class="math inline">\(S_i = Inf S_i^\infty\)</span>, <span class="math inline">\(\overline{S}_i = Sup S_i^\infty\)</span>. Then (<span class="math inline">\(S_1,S_2\)</span>) and (<span class="math inline">\(\overline{S}_1, \overline{S}_2\)</span>) are PSNE of G. If <span class="math inline">\(S^\ast\)</span> is unique PSNE of such agents, the game is solvable by PS ISD.</p>
+<p>Steps: 1) Define an iterative algorithm to find a point <span class="math inline">\(a^\ast\)</span>. 2) Show <span class="math inline">\(a^\theta\)</span> is a PSNE. 3) Show <span class="math inline">\(a_i^\ast = Sup S_i^\infty\)</span>.</p>
+</div>
+<div id="wts-spe-cc." class="section level4">
+<h4>3) WTS: SPE (C,C).</h4>
+<p>By backwards induction: the 2nd game has 3 NE: PSNE: (U,L) and (R,D). MSNE: (1/2 U + 1/2 D, 1/2 L + 1/2 R). Suppose a player deviates from (C,C) in the first game to obtain personal gain. Whatever punishment he faces in the 2nd game, it is at least as good as the MSNE. So if he’s gonna be punished with an equilibrium, he is going to deviate! So both are going to deviate on the first game, but that yields a worse payoff: (0,0). So it’s better that neither deviate.</p>
+</div>
+<div id="a-wts-symmetric-bne-for-lie." class="section level4">
+<h4>4)a) WTS: symmetric BNE for Lie.</h4>
+<p><span class="math inline">\(i\)</span> knows <span class="math inline">\(x_i\)</span> and thinks that <span class="math inline">\(x_{-i} \rightarrow \mathbb{E} = 0.5\)</span>.</p>
+</div>
+<div id="b-wts-4a-bne-unique" class="section level4">
+<h4>4)b) WTS: 4a BNE unique?</h4>
+</div>
+<div id="c-wts-knows-x_-i." class="section level4">
+<h4>4)c) WTS: Knows <span class="math inline">\(x_{-i}\)</span>.</h4>
+<p>They now know what the other player’s expected pardon rate will be. But they don’t know theirs!</p>
+</div>
+<div id="a-wts-separating-pbe-for-c." class="section level4">
+<h4>5)a) WTS separating PBE for c.</h4>
+</div>
+<div id="b-wts-semi-separating-equilibrium-some-types-choose-not-to-get-an-education." class="section level4">
+<h4>5)b) WTS: semi-separating equilibrium: some types choose not to get an education.</h4>
+</div>
+</div>
+<div id="section-1" class="section level3">
+<h3><strong>2016</strong></h3>
+<div id="a-wts-ne." class="section level4">
+<h4>1)a) WTS: NE.</h4>
+<p>Find NE. (A,X),(B,Y) Eliminate Z. MSNE: (5/7 A + 2/7 B, 1/5 X + 4/5 Y)</p>
+</div>
+<div id="b-wts-spe." class="section level4">
+<h4>1)b) WTS: SPE.</h4>
+<p>There is only one proper subgame: 2 vs 3.</p>
+</div>
+<div id="c-wts-when-a-unique-ne-is-solvable-by-isd." class="section level4">
+<h4>1)c) WTS: when a unique NE is solvable by ISD.</h4>
+</div>
+<div id="d-wts-folk-theorem-and-payoffs-that-players-that-players-can-obtain-in-repeated-games." class="section level4">
+<h4>1)d) WTS: Folk Theorem and payoffs that players that players can obtain in repeated games.</h4>
+<p>“Folk theorems” for repeated games assert that if the players are sufficiently patient, then any feasible, individually rational payoffs can be enforced by an equilibrium. To make this precise, we have to define <strong>feasible</strong> and <strong>individually rational</strong>. Player’s <em>reservation utility</em> or <em>minimax value</em>: the lowest payoff player i’s opponents can hold him to by any choice of <span class="math inline">\(\sigma_{-i}\)</span> provided that player <em>i</em> correctly foresees <span class="math inline">\(\sigma_{-i}\)</span> and plays a best response to it. For part a, P1 can never obtain a payoff smaller than 1, he just has to pay A. For P2, never smaller than 2, just has to play Y. If they mix, this increases.</p>
+</div>
+<div id="e-wts-spe-and-discount-factors." class="section level4">
+<h4>1)e) WTS: SPE and discount factors.</h4>
+<p>P1 has an incentive to deviate. Player 2 doesn’t have an incentive to deviate, but can punish player 1. If</p>
+</div>
+<div id="f-wts-equilibrium-that-does-not-satisfy-intuitive-criterion." class="section level4">
+<h4>1)f) WTS: Equilibrium that does not satisfy intuitive criterion.</h4>
+</div>
+<div id="a-wts-spe-of-a-2-stage-game." class="section level4">
+<h4>2)a) WTS: SPE of a 2-stage game.</h4>
+</div>
+<div id="b-wts-firm-1-payoff." class="section level4">
+<h4>2)b) WTS: firm 1 payoff.</h4>
+</div>
+<div id="c-wts-exists-ne-firm-1-gets-higher-payoff" class="section level4">
+<h4>2)c) WTS: <span class="math inline">\(\exists\)</span> NE firm 1 gets higher payoff?</h4>
+</div>
+<div id="a-wts-symmetric-bne." class="section level4">
+<h4>3)a) WTS: symmetric BNE.</h4>
+</div>
+<div id="b-wts-symmetric-bne." class="section level4">
+<h4>3)b) WTS: Symmetric BNE.</h4>
+</div>
+<div id="c-wts-exists-other-bne" class="section level4">
+<h4>3)c) WTS: <span class="math inline">\(\exists\)</span> other BNE?</h4>
+</div>
+<div id="a-wts-tree-diagram." class="section level4">
+<h4>4)a) WTS: Tree diagram.</h4>
+</div>
+<div id="b-wts-pooling-pbe-p-2-regardless-of-theta." class="section level4">
+<h4>4)b) WTS: Pooling PBE p = 2 regardless of <span class="math inline">\(\theta\)</span>.</h4>
+</div>
+<div id="c-separating-pbe-p-1-when-theta-2-and-p-x-when-theta-4." class="section level4">
+<h4>4)c) Separating PBE: p = 1 when <span class="math inline">\(\theta\)</span> = 2; and p = x when <span class="math inline">\(\theta\)</span> = 4.</h4>
+</div>
+<div id="d-find-a-semiseparating-pbe." class="section level4">
+<h4>4)d) Find a semiseparating PBE.</h4>
+</div>
 </div>
 </div>
 </div>

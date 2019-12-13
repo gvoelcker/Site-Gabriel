@@ -467,8 +467,8 @@ summary {
 <h4>3.1) Regression Fundamentals</h4>
 <ul>
 <li><p>Without randomness there is no causality.</p></li>
-<li><p>Conditional Expectation Function:</p></li>
-<li><p>Law of iterated expectations:</p></li>
+<li><p><strong>Conditional Expectation Function(CEF)</strong>: for a dependent ariable <span class="math inline">\(Y_i\)</span>, given a <span class="math inline">\(K \times 1\)</span> vector of covariates <span class="math inline">\(X_i\)</span> (with elements <span class="math inline">\(x_{ki}\)</span>) is the expectation(population average) of <span class="math inline">\(Y_i\)</span> holding <span class="math inline">\(X_i\)</span> fixed. CEF is written as <span class="math inline">\(E[Y_i|X_i]\)</span>.</p></li>
+<li><p><strong>Law of iterated expectations</strong>: an unconditional expectation can be written as the unconditional average of the CEF: <span class="math inline">\(E[Y_i] = E\{E[Y_i|X_i]\}\)</span>, where the outer expectation uses the distribution of <span class="math inline">\(X_i\)</span>. The power of LIE comes from it breaking down a r.v. into two pieces: the CEF and a residual with special properties: <span class="math inline">\(Y_i = E[Y_i|X_i] + \epsilon_i\)</span>. Where: i) <span class="math inline">\(\epsilon_i\)</span> is mean independent of <span class="math inline">\(X_i\)</span>, that is, <span class="math inline">\(E[\epsilon_i |X_i]\)</span> = 0, hence: ii) <span class="math inline">\(\epsilon_i\)</span> is uncorrelated with any function of <span class="math inline">\(X_i\)</span>. This can be interpreted as <strong>decomposing</strong> any variable <span class="math inline">\(Y_i\)</span> into a pice that is “explained by <span class="math inline">\(X_i\)</span>”, that is, the CEF - and a piece left over that is orthogonal to any function of <span class="math inline">\(X_i\)</span>. The CEF also has an important <strong>prediction</strong> property: <span class="math inline">\(E[Y_i|X_i] = argmin_{m(X_i)} E[(Y_i - m(X_i))^2]\)</span>, so it is the MMSE predictor of <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i\)</span>. The last property is the <strong>Anova Theorem</strong>: <span class="math inline">\(V(Y_i) = V(E[Y_i|X_i]) + E[V(Y_i|X_i)]\)</span>. This implies that the variance of <span class="math inline">\(Y_i\)</span> is the variance of the CEF plus the variance of the residual, since the residul and <span class="math inline">\(E[Y_i|X_i]\)</span> are uncorrelated.</p></li>
 </ul>
 <div id="linear-regression-and-the-cef" class="section level5">
 <h5>3.1.2) Linear Regression and The CEF</h5>
@@ -476,7 +476,7 @@ summary {
 <p><span class="math display">\[ \beta = arg min_{(b)} E[(Y_i - X_i'b)^2] \]</span></p>
 <p>Using FOC:</p>
 <p><span class="math display">\[ E[X_i (Y_i - X_i'b)] = 0 \]</span></p>
-<p>Where the solution can be written as <span class="math inline">\(\beta\)</span> = E<span class="math inline">\([X_iX_i']^{-1}E[X_iY_i]\)</span>. The population residual, which we define as <span class="math inline">\(Y_i - X_i'\beta = e_i\)</span> is uncorrelated with the regressors <span class="math inline">\(X_i\)</span>. For the multivariate case, the regression anatomy is:</p>
+<p>Where the solution can be written as <span class="math inline">\(\beta\)</span> = E<span class="math inline">\([X_iX_i']^{-1}E[X_iY_i]\)</span>. The population residual, which we define as <span class="math inline">\(Y_i - X_i'\beta = e_i\)</span> is uncorrelated with the regressors <span class="math inline">\(X_i\)</span>. For the multivariate case, the <strong>regression anatomy formula</strong> is:</p>
 <p><span class="math display">\[ \beta_k = \frac{Cov(Y_i, \tilde{x}_{ki})}{V(\tilde{x}_{ki})} \]</span></p>
 <p>Where <span class="math inline">\(\tilde{x}_{ki}\)</span> is the residual from a regression of <span class="math inline">\(x_{ki}\)</span> on all the other covariates. Into the math: E[<span class="math inline">\(X_iX_i'\)</span>]<span class="math inline">\(^{-1}\)</span>E[<span class="math inline">\(X_iY_i\)</span>] is the <span class="math inline">\(K \times 1\)</span> vector with <em>k</em>th element <span class="math inline">\(\frac{Cov(Y_i,\tilde{x}_{ki})}{V(\tilde{x}_{ki})}\)</span>. This formula describes the anatomy of a multivariate regression coefficient and it reveals much more than the matrix formula <span class="math inline">\(\beta\)</span> = <span class="math inline">\(E[X_iX_i']^{-1}E[X_iY_i]\)</span>. It is an important formula because it shows that <strong>each coefficient in a multivariate regression is the bivariate slope coefficient for the corresponding regressor after partialing out all the other covariates</strong>. To verify this, substitute:</p>
 <p><span class="math display">\[ Y_i = \alpha + \beta_1x_{1i} + ... + \beta_kx_{ki} + ... + \beta_k x_{ki} + e_i\]</span></p>
@@ -488,13 +488,28 @@ summary {
 </ul>
 <p><span class="math display">\[ \beta = argmin_{b} E\{(E[Y_i|X_i] - X_i'b)^2\} \]</span></p>
 </div>
+<div id="asymptotic-ols-inference" class="section level5">
+<h5>3.1.3) Asymptotic OLS Inference</h5>
+<ul>
+<li>A natural estimator of the first population moment, E[<span class="math inline">\(W_i\)</span>] is the sum <span class="math inline">\(\frac{1}{N} \sum_{i=1}^N W_i\)</span>.</li>
+<li><p><strong>Law of Large Numbers</strong>:</p></li>
+<li><p><strong>Central Limit Theorem</strong>:</p></li>
+<li><p><strong>Slutsky’s Theorem</strong>: 1) ; and 2) .</p></li>
+</ul>
+</div>
+<div id="saturated-models-main-effects-and-other-regression-talk" class="section level5">
+<h5>3.1.4) Saturated Models, Main Effects, and Other Regression Talk</h5>
+<ul>
+<li><strong>Saturated regression models</strong>: regression models with discrete explanatory variables, where the model includes a separate parameter for <strong>all possible values</strong> taken on by the explanatory variables. They fit the CEF perfectly because the CEF is a linear function of the dummy regressors used to saturate. We also use interaction terms to show how those behave with each other.</li>
+</ul>
+</div>
 </div>
 <div id="regression-and-causality" class="section level4">
 <h4>3.2) Regression and Causality</h4>
 <div id="the-conditional-independence-assumption-cia" class="section level5">
 <h5>3.2.1) The Conditional Independence Assumption (CIA)</h5>
 <p>A regression is causal when the Conditional Expectation Function it approximates is causal. The CEF is causal when it describes differences in average potential outcomes for a fixed reference population. As discussed in chapter 2: <strong>experiments ensure that the causal variable of interest is independent of potential outcomes so that the groups being compared are truly comparable</strong>. We want to generalize this to causal variables that take on more than two values and to more complicated situations where we must hold a variety of control variables fixed for causal inferences to be valid. This leads to the <strong>Conditional Independence Assumption</strong>: the assumption that provides justification for the causal interpretation of regression estimates. Also called <strong>Selection on Observables</strong> because the <em>covariates are held fixed since they are assumed to be known and observed</em>. The question is: <em>what these control variables are?</em> We call them <em>covariates</em> <span class="math inline">\(X_i\)</span> (in the schooling case, <span class="math inline">\(X_i\)</span> is a vector of abilities and family background).</p>
-<p>Suppose we want to know the difference in earnings (<span class="math inline">\(Y_{1i} - Y_{0i}\)</span>) if Angrist goes to college(<span class="math inline">\(C_i = 1\)</span>) versus not going to college (<span class="math inline">\(C_i = 0\)</span>). The observed outcome, <span class="math inline">\(Y_{i}\)</span> can be written in terms of potential outcomes as:</p>
+<p>Suppose we want to know the difference in earnings (<span class="math inline">\(Y_{1i} - Y_{0i}\)</span>) if Angrist goes to college(<span class="math inline">\(C_i = 1\)</span>) versus not going to college (<span class="math inline">\(C_i = 0\)</span>). The observed outcome, <span class="math inline">\(Y_{i}\)</span> can be written in terms of <strong>potential outcomes</strong> as:</p>
 <p><span class="math display">\[ Y_i = Y_{0i} + (Y_{1i} - Y_{0i})C_i   \]</span></p>
 <p>We get to see one of <span class="math inline">\(Y_{1i}\)</span> or <span class="math inline">\(Y_{0i}\)</span>, but never both. We therefore hope to measure the average of <span class="math inline">\(Y_{1i} - Y_{0i}\)</span>, or the average for some group, such as those who went to college. This is E[<span class="math inline">\(Y_{1i} - Y_{0i}|C_i = 1\)</span>]. But in general, comparisons of those who attend college vs those who don’t are a poor measure of the causal effect of college attendance. We have to take more into consideration, given what we talked about on chapter 2:</p>
 <p><span class="math display">\[  \underbrace{E[Y_i|C_i = 1] - E[Y_i|C_i = 0]}_\text{Observed difference in earnings} = \underbrace{E[Y_{1i} - Y_{0i}|C_i = 1]}_\text{ATE on the treated} + \underbrace{E[Y_{0i}|C_i = 1] - E[Y_{0i}|C_i = 0]}_\text{Selection Bias}  \]</span></p>
@@ -531,7 +546,7 @@ summary {
 </div>
 <div id="the-omitted-variables-bias-formula" class="section level5">
 <h5>3.2.2) The Omitted Variables Bias Formula</h5>
-<p>In addition to the variable of interest, we now have introduced a set of control variables, <span class="math inline">\(X_i\)</span>, into our regression. The <strong>Omitted Variable Bias(OVB) Formula describes the relationship between regression estimates in models with different sets of control variables</strong>. This is motivated by the notion that <em>a longer regression has a causal interpretation</em> while a shorter one does not. This means that the coefficients on the variables included in the shoter regression are <strong>biased</strong>. The difference between coefficients in a short and in a long regression are determined by the OVB formula.</p>
+<p>In addition to the variable of interest, we now have introduced a set of control variables, <span class="math inline">\(X_i\)</span>, into our regression. The <strong>Omitted Variable Bias(OVB) Formula describes the relationship between regression estimates in models with different sets of control variables</strong>. This is motivated by the notion that <em>a longer regression has a causal interpretation</em> while a shorter one does not. This means that the coefficients on the variables included in the shorter regression are <strong>biased</strong>. The difference between coefficients in a short and in a long regression are determined by the OVB formula.</p>
 <p>Imagine we are regressing wages on school years: <span class="math inline">\(Y_i = \alpha + \rho s_i + A_i' \gamma + e_i\)</span>. What are the consequences of leaving ability (<span class="math inline">\(A_i\)</span>) out of the regression? The resulting short regression is related to the long regression as follows:</p>
 <p>Ommited Variables Bias Formula:</p>
 <p><span class="math display">\[ \frac{Cov(Y_i,S_i)}{V(S_i)} = \rho + \gamma' \delta_{As} \]</span></p>
@@ -550,9 +565,10 @@ summary {
 <h5>3.3.1) Regression Meets Matching</h5>
 <p><strong>Matching</strong> is a useful strategy to control for <em>covariates</em>, motivated by the Conditional Independence Assumption. Military ex: conditional on the individual characteristics the military uses to select soldiers, veteran status is <strong>independent</strong> of potential earnings. The <strong>appeal</strong> of matching is: matching amounts to covariate-specific treatment-control comparisons, weighed together to produce a <strong>single overall average treatment effect</strong>.</p>
 <p>An attractive feature of matching strategies is that they are typically accompanied by an explicit statement of the conditional independence assumption required to give matching estimates a causal interpretation.</p>
-<p><strong>Matching requires two-steps: matching and then averaging</strong></p>
+<p><strong>Matching requires two-steps: matching and then averaging</strong>.</p>
 <p>That is: CIA assumes that once you have certain characteristics sorted out, a certain outcome does not depend on them.</p>
-<p><strong>REREAD PG 74 FORWARD MHE</strong></p>
+<p>The regression estimand differs from the matching estimands only in the weights used to combine the covariate-specific effects, <span class="math inline">\(\delta_X\)</span>, into a single average effect.</p>
+<p><strong>REREAD PG 74-80 MHE</strong></p>
 </div>
 <div id="control-for-covariates-using-propensity-score" class="section level5">
 <h5>3.3.2) Control for Covariates using Propensity Score</h5>
