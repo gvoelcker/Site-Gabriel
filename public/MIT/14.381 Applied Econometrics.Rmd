@@ -363,15 +363,44 @@ Propensity score methods shift attention from the estimation of $E[Y_i | X_i, D_
 
 Conclusion(Pg91): the experiments made in this subschapter boost the authors faith in regression. Regression controls for the right covariates does a reasonably good job of eliminating selection bias in the CPS-1 sample despite a huge baseline gap. Restricting the sample using our knowledge of program admissions yields even better results with CPS-3. Systematic **prescreening** to enforce common support seems like a useful adjunct to regression estimation with CPS-1, a large and coarsely selected initial sample. 
 
+#### 3.4) Regression Details
 
+##### 3.4.1) Weighting Regression
 
+The efficient WLS estimator for the LPM - a special case of generalized least squares (GLS) - is to weight by $[X_i'\beta (1 - X_i'\beta)]^{-1}$. Because the CEF has been assumed to be linear, these weights can be estimated in a first pass by OLS. 
 
+##### 3.4.2) Limited Dependent Variables and Marginal Effects
 
+Many econometrics textbooks argue that, while OLS is fine for continuous dependent variables, when the outcome of interest is a limited dependent variable, linear regression models are inappropriate and nonlinear models such as probit and Tobit are preferred. MHE thinks that regression inherits its legitimacy from the CEF, making LDVness less central. Given our earlier discussion:
 
+\[ E[Y_i | D_i = 1] - E[Y_i | D_i = 0] \]
 
+\[ = E[Y_{1i}|D_i = 1] - E[Y_{0i}|D_i = 1] \]
 
+\[ = E[Y_{1i} - Y_{0i}] \]
 
+Which suggests that the estimation of causal effects in experiments presents no special challenges whether $Y_i$ is binary, non-negative, or continuously distributed. We may change the way in which we describe results, but not the underlying population. Because the outcome is a dummy variable, the average causal effect is also a causal effect on usage rates or probabilities. The probit model is usually motivated by the assumption that participation is determined by a latent variable $Y_^\ast$ that satisfies:
 
+\[ Y_i^\ast = \beta_0^\ast + \beta_1^\ast D_i - v_i \]
+
+If we look at equation 3.4.4, the overall difference in average expenditure can be broken up in two parts: the difference in the probability that expenditures are positive (often called a participation effect) and the difference in means conditional on participation, a conditional-on-positive (COP) effect. 
+**Good COP Bad COP**: we can look at the two parts of causal effects on a non-negative random variable. Similarly to Bad Control, the problem here is that Conditional-on-Positive effects (COP) **don't have a causal interpretation**. In equations:
+
+\[ E[Y_i|Y_i > 0, D_i = 1] - E[Y_i|Y_i > 0, D_i = 0] \]
+
+\[ = E[Y_{1i}|Y_{1i} > 0] - E[Y_{0i}|Y_{0i} > 0]\]
+
+\[ = \underbrace{E[Y_{1i} - Y_{0i}| Y_{1i} > 0]}_\text{Causal effect} + \underbrace{\{E[Y_{0i}|Y_{1i} > 0] - E[Y_{0i}|Y_{0i} > 0] \}}_\text{Selection Bias} \]
+
+Selection bias arise because the experiment changes the composition of the group with positive expenditures. 
+
+**Covariates Lead to Nonlinearity**: in practice, the explanatory variable of interest isn't always a dummy, and there are usually covariates in the CEF. In this case, almost certainly $E[Y_i|X_i,D_i]$ is not linear. The upshot is that in LDV models with covariates, regression does not need to fit the CEF perfectly. It remains true, however, that the underlying CEF has a causal interpretation if the CIA holds. 
+
+**Marginal Effects**: the **output** from nonlinear models have to be converted into **marginal effects** to be useful. Marginal effects are the average changes in CEF implied by a nonlinear model. We usually find them by doing multiregression. 
+
+##### 3.4.3 Why is Regression Called Regression, and What Does Regression to the Mean Mean?
+
+Galton: parents and kids' height: towards the mean!
 
 ### **4) Instrumental Variables in Action**
 

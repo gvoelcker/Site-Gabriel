@@ -35,9 +35,11 @@ output: html_document
 
 #### Dec 13th
 
-- Redo 1 Micro Exam. 
+- Redo 1 Micro Exam.    ✅
 
-- Go over Metrics exercises. 
+- Go over Metrics exercises.      🔘 
+
+- Read Metrics.    ✅
 
 #### Dec 12th
 
