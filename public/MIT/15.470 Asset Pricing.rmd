@@ -1773,3 +1773,326 @@ Grossman-Stiglitz paradox: if in the end, the informed and uninformed get the sa
 
 
 
+
+
+## Redoing Old Exams{.tabset}
+
+### 2017
+
+#### **1)** WTS Risk aversion
+
+Risk aversion = $- \frac{w u_i''(w)}{u_i'(w)}$. Given the utility function: $u_i(w) = \frac{1}{1 - \gamma_i} w^{1 - \gamma_i}$, we depend on knowing the $\gamma$. The first derivative is: 
+
+\[ u_i = 1 - \gamma_i \frac{1}{1 - \gamma_i} w^{-\gamma_i} = w^{-\gamma_i} \]
+
+The second derivative is: 
+
+\[ \frac{- \gamma_i}{w^{(\gamma + 1)}}\]
+
+$R_i = - \frac{-\gamma_i w^{-\gamma_i - 1} w}{w^{-\gamma_i}} = \gamma_i$
+
+So for any $w$, agent 2 is more risk-averse than agent 1.
+
+#### **2)** 
+
+Expected utility: $u(w) = -e^{-aw}$, where a > 0.
+
+**a)** WTS: the agent's wealth at t = 1.
+
+The **consumption** is given by: **initial endowment + payoff from investments - investments**.
+
+\[ \overline{w} \sum_{n=1}^N \underbrace{\theta_n D_n}_\text{Payoff from risky asset} + ( \underbrace{\theta_n D_n}_\text{Payoff from risky asset} -  \underbrace{\sum_{n=1}^N \theta_n P_n}_\text{Wealth invested in risky assets}) \frac{1}{P_0}\]
+
+**b)** WTS: optimal portfolio choice problem for the agent.
+
+Maximization problem with constraints.
+
+\[ \text{Maximization problem: } max_{\{ \theta_n\}^N_{n=1}}\mathbb{E} [-e ^{-a \overline{w}}]  \]
+
+Subject to:
+
+\[ \overline{w} = \sum_{n=1}^N \theta_n D_n + \sum_{n=1}^N (1 - \theta_n) P_n \]
+
+Knowing that the distribution of $D_n \sim \mathcal{N}(\overline{D},\sigma^2)$, we have that the distribution of wealth is...
+
+\[ ... \]
+
+Which leads to the distribution of -aw:
+
+\[ ... \]
+
+And so the maximization problem is:
+
+\[ max_{\{ \theta_n\}^N_{n=1}} \sum_{n=1}^N \theta_n \overline{D} + \sum_{n=1}^N (1 - \theta_n) P_n - \frac{a}{2}\sigma \sum_{n=1}^N \theta_n^2 \]
+
+**c)** WTS: solve for the optimal portfolio.
+
+We FOC the maximization problem with respect to $\theta_n$:
+
+\[ \overline{D} - P_n - a \sigma^2 \theta_n = 0\]
+
+We isolate for holdings of securities $\theta_n$:
+
+\[  \theta_n = \frac{\overline{D} - P_n}{a\sigma^2} \]
+
+**d)** WTS: for different values of a, two-fund separation holds.
+
+Given initial wealth, the agent puts a part of her wealth in the risky asset and a part on the riskless asset. The **risky** asset gets: $\frac{\theta_n P_n}{w_0} = \frac{1}{a} \times \underbrace{\frac{(\overline{D} - P_n)P_n}{w_0 \sigma^2}}_\text{= $x_n$}$. The **riskless** asset gets: $(1 - \frac{1}{a} \sum_{n = 1}^N \frac{(\overline{D}-P_n)P_n}{w_0 \sigma^2})$.
+
+As a result, each agent optimally holds a linear combination of the risk-free asset and the risky portfolio $x_M = [x_1 \dots x_N]$, where $x_1 = \dots = x_N = \frac{(\overline{D} - P_n)P_n}{w_0 \sigma^2}$. Depending on her coefficient of absolute risk aversion, the agent will hold more or less the risk portfolio. The lower the coefficient of risk aversion, the more of the risky portfolio he will hold.
+
+**e)** WTS: equilibrium price $P_n$ for all the risky securities.
+
+What are the market clearing conditions? The optimal portfolio must equal 1.
+
+\[ \theta_n = 1 = \frac{\overline{D} - P_n}{a \sigma^2} \]
+
+and 
+
+\[ P_n = \overline{D} - a \sigma^2\]
+
+**f)** WTS: risk premium on each risky security. What happens to the risk premium as N $\rightarrow \infty$.
+
+The risk premium on each risky security *n*,for *n = 1,...,N* is equal to:
+
+\[ \overline{r}_n - 1 = \overline{R}_n - 1 = \mathbb{E}[R_n] - 1 = \frac{\mathbb{E}[D_n]}{P_n} - 1 = \frac{a \sigma^2}{\overline{D} - a \sigma^2} \]
+
+The risk premium stays constant as $\frac{a \sigma^2}{\overline{D} - a \sigma^2}$ has nothing to do with N.
+
+**g)** WTS: APT holds?
+
+Is there arbitrage? Yes! If you consider the sequence of arbitrage portfolios, $\theta_N$ where $\theta_N^0 = - 1$ and $\theta_N^1 = \theta_N^N = \frac{1}{N}$, we have
+
+\[ \mathbb{E}[r_{\theta_N}] = \sum_{n=1}^N \frac{1}{N}\overline{r}_n - 1 = \overline{r}_n - 1 = \overline{r}_n - 1 = \frac{a \sigma^2}{\overline{D} - a \sigma^2} > 0\]
+
+\[ Var(r_{\theta_N}) = \sum_{n=1}^N \frac{1}{N^2} Var(\epsilon_n) = \frac{\sigma^2}{N} \rightarrow 0 \]
+
+As a result, APT cannot hold in this market.
+
+#### **3)** 
+
+Endowment process: $d_t = d_{t-1} exp(\mu + \sigma \epsilon_t)$, where $\epsilon_t$ are IID over time and have a binomial distribution so $\epsilon_t$ equals 1 or -1 with equal probabilities. 2 agents endowed with (1/2)$d_t$. The two agents have preferences given by:
+
+\[ E_0 [ln c_0^i + \beta_i ln c_i^i], i = 1,2 \]
+
+We have two assets: a stock and a risk-free asset. Their returns: claim on aggregate endowment and $r_f$, respectively.
+
+**a)** WTS: equilibrium consumption allocation as a solution of the central planner's problem.
+
+1) FWT holds $\implies$ competitive equilibrium can be solved by solving the central planner’s planner $\implies \exists \lambda_1, \lambda_2$.
+
+2) Each $\lambda_i$ are the Pareto weights associated with each agent such that the social planner maximizes the weighted average of the utility functions of the two agents:
+
+\[ max c_1^0,c_1^1,c_0^2,c_1^2  \lambda_1U_1(c_0^1,c_1^1) + \lambda_2 U_2 (c_0^2,c_0^2) = max c_1^0,c_1^1,c_0^2,c_1^2 \lambda_1 E_0 [ln c_0^1 + \beta_1 ln c_1^1] + \lambda_2 E_0 [ln c_0^2 + \beta_2 ln c_1^2]\]
+
+3) The feasibility constraints at each point in time and in each state:
+
+\[ c_t^1 + c_t^2 = d_t, \text{ for t = 0,1}\]
+
+4) The social planner’s maximization problem can be solved independently at each point in time (t = 0, 1) and in each state and by substituting $c_t^2$ as a function of $c_t^1$ from the feasibility constraint:
+
+\[ max_{c_1^t, c_t^2} \lambda_1 \beta_1 ln c_t^1 + \lambda_2 \beta_2 ln (d_t - c_t^1) \]
+
+5) The FOC with respect to $c_t^1$ yields, for t = 0,1: 
+
+\[ \frac{\lambda_1 \beta_1^t}{c_t^1} - \frac{\lambda_2 \beta_1^t}{d_t - c_t^1} = 0 \]
+
+and therefore
+
+\[ c_t^1 = \frac{\beta_1^t \lambda_1 }{\beta_1^t \lambda_1 + \beta_2^t \lambda_2} d_t = A(t)d_t \]
+
+and
+
+\[ c_t^2 = d_t - c_t^2 = (1 - A(t))d_t \]
+
+Where $A(t) = \frac{\beta_1^t \lambda_1}{\beta_1^t \lambda_1 + \beta_2^t \lambda_2}$
+
+We can solve for the Pareto weights using the individual maximization problem. The Lagrange multiplier associated with the unique budget constraint (markets being complete) corresponds to the inverse of the Pareto weight associated with the same agent in the social planner’s problem.
+
+6) The unique SPD ($\pi_t$) in this economy with respect to agent 1 is equal to: 
+
+\[ \frac{\beta_1^t}{c_t^1} = \frac{1}{\lambda_1}\pi_t \]
+
+and 
+
+\[ \pi_t = \frac{\beta_1^t \lambda_1 + \beta_2^t + \lambda_2}{d_t} \]
+
+In particular, we have that, at t = 0:
+
+\[ \frac{\lambda_1}{c_0^1} = \frac{\lambda_1 + \lambda_2}{d_0} = \frac{\lambda_2}{c_0^2} = \pi_0 \]
+
+7) We can relate the Pareto Weights: WLOG assuming that $d_0 = 1$ and using the normalization $\pi_0 = 1$, we have that: $\lambda_2 = 1 - \lambda_1$. 
+
+8) We can plug what we have into the unique budget constraint of agent 1, yielding:
+
+\[ \mathbb{E}_0 [\pi_0 c_0^1 + \pi_1c_1^1] = \mathbb{E}_0[\lambda_1 + \lambda_1 \beta_1] = \frac{1}{2} \mathbb{E}_0 [\pi_0 d_0 + \pi_1 d_1] = \frac{1}{2} (1 + \lambda_1 \beta_1 + \lambda_2 \beta_2) \]
+
+9) Given that we know $\lambda_2 = 1 - \lambda_1$, we sub the above equation and get:
+
+\[ \lambda_1 = \frac{1 + \beta_2}{2 + \beta_1 + \beta_2} \]
+
+and 
+
+\[ \lambda_2 = \frac{1 + \beta_1}{2 + \beta_1 + \beta_2} \]
+
+**b)** WTS: equilibrium consumption processes of the two agents and the equilibrium state-price density.
+
+We already have their allocations $c_t^1$ and $c_t^2$. And we know what A(t) is. So the SPD is given by:
+
+\[ \pi_t = \frac{\beta_1^t \lambda_1 + \beta_2^t \lambda_2}{d_t} = \frac{\beta_1^t(1 + \beta_2) + \beta_2^t (1 + \beta_1)}{2 + \beta_1 + \beta_2} \frac{1}{d_t} \]
+
+**c)** WTS: price process for the stock and risk-free interest rate.
+
+The stock price is (after the dividend at time *t = 0* has been paid out), is the expectation of the SPD in t = 1 over SPD in t = 0 times the endowment in t = 1: 
+
+\[ S_0 = \mathbb{E}_0 [\frac{\pi_1}{\pi_0}d_1] \]
+
+\[ = \frac{\beta_1 (1 + \beta_2) + \beta_2 (1 + \beta_1)}{2 + \beta_1 + \beta_2} = \frac{\beta_1 + \beta_2 + 2 \beta_2 \beta_1}{2 + \beta_1 + \beta_2}\]
+
+The risk free rate at t = 0 is the expectation of 1 over SPD at t = 1. 
+
+\[ r_f = \frac{1}{\mathbb{E}_0 [\pi_1]} = \frac{1}{\mathbb{E}_0 [\frac{\beta_1 + \beta_2 + 2 \beta_2 \beta_1}{2 + \beta_1 + \beta_2}] \frac{1}{e^{\mu + \sigma epsilon}}}\]
+
+\[ = 2 \times \frac{2 + \beta_1 + \beta_2}{\beta_1 + \beta_2 + 2 \beta_2 \beta_1} \frac{e^\mu}{e^{\sigma \epsilon} + e^{-\sigma \epsilon}} \]
+
+**d)** WTS: markets are dynamically complete.
+
+Markets are complete: two assets have payoffs that are linearly independent at *t = 1*, and there are two assets of the world at *t = 1*. Any consumption plan ($c_1^u,c_1^d$) can be financed by investing in those two assets and by solving the following linear system in ($\theta_B, \theta_S$):
+
+\[ \theta_B \times R_0 + \theta_S e^{\mu + \sigma \epsilon} = c_1^s \]
+
+\[ \theta_B \times R_0 + \theta_S e^{\mu - \sigma \epsilon} = c_1^d \]
+
+#### **4)**
+
+Objective: minimize the tracking error of their portfolio vs a benchmark portfolio. Trying to obtain a return premium of $\Delta \mu$ over the benchmark.
+
+**a)** WTS: what $w$ would the manager select.
+
+1) Identify Manager's problem: $min_w (w - \overline{w})'V(w - \overline{w})$ subject to $w' \iota = 1$ and the targeted return premium constraint: $(w - \overline{w})'m = \Delta \mu$. 
+
+2) Find the lagrangian (denote $\lambda_1,\lambda_2$ the lagrangian multipliers):
+
+\[ \mathcal{L}(w,\lambda_1, \lambda_2) = \frac{1}{2}(w - \overline{w})'V (w - \overline{w}) + \lambda_1 (1 - w' \iota) + \lambda_2 (\Delta \mu - (w - \overline{w})' m) \]
+
+3) The FOC with respect to *w*:
+
+\[ V(w - \overline{w}) - \lambda_1 \iota - \lambda_2 m = 0 \iff w = \overline{w} + \lambda_1 V^{-1} \iota + \lambda_2 V^{-1} m \]
+
+Where $\lambda_1$ and $\lambda_2$ are such that two constraits are satisfied.
+
+**b)** WTS: is *w* in the efficient frontier?
+
+1) It's not necessary that *w* be on the efficient frontier $\rightarrow$ we know that $w - \overline{w}$ is on the efficient frontier $\implies$ if w is on the efficient frontier, then $\overline{w}$ is also on the MVF. But we are told that the benchmark may not be efficient. So we can't say whether *w* is efficient. The chosen portfolio will only be on the efficient frontier $\iff \overline{w}$ is efficient.
+
+**c)** WTS: the equation for TE as a function of return premium $\Delta \mu$.
+
+1) To obtain the TE, we make some manipulation:
+
+\[ TE = (w - \overline{w})' V(w - \overline{w}) \]
+
+\[ = (w - \overline{w})' (\lambda_1 \iota + \lambda_2 m) \]
+
+\[ = \lambda_1 (w - \overline{w})'\iota + \lambda_2 (w - \overline{w})' m \]
+
+\[ = \lambda_1 (w'\iota - \overline{w} \iota) + \lambda_2 \Delta \mu \]
+
+\[ = \lambda_2 \Delta \mu\]
+
+2) We solve for $\lambda_2$ by pinning down $\lambda_1$ and $\lambda_2$:
+
+\[ (w - \overline{w})'m = \lambda_1 \iota' V^{-1}m + \lambda_2 m' V^{-1} m\]
+
+\[ 0 = \lambda_1 \iota' V^{-1} \iota + \lambda_2 m' V^{-1} \iota \]
+
+As a result:
+
+\[ \lambda_1 = - \frac{m' V^{-1} \iota}{ \iota' V^{-1} \iota}\lambda_2 \]
+
+we then get $\lambda_2$, isolate it and arrive at:
+
+\[ TE = \frac{(\Delta \mu)^2}{m' V_^{-1}m - \frac{m'V^{-1}\iota}{\iota ' V^{-1} \iota}} \iota ' V^{-1} m \]
+
+#### **5)** 
+
+Given **endowment process**: $d_t = d_{t-1} exp(\mu + \sigma \epsilon_t)$, where $\epsilon_t$ are IID over time and have a standard Normal distribution. **Agents**' preferences:
+
+\[ E_0 [\sum_{t = 0}^T u (c_t, c_{t-1}^A)]\],
+
+$c_t$ is the consumption of agent and $c_t^A$ is the aggregate consumption. Assume also: $u(x,y) = \frac{1}{1 - \gamma}(x/y)^{1-\gamma}$. Assume financial markets are complete.
+
+**a)** WTS: SPD.
+
+1) FOC with respect to $c_t$: $\frac{c_t^{-\gamma}}{(c_{t-1}^A)^{1-\gamma}} = \lambda \pi_t$. 
+
+2) Since all agents are equal, by market clearing condition we have:
+
+\[ c_t = \frac{d_t}{N} = \frac{d_{t-1} exp(\mu + \sigma \epsilon_t)}{N} = \frac{c_{t-1}^A exp(\mu + \sigma \epsilon_t)}{N} \]
+
+3) So the SPD is: 
+
+\[ \pi_t = \frac{1}{\lambda} \frac{(\frac{d_t}{N})^{-\gamma}}{d_{t - 1}^{1 - \gamma}} = \frac{d_{t-1}^{- \gamma} exp (- \gamma \mu - \gamma \sigma \epsilon_t) N^\gamma}{(\lambda d_{t-1})^{1-\gamma}} = \frac{exp(- \gamma \mu - \gamma \sigma \epsilon_t) N^\gamma}{\lambda d_{t-1}} \]
+
+We normalize $\pi_0$ = 1 and pinned the Lagrange multiplier. It will depend on $d_{-1}$, $\lambda = \frac{exp (-\gamma \mu - \gamma \sigma \epsilon_0)N^{-\gamma}}{d_{-1}}$.
+
+**b)** WTS: risk-free rate
+
+We got $\pi$ in the last question, so:
+
+$\frac{1}{R_{f,t}} = \mathbb{E}_t [\frac{\pi_{t+1}}{\pi_t}]$
+
+do the math and..
+
+\[ = exp (\mu + \frac{\gamma^2 \sigma^2}{2} + (\gamma - 1)\sigma \epsilon_t)\]
+
+And $R_{f,t}$ = exp($\mu - \frac{\gamma^2 \sigma^2}{2} + (1 - \gamma)\sigma \epsilon_t$).
+
+The risk-free is clearly **constant**: at t, it depends on the state characterized by $\epsilon_t$. It is therefore a Markov process in the state variable $\epsilon_t$
+
+**c)** WTS: process for $P_t$.
+
+We have a long-maturity bond paying 1 at T. 
+
+We have for any *t*: 
+
+\[ \frac{\pi_T}{\pi_t} = math = (\frac{d_{t-1}}{d_{T-1})^{1 - \gamma} (\frac{d_T}{d_t})^{\gamma} \] 
+
+We have to find: $\frac{d_{t-1}}{d_{T-1}}$ and similarly: $(\frac{d_{t-1}}{d_{T-1}})^{1-\gamma}$. 
+
+Similarly, we find $(\frac{d_T}{d_t})^{-\gamma}$.
+
+**FINISH THISSSSSSSSS**
+
+**d)** WTS: bond returns satisfy APT model?
+
+We only need one factor.
+
+1) We start by finding the return on long-term bonds (with maturity at T):
+
+\[ R_{t,t+1}^T = \frac{P_{t+1}^T}{P_t^T} = math....\]
+
+2) Then we find the expected return.
+
+3) We can find a one-factor structure for the returns on long-term bonds using some factor loadings ($\beta_T = \beta = exp(\mu - \frac{\gamma^2}{2} \sigma^2)$) and a risk factor:
+
+\[ R_{t,t+1}^T - \overline{R}_{t,t+1}^T = math... = \beta f_{t,t+1} \]
+
+4) Given NA, the SPD and bond prices have been found, and the bond satisfies the APT model.
+
+One can check that: 
+
+\[ - \mathbb{E}_t^Q [ f_{t,t+1}] = ...\]
+
+
+
+
+
+
+
+
+
+
+
+
+
+

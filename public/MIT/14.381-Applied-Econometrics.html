@@ -393,7 +393,7 @@ summary {
 <li><p><strong>Potential outcomes</strong>: for probit, let’s list 3:</p></li>
 </ul>
 <p>1 - Outcome: <span class="math inline">\(Y_{i} = 1[X_i' \beta_0^\ast + \beta_1^\ast D_i &gt; \epsilon_i]\)</span></p>
-<p>2 - Outcome without treatment: $ Y_{0i} = 1[X_i’ _0^&gt; _i] $</p>
+<p>2 - Outcome without treatment: <span class="math inline">\(Y_{0i} = 1[X_i' \beta_0^\ast &gt; \epsilon_i]\)</span></p>
 <p>3 - Outcome with treatment: <span class="math inline">\(Y_{1i} = 1[X_i' \beta_0^\ast + \beta_1^\ast &gt; \epsilon_i]\)</span></p>
 <ul>
 <li><strong>Potential treatments</strong>: for probit, let’s list 3:</li>
@@ -989,6 +989,140 @@ summary {
 <p>Fuzzy RD requires tough judgements about the causal channels through which the instruments affect outcomes. In practice, multiple channels might mediate causal effects, in which case we explore alternatives. Likewise, the channels we measure not necessarily are the ones that matter.</p>
 <p><strong>Sharp vs Fuzzy summary</strong>: sharp is when treatment itself switches on or off at a cutoff. Fuzzy is when the probability or intensity of treatment jumps. In fuzzy designs, a dummy for clearing the cutoff becomes an instrument; the fuzzy design is analyzed by 2SLS.</p>
 </div>
+</div>
+</div>
+<div id="class-notes" class="section level2">
+<h2><strong>Class Notes</strong></h2>
+<div id="rct-and-regression-recap" class="section level3">
+<h3><strong>1) RCT and Regression Recap</strong></h3>
+<p>1.1) <strong>Conditional Expectation Function</strong>: <span class="math inline">\(\mathbb{E}(Y_i|X_i)\)</span>. For a certain <span class="math inline">\(X_i\)</span> = x, we write: <span class="math inline">\(\mathbb{E}(Y_i|X_i = x)\)</span>.</p>
+<ul>
+<li>For <em>continuous</em> <span class="math inline">\(Y_i\)</span> with <em>conditional density</em> <span class="math inline">\(f_y(.|X_i = x)\)</span>, the CEF is:</li>
+</ul>
+<p><span class="math display">\[ \mathbb{E}(Y_i|X_i = x) = \int t f_y(t| X_i = x)dt \]</span></p>
+<ul>
+<li>For <em>discrete</em> <span class="math inline">\(Y_i\)</span> with <em>condition pmf</em> <span class="math inline">\(f_y(.|X_i = x)\)</span>, the CEF is:</li>
+</ul>
+<p><span class="math display">\[ \mathbb{E}(Y_i|X_i = x) = \sum_t t f_y (t|X_i = x) \]</span></p>
+<ul>
+<li><p><strong>Law of Iterated Expectations</strong>: <span class="math inline">\(\mathbb{E}(Y_i) = \mathbb{E}(\mathbb{E}(Y_i|X_i)) \rightarrow\)</span> an unconditional expectation can be written as the population average of the CEF.</p></li>
+<li><p><strong>CEF Decomposition Property</strong>: any random variable <span class="math inline">\(Y_i\)</span> can be decomposed into a piece explained by <span class="math inline">\(X_i\)</span>(the CEF) and a piece left over which is orthogonal (i.e. uncorrelated) with any function of <span class="math inline">\(X_i\)</span>. <span class="math inline">\(\mathcal{Y}_i = \mathbb{E}(Y_i|X_i) + \epsilon_i\)</span>, where: <strong>i)</strong> <span class="math inline">\(\epsilon_i\)</span> is mean-independent of <span class="math inline">\(X_i\)</span>(<span class="math inline">\(\mathbb{E}(e_i|X_i)=0\)</span>) <strong>ii)</strong> <span class="math inline">\(\epsilon_i\)</span> is uncorrelated with any function of <span class="math inline">\(X_i\)</span> (and so it uncorrelated with the CEF, which is a function of <span class="math inline">\(X_i\)</span>).</p></li>
+</ul>
+<p>Pf: given <span class="math inline">\(Y_i = \mathbb{E}(Y_i|X_i) + \epsilon_i\)</span>, we prove:</p>
+<p><strong>i)</strong> <span class="math inline">\(\mathbb{E}(\epsilon_i |X_i) \iff \mathbb{E}(Y_i - \mathbb{E}(Y_i|X_i) | X_i) \iff \mathbb{E}(Y_i|X_i) - \mathbb{E}(Y_i|X_i) = 0\)</span>. Note also that <span class="math inline">\(\mathbb{E}(\epsilon_i) \iff \mathbb{E}(\mathbb{E}(\epsilon_i |X_i)) = 0\)</span></p>
+<p><strong>ii)</strong> Let <em>h</em> be a function of <span class="math inline">\(X_i\)</span>; WTS this function is uncorrelated to <span class="math inline">\(\epsilon_i\)</span>:</p>
+<p><span class="math display">\[ \mathbb{E}(h(X_i)\epsilon_i) = \mathbb{E}(\mathbb{E}(h(X_i)\epsilon)|X_i) \iff \mathbb{E}(h(X_i)\mathbb{E}(\epsilon_i|X_i)) = 0\]</span></p>
+<p>So if the expectations are uncorrelated (=0), we have:</p>
+<p><span class="math display">\[ Cov(h(X_i),\epsilon_i) = \mathbb{E}(h(X_i)\epsilon_i) - \mathbb{E}(h(X_i))\mathbb{E}(\epsilon_i) = 0\]</span></p>
+<p>Since <span class="math inline">\(\mathbb{E}(\epsilon_i) = \mathbb{E}(h(X_i)\epsilon_i) = 0\)</span>.</p>
+<ul>
+<li><p><strong>CEF Solves The MMSE Prediction Problem</strong>: the CEF is the best predictor of <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i\)</span> in that it solves the Minimum Mean Squared Error (MMSE) prediction problem.</p></li>
+<li><p><strong>ANOVA</strong>: states that: <span class="math inline">\(V(Y_i) = V(\mathbb{E}(Y_i|X_i)) + \mathbb{E}(V(Y_i|X_i))\)</span></p></li>
+</ul>
+<p>Pf: 1) use the CEF Decomposition Property; 2) decompose variance of <span class="math inline">\(\epsilon_i\)</span> and iterate expectations; 3) use the fact that <span class="math inline">\(\epsilon_i = Y_i - \mathbb{E}(Y_i|X_i))\)</span> and find <span class="math inline">\(\mathbb{E}(V(Y_i|X_i))\)</span>; 4) Once we know that V(<span class="math inline">\(\epsilon_i\)</span>) = <span class="math inline">\(\mathbb{E}(\mathbb{E}(\epsilon_i^2|X_i)) = \mathbb{E}(V(Y_i|X_i))\)</span>, we have: 5) V(<span class="math inline">\(Y_i\)</span>) = V(<span class="math inline">\(\mathbb{E}(Y_i|X_i)) + \mathbb{E}(V(Y_i|X_i))\)</span>.</p>
+<p>1.2) <strong>Linear Regression and the CEF</strong>:</p>
+<p>What is the regressor that minimizes the expected <span class="math inline">\((Y_i - X_i' \beta)^2\)</span>? FOC for <em>b</em>: <span class="math inline">\(\beta = \mathbb{E}(X_iX_i')^{-1} \mathbb{E}(X_i Y_i)\)</span>. The <strong>population residual</strong> is: <span class="math inline">\(e_i = Y_i - X_i'\beta\)</span>.</p>
+<p>The beta for a <strong>bivariate regression</strong> is: <span class="math inline">\(\beta_1 = \frac{Cov(Y_i,x_i)}{V(x_i)}\)</span>.</p>
+<p>In a <strong>multivariate regression</strong> the slope coefficient for the <em>k</em>-th regressor is given by <span class="math inline">\(\beta_k = \frac{Cov(Y_i,\tilde{x}_{ki})}{V(\tilde{x}_{ki})}\)</span>. Each coefficient in a multivariate regression is the bivariate slope coefficient for the corresponding regressor, after partialling out all the other variables in the model.</p>
+<ul>
+<li><strong>1.3 Regression Justification</strong>: what if the CEF is linear? Then the population regression function is the CEF. Suppose: <span class="math inline">\(\mathbb{E}(Y_i|X_i) = X_i'\beta^\ast\)</span>. We know that <span class="math inline">\(\mathbb{E}(X_i(Y_i - \mathbb{E}(Y_i|X_i))) = 0\)</span>. So by decomposition property we arrive at <span class="math inline">\(\beta^\ast = \beta\)</span>.</li>
+</ul>
+<p>But when is the CEF linear? <strong>i)</strong> <em>Joint Normality</em>: vector (<span class="math inline">\(Y_i,X_i\)</span>) has a multivariate normal distribution; <strong>ii)</strong> <em>regression model saturated</em>: the saturated regression model has a separate parameter for every possible combination of values that the set of regressors can take on.</p>
+<ul>
+<li><p><strong>Best Linear Predictor Theorem</strong>: the function <span class="math inline">\(X_i'\beta\)</span>, where <span class="math inline">\(\beta = \mathbb{E}(X_iX_i')^{-1} \mathbb{E}(X_iY_i)\)</span> is the best linear predictor of <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i\)</span> in a MMSE sense. Intuition: the CEF <span class="math inline">\(\mathbb{E}(Y_i|X_i)\)</span> is the best MMSE predictor of <span class="math inline">\(Y_i\)</span> given <span class="math inline">\(X_i\)</span> in the class of all functions of <span class="math inline">\(_i\)</span>. The population regression function is the best we can do in the class of linear functions.</p></li>
+<li><p><strong>Regression-CEF Theorem</strong>: even if the CEF is nonlinear, the function <span class="math inline">\(X_i'\beta\)</span> provides the MMSE best linear approximation to it.</p></li>
+<li><p><strong>1.4 Fits and Residuals</strong>: suppose <span class="math inline">\(\alpha\)</span> and <span class="math inline">\(\beta_1,...,\beta_k\)</span> are the intercept and slope coefficients from a regression of <span class="math inline">\(Y_i\)</span> on <span class="math inline">\(X_{1i},..., X_{ki}\)</span>. The <strong>fitted values</strong> from this regression are: <span class="math inline">\(\hat{Y}_i = \alpha + \sum_{k=1}^K \beta_k X_{ki}\)</span>. The <strong>residuals</strong> are: <span class="math inline">\(e_i = Y_i - \hat{Y}_i = Y_i - \alpha - \sum_{k=1}^K \beta_k X_{ki}\)</span>. Properties of the regression residuals: <strong>i)</strong> expectation and mean 0: <span class="math inline">\(\mathbb{E}(e_i) = \sum_{i=1}^n e_i = 0\)</span>; <strong>ii)</strong> they are uncorrelated (in population and sample) with all regressors that made them and with the corresponding fitted values.</p></li>
+<li><p><strong>1.5. Bivariate Regression With Dummy Regressor</strong>: with dummy off:</p></li>
+</ul>
+<p><span class="math display">\[ \mathbb{E}(Y_i|Z_i = 0) = \alpha \]</span></p>
+<p><span class="math display">\[ \mathbb{E}(Y_i|Z_i = 1) - \mathbb{E}(Y_i|Z_i = 0) = \alpha + \beta \]</span></p>
+<p>So <span class="math inline">\(\beta\)</span> = <span class="math inline">\(\mathbb{E}(Y_i|Z_i = 1) - \mathbb{E}(Y_i|Z_i = 0)\)</span>. So if we want a complete definition of expectation of <span class="math inline">\(Y_i\)</span> given dummy <span class="math inline">\(Z_i\)</span>, we have:</p>
+<p><span class="math display">\[ \mathbb{E}(Y_i|Z_i) = \mathbb{E}(Y_i|Z_i = 0) + (\mathbb{E}(Y_i|Z_i = 1) - \mathbb{E}(Y_i|Z_i = 0))Z_i = \alpha + \beta \]</span></p>
+<p>Hence: <span class="math inline">\(\mathbb{E}(Y_i|Z_i)\)</span> is a linear function of <span class="math inline">\(Z_i\)</span>, with slope <span class="math inline">\(\beta\)</span> and intercept <span class="math inline">\(\alpha\)</span>. Hence regression fits this CEF perfectly.</p>
+<ul>
+<li><p><strong>1.6 Asymptotic OLS Inference</strong>:</p></li>
+<li><p><strong>1.7 Omitted Variables Bias</strong>: short equals long plus the effect of omitted times the regression of omitted on included. Derive for the bivariate and multivariate cases.</p></li>
+<li><p><strong>1.8 Bad Controls</strong>: control variables measured later than the treatment and thus may have been affected by it <span class="math inline">\(\rightarrow\)</span> they are outcomes.</p></li>
+<li><p><strong>1.9 Measurement Error</strong>: Imagine we are running a regression but instead of directly observing one of the independent variables, we observe a slightly different variable: <strong>measurement error</strong>! <strong>Classical Measurement Errors</strong>: <strong>i)</strong> <span class="math inline">\(\mathbb{E} (m_i) = 0\)</span>; <strong>ii)</strong> Cov(<span class="math inline">\(S_i^\ast, m_i\)</span>) = Cov(<span class="math inline">\(e_i,m_i\)</span>) = 0.</p></li>
+</ul>
+<p>If we do the <span class="math inline">\(\beta_b = \frac{Cov(Y_i,S_i)}{V(S_i)}\)</span> calculations, we arrive at <span class="math inline">\(\beta_b = \beta \frac{V(S_i^\ast)}{V(S_i^\ast) + V(m_i)}\)</span>. We also get that <span class="math inline">\(r = \frac{V(S_i^\ast)}{V(S_i^\ast) + V(m_i)}\)</span>, where <span class="math inline">\(r\)</span> is the <strong>reliability</strong> of the wrong measurement (<span class="math inline">\(S_i\)</span>), the variation of <span class="math inline">\(S_i\)</span> that is unrelated to mistakes. The <strong>attenuation bias</strong> in <span class="math inline">\(\beta_b\)</span> is <span class="math inline">\(\beta_b - \beta = -(1 - r)\beta\)</span>. So the absolute value of the biased estimator is smaller than the desired one, hence attenuation bias.</p>
+<ul>
+<li><p><strong>1.9.2 IV Eliminates Measurement Error in Bivariate Regression</strong></p></li>
+<li><p>If we do the regression anatomy calculations but now using an instrument for <span class="math inline">\(S_i\)</span> when <span class="math inline">\(S_i = S_i^\ast + m_i\)</span>, we see that there’s no measurement error.</p></li>
+<li><p><strong>1.9.3 Multivariate</strong>: finish this.</p></li>
+</ul>
+<p>Intuition: adding covariates to a model with mismeasured schooling aggravates attenuation bias in estimates of the returns to schooling. Covariates are correlated with accurately measured schooling while being unrelated to the measurement error.</p>
+</div>
+<div id="conditional-independence-assumptions" class="section level3">
+<h3><strong>2) Conditional Independence Assumptions</strong></h3>
+<ul>
+<li><p>Cov(X,Y) = <span class="math inline">\(\mathbb{E}\)</span> ((X - <span class="math inline">\(\mathbb{E}\)</span>(X))Y); <strong>intuition</strong>: you only need to difference <em>one</em> of the r.v.s when calculating covariance.</p></li>
+<li><p><strong>2.1 Matching Meets Regression</strong></p></li>
+</ul>
+<p><strong>Matching</strong>: conditional on <span class="math inline">\(X_i\)</span>, treatment <span class="math inline">\(D_i\)</span> is as good as randomly assigned: <span class="math inline">\(\{ Y_{0i},Y_{1i} \perp D_i|X_i \}\)</span>. This leads to the Treatment on the Treated being:</p>
+<p><span class="math display">\[ \delta_{TOT} = \mathbb{E}(Y_{1i} - Y_{0i}|D_i = 1) \]</span></p>
+<p>Then we LIE on <span class="math inline">\(X_i\)</span></p>
+<p><span class="math display">\[ = \mathbb{E}(\mathbb{E}(Y_{1i}|X_i, D_i = 1)- \mathbb{E}(Y_{0i}|X_i, D_i = 1|D_i = 1) \]</span></p>
+<p>math….</p>
+<p>Intuition: <span class="math inline">\(\delta_{TOT}\)</span> is a <em>treatment-probability (conditional probability) of treatment weight average of</em> <span class="math inline">\(\delta_{X}\)</span>, whose sample analogue is observable-sample mean between the treated and the control.</p>
+<p><strong>Conditional Expectation</strong>: <span class="math inline">\(E(X|H) = \frac{E(1_H X)}{P(H)} = \int_X x dP (x|H)\)</span>.</p>
+<p><strong>Regression Meets Matching</strong>: Think of regression estimates parameter <span class="math inline">\(\delta_R\)</span> in <span class="math inline">\(Y_i = \sum_x d_{ix} \beta_x + \delta_R D_i + \epsilon_i\)</span> math… $ = $. <strong>Intuition</strong>: <span class="math inline">\(\delta_R\)</span> is a <em>conditional-variance weighted(condition variance of treatment) average of</em> <span class="math inline">\(\delta_X\)</span>, whose sample analogue is observable-sample mean between the treated an the control. In particular,</p>
+<p><span class="math display">\[ \sigma_D^2 = P(D_i = 1|_i)[1 - P(D_i = 1|X_i)] \]</span></p>
+<ul>
+<li><p><strong>2.2 Propensity Score</strong></p></li>
+<li><p>Given that <span class="math inline">\(\delta_{TOT}\)</span> = <span class="math inline">\(\mathbb{E}(\delta_X | D_i = 1)\)</span>, what happens if <span class="math inline">\(X_i\)</span> is many/multi continuous? Cell specific <span class="math inline">\(\delta_X\)</span> does not make sense (requires grouping or parametric assumptions). The <strong>Propensity-Score Theorem</strong> says we only need to control for covariates that affect the probability of treatment.</p></li>
+</ul>
+</div>
+<div id="instrument-variables" class="section level3">
+<h3><strong>3) Instrument Variables</strong></h3>
+<ul>
+<li><strong>3.1 Wald Estimator</strong>: use binary instrument <span class="math inline">\(Z_i\)</span> to estimate model with one endogenous regressor and no covariates.</li>
+</ul>
+<p><strong>Causal regression model</strong>: <span class="math inline">\(Y_i = \rho s_i + \eta_i\)</span>.</p>
+<p>If <span class="math inline">\(S_i\)</span> is an endogenous regressor, then <span class="math inline">\(\eta_i\)</span> and <span class="math inline">\(S_i\)</span> may be correlated. Suppose <span class="math inline">\(Z_i\)</span> is a binary instrument that equals 1 with probability <span class="math inline">\(p\)</span>. Claim: in the causal regression model above, we have that:</p>
+<p><span class="math display">\[ \rho = \frac{\mathbb{E}(Y_i|Z_i = 1) - \mathbb{E}(Y_i|Z_i = 0)}{\mathbb{E}(S_i|Z_i = 1) - \mathbb{E}(S_i |Z_i = 0)} \]</span></p>
+<p><strong>Exclusion restriction</strong>: <span class="math inline">\(\mathbb{E}(\eta|z = 0)\)</span>.</p>
+<p>Leads us to: <span class="math inline">\(\mathbb{E}(y|z) = \rho \mathbb{E}(s|z) + \mathbb{E}(\eta | z) = \rho \mathbb{E}(s|z)\)</span></p>
+<ul>
+<li><p><strong>3.2 2SLS</strong>:</p></li>
+<li><p><strong>3.3 Grouped Data and 2SLS</strong>: i) 2SLS using dummy instruments is = GLS on a set of group means; ii) GLS can be understood as a linear combination of all the Wald estimators that can be constructed from pairs of means.</p></li>
+<li><p><strong>3.4 Heterogeneous Effects</strong>:</p></li>
+</ul>
+<p><strong>LATE Theorem</strong>: assume, <span class="math inline">\(\forall i\)</span>:</p>
+<ol style="list-style-type: lower-roman">
+<li><p>Independence:</p></li>
+<li><p>Exclusion:</p></li>
+<li><p>First-stage:</p></li>
+<li><p>Monotonicity:</p></li>
+</ol>
+<p>Then:</p>
+<p><span class="math display">\[ \frac{\mathbb{E} (Y_i |Z_i = 1) - \mathbb{E}(Y_i|Z_i = 0)}{\mathbb{E}(D_i|Z_i = 1) - \mathbb{E}(D_i |Z_i = 0)} = \mathbb{E}(Y_{1i} - Y_{0i}|D_{1i} &gt; D_{0i}) = \mathbb{E}(\rho_i | \pi_{1i} &gt; 0) \]</span></p>
+<p>Proof: 1) write in terms of potential outcomes; 2) Rewrite the Wald estimator in terms of potential outcomes, using the law of total expectation; 3) Use independence to simplify the Wald denominator; 4) Combine the pieces.</p>
+<p>The intuition is: an instrument that is <strong>i)</strong> as good as randomly assigned, <strong>ii)</strong> affects the outcome through a single known channel, <strong>iii)</strong> has a first-stage and <strong>iv)</strong> affects the causal channel of interest in only one direction, can be used to estimate the <strong>average causal effect on the affected group</strong>.</p>
+<ul>
+<li><p><strong>3.4.1 Failures of Monotonicity</strong>: if monotonicity fails, the instrument pushes some people into treatment while pushing others(defiers) out of treatment. Without monotonicity we could have: <span class="math inline">\(D_{1i} - D_{0i} \in \{ 1,0,-1\}\)</span>. So it could be that treatment effects are positive to everyone,, but the reduced form is zero because the effects on compliers are canceled out by the effects on the defiers.</p></li>
+<li><p><strong>3.4.2 IV in Randomized Trials</strong>: <strong>Bloom Result</strong>: when there is one-sided non-compliance, IV estimates the effect of the treatment on the treated in a randomized trial.</p></li>
+<li><p><strong>3.5 2SLS Mistakes</strong></p></li>
+<li><p><strong>3.5.1 Manual 2SLS</strong>: steps: i) estimate the first stage by OLS; ii) plug the fitted values into the second stage equation; iii) estimate second stage equation by OLS:</p></li>
+</ul>
+<p><span class="math display">\[ S_i = X_i' \pi_{10} + \pi_{11}' Z_i + \xi_{1i}\]</span></p>
+<p><span class="math display">\[ Y_i = \alpha' X_i + \rho \hat{s}_i + [\eta_i + \rho (S_i - \hat{S}_i)] \]</span></p>
+<p>Where:</p>
+<ol style="list-style-type: lower-roman">
+<li><p><span class="math inline">\(X_i\)</span> is a set of covariates;</p></li>
+<li><p><span class="math inline">\(Z_i\)</span> is a set of excluded instruments.</p></li>
+<li><p>The first-stage fitted values are <span class="math inline">\(\hat{S}_i = X_i' \hat{\pi}_{10} + \hat{\pi}_{11}' Z_i\)</span></p></li>
+</ol>
+<p>The OLS residual variance is the variance of <span class="math inline">\(\eta_i + \rho(S_i - \hat{S}_i)\)</span>. The proper 2SLS standard errors include the variance of <span class="math inline">\(\eta_i\)</span> only.</p>
+</div>
+<div id="regression-discontinuity-designs-2" class="section level3">
+<h3><strong>4) Regression Discontinuity Designs</strong></h3>
+</div>
+<div id="inference" class="section level3">
+<h3><strong>5) Inference</strong></h3>
+</div>
+<div id="machine-labor" class="section level3">
+<h3><strong>6) Machine Labor</strong></h3>
 </div>
 </div>
 </div>

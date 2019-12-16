@@ -1562,6 +1562,218 @@ risk premium = - risk free rate x comovement of return with SDF
 <div id="the-model-2" class="section level5">
 <h5>6.1.1 The Model</h5>
 </div>
+<div id="rational-expectations-equilibrium" class="section level5">
+<h5>6.1.3 Rational Expectations Equilibrium</h5>
+<p>Grossman-Stiglitz paradox: if in the end, the informed and uninformed get the same allocation and information acquisition is costly, why would someone acquire information?</p>
+</div>
+</div>
+</div>
+<div id="lecture-7---non-competitive-models" class="section level3">
+<h3>Lecture 7 - Non-Competitive Models</h3>
+<div id="introduction-4" class="section level4">
+<h4>7.1 Introduction</h4>
+</div>
+</div>
+</div>
+<div id="redoing-old-exams" class="section level2 tabset">
+<h2>Redoing Old Exams</h2>
+<div id="section" class="section level3">
+<h3>2017</h3>
+<div id="wts-risk-aversion" class="section level4">
+<h4><strong>1)</strong> WTS Risk aversion</h4>
+<p>Risk aversion = <span class="math inline">\(- \frac{w u_i''(w)}{u_i'(w)}\)</span>. Given the utility function: <span class="math inline">\(u_i(w) = \frac{1}{1 - \gamma_i} w^{1 - \gamma_i}\)</span>, we depend on knowing the <span class="math inline">\(\gamma\)</span>. The first derivative is:</p>
+<p><span class="math display">\[ u_i = 1 - \gamma_i \frac{1}{1 - \gamma_i} w^{-\gamma_i} = w^{-\gamma_i} \]</span></p>
+<p>The second derivative is:</p>
+<p><span class="math display">\[ \frac{- \gamma_i}{w^{(\gamma + 1)}}\]</span></p>
+<p><span class="math inline">\(R_i = - \frac{-\gamma_i w^{-\gamma_i - 1} w}{w^{-\gamma_i}} = \gamma_i\)</span></p>
+<p>So for any <span class="math inline">\(w\)</span>, agent 2 is more risk-averse than agent 1.</p>
+</div>
+<div id="section-1" class="section level4">
+<h4><strong>2)</strong></h4>
+<p>Expected utility: <span class="math inline">\(u(w) = -e^{-aw}\)</span>, where a &gt; 0.</p>
+<p><strong>a)</strong> WTS: the agent’s wealth at t = 1.</p>
+<p>The <strong>consumption</strong> is given by: <strong>initial endowment + payoff from investments - investments</strong>.</p>
+<p><span class="math display">\[ \overline{w} \sum_{n=1}^N \underbrace{\theta_n D_n}_\text{Payoff from risky asset} + ( \underbrace{\theta_n D_n}_\text{Payoff from risky asset} -  \underbrace{\sum_{n=1}^N \theta_n P_n}_\text{Wealth invested in risky assets}) \frac{1}{P_0}\]</span></p>
+<p><strong>b)</strong> WTS: optimal portfolio choice problem for the agent.</p>
+<p>Maximization problem with constraints.</p>
+<p><span class="math display">\[ \text{Maximization problem: } max_{\{ \theta_n\}^N_{n=1}}\mathbb{E} [-e ^{-a \overline{w}}]  \]</span></p>
+<p>Subject to:</p>
+<p><span class="math display">\[ \overline{w} = \sum_{n=1}^N \theta_n D_n + \sum_{n=1}^N (1 - \theta_n) P_n \]</span></p>
+<p>Knowing that the distribution of <span class="math inline">\(D_n \sim \mathcal{N}(\overline{D},\sigma^2)\)</span>, we have that the distribution of wealth is…</p>
+<p><span class="math display">\[ ... \]</span></p>
+<p>Which leads to the distribution of -aw:</p>
+<p><span class="math display">\[ ... \]</span></p>
+<p>And so the maximization problem is:</p>
+<p><span class="math display">\[ max_{\{ \theta_n\}^N_{n=1}} \sum_{n=1}^N \theta_n \overline{D} + \sum_{n=1}^N (1 - \theta_n) P_n - \frac{a}{2}\sigma \sum_{n=1}^N \theta_n^2 \]</span></p>
+<p><strong>c)</strong> WTS: solve for the optimal portfolio.</p>
+<p>We FOC the maximization problem with respect to <span class="math inline">\(\theta_n\)</span>:</p>
+<p><span class="math display">\[ \overline{D} - P_n - a \sigma^2 \theta_n = 0\]</span></p>
+<p>We isolate for holdings of securities <span class="math inline">\(\theta_n\)</span>:</p>
+<p><span class="math display">\[  \theta_n = \frac{\overline{D} - P_n}{a\sigma^2} \]</span></p>
+<p><strong>d)</strong> WTS: for different values of a, two-fund separation holds.</p>
+<p>Given initial wealth, the agent puts a part of her wealth in the risky asset and a part on the riskless asset. The <strong>risky</strong> asset gets: <span class="math inline">\(\frac{\theta_n P_n}{w_0} = \frac{1}{a} \times \underbrace{\frac{(\overline{D} - P_n)P_n}{w_0 \sigma^2}}_\text{= $x_n$}\)</span>. The <strong>riskless</strong> asset gets: <span class="math inline">\((1 - \frac{1}{a} \sum_{n = 1}^N \frac{(\overline{D}-P_n)P_n}{w_0 \sigma^2})\)</span>.</p>
+<p>As a result, each agent optimally holds a linear combination of the risk-free asset and the risky portfolio <span class="math inline">\(x_M = [x_1 \dots x_N]\)</span>, where <span class="math inline">\(x_1 = \dots = x_N = \frac{(\overline{D} - P_n)P_n}{w_0 \sigma^2}\)</span>. Depending on her coefficient of absolute risk aversion, the agent will hold more or less the risk portfolio. The lower the coefficient of risk aversion, the more of the risky portfolio he will hold.</p>
+<p><strong>e)</strong> WTS: equilibrium price <span class="math inline">\(P_n\)</span> for all the risky securities.</p>
+<p>What are the market clearing conditions? The optimal portfolio must equal 1.</p>
+<p><span class="math display">\[ \theta_n = 1 = \frac{\overline{D} - P_n}{a \sigma^2} \]</span></p>
+<p>and</p>
+<p><span class="math display">\[ P_n = \overline{D} - a \sigma^2\]</span></p>
+<p><strong>f)</strong> WTS: risk premium on each risky security. What happens to the risk premium as N <span class="math inline">\(\rightarrow \infty\)</span>.</p>
+<p>The risk premium on each risky security <em>n</em>,for <em>n = 1,…,N</em> is equal to:</p>
+<p><span class="math display">\[ \overline{r}_n - 1 = \overline{R}_n - 1 = \mathbb{E}[R_n] - 1 = \frac{\mathbb{E}[D_n]}{P_n} - 1 = \frac{a \sigma^2}{\overline{D} - a \sigma^2} \]</span></p>
+<p>The risk premium stays constant as <span class="math inline">\(\frac{a \sigma^2}{\overline{D} - a \sigma^2}\)</span> has nothing to do with N.</p>
+<p><strong>g)</strong> WTS: APT holds?</p>
+<p>Is there arbitrage? Yes! If you consider the sequence of arbitrage portfolios, <span class="math inline">\(\theta_N\)</span> where <span class="math inline">\(\theta_N^0 = - 1\)</span> and <span class="math inline">\(\theta_N^1 = \theta_N^N = \frac{1}{N}\)</span>, we have</p>
+<p><span class="math display">\[ \mathbb{E}[r_{\theta_N}] = \sum_{n=1}^N \frac{1}{N}\overline{r}_n - 1 = \overline{r}_n - 1 = \overline{r}_n - 1 = \frac{a \sigma^2}{\overline{D} - a \sigma^2} &gt; 0\]</span></p>
+<p><span class="math display">\[ Var(r_{\theta_N}) = \sum_{n=1}^N \frac{1}{N^2} Var(\epsilon_n) = \frac{\sigma^2}{N} \rightarrow 0 \]</span></p>
+<p>As a result, APT cannot hold in this market.</p>
+</div>
+<div id="section-2" class="section level4">
+<h4><strong>3)</strong></h4>
+<p>Endowment process: <span class="math inline">\(d_t = d_{t-1} exp(\mu + \sigma \epsilon_t)\)</span>, where <span class="math inline">\(\epsilon_t\)</span> are IID over time and have a binomial distribution so <span class="math inline">\(\epsilon_t\)</span> equals 1 or -1 with equal probabilities. 2 agents endowed with (1/2)<span class="math inline">\(d_t\)</span>. The two agents have preferences given by:</p>
+<p><span class="math display">\[ E_0 [ln c_0^i + \beta_i ln c_i^i], i = 1,2 \]</span></p>
+<p>We have two assets: a stock and a risk-free asset. Their returns: claim on aggregate endowment and <span class="math inline">\(r_f\)</span>, respectively.</p>
+<p><strong>a)</strong> WTS: equilibrium consumption allocation as a solution of the central planner’s problem.</p>
+<ol style="list-style-type: decimal">
+<li><p>FWT holds <span class="math inline">\(\implies\)</span> competitive equilibrium can be solved by solving the central planner’s planner <span class="math inline">\(\implies \exists \lambda_1, \lambda_2\)</span>.</p></li>
+<li><p>Each <span class="math inline">\(\lambda_i\)</span> are the Pareto weights associated with each agent such that the social planner maximizes the weighted average of the utility functions of the two agents:</p></li>
+</ol>
+<p><span class="math display">\[ max c_1^0,c_1^1,c_0^2,c_1^2  \lambda_1U_1(c_0^1,c_1^1) + \lambda_2 U_2 (c_0^2,c_0^2) = max c_1^0,c_1^1,c_0^2,c_1^2 \lambda_1 E_0 [ln c_0^1 + \beta_1 ln c_1^1] + \lambda_2 E_0 [ln c_0^2 + \beta_2 ln c_1^2]\]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>The feasibility constraints at each point in time and in each state:</li>
+</ol>
+<p><span class="math display">\[ c_t^1 + c_t^2 = d_t, \text{ for t = 0,1}\]</span></p>
+<ol start="4" style="list-style-type: decimal">
+<li>The social planner’s maximization problem can be solved independently at each point in time (t = 0, 1) and in each state and by substituting <span class="math inline">\(c_t^2\)</span> as a function of <span class="math inline">\(c_t^1\)</span> from the feasibility constraint:</li>
+</ol>
+<p><span class="math display">\[ max_{c_1^t, c_t^2} \lambda_1 \beta_1 ln c_t^1 + \lambda_2 \beta_2 ln (d_t - c_t^1) \]</span></p>
+<ol start="5" style="list-style-type: decimal">
+<li>The FOC with respect to <span class="math inline">\(c_t^1\)</span> yields, for t = 0,1:</li>
+</ol>
+<p><span class="math display">\[ \frac{\lambda_1 \beta_1^t}{c_t^1} - \frac{\lambda_2 \beta_1^t}{d_t - c_t^1} = 0 \]</span></p>
+<p>and therefore</p>
+<p><span class="math display">\[ c_t^1 = \frac{\beta_1^t \lambda_1 }{\beta_1^t \lambda_1 + \beta_2^t \lambda_2} d_t = A(t)d_t \]</span></p>
+<p>and</p>
+<p><span class="math display">\[ c_t^2 = d_t - c_t^2 = (1 - A(t))d_t \]</span></p>
+<p>Where <span class="math inline">\(A(t) = \frac{\beta_1^t \lambda_1}{\beta_1^t \lambda_1 + \beta_2^t \lambda_2}\)</span></p>
+<p>We can solve for the Pareto weights using the individual maximization problem. The Lagrange multiplier associated with the unique budget constraint (markets being complete) corresponds to the inverse of the Pareto weight associated with the same agent in the social planner’s problem.</p>
+<ol start="6" style="list-style-type: decimal">
+<li>The unique SPD (<span class="math inline">\(\pi_t\)</span>) in this economy with respect to agent 1 is equal to:</li>
+</ol>
+<p><span class="math display">\[ \frac{\beta_1^t}{c_t^1} = \frac{1}{\lambda_1}\pi_t \]</span></p>
+<p>and</p>
+<p><span class="math display">\[ \pi_t = \frac{\beta_1^t \lambda_1 + \beta_2^t + \lambda_2}{d_t} \]</span></p>
+<p>In particular, we have that, at t = 0:</p>
+<p><span class="math display">\[ \frac{\lambda_1}{c_0^1} = \frac{\lambda_1 + \lambda_2}{d_0} = \frac{\lambda_2}{c_0^2} = \pi_0 \]</span></p>
+<ol start="7" style="list-style-type: decimal">
+<li><p>We can relate the Pareto Weights: WLOG assuming that <span class="math inline">\(d_0 = 1\)</span> and using the normalization <span class="math inline">\(\pi_0 = 1\)</span>, we have that: <span class="math inline">\(\lambda_2 = 1 - \lambda_1\)</span>.</p></li>
+<li><p>We can plug what we have into the unique budget constraint of agent 1, yielding:</p></li>
+</ol>
+<p><span class="math display">\[ \mathbb{E}_0 [\pi_0 c_0^1 + \pi_1c_1^1] = \mathbb{E}_0[\lambda_1 + \lambda_1 \beta_1] = \frac{1}{2} \mathbb{E}_0 [\pi_0 d_0 + \pi_1 d_1] = \frac{1}{2} (1 + \lambda_1 \beta_1 + \lambda_2 \beta_2) \]</span></p>
+<ol start="9" style="list-style-type: decimal">
+<li>Given that we know <span class="math inline">\(\lambda_2 = 1 - \lambda_1\)</span>, we sub the above equation and get:</li>
+</ol>
+<p><span class="math display">\[ \lambda_1 = \frac{1 + \beta_2}{2 + \beta_1 + \beta_2} \]</span></p>
+<p>and</p>
+<p><span class="math display">\[ \lambda_2 = \frac{1 + \beta_1}{2 + \beta_1 + \beta_2} \]</span></p>
+<p><strong>b)</strong> WTS: equilibrium consumption processes of the two agents and the equilibrium state-price density.</p>
+<p>We already have their allocations <span class="math inline">\(c_t^1\)</span> and <span class="math inline">\(c_t^2\)</span>. And we know what A(t) is. So the SPD is given by:</p>
+<p><span class="math display">\[ \pi_t = \frac{\beta_1^t \lambda_1 + \beta_2^t \lambda_2}{d_t} = \frac{\beta_1^t(1 + \beta_2) + \beta_2^t (1 + \beta_1)}{2 + \beta_1 + \beta_2} \frac{1}{d_t} \]</span></p>
+<p><strong>c)</strong> WTS: price process for the stock and risk-free interest rate.</p>
+<p>The stock price is (after the dividend at time <em>t = 0</em> has been paid out), is the expectation of the SPD in t = 1 over SPD in t = 0 times the endowment in t = 1:</p>
+<p><span class="math display">\[ S_0 = \mathbb{E}_0 [\frac{\pi_1}{\pi_0}d_1] \]</span></p>
+<p><span class="math display">\[ = \frac{\beta_1 (1 + \beta_2) + \beta_2 (1 + \beta_1)}{2 + \beta_1 + \beta_2} = \frac{\beta_1 + \beta_2 + 2 \beta_2 \beta_1}{2 + \beta_1 + \beta_2}\]</span></p>
+<p>The risk free rate at t = 0 is the expectation of 1 over SPD at t = 1.</p>
+<p><span class="math display">\[ r_f = \frac{1}{\mathbb{E}_0 [\pi_1]} = \frac{1}{\mathbb{E}_0 [\frac{\beta_1 + \beta_2 + 2 \beta_2 \beta_1}{2 + \beta_1 + \beta_2}] \frac{1}{e^{\mu + \sigma epsilon}}}\]</span></p>
+<p><span class="math display">\[ = 2 \times \frac{2 + \beta_1 + \beta_2}{\beta_1 + \beta_2 + 2 \beta_2 \beta_1} \frac{e^\mu}{e^{\sigma \epsilon} + e^{-\sigma \epsilon}} \]</span></p>
+<p><strong>d)</strong> WTS: markets are dynamically complete.</p>
+<p>Markets are complete: two assets have payoffs that are linearly independent at <em>t = 1</em>, and there are two assets of the world at <em>t = 1</em>. Any consumption plan (<span class="math inline">\(c_1^u,c_1^d\)</span>) can be financed by investing in those two assets and by solving the following linear system in (<span class="math inline">\(\theta_B, \theta_S\)</span>):</p>
+<p><span class="math display">\[ \theta_B \times R_0 + \theta_S e^{\mu + \sigma \epsilon} = c_1^s \]</span></p>
+<p><span class="math display">\[ \theta_B \times R_0 + \theta_S e^{\mu - \sigma \epsilon} = c_1^d \]</span></p>
+</div>
+<div id="section-3" class="section level4">
+<h4><strong>4)</strong></h4>
+<p>Objective: minimize the tracking error of their portfolio vs a benchmark portfolio. Trying to obtain a return premium of <span class="math inline">\(\Delta \mu\)</span> over the benchmark.</p>
+<p><strong>a)</strong> WTS: what <span class="math inline">\(w\)</span> would the manager select.</p>
+<ol style="list-style-type: decimal">
+<li><p>Identify Manager’s problem: <span class="math inline">\(min_w (w - \overline{w})'V(w - \overline{w})\)</span> subject to <span class="math inline">\(w' \iota = 1\)</span> and the targeted return premium constraint: <span class="math inline">\((w - \overline{w})'m = \Delta \mu\)</span>.</p></li>
+<li><p>Find the lagrangian (denote <span class="math inline">\(\lambda_1,\lambda_2\)</span> the lagrangian multipliers):</p></li>
+</ol>
+<p><span class="math display">\[ \mathcal{L}(w,\lambda_1, \lambda_2) = \frac{1}{2}(w - \overline{w})'V (w - \overline{w}) + \lambda_1 (1 - w' \iota) + \lambda_2 (\Delta \mu - (w - \overline{w})' m) \]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>The FOC with respect to <em>w</em>:</li>
+</ol>
+<p><span class="math display">\[ V(w - \overline{w}) - \lambda_1 \iota - \lambda_2 m = 0 \iff w = \overline{w} + \lambda_1 V^{-1} \iota + \lambda_2 V^{-1} m \]</span></p>
+<p>Where <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span> are such that two constraits are satisfied.</p>
+<p><strong>b)</strong> WTS: is <em>w</em> in the efficient frontier?</p>
+<ol style="list-style-type: decimal">
+<li>It’s not necessary that <em>w</em> be on the efficient frontier <span class="math inline">\(\rightarrow\)</span> we know that <span class="math inline">\(w - \overline{w}\)</span> is on the efficient frontier <span class="math inline">\(\implies\)</span> if w is on the efficient frontier, then <span class="math inline">\(\overline{w}\)</span> is also on the MVF. But we are told that the benchmark may not be efficient. So we can’t say whether <em>w</em> is efficient. The chosen portfolio will only be on the efficient frontier <span class="math inline">\(\iff \overline{w}\)</span> is efficient.</li>
+</ol>
+<p><strong>c)</strong> WTS: the equation for TE as a function of return premium <span class="math inline">\(\Delta \mu\)</span>.</p>
+<ol style="list-style-type: decimal">
+<li>To obtain the TE, we make some manipulation:</li>
+</ol>
+<p><span class="math display">\[ TE = (w - \overline{w})' V(w - \overline{w}) \]</span></p>
+<p><span class="math display">\[ = (w - \overline{w})' (\lambda_1 \iota + \lambda_2 m) \]</span></p>
+<p><span class="math display">\[ = \lambda_1 (w - \overline{w})'\iota + \lambda_2 (w - \overline{w})' m \]</span></p>
+<p><span class="math display">\[ = \lambda_1 (w'\iota - \overline{w} \iota) + \lambda_2 \Delta \mu \]</span></p>
+<p><span class="math display">\[ = \lambda_2 \Delta \mu\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li>We solve for <span class="math inline">\(\lambda_2\)</span> by pinning down <span class="math inline">\(\lambda_1\)</span> and <span class="math inline">\(\lambda_2\)</span>:</li>
+</ol>
+<p><span class="math display">\[ (w - \overline{w})'m = \lambda_1 \iota' V^{-1}m + \lambda_2 m' V^{-1} m\]</span></p>
+<p><span class="math display">\[ 0 = \lambda_1 \iota' V^{-1} \iota + \lambda_2 m' V^{-1} \iota \]</span></p>
+<p>As a result:</p>
+<p><span class="math display">\[ \lambda_1 = - \frac{m' V^{-1} \iota}{ \iota' V^{-1} \iota}\lambda_2 \]</span></p>
+<p>we then get <span class="math inline">\(\lambda_2\)</span>, isolate it and arrive at:</p>
+<p><span class="math display">\[ TE = \frac{(\Delta \mu)^2}{m' V_^{-1}m - \frac{m'V^{-1}\iota}{\iota ' V^{-1} \iota}} \iota ' V^{-1} m \]</span></p>
+</div>
+<div id="section-4" class="section level4">
+<h4><strong>5)</strong></h4>
+<p>Given <strong>endowment process</strong>: <span class="math inline">\(d_t = d_{t-1} exp(\mu + \sigma \epsilon_t)\)</span>, where <span class="math inline">\(\epsilon_t\)</span> are IID over time and have a standard Normal distribution. <strong>Agents</strong>’ preferences:</p>
+<p><span class="math display">\[ E_0 [\sum_{t = 0}^T u (c_t, c_{t-1}^A)]\]</span>,</p>
+<p><span class="math inline">\(c_t\)</span> is the consumption of agent and <span class="math inline">\(c_t^A\)</span> is the aggregate consumption. Assume also: <span class="math inline">\(u(x,y) = \frac{1}{1 - \gamma}(x/y)^{1-\gamma}\)</span>. Assume financial markets are complete.</p>
+<p><strong>a)</strong> WTS: SPD.</p>
+<ol style="list-style-type: decimal">
+<li><p>FOC with respect to <span class="math inline">\(c_t\)</span>: <span class="math inline">\(\frac{c_t^{-\gamma}}{(c_{t-1}^A)^{1-\gamma}} = \lambda \pi_t\)</span>.</p></li>
+<li><p>Since all agents are equal, by market clearing condition we have:</p></li>
+</ol>
+<p><span class="math display">\[ c_t = \frac{d_t}{N} = \frac{d_{t-1} exp(\mu + \sigma \epsilon_t)}{N} = \frac{c_{t-1}^A exp(\mu + \sigma \epsilon_t)}{N} \]</span></p>
+<ol start="3" style="list-style-type: decimal">
+<li>So the SPD is:</li>
+</ol>
+<p><span class="math display">\[ \pi_t = \frac{1}{\lambda} \frac{(\frac{d_t}{N})^{-\gamma}}{d_{t - 1}^{1 - \gamma}} = \frac{d_{t-1}^{- \gamma} exp (- \gamma \mu - \gamma \sigma \epsilon_t) N^\gamma}{(\lambda d_{t-1})^{1-\gamma}} = \frac{exp(- \gamma \mu - \gamma \sigma \epsilon_t) N^\gamma}{\lambda d_{t-1}} \]</span></p>
+<p>We normalize <span class="math inline">\(\pi_0\)</span> = 1 and pinned the Lagrange multiplier. It will depend on <span class="math inline">\(d_{-1}\)</span>, <span class="math inline">\(\lambda = \frac{exp (-\gamma \mu - \gamma \sigma \epsilon_0)N^{-\gamma}}{d_{-1}}\)</span>.</p>
+<p><strong>b)</strong> WTS: risk-free rate</p>
+<p>We got <span class="math inline">\(\pi\)</span> in the last question, so:</p>
+<p><span class="math inline">\(\frac{1}{R_{f,t}} = \mathbb{E}_t [\frac{\pi_{t+1}}{\pi_t}]\)</span></p>
+<p>do the math and..</p>
+<p><span class="math display">\[ = exp (\mu + \frac{\gamma^2 \sigma^2}{2} + (\gamma - 1)\sigma \epsilon_t)\]</span></p>
+<p>And <span class="math inline">\(R_{f,t}\)</span> = exp(<span class="math inline">\(\mu - \frac{\gamma^2 \sigma^2}{2} + (1 - \gamma)\sigma \epsilon_t\)</span>).</p>
+<p>The risk-free is clearly <strong>constant</strong>: at t, it depends on the state characterized by <span class="math inline">\(\epsilon_t\)</span>. It is therefore a Markov process in the state variable <span class="math inline">\(\epsilon_t\)</span></p>
+<p><strong>c)</strong> WTS: process for <span class="math inline">\(P_t\)</span>.</p>
+<p>We have a long-maturity bond paying 1 at T.</p>
+<p>We have for any <em>t</em>:</p>
+<p><span class="math display">\[ \frac{\pi_T}{\pi_t} = math = (\frac{d_{t-1}}{d_{T-1})^{1 - \gamma} (\frac{d_T}{d_t})^{\gamma} \]</span></p>
+<p>We have to find: <span class="math inline">\(\frac{d_{t-1}}{d_{T-1}}\)</span> and similarly: <span class="math inline">\((\frac{d_{t-1}}{d_{T-1}})^{1-\gamma}\)</span>.</p>
+<p>Similarly, we find <span class="math inline">\((\frac{d_T}{d_t})^{-\gamma}\)</span>.</p>
+<p><strong>FINISH THISSSSSSSSS</strong></p>
+<p><strong>d)</strong> WTS: bond returns satisfy APT model?</p>
+<p>We only need one factor.</p>
+<ol style="list-style-type: decimal">
+<li>We start by finding the return on long-term bonds (with maturity at T):</li>
+</ol>
+<p><span class="math display">\[ R_{t,t+1}^T = \frac{P_{t+1}^T}{P_t^T} = math....\]</span></p>
+<ol start="2" style="list-style-type: decimal">
+<li><p>Then we find the expected return.</p></li>
+<li><p>We can find a one-factor structure for the returns on long-term bonds using some factor loadings (<span class="math inline">\(\beta_T = \beta = exp(\mu - \frac{\gamma^2}{2} \sigma^2)\)</span>) and a risk factor:</p></li>
+</ol>
+<p><span class="math display">\[ R_{t,t+1}^T - \overline{R}_{t,t+1}^T = math... = \beta f_{t,t+1} \]</span></p>
+<ol start="4" style="list-style-type: decimal">
+<li>Given NA, the SPD and bond prices have been found, and the bond satisfies the APT model.</li>
+</ol>
+<p>One can check that:</p>
+<p><span class="math display">\[ - \mathbb{E}_t^Q [ f_{t,t+1}] = ...\]</span></p>
 </div>
 </div>
 </div>

@@ -279,10 +279,7 @@ Readings: (FT 8.3.2, 11.2; G 4.4)
 
 - **Discount in repeated games**: the payoff takes the following form: $(1 - \delta) \times \text{1st payoff} + \delta \times \text{2nd payoff}$. If the agents are patient enough ($\delta = 1$), then any move can be an equilibrium because it will be irrelevant as a 1st payoff.
 
-
-
-
-
+- **Feasible and individually rational payoff vectors?**
 
 
 
@@ -361,6 +358,8 @@ There is only one proper subgame: 2 vs 3.
 
 #### 1)c) WTS: when a unique NE is solvable by ISD.
 
+
+
 #### 1)d) WTS: Folk Theorem and payoffs that players that players can obtain in repeated games. 
 
 "Folk theorems" for repeated games assert that if the players are sufficiently patient, then any feasible, individually rational payoffs can be enforced by an equilibrium. To make this precise, we have to define **feasible** and **individually rational**. Player's *reservation utility* or *minimax value*: the lowest payoff player i's opponents can hold him to by any choice of $\sigma_{-i}$ provided that player *i* correctly foresees $\sigma_{-i}$ and plays a best response to it. For part a, P1 can never obtain a payoff smaller than 1, he just has to pay A. For P2, never smaller than 2, just has to play Y. If they mix, this increases. 
@@ -393,7 +392,7 @@ P1 has an incentive to deviate. Player 2 doesn't have an incentive to deviate, b
 
 #### 4)d) Find a semiseparating PBE. 
 
-
+### **2015**
 
 
 

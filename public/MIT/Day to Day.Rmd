@@ -26,12 +26,15 @@ output: html_document
 
 - Review for Metrics.
 
-
 #### Dec 14th
 
-- Redo 1 Micro Exam.
+- Redo 1 Micro Exam.  ✅
 
 - Go over Metrics exercises.
+
+- Go over Asset Pricing Old Exams.   ✅
+
+- Read Metrics.   ✅
 
 #### Dec 13th
 
