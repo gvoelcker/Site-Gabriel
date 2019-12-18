@@ -1777,6 +1777,30 @@ risk premium = - risk free rate x comovement of return with SDF
 </div>
 </div>
 </div>
+<div id="recitations" class="section level2 tabset">
+<h2>Recitations</h2>
+<div id="rec-8" class="section level3">
+<h3>Rec 8</h3>
+<div id="markowitz-model" class="section level4">
+<h4>Markowitz Model</h4>
+<p>Model primitives are described by <span class="math inline">\(\{ \mu, \sum \}\)</span> only, where:</p>
+<ul>
+<li><p>r = [<span class="math inline">\(r_1,...,r_N\)</span>] is the vector of asset returns with mean <span class="math inline">\(\mu\)</span> = <span class="math inline">\(\mathbb{E}[r]\)</span> and variance-covariance matrix <span class="math inline">\(\sum = V[r]\)</span>.</p></li>
+<li><p>No redundant securities and Risk-Free <span class="math inline">\(r^f \implies \sum^{-1}\)</span> exists.</p></li>
+<li><p><strong>Portfolio Weights</strong>: x = [<span class="math inline">\(x_1;...;x_N\)</span>]. Portfolio return is <span class="math inline">\(r_x = r \times x\)</span></p></li>
+<li><p><strong>Expected return</strong>: <span class="math inline">\(\overline{r}_x = \mu \times x\)</span>.</p></li>
+<li><p><strong>Expected Variance</strong>: <span class="math inline">\(\sigma^2_x = x' \sum x\)</span>.</p></li>
+<li><p>Agents can choose portfolios <span class="math inline">\(x_i \implies w_{1,i} = w_{0,i} \times (1 + r x_i)\)</span>.</p></li>
+<li><p>Expected moments on returns: <span class="math inline">\(\overline{r}_{w,i}\)</span> = <span class="math inline">\(\mu x_i\)</span> and <span class="math inline">\(\sigma_{w,i}^2 = x_i' \sum x_i\)</span>.</p></li>
+<li><p>Agents have preferences only over the mean and variance of their wealth: <span class="math inline">\(U_i(x) = U_i(w_{0,i} (1 + \overline{r}_{w,i}), w_{0,i}^2 \times \sigma_{w,i}^2)\)</span>.</p></li>
+<li><p>Solution of the agent’s problem: <span class="math inline">\(x_i^\ast = argmax_{x} U_i(x)\)</span>. This solution satisfies that there is a minimum variance for the expected return(variance-efficient).</p></li>
+<li><p>The set of optimal portfolios stand in the <strong>Mean-Variance Frontier</strong>: MVF(<span class="math inline">\(\mu, \sum\)</span>). So that the problem is now: <span class="math inline">\(x(\overline{r}_p) = argmin_{x} \frac{1}{2} x^T \sum x\)</span>, s.t. <span class="math inline">\(\overline{r}_x = \overline{r}_p\)</span>; and <span class="math inline">\(\iota^T x = 1\)</span> (<span class="math inline">\(\iota = 1_N\)</span>).</p></li>
+<li><p><strong>Mean Variance Frontier</strong>: <span class="math inline">\(\mathcal{L} = \frac{1}{2}x^T\sum x+ \lambda_1 (\overline{r}_p - \mu x) + \lambda_2 (1 - \iota^T x)\)</span>. The FOC is: <span class="math inline">\(x = \lambda_1 \sum^{-1} \iota + \lambda_2 \sum^{-1} \mu^T\)</span>.</p></li>
+<li><p>Given a = <span class="math inline">\(\lambda_1 \iota^T \sum^{-1} \iota\)</span>; and b = <span class="math inline">\(\mu \sum^{-1} \iota\)</span>, we have that: x = <span class="math inline">\(a \underbrace{\frac{\sum^{-1}\iota}{\iota^T \sum^{-1} \iota}}_\text{$x_1$}\)</span> + <span class="math inline">\(b \underbrace{\frac{\sum^{-1}\mu^T}{\iota^T \sum^{-1} \mu^T}}_\text{$_2$}\)</span></p></li>
+</ul>
+</div>
+</div>
+</div>
 </div>
 
 

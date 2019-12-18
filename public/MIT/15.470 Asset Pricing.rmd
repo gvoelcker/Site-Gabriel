@@ -2096,3 +2096,122 @@ One can check that:
 
 
 
+
+
+## Recitations {.tabset}
+
+### Rec 8
+
+#### Markowitz Model
+
+Model primitives are described by $\{ \mu, \sum \}$ only, where:
+
+- r = [$r_1,...,r_N$] is the vector of asset returns with mean $\mu$ = $\mathbb{E}[r]$ and variance-covariance matrix $\sum = V[r]$.
+
+- No redundant securities and Risk-Free $r^f \implies \sum^{-1}$ exists.
+
+- **Portfolio Weights**: x = [$x_1;...;x_N$]. Portfolio return is $r_x = r \times x$
+
+- **Expected return**: $\overline{r}_x = \mu \times x$.
+
+- **Expected Variance**: $\sigma^2_x = x' \sum x$.
+
+- Agents can choose portfolios $x_i \implies w_{1,i} = w_{0,i} \times (1 + r x_i)$.
+
+- Expected moments on returns: $\overline{r}_{w,i}$ = $\mu x_i$ and $\sigma_{w,i}^2 = x_i' \sum x_i$.
+
+- Agents have preferences only over the mean and variance of their wealth: $U_i(x) = U_i(w_{0,i} (1 + \overline{r}_{w,i}), w_{0,i}^2 \times \sigma_{w,i}^2)$.
+
+- Solution of the agent's problem: $x_i^\ast = argmax_{x} U_i(x)$. This solution satisfies that there is a minimum variance for the expected return(variance-efficient).
+
+- The set of optimal portfolios stand in the **Mean-Variance Frontier**: MVF($\mu, \sum$). So that the problem is now: $x(\overline{r}_p) = argmin_{x} \frac{1}{2} x^T \sum x$, s.t. $\overline{r}_x = \overline{r}_p$; and $\iota^T x = 1$ ($\iota = 1_N$).
+
+- **Mean Variance Frontier**: $\mathcal{L} = \frac{1}{2}x^T\sum x+ \lambda_1 (\overline{r}_p - \mu x) + \lambda_2 (1 - \iota^T x)$. The FOC is: $x = \lambda_1 \sum^{-1} \iota + \lambda_2 \sum^{-1} \mu^T$.
+
+- Given a = $\lambda_1 \iota^T \sum^{-1} \iota$; and b = $\mu \sum^{-1} \iota$, we have that: x = $a \underbrace{\frac{\sum^{-1}\iota}{\iota^T \sum^{-1} \iota}}_\text{$x_1$}$ + $b \underbrace{\frac{\sum^{-1}\mu^T}{\iota^T \sum^{-1} \mu^T}}_\text{$_2$}$. If we multiply by $\iota^T$, we get 1 = a + b. Denote $\lambda = b, a = 1 - \lambda$: $x = \lambda x_2 + (1 - \lambda) x_1$.
+
+#### Approaching CAPM
+
+- **Total Wealth** in asset *j* t t - 0: $W_{0,j} = \sum_i \alpha_{0,i,j}$. $W_{1,j} = W_j r_j$.
+
+- $W_t = [W_{t,1};...;W_{t,N}]$.
+
+- **Price of market** at t: $W_t^m$ = $W_t^T \iota = \sum_i \alpha{0,i}^T \iota$.
+
+- **Market return**: $r^m = W_1^m / W_0^m - 1 = \sum_j \frac{W_{0,j}}{W_0^m} r_j$. It also corresponds to portfolio $x_m = \frac{W_0}{W_0^m}$.
+
+- Agent's portfolio: $w_i \times x_i$; where $x_i = \lambda_i x_2 + (1 - \lambda_i) x_1$. 
+
+- We sum all agents' portfolio and multiply by $1/W_^m$ and get: $\overline{\lambda} x_2 + (1 - \overline{\lambda})x_1$. 
+
+- The market portfolio must be in the frontier: given $w_i = \alpha_{0,i} \iota^T$ and $\iota^T x = 1$, we have that $x_m = \overline{\lambda} x_2 + (1 - \overline{\lambda})x_1$. 
+
+- **Zero-covariance portfolio**: $x_{zcp}$ such that: $Cov(r_p, r_{zcp})$ = 0 for any portfolio $x_p$. We solve for $x_{zcp}$ by $x_{zcp}^T sum x_p$ = 0. 
+
+- 
+
+#### CAPM
+
+- Combine that $\beta_{qp} = \frac{\overline{r}_q - \overline{r}_{rcp}}{\overline{r}_p - \overline{r}_{zcp}} = \frac{\sigma_{pq}}{\sigma_{p}^2}$.
+
+- Since $x_m$ is mean-variance efficient, the zero covariance portfolio exists for it too. It is denoted by $x_{zcp,m}$.
+
+- **Zero-beta CAPM**: $\mathbb{E}[r_q] - \mathbb{E}[r_{zcp,m}] = \beta_{qm} \times (\mathbb{E}[r_m] - \mathbb{E}[r_{zcp,m}]) = \beta_{qm} \times \lambda_m$. 
+
+- If agents have non-traded assets that generate a random return, we can derive an extension of the zero-beta CAPM:
+
+- $x(\overline{r}_p) = argmin_x w_i^2 \frac{1}{2}x^T \sum x + w_i h_i x^T \sum_{hi}$.
+
+s.t. $\overline{r}_x = \overline{r}_p$; $\iota^T x = 1$.
+
+FOC: $w_ix_i = w_i \lambda_{1i} \sum^{-1} \iota + w_i \lambda_{2i} \sum^{-1} \mu^T - h_i \sum_{hi}$.
+
+- We sum up over all agents and divide by $W_0^m$ $\rightarrow$ find the covariance of human return and traded assets $\rightarrow$ find a pseudo-zcp portfolio, $x_{h,zcp}$ such that it is uncorrelated with return of portfolio $\tilde{x}_{m,h}$ = $x_m + H \sum_h$. We get a form of CAPM:
+
+\[ \overline{r}_m - \overline{r}_{h,zcp} = \beta_{h,qm} \times (\overline{r}_m - \overline{r}_{h,zcp})\]
+
+Where: $\beta_{h,qm} = \frac{\sigma_{mq} + \frac{H_0}{W_0^m} Cov(r_q,r_h)}{\sigma_m^2 + \frac{H_0}{W_0^m} Cov(r_m,r_h)}$.
+
+#### Markowitz + Risk-free
+
+- Now we can't do the same analysis since $\sum \in \mathbb{R}^{(N+1) \times (N+1)}$ is not invertible. Solution: **exclude riskless asset** and denote mean and variance-covariance matrix for all other $N$ risky-assets by $\mu \in \mathbb{R}^N$ and $\sum \in \mathbb{R}^{N \times N}$ then the set of mean-variance efficient portfolios can be described by subset in $\mathbb{R}^N$, MVF ($R_f, \mu, \sum$).
+
+- Now the problem to solve is:
+
+\[ x(\overline{r}_p) = argmin_x \frac{1}{2} x^T \sum x\]
+
+S.t.: $\mu x + (1 - \iota^T x)\overline{r}_f = \overline{r}_p$. 
+
+- We fave full freedom of choice of portfolio weights on risky assets but the portfolio weight on risk-free asset is pinned down by 1 - $\iota^T x$. 
+
+- Now, all MVF portfolio weights on risky assets are scaled $\sum^{-1} (\mu^T - \overline{r}_f \iota)$.
+
+- Denote $x_t = \frac{\sum^{-1}(\mu^T - \overline{r}_f \iota)}{\iota^T \sum^{-1} (\mu^T - \overline{r}_f \iota)}$.
+
+We do some math and arrive at:
+
+\[ \\overline{r}_q - \overline{r}_f = \beta_{qt} (\overline{r}_t - \overline{r}_f) \text{, where } \beta_{qt} = \frac{Cov(r_t, r_q)}{V(r_t)}\]
+
+- **Total price of net supply for risk-free asset**: $W_0^f$. Prices all risky assets in the market: $W_0^{rm} = \iota^T W_o^r W_0^m = W_0^f + W_0^{rm}$ is total market value.
+
+- Summing up portfolios for all agents and use market clearing conditions:
+
+\[ w_0^r = \sum_i x_i w_i = \tilde{\lambda}_1 \frac{\sum^{-1} (\mu^T - \overline{r}_{f} \iota)}{\iota^T \sum^{-1} (\mu^T - \overline{r}_f \iota)} = \tilde{\lambda}_1 x_t\]
+
+\[ w_0^f = sum_i (1 - \iota^T x_i)w_i\]
+
+#### CAPM with risk-free
+
+
+
+
+
+
+
+
+
+
+
+
+
+

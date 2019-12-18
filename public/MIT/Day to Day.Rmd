@@ -8,23 +8,35 @@ output: html_document
 
 #### Today
 
+#### Dec 18th
+
+- E-mail Yura.
+
+- Look at Aboody & Kasznik databases.
+
+- 1hr of how to prove it.
+
+- 1hr Wolfram Mathematica.
+
+- Acct trends. 
+
 #### Dec 17th
 
-- Asset Pricing Exam: 9am - 12pm - E62-350.
+- Asset Pricing Exam: 9am - 12pm - E62-350.  ✅
 
-- Microeconomics 2 Exam: 1:30 pm - 4:30 pm: E51-145.
+- Microeconomics 2 Exam: 1:30 pm - 4:30 pm: E51-145.  ✅
 
-- Start looking at Project.
+- Start looking at Project.  ✅
 
 #### Dec 16th
 
-- Applied Econometrics Exam: 9 am - 12 pm: 50-340.
+- Applied Econometrics Exam: 9 am - 12 pm: 50-340.  ✅
 
-- Review for AP and Micro Exams.
+- Review for AP and Micro Exams.  ✅
 
 #### Dec 15th
 
-- Review for Metrics.
+- Review for Metrics.  ✅
 
 #### Dec 14th
 
