@@ -81,7 +81,40 @@ output: html_document
 
 ### **L3**
 
+#### **Lotteries with Monetary Payoffs**
+
+- **Coefficient of Relative Risk Version**: R(w) = $\frac{-wu''(w)}{u'(w)}$ = an agent with increasing relative risk aversion gets more averse to proportional risks as he gets wealthier.
+
+- **Insurance against a purely monetary loss**. Optimal purchase of actuarially fair insurance only *equates the marginal utility* in the various states.
+
+- **Insurance with state dependent utility**.
+
+- **Risk preferences of insurances in the lab**: Given the wealth of most lab subjects, they
+should be almost risk neutral to lab gambles(given they are small stakes), but they’re not.
+
+- **First Order Stochastic Dominance**: p ≥$^{FOSD}$ q, if $F_p(x) ≤ F_q(x)\forall x$. It doesn't necessarily let us compare the realization of lotteries but we could represent them with a perfectly correlated lotteries where one is always as large as the other. **Theorem**: p ≥$^{FOSD}$ q $\iff \int u(dp) ≥ \int u(dq)$ for every weakly increasing function u: $\mathbb{R} \rightarrow \mathbb{R}$.
+
+- **Second Order Stochastic Dominance**: what if we add concavity to the expected utility of lotteries? If the supports of *p* and *q* lie in [a,b]m we say *p* SOSD *q*, *p* $\succeq^{SOSD}$ *q* if $\int_a^c F_q(x)dx ≥ \int_a^c F_p(X) dx \forall c \in [a,b]$. **Theorem**: assuming $Ep$ = $Eq$, then $p \succeq^{SOSD} q \iff \forall$ nondecreasing concave $u$ on [a,b] $\int_b^a ud F_p ≥ \int_a^b udF_q$. Intuitively, this comes from a related result, where $p SOSDs q$ only if we can write $p$ and $q$ as the marginal distributions of random variables $z_p$ and $z_q$ with $z_q = z_p + \epsilon$ and E($\epsilon | z_p$) ≤ 0.
+
+#### Proofs
+
+- **FOSD**: p ≥$^{FOSD} q \iff \int u(dp) ≥ \int u(dq)$ for every weakly increasing function u: $\mathbb{R} \rightarrow \mathbb{R}$.
+
 ### **L4**
+
+#### **Non-EU Risk Preferences**
+
+- **The Allais Paradox**: choice questions that violates expected utility.
+
+    - A: $1 \delta_1$ vs B $0.1 \delta_5 + 0.89 \delta_1 + 0.01 \delta_0$. Although expected utility is higher for B, considerably lot of people choose A.
+    
+    - C: $0.11\delta_1 + 0.89 \delta_0$ vs D: $0.1 \delta_5 + 0.9 \delta_0$. Again although EU of C is higher, a lot choose D.
+    
+    - Reason: use the independence axiom - $0.11 \delta_1 + 0.89 \delta_1 \succ 0.1 \delta_5 + 0.89 \delta_1 + 0.01 \delta_0 \rightarrow \delta_1 \succ (10/11)\delta_5 + (1/11)\delta_0$. 
+    
+- **Prospect Theory**: Reference-dependent preferences for changes to current wealth (to ac- commodate ”loss aversion.”). Preference over lotteries non-linear in probabilities via proba- bility weighting function. One critical problem is that the prospect theory allows violations of FOSD. This leads to rank-dependent expected utility and cumulative prospect theory.
+
+- **Cumulative Prospect Theory**: under EU, one way to compute the expected utility is using "vertical stripes" as in Riemann integrals; another is using horizontal stripes using Lebesgue integration. CPT is like integrating the horizontal stripes, replacing *p* with $\pi(p)$ and this gives preferences tht follow FOSD. CPT has been used to explain a wide range of lab data, including why some people both buy insurance and lottery tickets. 
 
 ### **L5**
 
