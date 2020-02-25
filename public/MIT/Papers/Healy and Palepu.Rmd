@@ -1,0 +1,40 @@
+---
+title: "Healy and Palepu (1990)"
+date: "02/03/2019"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Paper Analysis 
+
+-   **Research question**: how to prevent the circumvention of bondholders' responsibilities by the managers? How do firms behave in terms of dividend cuts and debt renegotiations?
+
+-   **Intended contribution/importance**: understand what is the behaviour of managers when nearing violation in terms of accounting-methods change and dividend cuts and debt renegotiation.
+
+-   **Hypotheses**: managers can potentially circumvent dividend covenant restrictions and avoid dividend cuts by increasing earnings through accounting decisions?
+
+-   **Setting/research design**: examines accounting and dividend policy changes in response to an increase in the probability of violating the dividend covenant restriction.
+
+-   **Main results**: there are no significant changes in accounting methods surrounding the increased tightness of the dividend constraint. In contrast, for many firms, the change in closeness to the dividend constraint is associated with a major change in dividend policy. A large number of sample firms reduce their dividends when their dividend covenants become more restrictive -> covenants are useful. Also, there is a small part of the sample reestructuring the debt. 
+
+-   **Additional results crucial to the story**:
+
+- **Possible alternative hypotheses**: sample selection bias is possible; Big bath possibility. However, Holthausen(1981) finds similar results.
+
+-   **Conclusion**: accounting decisions play only a limited role in sample firms' overall responses. The findings suggest that earnings-based dividend covenants are an effective means for bondholders to constrain firms' dividend policies(implicit costs of deviating are high).
+
+- **Future research**: negative vs positive covenants. *Negative*: controlled by managers, such as the dividend restriction examined in the paper.  *Positive*: not controlled by managers, such as working capital, interest coverage and net worth of covenants (designed to increase the security of bondholders). 
+
+#### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?

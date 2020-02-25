@@ -1,0 +1,111 @@
+---
+title: "Contracting Theory and Accounting"
+date: "21/02/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Paper Analysis{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: make a survey on contracting theory and accounting.
+
+-   **Intended contribution/importance**:  review agency theory and its application to accounting issues.
+
+-   **Hypotheses**: 
+
+-   **Setting/research design**: reviews theoretical research on the role of performance measures in compensation contracts, and I compare how information is aggregated for compensation purposes versus valuation purposes. Reviews literature in communication. Reviews capital allocation within firms. 
+
+-   **Main results**:  
+
+-   **Additional results crucial to the story**:
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
+
+#### **1) Introduction**
+
+##### **1.1) Setup of the basic agency model**
+
+##### **1.2) Organization of the paper**
+
+#### **2) Single-action agency models**
+
+##### **2.1) First-best solution**
+
+##### **2.2) Situations where the first-best solution can be achieved**
+
+##### **2.3) Second-best solution - only the outcome (x) is observable**
+
+##### **2.4) When are additional performance measures valuable?**
+
+##### **2.5) Aggregation of performance measures**
+
+##### **2.6) The controllability principle and relative performance evaluation**
+
+##### **2.7) Magnitude of the value of a performance measure**
+
+#### **3) Multi-action models**
+
+
+### Hand-out
+
+The survey reviews agency theory and its applications to accounting.
+
+Two main issues:
+
+- How do features of information, accounting and compensation systems affect (reduce or make worse) incentive problems?
+
+- How does the existence of incentive problems affect the design and structure of information, accounting and compensation systems.
+
+---------------------5-------------------
+
+Roots: 
+
+Agency theory has its roots in the information economics literature. The value of information is derived from the better decisions(and higher profits) that results from its use. Also, the most meaningful way to compare accounting/performance measure systems is by comparing each system when it is used optimally $\implies$ forces the researcher to explicitly build uncertainty and measurement problems into the model. 
+
+Typical agency conflicts bottom pg5
+
+Basic ex - describe chronology and *s*, *y* and *a*
+
+use 1.2 as a basic outline for what we cover in our paper
+
+2 set up basic model, maximization problem, constraints, utility functions, 
+
+Optimal risk sharing condition
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
