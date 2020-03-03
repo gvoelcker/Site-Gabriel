@@ -16,11 +16,11 @@ html_document:
 
 -   **Intended contribution/importance**: first study to empirically document the link between financing and investment. 
 
--   **Hypotheses**: main: debt covenant violations impact investment; additional: what firm characteristics decrease investment?
+-   **Hypotheses**: main: debt covenant violations impact investment; additional: cross-section: what firm characteristics decrease investment?
 
 -   **Setting/research design**: Dealscan data on loans 1994-2005 containing covenant restriction on: current ratio, net worth or tangible net worth. 1st test: impact of violation on investment; 2nd: RDD of firms within 0.2 of the covenant threshold; 3rd: cross-sectional characteristics.
 
--   **Main results**: when a firm violates a covenant $\implies$ investment opporutnities and cash flow are significantly lower while leverage is significantly higher.
+-   **Main results**: when a firm violates a covenant $\implies$ investment opportunities and cash flow are significantly lower while leverage is significantly higher.
 
 -   **Additional results crucial to the story**: 
 
@@ -28,7 +28,7 @@ i) when agency and information problems are severe $\rightarrow$ covenant violat
 
 ii) intervention after violation has significant consequences for borrowers; 
 
-iii) Cross-section tests: control for following characteristics: a) $\uparrow$ Credit rating $\iff$ $\downarrow$ Information Asymmetry/Agency Issues; b) $\uparrow$ Financially Constrained $\iff$ $\downarrow$ Investment; c) $\uparrow$ Reputation/# of loans $\iff$ $\downarrow$ Decline in Investment when violated; d) $\uparrow$ # of creditors $\iff$ $\downarrow$ Violation; e) $\uparrow$ Cash holdings Constrained $\iff$ $\uparrow$ investment responses;
+iii) Cross-section tests: control for following characteristics: **a)** $\uparrow$ Credit rating $\iff$ $\downarrow$ Information Asymmetry/Agency Issues; **b)** $\uparrow$ Financially Constrained $\iff$ $\downarrow$ Investment; **c)**** $\uparrow$ Reputation/# of loans $\iff$ $\downarrow$ Decline in Investment when violated; **d)** $\uparrow$ # of creditors $\iff$ $\downarrow$ Violation; **e)** $\uparrow$ Cash holdings Constrained $\iff$ $\uparrow$ investment responses;
 
 - **Possible alternative hypotheses**: 
 

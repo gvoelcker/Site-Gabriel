@@ -1,0 +1,63 @@
+---
+title: ""
+date: "28/02/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Ball Bushman Vasvari 2008{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: how does debt-contracting value(DCV) influence both the *ownership structure* and explicit *contractual structure* of syndicated loan deals?
+
+-   **Intended contribution/importance**: we connect the existence of unresolved information asymmetries with direct, intuitive measures of the debt-contracting value of accounting information. Provides evidence on the central role of accounting information in the design of loan syndicates. Second, we distinguish an important transparency channel through which the inherent properties of general purpose financial state- ments can contribute to the efficiency of debt contracting, as distinct from a formal contracting channel, such as financial covenants. Third, we document that the relation between the debt-contracting value of accounting information and ownership structure of the syndicate is conditioned by the presence of al- ternative disciplining mechanisms.
+
+-   **Hypotheses**: $\uparrow$ DCV $\iff$ $\downarrow$ proportion of the loan retained by the leader when: 1) borrower is not rated; 2) lead arranger doesn't have an established reputation; 3) leader hasn't previously served as a leader for the same borrower;
+
+Syndicates are more likely to choose an accounting ratio over credit ratings as the borrower's debt-contracting value of accounting information increases.
+
+-   **Setting/research design**: estimate a direct proxy for the debt-contracting value of accounting by exploiting observable changes in credit quality. Our primary measure is a goodness-of-fit statistic from a probit model where credit ratings downgrades are modeled as a function of lagged seasonally adjusted changes in accounting earnings. 
+
+Data: Dealscan and SEC(13Ds, 14Ds, 13Es, 10Ks, and 8Ks), firms that are matchable to Compustat data. 4140 deals/1915 firms/1992-2004.
+
+-   **Main results**: proportion of loan retained by the principal is decreasing function of DCV of accounting information, controlling for many characteristics. This relation is even more pronounced when: 1) borrower is not rated; 2) lead arranger does not have an established reputation; 3) lead arranger has not previously served as the lead arranger for the same borrower.
+
+-   **Additional results crucial to the story**: how the debt-contracting value of accounting data influences the choice of the performance measure used in performance pricing provisions. syndicates are more likely to choose the timeliness inherent in an accounting ratio over the superior in- formativeness of credit ratings as the debt-contracting value of a borrower’s accounting information increases. We thus establish a direct connection between the choice of performance measure included in the explicit debt contract and the debt-contracting value of accounting.
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
+
+Influence of DCV info on leader(senior banks in the loan) involvement: 1) $\exists$ credit rating by an independent agency; 2) reputation of leader; 3) if the leader has already worked with the borrower in a previous arrangement.  
+
+Empirical investigation of how the DCV of accounting information, a mechanism that decreases information asymmetries, influences both the ownership structure and the explicit contractual structure of syndicated loan deals for publicly traded borrowers. 
+
+**Pricing grids**: make the interest rate contingent on accounting ratios or credit ratings. Classified into: 1) capital-based(C-grid), which rely on capital-based accounting indicators used by C-covenants; 2) profitability-based grids (P-grid), which rely on accounting indicators used by P-covenants; 3) grids based on credit ratings.  
+
+Sum by Christensen Nikolaev(2012): Ball et al. [2008] demonstrate that **credit rating–based performance pricing grids are chosen over accounting-based performance pricing grids when accounting information is a poor predictor(does the lender know that?) of credit risk deteriorations**. However, Ball et al. [2008] do not distinguish between C- and P-grids in their analysis. C-grids penalize the use of debt in the capital structure and we therefore expect them to have similar interest-aligning effects as the Ccovenants described in section 2. As a result, C-grids are less dependent on the contractibility of accounting information than P-grids. Therefore, as the contractibility of accounting information varies, we expect to observe a substitution effect between performance-based and rating-based pricing grids but not between capital-based and rating-based pricing grids.
+
+Terms of the loan: price(interest rates and fees), maturity, size, collateral requirements and covenants. 
+
+
+
+
+

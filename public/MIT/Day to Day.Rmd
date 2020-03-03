@@ -1,4 +1,5 @@
 ---
+title: PhD to do's
 output: html_document
 ---
 
@@ -24,13 +25,19 @@ output: html_document
 
 ##### **Micro**
 
-- Pset 2. Goal: 01/03.
+- **Pset 2. Goal: 01/03.**
 
-- Readings.
+- Bernheim and Sprenger (2019). Goal 27/02.
+
+- Strzalecki 7.1, 7.6.    ✅ 
+
+- Strzalecki 7.5, 10.3, 10.4, 10.5. Goal 27/02.
+
+- MWG 6F on EU with subjective probability.   ✅ 
 
 ##### **Metrics**
 
-**- PS2. Goal: 01/03.**
+- **PS2. Goal: 01/03.**
 
 - Read Greene's 2003 -> Proofs of NYU notes. Goal: 24/02.
 
@@ -40,11 +47,11 @@ output: html_document
 
 - Discuss with Thobias. Goal: 23/02.   ✅ 
 
-- Set up presentation/hand-out. Goal: 26/02.
+- Set up presentation/hand-out. Goal: 26/02.  ✅ 
 
 ##### **Harvard's TEPE**
 
-- Skim abstract + intro papers. Goal: 26/02.
+- Skim abstract + intro papers. Goal: 26/02. ✅ 
 
 - Referee Report #2: Goal 19/03.
 

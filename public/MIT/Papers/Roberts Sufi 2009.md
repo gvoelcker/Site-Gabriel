@@ -18,7 +18,7 @@ html_document:
 
 -   **Hypotheses**: 
 
--   **Setting/research design**: 1000 private credit agreements between 1996 and 2005. 1st test: Probit: how much more likely is a firm to renegotiate if it has certain characteristics? 2nd test: Multinomial logit: what determines the outcomes?
+-   **Setting/research design**: 1000 private credit agreements between 1996 and 2005. 1st test: Probit: how much more likely is a firm to renegotiate given some ex ante and ex post conditions..........? 2nd test: Multinomial logit: what determines the outcomes?
 
 -   **Main results**: primary determinants of renegotiation and outcomes: new information concerning credit quality, investment opportunities, collateral of the borrower and macroeconomic fluctuations.
 
