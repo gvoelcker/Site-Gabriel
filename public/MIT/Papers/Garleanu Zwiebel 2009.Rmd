@@ -37,9 +37,9 @@ html_document:
 
 What is crucial to be able to use this model: a) presence of *ex-ante* noncontractible future actions for which decision rights can be assigned; b) asymmetric information between the contracting parties regarding the relative consequences of such future actions on the two parties. 
 
-- **Main results**: $\uparrow$ tighter covenants $\iff$ $\uparrow$ asymmetric information $\land$ $\uparrow$ lender's info obtaining cost $\land$ $\downarrow$ renegotiation costs. Ex-post renegotiation will be biased towards the uninformed party giving up these excessive rights $\implies$ asymmetric renegotiation.
+- **Main results**: $\uparrow$ tighter covenants $\iff$ $\uparrow$ asymmetric information $\land$ $\uparrow$ lender's info acquisition cost $\land$ $\downarrow$ renegotiation costs. Ex-post renegotiation will be biased towards the uninformed party giving up these excessive rights $\implies$ asymmetric renegotiation.
 
-- **Additional results crucial to the story**: *when* the timing of information acquisition by the lender is also important: $\downarrow$ information disadvantage $\implies$ more efficient contract. Sometimes this acquisition is not necessary(ex: at t=1 there is no room for renegotiation). 
+- **Additional results crucial to the story**: the timing of information acquisition by the lender is also important: $\downarrow$ information disadvantage $\implies$ more efficient contract. Sometimes this acquisition is not necessary(ex: at t=1 there is no room for renegotiation). 
 
 - **Possible alternative hypotheses**: 
 
@@ -71,7 +71,7 @@ Under asymmetric information, given p > 1/2 and $G^M$ > (2p - 1)c, the uninforme
 
 #### **Empirical Predictions**:
 
-4.1) **Strict covenants and asymmetric renegotiation**: Exactly how strict should one expect /covenants to be, and what renegotiation should be expected? If debt covenants are simply an ex ante unbiased estimate of the future states in which investments should and should not be undertaken, or if renegotiations are costly, one would not expect to see covenants that are so likely to be in violation so soon after the debt is issued.
+4.1) **Strict covenants and asymmetric renegotiation**: Exactly how strict should one expect covenants to be, and what renegotiation should be expected? If debt covenants are simply an ex ante unbiased estimate of the future states in which investments should and should not be undertaken, or if renegotiations are costly, one would not expect to see covenants that are so likely to be in violation so soon after the debt is issued.
 
 4.2) **Renegotiation costs and debt covenants**: covenant strictness should decrease with renegotiation costs. “Good” managers choose strict debt covenants in our model in order to distinguish themselves from other managers with a greater ability or propensity for asset substitution; and the level of strictness takes into account that the cost of overly strict covenants can be mitigated by renegotiation in the future whenthere is less informational asymmetry. This prediction contrasts with a commonnotion of covenants and renegotiation as alternative mechanisms for debtholder control. If that were the case, then stricter covenants would be employed when renegotiations were more costly. In contrast, in our model, strict covenants follow as a consequence of adverse selection, and the ability to renegotiate such covenants ex post allows for stricter covenants.
 
@@ -83,7 +83,7 @@ If covenants were as likely to be tightened as loosened in renegotiations, it is
 
 4.4) **Cash flow and debt covenants**: the potential for intrafirm transfers is likely to be larger when there is a lot of fungible cash present (as opposed to, say, large physical assets). That is, holding all else fixed, it is likely to be easier to secretly transfer cash than machines. More generally, a similar distinction is likely to hold for other fungible versus nonfungible assets as well. Furthermore, one might expect such transfers of cash to be easier when cash flows are more volatile and unpredictable.
 
-Our model would predict $\uparrow$ covenants strictness $\iff$ $uparrow$ $\frac{ cash flow (and other fungible assets)}{relative to overall capital}$. Additionally, covenants should be stricter in firms and industries with volatile and uncertain cash flows, and weaker in industries in which cash flows are stable and predictable.
+Our model would predict $\uparrow$ covenants strictness $\iff$ $\uparrow$ $\frac{ cash flow (and other fungible assets)}{relative to overall capital}$. Additionally, covenants should be stricter in firms and industries with volatile and uncertain cash flows, and weaker in industries in which cash flows are stable and predictable.
 
 4.5) **Asymmetric information regarding investment and covenants**: the two types of asymmetric information (regarding investments and regarding transfers) are likely to be present together often, and it may be hard to measure one independently of the other.
 

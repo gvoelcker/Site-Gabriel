@@ -7,6 +7,22 @@ output: html_document
 
 [**MIT PhD Accounting**](https://gabrielvoelcker.netlify.com/mit/mitaccphd)
 
+#### **Mar 3rd - Mar 18th**
+
+- Micro PS3. Goal: 10/03. Deadline: 12/03. Status: 0%.
+
+- Metrics PS3. Goal 13/03. Deadline: 16/03. Status: 0%.
+
+- JAE's RR. Goal 15/03. Deadline: 16/03. Status: 20%.
+
+- Joe's RR. Goal: by the end of spring break. Deadline: $\sim$ 31/03. Status: 0%.
+
+- Harvard's 2nd RR. Goal: 22/03. Deadline: 25/03. Status: 0%.
+
+- Micro midterm: 17/03. Status: -50%.
+
+- Metrics midterm: 18/03. Status: 10%.
+
 #### **Feb 24th - Mar 2nd**
 
 ##### **Paper review**
