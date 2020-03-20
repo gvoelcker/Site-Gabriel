@@ -12,13 +12,13 @@ output: html_document
 ```{r table, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
 library(kableExtra)
 library(tidyverse)
-Task <- c("Micro PS3", "Metrics PS3", "JAE's RR", "Joe's RR", "Harvard's 2nd RR", "Metrics PS4", "Metrics PS5")
-Goal <- c("10/03", "13/03", "15/03", "20/03", "20/03", "18/04", "04/05")
-Deadline <- c("12/03", "16/03", "16/03", "31/03", "08/04", "22/04", "08/05")
-Start <- c("03/03", "03/03", "03/03", "16/03", "16/03", "12/04", "27/04")
-Status <- c("99%", "99%", "100%", "99%", "60%", "0%", "0%")
-Completion <- c("Review and Submit!", "Review and Submit!", "Done", "Review and Submit!", " ", " ", " ")
-Feedback <- c(" ", " ", "Ok", " ", " ", " ", " ")
+Task <- c("Micro PS3", "Metrics PS3", "JAE's RR", "Joe's RR", "Harvard's 2nd RR", "Metrics PS4", "Metrics PS5", "TEPE Paper Project")
+Goal <- c("10/03", "13/03", "15/03", "20/03", "20/03", "18/04", "04/05", "05/05")
+Deadline <- c("12/03", "16/03", "16/03", "31/03", "08/04", "22/04", "08/05", "10/05")
+Start <- c("03/03", "03/03", "03/03", "16/03", "16/03", "12/04", "27/04", "23/03")
+Status <- c("99%", "99%", "100%", "99%", "60%", "0%", "0%", "1%")
+Completion <- c("Review and Submit!", "Review and Submit!", "Done", "Review and Submit!", " ", " ", " ", " ")
+Feedback <- c(" ", " ", "Ok", " ", " ", " ", " ", " ")
 
 ApplicationsTable <- as.data.frame(cbind(Task, Goal, Deadline, Start, Status, Completion, Feedback))
 colnames(ApplicationsTable) <- c("Task", "Goal", "Deadline", "Start", "Status", "Completion", "Feedback")
@@ -33,6 +33,19 @@ Doing them:
 - Metrics: reread all notes; finish psets and sum them up.
 
 - Joe's RR: done in 3 pages.
+
+```{r table2, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
+library(kableExtra)
+library(tidyverse)
+Doing1 <- c("Principles of Mathematical Analysis", "Math Hard Book", "1 Python/R course a day", "Paper per day")
+Doing2 <- c("0", "0", "Python Toolbox1, Shiny1, Shiny2", "0")
+Doing3 <- c("Chapter 1/11", "0", "3", "0")
+Doing4 <- c("1%", " ", " ", " ")
+ApplicationsTable2 <- as.data.frame(cbind(Doing1, Doing2, Doing3, Doing4))
+colnames(ApplicationsTable2) <- c("Task", "Achieved", "Completion", "Status" )
+knitr::kable(ApplicationsTable2[], caption = 't ') %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed")) 
+```
 
 #### **Feb 24th - Mar 2nd**
 
