@@ -100,3 +100,62 @@ We call *W,Z* the predetermined or *exogenous variables*, and *Y,D* as jointly d
 
 
 
+
+
+## **Applied Exercises**{.tabset}
+
+In here I'll try to replicate the applied exercises from 14.382 as taught in the Spring of 2020.
+
+### **PS1**
+
+#### **Q4)**
+
+*(30 points) Consider the [**Angrist and Evans(1998)**](https://www.jstor.org/stable/116844?seq=1) paper on the effect of family size on a mother’s labor force participation. The data is available [**here**](https://dataverse.harvard.edu/dataset.xhtml?persistentId=hdl:1902.1/11288).*
+
+
+*(a) Reproduce the part of Table 7 of Angrist and Evans (1998) that uses labor income as the left hand side variable, more than 2 children as the endogenous dummy variable, same sex as the instrument, and other covariates as in Table 7.*
+
+Let's start by tidying the data to be used:
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+library(haven)
+library(tidyverse)
+library(AER)
+library(systemfit)
+```
+
+```{r, echo=TRUE, message=FALSE}
+  # Importing data:
+m_d_806 <- read_sav("C:/Users/gmv/Dropbox/MIT/2020 1/14.382 - Econometrics/PS1/m_d_806.sav")
+
+# 4a) Table 7, 4th column:
+  # Generating variables:
+
+  # Creating count of same sex for first two births:
+m_d_806$same <- as.numeric(m_d_806$SEXK) + as.numeric(m_d_806$SEX2ND)
+
+  # Creating dummy for first two births of the same sex:
+samesexm <- as.numeric(m_d_806$same == 0)
+samesexw <- as.numeric(m_d_806$same == 2)
+
+  # Generates same sex variable:
+m_d_806$samesex <- as.numeric(samesexm) + as.numeric(samesexw)
+
+```
+
+
+*(b) Calculate standard errors for the coefficients that impose homoskedasticity. For the coefficient on the more than two children variable, how different would a 90% confidence interval be if homoskedasticity consistent standard errors are used rather than heteroskedaticity consistent?*
+
+
+*(c) Caclulate clustered standard errors based on clustering by the state variable. How different is the 95 percent confidence interval for clustered standard errors than for heteroskedasticity consistent standard errors?*
+
+### **PS2**
+
+
+### **PS3**
+
+### **PS4**
+
+### **PS5**
+
+### **PS6**

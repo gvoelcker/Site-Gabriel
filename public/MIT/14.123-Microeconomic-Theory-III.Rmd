@@ -597,7 +597,7 @@ Where $u_1$ can depend on s. But neither $u_1$ nor $p$ can depend on $A_1$. Usin
 
 - The individual knows his preferences will change: it's as if an equilibria between two selves.
 
-- **No Compromise**: t=0 preference $\succeq$ satisfies **no compromise** if $\forall$ $A_1, B_1 \in M(Z_1)$ either $A_1 \sim_0 A_1 \cup B_1$ or $B_1 \sim_0 A_1 \cup B_1$. 
+- **No Compromise**: t=0 preference $\succeq_0$ satisfies **no compromise** if $\forall$ $A_1, B_1 \in M(Z_1)$ either $A_1 \sim_0 A_1 \cup B_1$ or $B_1 \sim_0 A_1 \cup B_1$. 
 
 - Gul and Pesendorfer Theorem (2005): $\succeq_0$ satisfies *no compromise* if it has a Strotz representation. The Strotz representation is closely related to quasi-hyperbolic discounting, where preferences are represented by
 

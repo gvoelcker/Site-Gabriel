@@ -62,7 +62,7 @@ But what if we use another set of numbers? For example: the first 1000 occurrenc
 Base <- read_excel("Fibonacci.xlsx", sheet=1, col_names = TRUE)
 ```
 
-```{r Beta, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
+```{r Beta, tidy=FALSE, echo=TRUE, message=FALSE, include=TRUE, warning=FALSE}
 Graf1 <- ggplot(data = Base, mapping = aes(Digit, as.numeric(Distribution))) +
   geom_col() +
   theme_economist(base_size = 12) +

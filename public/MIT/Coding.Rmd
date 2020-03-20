@@ -1,0 +1,98 @@
+---
+title: ""
+author: ""
+date: ""
+output: html_document
+---
+# Coding{.tabset}
+
+## R{.tabset}
+
+### Shiny Apps
+
+**1)**
+
+**2)** 
+
+### Building Dashboards with Shiny
+
+**1) Building Static Dashboards** 
+
+- Creates dashboard. Messages/notifications. Creates tabs/tab boxes. 
+
+**2) Building Dynamic Dashboards**
+
+- Reactive data. Creating **sliders**. Creates list of options based on "choices = starwars$name". Read in real-time data: reactiveFileReader (change input). FilePath = indicates where is the source we're using? Read vs displaying? **View real time data with: renderTable()**. Optimizing performance: dynamic data should be read how many times? Clickbox updating.
+
+**3) Customizing Style**
+
+- Row-based layout: **fluidRow()** within the dashboardBody(). Column-based layout: fluidRow() + column. Mix row and column. Customizing: color/icons/status.
+
+**4) Case Study**
+
+- Inputting data from a data frame into a dashboard. Using leaflet to create a **dynamic dashboard**. **User inputs** a threshold. 
+
+http://www.htmlwidgets.org/
+
+## Python{.tabset}
+
+### **Data Manipulation with pandas**
+
+**1) Transforming Data: DataFrames**
+
+a) Sorting and subsetting: sorting by one/more column(s). Ascend, descend.
+
+*Double sort:* homelessness.sort_values(["region", "family_members"], ascending=[True, False])
+
+- Subsetting by categorical variables.
+  
+b) Creating new columns.
+  
+- *transforming*, *mutating* and *feature engineering*. 
+  
+**2) Aggregating Data:**
+
+- Summary statistics. *Efficient summaries*: the .agg() method allows you to apply your own custom functions to a DataFrame, as well as apply functions to more than one column of a DataFrame at once, making your aggregations super efficient. **Creates a function** for the first time. **Cumulative statistics**. **Removes duplicates**. For **proportion**, use *normalize*. Summary statistics using **groupby**. **Pivot_table**.
+    
+- Counting.
+    
+- Grouped summary statistics.
+    
+**3) Slicing and Indexing Data**
+
+- Subsetting using slicing: indexing. .loc[]. Individual/Plural indices. Sort by two variables. Slicing in both directions: subsetting possibilities. Calculating mean by type. **Mean value by characteristic**.
+    
+- Indexes and Subsetting usind indexes.
+    
+**4) Creating and Visualizing Data:**
+
+- Plotting: matplotlib.pyplot. Two histograms together(4.5).
+    
+- Handling missing data. Identifying and removing. Multi-histogram visualization.
+    
+- Reading data into a DataFrame. Creating data frames. Dictionaries. Converting data to dataframe: pd.DataFrame(). Read csv: pd.read_csv().
+
+
+
+
+
+
+
+
+
+
+
+
+
+### **Python Data Science Toolbox (Part 1)**
+
+1) Writing your own functions: basic functions. Multiple function parameters. **Tuples**: function returns multiple values. Access a single value inside a tuple. Importing data and iterating over it.
+
+2) Default arguments, variable-length arguments and scope. Local scope comes before global in searches. **Nested** functions: avoids being repetitive. **Closure**: anything defined locally in the enclosing scope is available to the inner function even when the outer function has finished execution. **nonlocal** (?). Adding default arguments. Flexible arguments *args.
+
+3) Lambda functions and error-handling.
+
+
+
+
+
