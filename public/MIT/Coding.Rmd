@@ -90,8 +90,7 @@ b) Creating new columns.
 
 2) Default arguments, variable-length arguments and scope. Local scope comes before global in searches. **Nested** functions: avoids being repetitive. **Closure**: anything defined locally in the enclosing scope is available to the inner function even when the outer function has finished execution. **nonlocal** (?). Adding default arguments. Flexible arguments *args.
 
-3) Lambda functions and error-handling.
-
+3) Lambda functions and error-handling: lambda is a super simple way to write functions. Creates function, converts to a list. Filtering a list based on a characteristic. Import a function from a module. Error handling. 
 
 
 
