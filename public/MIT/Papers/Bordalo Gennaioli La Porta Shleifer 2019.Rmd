@@ -1,0 +1,44 @@
+---
+title: "Diagnostic Expectations and Stock Returns"
+date: "26/03/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Bordalo Gennaioli La Porta Shleifer 2019{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: returns on stocks with most optimistic analyst long-term earnings growth forecasts are lower than those on stocks with the most pessimistic forecasts. 
+
+-   **Intended contribution/importance**: 
+
+-   **Hypotheses**: 
+
+-   **Setting/research design**: develop a model of belief formation based on the representativeness heuristic. 
+
+-   **Main results**: analysts forecast fundamentals from observed earniongs growth, but overreact to news by exaggerating the probability of states that have become more likely. 
+
+-   **Additional results crucial to the story**:
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
