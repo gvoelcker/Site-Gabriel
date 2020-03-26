@@ -1,0 +1,44 @@
+---
+title: "Mann 2018"
+date: "26/03/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Creditor rights and innovation: Evidence from patent collateral{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: does pledging patents as collateral increase innovation?
+
+-   **Intended contribution/importance**: relevance: link between creditor rights and innovation: patents are a growing source of financing for innovative firms. Innovative firms have low tangibility: but with patents they have collaterals! Contributions: to the literature on the role of intangible assets in corporate finance; to the literature on optimal creditor rights for innovative industries.
+
+-   **Hypotheses**: additional: stronger creditor rights to patents primarily encourage/discourage financing and investment among patenting firms? What is the optimal degree of creditor rights for innovative firms?
+
+-   **Setting/research design**: show the value of patent collateral for financing innovation among public firms. Employs diff-in-diff that examines the evolution of financing and investment for Delaware relative to non Delaware-incorporated firms around the dates of the four court decisions.
+
+-   **Main results**: intangible collateral can have significant economic value. Clarification of legal uncertainties led to large responses in financing and innovation output. For ex: the increase in patent collateral value via strengthening of creditor rights led to increased use of external finance in the form of debt $\rightarrow$ $\uparrow$ investment in innovation (R\&D).
+
+-   **Additional results crucial to the story**: investment by innovative firms is constrained more by a lack of collateral value. The changes led to an increase on the number of patents. 
+
+- **Possible alternative hypotheses**: 
+
+- **Conclusion**: the results demonstrate that the firms relying on patent col- lateral face significant financial constraints, and that an in- crease in the collateral value of their important intangible assets increased their ability to raise capital and invest it.
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
