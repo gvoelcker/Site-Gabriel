@@ -1,0 +1,50 @@
+---
+title: "test1"
+author: "Gabriel Voelcker"
+date: "3/26/2020"
+output: html_document
+---
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+library(tidyverse)
+library(stringr)
+library(mefa)
+library(plotly)
+library(rjson)
+library(grid)
+library(jpeg)
+library(RCurl)
+library(hexbin)
+library(rvest)
+library(dplyr)
+library(readxl)
+library(writexl)
+library(ggthemes)
+library(ggplot2)
+library(xml2)
+library(shiny)
+```
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+setwd("C:/Users/gmv/Dropbox/MIT/2020 1/Acct Trends")
+# importing citations database:
+citations <- read_excel("citations.xlsx")
+
+# Deleting all archives except:
+rm(list=setdiff(ls(), c("citations")))
+
+# Groupping data by Universities:
+Universities <- as.data.frame(table(citations$School))
+
+Unis1 <- group_by(citations, School)
+Unis2 <- summarize(Unis1, count = n(), totalcites = sum(Citations), totalcites5 = sum(Citations5), totalhindex = sum(hindex), totalhindex5 = sum(hindex5), totali10 = sum(i10), totali105 = sum(i105))
+Unis <- Unis2 %>% mutate(Cit_Avg = totalcites/count, 
+                          Cit_Avg5 = totalcites5/count)
+rm(list=setdiff(ls(), c("citations", "Unis")))
+
+# Plotly 1
+fig <- plot_ly(data = Unis, x = ~totalcites, y = ~Cit_Avg, color = ~School)
+
+fig
+```
+
