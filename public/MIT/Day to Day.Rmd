@@ -16,8 +16,8 @@ Task <- c("Micro PS3", "Metrics PS3", "JAE's RR", "Joe's RR", "Harvard's 2nd RR"
 Goal <- c("10/03", "13/03", "15/03", "20/03", "20/03", "18/04", "04/05", "05/05", "05/04")
 Deadline <- c("12/03", "16/03", "16/03", "31/03", "08/04", "22/04", "08/05", "10/05", "07/04")
 Start <- c("03/03", "03/03", "03/03", "16/03", "16/03", "12/04", "27/04", "23/03", "26/03")
-Status <- c("100%", "100%", "100%", "100%", "95%", "0%", "0%", "1%", "0%")
-Completion <- c("Done", "Done", "Done", "Done", "Review and Submit!", " ", " ", " ", " ")
+Status <- c("100%", "100%", "100%", "100%", "95%", "0%", "0%", "1%", "30%")
+Completion <- c("Done", "Done", "Done", "Done", "Review and Submit!", " ", " ", " ", "Interpret results; create handout")
 Feedback <- c(" ", " ", "Ok", " ", " ", " ", " ", " ", " ")
 
 ApplicationsTable <- as.data.frame(cbind(Task, Goal, Deadline, Start, Status, Completion, Feedback))
