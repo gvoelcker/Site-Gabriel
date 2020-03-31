@@ -19,7 +19,7 @@ html_document:
 
 -   **Setting/research design**: show the value of patent collateral for financing innovation among public firms. Employs diff-in-diff that examines the evolution of financing and investment for Delaware relative to non Delaware-incorporated firms around the dates of the four court decisions.
 
--   **Main results**: intangible collateral can have significant economic value. Clarification of legal uncertainties led to large responses in financing and innovation output. For ex: the increase in patent collateral value via strengthening of creditor rights led to increased use of external finance in the form of debt $\rightarrow$ $\uparrow$ investment in innovation (R\&D).
+-   **Main results**: intangible collateral can have significant economic value. Clarification of legal uncertainties led to large responses in financing and innovation output. For ex: t he increase in patent collateral value via strengthening of creditor rights led to increased use of external finance in the form of debt $\rightarrow$ $\uparrow$ investment in innovation (R\&D).
 
 -   **Additional results crucial to the story**: investment by innovative firms is constrained more by a lack of collateral value. The changes led to an increase on the number of patents. 
 

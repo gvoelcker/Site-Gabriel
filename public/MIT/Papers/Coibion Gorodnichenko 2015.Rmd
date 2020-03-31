@@ -1,4 +1,5 @@
 ---
+title: "XXX"
 date: "XX/XX/2020"
 html_document:
     toc: true
@@ -6,11 +7,9 @@ html_document:
     number_sections: true
     fig_caption: true
 ---
-# [**Paper Name and Link**]()
+## Paper Analysis{.tabset}
 
-## {.tabset}
-
-### **Paper Analysis**
+### Paper Analysis
 
 -   **Research question**: 
 
@@ -30,7 +29,7 @@ html_document:
 
 - **Future research**:  
 
-### **When evaluating a paper:**
+### When evaluating a paper:
 
 - Does the study address an important question?
 
@@ -42,4 +41,6 @@ html_document:
 
 - Does the study consider and rule out alternative explanations?
 
-### **Summary**
+### Summary
+
+The model has the advantage of nesting rational expectations as a particular case and offers a simple way to measure expectation stickiness using the link between forecast errors and past forecast revisions. 

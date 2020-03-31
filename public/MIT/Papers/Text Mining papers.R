@@ -1,12 +1,13 @@
 require(pdftools)
 require(ggthemes)
 require(tidyverse)
+require(tidytext)
 
 Sys.setlocale("LC_ALL", "UTF-8")
-setwd("C:/Users/gmv/Dropbox/MIT/2020 1/15.539 - Acct Seminar")
+setwd("C:/Users/gmv/Dropbox/R/Site-Gabriel/public/MIT/Papers")
 
 # Importng
-text <- pdf_text("TAR-2020-0129.pdf")
+text <- pdf_text("Ferri Zheng Zou 2018.pdf")
 paper_analysis <- as.data.frame(text)
 
 # Cleaning symbols
@@ -69,7 +70,6 @@ bigram_counts
 bigrams_united <- bigrams_filtered %>%
   unite(bigram, word1, word2, sep = " ")
 
-
 # Trigrams:
 trigrams <- total_words %>%
   unnest_tokens(trigram, word, token = "ngrams", n = 3) %>%
@@ -78,7 +78,6 @@ trigrams <- total_words %>%
          !word2 %in% stop_words$word,
          !word3 %in% stop_words$word) %>%
   count(word1, word2, word3, sort = TRUE)
-
 
 bigram_graph <- bigram_counts %>%
   filter(n > 15) %>%
