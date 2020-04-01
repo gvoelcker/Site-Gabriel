@@ -1,0 +1,72 @@
+---
+title: "14.124 - Microeconomic Theory IV"
+output: html_document
+---
+
+# Study Guide{.tabset}
+
+## **Lectures**{.tabset}
+
+### **L1** 
+
+## **Lecture Notes**{.tabset}
+
+### **L1**
+
+First two pages lay out what the course covers. Then, some key concepts are presented and we focus on DSE.
+
+#### **Mechanism Design Problem**
+
+- **Social choice function(Def1)**: a mapping from the type profiles to chosen alternatives. 
+
+- **Mechanism**($\Gamma$)(Def2): a game whose outcomes are the alternatives $x \in X$ that the players choose. A mechanism consist in the set of actions($A_i$) available to player $i$ and a function($g$) that maps these actions to the alternatives. 
+
+- **Strategy**: a mapping from the player's private info to the action she takes.  
+
+- **Incomplete information game(Def3)**: game G induced by mechanism $\Gamma$ is the incomplete information game with players *I*, types $\Theta$, prior probability distribution $\theta$, actions A, and payoff functions (as a function of actions and types) $u_i$(g(a),$\theta_i$) for each $i \in I$. 
+
+The *mechanism* $\Gamma$ implements the *social choice function* $f: \Theta \rightarrow X$ if, when the players play some *equilibrium* $s^\ast$ of $\Gamma$, the resulting outcome corresponds to the social choice function $f$ for any type profile. But what is the equilibrium?
+
+1) **Dominant Strategy Equilibrium(DSE)**: player *i* plays $s_i^\ast(\theta_i)$ maximizes type $\theta_i$'s utility, irrespective of what the other players play.
+
+2) **Bayesian Nash Equilibrium(BNE)**L player *i* plays $s_i^\ast (\theta_i)$ to maximize her type $\theta_i$'s expected utility, assuming the other players *-i* follow strategies $s_{-i}^\ast$.
+
+How do we choose how to restrict our attention when designing mechanisms? Do we have to check "all possible mechanisms"?
+
+$\Downarrow$
+
+- **Revelation Principle of Mechanism Design**: once players reveal their types, we can play the complicated game for them $\rightarrow$ simpler mechanism with the same information as the more complicated mechanism and makes the game less manipulable because it offers each player fewer possible deviations. With it, we don't have to check different mechanisms. If truthful reporting is an equilibrium, we say the mechanism is **incentive compatible**. 
+
+- **Direct Mechanism**: a mechanism satisfying $A = \Theta$. A direct mechanism can thus be identified with its outcome function $g: \Theta \rightarrow X$, a similar mathematical object to the SCF. The only possible deviation is to follow the equilibrium strategy of **another** type.
+
+- **Incentive Compatibility**: SCF $f$ is *dominant strategy incentive compatible*(DSIC) if
+
+\[ u_i(f(\theta_i, \theta_{-i}),\theta_i) \geq (f(\theta_i', \theta_{-i}), \theta_i) \forall i \in I, \theta_i \in \Theta_i, \theta_i' \in \Theta_i, \theta_{-i} \in \Theta_{-i}\]
+
+From which we derive the following proposition:
+
+- **Revelation Principle for DSE**: a SCF *f* is implementable in dominant strategies $\iff$ it's DSIC $\implies$ the direct mechanism $g = f$ implements it in dominant strategies. So if *f* is implementable in dominant strategies by **any** mechanism $\implies$ it's also implementable by an incentive-compatible direct mechanism. 
+
+Proceeding to analyzing the implementability of social choice functions we arrive at:
+
+- **Gibbard-Satterthwaite Theorem**: if the set of alternatives $X$ contains at least three elements, individuals can have any strict preferences over X, and the range of $f$ equals X, then $f$ is DSIC $\iff$ it is dictatorial. This means that there some agent $i^\ast$ such that $f(\theta)$ is always $i^\ast$'s favorite alternative. Hence, Mechanism Design theory must concern itself with more restrictive environments.
+
+- **Quasi-linear environments**: where each player *i* cares about a social outcome (or *allocation*) $y \in Y$ and a monetary transfer $t_i \in \mathbb{R}$ and her utility for outcome x = (y,t) (where t =($t_1,...,t_n$) is the vector of transfers) takes the form:
+
+\[  u_i(y, t, \theta_i) = v_i (y, \theta_i) + t_i \]
+
+The assumption of quasi linearity implies two restrictions: 1) each agent cares about her own transfer $t_i$ in a linear and additively separable manner; 2) each agent does not care about anyone else's transfer at all. 
+
+In these environments, we are concerned with implementable SCF that aim either for utility maximization or profit maximization.
+
+1) Utilitarian efficient allocation at type profile $\theta$:
+
+\[ y^\ast (\theta) = argmax_{y \in Y} \sum_{i \in I}v_i (y,\theta_i) \]
+
+Do there exist transfers $t(\theta)$ such that the socil function given by $f(\theta) = (y^\ast (\theta), t(\theta))$ is DSIC? i.e. can we design transfers so that society always obtains the efficient allocation?
+
+
+
+
+
+
