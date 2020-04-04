@@ -63,9 +63,234 @@ In these environments, we are concerned with implementable SCF that aim either f
 
 \[ y^\ast (\theta) = argmax_{y \in Y} \sum_{i \in I}v_i (y,\theta_i) \]
 
-Do there exist transfers $t(\theta)$ such that the socil function given by $f(\theta) = (y^\ast (\theta), t(\theta))$ is DSIC? i.e. can we design transfers so that society always obtains the efficient allocation?
+Do there exist transfers $t(\theta)$ such that the social function given by $f(\theta) = (y^\ast (\theta), t(\theta))$ is DSIC? i.e. can we design transfers so that society always obtains the efficient allocation?
+
+#### **Summary**
+
+VCG mechanisms have the remarkable property of implementing efficient outcomes in the presence of private information. In a nutshell, they do this by aligning private and social incentives: each player is paid the sum of othersíutilities (plus a constant), and thus internalizes the e§ects of her report on others. At the end of class, I also claimed that, under mild conditions, VCG mechanisms are the only ones that implement e¢ cient outcomes. We will prove this claim in this class, and will illustrate with some examples.
+
+### **L2**
+
+To prove that VCG mechanisms are the unique efficient, DSIC mechanisms, we need a fundamental tool from mathematical economics: the **envelope theorem** and the closely related **payoff equivalence** theorem.
+
+#### **Envelope Theorem**
+
+We start by using an abstract optimization problem:
+
+\begin{equation}
+V(\theta) = \sup\limits_{x \in X} f (x, \theta)
+\end{equation}
+
+where we have
+
+- **Parameter**: $\theta \in [0,1]$.
+
+- **Arbitrary choice set**: X.
+
+- **Objective function**: $f: X \times [0,1] \rightarrow \mathbb{R}$.
+
+- **Value function**: V: [0,1] $\rightarrow \mathbb{R}$.
+
+Also, let 
+
+\begin{equation}
+X^\ast (\theta) = argmax_{x \in X} f (x,\theta)
+\end{equation}
+
+be the **maximizer correspondence** $X^\ast : [0,1] \rightarrow 2^X$. Let $x^\ast(\theta)$ be an arbitrary selection from $X^\ast(\theta)$.
+
+The envelope theorem gives conditions under which
+
+\begin{equation}
+    \underbrace{V'(\theta)}_\text{Derivative of Value Function} = \underbrace{f_\theta (x^\ast (\theta), \theta)}_\text{Derivative of Objective Function} 
+\end{equation}
+
+Which it's true when the optimal choice doesn't change with the parameter. And 
+
+\begin{equation}
+    \underbrace{V(\theta)}_\text{Value Function} = \underbrace{V(0)}_\text{Value Function at 0} + \underbrace{\int_0^\theta f_\theta (x^\ast (\tilde{\theta}), \tilde{\theta}) d \tilde{\theta}}_\text{The integral of the derivative - captures all the changes from 0 to $\theta$}
+\end{equation}
+
+This is a general version of the envelope. For 124 we'll need:
+
+$If$
+
+- $f(x,\theta)$ is differentiable in $\theta \forall x \in X$;
+
+- $\exists B < \infty$ such that $|f_\theta(x,\theta)| ≤ B \forall x \in X$ and almost every $\theta \in [0,1]$; and
+
+- $X^\ast (\theta) \neq \varnothing$ for almost every $\theta \in [0,1]$. 
+
+Then for every selection $x^\ast$ in from $X^\ast$ and every $\theta \in [0,1]$, we have
+
+\[ V(\theta) = V(0) + \int_0^\theta f_\theta (x^\ast (\tilde{\theta}), \tilde{\theta})d \tilde{\theta} \]
+
+We haven't made any assumptions about X and the behavior of $f$ with respect to $x$. So, the beauty of the envelope theorem is that regularity of V in the parameter $\theta$ comer "for free" from regularity of $f$ in $\theta$ and the nature of optimizing behavior.
+
+Now, we also want to show that $V'(\theta) = f_\theta (x^\ast (\theta), \theta)$ for almost every $\theta \in [0,1]$ and that V is **Lipschitz continuoues**(i.e. $\exists C < \infty$ s.t. $|V(\theta ') - V(\theta)| ≤ C(\theta ' - \theta)$ $\forall \theta, \theta' \in [0,1]$).
+
+Claim 1: V is Lipschitz Continuous, with Lipschitz constant B.
+
+*Proof*: fix $\theta, \theta' \in [0,1]$. Without loss, assume that the value function for $\theta '$ is bigger than for $\theta$ (i.e. $V(\theta ') ≥ V(\theta)$). Then,
+
+\[ \begin{aligned}
+\left|V\left(\theta^{\prime}\right)-V(\theta)\right| &=\sup _{x^{\prime} \in X} f\left(x^{\prime}, \theta^{\prime}\right)-\sup _{x \in X} f(x, \theta) \\
+& \leq \sup _{x \in X}\left[f\left(x, \theta^{\prime}\right)-f(x, \theta)\right] \\
+& \leq B\left|\theta^{\prime}-\theta\right| \\
+\blacksquare
+\end{aligned}\]
+
+Claim 2: $\forall x^\ast$ from $X^\ast$, we have: 
+
+\[ V^{\prime}(\theta)=f_{\theta}\left(x^{*}(\theta), \theta\right) \text { for almost every } \theta \in[0,1] \]
+
+*Proof*: given that Lipschitz continuous functions are differentiable almost everywhere, we have that for almost every $\theta$, V is differentiable and $X^\ast (\theta) \neq \varnothing$. Fix such a $\theta$, fix $x^\ast \in X^\ast(\theta)$. We still have to show what we wanted to prove in the first place: $V'(\theta) = f_\theta (x^\ast, \theta)$. Given the maximization problem 
+\[ \max _{\theta^{\prime} \in \Theta}\left[f\left(x^{*}(\theta), \theta^{\prime}\right)-V\left(\theta^{\prime}\right)\right] \]
+
+Since we established that $V(\theta ') ≥ V(\theta)$ $\forall \theta$, we know that $f\left(x^{*}(\theta), \theta^{\prime}\right) \leq V\left(\theta^{\prime}\right)$ for all $\theta^{\prime},$ with equality at $\theta^{\prime}=\theta,$ the maximum is attained at $\theta^{\prime}=\theta .$ since $f$ and $V$ are both differentiable in $\theta^{\prime},$ the first-order condition with respect to $\theta^{\prime}$ must hold at $\theta^{\prime}=\theta.$ Finally, the first-order condition is precisely $V^{\prime}(\theta)=f_{\theta}\left(x^{*}, \theta\right)$. $\blacksquare$
+
+#### **The Payoff Equivalence Theorem**
+
+Suppose we have just one agent, $\theta \in \Theta$ and payoff function $u : X \times \Theta \rightarrow \mathbb{R}$. A SCF $f : \Theta \rightarrow X$ is *incentive compatible* if 
+
+\[ \theta = argmax_{\theta' \in \Theta} u (f(\theta'), \theta)\]
+
+Let $V(\theta) = u(f(\theta),\theta)$ be the agent''s value function under social choice function $f$. 
+
+The PE theorem says that if $\Theta$ is an interval: $\Theta = [\underline{\theta}, \overline{\theta}]$ and $u_\theta$(x,$\theta$) is uniformly bounded, then the agent's value function $V(\theta)$ (utility for type $\theta$) is uniquely determined by $V(\underline{\theta})$(the utility of the lowest type) and $u_{\theta}(x(\tilde{x}), \tilde{\theta})$ for $\tilde{\theta} \in [\underline{\theta}, \theta]$(the partial derivative of utility with respect to the parameter).
+
+**Theorem 2 (Envelope Characterization of Payoffs)**: Suppose
+
+- $\Theta=[\underline{\theta}, \bar{\theta}] \subset \mathbb{R}$ and
+- for all $x \in X$ and $\theta \in \Theta, u_{\theta}(x, \theta)$ exists and is uniformly bounded.
 
 
+If $f$ is incentive compatible, then, for all $\theta \in \Theta$
+
+\[ V(\theta)=V(\underline{\theta})+\int_{\underline{\theta}}^{\theta} u_{\theta}(f(\tilde{\theta}), \tilde{\theta}) d \tilde{\theta} \]
+
+*Proof*: envelope theorem!
+
+Envelope theorem + quasi-linearity = *payoff equivalence theorem*.
+
+- **Theorem 3 - Payoff Equivalence Theorem**: Theorem 2 assumptions + quasi-linearity ($X = Y \times \mathbb{R}$), and $u(y,t, \theta)$ = $v(y, \theta) + t$.
+
+Consider two incentive compatible social choice functions (y,t): $\Theta \rightarrow Y \times \mathbb{R}$ and ($y, \hat{t}$): $\Theta \rightarrow Y \times \mathbb{R}$ with the same allocation rule $y$. Let $V^t$ and $\V^{\hat{t}}$ be the corresponding value functions. Then, $\forall \theta \in \Theta$, 
+
+\[ V^{t}(\theta)-V^{t}(\underline{\theta})=V^{\hat{t}}(\theta)-V^{\hat{t}}(\underline{\theta}) \]
+
+Equivalently, if the magnitude of transfer is the difference, then exists a $c \in \mathbb{R}$ such that
+
+\[ t(\theta) = \hat{\theta} + c\]
+
+*Proof*: by the envelope characterization of payoffs:
+
+\[V^{t}(\theta)-V^{t}(\underline{\theta})=\int_{\theta}^{\theta} u_{\theta}(y(\tilde{\theta}), t(\tilde{\theta}), \tilde{\theta}) d \tilde{\theta}=\int_{\theta}^{\theta} v_{\theta}(y(\tilde{\theta}), \tilde{\theta}) d \tilde{\theta}\]
+
+Since the equation above does not depend on the transfer rule, the same is valid for the $\hat{t}$ scenario: $V^{\hat{t}} (\theta) - V^{\hat{t}}(\underline{\theta})$.
+
+The conclusion we get from this is: **incentive compatible mechanisms with the same allocation rule can differ only in the utility they give to the lowest-type agent**. In particular, they must be identical up to a constant.
+
+- **Theorem 4: VCG Uniqueness**: the first key application from this theorem is that if types are drawn from an interval, then every efficient DSIC mechanism is a VCG mechanism. 
+
+Theorem 4 (VCG Uniqueness) Suppose there are $n$ players with quasi-linear utility. Suppose that, for each player $i \in I$
+
+- $\Theta_{i}=\left[\underline{\theta}_{i}, \theta_{i}\right] \subset \mathbb{R}$;
+
+- for all $y \in Y$ and $\theta \in \Theta, \partial v_{i}\left(y, \theta_{i}\right) / \partial \theta_{i}$ exists and is uniformly bounded.
+
+If a social choice function $(y, t): \Theta \rightarrow Y \times \mathbb{R}^{n}$ is DSIC and allocation-efficient (i.e., $\left.y(\theta)=y^{*}(\theta) \text { for all } \theta \in \Theta\right),$ then for each $i \in I$ there exists a function $h_{i}: \Theta_{-i} \rightarrow \mathbb{R}$ such that
+
+$$
+t_{i}(\theta)=\left[\sum_{j \neq i} v_{j}\left(y^{*}(\theta), \theta_{j}\right)\right]+h_{i}\left(\theta_{-i}\right) \text { for all } \theta \in \Theta
+$$
+
+That is, $(y, t)$ is a VCG mechanism.
+
+*Proof*: blablabla... by the payoff equivalence theorem, any incentive compatible and allocation-efficient mechanism differs from a VCG mechanism by a constant $h_i(\theta_{-i})$. But if the difference is a constant, then this mechanism is just another VCG mechanism. Hence, all incentive compatible and allocation-efficient mechanism is VCG.
+
+#### **Budget Balance**
+
+We have seen that VCG implement the efficient allocation $y^\ast (\theta)$. But what if the mechanism **wastes a lot of money**(i.e. $\sum_i t_i << 0$)? To balance the budget, we must have $\sum_i t_i (\theta) = 0$. 
+
+Let S($\theta$) denote the efficient social surplus at type profile $\theta$, that is
+
+\[ S(\theta) = \sum_i v_i (y^\ast (\theta), \theta_i) \]
+
+Under a VCG mechanism we have:
+
+\[ \begin{aligned} \sum_{i} t_{i}(\theta) &=\sum_{i}\left[\left[\sum_{j \neq i} v_{j}\left(y^{*}(\theta), \theta_{j}\right)\right]+h_{i}\left(\theta_{-i}\right)\right] \\ &=(n-1) S(\theta)+\sum_{i} h_{i}\left(\theta_{-i}\right) \end{aligned} \]
+
+Which will lead eventually to Theorem 5:
+
+- **Theorem 5**: There exists a budget balanced VCG mechanism iff there exist functions $(h_i : \Theta_{-i} \rightarrow \mathbb{R})_{i \in I}$ such that
+
+\[ \sum_{i} h_{i}\left(\theta_{-i}\right)=S(\theta) \text{ for all } \theta \in \Theta \]
+
+Applying this to a pivot mechanism:
+
+\[ h_{i}\left(\theta_{i}\right)=-\sum_{j \neq i} v_{j}\left(y_{-i}^{*}\left(\theta_{-i}\right), \theta_{j}\right) \]
+
+Where the allocation is
+
+\[ y_{-i}^{*}\left(\theta_{-i}\right)=\operatorname{argmax}_{y \in Y} \sum_{j \neq i} v_{j}\left(y, \theta_{j}\right) \]
+
+Under a pivot mechanism we have
+
+\[ t_{i}(\theta)=\left[\sum_{j \neq i} v_{j}\left(y^{*}(\theta), \theta_{j}\right)\right]-\left[\sum_{j \neq i} v_{j}\left(y_{-i}^{*}\left(\theta_{-i}\right), \theta_{j}\right)\right] \leq 0  \]
+
+Hence, a pivot mechanism is feasible for the players without an external source of funds, but it typically wastes some money. 
+
+When does the budget balanced VCG **exist**? 
+
+- When Player 0 has **no private information**: $\Theta_0$ is a singleton, which can also be characterized as $v_0 (y, \theta_0)$ does not depend on $\theta_0$. So we can drop the type $\theta_0$ for the model. In this case, the other players can dump the budget surplus/deficit on Player 0: 
+
+$$
+t_{0}(\theta)=-(n-1) S(\theta)-\sum_{i \neq 0} h_{i}\left(\theta_{-i}\right)
+$$
+
+then, by (2)
+
+$$
+t_{0}(\theta)+\sum_{i \neq 0} t_{i}(\theta)=\left[-(n-1) S(\theta)-\sum_{i \neq 0} h_{i}\left(\theta_{-i}\right)\right]+\left[(n-1) S(\theta)+\sum_{i \neq 0} h_{i}\left(\theta_{-i}\right)\right]=0
+$$
+
+In this case, Player 0 is the **budget breaker**: she breaks the budget constraint for the remaining $n$ players. 
+
+#### Second-Best Mechanisms Under Budget-Balance
+
+Given budget balance does not exist, what is the least inefficient mechanism that does satisfy budget-balance?
+
+Let's use the *bilateral public good problem* example. Assume there are two agents $(n=2)$ who must decide whether to obtain a public good or not $(y \in\{0,1\}) .$ Agent $i$ 's type $\theta_{i} \in \Theta_{i}=\left[\underline{\theta}_{i}, \bar{\theta}_{i}\right]$ equals her value for the good. The cost of obtaining the good is $c .$ Thus, a budget-balanced mechanism is a function $(y, t): \Theta_{1} \times \Theta_{2} \rightarrow\{0,1\} \times \mathbb{R}^{2}$ such that $t\left(\theta_{1}\right)+t\left(\theta_{2}\right)=-c$ if $y\left(\theta_{1}, \theta_{2}\right)=1$ and $t\left(\theta_{1}\right)+t\left(\theta_{2}\right)=0$ if $y\left(\theta_{1}, \theta_{2}\right)=0 .$ That is, if the agents decide to obtain the public good, the sum of their contributions must cover its cost $c .$
+
+We will also restrict attention to mechanisms where each agent always obtains a non-negative utility: that is, for all $(\theta_1, \theta_2)$, we have
+
+\[ \theta_{1} y\left(\theta_{1}, \theta_{2}\right)+t_{1}\left(\theta_{1}, \theta_{2}\right) \geq 0 \text { and } \theta_{2} y\left(\theta_{1}, \theta_{2}\right)+t_{2}\left(\theta_{1}, \theta_{2}\right) \geq 0 \]
+
+The efficient (or surplus-maximizing, or first-best) outcome is to obtain the public good if and only if the sum of the playersívalues exceeds the production cost: that is, iff $\theta_1$ + $\theta_2$ ≥ c. Note that this says that the set of values of ($\theta_1; \theta_2$) for which the good should be produced is a triangle: the region of ($\theta_1; \theta_2$) space bounded below by the line $\theta_1 + \theta_2$ = c.
+
+WTS: a mechanism is budget balanced, individually rational and DSIC iff $\theta_1 + \theta_2 ≥ c$. 
+
+**Theorem 6:** In the bilateral public good provision problem, a mechanism (y; t) is budget-balanced, individually rational, and DSIC if and only if there exist constants $c_1$ and $c_2$ such that $c_1 + c_2 = c$ and 
+
+\begin{equation}
+\begin{aligned}
+&y(\theta)=\left\{\begin{array}{ll}
+1 & \text { if } \theta_{1} \geq c_{1} \text { and } \theta_{2} \geq c_{2} \\
+0 & \text { otherwise }
+\end{array}\right.\\
+&t_{i}(\theta)=\left\{\begin{array}{ll}
+-c_{i} & \text { if } \theta_{1} \geq c_{1} \text { and } \theta_{2} \geq c_{2} \\
+0 & \text { otherwise }
+\end{array} \quad \text { for } i=1,2\right.
+\end{aligned}
+\end{equation}
+
+That is, every budget-balanced, individually rational, and DSIC mechanism first decides how the cost c is to be split between the two players in the event that the public good is obtained, and then asks each player whether they want to obtain the good (and pay their pre-determined share of the cost). Different ways of allocating the cost yield different mechanisms.
+
+The logic of the result is that, for any value of $\theta_{2},$ there must be a "price" $c_{1}\left(\theta_{2}\right)$ that player 1 needs to pay to obtain the good. Similarly, for any value of $\theta_{1},$ there is a price $c_{2}\left(\theta_{1}\right)$ that player 2 must pay to obtain the good. But, if $c_{1}\left(\theta_{2}\right)$ actually varies with $\theta_{2},$ or if $c_{2}\left(\theta_{1}\right)$ actually varies with $\theta_{1},$ then the budget cannot be balanced for all possible combinations of $\theta_{1}$ and $\theta_{2} .$ So each player must face a constant price to obtain the good, where the price is actually paid (and the good is obtained) if and only if the other player also pays.
+
+*Proof*: too long, see notes!  
 
 
 

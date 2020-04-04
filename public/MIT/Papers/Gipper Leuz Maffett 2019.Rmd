@@ -13,11 +13,11 @@ html_document:
 
 -   **Research question**: does regulatory oversight enhances reporting credibility?
 
--   **Intended contribution/importance**: 
+-   **Intended contribution/importance**: 1) provides evidence on the pricing of reporting credibility in capital markets, as measured by investors' responses to earnings news; novel evidence on credibility effects in capital markets and the extent to which public oversight can increase the credibility of audited financial reports. 2) literature on the effects of SOX, focusing on PCAOB, providing a capital market-based assessment of the new regime. 
 
 -   **Hypotheses**: the new oversight regime PCAOB spurs improvements in auditing relative to the peer review regime and investors use this to adjust their assessments of firms. 
 
--   **Setting/research design**: uses ERCs based on the association between 3-day cumulative abnormal returns (CARs) and unepected earnings news.
+-   **Setting/research design**: diff-in-diff that exploits the staggered introduction of PCAOB regime. uses ERCs based on the association between 3-day cumulative abnormal returns (CARs) and unepected earnings news.
 
 -   **Main results**: investors respond more strongly to earnings news following public audit oversight.
 
