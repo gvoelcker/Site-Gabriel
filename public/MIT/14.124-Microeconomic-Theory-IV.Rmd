@@ -9,6 +9,57 @@ output: html_document
 
 ### **L1** 
 
+#### **Summary**
+
+- Introduction to **mechanism design**: studies the implementation of *social choice functions* under private information. 
+
+- **Revelation Principle**: makes it possible to consider **incentive compatible** direct mechanisms without loss.
+
+- VCG mechanism: each player is paid the sum of two terms: 1) sum of everyone else's utility at the efficient allocation + 2) a constant that depends only on others' reports: $t_{i}(\theta)=\left[\sum_{i \neq i} v_{j}\left(y^{*}(\theta), \theta_{j}\right)\right]+h_{i}\left(\theta_{-i}\right)$.
+
+- In quasi-linear environments with private values, **VCG mechanisms implement socially efficient allocations in dominant strategies**(DSIC).
+
+- VCG are not typically **budget-balanced**.
+
+- **Pivot mechanisms**: a special case of VCG, where: $h_{i}\left(\theta_{-i}\right)=-\sum_{j \neq i} v_{j}\left(y_{-i}^{*}\left(\theta_{-i}\right), \theta_{j}\right)$, where $y_{-i}^\ast (\theta_{-i})$ is the efficient allocation for everyone other than *i*. *i* gets paid$(t_{i}(\theta))$ the difference between others' welfare under efficient outcome for everyone (including *i*) and others' welfare under efficient outcome for them $\implies$ everyone pays the externality imposed on others. The more a player contributes to the welfare, the more he gets paid $\implies$ incentives to report truthfully.
+
+$$t_{i}(\theta)= \underbrace{\left[\sum_{j \neq i} v_{j}\left(y^{\ast}(\theta), \theta_{j}\right)\right]}_\text{others' welfare under efficient outcome for everyone (including i)} - \underbrace{\left[\sum_{i \neq i} v_{j}\left(y_{-i}^{*}\left(\theta_{-i}\right), \theta_{j}\right)\right]}_\text{others' welfare under efficient outcome for them}$$
+
+#### **Intuitions**
+
+- **Theorem**: every VCG is DSIC. Intuition: everyone is paid the sum of everyone else's utility from y + constant $\implies$ everyone's utility equals total utility from y + constant $\implies$ agents have incentives to report truthfully. 
+
+
+### **L2**
+
+#### **Summary**
+
+- **Envelope Theorem**: powerful tool relating an agent's **value** function($V:[0,1] \rightarrow \mathbb{R}$) to her **objective** function ($f: X \times[0,1] \rightarrow \mathbb{R}$.
+
+- **Payoff Equivalence Theorem**: in quasi-linear environments, any two Incentive Compatible mechanisms with the same allocation rule (y) must also have the same transfer rule, up to a constant. In other words, once we decide the allocation ("quantities") we want the mechanism to deliver, the necessity of satisfying incentive constraints completely determines the transfers ("prices") up to a constant term. 
+
+- VCG mechanisms are the **only** mechanisms that implement efficient allocations in dominant strategies, by the PE Theorem.
+
+- VCG can be budget balanced only under a very restrictive condition.
+
+
+### **L3**
+
+#### **Summary**
+
+- **Bayesian Implementation** is an alternative to dominant strategy implementation. More permissive $\iff$ less robust. 
+
+- The revelation principle and the payoff equivalence theorem still apply under Bayesian implementation.
+
+- **Revenue Equivalence Theorem**: shows that any two BIC mechanisms with the same allocation rule that give the same **interim** payoff to the lowest type of each agent generate the same expected revenue.
+
+- Under Bayesian implementation, it is possible to implement efficient allocations and balance the budget. The mechanism that does it is the **AGV** ("expected externality"). 
+
+- **AGV** is BIC, allocation-efficient and budget-balanced. However, it may not give all players an incentive to participate in the mechanism.
+
+
+### **L4**
+
 ## **Lecture Notes**{.tabset}
 
 ### **L1**
@@ -290,8 +341,291 @@ That is, every budget-balanced, individually rational, and DSIC mechanism first 
 
 The logic of the result is that, for any value of $\theta_{2},$ there must be a "price" $c_{1}\left(\theta_{2}\right)$ that player 1 needs to pay to obtain the good. Similarly, for any value of $\theta_{1},$ there is a price $c_{2}\left(\theta_{1}\right)$ that player 2 must pay to obtain the good. But, if $c_{1}\left(\theta_{2}\right)$ actually varies with $\theta_{2},$ or if $c_{2}\left(\theta_{1}\right)$ actually varies with $\theta_{1},$ then the budget cannot be balanced for all possible combinations of $\theta_{1}$ and $\theta_{2} .$ So each player must face a constant price to obtain the good, where the price is actually paid (and the good is obtained) if and only if the other player also pays.
 
-*Proof*: too long, see notes!  
+*Proof*: too long, see lecture notes!  
 
 
+### **L3**
+
+#### **Bayesian Implementation**
+
+This lecture covers **Bayesian implementation**. Given the limitations of Dominant Strategies covered in the first two lectures, Bayesian implementation arise as the answer to the following question: "what social choice are implementable with solution concepts that are weaker than DS equilibrium?". Indeed, **Bayesian Nash Equilibrium** is the most standard solution concept for incomplete information games, and we have seen that every mechanism $\Gamma = (A,g)$ induces an *incomplete information game* with players *I*, types $\Theta$, prior probability distribution $\phi$, actions *A*, and payoff functions $u_i (g(a),\theta_i)$ for each $i \in I$.
+
+#### **Definition 1** 
+
+Strategy profile $s^{*}$ is a Bayesian Nash equilibrium (BNE) of mechanism $\Gamma$ if
+
+\begin{equation} E_{\theta_{-i}}\left[u_{i}\left(g\left(s_{i}^{*}\left(\theta_{i}\right), s_{-i}^{*}\left(\theta_{-i}\right)\right), \theta_{i}\right) | \theta_{i}\right] \geq E_{\theta_{-i}}\left[u_{i}\left(g\left(a_{i}, s_{-i}^{*}\left(\theta_{-i}\right)\right), \theta_{i}\right) | \theta_{i}\right]\text{ for all } i \in I, \theta_{i} \in \Theta_{i}, a_{i} \in A_{i} \end{equation}
+
+where $E_{\theta_{-i}}[\cdot | \cdot]$ denotes conditional expectation over $\theta_{-i}$ under the prior $\phi$.
+
+#### **Definition 2**
+
+Mechanism $\Gamma$ implements social choice function $f: \Theta \rightarrow X$ in BNE if there exists a BNE $s^{*}$ of $\Gamma$ such that $g\left(s^{*}(\theta)\right)=f(\theta)$ for all $\theta \in \Theta$.
+
+Interpreting the above definitions, if we compare to DSE, we know that in DSE the player chooses to play $s_i^\ast (\theta_i)$ regardless of what the others do. So the player would never spend resources to learn about the other players' types. 
+
+In BNE, it is optimal for type $\theta_i$ to play $s_i^\ast (\theta_i)$ when her opponents' types are distributed according to the prior and they follow their equilibrium strategies. If a player could spend resources to learn about the others' types, it could be beneficial. 
+
+It is without loss of generality to restrict attention to *incentive compatible direct mechanisms* (i.e. $\Gamma$ where A equals $\Theta$ and players report truthfully in equilibrium). This is the *Revelation Principle for BNE*. 
+
+#### **Definition 3**
+
+- Social choice function $f$ is Bayesian incentive compatible (BIC) if
+
+\begin{equation}E_{\theta_{-i}}\left[u_{i}\left(f\left(\theta_{i}, \theta_{-i}\right), \theta_{i}\right) | \theta_{i}\right] \geq E_{\theta_{-i}}\left[u_{i}\left(f\left(\theta_{i}^{\prime}, \theta_{-i}\right), \theta_{i}\right) | \theta_{i}\right]\text{ for all }i \in I, \theta_{i} \in \Theta_{i}, \theta_{i}^{\prime} \in \Theta_{i} \end{equation}
+
+**Proposition 1 - Revelation Principle for BNE**: if a social choice function *f* is implementable in *BNE*, then it is Bayesian IC. Proof: in the notes (pg 3). 
+
+The **difference between DSE and BNE** is that for a social choice function to be implementable in DSE it must be truthtelling for **any** vector of the opponents' reports. While in BNE, it must be truthtellling is optimal **in expectation when one's opponents' tell the truth**. BIC is more permissive: any SCF that is DSIC is also BIC. But how much more can we implement when we move from dominant strategy implementation to Bayesian implementation? 
+
+#### Payoff Equivalence for BIC Mechanisms
+
+The payoff equivalence theorem we developed last class can be used to help characterize BIC mechanisms. Let
+
+$$
+V_{i}\left(\theta_{i}\right)=E_{\theta_{-i}}\left[u_{i}\left(f\left(\theta_{i}, \theta_{-i}\right), \theta_{i}\right) | \theta_{i}\right]
+$$
+
+be type $\theta_{i}$ 's expected utility under social choice function $f .$ (aka i's **interim** utility, "interim" meaning "after player $i$ learns her own type is $\theta_{i},$ but before she learns her opponents' types.")
+
+**Theorem 1 (Payoff Equivalence for BIC)**: suppose that, for all $i \in I$
+
+-  $\Theta_{i}=\left[\underline{\theta}_{i}, \bar{\theta}_{i}\right] \subset \mathbb{R} \text { and }$
+
+- for all $x \in X$ and $\theta_{i} \in \Theta_{i}, \partial u_{i}\left(x, \theta_{i}\right) / \partial \theta_{i}$ exists and is uniformly bounded.
+
+If $f$ is $B I C$ then, for all $i \in I$ and $\theta_{i} \in \Theta_{i}$
+
+\begin{equation} V_{i}\left(\theta_{i}\right)=V_{i}\left(\underline{\theta}_{i}\right)+\int_{\theta_{i}}^{\theta_{i}} E_{\theta_{-i}}\left[\frac{\partial u_{i}\left(f\left(\tilde{\theta}_{i}, \theta_{-i}\right), \tilde{\theta}_{i}\right)}{\partial \theta_{i}} | \tilde{\theta}_{i}\right] d \tilde{\theta}_{i} \end{equation}
+
+In particular, in quasi-linear environments (i.e., if $X=Y \times \mathbb{R}^{n}$ and $u_{i}\left(y, t_{i}, \theta_{i}\right)=$ $\left.v_{i}\left(y, \theta_{i}\right)+t_{i}\right),$ if two BIC social choice functions have the same allocation rule y and different transfer rules $t$ and $\hat{t},$ and $i f V^{t}$ and $V^{\hat{t}}$ are the corresponding interim utility functions, then, for all $i \in I$ and $\theta_{i} \in \Theta_{i}$
+
+
+\begin{equation} V_{i}^{t}\left(\theta_{i}\right)-V_{i}^{t}\left(\underline{\theta}_{i}\right)=V_{i}^{\hat{t}}\left(\theta_{i}\right)-V_{i}^{\hat{t}}\left(\underline{\theta}_{i}\right) \end{equation}
+
+Equivalently, for all $i \in I,$ there exists $c_{i} \in \mathbb{R}$ such that, for all $\theta_{i} \in \Theta_{i}$
+
+\begin{equation}E_{\theta_{-i}}\left[t_{i}\left(\theta_{i}, \theta_{-i}\right) | \theta_{i}\right]=E_{\theta_{-i}}\left[\hat{t}_{i}\left(\theta_{i}, \theta_{-i}\right) | \theta_{i}\right]+c_{i} \end{equation}
+
+In my words, the difference in utility from $\underline{\theta}$ to $\theta$ under the same allocation rule but different transfer rules is the same. That yields the last equation that stats that the expected transfers differ by a constant. *Proof*: see notes (pg 5).
+
+**Interim equivalence**: happens when two mechanisms, say $(y,t)$ and $(\hat{y},t)$, obey:
+
+
+\begin{equation} E_{\theta_{-i}}\left[v_{i}\left(y\left(\theta_{i}, \theta_{-i}\right)\right) | \theta_{i}\right]=E_{\theta_{-i}}\left[v_{i}\left(\hat{y}\left(\theta_{i}, \theta_{-i}\right)\right) | \theta_{i}\right] \end{equation}
+
+and
+
+\begin{equation} E_{\theta_{-i}}\left[t_{i}\left(\theta_{i}, \theta_{-i}\right) | \theta_{i}\right]=E_{\theta_{-i}}\left[\hat{t}_{i}\left(\theta_{i}, \theta_{-i}\right) | \theta_{i}\right] \end{equation}
+
+In words: the expected allocation utility and the expected transfer are the same for each type of player. So, the only way an allocation-efficient BIC mechanism can differ from VCG mechanisms is that type $\theta_i$'s transfer can depend on her opponents' types differently than it does under VCG, while still having the same expectation. In other words, we have an extra degree of freedom with BCG: type $\theta_i$'s **expected** transfer is same as in VCG, but **realized** transfer can depend on others' types more flexibly. 
+
+#### **Revenue Equivalence Theorem**
+
+This theorem implies that any two ways of running an auction that yield the same allocation rule and give the same utility to the lowest type of each bidder yield the same expected revenue.
+
+**Theorem 2 - Revenue Equivalence Theorem**: assume that:
+
+1. We are in a quasi-linear environment (i.e., $X=Y \times \mathbb{R}^{n}$ and $u_{i}\left(y, t_{i}, \theta_{i}\right)=v_{i}\left(y, \theta_{i}\right)+t_{i}$
+$\forall i),$ and
+
+2. For all $i \in I, \Theta_{i}=\left[\underline{\theta}_{i}, \bar{\theta}_{i}\right] \subset \mathbb{R}$ and, for all $y \in Y$ and $\theta_{i} \in \Theta_{i}, \partial v_{i}\left(y, \theta_{i}\right) / \partial \theta_{i}$ exists and is uniformly bounded.
+
+Consider two BIC mechanisms $(y, t)$ and $(y, \hat{t})$ with the same allocation rule. If $V_{i}\left(\underline{\theta}_{i}\right)=\hat{V}_{i}\left(\underline{\theta}_{i}\right)$ for all $i \in I,$ then $E_{\theta}\left[\sum_{i} t_{i}(\theta)\right]=E_{\theta}\left[\sum_{i} \hat{t}_{i}(\theta)\right]$
+
+#### **Arrow-d'Aspremont-Gérard-Varet Mechanism**
+
+Conclusion: when player *i* changes her report, the change in her transfer is precisely the **expected** externality of this change on the other players (under VCG is the **realized** externality of the change evaluated at her opponents' type profile $\theta_{-i}$). 
+
+### **L4**
+
+So far we had two constraints: **incentive constraints** - the desire allocation can be implemented when the required information is privately held by self-interested individuals; **Budget balance** - the desire allocation can be implemented without wasting money.
+
+In some settings, there is a third type of constraint: **participation constraint** - such that individuals want to participate on the mechanism rather than walking away and choosing an *outside option*. A mechanism that satisfies participation contraints is called **individually rational**, i.e. it is rational for each individual to participate in the mechanism. L4 deals with when, in quasi-linear environments, there exist mechanisms that are efficient, incentive compatible, budget balanced and individually rational. 
+
+#### [**Myerson-Satterthwaite Theorem**](https://en.wikipedia.org/wiki/Myerson%E2%80%93Satterthwaite_theorem)
+
+In a nutshell: unless gains from trade are certain to exist, there is no efficient, BIC, budget balanced and individually rational mechanism for bilateral exchange. It states that the *Coase's theorem* (agents will always trade to an ex-post efficient allocation) does not apply under private information. 
+
+**Setup**: generlization of the end of L3. Two **agents** with values $\theta_1, \theta_2 \in [0,1]$. Types are **independently** distributed, with $\theta_i$ distributed according to $\phi_i$, and each $\phi_i$ has full support (i.e. is continuous) on the interval [0,1]. An **alternative** is a vector *x* = $(y_1, y_2, t_1, t_2)$ where $y_i (\theta_1, \theta_2) \in [0,1]$ is the probability that the agent *i* gets the good and $t_i (\theta_1 , \theta_2)$ is the transfer received by agent *i*. Agent $i's$ utility is: 
+
+\[ u_i (y, t, \theta_i) = \theta_i y_i + t_i \]
+
+Agent *i's* expected utility from participating in the mechanism $(y,t)$ : $\Theta_1 \times \Theta_2 \rightarrow X$ is
+
+\[ V_{i}\left(\theta_{i}\right)=\theta_{i} E_{\theta_{-i}}\left[y_{i}\left(\theta_{i}, \theta_{-i}\right)\right]+E_{\theta_{-i}}\left[t_{i}\left(\theta_{i}, \theta_{-i}\right)\right] \]
+
+The efficient allocation $(y_1 (\theta_1, \theta_2), y_2(\theta_1, \theta_2))$ is (1,0) if $\theta_1 > \theta_2$ and (0,1) if $\theta_1 < \theta_2$. Any allocation is efficient under $\theta_1 = \theta_2$. 
+
+What is different now is that we assume that agent 1 is the **initial owner**(seller) of the good and can reject the mechanism and keep the good. Agent 2 is the buyer. Hence, the mechanism is *individually rational* if
+
+\[V_{1}\left(\theta_{1}\right) \geq \theta_{1} \text{ for all }\theta_{1} \in[0,1] \text{, and } \]
+
+\[ V_{2}\left(\theta_{2}\right) \geq 0 \text{ for all } \theta_{2} \in[0,1] \]
+
+Also, the mechanism is **ex ante budget balanced** if
+
+\[ E[t_1 (\theta) + t_2 (\theta) ] = 0 \]
+
+This means we only require budget balance **"on average"**. Lastly, we denote the gains from the trade at profile $\theta$ by
+
+\[ S(\theta) = max \{ \theta_2 - \theta_1, 0 \} \]
+
+**Theorem 1 (Myerson-Satterthwaite)**: in the bilateral trade setting described above, there does not exist an allocation-efficient, BIC, IR, and ex ante budget balanced mechanism. In particular, if a mechanism (y,t) is allocation-efficient, BIC, and individually rational, then
+
+\[ E[t_1 (\theta) + t_2 (\theta) ] ≥ E[S(\theta)] \]
+
+In my words: the ex ante budget is bigger than the expected gains from the trade. So, the mechanism will yield losses. Not only is it impossible to implement e¢ cient trade without subsidizing the players, but the size of the required subsidy is equal to the entire expected gains from trade. 
+
+Proof is in the notes. The players trade $\iff \theta_2 > \theta_1$, and when they trade the buyer pays $\theta_1$ and the seller receives $\theta_2$. 
+
+If we relax the assumption that $\phi_i$ has full support we will have fewer IC constraints, and hence more incentive compatible mechanisms. A good example is: if $\theta_1, \theta_2$ are drawn from \{0,1\} instead of [0,1], then there are many allocation efficient, BIC, IR, budget balanced mechanisms - for any price p $\in$ (0,1), the mechanism "Vote yes or no: if both vote yes then trade at price p; if either votes no then don't trade" is efficient, BIC, IR, and budget balanced.
+
+#### **When is Efficiency Possible With Participation Constraints?**
+
+We want to generalize the findings from the MS Theorem to find when are efficient allocations implementable under BIC, budget balance and participation constraints.
+
+Consider the standard quasi-linear, independent private values environment from last lecture. (Recall: independent means types are independently distributed, private values means utility doesn't depend on others' types.) Recall that type $\theta_i$ has, under mechanism (y,t):
+
+- **Expected utility**:
+
+$$
+V_{i}\left(\theta_{i}\right)=E_{\theta_{-i}}\left[u_{i}\left(y\left(\theta_{i}, \theta_{-i}\right), t_{i}\left(\theta_{i}, \theta_{-i}\right), \theta_{i}\right)\right]
+$$
+
+- Is **individually rational**(IR) if
+
+$$
+V_{i}\left(\theta_{i}\right) \geq 0 \text { for all } i \in I, \theta_{i} \in \Theta_{i}
+$$
+
+Where we've normalized the outisde option to 0. So we can redefine utility as:
+
+\[ \hat{u}_i (x, \theta_i) = u_i (x, \theta) - \overline{u}_i (\theta_i) \]
+
+(Not sure here: $\overline{u}_i$ is the average utility?) 
+
+We then define the *budget balance* ($\sum\limits_{i} t_i (\theta) = 0 \forall \theta \in \Theta$) and *ex ante budget balance* ($E[\sum\limits_{i}t_i (\theta) = 0]$). The latter is weaker. The last part of this set up is the type $\theta_i$'s expected transfer:
+
+\[ \overline{t}_i (\theta_i) = E_{\theta_{-i}} [t_i (\theta_i, \theta_{-i})]\]
+
+**Lemma 1**: Assume n ≥ 2. For any ex ante budget balanced mechanism (y,t), there exists a budget balanced mechanism (y,s) with the same allocation rule such that
+
+\[ \bar{t}_{i}\left(\theta_{i}\right)=\bar{s}_{i}\left(\theta_{i}\right)$ for all $i \in I, \theta_{i} \in \Theta_{i} \]
+
+Intuition: an arbitrary player can soak up the difference between the realized deficit $\sum_i t_i (\theta)$ and the expected deficit $E_{\theta_{-1}} [\sum_i t_i (\theta_1, \theta_{-1})]$ without affecting expected transfers. Proof: in the notes
+
+**Theorem 2**: Consider the quasi-linear, independent private values environment. Assume
+types are drawn from intervals and $\partial v_{i}\left(y, \theta_{i}\right) / \partial \theta_{i}$ exists and is uniformly bounded (so the payoff equivalence theorem applies). Assume also $S(\theta) \geq 0$ (note this always holds if one feasible alternative is giving everyone her outside option).
+
+There exists an allocation-efficient, BIC, IR, and budget balanced mechanism if and only if
+$$
+\sum_{i} \min _{\theta_{i} \in \Theta_{i}} E_{\theta_{-i}}\left[S\left(\theta_{i}, \theta_{-i}\right)\right] \geq(n-1) E_{\theta}[S(\theta)]
+$$
+
+The LHS of the above equation is the sum of the interim expected social surpluses according to the *worst* type of each agent(maximum type-independent participation fee that can be charged to each agent when she receives the total gains from trade). The RHS is the (n-1) times the ex ante expected social surplus(the deficit created by giving each agent the total gains from trade, which is the **minimum deficit run by an IR VCG mechanism**). This **generalizes the MS Theorem** as in the bilateral trade setting the LHS of the above equation equals 0 (as the expected social surplus acording to a type-1 seller or a type-0 buyer equals 0) while the RHS is positive.
+
+Notes here pause on L4Pg8.
+
+#### **Discussion**
+
+So far we've discussed basics of efficient mechanism design, overlooking the case where values are interdependent rather than private (agents have private information that's relevant for each other's payoffs) or correlated. Rough summary:
+
+**Interdependent values**: efficient allocation gets harder. If I know something that's relevant for your value but not my own, it's hard to give me incentives to reveal it. For example, if only player 1 knows that a good she likes is actually even more valuable to player 2, she will not reveal this information.
+
+**Correlated types**: efficient gets easier. Players have information about each other's types, and can therefore be used to "cross-check" each other's reports. Finally, this "cross-checking" used to attain efficiency with correlated types is arguably *unrealistic*, as it relies on fine details of the players' information. 
+
+## **MWG**
+
+### **23) Incentives and Mechanism Design**
+
+This chapter studies how information about individual preferences can be elicited and the extent to which the revelation problem constrains the ways in which social decisions can respond to individual preferences. This is **mechanism design**. 
+
+Issues:
+
+- Difficulties introduced by the need to elicit the agents' preferences. 
+
+- **Social choice functions**.
+
+- **Ex post efficiency**.
+
+- **Mechanisms**. 
+
+- **Implementations**. 
+
+- **Direct revelation mechanisms**. 
+
+- **Truthful implementation**. 
+
+#### **23.B) The Mechanism Design Problem**
+
+Setting: *I* agents, indexed by *i = 1,2,...,I* must make a **collective choice** from the set *X* of possible alternatives. Before making the choice, each agent **privately observes** her preferences over the alternatives in *X*. Each agent has a **signal** $\theta_i$ that determines her preferences, called **type**. All types of an agent *i* are denoted by $\Theta_i$. Agent's Bernoulli utility function she is of type $\theta_i$ is $u_i (x, \theta_i)$. Agent i's set of possible preference relations over *X* is given by 
+
+\[ \mathscr{R}_{i}=\left\{\succsim_{i}: \succsim_{i}=\succsim_{i}\left(\theta_{i}\right) \text { for some } \theta_{i} \in \Theta_{i}\right\} \]
+
+Given $\theta_i$ is only observed by agent *i*, we denote this setting as **incomplete information**. The **probability density** over the possible realizations of $\theta \in \Theta_{1} \times \cdots \times \Theta_{1}$ is $\phi(-) .$ The probability density $\phi(\cdot)$ as well as the sets $\Theta_{1}, \ldots, \Theta_{I}$ and the utility functions $u_{i}\left(\cdot, \theta_{i}\right)$ are assumed to be common knowledge among the agents, but the specific value of each agent is type is observed only by $i .^{2}$
+
+The agents may want the collective decision to depend on $\theta$, as their preferences depend on the realizations of $\theta = (\theta_1, ... , \theta_I)$. To capture this dependence formally, we introduce the 
+
+- **Social choice function**: is a function $f: \Theta_1 \times ... \times \Theta_I \rightarrow X$ that, for each possible profile of the agents' types ($\theta_1, ..., \theta_I$) assigns a collective choice $f\left(\theta_{1}, \ldots, \theta_{1}\right) \in X$. This SCF has to satisfy the property of *ex post efficiency*:
+
+- The social choice function $t: \Theta_{1} \times \cdots \times \Theta_{1} \rightarrow X$ is **ex post efficient (or Paretian)** if for no profile $\theta=\left(\theta_{1}, \ldots, \theta_{1}\right)$ is there an $x \in X$ such that $u_{i}\left(x, \theta_{i}\right) \geq u_{i}\left(f(\theta), \theta_{i}\right)$ for every $i,$ and $u_{i}\left(x, \theta_{i}\right)>u_{i}\left(f(\theta), \theta_{i}\right)$ for some $i$. In words: the SCF is ex post efficient if it selects, for every profile $\theta = (\theta_1, ..., \theta_I)$ an alternative $f (\theta) \in X$ that is Pareto Optimal given the agents' utility functions $u_1 (\cdot, \theta_1),... u_i(\cdot, \theta_I)$.
+
+The problem is that the $\theta$s are not publicly observable, so for the SCF to be chosen in correspondence to the agents' types depends on each agent disclosing **truthfully** her type. This may not be necessarily in her best interests. Example 23.B.1 gives a very abstract setting in which the agent lies about her type: 
+
+**Example 23.B.1**: An Abstract Social Choice Setting. In the most abstract case, we are given a set $X$ and, for each agent $i,$ a set $\mathscr{R}_{i}$ of possible rational preference orderings on $X .$ To consider a very simple example, suppose that $X=\{x, y, z\}$ and that $I=2$ Suppose also that agent 1 has one possible type, so that $\Theta_{1}=\left\{\bar{\theta}_{1}\right\},$ and that agent
+2 has two possible types, so that $\Theta_{2}=\left\{\theta_{2}, \theta_{2}^{*}\right\} .$ The agents' possible preference orderings $\mathscr{R}_{1}=\left\{\succsim_{1}\left(\bar{\theta}_{1}\right)\right\}$ and $\mathscr{R}_{2}=\left\{\succsim_{2}\left(\theta_{2}\right), \succsim_{2}\left(\theta_{2}^{\prime \prime}\right)\right\}$ are given by
+
+$$
+\begin{array}{ccc}
+\succsim_{1}\left(\bar{\theta}_{1}\right) & \succsim_{2}\left(\theta_{2}^{\prime}\right) & \succsim_{2}\left(\theta_{2}^{\prime \prime}\right) \\
+\hline x & z & y \\
+y & y & x \\
+z & x & z
+\end{array}
+$$
+
+[A higher positioned alternative is strictly preferred to a lower positioned one; so, for example, $x \succ_1 (\overline{\theta}_1) y \succ_1 (\overline{\theta}_1) z$ ]
+Now suppose that the agents wish to implement the ex post efficient social choice function $f(\cdot)$ with
+
+$$
+f\left(\bar{\theta}_{1}, \theta_{2}^{\prime}\right)=y \quad \text { and } \quad f\left(\bar{\theta}_{1}, \theta_{2}^{\prime \prime}\right)=x
+$$
+
+If so, then agent 2 must be relied upon to truthfully reveal his preferences. But it is apparent that he will not find it in his interest to do so: When $\theta_{2}=\theta_{2}^{\prime \prime},$ agent 2 will wish to lie and claim that his type is $\theta_{2}^{\prime}$. 
+
+I leave the following 3 examples to be checked in MWG.
+
+For the 4th example, note that it's optimal to report the truth in a second-highest valuation auction. 
+
+The examples show how when agents' types are privately observed they can constrain the set of social choice functions that can be successfully implemented. We now address the main issue of the chapter:
+
+#### **What social choice functions can be implemented when agents' types are private information?**
+
+We can directly ask the agents their preferences and then try to compute the SCF. Otherwise, we can indirectly implement a SCF by having the agents interact under some sort of institution. The formal representation of this institution is known as **mechanism**. 
+
+**Mechanism Definition**: $\Gamma=\left(S_{1}, \ldots, S_{1}, g(\cdot)\right)$ is a collection of $I$ strategy sets $\left(S_{1}, \ldots, S_{1}\right)$ and an outcome function $g: S_{1} \times \cdots \times S_{1} \rightarrow X$. It transforms each players strategies in playing the game into an outcome *X*.
+
+A mechanism can be viewed as an institution with rules governing the procedure for making the collective choice. The allowed actions of each agent $i$ are summarized by the strategy set $S_{i},$ and the rule for how agents' actions get turned into a social choice is given by the outcome function $g(\cdot)$
+
+Formally, the mechanism $\Gamma$ combined with possible types $\left(\Theta_{1}, \ldots, \Theta_{l}\right)$ probability density $\phi(\cdot),$ and Bernoulli utility functions $\left(u_{1}(\cdot), \ldots, u_{l}(\cdot)\right)$ defines a Bayesian game of incomplete information. That is, letting $\tilde{u}_{t}\left(s_{1}, \ldots, s_{1}, \theta_{t}\right)=$ $u_{i}\left(g\left(s_{1}, \ldots, s_{1}\right), \theta_{i}\right),$ the game
+
+\[ \left[I,\left\{S_{i}\right\},\left\{\bar{u}_{i}(\cdot)\right\}, \Theta_{1} \times \cdots \times \Theta_{1}, \phi(\cdot)\right] \]
+
+is exactly the type of Bayesian game studied in Section 8.E. Note that a mechanism could in principle be a complex dynamic procedure, in which case the elements of the strategy sets $S_{i}$ would consist of contingent plans of action (sec Chapter 7).
+
+Loosely put, a mechanism **implements** SCF $f(\cdot)$ if there is an equilibrium of the game induced by the mechanism that yields the same outcomes as $f(\cdot)$ for each possible profile of types $\theta = (\theta_1, ..., \theta_I)$. Formally:
+
+- **Definition**: the mechanism $\Gamma=\left(S_{1}, \ldots, S_{1}, g(\cdot)\right)$ implements social choice function $f(\cdot)$ if there is an equilibrium strategy profite $\left(s_{1}^{*}(\cdot), \ldots, s_{i}^{*}(\cdot)\right)$ of the game induced by $\Gamma$ such that $g\left(s_{1}^{*}\left(\theta_{1}\right), \ldots, s_{i}^{*}\left(\theta_{1}\right)\right)=f\left(\theta_{1}, \ldots, \theta_{1}\right)$ for all
+$\left(\theta_{1}, \ldots, \theta_{1}\right) \in \Theta_{1} \times \cdots \times \Theta_{1}$.
+
+For the above definition, it suffices that *one* mechanism induces outcomes in accord with $f (\cdot)$. Does that mean that to know all SCFs that are implementable we have to know all possible mechanisms? **NO!** The **revelation principle** states that we can restrict our attention only to the very simple type of mechanisms in which we directly ask the agents their types and given their announced types the alternative is chosen. This constitutes a
+
+**Direct Revelation Mechanism**: is a mechanism in which $S_{i}=\Theta_{i}$ for all $i$ and $g(\theta)=f(\theta)$ for all $\theta \in \Theta_{1} \times \cdots \times \Theta_{1}$ (i.e. strategies used in the mechanism = type?).
+
+Expanding on that, we can further restrict our attention to direct revelation mechanisms in which truth telling is an optimal strategy for each agent. This motives the notion of...
+
+**Truthful implementation**: The social choice function $f(\cdot)$ is truthfully implementable (or incentive compatible) it the direct revelation mechanism $\Gamma=\left(\Theta_{1}, \ldots, \Theta_{1}, f(\cdot)\right)$ has an equilibrium $\left(s_{1}^{*}(\cdot), \ldots, s_{1}^{*}(\cdot)\right)$ in which $s_{i}^{*}\left(\theta_{i}\right)=\theta_{i}$ for all $\theta_{i} \in \Theta_{i}$ and all
+$i=1, \ldots, I ;$ that is, **if truth telling by each agent $i$ constitutes an equilibrium** of $\Gamma=\left(\Theta_{1}, \ldots, \Theta_{1}, t(\cdot)\right)$.
 
 
