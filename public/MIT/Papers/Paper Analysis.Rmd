@@ -13,6 +13,8 @@ html_document:
 
 -   **Research question**: 
 
+-   **Why is it relevant**: 
+
 -   **Intended contribution/importance**: 
 
 -   **Hypotheses**: 

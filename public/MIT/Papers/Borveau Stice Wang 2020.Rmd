@@ -1,0 +1,65 @@
+---
+title: "Borveau Stice Wang 2019"
+date: "13/04/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Strategic Disclosure and Debt Covenant Violation{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: how managers change their forecasting behavior as a debt covenant violation(DCV) approaches?
+
+- **Why is it relevant**: accounting literature has documented the costs and consequences of DCVs + DCV violation is associated with a shift of firm control to lenders + MGMT try to avoid DCV;
+
+-   **Intended contribution/importance**: there is no prior evidence related to whether managers have incentives to modify their disclosure behavior before a DCV is disclosed even if it does not help to avoid a DCV. Contributions: 1) covenant violation literature: if DCV is given, provides evidence tht managers alter their voluntary discosure to reduce the costs associated with DCV ex post; 2) voluntary management disclosure: managers intentionally introduce bias in earnings forecast; 3) agency considerations as managers choose actions before DCV: different impact for share vs debtholders. 
+
+-   **Hypotheses**: managers strategically alter their voluntary disclosure behavior prior to a DCV in order to reduce the costs associated with a DCV to both managers and their shareholders.
+
+-   **Setting/research design**: uses a sample of firms that disclose a debt covenant violation in their financial statements.
+
+-   **Main results**: management forecasts are more optimistic in the period leading to a DCV, this behavior not being driven by managers' unintentional forecast bias. 
+
+-   **Additional results crucial to the story**: **i)** $\uparrow$ optimistic managers $\iff$ $\uparrow$ risk + dividend payouts before violations (managers strategically use earnings forecasts to justify their actions favorable to shareholders but not to debtholders); **ii)** managers: $\uparrow$ bias $\leftarrow \rightarrow$ $\uparrow$ chance of losing control rights if DCV happens; **iii)** $\uparrow$ optimism $\leftarrow \rightarrow$ $\downarrow$ likelihood of manager being replaced (i.e. lower CEO turnover).
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: results consistent with managers changing disclosure behavior in an attempt to justify actions that are favorable to equity investors but would likely be opposed by debtholders $\implies$ improving managers' job security.
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
+
+Intuition behind hypothesis: Managers strategically alter their voluntary disclosure behavior prior to a DCV in order to reduce the costs associated with a DCV to both managers and their shareholders $\rightarrow$ managers take actions in advance that place shareholders' interests ahead those of debtholders because shareholders are the ones that select and retain managers **vs** if debtholders gain control after a DCV $\implies$ backlash on managers. To protect themselves managers use overly optimistic forecasts to justify their actions as to increase the likelihood of staying in place after the DCV. 
+
+*Implicit assumption*: management earnings forecasts do not necessarily need to directly inform debtholders about the likelihood of an upcoming DCV as long as the forecasts help managers justify favorable actions to shareholders resulting from an unintentional (optimistic) bias rather than an opportunistic decision.
+
+- If the optimistic number forecast by the managers were met, were the DCV to be avoided? Can't they just bias upwards the forecast to argue they didn't expect the violation?
+
+- If DCV is a given, what's the relation of the bad decisions made that led to DCV and the optimistic forecasting?
+
+
+
+
+
+
+
+
+
+
+
