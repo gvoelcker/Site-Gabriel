@@ -535,6 +535,12 @@ So far we've discussed basics of efficient mechanism design, overlooking the cas
 
 **Correlated types**: efficient gets easier. Players have information about each other's types, and can therefore be used to "cross-check" each other's reports. Finally, this "cross-checking" used to attain efficiency with correlated types is arguably *unrealistic*, as it relies on fine details of the players' information. 
 
+### **L5** 
+
+- Transition: our perspective now is to study the design of mechanisms that may be **socially inneficient** but are optimal from the perspective of the **uninformed party who designs them**.
+
+
+
 ## **MWG**
 
 ### **23) Incentives and Mechanism Design**
