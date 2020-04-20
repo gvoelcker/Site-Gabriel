@@ -12,27 +12,20 @@ output: html_document
 ```{r table, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
 library(kableExtra)
 library(tidyverse)
-Task <- c("Micro PS3", "Metrics PS3", "JAE's RR", "Joe's RR", "Harvard's 2nd RR", "Metrics PS4", "Metrics PS5", "TEPE Paper Project", "Joe's paper presentation", "Micro IV PS1", "Micro IV PS2")
-Goal <- c("10/03", "13/03", "15/03", "20/03", "20/03", "18/04", "04/05", "05/05", "05/04", "06/04", "13/04")
-Deadline <- c("12/03", "16/03", "16/03", "31/03", "08/04", "22/04", "08/05", "10/05", "07/04", "07/04", "14/04")
-Start <- c("03/03", "03/03", "03/03", "16/03", "16/03", "12/04", "27/04", "23/03", "26/03", "01/04", "09/04")
-Status <- c("100%", "100%", "100%", "100%", "100%", "0%", "0%", "1%", "100%", "100%", "99%")
-Completion <- c("Done", "Done", "Done", "Done", "Done", " ", " ", " ", "Done", "Done", "Review and submit")
-Feedback <- c(" ", " ", "Ok", " ", "3/3", " ", " ", " ", " ", " ", " ")
+Task <- c("Micro PS3", "Metrics PS3", "JAE's RR", "Joe's RR", "Harvard's 2nd RR", "Metrics PS4", "Metrics PS5", "TEPE Paper Project", "Joe's paper presentation", "Micro IV PS1", "Micro IV PS2", "TEPE's 3rd RR", " Micro IV PS3")
+Goal <- c("10/03", "13/03", "15/03", "20/03", "20/03", "18/04", "04/05", "05/05", "05/04", "06/04", "13/04", "18/04", "19/04")
+Deadline <- c("12/03", "16/03", "16/03", "31/03", "08/04", "22/04", "08/05", "10/05", "07/04", "07/04", "14/04", "22/04", "21/04")
+Start <- c("03/03", "03/03", "03/03", "16/03", "16/03", "12/04", "27/04", "23/03", "26/03", "01/04", "09/04", "16/04", "17/04")
+Status <- c("100%", "100%", "100%", "100%", "100%", "5%", "0%", "1%", "100%", "100%", "100%", "98%", "98%")
+Completion <- c("Done", "Done", "Done", "Done", "Done", " ", " ", " ", "Done", "Done", "Done", "Review and submit", "Review and submit")
+Feedback <- c(" ", " ", "Ok", " ", "3/3", " ", " ", "Good", " ", "Check+", " ", "", "")
 
 ApplicationsTable <- as.data.frame(cbind(Task, Goal, Deadline, Start, Status, Completion, Feedback))
 colnames(ApplicationsTable) <- c("Task", "Goal", "Deadline", "Start", "Status", "Completion", "Feedback")
-knitr::kable(ApplicationsTable[], caption = 't ') %>%
+knitr::kable(ApplicationsTable[], caption = 'To do s ') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed")) 
 ```
 
-Doing them:
-
-- JAE's RR: read with Overleaf open.
-
-- Metrics: reread all notes; finish psets and sum them up.
-
-- Joe's RR: done in 3 pages.
 
 ```{r table2, tidy=FALSE, echo=FALSE, message=FALSE, include=TRUE, warning=FALSE}
 library(kableExtra)
@@ -43,7 +36,7 @@ Doing3 <- c("Chapter 1/11", "0", "3", "0")
 Doing4 <- c("1%", " ", " ", " ")
 ApplicationsTable2 <- as.data.frame(cbind(Doing1, Doing2, Doing3, Doing4))
 colnames(ApplicationsTable2) <- c("Task", "Achieved", "Completion", "Status" )
-knitr::kable(ApplicationsTable2[], caption = 't ') %>%
+knitr::kable(ApplicationsTable2[], caption = 'Misc to dos') %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed")) 
 ```
 

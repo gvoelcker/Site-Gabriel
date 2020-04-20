@@ -535,6 +535,31 @@ So far we've discussed basics of efficient mechanism design, overlooking the cas
 
 **Correlated types**: efficient gets easier. Players have information about each other's types, and can therefore be used to "cross-check" each other's reports. Finally, this "cross-checking" used to attain efficiency with correlated types is arguably *unrealistic*, as it relies on fine details of the players' information. 
 
+### **L5** 
+
+- Transition: our perspective now is to study the design of mechanisms that may be **socially inneficient** but are optimal from the perspective of the **uninformed party who designs them**.
+
+
+
+
+### **L6**
+
+We study optimal selling mechanisms with the buyer having diminishing marginal utility: **screening mechanisms**. They receive this name because they "screen" different types of buyers. This allows us to consider applications like insurance and taxation. Also, we assume the seller can produce as much of the good as she wants at some constant marginal cost *c*.
+
+#### **1) Optimal Screening with two types**
+
+##### **Benchmark 1**
+
+Introduce the three scenarios that are benchmarks, problems and solutions.
+
+##### **Benchmark 2**
+
+##### **Benchmark 3**
+
+##### **Second-Best Solution: Optimal Screening**
+
+
+
 ## **MWG**
 
 ### **23) Incentives and Mechanism Design**

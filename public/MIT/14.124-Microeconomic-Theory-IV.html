@@ -1,11 +1,10 @@
 <!DOCTYPE html>
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html>
 
 <head>
 
 <meta charset="utf-8" />
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -330,6 +329,7 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
+  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -382,7 +382,7 @@ summary {
 <li><p>VCG are not typically <strong>budget-balanced</strong>.</p></li>
 <li><p><strong>Pivot mechanisms</strong>: a special case of VCG, where: <span class="math inline">\(h_{i}\left(\theta_{-i}\right)=-\sum_{j \neq i} v_{j}\left(y_{-i}^{*}\left(\theta_{-i}\right), \theta_{j}\right)\)</span>, where <span class="math inline">\(y_{-i}^\ast (\theta_{-i})\)</span> is the efficient allocation for everyone other than <em>i</em>. <em>i</em> gets paid<span class="math inline">\((t_{i}(\theta))\)</span> the difference between others’ welfare under efficient outcome for everyone (including <em>i</em>) and others’ welfare under efficient outcome for them <span class="math inline">\(\implies\)</span> everyone pays the externality imposed on others. The more a player contributes to the welfare, the more he gets paid <span class="math inline">\(\implies\)</span> incentives to report truthfully.</p></li>
 </ul>
-<p><span class="math display">\[t_{i}(\theta)= \underbrace{\left[\sum_{j \neq i} v_{j}\left(y^{\ast}(\theta), \theta_{j}\right)\right]}_\text{others' welfare under efficient outcome for everyone (including i)} - \underbrace{\left[\sum_{i \neq i} v_{j}\left(y_{-i}^{*}\left(\theta_{-i}\right), \theta_{j}\right)\right]}_\text{others' welfare under efficient outcome for them}\]</span></p>
+<p><span class="math display">\[t_{i}(\theta)= \underbrace{\left[\sum_{j \neq i} v_{j}\left(y^{\ast}(\theta), \theta_{j}\right)\right]}_\text{others&#39; welfare under efficient outcome for everyone (including i)} - \underbrace{\left[\sum_{i \neq i} v_{j}\left(y_{-i}^{*}\left(\theta_{-i}\right), \theta_{j}\right)\right]}_\text{others&#39; welfare under efficient outcome for them}\]</span></p>
 </div>
 <div id="intuitions" class="section level4">
 <h4><strong>Intuitions</strong></h4>
@@ -445,7 +445,7 @@ summary {
 <li><p><strong>Direct Mechanism</strong>: a mechanism satisfying <span class="math inline">\(A = \Theta\)</span>. A direct mechanism can thus be identified with its outcome function <span class="math inline">\(g: \Theta \rightarrow X\)</span>, a similar mathematical object to the SCF. The only possible deviation is to follow the equilibrium strategy of <strong>another</strong> type.</p></li>
 <li><p><strong>Incentive Compatibility</strong>: SCF <span class="math inline">\(f\)</span> is <em>dominant strategy incentive compatible</em>(DSIC) if</p></li>
 </ul>
-<p><span class="math display">\[ u_i(f(\theta_i, \theta_{-i}),\theta_i) \geq (f(\theta_i', \theta_{-i}), \theta_i) \forall i \in I, \theta_i \in \Theta_i, \theta_i' \in \Theta_i, \theta_{-i} \in \Theta_{-i}\]</span></p>
+<p><span class="math display">\[ u_i(f(\theta_i, \theta_{-i}),\theta_i) \geq (f(\theta_i&#39;, \theta_{-i}), \theta_i) \forall i \in I, \theta_i \in \Theta_i, \theta_i&#39; \in \Theta_i, \theta_{-i} \in \Theta_{-i}\]</span></p>
 <p>From which we derive the following proposition:</p>
 <ul>
 <li><strong>Revelation Principle for DSE</strong>: a SCF <em>f</em> is implementable in dominant strategies <span class="math inline">\(\iff\)</span> it’s DSIC <span class="math inline">\(\implies\)</span> the direct mechanism <span class="math inline">\(g = f\)</span> implements it in dominant strategies. So if <em>f</em> is implementable in dominant strategies by <strong>any</strong> mechanism <span class="math inline">\(\implies\)</span> it’s also implementable by an incentive-compatible direct mechanism.</li>
@@ -492,7 +492,7 @@ X^\ast (\theta) = argmax_{x \in X} f (x,\theta)
 <p>be the <strong>maximizer correspondence</strong> <span class="math inline">\(X^\ast : [0,1] \rightarrow 2^X\)</span>. Let <span class="math inline">\(x^\ast(\theta)\)</span> be an arbitrary selection from <span class="math inline">\(X^\ast(\theta)\)</span>.</p>
 <p>The envelope theorem gives conditions under which</p>
 <p><span class="math display">\[\begin{equation}
-    \underbrace{V'(\theta)}_\text{Derivative of Value Function} = \underbrace{f_\theta (x^\ast (\theta), \theta)}_\text{Derivative of Objective Function} 
+    \underbrace{V&#39;(\theta)}_\text{Derivative of Value Function} = \underbrace{f_\theta (x^\ast (\theta), \theta)}_\text{Derivative of Objective Function} 
 \end{equation}\]</span></p>
 <p>Which it’s true when the optimal choice doesn’t change with the parameter. And</p>
 <p><span class="math display">\[\begin{equation}
@@ -508,9 +508,9 @@ X^\ast (\theta) = argmax_{x \in X} f (x,\theta)
 <p>Then for every selection <span class="math inline">\(x^\ast\)</span> in from <span class="math inline">\(X^\ast\)</span> and every <span class="math inline">\(\theta \in [0,1]\)</span>, we have</p>
 <p><span class="math display">\[ V(\theta) = V(0) + \int_0^\theta f_\theta (x^\ast (\tilde{\theta}), \tilde{\theta})d \tilde{\theta} \]</span></p>
 <p>We haven’t made any assumptions about X and the behavior of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(x\)</span>. So, the beauty of the envelope theorem is that regularity of V in the parameter <span class="math inline">\(\theta\)</span> comer “for free” from regularity of <span class="math inline">\(f\)</span> in <span class="math inline">\(\theta\)</span> and the nature of optimizing behavior.</p>
-<p>Now, we also want to show that <span class="math inline">\(V'(\theta) = f_\theta (x^\ast (\theta), \theta)\)</span> for almost every <span class="math inline">\(\theta \in [0,1]\)</span> and that V is <strong>Lipschitz continuoues</strong>(i.e. <span class="math inline">\(\exists C &lt; \infty\)</span> s.t. <span class="math inline">\(|V(\theta ') - V(\theta)| ≤ C(\theta ' - \theta)\)</span> <span class="math inline">\(\forall \theta, \theta' \in [0,1]\)</span>).</p>
+<p>Now, we also want to show that <span class="math inline">\(V&#39;(\theta) = f_\theta (x^\ast (\theta), \theta)\)</span> for almost every <span class="math inline">\(\theta \in [0,1]\)</span> and that V is <strong>Lipschitz continuoues</strong>(i.e. <span class="math inline">\(\exists C &lt; \infty\)</span> s.t. <span class="math inline">\(|V(\theta &#39;) - V(\theta)| ≤ C(\theta &#39; - \theta)\)</span> <span class="math inline">\(\forall \theta, \theta&#39; \in [0,1]\)</span>).</p>
 <p>Claim 1: V is Lipschitz Continuous, with Lipschitz constant B.</p>
-<p><em>Proof</em>: fix <span class="math inline">\(\theta, \theta' \in [0,1]\)</span>. Without loss, assume that the value function for <span class="math inline">\(\theta '\)</span> is bigger than for <span class="math inline">\(\theta\)</span> (i.e. <span class="math inline">\(V(\theta ') ≥ V(\theta)\)</span>). Then,</p>
+<p><em>Proof</em>: fix <span class="math inline">\(\theta, \theta&#39; \in [0,1]\)</span>. Without loss, assume that the value function for <span class="math inline">\(\theta &#39;\)</span> is bigger than for <span class="math inline">\(\theta\)</span> (i.e. <span class="math inline">\(V(\theta &#39;) ≥ V(\theta)\)</span>). Then,</p>
 <p><span class="math display">\[ \begin{aligned}
 \left|V\left(\theta^{\prime}\right)-V(\theta)\right| &amp;=\sup _{x^{\prime} \in X} f\left(x^{\prime}, \theta^{\prime}\right)-\sup _{x \in X} f(x, \theta) \\
 &amp; \leq \sup _{x \in X}\left[f\left(x, \theta^{\prime}\right)-f(x, \theta)\right] \\
@@ -519,13 +519,13 @@ X^\ast (\theta) = argmax_{x \in X} f (x,\theta)
 \end{aligned}\]</span></p>
 <p>Claim 2: <span class="math inline">\(\forall x^\ast\)</span> from <span class="math inline">\(X^\ast\)</span>, we have:</p>
 <p><span class="math display">\[ V^{\prime}(\theta)=f_{\theta}\left(x^{*}(\theta), \theta\right) \text { for almost every } \theta \in[0,1] \]</span></p>
-<p><em>Proof</em>: given that Lipschitz continuous functions are differentiable almost everywhere, we have that for almost every <span class="math inline">\(\theta\)</span>, V is differentiable and <span class="math inline">\(X^\ast (\theta) \neq \varnothing\)</span>. Fix such a <span class="math inline">\(\theta\)</span>, fix <span class="math inline">\(x^\ast \in X^\ast(\theta)\)</span>. We still have to show what we wanted to prove in the first place: <span class="math inline">\(V'(\theta) = f_\theta (x^\ast, \theta)\)</span>. Given the maximization problem <span class="math display">\[ \max _{\theta^{\prime} \in \Theta}\left[f\left(x^{*}(\theta), \theta^{\prime}\right)-V\left(\theta^{\prime}\right)\right] \]</span></p>
-<p>Since we established that <span class="math inline">\(V(\theta ') ≥ V(\theta)\)</span> <span class="math inline">\(\forall \theta\)</span>, we know that <span class="math inline">\(f\left(x^{*}(\theta), \theta^{\prime}\right) \leq V\left(\theta^{\prime}\right)\)</span> for all <span class="math inline">\(\theta^{\prime},\)</span> with equality at <span class="math inline">\(\theta^{\prime}=\theta,\)</span> the maximum is attained at <span class="math inline">\(\theta^{\prime}=\theta .\)</span> since <span class="math inline">\(f\)</span> and <span class="math inline">\(V\)</span> are both differentiable in <span class="math inline">\(\theta^{\prime},\)</span> the first-order condition with respect to <span class="math inline">\(\theta^{\prime}\)</span> must hold at <span class="math inline">\(\theta^{\prime}=\theta.\)</span> Finally, the first-order condition is precisely <span class="math inline">\(V^{\prime}(\theta)=f_{\theta}\left(x^{*}, \theta\right)\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+<p><em>Proof</em>: given that Lipschitz continuous functions are differentiable almost everywhere, we have that for almost every <span class="math inline">\(\theta\)</span>, V is differentiable and <span class="math inline">\(X^\ast (\theta) \neq \varnothing\)</span>. Fix such a <span class="math inline">\(\theta\)</span>, fix <span class="math inline">\(x^\ast \in X^\ast(\theta)\)</span>. We still have to show what we wanted to prove in the first place: <span class="math inline">\(V&#39;(\theta) = f_\theta (x^\ast, \theta)\)</span>. Given the maximization problem <span class="math display">\[ \max _{\theta^{\prime} \in \Theta}\left[f\left(x^{*}(\theta), \theta^{\prime}\right)-V\left(\theta^{\prime}\right)\right] \]</span></p>
+<p>Since we established that <span class="math inline">\(V(\theta &#39;) ≥ V(\theta)\)</span> <span class="math inline">\(\forall \theta\)</span>, we know that <span class="math inline">\(f\left(x^{*}(\theta), \theta^{\prime}\right) \leq V\left(\theta^{\prime}\right)\)</span> for all <span class="math inline">\(\theta^{\prime},\)</span> with equality at <span class="math inline">\(\theta^{\prime}=\theta,\)</span> the maximum is attained at <span class="math inline">\(\theta^{\prime}=\theta .\)</span> since <span class="math inline">\(f\)</span> and <span class="math inline">\(V\)</span> are both differentiable in <span class="math inline">\(\theta^{\prime},\)</span> the first-order condition with respect to <span class="math inline">\(\theta^{\prime}\)</span> must hold at <span class="math inline">\(\theta^{\prime}=\theta.\)</span> Finally, the first-order condition is precisely <span class="math inline">\(V^{\prime}(\theta)=f_{\theta}\left(x^{*}, \theta\right)\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <div id="the-payoff-equivalence-theorem" class="section level4">
 <h4><strong>The Payoff Equivalence Theorem</strong></h4>
 <p>Suppose we have just one agent, <span class="math inline">\(\theta \in \Theta\)</span> and payoff function <span class="math inline">\(u : X \times \Theta \rightarrow \mathbb{R}\)</span>. A SCF <span class="math inline">\(f : \Theta \rightarrow X\)</span> is <em>incentive compatible</em> if</p>
-<p><span class="math display">\[ \theta = argmax_{\theta' \in \Theta} u (f(\theta'), \theta)\]</span></p>
+<p><span class="math display">\[ \theta = argmax_{\theta&#39; \in \Theta} u (f(\theta&#39;), \theta)\]</span></p>
 <p>Let <span class="math inline">\(V(\theta) = u(f(\theta),\theta)\)</span> be the agent’’s value function under social choice function <span class="math inline">\(f\)</span>.</p>
 <p>The PE theorem says that if <span class="math inline">\(\Theta\)</span> is an interval: <span class="math inline">\(\Theta = [\underline{\theta}, \overline{\theta}]\)</span> and <span class="math inline">\(u_\theta\)</span>(x,<span class="math inline">\(\theta\)</span>) is uniformly bounded, then the agent’s value function <span class="math inline">\(V(\theta)\)</span> (utility for type <span class="math inline">\(\theta\)</span>) is uniquely determined by <span class="math inline">\(V(\underline{\theta})\)</span>(the utility of the lowest type) and <span class="math inline">\(u_{\theta}(x(\tilde{x}), \tilde{\theta})\)</span> for <span class="math inline">\(\tilde{\theta} \in [\underline{\theta}, \theta]\)</span>(the partial derivative of utility with respect to the parameter).</p>
 <p><strong>Theorem 2 (Envelope Characterization of Payoffs)</strong>: Suppose</p>
@@ -565,7 +565,7 @@ t_{i}(\theta)=\left[\sum_{j \neq i} v_{j}\left(y^{*}(\theta), \theta_{j}\right)\
 </div>
 <div id="budget-balance" class="section level4">
 <h4><strong>Budget Balance</strong></h4>
-<p>We have seen that VCG implement the efficient allocation <span class="math inline">\(y^\ast (\theta)\)</span>. But what if the mechanism <strong>wastes a lot of money</strong>(i.e. <span class="math inline">\(\sum_i t_i &lt;&lt; 0\)</span>)? To balance the budget, we must have <span class="math inline">\(\sum_i t_i (\theta) = 0\)</span>.</p>
+<p>We have seen that VCG implement the efficient allocation <span class="math inline">\(y^\ast (\theta)\)</span>. But what if the mechanism <strong>wastes a lot of money</strong>(i.e. <span class="math inline">\(\sum_i t_i &lt;&lt; 0\)</span>)? To balance the budget, we must have <span class="math inline">\(\sum_i t_i (\theta) = 0\)</span>.</p>
 <p>Let S(<span class="math inline">\(\theta\)</span>) denote the efficient social surplus at type profile <span class="math inline">\(\theta\)</span>, that is</p>
 <p><span class="math display">\[ S(\theta) = \sum_i v_i (y^\ast (\theta), \theta_i) \]</span></p>
 <p>Under a VCG mechanism we have:</p>
@@ -601,7 +601,7 @@ t_{0}(\theta)+\sum_{i \neq 0} t_{i}(\theta)=\left[-(n-1) S(\theta)-\sum_{i \neq 
 <p>Let’s use the <em>bilateral public good problem</em> example. Assume there are two agents <span class="math inline">\((n=2)\)</span> who must decide whether to obtain a public good or not <span class="math inline">\((y \in\{0,1\}) .\)</span> Agent <span class="math inline">\(i\)</span> ’s type <span class="math inline">\(\theta_{i} \in \Theta_{i}=\left[\underline{\theta}_{i}, \bar{\theta}_{i}\right]\)</span> equals her value for the good. The cost of obtaining the good is <span class="math inline">\(c .\)</span> Thus, a budget-balanced mechanism is a function <span class="math inline">\((y, t): \Theta_{1} \times \Theta_{2} \rightarrow\{0,1\} \times \mathbb{R}^{2}\)</span> such that <span class="math inline">\(t\left(\theta_{1}\right)+t\left(\theta_{2}\right)=-c\)</span> if <span class="math inline">\(y\left(\theta_{1}, \theta_{2}\right)=1\)</span> and <span class="math inline">\(t\left(\theta_{1}\right)+t\left(\theta_{2}\right)=0\)</span> if <span class="math inline">\(y\left(\theta_{1}, \theta_{2}\right)=0 .\)</span> That is, if the agents decide to obtain the public good, the sum of their contributions must cover its cost <span class="math inline">\(c .\)</span></p>
 <p>We will also restrict attention to mechanisms where each agent always obtains a non-negative utility: that is, for all <span class="math inline">\((\theta_1, \theta_2)\)</span>, we have</p>
 <p><span class="math display">\[ \theta_{1} y\left(\theta_{1}, \theta_{2}\right)+t_{1}\left(\theta_{1}, \theta_{2}\right) \geq 0 \text { and } \theta_{2} y\left(\theta_{1}, \theta_{2}\right)+t_{2}\left(\theta_{1}, \theta_{2}\right) \geq 0 \]</span></p>
-<p>The efficient (or surplus-maximizing, or first-best) outcome is to obtain the public good if and only if the sum of the playersívalues exceeds the production cost: that is, iff <span class="math inline">\(\theta_1\)</span> + <span class="math inline">\(\theta_2\)</span> ≥ c. Note that this says that the set of values of (<span class="math inline">\(\theta_1; \theta_2\)</span>) for which the good should be produced is a triangle: the region of (<span class="math inline">\(\theta_1; \theta_2\)</span>) space bounded below by the line <span class="math inline">\(\theta_1 + \theta_2\)</span> = c.</p>
+<p>The efficient (or surplus-maximizing, or first-best) outcome is to obtain the public good if and only if the sum of the playersívalues exceeds the production cost: that is, iff <span class="math inline">\(\theta_1\)</span> + <span class="math inline">\(\theta_2\)</span> ≥ c. Note that this says that the set of values of (<span class="math inline">\(\theta_1; \theta_2\)</span>) for which the good should be produced is a triangle: the region of (<span class="math inline">\(\theta_1; \theta_2\)</span>) space bounded below by the line <span class="math inline">\(\theta_1 + \theta_2\)</span> = c.</p>
 <p>WTS: a mechanism is budget balanced, individually rational and DSIC iff <span class="math inline">\(\theta_1 + \theta_2 ≥ c\)</span>.</p>
 <p><strong>Theorem 6:</strong> In the bilateral public good provision problem, a mechanism (y; t) is budget-balanced, individually rational, and DSIC if and only if there exist constants <span class="math inline">\(c_1\)</span> and <span class="math inline">\(c_2\)</span> such that <span class="math inline">\(c_1 + c_2 = c\)</span> and</p>
 <p><span class="math display">\[\begin{equation}
@@ -638,7 +638,7 @@ t_{0}(\theta)+\sum_{i \neq 0} t_{i}(\theta)=\left[-(n-1) S(\theta)-\sum_{i \neq 
 <p>Mechanism <span class="math inline">\(\Gamma\)</span> implements social choice function <span class="math inline">\(f: \Theta \rightarrow X\)</span> in BNE if there exists a BNE <span class="math inline">\(s^{*}\)</span> of <span class="math inline">\(\Gamma\)</span> such that <span class="math inline">\(g\left(s^{*}(\theta)\right)=f(\theta)\)</span> for all <span class="math inline">\(\theta \in \Theta\)</span>.</p>
 <p>Interpreting the above definitions, if we compare to DSE, we know that in DSE the player chooses to play <span class="math inline">\(s_i^\ast (\theta_i)\)</span> regardless of what the others do. So the player would never spend resources to learn about the other players’ types.</p>
 <p>In BNE, it is optimal for type <span class="math inline">\(\theta_i\)</span> to play <span class="math inline">\(s_i^\ast (\theta_i)\)</span> when her opponents’ types are distributed according to the prior and they follow their equilibrium strategies. If a player could spend resources to learn about the others’ types, it could be beneficial.</p>
-<p>It is without loss of generality to restrict attention to <em>incentive compatible direct mechanisms</em> (i.e. <span class="math inline">\(\Gamma\)</span> where A equals <span class="math inline">\(\Theta\)</span> and players report truthfully in equilibrium). This is the <em>Revelation Principle for BNE</em>.</p>
+<p>It is without loss of generality to restrict attention to <em>incentive compatible direct mechanisms</em> (i.e. <span class="math inline">\(\Gamma\)</span> where A equals <span class="math inline">\(\Theta\)</span> and players report truthfully in equilibrium). This is the <em>Revelation Principle for BNE</em>.</p>
 </div>
 <div id="definition-3" class="section level4">
 <h4><strong>Definition 3</strong></h4>
@@ -684,7 +684,7 @@ V_{i}\left(\theta_{i}\right)=E_{\theta_{-i}}\left[u_{i}\left(f\left(\theta_{i}, 
 </ol>
 <p>Consider two BIC mechanisms <span class="math inline">\((y, t)\)</span> and <span class="math inline">\((y, \hat{t})\)</span> with the same allocation rule. If <span class="math inline">\(V_{i}\left(\underline{\theta}_{i}\right)=\hat{V}_{i}\left(\underline{\theta}_{i}\right)\)</span> for all <span class="math inline">\(i \in I,\)</span> then <span class="math inline">\(E_{\theta}\left[\sum_{i} t_{i}(\theta)\right]=E_{\theta}\left[\sum_{i} \hat{t}_{i}(\theta)\right]\)</span></p>
 </div>
-<div id="arrow-daspremont-gerard-varet-mechanism" class="section level4">
+<div id="arrow-daspremont-gérard-varet-mechanism" class="section level4">
 <h4><strong>Arrow-d’Aspremont-Gérard-Varet Mechanism</strong></h4>
 <p>Conclusion: when player <em>i</em> changes her report, the change in her transfer is precisely the <strong>expected</strong> externality of this change on the other players (under VCG is the <strong>realized</strong> externality of the change evaluated at her opponents’ type profile <span class="math inline">\(\theta_{-i}\)</span>).</p>
 </div>
@@ -696,7 +696,7 @@ V_{i}\left(\theta_{i}\right)=E_{\theta_{-i}}\left[u_{i}\left(f\left(\theta_{i}, 
 <div id="myerson-satterthwaite-theorem" class="section level4">
 <h4><a href="https://en.wikipedia.org/wiki/Myerson%E2%80%93Satterthwaite_theorem"><strong>Myerson-Satterthwaite Theorem</strong></a></h4>
 <p>In a nutshell: unless gains from trade are certain to exist, there is no efficient, BIC, budget balanced and individually rational mechanism for bilateral exchange. It states that the <em>Coase’s theorem</em> (agents will always trade to an ex-post efficient allocation) does not apply under private information.</p>
-<p><strong>Setup</strong>: generlization of the end of L3. Two <strong>agents</strong> with values <span class="math inline">\(\theta_1, \theta_2 \in [0,1]\)</span>. Types are <strong>independently</strong> distributed, with <span class="math inline">\(\theta_i\)</span> distributed according to <span class="math inline">\(\phi_i\)</span>, and each <span class="math inline">\(\phi_i\)</span> has full support (i.e. is continuous) on the interval [0,1]. An <strong>alternative</strong> is a vector <em>x</em> = <span class="math inline">\((y_1, y_2, t_1, t_2)\)</span> where <span class="math inline">\(y_i (\theta_1, \theta_2) \in [0,1]\)</span> is the probability that the agent <em>i</em> gets the good and <span class="math inline">\(t_i (\theta_1 , \theta_2)\)</span> is the transfer received by agent <em>i</em>. Agent <span class="math inline">\(i's\)</span> utility is:</p>
+<p><strong>Setup</strong>: generlization of the end of L3. Two <strong>agents</strong> with values <span class="math inline">\(\theta_1, \theta_2 \in [0,1]\)</span>. Types are <strong>independently</strong> distributed, with <span class="math inline">\(\theta_i\)</span> distributed according to <span class="math inline">\(\phi_i\)</span>, and each <span class="math inline">\(\phi_i\)</span> has full support (i.e. is continuous) on the interval [0,1]. An <strong>alternative</strong> is a vector <em>x</em> = <span class="math inline">\((y_1, y_2, t_1, t_2)\)</span> where <span class="math inline">\(y_i (\theta_1, \theta_2) \in [0,1]\)</span> is the probability that the agent <em>i</em> gets the good and <span class="math inline">\(t_i (\theta_1 , \theta_2)\)</span> is the transfer received by agent <em>i</em>. Agent <span class="math inline">\(i&#39;s\)</span> utility is:</p>
 <p><span class="math display">\[ u_i (y, t, \theta_i) = \theta_i y_i + t_i \]</span></p>
 <p>Agent <em>i’s</em> expected utility from participating in the mechanism <span class="math inline">\((y,t)\)</span> : <span class="math inline">\(\Theta_1 \times \Theta_2 \rightarrow X\)</span> is</p>
 <p><span class="math display">\[ V_{i}\left(\theta_{i}\right)=\theta_{i} E_{\theta_{-i}}\left[y_{i}\left(\theta_{i}, \theta_{-i}\right)\right]+E_{\theta_{-i}}\left[t_{i}\left(\theta_{i}, \theta_{-i}\right)\right] \]</span></p>
@@ -751,6 +751,12 @@ V_{i}\left(\theta_{i}\right) \geq 0 \text { for all } i \in I, \theta_{i} \in \T
 <p><strong>Interdependent values</strong>: efficient allocation gets harder. If I know something that’s relevant for your value but not my own, it’s hard to give me incentives to reveal it. For example, if only player 1 knows that a good she likes is actually even more valuable to player 2, she will not reveal this information.</p>
 <p><strong>Correlated types</strong>: efficient gets easier. Players have information about each other’s types, and can therefore be used to “cross-check” each other’s reports. Finally, this “cross-checking” used to attain efficiency with correlated types is arguably <em>unrealistic</em>, as it relies on fine details of the players’ information.</p>
 </div>
+</div>
+<div id="l5" class="section level3">
+<h3><strong>L5</strong></h3>
+<ul>
+<li>Transition: our perspective now is to study the design of mechanisms that may be <strong>socially inneficient</strong> but are optimal from the perspective of the <strong>uninformed party who designs them</strong>.</li>
+</ul>
 </div>
 </div>
 <div id="mwg" class="section level2">

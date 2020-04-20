@@ -1,0 +1,52 @@
+---
+title: "Ewens Nanda Stanton 2020"
+date: "16/04/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## The Evolution of CEO Compensation in Venture Capital Backed Startups{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: what's the evolution of founder-CEO compensation over the life of private, venture capital-backe firms?
+
+-   **Why is it relevant/gap**: prior literature shows how in the presence of asymmetric information, investors need to screen potential entrepreneurs by offering them back-loaded compensation contracts $\implies$ some ideas can go uncommercialized because non-diversifiable risk can be too high. The paper examines how this non-diversifiable risk evolves until it hits an *inflection point*: a big milestone so that the CEO compensation evolves to another, more professionalized, level of compensation. 
+
+-   **Intended contribution/importance**: fill the gap in the compensation contract between entrepreneurs and investors and whether this also evolves in parallel over the lifecycle of the firm. Contributions to literature on: **i)** principal agents problems for both CEO compensation and optimal contracts between investors and entrepreneurs - provides the first evidence from private firms that suggests that the class of contracts that are relevant for the CEOs of publicly traded firms extends back well before firms go public; **ii)** compensation contract for founders and top executives in VC-backed firms - VCs are painted here in a lesser-known role: that of intermediate liquidity providers; **iii)** selection into entrepreneurship - our paper ratio- nalizes the large number of individuals selecting into VC-backed entrepreneurship without having to resort to behavioral drivers such as risk tolerance, optimism, overconfidence, or non-pecuniary benefits. We show that the relatively short duration of low salary before a transition to ‘market salary’ makes the certainty equivalent of VC-backed entrepreneur- ship positive for the vast majority of potential entrepreneurs, even if they are risk averse.
+
+-   **Hypotheses**: inflection point: once a startup reaches a certain level of solidness (ex: makes revenue, has a product..), the CEO compensation becomes more "professionalized". 
+
+-   **Setting/research design**: use unique individual data on executive compensation in venture capital backed startups to study both the level and evolution of entrepreneurial compensation in VC-backed firms. We link, at the individual executive-level, their salary, bonus, and equity holdings to firm-level information on financing, revenue, headcount, and product milestones. We also observe whether the executive is a founder or not, and we have rich covariates on industry, geography, and firm age. **Datasets**: Advanced HR - leading provider of data for VC backed startups. Data from AHR's 2015 and 2017 surveys: 933 and 1552 portfolio companies respectively, 70 and 115 VC investors respectively. Other **source**: **Venture Source**. 
+
+-   **Main results**: founder-CEOs earn relatively little cash compensation in the life of a new venture. **Inflection point**: when the product is commercialized the transition to *professionalized* compensation schedules happens. The paper shows that non-diversifiable risk borne by founder-CEOs is low enough for the vast majority of potential entrepreneurs to select into en- trepreneurship even with standard levels of risk aversion. Main findings: **i)** founder cash compensation is mi imal at the birth of ventures; **ii)** cash compensation changes substantially with respect to financial and product market milestones that signal the resolution of uncertainty; **iii)** revenue and product milestones are achieved within a short-time from firm birth;
+
+-   **Additional results crucial to the story**: 80% of startups take 3 years to hit the inflection point or fail to hit it. It is not the initial level of cash compensation but the **sped with which milestones are achieved** that determines the risk entrepreneurs face. 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  frictions at the very top end of the human capital distribution: potential entrepreneuers may have sufficiently high outside options that the risk-adjusted return to VC backed entrepreneurship is negative; the degree to which their ideas are not commercialized as well as the aggregate impact of this selection remains open for future research.
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
+
+#### Summary of the paper
+
+A critical component of the risk borne by entrepreneurs is the amount of time between starting a firm and an entrepreneur’s ability to access a liquid source of cash, either through salary, bonus compensation, or realized capital gains. The longer the delay till they can access liquid cash, the greater their **‘burden of non-diversifiable risk’**.
+
+How can a good idea die without VC funding?
