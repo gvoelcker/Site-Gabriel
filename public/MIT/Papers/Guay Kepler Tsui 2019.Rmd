@@ -1,0 +1,54 @@
+---
+title: "Guay Kepler Tsui 2019"
+date: "20/04/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Paper Analysis{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: what's the role of cash bonuse in providing executives individual and team incentives?
+
+-   **Why is it relevant**: recent literature on CEO incentives regards cash-based bonus plans as largely irrelevant - why are they still included in compensation?
+
+-   **Intended contribution/importance**: develop a new measure of bonus plan incentives to understand how much are executives sensitivity to cash bonus compensation. Analyzes the team role of executive compensation. 
+
+-   **Hypotheses**: beyond providing executives with individual incentives, bonus plans can also play a key role in providing collective top management team incentives. Bonus compensation encourages mutual monitoring and facilitating cooperation among executives. Beyond individual incentives, an alternative role for executives' bonus plans may be to provide team incentives across top managemnt as a whole.
+
+-   **Setting/research design**: our empirical analysis uses detailed data on the ac- tual performance measures and the functional forms of payout structures to construct precise measures of both the performance sensitivity embedded in executive bonus contracts and the degree of similarity in bonus plans across a firm’s top management team, which we then use to evaluate theories of individual and team incen- tives. In contrast, prior studies typically lack data on the specific performance measures used in each bonus plan and approximate bonus-performance sensitivities using estimated coefficients from regressing bonuses (or total cash pay, including salary) on an assumed measure of firm performance, such as stock return or earnings.
+
+-   **Main results**: performance sensitivity to bonus compensation is greater than prior estimates, to the point that it is comparable to equity incentives.
+
+-   **Additional results crucial to the story**: a typical CEO receives an extra 25\% - 35\% in bonus (about 300,000 to 450,000) for a 10\% increase in shareholder value. Bonus incentives increase with executive tenure, providing support for an efficient risk-sharing role for cash-based bonuses.
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
+
+Research into the team role of executives is limited. - [Potential future idea]
+
+Issue; boards appear to determine cash-based incentives independently of time variation in executives' equity portfolio incentives.
+
+
+
+

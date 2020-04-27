@@ -560,6 +560,374 @@ Introduce the three scenarios that are benchmarks, problems and solutions.
 
 
 
+### **L7**
+
+#### **Competitive Screening: Akerlof and Rothschild-Stiglitz**
+
+Theory hasn't developed much since the 70's, easier to study to the point of being on the research frontier. 
+
+**Akerlof**: principals can only offer one contract: single price for a given allocation $\implies$ impossible to screen different types of buyers. 
+
+**Rothschild-Stiglitz**: can offer a menu of contracts.
+
+Into the models:
+
+#### **Akerlof (1970)**
+
+A seller of indivisible goods (cars) faces a population of $n ≥ 2$ buyers. Quality of the good denoted by $\theta$ and distributed on $[\underline{\theta}, \overline{\theta}] \subset \mathbb{R}$ with positive density $f(\theta)$. The real quality of the good is only observed by the seller. Utility is quasi-linear, a buyer's value for a good of quality $\theta$ is just $\theta$ and the seller's reservation value for a good of quality $\theta$ is $r(\theta)$, with $r(0) = 0$, $r' > 0$, and $r(\theta) ≤ \theta$ $\forall \theta$ (this last assumption means that it is efficient to trade goods of every quality).
+
+**Interdependent values**: the seller's type is $\theta$ and a buyer's payoff from buying the good at price *p* is $\theta - p$, which depends on seller's type. So to obtain a profit, the buyer has to make the trade when he values the good less than the seller. 
+
+When quality **is observable**: there will be an equilibrium price $p(\theta) \in [r(\theta), \theta]$ for every quality $\theta$, and all goods will be traded. In particular, the outcome is efficient. 
+
+Can the outcome be efficient when quality is **unobservable**? The equilibrium price is defined depending on the fact that each seller wants to sell the good for as much as he can. 
+
+- **Competitive Equilibrium Definition**: a non-trivial competitive equilibrium in the market for lemons is a price $p^\ast$ and a non-empty set of types that sell $\Theta^\ast$ such that:
+
+\[ \Theta^\ast = \{ \theta : r (\theta) ≤ p^\ast \} \\ p^\ast = E[\theta | \theta \in \Theta^\ast] \]
+
+In words: buyers pay price equal to their expected value (2nd line); sellers sell those goods that they value weakly less than the price (1st line).
+
+**Proposition 1**: no efficient equilibrium exists when:
+
+\[     \underbrace{r(\overline{\theta})}_\text{seller's valuation of best good} > \underbrace{E [\theta]}_\text{buyers valuation of average good} \]
+
+*Proof.* In an efficient competitive equilibrium **all goods are traded**, so $\Theta^\ast = \Theta$ and hence $p^\ast = E[\theta]$. But then the requirement that $r(\theta) ≤ p^\ast$ for all $\theta \in \Theta$ implies that $r(\overline{\theta}) ≤ E[\theta]$.
+
+The reserve value has to always be smaller than $p^\ast \implies$ the seller that values the most still has to have $r(\overline{\theta}) ≤ p^\ast$ or he won't trade. So the **competitive equilibrium can't be efficient**. The problem is that there is no way the price can depend on quality and when $r(\overline{\theta}) > E[\theta]$ there is no price that both the buyer and every type of seller would accept. 
+
+What kinds of competitive equilibrium exist? An equilibrium with price $p^\ast$ exists iff $p^\ast = E[\theta | r(\theta) ≤ p^\ast]$. In other words, $p^\ast$ is a competitive when it is a fixed point given that $E[\theta | r (\theta) ≤ p]$ is nondecreasing. 
+
+There can be **multiple equilibria**: where the curve $E[\theta | r(\theta) ≤ p]$ crosses the 45$^o$ line. 
+
+Example 1: suppose $\theta \sim U [0,1]$ and $r(\theta) = \frac{2}{3}\theta$ for all $\theta$. Then
+
+\[ E[\theta |r (\theta) ≤ p^\ast] = E[\theta | \frac{2}{3} \theta ≤ p^\ast ] = E [ \theta | \theta ≤ \frac{3}{2} p^\ast] = min \{ \frac{3}{4}p^\ast, \frac{1}{2} \} \]
+
+Therefore, $p^\ast$ is a competitive equilibrium price iff $p^\ast = \frac{3}{4}p^\ast$, so the unique competitive equilibrium price is $p^\ast = 0$. 
+
+When we compare Pareto equilibria, the higher $p^\ast$ always dominates! (better for sellers, buyers always have 0 payoff). **Coordination failure**: in lower $p^\ast$ buyers offer a low price because they expect that only low quality goods are sold and sellers only sell low quality goods because they expect to receive a low price. 
+
+**Proposition 2**: consider the game where buyers simultaneously offer prices and then the seller accepts or rejects. Let $\overline{p}^\ast$ be the highest competitive equilibrium price. If the curve $E[\theta | r (\theta) ≤ p]$ crosses the 45$^o$ line from above at $\overline{p}^\ast$, then in every pure strategy SPNE all trades occur at price $\overline{p}^\ast$ all sellers with $r(\theta) < \overline{p}^\ast$ sell. 
+*Proof*. Buyers get 0 payoff. Suppose trade occurs at p < $\overline{p}^\ast$, then a buyer deviates by offering $\overline{p}^\ast - \epsilon > p$ for such small $\epsilon$ that $E[\theta | r(\theta) ≤ \overline{p}^\ast - \epsilon] > \overline{p}^\ast - \epsilon$. This small deviation $\epsilon$ exists because $E[\theta | r (\theta) ≤ p]$ crosses the line from above. This offer will be accepted by all sellers with $r(\theta) ≤ \overline{p}^\ast - \epsilon$, so the buyer gets payoff $E[\theta | r(\theta) ≤ \overline{p}^\ast - \epsilon] - (\overline{p}^\ast - \epsilon) > 0$. This is a profitable deviation so there can be no equilbrium where trade occurs at $p < \overline{p}^\ast$. 
+
+This argument implies that if $\overline{p}^\ast > r(\underline{\theta})$, then some buyer must actually offer price $\overline{p}^\ast$ in equilibrium, so all sellers with $r(\theta) < \overline{p}^\ast$ must sell. If instead $\overline{p}^\ast = r(\underline{\theta})$, then there are no sellers with $r(\theta) < \overline{p}^\ast$, so the claim that they sell is vacuous. (this means that if no seller values the good less than the highest equilibrium price, there will be no trades)
+
+Key **conclusions** from Akerlof: 
+
+1) If the seller values the best good more than the buyer values the average good, then no efficient competitive equilibrium exists.
+
+2) Some competitive equilibrium always exists. It may be the case that multiple competitive equilibria exist. If so, they are Pareto-ranked, with higher-price equilibria Pareto-dominating lower-price equilibria.
+
+3) It may be that the market breaks down completely, in that only the very worst type seller trades in equilibrium.
+
+4) Generically, only the highest competitive equilibrium price is also a SPNE price of the game-theoretic version of Akerlof's model. However, lower-price competitive equilibria may survive as outcomes of realistic dynamic price-adjustment processes.
+
+#### **Rothschild-Stiglitz (1978)**
+
+Now the buyers are trying to design contracts that select for good agent types. The buyers can offer **screening contracts** that specifiy a menu of price-allocation pairs. Buyers offer *exclusive screening contracts* of the form (p,q) where $q \in [0,1]$ is the quantity demanded and $p≥0$ is the price offered for that quantity. If the contract is accepted and the quality of the good is $\theta$, payoffs are:
+
+\[ \text{Buyer's payoff: } \theta q - p \]
+
+\[ \text{Seller's payoff: } p - r(\theta) q \]
+
+We also assume that $r(\theta) < \theta$ for all $\theta > 0$.
+
+In the Akerlof model, the breakdown of the market was due to the non-existence of a price that all seller types accept. Here, the focus is in the breakdown resulting when competitive screening causes different buyers to target different types of sellers, as well as the inefficiencies that occur in equilibrium even when the market does not break down completely. 
+
+##### **Complete Information**
+
+**Proposition 3**: when $\theta$ is observable, in every equilibrium all type $\theta > 0$ sellers accept the first-best contract (1,$\theta$). 
+
+Proof omitted. Intuition: what happens when $p \neq \theta$? Conclusion: as in the Akerlof model, the RS model is efficient when quality is observable.
+
+##### **Incomplete Information**
+
+Setting: Quality is unobservable, only two possible qualities $\theta_L$ and $\theta_H$. There are only two possible kinds of equilibria: *separating equilbria*(different contracts per type) and *pooling equilibria*(same contract for both types). 
+
+**Lemma 1**: all buyers get payoff 0 in every equilibrium. Proof omitted. Intuition: if a buyer has profit, by marginally decreasing his profit and offering a slightly better contract for sellers, the buyer can grab all the market for himself. 
+
+From Lemma 1 we obtain that **there is never a pooling equilibrium**. The intuition is that a buyer could profitably deviate by offering a *cream-skimming* contract with lower quantity and price (but higher per-unit price) that only attracts the high types. 
+
+**Proposition 4**: no pooling equilibrium exists. 
+
+*Proof.* Suppose there is a pooling equilibrium where all sellers accept contract ($q^\ast, p^\ast$) with $q^\ast > 0$. By Lemma 1, this contract gives buyers payoff 0. This implies that $\frac{p^\ast}{q^\ast} = \beta \theta_L + (1 - \beta) \theta_H$, where $\beta$ is the probability of being low type and that in particular $\frac{p^\ast}{q^\ast} < \theta_H$. Now, let $\hat{q} = q^\ast - \epsilon$ and let $\hat{p} = p^\ast - \epsilon r(\theta_H)$ for $\epsilon$ small enough such that $\frac{\hat{p}}{\hat{q}} < \theta_H$. By construction, type $\theta_H$ is indifferent between $(\hat{q}, \hat{p})$ and $(q^\ast, p^\ast)$: that is
+
+\[ (1-\hat{q}) r\left(\theta_{H}\right)+\hat{p}=\left(1-q^{*}\right) r\left(\theta_{H}\right)+p^{*} \text{ (ICH)}\]
+
+Since $r(\theta_H) ≥ r(\theta_L)$ and $\hat{q} < q^\ast$, we have
+
+\[ (1 - \hat{q}) r (\theta_L) + \hat{p} < (1 - q^\ast) r (\theta_L) + p^\ast \text{ (ICL)} \]
+
+That is, contract $(\hat{q},\hat{p})$ does not attract low types. Thus, since $\frac{\hat{p}}{\hat{q}} < \theta_H$, if a buyer offers contract $(\hat{q}, \hat{p})$ and only high types accept, this is a profitable deviation. Now suppose a buyer offers a contract $(\hat{q} \hat{p} + \epsilon ')$ for sufficiently small $\epsilon '$, high types must accept $\rightarrow$ profitable deviation. 
+
+Finally, there can't be a pooling equilibrium where $q^\ast$ = 0. If there where, then a buyer could offer contract $(\hat{q}, \hat{p})$ = ($1, \frac{r (\theta_L) + \theta_L}{2}$). 
+
+**Lemma 2**: in a separating equilibrium where low types accept contract ($q_L, p_L$) and high type accept contract ($q_H, p_H$), both contracts give payoff 0 to buyers. That is, $\frac{p_L}{q_L} = \theta_L$ and $\frac{p_H}{q_H} = \theta_H$. Proof omitted.
+
+This enforces the concept of **cross-subsidization**: a buyer can't make x money on one contract and lose x money on another. 
+
+**Lemma 3**: in any separating equilibrium low types accept contract ($q_L, p_L$) = (1, $\theta_L$). *Proof.* Suppose $q_L < 1$. Then it is profitable to deviate to $(q_L + \epsilon, p_L + \epsilon \frac{r(\theta_L) + \theta_L}{2})$. 
+
+Finally, in any separating equilibrium, **high types' quantity is distorted down**. $q_H$ must be distorted down to make low types indifferent between their contract and the high types' contract, else a buyer could profitably deviate by raising quantity and price for the high types without attracting low types. 
+
+**Lemma 4**: in any separating equilibrium, high types accept contract:
+
+\[ (q_H, p_H) = \left( \frac{\theta_L - r(\theta_L)}{\theta_H - r(\theta_L)}, \left( \frac{\theta_L - r(\theta_L)}{\theta_H - r(\theta_L)} \right) \theta_H \right)   \]
+
+Proof omitted. This allows us to complete the characterization of separating equilibria.
+
+**Proposition 5**: in any separating equilibrium, low types accept the first-best contract given by *Lemma 3*, and high types accept the distorted contract given by *Lemma 4*. 
+
+**Summary**: in RS model, pooling equilibria can't exist and separating equilibria have distortions similar to those of monopolistic screening. Also: *an equilibrium can fail to exist* altogether. In response to this: Wilson and Riley equilibrium. 
+
+
+### **L9**
+
+#### **Introduction to Moral Hazard**
+
+*Moral Hazard models* are the ones where individuals have symmetric information at the time of contracting but subsequently take unobserved actions that generate private information. Basic outline: the **principal** designs a contract for the **agent** where *i)* the principal and agent have symmetric information at the time of contracting; *ii)* the agent then takes an *unobserved* action that affects the distribution of various outcomes; *iii)* the contract rewards or punishes the agent as a function of the outcome.
+
+When can this situation lead to **inefficient** contracts? We will analyze models with 1-dimensional efforts, risk-neutrality and limitied liability. We first present the setup of the problem and then analyze 4 benchmark scenarios, focusing on when FB is attainable or not.
+
+#### **Setup**
+
+- Agent chooses **action** $a \in A$. In the 1-dimensional effort model $A \subset \mathbb{R}$.
+
+- $a$ determines the distribution of possible outcomes $y \in Y$: by choosing $a$ the distribution of outcomes is $F( \cdot | a) \in \Delta (Y)$. $Y \subset \mathbb{R}$ can be interpreted as the *output* of the relationship.
+
+- Having chosen action *a*, outcome *y* realizes. Then the principal rewards the agent with the *transfer*(wage) *w*, and the agent's payoff is:
+
+\[ u_A = u(w) - c(a) \]
+
+and the principal's payoff is:
+
+\[ u_P = V(y,w) \]
+
+The agent doesn't care *directly about y*(but will if *w* depends on *y*) and the principal cares about *a* only through its influence on the distribution of *y*. We assume $V$ has the following form:
+
+\[ V(y,w) = v(y - w) \]
+
+We also assume that $u', v' > 0$ and $u'', v'' \leq 0$. When effort is 1-dimensional: $c'>0$, $c'' \geq 0$. This means that both the agent and the principal like money and are weakly risk-averse and the agent's mrginal cost of effort is positive and non-decreasing. For the agent, we separate effort from money in her utility function, ensuring that her preferences over money lotteries are independent of her effort choice. We also assume that $v(\cdot)$ is the *identity*: the principal is risk-neutral. 
+
+**How does the model "happen"?**
+
+1) The principal **offers a contract** $w: Y \rightarrow \mathbb{R}$, specifying the agent's wage as a function of the outcome. 
+
+2a) If the agent **accepts** the contract, the model happens.
+
+2b) If the agent **rejects** the contract, the game ends and agent gets outside option $\overline{u}$.
+
+3) Agent chooses her action *a*.
+
+4) The outcome *y* realizes. 
+
+5) The transfer $w(y)$ is drawn according to $F(\cdot | a)$.
+
+We wish to characterize the **optimal contract for the principal**. If the agent is indifferent among two or more actions, she chooses the one that is best for the principal.
+
+The principal chooses the contract *w* and the agent's action *a* subject to the constraint that *a* is optimal for the agent under contract *w*. The optimal contracting problem is: 
+
+\[ \max _{a, w: Y \rightarrow \mathbb{R}} E^{a}[v(y-w(y))] \]
+
+s.t.
+
+\[ \begin{aligned} a \in \operatorname{argmax}_{a^{\prime} \in A} E^{a^{\prime}}[u(w(y))]-c\left(a^{\prime}\right) \text{ (IC)} & \\ E^{a}[u(w(y))-c(a)] \geq \bar{u} \text{ (IR)} \end{aligned}
+\]
+
+Interpreting that, $E^a [\cdot]$ is the expectation with respect to probability $F(\cdot | a)$. So the principal is trying to maximize his payoff (first equation) but at the same time has two constraints: 1) IC means that the agent will choose his action *a* to maximize her payoff; 2) IR means that the contract offered is better than the agent's outside option. 
+
+We proceed to analyze 4 benchmark cases:
+
+1. No uncertainty: $y$ is a deterministic function of $a$.
+
+2. No moral hazard (i.e., observable actions): $y$ is a stochastic function of $a,$ but $w$ can
+depend directly on $a$.
+
+3. Risk neutral agent: $w(\cdot)$ is the identity.
+
+4. Limited liability: the agent is still risk neutral, but now she cannot make unboundedly
+large payments to the principal.
+
+####  **1) No Uncertainty**
+
+*y* is a deterministic function of *a*: $F(\cdot | a)$ is degenerate. Also, the wage can be $- \infty$, i.e. the agent can be punished arbitrarily harshly. In other words, by choosing her action, the agent is also choosing *y* while bearing cost $c(y)$. The problem is now:
+
+\[ \max _{y, w: Y \rightarrow \mathbb{R}} v(y-w(y)) \]
+
+s.t.
+
+\[ y \in \operatorname{argmax}_{y^{\prime} \in Y} u\left(w\left(y^{\prime}\right)\right)-c\left(y^{\prime}\right) \text{ (IC)}\]
+
+\[ u(w(y))-c(y) \geq \bar{u} \text{ (IR)}\]
+
+From the above we note that IC is slack: to satisfy see that by setting w(y') = $- \infty \forall y' \neq y$, in other words, when the agent deviates she will be punished, so she won't deviate. Also, IR binds, otherwise the agent reduces $w(y)$ until it binds. Hence, we drop IC an use IR to substitute out for $w(y)$:
+
+\[ \max\limits_{y} v(y - u^{-1} (\overline{u} + c(y))) \]
+
+And given $v' > 0$, this can be rewritten as
+
+\[ \max\limits_{y} - u^{-1} (\overline{u} + c(y)) \] 
+
+FOC is:
+
+$1=\frac{c^{\prime}(y)}{u^{\prime}\left(u^{-1}(\bar{u}+c(y))\right)}$
+
+
+This is the **principal's FB**: maimize the principal utility while giving the agent the minimum acceptable wage for the agent to take part in the contract. The agent produces until the marginal benefit of production in monetary terms (1)(LHS above) equals the marginal cost of production in monetary terms(RHS above). 
+
+#### **2) Observable Actions**
+
+Now the output is a stochastic function of the action, but the action is still observable so that the wage can directly depend on a(there is risk on how the agent's action determines the output). IC remains slack: if $a' \neq a$ then $w(a',y) = - \infty$. The problem is:
+
+\[ \max _{a, w: Y \rightarrow \mathbb{R}} E^{a}[v(y-w(y))] \]
+
+s.t.
+
+\[ E^{a}[u(w(y))]-c(a) \geq \bar{u} \text{ (IR)}\]
+
+where *w(y)* is the agent's wage given output *y* when she takes the "recommended" action *a*. This is a concave maximization problem, so we solve it by maximizing the Lagrangean:
+
+\[ \begin{aligned} & E^{a}[v(y-w(y))]+\lambda E^{a}[u(w(y))-c(a)-\bar{u}] \\=& E^{a}[v(y-w(y))+\lambda u(w(y))]-\lambda(c(a)+\bar{u}) \\=& \int_{Y}(v(y-w(y))+\lambda u(w(y))) d F(y | a)-\lambda(c(a)+\bar{u}) \end{aligned} \]
+
+where $\lambda$ is the multiplier on IR.
+
+Whatever the optimal effort level *a* is, the contract $w(y)$ must maximize the integrand pointwise: for almost all $y \in Y$
+
+\[ w(y) \in \underset{w \in \mathbb{R}}{\operatorname{argmax}} v(y-w)+\lambda u(w) \]
+
+If at least one of the parties involved is strictly risk-averse ($v''$ or $u''$ < 0), then there is a unique wage $w(y)$ that maximizes this sum, given by FOC
+
+\[ \frac{v^{\prime}(y-w(y))}{u^{\prime}(w(y))}=\lambda \text{ for all } y \in Y \]
+
+This is the **Borch Rule**: given $\lambda$ doesn't depend on the realized output $y$, the ratio of marginal utilities for the principal and the agent does not depend on *y*. The intuition is that if the ratio $v'/u'$ were higher at *y* than *y'*, then the principal would be better off by paying the agent less at *y* and more at *y'*. From that we can see that if one party is risk-neutral and the other is risk-averse, the former will **bear all the risk**. When the principal is the risk-neutral, the Borch Rule becomes:
+
+\[ \frac{1}{u' (w(y))} = \lambda \text{ for all }y\]
+
+If the agent is strictly risk-averse, it implies that w(y) = w(y') for all *y*: the agent is fully insured. By IR, the agent's constant wage $w^\ast$ is given by
+
+\[ w^\ast = u^{-1} (\overline{u} + c(a)) \]
+
+The **optimal action** is given by:
+
+\[ \max _{a \in A} E^{a}[y]-u^{-1}(\bar{u}+c(a)) \]
+
+Which is the difference between the output and the agent's wage. What would happen if *a* were not observable(i.e. under moral hazard)? Poorly! If it is observable, the optimal contract "shoots the agent" if thse chooses an effort level below $a^{FB}$, but then completely insures the agent against the resulting risky output. If the agent can't be shot but is still completely insured, the agent would choose the loeast costly effort and then enjoy the perks of the insurance:
+
+\[ a^{LC} \in argmin_{a \in A} c(a)\]
+
+So, when *a* is unobservable the principal must expose the agent to some risk to provide her with incentives.
+
+#### **3) Risk-Neutral Agent**
+
+Now suppose that *y* is stochastic conditional on *a* and *a* is unobserved(*w* only depends on *y*) but the agent is risk-neutral. It still possible to attain FB: sell the firm to the agent!
+
+With bilateral risk-neutrality, the problem becomes:
+
+\[ \max\limits_{a,w: Y \rightarrow \mathbb{R}} E^a [y - w(y)] \] 
+
+s.t.
+
+\[ a \in argmax_{a' \in A} E^{a'} [w(y)] - c(a') \text{ (IC)} \]
+
+\[ E^a [w(y) - c(a)] ≥ \overline{u} \text{ (IR)}\]
+
+We require that $a = a^{FB}$, given by
+
+\[ a^{F B}=\underset{a \in A}{\operatorname{argmax}} E^{a}[y]-c(a) \rightarrow \text{ efficient effort} \]
+
+as well as
+
+\[ E^a [w(y)] = \overline{u} + c(a^{FB}) \rightarrow \text{IR binds} \]
+
+So that the principal attains FB surplus by
+
+\[ E^{a^{FB}} [y] - \overline{u} - c (a^{FB}) \]
+
+Does there exist a contract $w: Y \rightarrow \mathbb{R}$ that induces FB effort while satisfying IR with equality? Yes! Consider
+
+\[ w(y) = y - E^{a^{FB}} [y] + \overline{u} + c(a^{FB})\]
+
+Everything except the first element is a constant (y), so the agent chooses effort to maximize $E^a [y] - c(a)$, setting $a = a^{FB}$ and IR binds because:
+
+\[ E^{a^{F B}}\left[y-E^{a^{F B}}[y]+\bar{u}+c\left(a^{F B}\right)\right]=\bar{u}+c\left(a^{F B}\right) \]
+
+The intuition is that when the agent is risk-neutral, the principal can sell the firm to the agent. The price will be the first-best surplus. How did we get to this extreme and insightful result? In the last benchmark scenario we considered what would happen if the agent's action couldn't be observed. When the agent is insured, he would choose the least costly effort and attain the same fixed wage. To remedy that, we make the agent bear some risk so he is induced to put some effort into his contract. By setting the agent as risk-neutral, we make him bear all the risk by selling him the firm so that he chooses a FB effort: the one that maximizes the firm that he now owns. The firm was sold by $E^{a^{FB}} [y] - \overline{u} - c(a^{FB})$. Two problems from this scenario:
+
+1) the agent is exposed to a great deal of risk: is this realistic?
+
+2) does the agent have sufficient liquidity to pay for the firm upfront?
+
+#### **4) Risk-Neutrality with limited liability**
+
+We now consider the simplest case where FB is not attainable: moral hazard with risk-neutrality but limited liabilitiy on the agent's side. Assume that $w(y)$ is constrained to be at least $\overline{w}$ for all $y \in Y$: the interpretation is that the agent's wealth is $- \overline{w}$, or $\overline{w}$ is the legal minimum wage, or the subsistence wage. We assume output is binary, $Y = \{0,1\}$, effort is drawn from interval [0,1] and $Pr(y = 1|a)$ is $a$ itself: we view the agent as choosing the probability of high output directly. The problem is:
+
+\[ \max _{a, w_{0}, w_{1}} a-a w_{1}-(1-a) w_{0}\]
+
+s.t.
+
+\[ a \in \operatorname{argmax}_{a^{\prime} \in A} a^{\prime} w_{1}+\left(1-a^{\prime}\right) w_{0}-c\left(a^{\prime}\right) \text{ (IC)}\]
+
+\[a w_{1}+(1-a) w_{0}-c(a) \geq \bar{u} \text{ (IR)}\]
+
+\[ w_{0}, w_{1} \geq \bar{w} \text{ (LL)}\]
+
+To solve for the optimal contract, first note that the agent's problem is concave in *a*, so the FOC is necessary and sufficient:
+
+\[ c'(a) = w_1 - w_0 \text{ (ICFOC)} \]
+
+In particular, if optimal effort is non-zero, we must have $w_1 > w_0$. Given that $w_1 > w_0$, LL iff $w_0 = \overline{w}$. Moreover, only one of RR and LL can bind at the optimum: IR binds if
+
+\[ \frac{1}{1-a}\left[\bar{u}+c(a)-a w_{1}\right] \geq \bar{w} \]
+
+else, LL binds. We've seen that the solution is FB when IR is binding, we will assume that LL binds. Thus, we can rewrite the problem as
+
+\[ \max _{a, w_{1}} a-a w_{1}-(1-a) \bar{w} \]
+
+\[s . t\]
+
+\[ c^{\prime}(a)=w_{1}-\bar{w}  \text{ (ICFOC)}\]
+
+Using IFOC to substitute out for $w_1$, the unconstrained maximization problem is:
+
+\[ \max _{a} a-a c^{\prime}(a)-\bar{w} \]
+
+Hence, the FOC
+
+\[ c'(a^\ast) = 1 - ac'' (a^\ast) \]
+
+Recalling that $a^{FB}$ is given by 
+
+\[ c'(a^{FB}) = 1\]
+
+As c is convex, the FOC implies that $a^\ast < a^{FB}$. Thus, optimal effort is below first-best whenever LL binds. A parametric example: assuming quadratic costs $c(a) = \frac{1}{2} ca^2$, the agent's FOC is:
+
+\[ ca = w_1 - w_0 \]
+
+and the principal's unconstrained problem is
+
+\[ \max\limits_{a} a - ca^2 - \overline{w} \]
+
+and the solution is 
+
+\[ a^\ast = \frac{1}{2c} \]
+
+In contrast, $a^{FB}$ is given by 
+
+\[ a^{FB} = \frac{1}{c} \]
+
+Intuition: to induce effort *a*, the agent's "bonus"on attaining output 1 rather than 0 must equal $c'(a)$ (as the agent sets her marginal benefit of increasing $a = Pr(y=1)$ equal to the marginal cost, and her marginal benefit is precisely the bonus for $y = 1$). This means the principal must pay an expected bonus of ac'(a) when he induces effort *a*. The marginal cost to the principal of inducing higher effort is
+
+\[ \frac{d}{da} (ac'(a)) = c'(a) + ac''(a) \]
+
+If the effort could be observed directly, the principal would compensate the agent for her effort by paying c(a). In this FB world the marginal cost of inducing higher effort is c'(a), less than c'(a) + ac''(a).
+
+From another perspective, when LL binds and the principal induces effort *a*, the agent's utility is
+
+\[ ac'(a) - c(a) + \overline{w} > \overline{u} \]
+
+This is the **agent's information rent** in this context: the principal can't require effort *a* but must induce it via incentive payment. As ac' (a) - c(a) is increasing in *a*, the more effort the principal wants, the higher will be the information rent $\rightarrow$ the principal will demand less than FB effort. 
+
 ## **MWG**
 
 ### **23) Incentives and Mechanism Design**

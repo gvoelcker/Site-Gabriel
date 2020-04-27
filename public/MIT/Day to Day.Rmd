@@ -5,7 +5,7 @@ output: html_document
 
 ### **Day to Day** {.tabset}
 
-[**MIT PhD Accounting**](https://gabrielvoelcker.netlify.com/mit/mitaccphd)
+[**MIT PhD Accounting**](https://gabrielvoelcker.netlify.app/mit/mitaccphd)
 
 #### **Mar 3rd - May 8th**
 

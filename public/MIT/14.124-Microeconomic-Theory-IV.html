@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
 
 <meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta name="generator" content="pandoc" />
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
@@ -329,7 +330,6 @@ summary {
   border: none;
   display: inline-block;
   border-radius: 4px;
-  background-color: transparent;
 }
 
 .tabset-dropdown > .nav-tabs.nav-tabs-open > li {
@@ -382,7 +382,7 @@ summary {
 <li><p>VCG are not typically <strong>budget-balanced</strong>.</p></li>
 <li><p><strong>Pivot mechanisms</strong>: a special case of VCG, where: <span class="math inline">\(h_{i}\left(\theta_{-i}\right)=-\sum_{j \neq i} v_{j}\left(y_{-i}^{*}\left(\theta_{-i}\right), \theta_{j}\right)\)</span>, where <span class="math inline">\(y_{-i}^\ast (\theta_{-i})\)</span> is the efficient allocation for everyone other than <em>i</em>. <em>i</em> gets paid<span class="math inline">\((t_{i}(\theta))\)</span> the difference between others’ welfare under efficient outcome for everyone (including <em>i</em>) and others’ welfare under efficient outcome for them <span class="math inline">\(\implies\)</span> everyone pays the externality imposed on others. The more a player contributes to the welfare, the more he gets paid <span class="math inline">\(\implies\)</span> incentives to report truthfully.</p></li>
 </ul>
-<p><span class="math display">\[t_{i}(\theta)= \underbrace{\left[\sum_{j \neq i} v_{j}\left(y^{\ast}(\theta), \theta_{j}\right)\right]}_\text{others&#39; welfare under efficient outcome for everyone (including i)} - \underbrace{\left[\sum_{i \neq i} v_{j}\left(y_{-i}^{*}\left(\theta_{-i}\right), \theta_{j}\right)\right]}_\text{others&#39; welfare under efficient outcome for them}\]</span></p>
+<p><span class="math display">\[t_{i}(\theta)= \underbrace{\left[\sum_{j \neq i} v_{j}\left(y^{\ast}(\theta), \theta_{j}\right)\right]}_\text{others' welfare under efficient outcome for everyone (including i)} - \underbrace{\left[\sum_{i \neq i} v_{j}\left(y_{-i}^{*}\left(\theta_{-i}\right), \theta_{j}\right)\right]}_\text{others' welfare under efficient outcome for them}\]</span></p>
 </div>
 <div id="intuitions" class="section level4">
 <h4><strong>Intuitions</strong></h4>
@@ -445,7 +445,7 @@ summary {
 <li><p><strong>Direct Mechanism</strong>: a mechanism satisfying <span class="math inline">\(A = \Theta\)</span>. A direct mechanism can thus be identified with its outcome function <span class="math inline">\(g: \Theta \rightarrow X\)</span>, a similar mathematical object to the SCF. The only possible deviation is to follow the equilibrium strategy of <strong>another</strong> type.</p></li>
 <li><p><strong>Incentive Compatibility</strong>: SCF <span class="math inline">\(f\)</span> is <em>dominant strategy incentive compatible</em>(DSIC) if</p></li>
 </ul>
-<p><span class="math display">\[ u_i(f(\theta_i, \theta_{-i}),\theta_i) \geq (f(\theta_i&#39;, \theta_{-i}), \theta_i) \forall i \in I, \theta_i \in \Theta_i, \theta_i&#39; \in \Theta_i, \theta_{-i} \in \Theta_{-i}\]</span></p>
+<p><span class="math display">\[ u_i(f(\theta_i, \theta_{-i}),\theta_i) \geq (f(\theta_i', \theta_{-i}), \theta_i) \forall i \in I, \theta_i \in \Theta_i, \theta_i' \in \Theta_i, \theta_{-i} \in \Theta_{-i}\]</span></p>
 <p>From which we derive the following proposition:</p>
 <ul>
 <li><strong>Revelation Principle for DSE</strong>: a SCF <em>f</em> is implementable in dominant strategies <span class="math inline">\(\iff\)</span> it’s DSIC <span class="math inline">\(\implies\)</span> the direct mechanism <span class="math inline">\(g = f\)</span> implements it in dominant strategies. So if <em>f</em> is implementable in dominant strategies by <strong>any</strong> mechanism <span class="math inline">\(\implies\)</span> it’s also implementable by an incentive-compatible direct mechanism.</li>
@@ -492,7 +492,7 @@ X^\ast (\theta) = argmax_{x \in X} f (x,\theta)
 <p>be the <strong>maximizer correspondence</strong> <span class="math inline">\(X^\ast : [0,1] \rightarrow 2^X\)</span>. Let <span class="math inline">\(x^\ast(\theta)\)</span> be an arbitrary selection from <span class="math inline">\(X^\ast(\theta)\)</span>.</p>
 <p>The envelope theorem gives conditions under which</p>
 <p><span class="math display">\[\begin{equation}
-    \underbrace{V&#39;(\theta)}_\text{Derivative of Value Function} = \underbrace{f_\theta (x^\ast (\theta), \theta)}_\text{Derivative of Objective Function} 
+    \underbrace{V'(\theta)}_\text{Derivative of Value Function} = \underbrace{f_\theta (x^\ast (\theta), \theta)}_\text{Derivative of Objective Function} 
 \end{equation}\]</span></p>
 <p>Which it’s true when the optimal choice doesn’t change with the parameter. And</p>
 <p><span class="math display">\[\begin{equation}
@@ -508,9 +508,9 @@ X^\ast (\theta) = argmax_{x \in X} f (x,\theta)
 <p>Then for every selection <span class="math inline">\(x^\ast\)</span> in from <span class="math inline">\(X^\ast\)</span> and every <span class="math inline">\(\theta \in [0,1]\)</span>, we have</p>
 <p><span class="math display">\[ V(\theta) = V(0) + \int_0^\theta f_\theta (x^\ast (\tilde{\theta}), \tilde{\theta})d \tilde{\theta} \]</span></p>
 <p>We haven’t made any assumptions about X and the behavior of <span class="math inline">\(f\)</span> with respect to <span class="math inline">\(x\)</span>. So, the beauty of the envelope theorem is that regularity of V in the parameter <span class="math inline">\(\theta\)</span> comer “for free” from regularity of <span class="math inline">\(f\)</span> in <span class="math inline">\(\theta\)</span> and the nature of optimizing behavior.</p>
-<p>Now, we also want to show that <span class="math inline">\(V&#39;(\theta) = f_\theta (x^\ast (\theta), \theta)\)</span> for almost every <span class="math inline">\(\theta \in [0,1]\)</span> and that V is <strong>Lipschitz continuoues</strong>(i.e. <span class="math inline">\(\exists C &lt; \infty\)</span> s.t. <span class="math inline">\(|V(\theta &#39;) - V(\theta)| ≤ C(\theta &#39; - \theta)\)</span> <span class="math inline">\(\forall \theta, \theta&#39; \in [0,1]\)</span>).</p>
+<p>Now, we also want to show that <span class="math inline">\(V'(\theta) = f_\theta (x^\ast (\theta), \theta)\)</span> for almost every <span class="math inline">\(\theta \in [0,1]\)</span> and that V is <strong>Lipschitz continuoues</strong>(i.e. <span class="math inline">\(\exists C &lt; \infty\)</span> s.t. <span class="math inline">\(|V(\theta ') - V(\theta)| ≤ C(\theta ' - \theta)\)</span> <span class="math inline">\(\forall \theta, \theta' \in [0,1]\)</span>).</p>
 <p>Claim 1: V is Lipschitz Continuous, with Lipschitz constant B.</p>
-<p><em>Proof</em>: fix <span class="math inline">\(\theta, \theta&#39; \in [0,1]\)</span>. Without loss, assume that the value function for <span class="math inline">\(\theta &#39;\)</span> is bigger than for <span class="math inline">\(\theta\)</span> (i.e. <span class="math inline">\(V(\theta &#39;) ≥ V(\theta)\)</span>). Then,</p>
+<p><em>Proof</em>: fix <span class="math inline">\(\theta, \theta' \in [0,1]\)</span>. Without loss, assume that the value function for <span class="math inline">\(\theta '\)</span> is bigger than for <span class="math inline">\(\theta\)</span> (i.e. <span class="math inline">\(V(\theta ') ≥ V(\theta)\)</span>). Then,</p>
 <p><span class="math display">\[ \begin{aligned}
 \left|V\left(\theta^{\prime}\right)-V(\theta)\right| &amp;=\sup _{x^{\prime} \in X} f\left(x^{\prime}, \theta^{\prime}\right)-\sup _{x \in X} f(x, \theta) \\
 &amp; \leq \sup _{x \in X}\left[f\left(x, \theta^{\prime}\right)-f(x, \theta)\right] \\
@@ -519,13 +519,13 @@ X^\ast (\theta) = argmax_{x \in X} f (x,\theta)
 \end{aligned}\]</span></p>
 <p>Claim 2: <span class="math inline">\(\forall x^\ast\)</span> from <span class="math inline">\(X^\ast\)</span>, we have:</p>
 <p><span class="math display">\[ V^{\prime}(\theta)=f_{\theta}\left(x^{*}(\theta), \theta\right) \text { for almost every } \theta \in[0,1] \]</span></p>
-<p><em>Proof</em>: given that Lipschitz continuous functions are differentiable almost everywhere, we have that for almost every <span class="math inline">\(\theta\)</span>, V is differentiable and <span class="math inline">\(X^\ast (\theta) \neq \varnothing\)</span>. Fix such a <span class="math inline">\(\theta\)</span>, fix <span class="math inline">\(x^\ast \in X^\ast(\theta)\)</span>. We still have to show what we wanted to prove in the first place: <span class="math inline">\(V&#39;(\theta) = f_\theta (x^\ast, \theta)\)</span>. Given the maximization problem <span class="math display">\[ \max _{\theta^{\prime} \in \Theta}\left[f\left(x^{*}(\theta), \theta^{\prime}\right)-V\left(\theta^{\prime}\right)\right] \]</span></p>
-<p>Since we established that <span class="math inline">\(V(\theta &#39;) ≥ V(\theta)\)</span> <span class="math inline">\(\forall \theta\)</span>, we know that <span class="math inline">\(f\left(x^{*}(\theta), \theta^{\prime}\right) \leq V\left(\theta^{\prime}\right)\)</span> for all <span class="math inline">\(\theta^{\prime},\)</span> with equality at <span class="math inline">\(\theta^{\prime}=\theta,\)</span> the maximum is attained at <span class="math inline">\(\theta^{\prime}=\theta .\)</span> since <span class="math inline">\(f\)</span> and <span class="math inline">\(V\)</span> are both differentiable in <span class="math inline">\(\theta^{\prime},\)</span> the first-order condition with respect to <span class="math inline">\(\theta^{\prime}\)</span> must hold at <span class="math inline">\(\theta^{\prime}=\theta.\)</span> Finally, the first-order condition is precisely <span class="math inline">\(V^{\prime}(\theta)=f_{\theta}\left(x^{*}, \theta\right)\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
+<p><em>Proof</em>: given that Lipschitz continuous functions are differentiable almost everywhere, we have that for almost every <span class="math inline">\(\theta\)</span>, V is differentiable and <span class="math inline">\(X^\ast (\theta) \neq \varnothing\)</span>. Fix such a <span class="math inline">\(\theta\)</span>, fix <span class="math inline">\(x^\ast \in X^\ast(\theta)\)</span>. We still have to show what we wanted to prove in the first place: <span class="math inline">\(V'(\theta) = f_\theta (x^\ast, \theta)\)</span>. Given the maximization problem <span class="math display">\[ \max _{\theta^{\prime} \in \Theta}\left[f\left(x^{*}(\theta), \theta^{\prime}\right)-V\left(\theta^{\prime}\right)\right] \]</span></p>
+<p>Since we established that <span class="math inline">\(V(\theta ') ≥ V(\theta)\)</span> <span class="math inline">\(\forall \theta\)</span>, we know that <span class="math inline">\(f\left(x^{*}(\theta), \theta^{\prime}\right) \leq V\left(\theta^{\prime}\right)\)</span> for all <span class="math inline">\(\theta^{\prime},\)</span> with equality at <span class="math inline">\(\theta^{\prime}=\theta,\)</span> the maximum is attained at <span class="math inline">\(\theta^{\prime}=\theta .\)</span> since <span class="math inline">\(f\)</span> and <span class="math inline">\(V\)</span> are both differentiable in <span class="math inline">\(\theta^{\prime},\)</span> the first-order condition with respect to <span class="math inline">\(\theta^{\prime}\)</span> must hold at <span class="math inline">\(\theta^{\prime}=\theta.\)</span> Finally, the first-order condition is precisely <span class="math inline">\(V^{\prime}(\theta)=f_{\theta}\left(x^{*}, \theta\right)\)</span>. <span class="math inline">\(\blacksquare\)</span></p>
 </div>
 <div id="the-payoff-equivalence-theorem" class="section level4">
 <h4><strong>The Payoff Equivalence Theorem</strong></h4>
 <p>Suppose we have just one agent, <span class="math inline">\(\theta \in \Theta\)</span> and payoff function <span class="math inline">\(u : X \times \Theta \rightarrow \mathbb{R}\)</span>. A SCF <span class="math inline">\(f : \Theta \rightarrow X\)</span> is <em>incentive compatible</em> if</p>
-<p><span class="math display">\[ \theta = argmax_{\theta&#39; \in \Theta} u (f(\theta&#39;), \theta)\]</span></p>
+<p><span class="math display">\[ \theta = argmax_{\theta' \in \Theta} u (f(\theta'), \theta)\]</span></p>
 <p>Let <span class="math inline">\(V(\theta) = u(f(\theta),\theta)\)</span> be the agent’’s value function under social choice function <span class="math inline">\(f\)</span>.</p>
 <p>The PE theorem says that if <span class="math inline">\(\Theta\)</span> is an interval: <span class="math inline">\(\Theta = [\underline{\theta}, \overline{\theta}]\)</span> and <span class="math inline">\(u_\theta\)</span>(x,<span class="math inline">\(\theta\)</span>) is uniformly bounded, then the agent’s value function <span class="math inline">\(V(\theta)\)</span> (utility for type <span class="math inline">\(\theta\)</span>) is uniquely determined by <span class="math inline">\(V(\underline{\theta})\)</span>(the utility of the lowest type) and <span class="math inline">\(u_{\theta}(x(\tilde{x}), \tilde{\theta})\)</span> for <span class="math inline">\(\tilde{\theta} \in [\underline{\theta}, \theta]\)</span>(the partial derivative of utility with respect to the parameter).</p>
 <p><strong>Theorem 2 (Envelope Characterization of Payoffs)</strong>: Suppose</p>
@@ -565,7 +565,7 @@ t_{i}(\theta)=\left[\sum_{j \neq i} v_{j}\left(y^{*}(\theta), \theta_{j}\right)\
 </div>
 <div id="budget-balance" class="section level4">
 <h4><strong>Budget Balance</strong></h4>
-<p>We have seen that VCG implement the efficient allocation <span class="math inline">\(y^\ast (\theta)\)</span>. But what if the mechanism <strong>wastes a lot of money</strong>(i.e. <span class="math inline">\(\sum_i t_i &lt;&lt; 0\)</span>)? To balance the budget, we must have <span class="math inline">\(\sum_i t_i (\theta) = 0\)</span>.</p>
+<p>We have seen that VCG implement the efficient allocation <span class="math inline">\(y^\ast (\theta)\)</span>. But what if the mechanism <strong>wastes a lot of money</strong>(i.e. <span class="math inline">\(\sum_i t_i &lt;&lt; 0\)</span>)? To balance the budget, we must have <span class="math inline">\(\sum_i t_i (\theta) = 0\)</span>.</p>
 <p>Let S(<span class="math inline">\(\theta\)</span>) denote the efficient social surplus at type profile <span class="math inline">\(\theta\)</span>, that is</p>
 <p><span class="math display">\[ S(\theta) = \sum_i v_i (y^\ast (\theta), \theta_i) \]</span></p>
 <p>Under a VCG mechanism we have:</p>
@@ -601,7 +601,7 @@ t_{0}(\theta)+\sum_{i \neq 0} t_{i}(\theta)=\left[-(n-1) S(\theta)-\sum_{i \neq 
 <p>Let’s use the <em>bilateral public good problem</em> example. Assume there are two agents <span class="math inline">\((n=2)\)</span> who must decide whether to obtain a public good or not <span class="math inline">\((y \in\{0,1\}) .\)</span> Agent <span class="math inline">\(i\)</span> ’s type <span class="math inline">\(\theta_{i} \in \Theta_{i}=\left[\underline{\theta}_{i}, \bar{\theta}_{i}\right]\)</span> equals her value for the good. The cost of obtaining the good is <span class="math inline">\(c .\)</span> Thus, a budget-balanced mechanism is a function <span class="math inline">\((y, t): \Theta_{1} \times \Theta_{2} \rightarrow\{0,1\} \times \mathbb{R}^{2}\)</span> such that <span class="math inline">\(t\left(\theta_{1}\right)+t\left(\theta_{2}\right)=-c\)</span> if <span class="math inline">\(y\left(\theta_{1}, \theta_{2}\right)=1\)</span> and <span class="math inline">\(t\left(\theta_{1}\right)+t\left(\theta_{2}\right)=0\)</span> if <span class="math inline">\(y\left(\theta_{1}, \theta_{2}\right)=0 .\)</span> That is, if the agents decide to obtain the public good, the sum of their contributions must cover its cost <span class="math inline">\(c .\)</span></p>
 <p>We will also restrict attention to mechanisms where each agent always obtains a non-negative utility: that is, for all <span class="math inline">\((\theta_1, \theta_2)\)</span>, we have</p>
 <p><span class="math display">\[ \theta_{1} y\left(\theta_{1}, \theta_{2}\right)+t_{1}\left(\theta_{1}, \theta_{2}\right) \geq 0 \text { and } \theta_{2} y\left(\theta_{1}, \theta_{2}\right)+t_{2}\left(\theta_{1}, \theta_{2}\right) \geq 0 \]</span></p>
-<p>The efficient (or surplus-maximizing, or first-best) outcome is to obtain the public good if and only if the sum of the playersívalues exceeds the production cost: that is, iff <span class="math inline">\(\theta_1\)</span> + <span class="math inline">\(\theta_2\)</span> ≥ c. Note that this says that the set of values of (<span class="math inline">\(\theta_1; \theta_2\)</span>) for which the good should be produced is a triangle: the region of (<span class="math inline">\(\theta_1; \theta_2\)</span>) space bounded below by the line <span class="math inline">\(\theta_1 + \theta_2\)</span> = c.</p>
+<p>The efficient (or surplus-maximizing, or first-best) outcome is to obtain the public good if and only if the sum of the playersívalues exceeds the production cost: that is, iff <span class="math inline">\(\theta_1\)</span> + <span class="math inline">\(\theta_2\)</span> ≥ c. Note that this says that the set of values of (<span class="math inline">\(\theta_1; \theta_2\)</span>) for which the good should be produced is a triangle: the region of (<span class="math inline">\(\theta_1; \theta_2\)</span>) space bounded below by the line <span class="math inline">\(\theta_1 + \theta_2\)</span> = c.</p>
 <p>WTS: a mechanism is budget balanced, individually rational and DSIC iff <span class="math inline">\(\theta_1 + \theta_2 ≥ c\)</span>.</p>
 <p><strong>Theorem 6:</strong> In the bilateral public good provision problem, a mechanism (y; t) is budget-balanced, individually rational, and DSIC if and only if there exist constants <span class="math inline">\(c_1\)</span> and <span class="math inline">\(c_2\)</span> such that <span class="math inline">\(c_1 + c_2 = c\)</span> and</p>
 <p><span class="math display">\[\begin{equation}
@@ -638,7 +638,7 @@ t_{0}(\theta)+\sum_{i \neq 0} t_{i}(\theta)=\left[-(n-1) S(\theta)-\sum_{i \neq 
 <p>Mechanism <span class="math inline">\(\Gamma\)</span> implements social choice function <span class="math inline">\(f: \Theta \rightarrow X\)</span> in BNE if there exists a BNE <span class="math inline">\(s^{*}\)</span> of <span class="math inline">\(\Gamma\)</span> such that <span class="math inline">\(g\left(s^{*}(\theta)\right)=f(\theta)\)</span> for all <span class="math inline">\(\theta \in \Theta\)</span>.</p>
 <p>Interpreting the above definitions, if we compare to DSE, we know that in DSE the player chooses to play <span class="math inline">\(s_i^\ast (\theta_i)\)</span> regardless of what the others do. So the player would never spend resources to learn about the other players’ types.</p>
 <p>In BNE, it is optimal for type <span class="math inline">\(\theta_i\)</span> to play <span class="math inline">\(s_i^\ast (\theta_i)\)</span> when her opponents’ types are distributed according to the prior and they follow their equilibrium strategies. If a player could spend resources to learn about the others’ types, it could be beneficial.</p>
-<p>It is without loss of generality to restrict attention to <em>incentive compatible direct mechanisms</em> (i.e. <span class="math inline">\(\Gamma\)</span> where A equals <span class="math inline">\(\Theta\)</span> and players report truthfully in equilibrium). This is the <em>Revelation Principle for BNE</em>.</p>
+<p>It is without loss of generality to restrict attention to <em>incentive compatible direct mechanisms</em> (i.e. <span class="math inline">\(\Gamma\)</span> where A equals <span class="math inline">\(\Theta\)</span> and players report truthfully in equilibrium). This is the <em>Revelation Principle for BNE</em>.</p>
 </div>
 <div id="definition-3" class="section level4">
 <h4><strong>Definition 3</strong></h4>
@@ -684,7 +684,7 @@ V_{i}\left(\theta_{i}\right)=E_{\theta_{-i}}\left[u_{i}\left(f\left(\theta_{i}, 
 </ol>
 <p>Consider two BIC mechanisms <span class="math inline">\((y, t)\)</span> and <span class="math inline">\((y, \hat{t})\)</span> with the same allocation rule. If <span class="math inline">\(V_{i}\left(\underline{\theta}_{i}\right)=\hat{V}_{i}\left(\underline{\theta}_{i}\right)\)</span> for all <span class="math inline">\(i \in I,\)</span> then <span class="math inline">\(E_{\theta}\left[\sum_{i} t_{i}(\theta)\right]=E_{\theta}\left[\sum_{i} \hat{t}_{i}(\theta)\right]\)</span></p>
 </div>
-<div id="arrow-daspremont-gérard-varet-mechanism" class="section level4">
+<div id="arrow-daspremont-gerard-varet-mechanism" class="section level4">
 <h4><strong>Arrow-d’Aspremont-Gérard-Varet Mechanism</strong></h4>
 <p>Conclusion: when player <em>i</em> changes her report, the change in her transfer is precisely the <strong>expected</strong> externality of this change on the other players (under VCG is the <strong>realized</strong> externality of the change evaluated at her opponents’ type profile <span class="math inline">\(\theta_{-i}\)</span>).</p>
 </div>
@@ -696,7 +696,7 @@ V_{i}\left(\theta_{i}\right)=E_{\theta_{-i}}\left[u_{i}\left(f\left(\theta_{i}, 
 <div id="myerson-satterthwaite-theorem" class="section level4">
 <h4><a href="https://en.wikipedia.org/wiki/Myerson%E2%80%93Satterthwaite_theorem"><strong>Myerson-Satterthwaite Theorem</strong></a></h4>
 <p>In a nutshell: unless gains from trade are certain to exist, there is no efficient, BIC, budget balanced and individually rational mechanism for bilateral exchange. It states that the <em>Coase’s theorem</em> (agents will always trade to an ex-post efficient allocation) does not apply under private information.</p>
-<p><strong>Setup</strong>: generlization of the end of L3. Two <strong>agents</strong> with values <span class="math inline">\(\theta_1, \theta_2 \in [0,1]\)</span>. Types are <strong>independently</strong> distributed, with <span class="math inline">\(\theta_i\)</span> distributed according to <span class="math inline">\(\phi_i\)</span>, and each <span class="math inline">\(\phi_i\)</span> has full support (i.e. is continuous) on the interval [0,1]. An <strong>alternative</strong> is a vector <em>x</em> = <span class="math inline">\((y_1, y_2, t_1, t_2)\)</span> where <span class="math inline">\(y_i (\theta_1, \theta_2) \in [0,1]\)</span> is the probability that the agent <em>i</em> gets the good and <span class="math inline">\(t_i (\theta_1 , \theta_2)\)</span> is the transfer received by agent <em>i</em>. Agent <span class="math inline">\(i&#39;s\)</span> utility is:</p>
+<p><strong>Setup</strong>: generlization of the end of L3. Two <strong>agents</strong> with values <span class="math inline">\(\theta_1, \theta_2 \in [0,1]\)</span>. Types are <strong>independently</strong> distributed, with <span class="math inline">\(\theta_i\)</span> distributed according to <span class="math inline">\(\phi_i\)</span>, and each <span class="math inline">\(\phi_i\)</span> has full support (i.e. is continuous) on the interval [0,1]. An <strong>alternative</strong> is a vector <em>x</em> = <span class="math inline">\((y_1, y_2, t_1, t_2)\)</span> where <span class="math inline">\(y_i (\theta_1, \theta_2) \in [0,1]\)</span> is the probability that the agent <em>i</em> gets the good and <span class="math inline">\(t_i (\theta_1 , \theta_2)\)</span> is the transfer received by agent <em>i</em>. Agent <span class="math inline">\(i's\)</span> utility is:</p>
 <p><span class="math display">\[ u_i (y, t, \theta_i) = \theta_i y_i + t_i \]</span></p>
 <p>Agent <em>i’s</em> expected utility from participating in the mechanism <span class="math inline">\((y,t)\)</span> : <span class="math inline">\(\Theta_1 \times \Theta_2 \rightarrow X\)</span> is</p>
 <p><span class="math display">\[ V_{i}\left(\theta_{i}\right)=\theta_{i} E_{\theta_{-i}}\left[y_{i}\left(\theta_{i}, \theta_{-i}\right)\right]+E_{\theta_{-i}}\left[t_{i}\left(\theta_{i}, \theta_{-i}\right)\right] \]</span></p>
@@ -757,6 +757,248 @@ V_{i}\left(\theta_{i}\right) \geq 0 \text { for all } i \in I, \theta_{i} \in \T
 <ul>
 <li>Transition: our perspective now is to study the design of mechanisms that may be <strong>socially inneficient</strong> but are optimal from the perspective of the <strong>uninformed party who designs them</strong>.</li>
 </ul>
+</div>
+<div id="l6" class="section level3">
+<h3><strong>L6</strong></h3>
+<p>We study optimal selling mechanisms with the buyer having diminishing marginal utility: <strong>screening mechanisms</strong>. They receive this name because they “screen” different types of buyers. This allows us to consider applications like insurance and taxation. Also, we assume the seller can produce as much of the good as she wants at some constant marginal cost <em>c</em>.</p>
+<div id="optimal-screening-with-two-types" class="section level4">
+<h4><strong>1) Optimal Screening with two types</strong></h4>
+<div id="benchmark-1" class="section level5">
+<h5><strong>Benchmark 1</strong></h5>
+<p>Introduce the three scenarios that are benchmarks, problems and solutions.</p>
+</div>
+<div id="benchmark-2" class="section level5">
+<h5><strong>Benchmark 2</strong></h5>
+</div>
+<div id="benchmark-3" class="section level5">
+<h5><strong>Benchmark 3</strong></h5>
+</div>
+<div id="second-best-solution-optimal-screening" class="section level5">
+<h5><strong>Second-Best Solution: Optimal Screening</strong></h5>
+</div>
+</div>
+</div>
+<div id="l7" class="section level3">
+<h3><strong>L7</strong></h3>
+<div id="competitive-screening-akerlof-and-rothschild-stiglitz" class="section level4">
+<h4><strong>Competitive Screening: Akerlof and Rothschild-Stiglitz</strong></h4>
+<p>Theory hasn’t developed much since the 70’s, easier to study to the point of being on the research frontier.</p>
+<p><strong>Akerlof</strong>: principals can only offer one contract: single price for a given allocation <span class="math inline">\(\implies\)</span> impossible to screen different types of buyers.</p>
+<p><strong>Rothschild-Stiglitz</strong>: can offer a menu of contracts.</p>
+<p>Into the models:</p>
+</div>
+<div id="akerlof-1970" class="section level4">
+<h4><strong>Akerlof (1970)</strong></h4>
+<p>A seller of indivisible goods (cars) faces a population of <span class="math inline">\(n ≥ 2\)</span> buyers. Quality of the good denoted by <span class="math inline">\(\theta\)</span> and distributed on <span class="math inline">\([\underline{\theta}, \overline{\theta}] \subset \mathbb{R}\)</span> with positive density <span class="math inline">\(f(\theta)\)</span>. The real quality of the good is only observed by the seller. Utility is quasi-linear, a buyer’s value for a good of quality <span class="math inline">\(\theta\)</span> is just <span class="math inline">\(\theta\)</span> and the seller’s reservation value for a good of quality <span class="math inline">\(\theta\)</span> is <span class="math inline">\(r(\theta)\)</span>, with <span class="math inline">\(r(0) = 0\)</span>, <span class="math inline">\(r' &gt; 0\)</span>, and <span class="math inline">\(r(\theta) ≤ \theta\)</span> <span class="math inline">\(\forall \theta\)</span> (this last assumption means that it is efficient to trade goods of every quality).</p>
+<p><strong>Interdependent values</strong>: the seller’s type is <span class="math inline">\(\theta\)</span> and a buyer’s payoff from buying the good at price <em>p</em> is <span class="math inline">\(\theta - p\)</span>, which depends on seller’s type. So to obtain a profit, the buyer has to make the trade when he values the good less than the seller.</p>
+<p>When quality <strong>is observable</strong>: there will be an equilibrium price <span class="math inline">\(p(\theta) \in [r(\theta), \theta]\)</span> for every quality <span class="math inline">\(\theta\)</span>, and all goods will be traded. In particular, the outcome is efficient.</p>
+<p>Can the outcome be efficient when quality is <strong>unobservable</strong>? The equilibrium price is defined depending on the fact that each seller wants to sell the good for as much as he can.</p>
+<ul>
+<li><strong>Competitive Equilibrium Definition</strong>: a non-trivial competitive equilibrium in the market for lemons is a price <span class="math inline">\(p^\ast\)</span> and a non-empty set of types that sell <span class="math inline">\(\Theta^\ast\)</span> such that:</li>
+</ul>
+<p><span class="math display">\[ \Theta^\ast = \{ \theta : r (\theta) ≤ p^\ast \} \\ p^\ast = E[\theta | \theta \in \Theta^\ast] \]</span></p>
+<p>In words: buyers pay price equal to their expected value (2nd line); sellers sell those goods that they value weakly less than the price (1st line).</p>
+<p><strong>Proposition 1</strong>: no efficient equilibrium exists when:</p>
+<p><span class="math display">\[     \underbrace{r(\overline{\theta})}_\text{seller's valuation of best good} &gt; \underbrace{E [\theta]}_\text{buyers valuation of average good} \]</span></p>
+<p><em>Proof.</em> In an efficient competitive equilibrium <strong>all goods are traded</strong>, so <span class="math inline">\(\Theta^\ast = \Theta\)</span> and hence <span class="math inline">\(p^\ast = E[\theta]\)</span>. But then the requirement that <span class="math inline">\(r(\theta) ≤ p^\ast\)</span> for all <span class="math inline">\(\theta \in \Theta\)</span> implies that <span class="math inline">\(r(\overline{\theta}) ≤ E[\theta]\)</span>.</p>
+<p>The reserve value has to always be smaller than <span class="math inline">\(p^\ast \implies\)</span> the seller that values the most still has to have <span class="math inline">\(r(\overline{\theta}) ≤ p^\ast\)</span> or he won’t trade. So the <strong>competitive equilibrium can’t be efficient</strong>. The problem is that there is no way the price can depend on quality and when <span class="math inline">\(r(\overline{\theta}) &gt; E[\theta]\)</span> there is no price that both the buyer and every type of seller would accept.</p>
+<p>What kinds of competitive equilibrium exist? An equilibrium with price <span class="math inline">\(p^\ast\)</span> exists iff <span class="math inline">\(p^\ast = E[\theta | r(\theta) ≤ p^\ast]\)</span>. In other words, <span class="math inline">\(p^\ast\)</span> is a competitive when it is a fixed point given that <span class="math inline">\(E[\theta | r (\theta) ≤ p]\)</span> is nondecreasing.</p>
+<p>There can be <strong>multiple equilibria</strong>: where the curve <span class="math inline">\(E[\theta | r(\theta) ≤ p]\)</span> crosses the 45<span class="math inline">\(^o\)</span> line.</p>
+<p>Example 1: suppose <span class="math inline">\(\theta \sim U [0,1]\)</span> and <span class="math inline">\(r(\theta) = \frac{2}{3}\theta\)</span> for all <span class="math inline">\(\theta\)</span>. Then</p>
+<p><span class="math display">\[ E[\theta |r (\theta) ≤ p^\ast] = E[\theta | \frac{2}{3} \theta ≤ p^\ast ] = E [ \theta | \theta ≤ \frac{3}{2} p^\ast] = min \{ \frac{3}{4}p^\ast, \frac{1}{2} \} \]</span></p>
+<p>Therefore, <span class="math inline">\(p^\ast\)</span> is a competitive equilibrium price iff <span class="math inline">\(p^\ast = \frac{3}{4}p^\ast\)</span>, so the unique competitive equilibrium price is <span class="math inline">\(p^\ast = 0\)</span>.</p>
+<p>When we compare Pareto equilibria, the higher <span class="math inline">\(p^\ast\)</span> always dominates! (better for sellers, buyers always have 0 payoff). <strong>Coordination failure</strong>: in lower <span class="math inline">\(p^\ast\)</span> buyers offer a low price because they expect that only low quality goods are sold and sellers only sell low quality goods because they expect to receive a low price.</p>
+<p><strong>Proposition 2</strong>: consider the game where buyers simultaneously offer prices and then the seller accepts or rejects. Let <span class="math inline">\(\overline{p}^\ast\)</span> be the highest competitive equilibrium price. If the curve <span class="math inline">\(E[\theta | r (\theta) ≤ p]\)</span> crosses the 45<span class="math inline">\(^o\)</span> line from above at <span class="math inline">\(\overline{p}^\ast\)</span>, then in every pure strategy SPNE all trades occur at price <span class="math inline">\(\overline{p}^\ast\)</span> all sellers with <span class="math inline">\(r(\theta) &lt; \overline{p}^\ast\)</span> sell. <em>Proof</em>. Buyers get 0 payoff. Suppose trade occurs at p &lt; <span class="math inline">\(\overline{p}^\ast\)</span>, then a buyer deviates by offering <span class="math inline">\(\overline{p}^\ast - \epsilon &gt; p\)</span> for such small <span class="math inline">\(\epsilon\)</span> that <span class="math inline">\(E[\theta | r(\theta) ≤ \overline{p}^\ast - \epsilon] &gt; \overline{p}^\ast - \epsilon\)</span>. This small deviation <span class="math inline">\(\epsilon\)</span> exists because <span class="math inline">\(E[\theta | r (\theta) ≤ p]\)</span> crosses the line from above. This offer will be accepted by all sellers with <span class="math inline">\(r(\theta) ≤ \overline{p}^\ast - \epsilon\)</span>, so the buyer gets payoff <span class="math inline">\(E[\theta | r(\theta) ≤ \overline{p}^\ast - \epsilon] - (\overline{p}^\ast - \epsilon) &gt; 0\)</span>. This is a profitable deviation so there can be no equilbrium where trade occurs at <span class="math inline">\(p &lt; \overline{p}^\ast\)</span>.</p>
+<p>This argument implies that if <span class="math inline">\(\overline{p}^\ast &gt; r(\underline{\theta})\)</span>, then some buyer must actually offer price <span class="math inline">\(\overline{p}^\ast\)</span> in equilibrium, so all sellers with <span class="math inline">\(r(\theta) &lt; \overline{p}^\ast\)</span> must sell. If instead <span class="math inline">\(\overline{p}^\ast = r(\underline{\theta})\)</span>, then there are no sellers with <span class="math inline">\(r(\theta) &lt; \overline{p}^\ast\)</span>, so the claim that they sell is vacuous. (this means that if no seller values the good less than the highest equilibrium price, there will be no trades)</p>
+<p>Key <strong>conclusions</strong> from Akerlof:</p>
+<ol style="list-style-type: decimal">
+<li><p>If the seller values the best good more than the buyer values the average good, then no efficient competitive equilibrium exists.</p></li>
+<li><p>Some competitive equilibrium always exists. It may be the case that multiple competitive equilibria exist. If so, they are Pareto-ranked, with higher-price equilibria Pareto-dominating lower-price equilibria.</p></li>
+<li><p>It may be that the market breaks down completely, in that only the very worst type seller trades in equilibrium.</p></li>
+<li><p>Generically, only the highest competitive equilibrium price is also a SPNE price of the game-theoretic version of Akerlof’s model. However, lower-price competitive equilibria may survive as outcomes of realistic dynamic price-adjustment processes.</p></li>
+</ol>
+</div>
+<div id="rothschild-stiglitz-1978" class="section level4">
+<h4><strong>Rothschild-Stiglitz (1978)</strong></h4>
+<p>Now the buyers are trying to design contracts that select for good agent types. The buyers can offer <strong>screening contracts</strong> that specifiy a menu of price-allocation pairs. Buyers offer <em>exclusive screening contracts</em> of the form (p,q) where <span class="math inline">\(q \in [0,1]\)</span> is the quantity demanded and <span class="math inline">\(p≥0\)</span> is the price offered for that quantity. If the contract is accepted and the quality of the good is <span class="math inline">\(\theta\)</span>, payoffs are:</p>
+<p><span class="math display">\[ \text{Buyer's payoff: } \theta q - p \]</span></p>
+<p><span class="math display">\[ \text{Seller's payoff: } p - r(\theta) q \]</span></p>
+<p>We also assume that <span class="math inline">\(r(\theta) &lt; \theta\)</span> for all <span class="math inline">\(\theta &gt; 0\)</span>.</p>
+<p>In the Akerlof model, the breakdown of the market was due to the non-existence of a price that all seller types accept. Here, the focus is in the breakdown resulting when competitive screening causes different buyers to target different types of sellers, as well as the inefficiencies that occur in equilibrium even when the market does not break down completely.</p>
+<div id="complete-information" class="section level5">
+<h5><strong>Complete Information</strong></h5>
+<p><strong>Proposition 3</strong>: when <span class="math inline">\(\theta\)</span> is observable, in every equilibrium all type <span class="math inline">\(\theta &gt; 0\)</span> sellers accept the first-best contract (1,<span class="math inline">\(\theta\)</span>).</p>
+<p>Proof omitted. Intuition: what happens when <span class="math inline">\(p \neq \theta\)</span>? Conclusion: as in the Akerlof model, the RS model is efficient when quality is observable.</p>
+</div>
+<div id="incomplete-information" class="section level5">
+<h5><strong>Incomplete Information</strong></h5>
+<p>Setting: Quality is unobservable, only two possible qualities <span class="math inline">\(\theta_L\)</span> and <span class="math inline">\(\theta_H\)</span>. There are only two possible kinds of equilibria: <em>separating equilbria</em>(different contracts per type) and <em>pooling equilibria</em>(same contract for both types).</p>
+<p><strong>Lemma 1</strong>: all buyers get payoff 0 in every equilibrium. Proof omitted. Intuition: if a buyer has profit, by marginally decreasing his profit and offering a slightly better contract for sellers, the buyer can grab all the market for himself.</p>
+<p>From Lemma 1 we obtain that <strong>there is never a pooling equilibrium</strong>. The intuition is that a buyer could profitably deviate by offering a <em>cream-skimming</em> contract with lower quantity and price (but higher per-unit price) that only attracts the high types.</p>
+<p><strong>Proposition 4</strong>: no pooling equilibrium exists.</p>
+<p><em>Proof.</em> Suppose there is a pooling equilibrium where all sellers accept contract (<span class="math inline">\(q^\ast, p^\ast\)</span>) with <span class="math inline">\(q^\ast &gt; 0\)</span>. By Lemma 1, this contract gives buyers payoff 0. This implies that <span class="math inline">\(\frac{p^\ast}{q^\ast} = \beta \theta_L + (1 - \beta) \theta_H\)</span>, where <span class="math inline">\(\beta\)</span> is the probability of being low type and that in particular <span class="math inline">\(\frac{p^\ast}{q^\ast} &lt; \theta_H\)</span>. Now, let <span class="math inline">\(\hat{q} = q^\ast - \epsilon\)</span> and let <span class="math inline">\(\hat{p} = p^\ast - \epsilon r(\theta_H)\)</span> for <span class="math inline">\(\epsilon\)</span> small enough such that <span class="math inline">\(\frac{\hat{p}}{\hat{q}} &lt; \theta_H\)</span>. By construction, type <span class="math inline">\(\theta_H\)</span> is indifferent between <span class="math inline">\((\hat{q}, \hat{p})\)</span> and <span class="math inline">\((q^\ast, p^\ast)\)</span>: that is</p>
+<p><span class="math display">\[ (1-\hat{q}) r\left(\theta_{H}\right)+\hat{p}=\left(1-q^{*}\right) r\left(\theta_{H}\right)+p^{*} \text{ (ICH)}\]</span></p>
+<p>Since <span class="math inline">\(r(\theta_H) ≥ r(\theta_L)\)</span> and <span class="math inline">\(\hat{q} &lt; q^\ast\)</span>, we have</p>
+<p><span class="math display">\[ (1 - \hat{q}) r (\theta_L) + \hat{p} &lt; (1 - q^\ast) r (\theta_L) + p^\ast \text{ (ICL)} \]</span></p>
+<p>That is, contract <span class="math inline">\((\hat{q},\hat{p})\)</span> does not attract low types. Thus, since <span class="math inline">\(\frac{\hat{p}}{\hat{q}} &lt; \theta_H\)</span>, if a buyer offers contract <span class="math inline">\((\hat{q}, \hat{p})\)</span> and only high types accept, this is a profitable deviation. Now suppose a buyer offers a contract <span class="math inline">\((\hat{q} \hat{p} + \epsilon ')\)</span> for sufficiently small <span class="math inline">\(\epsilon '\)</span>, high types must accept <span class="math inline">\(\rightarrow\)</span> profitable deviation.</p>
+<p>Finally, there can’t be a pooling equilibrium where <span class="math inline">\(q^\ast\)</span> = 0. If there where, then a buyer could offer contract <span class="math inline">\((\hat{q}, \hat{p})\)</span> = (<span class="math inline">\(1, \frac{r (\theta_L) + \theta_L}{2}\)</span>).</p>
+<p><strong>Lemma 2</strong>: in a separating equilibrium where low types accept contract (<span class="math inline">\(q_L, p_L\)</span>) and high type accept contract (<span class="math inline">\(q_H, p_H\)</span>), both contracts give payoff 0 to buyers. That is, <span class="math inline">\(\frac{p_L}{q_L} = \theta_L\)</span> and <span class="math inline">\(\frac{p_H}{q_H} = \theta_H\)</span>. Proof omitted.</p>
+<p>This enforces the concept of <strong>cross-subsidization</strong>: a buyer can’t make x money on one contract and lose x money on another.</p>
+<p><strong>Lemma 3</strong>: in any separating equilibrium low types accept contract (<span class="math inline">\(q_L, p_L\)</span>) = (1, <span class="math inline">\(\theta_L\)</span>). <em>Proof.</em> Suppose <span class="math inline">\(q_L &lt; 1\)</span>. Then it is profitable to deviate to <span class="math inline">\((q_L + \epsilon, p_L + \epsilon \frac{r(\theta_L) + \theta_L}{2})\)</span>.</p>
+<p>Finally, in any separating equilibrium, <strong>high types’ quantity is distorted down</strong>. <span class="math inline">\(q_H\)</span> must be distorted down to make low types indifferent between their contract and the high types’ contract, else a buyer could profitably deviate by raising quantity and price for the high types without attracting low types.</p>
+<p><strong>Lemma 4</strong>: in any separating equilibrium, high types accept contract:</p>
+<p><span class="math display">\[ (q_H, p_H) = \left( \frac{\theta_L - r(\theta_L)}{\theta_H - r(\theta_L)}, \left( \frac{\theta_L - r(\theta_L)}{\theta_H - r(\theta_L)} \right) \theta_H \right)   \]</span></p>
+<p>Proof omitted. This allows us to complete the characterization of separating equilibria.</p>
+<p><strong>Proposition 5</strong>: in any separating equilibrium, low types accept the first-best contract given by <em>Lemma 3</em>, and high types accept the distorted contract given by <em>Lemma 4</em>.</p>
+<p><strong>Summary</strong>: in RS model, pooling equilibria can’t exist and separating equilibria have distortions similar to those of monopolistic screening. Also: <em>an equilibrium can fail to exist</em> altogether. In response to this: Wilson and Riley equilibrium.</p>
+</div>
+</div>
+</div>
+<div id="l9" class="section level3">
+<h3><strong>L9</strong></h3>
+<div id="introduction-to-moral-hazard" class="section level4">
+<h4><strong>Introduction to Moral Hazard</strong></h4>
+<p><em>Moral Hazard models</em> are the ones where individuals have symmetric information at the time of contracting but subsequently take unobserved actions that generate private information. Basic outline: the <strong>principal</strong> designs a contract for the <strong>agent</strong> where <em>i)</em> the principal and agent have symmetric information at the time of contracting; <em>ii)</em> the agent then takes an <em>unobserved</em> action that affects the distribution of various outcomes; <em>iii)</em> the contract rewards or punishes the agent as a function of the outcome.</p>
+<p>When can this situation lead to <strong>inefficient</strong> contracts? We will analyze models with 1-dimensional efforts, risk-neutrality and limitied liability. We first present the setup of the problem and then analyze 4 benchmark scenarios, focusing on when FB is attainable or not.</p>
+</div>
+<div id="setup" class="section level4">
+<h4><strong>Setup</strong></h4>
+<ul>
+<li><p>Agent chooses <strong>action</strong> <span class="math inline">\(a \in A\)</span>. In the 1-dimensional effort model <span class="math inline">\(A \subset \mathbb{R}\)</span>.</p></li>
+<li><p><span class="math inline">\(a\)</span> determines the distribution of possible outcomes <span class="math inline">\(y \in Y\)</span>: by choosing <span class="math inline">\(a\)</span> the distribution of outcomes is <span class="math inline">\(F( \cdot | a) \in \Delta (Y)\)</span>. <span class="math inline">\(Y \subset \mathbb{R}\)</span> can be interpreted as the <em>output</em> of the relationship.</p></li>
+<li><p>Having chosen action <em>a</em>, outcome <em>y</em> realizes. Then the principal rewards the agent with the <em>transfer</em>(wage) <em>w</em>, and the agent’s payoff is:</p></li>
+</ul>
+<p><span class="math display">\[ u_A = u(w) - c(a) \]</span></p>
+<p>and the principal’s payoff is:</p>
+<p><span class="math display">\[ u_P = V(y,w) \]</span></p>
+<p>The agent doesn’t care <em>directly about y</em>(but will if <em>w</em> depends on <em>y</em>) and the principal cares about <em>a</em> only through its influence on the distribution of <em>y</em>. We assume <span class="math inline">\(V\)</span> has the following form:</p>
+<p><span class="math display">\[ V(y,w) = v(y - w) \]</span></p>
+<p>We also assume that <span class="math inline">\(u', v' &gt; 0\)</span> and <span class="math inline">\(u'', v'' \leq 0\)</span>. When effort is 1-dimensional: <span class="math inline">\(c'&gt;0\)</span>, <span class="math inline">\(c'' \geq 0\)</span>. This means that both the agent and the principal like money and are weakly risk-averse and the agent’s mrginal cost of effort is positive and non-decreasing. For the agent, we separate effort from money in her utility function, ensuring that her preferences over money lotteries are independent of her effort choice. We also assume that <span class="math inline">\(v(\cdot)\)</span> is the <em>identity</em>: the principal is risk-neutral.</p>
+<p><strong>How does the model “happen”?</strong></p>
+<ol style="list-style-type: decimal">
+<li>The principal <strong>offers a contract</strong> <span class="math inline">\(w: Y \rightarrow \mathbb{R}\)</span>, specifying the agent’s wage as a function of the outcome.</li>
+</ol>
+<p>2a) If the agent <strong>accepts</strong> the contract, the model happens.</p>
+<p>2b) If the agent <strong>rejects</strong> the contract, the game ends and agent gets outside option <span class="math inline">\(\overline{u}\)</span>.</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Agent chooses her action <em>a</em>.</p></li>
+<li><p>The outcome <em>y</em> realizes.</p></li>
+<li><p>The transfer <span class="math inline">\(w(y)\)</span> is drawn according to <span class="math inline">\(F(\cdot | a)\)</span>.</p></li>
+</ol>
+<p>We wish to characterize the <strong>optimal contract for the principal</strong>. If the agent is indifferent among two or more actions, she chooses the one that is best for the principal.</p>
+<p>The principal chooses the contract <em>w</em> and the agent’s action <em>a</em> subject to the constraint that <em>a</em> is optimal for the agent under contract <em>w</em>. The optimal contracting problem is:</p>
+<p><span class="math display">\[ \max _{a, w: Y \rightarrow \mathbb{R}} E^{a}[v(y-w(y))] \]</span></p>
+<p>s.t.</p>
+<p><span class="math display">\[ \begin{aligned} a \in \operatorname{argmax}_{a^{\prime} \in A} E^{a^{\prime}}[u(w(y))]-c\left(a^{\prime}\right) \text{ (IC)} &amp; \\ E^{a}[u(w(y))-c(a)] \geq \bar{u} \text{ (IR)} \end{aligned}
+\]</span></p>
+<p>Interpreting that, <span class="math inline">\(E^a [\cdot]\)</span> is the expectation with respect to probability <span class="math inline">\(F(\cdot | a)\)</span>. So the principal is trying to maximize his payoff (first equation) but at the same time has two constraints: 1) IC means that the agent will choose his action <em>a</em> to maximize her payoff; 2) IR means that the contract offered is better than the agent’s outside option.</p>
+<p>We proceed to analyze 4 benchmark cases:</p>
+<ol style="list-style-type: decimal">
+<li><p>No uncertainty: <span class="math inline">\(y\)</span> is a deterministic function of <span class="math inline">\(a\)</span>.</p></li>
+<li><p>No moral hazard (i.e., observable actions): <span class="math inline">\(y\)</span> is a stochastic function of <span class="math inline">\(a,\)</span> but <span class="math inline">\(w\)</span> can depend directly on <span class="math inline">\(a\)</span>.</p></li>
+<li><p>Risk neutral agent: <span class="math inline">\(w(\cdot)\)</span> is the identity.</p></li>
+<li><p>Limited liability: the agent is still risk neutral, but now she cannot make unboundedly large payments to the principal.</p></li>
+</ol>
+</div>
+<div id="no-uncertainty" class="section level4">
+<h4><strong>1) No Uncertainty</strong></h4>
+<p><em>y</em> is a deterministic function of <em>a</em>: <span class="math inline">\(F(\cdot | a)\)</span> is degenerate. Also, the wage can be <span class="math inline">\(- \infty\)</span>, i.e. the agent can be punished arbitrarily harshly. In other words, by choosing her action, the agent is also choosing <em>y</em> while bearing cost <span class="math inline">\(c(y)\)</span>. The problem is now:</p>
+<p><span class="math display">\[ \max _{y, w: Y \rightarrow \mathbb{R}} v(y-w(y)) \]</span></p>
+<p>s.t.</p>
+<p><span class="math display">\[ y \in \operatorname{argmax}_{y^{\prime} \in Y} u\left(w\left(y^{\prime}\right)\right)-c\left(y^{\prime}\right) \text{ (IC)}\]</span></p>
+<p><span class="math display">\[ u(w(y))-c(y) \geq \bar{u} \text{ (IR)}\]</span></p>
+<p>From the above we note that IC is slack: to satisfy see that by setting w(y’) = <span class="math inline">\(- \infty \forall y' \neq y\)</span>, in other words, when the agent deviates she will be punished, so she won’t deviate. Also, IR binds, otherwise the agent reduces <span class="math inline">\(w(y)\)</span> until it binds. Hence, we drop IC an use IR to substitute out for <span class="math inline">\(w(y)\)</span>:</p>
+<p><span class="math display">\[ \max\limits_{y} v(y - u^{-1} (\overline{u} + c(y))) \]</span></p>
+<p>And given <span class="math inline">\(v' &gt; 0\)</span>, this can be rewritten as</p>
+<p><span class="math display">\[ \max\limits_{y} - u^{-1} (\overline{u} + c(y)) \]</span></p>
+<p>FOC is:</p>
+<p><span class="math inline">\(1=\frac{c^{\prime}(y)}{u^{\prime}\left(u^{-1}(\bar{u}+c(y))\right)}\)</span></p>
+<p>This is the <strong>principal’s FB</strong>: maimize the principal utility while giving the agent the minimum acceptable wage for the agent to take part in the contract. The agent produces until the marginal benefit of production in monetary terms (1)(LHS above) equals the marginal cost of production in monetary terms(RHS above).</p>
+</div>
+<div id="observable-actions" class="section level4">
+<h4><strong>2) Observable Actions</strong></h4>
+<p>Now the output is a stochastic function of the action, but the action is still observable so that the wage can directly depend on a(there is risk on how the agent’s action determines the output). IC remains slack: if <span class="math inline">\(a' \neq a\)</span> then <span class="math inline">\(w(a',y) = - \infty\)</span>. The problem is:</p>
+<p><span class="math display">\[ \max _{a, w: Y \rightarrow \mathbb{R}} E^{a}[v(y-w(y))] \]</span></p>
+<p>s.t.</p>
+<p><span class="math display">\[ E^{a}[u(w(y))]-c(a) \geq \bar{u} \text{ (IR)}\]</span></p>
+<p>where <em>w(y)</em> is the agent’s wage given output <em>y</em> when she takes the “recommended” action <em>a</em>. This is a concave maximization problem, so we solve it by maximizing the Lagrangean:</p>
+<p><span class="math display">\[ \begin{aligned} &amp; E^{a}[v(y-w(y))]+\lambda E^{a}[u(w(y))-c(a)-\bar{u}] \\=&amp; E^{a}[v(y-w(y))+\lambda u(w(y))]-\lambda(c(a)+\bar{u}) \\=&amp; \int_{Y}(v(y-w(y))+\lambda u(w(y))) d F(y | a)-\lambda(c(a)+\bar{u}) \end{aligned} \]</span></p>
+<p>where <span class="math inline">\(\lambda\)</span> is the multiplier on IR.</p>
+<p>Whatever the optimal effort level <em>a</em> is, the contract <span class="math inline">\(w(y)\)</span> must maximize the integrand pointwise: for almost all <span class="math inline">\(y \in Y\)</span></p>
+<p><span class="math display">\[ w(y) \in \underset{w \in \mathbb{R}}{\operatorname{argmax}} v(y-w)+\lambda u(w) \]</span></p>
+<p>If at least one of the parties involved is strictly risk-averse (<span class="math inline">\(v''\)</span> or <span class="math inline">\(u''\)</span> &lt; 0), then there is a unique wage <span class="math inline">\(w(y)\)</span> that maximizes this sum, given by FOC</p>
+<p><span class="math display">\[ \frac{v^{\prime}(y-w(y))}{u^{\prime}(w(y))}=\lambda \text{ for all } y \in Y \]</span></p>
+<p>This is the <strong>Borch Rule</strong>: given <span class="math inline">\(\lambda\)</span> doesn’t depend on the realized output <span class="math inline">\(y\)</span>, the ratio of marginal utilities for the principal and the agent does not depend on <em>y</em>. The intuition is that if the ratio <span class="math inline">\(v'/u'\)</span> were higher at <em>y</em> than <em>y’</em>, then the principal would be better off by paying the agent less at <em>y</em> and more at <em>y’</em>. From that we can see that if one party is risk-neutral and the other is risk-averse, the former will <strong>bear all the risk</strong>. When the principal is the risk-neutral, the Borch Rule becomes:</p>
+<p><span class="math display">\[ \frac{1}{u' (w(y))} = \lambda \text{ for all }y\]</span></p>
+<p>If the agent is strictly risk-averse, it implies that w(y) = w(y’) for all <em>y</em>: the agent is fully insured. By IR, the agent’s constant wage <span class="math inline">\(w^\ast\)</span> is given by</p>
+<p><span class="math display">\[ w^\ast = u^{-1} (\overline{u} + c(a)) \]</span></p>
+<p>The <strong>optimal action</strong> is given by:</p>
+<p><span class="math display">\[ \max _{a \in A} E^{a}[y]-u^{-1}(\bar{u}+c(a)) \]</span></p>
+<p>Which is the difference between the output and the agent’s wage. What would happen if <em>a</em> were not observable(i.e. under moral hazard)? Poorly! If it is observable, the optimal contract “shoots the agent” if thse chooses an effort level below <span class="math inline">\(a^{FB}\)</span>, but then completely insures the agent against the resulting risky output. If the agent can’t be shot but is still completely insured, the agent would choose the loeast costly effort and then enjoy the perks of the insurance:</p>
+<p><span class="math display">\[ a^{LC} \in argmin_{a \in A} c(a)\]</span></p>
+<p>So, when <em>a</em> is unobservable the principal must expose the agent to some risk to provide her with incentives.</p>
+</div>
+<div id="risk-neutral-agent" class="section level4">
+<h4><strong>3) Risk-Neutral Agent</strong></h4>
+<p>Now suppose that <em>y</em> is stochastic conditional on <em>a</em> and <em>a</em> is unobserved(<em>w</em> only depends on <em>y</em>) but the agent is risk-neutral. It still possible to attain FB: sell the firm to the agent!</p>
+<p>With bilateral risk-neutrality, the problem becomes:</p>
+<p><span class="math display">\[ \max\limits_{a,w: Y \rightarrow \mathbb{R}} E^a [y - w(y)] \]</span></p>
+<p>s.t.</p>
+<p><span class="math display">\[ a \in argmax_{a' \in A} E^{a'} [w(y)] - c(a') \text{ (IC)} \]</span></p>
+<p><span class="math display">\[ E^a [w(y) - c(a)] ≥ \overline{u} \text{ (IR)}\]</span></p>
+<p>We require that <span class="math inline">\(a = a^{FB}\)</span>, given by</p>
+<p><span class="math display">\[ a^{F B}=\underset{a \in A}{\operatorname{argmax}} E^{a}[y]-c(a) \rightarrow \text{ efficient effort} \]</span></p>
+<p>as well as</p>
+<p><span class="math display">\[ E^a [w(y)] = \overline{u} + c(a^{FB}) \rightarrow \text{IR binds} \]</span></p>
+<p>So that the principal attains FB surplus by</p>
+<p><span class="math display">\[ E^{a^{FB}} [y] - \overline{u} - c (a^{FB}) \]</span></p>
+<p>Does there exist a contract <span class="math inline">\(w: Y \rightarrow \mathbb{R}\)</span> that induces FB effort while satisfying IR with equality? Yes! Consider</p>
+<p><span class="math display">\[ w(y) = y - E^{a^{FB}} [y] + \overline{u} + c(a^{FB})\]</span></p>
+<p>Everything except the first element is a constant (y), so the agent chooses effort to maximize <span class="math inline">\(E^a [y] - c(a)\)</span>, setting <span class="math inline">\(a = a^{FB}\)</span> and IR binds because:</p>
+<p><span class="math display">\[ E^{a^{F B}}\left[y-E^{a^{F B}}[y]+\bar{u}+c\left(a^{F B}\right)\right]=\bar{u}+c\left(a^{F B}\right) \]</span></p>
+<p>The intuition is that when the agent is risk-neutral, the principal can sell the firm to the agent. The price will be the first-best surplus. How did we get to this extreme and insightful result? In the last benchmark scenario we considered what would happen if the agent’s action couldn’t be observed. When the agent is insured, he would choose the least costly effort and attain the same fixed wage. To remedy that, we make the agent bear some risk so he is induced to put some effort into his contract. By setting the agent as risk-neutral, we make him bear all the risk by selling him the firm so that he chooses a FB effort: the one that maximizes the firm that he now owns. The firm was sold by <span class="math inline">\(E^{a^{FB}} [y] - \overline{u} - c(a^{FB})\)</span>. Two problems from this scenario:</p>
+<ol style="list-style-type: decimal">
+<li><p>the agent is exposed to a great deal of risk: is this realistic?</p></li>
+<li><p>does the agent have sufficient liquidity to pay for the firm upfront?</p></li>
+</ol>
+</div>
+<div id="risk-neutrality-with-limited-liability" class="section level4">
+<h4><strong>4) Risk-Neutrality with limited liability</strong></h4>
+<p>We now consider the simplest case where FB is not attainable: moral hazard with risk-neutrality but limited liabilitiy on the agent’s side. Assume that <span class="math inline">\(w(y)\)</span> is constrained to be at least <span class="math inline">\(\overline{w}\)</span> for all <span class="math inline">\(y \in Y\)</span>: the interpretation is that the agent’s wealth is <span class="math inline">\(- \overline{w}\)</span>, or <span class="math inline">\(\overline{w}\)</span> is the legal minimum wage, or the subsistence wage. We assume output is binary, <span class="math inline">\(Y = \{0,1\}\)</span>, effort is drawn from interval [0,1] and <span class="math inline">\(Pr(y = 1|a)\)</span> is <span class="math inline">\(a\)</span> itself: we view the agent as choosing the probability of high output directly. The problem is:</p>
+<p><span class="math display">\[ \max _{a, w_{0}, w_{1}} a-a w_{1}-(1-a) w_{0}\]</span></p>
+<p>s.t.</p>
+<p><span class="math display">\[ a \in \operatorname{argmax}_{a^{\prime} \in A} a^{\prime} w_{1}+\left(1-a^{\prime}\right) w_{0}-c\left(a^{\prime}\right) \text{ (IC)}\]</span></p>
+<p><span class="math display">\[a w_{1}+(1-a) w_{0}-c(a) \geq \bar{u} \text{ (IR)}\]</span></p>
+<p><span class="math display">\[ w_{0}, w_{1} \geq \bar{w} \text{ (LL)}\]</span></p>
+<p>To solve for the optimal contract, first note that the agent’s problem is concave in <em>a</em>, so the FOC is necessary and sufficient:</p>
+<p><span class="math display">\[ c'(a) = w_1 - w_0 \text{ (ICFOC)} \]</span></p>
+<p>In particular, if optimal effort is non-zero, we must have <span class="math inline">\(w_1 &gt; w_0\)</span>. Given that <span class="math inline">\(w_1 &gt; w_0\)</span>, LL iff <span class="math inline">\(w_0 = \overline{w}\)</span>. Moreover, only one of RR and LL can bind at the optimum: IR binds if</p>
+<p><span class="math display">\[ \frac{1}{1-a}\left[\bar{u}+c(a)-a w_{1}\right] \geq \bar{w} \]</span></p>
+<p>else, LL binds. We’ve seen that the solution is FB when IR is binding, we will assume that LL binds. Thus, we can rewrite the problem as</p>
+<p><span class="math display">\[ \max _{a, w_{1}} a-a w_{1}-(1-a) \bar{w} \]</span></p>
+<p><span class="math display">\[s . t\]</span></p>
+<p><span class="math display">\[ c^{\prime}(a)=w_{1}-\bar{w}  \text{ (ICFOC)}\]</span></p>
+<p>Using IFOC to substitute out for <span class="math inline">\(w_1\)</span>, the unconstrained maximization problem is:</p>
+<p><span class="math display">\[ \max _{a} a-a c^{\prime}(a)-\bar{w} \]</span></p>
+<p>Hence, the FOC</p>
+<p><span class="math display">\[ c'(a^\ast) = 1 - ac'' (a^\ast) \]</span></p>
+<p>Recalling that <span class="math inline">\(a^{FB}\)</span> is given by</p>
+<p><span class="math display">\[ c'(a^{FB}) = 1\]</span></p>
+<p>As c is convex, the FOC implies that <span class="math inline">\(a^\ast &lt; a^{FB}\)</span>. Thus, optimal effort is below first-best whenever LL binds. A parametric example: assuming quadratic costs <span class="math inline">\(c(a) = \frac{1}{2} ca^2\)</span>, the agent’s FOC is:</p>
+<p><span class="math display">\[ ca = w_1 - w_0 \]</span></p>
+<p>and the principal’s unconstrained problem is</p>
+<p><span class="math display">\[ \max\limits_{a} a - ca^2 - \overline{w} \]</span></p>
+<p>and the solution is</p>
+<p><span class="math display">\[ a^\ast = \frac{1}{2c} \]</span></p>
+<p>In contrast, <span class="math inline">\(a^{FB}\)</span> is given by</p>
+<p><span class="math display">\[ a^{FB} = \frac{1}{c} \]</span></p>
+<p>Intuition: to induce effort <em>a</em>, the agent’s “bonus”on attaining output 1 rather than 0 must equal <span class="math inline">\(c'(a)\)</span> (as the agent sets her marginal benefit of increasing <span class="math inline">\(a = Pr(y=1)\)</span> equal to the marginal cost, and her marginal benefit is precisely the bonus for <span class="math inline">\(y = 1\)</span>). This means the principal must pay an expected bonus of ac’(a) when he induces effort <em>a</em>. The marginal cost to the principal of inducing higher effort is</p>
+<p><span class="math display">\[ \frac{d}{da} (ac'(a)) = c'(a) + ac''(a) \]</span></p>
+<p>If the effort could be observed directly, the principal would compensate the agent for her effort by paying c(a). In this FB world the marginal cost of inducing higher effort is c’(a), less than c’(a) + ac’’(a).</p>
+<p>From another perspective, when LL binds and the principal induces effort <em>a</em>, the agent’s utility is</p>
+<p><span class="math display">\[ ac'(a) - c(a) + \overline{w} &gt; \overline{u} \]</span></p>
+<p>This is the <strong>agent’s information rent</strong> in this context: the principal can’t require effort <em>a</em> but must induce it via incentive payment. As ac’ (a) - c(a) is increasing in <em>a</em>, the more effort the principal wants, the higher will be the information rent <span class="math inline">\(\rightarrow\)</span> the principal will demand less than FB effort.</p>
+</div>
 </div>
 </div>
 <div id="mwg" class="section level2">
