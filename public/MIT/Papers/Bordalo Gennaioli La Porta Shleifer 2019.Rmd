@@ -1,0 +1,68 @@
+---
+title: "Bordalo Gennaioli La Porta Shleifer 2019"
+date: "26/03/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Diagnostic Expectations and Stock Returns{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: returns on stocks with most optimistic analyst long-term earnings growth forecasts are lower than those on stocks with the most pessimistic forecasts. 
+
+-   **Intended contribution/importance**: *1)* rely on a portable and psychologically founded model that has been used to describe the dynamics of beliefs in a variety of settings; *2)* assess the qualitative and quantitative performance of this model in explaining not only a cross-section of stock returns but also the paths of fundamentals leading to overvaluation and of analyst expectations; *3)* test new predictions that distinguish our model from mechanical models of extrapolation such as adaptive expectations 
+
+-   **Hypotheses**: *a)* HLTG exhibit fast past earnings growth, which slows down going forward. *b)* forecasts of future growth of HLTG are too optimistic; *c)* HLTG stocks exhibit good past returns but their returns going forward are low. 
+
+-   **Setting/research design**: Section **II** looks at the data: suggest that analyzing past performance while forecasting leads to overreaction: **representativeness** - there is kernel of truth in departures from rationality. **III** incorporates the model of representativeness into a problem of an analyst learning about a firm's unobserved fundamentals in light of a noisy signal such as current earnings $\rightarrow$ diagnositc Kalman filter - overinflates the probability  of future earnings growth realizations whose likelihood has objectively increased the most in light of recent news. **IV** the model makes predictions consistent with the evidence. **V** performs a first pass quantitative assessment of the model. **VI** tests three novel predictions from the model: *i)* HLTG has a fat right tail of future exceptional performers and that analysts attach an excessively high probability that HLTG firms are in that tail; *ii)* the **return spread** between LLTG and HLTG stocks **widens** among firms with more volatile or persistent fundamentals; **iii)** expectations about HLTG (LLTG) stocks revert downward (upward) even in the absence of bad (good) news. Data: analysts' expectations from **IBES**, stock prices/returns from **CRSP**, accounting information from **CRSP/Compustat**. Sample years: 1978-2016. 
+
+-   **Main results**: analysts forecast fundamentals from observed earnings growth, but overreact to news by exaggerating the probability of states that have become more likely. 
+
+-   **Additional results crucial to the story**: investors are forward-looking, i.e. they react to news. People put too much probability weight on states of the world that the news they receive aligns with ($\implies$ overreaction). They react in the right direction, but too strongly. 
+
+- **Possible alternative hypotheses**: 
+
+- **Conclusion**: the theory of asset pricing can incorporate fundamental psychological insights while retaining the rigor and the predictive discipline of rational expectations models. It can explain, in a unified dynamic framework, the joint evolution of fundamentals and security prices as well as expectations. Allows to unify several biases hitherto viewed as separete, such as extrapolation, overreaction to information and neglect of tail risk. 
+
+- **Future research**: expectation formation can be taken to other contexts such as aggregate stock prices an macroeconomic time series.   
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
+
+Theory paper that revisits La Porta(2019)'s findings that return on optimistic forecast stocks are lower than pessimistic forecast stocks.
+
+It's all about the **kernel of truth**.
+
+Who's this paper for? Analysts -> change in behavior? Investors -> become aware of analysts biases?
+
+Diagnostic expectatations: $\theta > 0$; rational: $\theta = 0$. 
+
+- **Mean reversion** in LTG obtains under rational expectations due to *mean reversion in fundamentals*. 
+
+- Under *diagnostic expectations*, mean reversion is amplified by the correction of initial forecast errors.
+
+- **Model estimation with SMM**: they simulate a time series of log earnings $x_t$ and compute the associated diagnostic expectations $\hat{f}_t^\theta$ about fundamentals, for each parameter combination. The parameters are: persistence and conditional variance of log EPS(*b* and $\sigma_\epsilon$); persistence and conditional variance of fundamentals $f$($a$ and $\sigma_n$); strength of representativeness $\theta$; and the sluggishness *s* of the lagged expectations -G. 
+
+- Analysts' forecasts are known to be an imperfect proxy for investors' expectations, because analysts do not rationally incorporate all information in their forecasts and are subject to non-random biases (Bradshaw 2011, Brown et al. 2015). This biases down the ERC (Kothari, 2001). 
+
+
+
+
+
+
+
+

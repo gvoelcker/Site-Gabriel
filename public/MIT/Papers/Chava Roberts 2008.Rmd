@@ -1,0 +1,53 @@
+---
+date: "24/02/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+# [**Chava Roberts 2008**](https://onlinelibrary.wiley.com/doi/full/10.1111/j.1540-6261.2008.01391.x)
+
+## {.tabset}
+
+### Paper Analysis
+
+-   **Research question**: to what extent does violation of a debt covenant impact investment?
+
+-   **Intended contribution/importance**: first study to empirically document the link between financing and investment. 
+
+-   **Hypotheses**: main: debt covenant violations impact investment; additional: cross-section: what firm characteristics decrease investment?
+
+-   **Setting/research design**: Dealscan data on loans 1994-2005 containing covenant restriction on: current ratio, net worth or tangible net worth. 1st test: impact of violation on investment; 2nd: RDD of firms within 0.2 of the covenant threshold; 3rd: cross-sectional characteristics.
+
+-   **Main results**: when a firm violates a covenant $\implies$ investment opportunities and cash flow are significantly lower while leverage is significantly higher.
+
+-   **Additional results crucial to the story**: 
+
+i) when agency and information problems are severe $\rightarrow$ covenant violations have serious repercussions in the form of reduced capital expenditures; 
+
+ii) intervention after violation has significant consequences for borrowers; 
+
+iii) Cross-section tests: control for following characteristics: **a)** $\uparrow$ Credit rating $\iff$ $\downarrow$ Information Asymmetry/Agency Issues; **b)** $\uparrow$ Financially Constrained $\iff$ $\downarrow$ Investment; **c)**** $\uparrow$ Reputation/# of loans $\iff$ $\downarrow$ Decline in Investment when violated; **d)** $\uparrow$ # of creditors $\iff$ $\downarrow$ Violation; **e)** $\uparrow$ Cash holdings Constrained $\iff$ $\uparrow$ investment responses;
+
+- **Possible alternative hypotheses**: 
+
+- **Conclusion**: state-contingent allocation of control rights mitigates investment distortions arising from financing frictions. 
+
+- **Future research**: **i)** which **other channels** are affected by control rights transfer accompanying covenant violations?; **ii)** does the pledging of control rights helps alleviating any financing constraints ex ante and mitigate underinvestment? **iii)** are there macroeconomic implications of control rights transfers to creditors?
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
+
+- Technical default: violation of any covenant **other** than one requiring the payment of **interest** or **principal**. 

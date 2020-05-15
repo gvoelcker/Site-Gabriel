@@ -1,0 +1,44 @@
+---
+title: "Jovanovic 1982"
+date: "08/04/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## The Life Cycle of a Competitive Industry{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: 
+
+-   **Intended contribution/importance**: 
+
+-   **Hypotheses**: 
+
+-   **Setting/research design**: 
+
+-   **Main results**:  
+
+-   **Additional results crucial to the story**:
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

@@ -1,0 +1,44 @@
+---
+title: "Demerjian Owens 2016"
+date: "09/03/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Paper Analysis{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: what's the probability that a borrower will violate financial covenants in private debt contracts?
+
+-   **Intended contribution/importance**: 
+
+-   **Hypotheses**: 
+
+-   **Setting/research design**: 
+
+-   **Main results**:  
+
+-   **Additional results crucial to the story**:
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

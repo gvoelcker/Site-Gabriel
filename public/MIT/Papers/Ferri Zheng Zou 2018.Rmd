@@ -1,0 +1,165 @@
+---
+title: "Ferri Zheng Zou 2018"
+date: "30/03/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Uncertainty About Managers' Reporting Objectives and Investors' Response to Earnings Reports: Evidence From The 2006 Executive Compensation Disclosures{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: does the information content of the earnings report (captured by the ERC) increase when investors' uncertainty about the manager's reporting objective decreases? 
+
+-   **Intended contribution/importance**: first to link investors' uncertainty about the manager's reporting objectives to the information content of earnings reports, a question highlighted in theoretical work. Contributes to: 1) determinants of ERC, not only firms' characteristics but responses to shocks; 2) compensation disclosure literature; 3) CD\&A rules literature. 
+
+-   **Hypotheses**: the change in regulation decreased the uncertainty of investors regarding managers' actions, which led to bigger ERC. 
+
+-   **Setting/research design**: use the 2006 mandatory compensation disclosures as an instrument to capture investors' decrease in uncertainty about managers' incentives and reporting objectives. Diff-in-diff exploits the staggered adoption of these new rules. They match using **entropy balancing**: a quasi-matching approach which re-weights each control observation so that post-weighting distributional properties of matched variables of treatment and control observations are virtually identical, thereby ensuring covariate balance. The difference in treatment is given by the month of the Fiscal Year end for the firm. If it was after December 15th 2006 $\rightarrow$ treated. 14,509 firm-quarter observations, 88\% treated vs 12\% control (acceptable according to prior literature). Coefficient of interest: $\beta_1$ for UE$^{ast}$POST$^{ast}$TREAT: correspont to a 20\% increase of ERC.
+
+-   **Main results**: significant increase in ERC for treated firms relative to control firms, largely driven by profit firms. 
+
+-   **Additional results crucial to the story**: cross-sectional tests: effects are more pronounced in firms most affected by the new rules. We find a statistically and economically significant increase in ERC for treatment firms relative to control firms is 0.925, corresponding to about a 20\% increase over the pre-CD\&A level. Additional takeaways: a) increase in ERC is driven by the profit firms, loss firms don't present a different result between treated and control groups; b) enhanced compensation disclosures have limited usefulness in reducing investors' uncertainty about the manager's reporting objectives at loss firms because these firms instead of linking manager's compensation to performace may use subjective evaluation and non-financial metrics; c) treated firms experienced a relative decrease in the degree to which extreme surprises reduce the ERC;
+
+- **Possible alternative hypotheses/assumptions**: the new rules could have had some unintended consequences that affected the ERC. Section 6 posits 3 explanations, focusing on the first.
+
+1) CD\&A rules may have led boards to modify compensation contracts, thereby altering managerial incentives and, through those, the economics of the firm. However, there's no reason to believe that treated and controlled firms would be affected differently from this. (**One thing they could address: can the compensation be steered toward non-pecuniary benefits (J\&M '76**)
+
+2) CD\&A rules may have led to the compensation disclosures indirectly providing information about the firm's economics: $\uparrow$ compensation disclosures $\rightarrow$ investors better predict manager's real activities and reduce uncertainty. Don't fully buy that this biases against the hypothesis.
+
+3) Improved compensation disclosure might increase the marginal cost of adding bias(*c*). 
+
+-   **Conclusion**: findings represent the first empirical evidence of a role of compensation disclosures in enhancing the information content of financial reports. However, the change in ERC doesn't differ among loss firms, suggesting enhanced compensation disclosures have limited usefulness in reducing investors' uncertainty about the manager's reporting objectives. 
+
+- **Future research**: re-examine F\&V(2000) predictions using new regulatory changes or changes in other jurisdictions (should improve). 
+
+### **Expanding Research**
+
+To expand the research on the topic:
+
+- IMO:ERC literature: usually measure characteristics that lead to $\uparrow$ or $\downarrow$ ERC; here we are evluating a shock, a change in ERC. If we are not satisfied with the two assumptions that the paper makes to infer causality from the CD\&A in the ERC increase, we can always look for another regulation change. However, dealing with ERC dynamically is interesting(review paper from 1st/2nd week that dealt with ERC). 
+
+- 4.2 - Interpreting ERC magnitude:  we lack a benchmark or a way to measure what is the increase of ERC increase desired. A way to pose this is: "when would the policy makers consider the change a success?". How to measure this $\Delta$informativeness? How do you translate information into monetary gain/increased welfare?.  The study uses two proxies to caputre the improvement in compensation disclosures: 1) ex-post observed improvements; 2) ex-ante expected improvements. Combining both sells it better: ex-ante convinces, ex-post is being right.
+
+- For the benchmark ERC: Empirically observed ERC vs theoretical ERC. What should the $\Delta$ ERC be? Gipper, Leuz and Maffett 2019 measure how a change in ERC can decrease the cost of capital. What about $\uparrow$ ERC $\iff$ $\uparrow$ investor participation/stickyness. Can a bigger ERC catalyze growth? Another issue: if having more info about the executives decrease the cost of capital, that is an assymetry reduction: can we relate contractual obligations to cost of capital? Can we get an index relating firm performance and the loans it is able to get?
+
+- From the regulators perspective: the new rule increases the amount of information available, but how do we quantify this shock? Does this attract more outside investment? More market participation given this IA reduction? 
+
+- How dynamic are contracts? Do firms learn how to create compensation contracts? Is there a learning curve for firms/managers until they settle on a type of contract? How can you use the knowledge derived from this kind of learning to anticipate obtaining the ideal contract? 
+
+- 5) how can we measure improvement in compensation disclosures?
+
+- 5) CEO excess pay $\rightarrow$ demand for improved disclosure. Does this depend on firm performance?
+
+- 4.1.1. Unexpected earnings: CD\&A makes the firm less affected by the way UE reduce the ERC.
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
+
+If the investors' uncertainty about the manager's reporting objectives decreases ($\downarrow$ IA - agency conflict), does the earnings report become more informational? From Fisher and Verrecchia(2000), the hypothesis is that the manager's reporting bias can reduce the information content of the earnings report, with the effect increasing in the degree of investors' uncertainty about her reporting objectives. *Uncertainty prevents investors from adjusting for the bias.* 
+
+Assumptions: 1) 2006 disclosures substantially increased the quality of the managers' reporting objectives; 2) the new rules affected only the quality of compensation disclosures. The information content of the manager's financial report increases as a result of a decrease in investors' uncertainty about the manager's reporting objectives caused by enhanced disclosure of the manager's compensation schemes under the CD\&A rules. 
+
+Method: diff-in-diff comparing the change in investors' response to quarterly earnings releases (ERC) of treatment and control firms from the year prior to 2006(when no firm was affected) to the subsequent, during which treated firms were affected but control firms were not yet. Given firms with different Fiscal Year-ends may have different characteristics, we use entropy balancing, a quasi-matching technique which re-weights control observations to ensure covariate balance. 
+
+Implication of the study: policy makers can increase the information content of financial reports not only by improving their credibitility (via disclosure of higher-quality financial information and greater public oversight) but also by reducing investors' uncertainty about managers' reporting objectives(ex: better disclosures of compensation incentives). 
+
+#### **Sum Up The Model**
+
+Based on Fischer and Verrecchia (2000), the model is presented in the paper on pg 342:
+
+- $\tilde{v} \sim N(\mu_v, \sigma_v^2)$: **prior distribution of firm value**, which it is common knowledge. 
+
+- **Earnings**: $\tilde{e}= \tilde{v} + \tilde{n}, \tilde{n} \sim N (0, \sigma_n^2)$ - the manager privately observes the earnings, where *n* is a noisy signal of the firm value v.
+
+- **Manager's bias**: b $\equiv$ r - e, where r is the report. 
+
+- **Market price of firm**: $P(r) = E[\tilde{v}|r]$
+
+- **Manager's private cost**: C(b) = cb$^2$/2, 
+
+- $\tilde{v}$P(r): the manager's benefit from obtaining a certain price as a result of biasing the result. 
+- **x** can be both positive or negative, i.e. the manager may have incentives to inflate or deflate firm value. Investors only know the prior distribution: $\tilde{x} \sim N(\mu_x, \sigma_x^2)$. Hence, $\sigma_x^2$ captures the **investors' uncertainty about the manager's reporting objectives**. F\&V show that in equilibrium the manager chooses bias  $b^\ast$ = $\beta x / c$ (resulting in earnings report $r^\ast = e + \frac{\beta x}{c}$) and the market price is P($r^\ast$) = $\mu_v + \beta (r^\ast - (\mu_v + \frac{\beta \mu_x}{c}))$, where $\beta$ is determined by:
+
+\[ ERC = \beta = \frac{\sigma_v^2}{(\sigma_v^2 + \sigma_n^2 + \beta^2 \sigma_x^2 / c^2)} \]
+
+If there's no uncertainty about the manager's reporting objectives, we have $\tilde{x}$ = $\mu_x$, and thus $\sigma_x^2 = 0$ $\rightarrow$ $\beta = \frac{\sigma_v^2}{(\sigma_v^2 + \sigma_n^2)}$. 
+
+The paper **empirically** test the relation between $\beta$ (which is related to the optimal bias) and $\sigma_x^2$ (the investors' uncertainty about the manager's compensation). 
+
+- After the CD\&A shock, firms started to disclose more details about performance metrics used (including weight, when multiple metrics are used and their exact definition) and performance targets for any type of incentive. That led to investors having substantially more precise information about the compensation consequences of reported performance to the manager, and thus about her reporting objectives. To illustrate the shock, use Figures 1 and 2: from 2005 onwards, the proportion of Objectivves non-Missing greatly increased. Not only CD\&A was a shock, but also the disclosure of "Outstanding equity awards at fiscal year-end". 
+
+#### **Research Design**
+
+Identification strategy: December FY-end firms as *treatment* (first subject to the new rules); Sep/Oct/Nov FY-end as *control* (last to comply with the rules).
+
+Main regression - diff-in-diff:
+
+\begin{equation}\begin{aligned}
+C A R_{i, t}=& \beta_{0}+\beta_{1} U E_{i, t}^{*} P O S T_{i, t}^{*} T R E A T_{i, t}+\beta_{2} U E_{i, t}+\beta_{3} T R E A T_{i, t}+\beta_{4} P O S T_{i, t} \\
+&+\beta_{5} T R E A T_{i, t}^{*} P O S T_{i, t}+\beta_{6} U E_{i, t}^{*} P O S T_{i, t}+\beta_{7} U E_{i, t}^{*} T R E A T_{i, t} \\
+&+\beta_{m} \text { Controls }+\beta_{n} U E_{i, t}^{*} \text { Controls }+\varepsilon_{i, t}
+\end{aligned}\end{equation}
+
+We are interested in: $\beta_1$ - captures the change in ERCs for treated firms vs control firms from the Pre(FY 2006) to the Post(FY 2007) CD\&A period. This coefficient expresses the relation with Unexpected Earnings(UE), a dummy for treatment (TREAT) and dummy for FY(POST)(=1 if FY = 2007).
+
+$CAR_{i,t}$ is the 30day market adjusted stock return around the date of quarterly earnings announcements.
+
+The other variables are combinations of these aforementioned variables + controls. The regression uses **weighted-least squares "robust" regression**, which places less weights on observations with large absolute residuals. 
+
+Biases against what they're trying to prove(pg 345, bottom): 1) more precise information provided by the CD\&A adjusts for the manager's reporting bias. If analysts only incorporate the new info in their forecasts, there would be worse proxy for investors' expectations in POST: bias against because the relative change in ERC would be harder to capture. 2) analysts' incentives to bias affected by CD&A: they test proxy for analyst bias and see no significant different in Pre vs Post. 
+
+**Key issue**: parallel trends assumption - for diff-in-diff to work, in the absence of CD\&A, treated and control firms should experience similar things. Since obtaining such a counterfactual is an issue, they test the ERC trends prior to the shock. Fig4 plots this: the gap narrows.
+
+**Describe entropy balancing (pg 347 middle paragraph)**
+
+**Table 1**: descriptive statistics.
+
+**Table 2**: distributional properties of treatment and control firms before and after entropy matching process. 
+
+#### **4) Empirical Results**
+
+Main results: diff-in-diff comparing ERC around the 2006 CD\&A rules for firms that are immediately subject to it and not subject to it until a later date. Panel A: un-weighted control observations; Panel B: entropy balanced observations. The coefficients for both Panels A and B are similar, both in terms of significance and sign (+/-). The results suggest a greater relative increase of ERC for treated firms after the introduction of the CD\&A rules. In terms of economic magnitude, the coefficient of 0.925(0.648) means a 20\%(15\%) increase over the ERC level in the Pre period for treatment firms of 4.64(4.44). This ERC figure of 4.64 is the average of the four quarterly ERCs for treatment firms in the Pre period (i.e. FY 2006), where each quarterly ERC is estimated by adding a) the coefficient of UE; (b) the coefficient of UE$^\ast$TREAT; (c) the coefficient of the interaction between UE and the relevant quarter fixed effect; (d) the average of the coefficients of the interactions between UE and industry effects (since we want to estimate an ‘average’ ERC, across all industries); (e) for each firm characteristic, the coefficient of the interaction term of UE with that firm characteristic multiplied by the sample median of that firm characteristic. In essence, the resulting estimate represents the average ERC (across quarters and in- dustries) for a “typical” treatment firm (i.e. “typical” in terms of firm characteristics) in the Pre period.)
+
+#### **5) Cross Sectional tests**
+
+#### **6) Alternative explanations for increases in ERC**
+
+Addressing potential caveats/limitations, the F\&V model in which the paper is based has the following equilibrium equation for ERC: $\beta = \frac{\sigma_v^2}{(\sigma_v^2 + \sigma_n^2 + \frac{\beta^2 \sigma_x^2}{c^2})}$. This means that an increase in ERC can result not only from a decrease in $\sigma_x^2$(uncertainty of reporting objectives) but from an increase in $\sigma^2_v$ (greater prior uncertainty on firm value), an increase in $c$($\uparrow$ marginal cost of adding bias to the earnings report) or a decrease in $\sigma_n^2$($\uparrow$ inherent earnings quality). The whole paper lingers on the fact that the only effect of the CD\&A is to improve the quality of compensation disclosures. But what if not?
+
+1) CD\&A may have led boards to modify the compensation contracts (obviously? speaks directly to the excess CEO pay, or excess CFO pay) and therefore the economics of the firm. However, it's not obvious that they would explain a different impact of these changes for treated and control firms; both groups started their FY 2007 with full knowledge of the final rules and may have adjusted the contracts already during FY2007 $\rightarrow$ all firms were treated at the same time.
+
+But what if the control firms began to adjust their compensation contracts only *after* their first proxy disclosures under the new regime (i.e. FY 2008)? Then they would be a control sample and we can use our difference-in-difference research design to detect compensation changes induced by the CD\&A rules. This possibility is examined in Table 6. However, does T6PA capture all changes in executive compensation?
+
+2) CD\&A shock may also indirectly provide information about the firm's economics. 
+
+3) CD\&A may also increase the marginal cost of adding bias (the $c$ of the model). More precise information about compensation targets may have resulted in greater investors’ scrutiny of reporting choices and/or stronger penalties for adding bias (e.g. reputation costs, turnover risk, litigation risk). But then, c would be a decreasing function of $\sigma^2_x$ (rather than a constant, as in the model) and an increase in c would not be an alternative explanation for the increase in ERC.
+
+#### 7) Returning to the model: Bias
+
+
+
+
+
+
+
+
+
+
+
+
+
+

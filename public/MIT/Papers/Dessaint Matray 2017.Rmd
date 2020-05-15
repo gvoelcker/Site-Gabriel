@@ -1,0 +1,46 @@
+---
+title: "Dessaint Matray 2017"
+date: "27/04/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Do managers overreact to salient risks? Evidence from hurricane strikes{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: how do managers respond to hurricane events when their firms are located in the neighborhood of the disaster area? 
+
+-   **Why is it relevant**: risk assessment is super important! 
+
+-   **Intended contribution/importance**: i) behavioral corporate finance literature - specifically managers' behavioral biases; ii) boom and leniency literature; iii) how past experiences affect subsequent risk-taking; iv) behavioral biases in "the field". 
+
+-   **Hypotheses**: managers' perceived risk temporarily increases even though the real risk doesn't change. 
+
+-   **Setting/research design**: how managers estimate the risk of a liquidity shochk at the firm level, use variation in corporate cash holdings to measure how their perception of this risk changes. Hurricanes are used as a source of liquidity shocks. Diff-in-diff: $Cash_{iyqc} = \alpha_{iq} + \delta_{yq} + \gamma X_{iyqc} + \beta Neighbor_{yqc} + \epsilon_{iyqc}$, where $\beta$ is the coefficient of interest, capturing the effect of hurricane landfall proximity. 
+
+-   **Main results**: 1) managers of unaffected firms respond to a hurricane in their proximity by increasing corporate cash holdings; 2) this cash increase is temporary; 3) cash increases the first and second time a firm is located in the neighborhood area but not in subsequent occurences. 
+
+-   **Additional results crucial to the story**: firms mention natural disasters in their 10-Ks/8-Ks/10-Qs more frequently after one hits close to them. 
+
+- **Possible alternative hypotheses**: what could've changed the cash holdings if not the recency and recalledness from the hurricane? Possibilities: "regional spillover", "change in risk" and "risk learning". 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

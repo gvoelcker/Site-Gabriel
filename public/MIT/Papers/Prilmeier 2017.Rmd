@@ -1,0 +1,55 @@
+---
+title: "Prilmeier 2017"
+date: "04/04/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Why do loans contain covenants? Evidence from lending relationships{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: little is known about how non-price terms of loan contracts are structured to optimize information production in a **lending relationship**. 
+
+-   **Intended contribution/importance**: to the growing literature on why debt contains covenants: paper shows that covenant tightness behaves like predicted by IA theory. To the lending relationships literature: investigates the effect of relationship intensity on covenant use. 
+
+-   **Hypotheses**: forming and maintaining a lending relationship affects information asymmetries at two levels: 1) as the lender becomes informed about the borrower, information asymmetries between the two parties are reduced; 2)  the relationship lender’s information acquisition potentially increases the information distance between herself and nonrelationship lenders.
+
+-   **Setting/research design**: using a sample of 7,924 corporate loans from DealScan, the paper examines the effect of relationship lending on covenant choice. 1st measure: **relationship intensity**: proportion of firm's loans over last 5 years that were arranged by the current lender; 2nd measure: **duration of the borrower's relationship** with the current lender. Then, **covenant intensity** is tested: number of financial covenants attached to a loan. The paper also employs IV to rule out selection effects or omitted variable bias: exploits differences in borrowers' proximity to banks that actively syndicate loans. 
+
+-   **Main results**: covenant tightness is relaxed over the duration of a relationship, especially for opaque borrowers. The effect of lending relationship intensity on the number of covenants included in a loan follows an inverted U shape. 
+
+-   **Additional results crucial to the story**:
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: Covenant tightness monotonically decreases over the duration of a lending relationship, especially if borrowers are opaque. In contrast to this result, covenant intensity in a loan appears to be related to relationship intensity rather than relation- ship duration. The differences in the results for covenant tightness and convenant intensity are consistent with them performing different roles in a loan contract.
+
+- **Future research**: Future research should examine the extent to which free-riding occurs among senior bank lenders and under what circumstances covenants, as opposed to exclusive lending, are part of an optimal solution to such free-riding.
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
+
+This paper contributes to closing that gap by studying how relationship lending affects the use of loan covenants in a sample of large loans to publicly listed borrowers. 
+
+Forming and maintaining a lending relationship affects information asymmetries at two levels: 1) as the lender becomes informed about the borrower, information asymmetries between the two parties are reduced; 2) the relationship lender’s information acquisition potentially increases the information distance between herself and nonrelationship lenders. It is not clear how this difference in knowledge about the borrower should affect covenant choice. However, prior evidence has shown that lock-in effects are not a concern for publicly listed borrowers such as those studied in this paper. 
+
+I like how this links to Garleanu and Zwiebel (2009): I didn't see at the time that the shift in bargaining power was because of relationship - I thought it was due to the borrower not being able to meet his covenants. 
+
+
+
+
+

@@ -1,0 +1,94 @@
+---
+title: ""
+date: "28/02/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Christensen Nikolaev 2012{.tabset}
+
+### Paper Analysis
+
+-   **Research question**: what are the differences between capital covenants and performance covenants for the firm when contracting?
+
+-   **Intended contribution/importance**: contributes to the literature on creditor control rights and debt contract design. Shows how there are important distinctions in how *P-* and *C-covenants* address the agency problems and how the choice between them is consistent with prior theory. Also aims to shed light in ways in which accounting improves contracting efficiency. 
+
+-   **Hypotheses**: role of C-covenants: align ex-ante shareholder and debtholders interests. Role P-covenants: allocation of control to lenders. Hypotheses: 
+
+1) $\uparrow$ borrowers financial constraint $\implies$ $\uparrow$ p-covenants: Financially constrained firms rely more on performance covenants than on capital covenants.
+
+2) $\downarrow$ contractibility of accounting information $\implies$ $\downarrow$ p-covenants: The reliance on performance (capital) covenants is positively (negatively) associated with the ability of accounting information to explain credit risk (i.e., contractibility).
+
+3) $\uparrow$ P-covenants $\iff$ $\uparrow$ contract renegotiations, i.e., P-covenants are used as trip-wires: Performance covenants, but not capital covenants, are positively related to the frequency of contract amendments.
+
+4) $\uparrow$ use of negative covenants $\implies$ $\uparrow$ P-covenants: Negative covenants are used in contracts with performance covenants, but not with capital covenants.
+
+Also: a) capital indicators penalize the use of debt in the capital structure and hence are less dependent on the ability of accounting information to explain credit risk; b) how the contracting practices behaved around the 2008 financial crisis;
+
+-   **Setting/research design**: use 3 measures of **financial constraints**: 1) F-Constraint-WW (Whited and Wu 2006); 2) F-Constraint-KZ (Kaplan and Zingales 1997); 3) F-Constraint-CL (Cleary 1999). Proxies for the ability of the accounting information to measure the state of nature: **accounting information contractability**. Uses industry-level ordered logit regressions of long-term debt ratings on accounting variables: C1) and C2) rely on income statement info - ROA and interest coverage ratio; C3) relies on debt-to-total assets - a capital ratio; C4) mix C1, C2 and C3; Alternative measure: timely loss recognition within-industry. 
+
+Data: Dealscan(accounting-based covenants), Compustat(accounting variables) CRSP(stock return data). Merge Dealscan and Compustat using Roberts Dealscan-Compustat link. 
+
+Regress P/(P+C) on the proxies to test hypotheses.
+
+Additional testing: 1) refine Ball,Bushman,Vasvari(2008) on the choice of performance pricing grids: differentiate types of covenants and extend to similar results;  2) time series variation in the frequency of *P-* and *C-*covenants around the time of the financial crisis. 
+
+-   **Main results**: $\uparrow$ **Performance covenants** are associated with:
+
+1) $\uparrow$ financial constraints of the borrower;
+
+2) $\uparrow$ accounting information portrays credit risk;
+
+3) $\uparrow$ likelihood of contract renegotiation;
+
+4) $\uparrow$ presence of contractual restrictions on managerial actions;
+
+- **Additional results crucial to the story**:
+
+- **Possible alternative hypotheses**: 
+
+- **Conclusion**: accounting information can be used to either align interests between lenders and shareholders (via C-covenants) or to facilitate state contingent control allocation (P-covenants).
+
+- **Future research**: undertand how the differential role of covenants depends on thenature of the contracting environment. 
+
+- **Personal comment**: decomposing covenants into p- and c-types is the game changer they proposed? Is the P/(P+C) ratio a good proxy? Why not use all covenants as the denominator?
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
+
+- **C-covenants**: rely on information about sources and uses of capital (i.e. **balance sheet information** only) $\implies$ restrict the level of debt in a firm's capital structure. Effective in controlling agency costs of debt by making the value of the shareholder's stake sensitive to managerial actions and reduce the need for debt holder interference. In addition, c-covenants are not necessarily violated with performance deterioration (everyone loses together) as long as shareholders are sufficiently invested in the firm. *C-covenants* require stringent constraints placed on the capital structure, so they are not always suitable. The hypothesis is that **C-covenant align ex-ante the shareholders and debtholders interests by requiring that enough capital is maintained inside the firm**. 
+
+- **P-covenants**: rely on current-period profitability and efficiency indicators formulated in terms of income statement (cash flow statement) information alone or in combination with balance sheet
+
+The hypothesis is that **P-covenants facilitate the contingent allocation of control to lenders**, restricting managers' actions in case of poor economic performance. 
+
+Lit review: what are the 3 main agency problems associated with expropriation of debt holders' wealth?
+
+**1) Asset substitution** (Jensen and Meckling 1976): shareholders' equity is thin and they are effectively holding a close to out-of-the-money call option on the firm's assets $\implies$ incentivize risk-taking (bad for debtholders). 
+
+**2) Debt overhang**(Myers 1977): shareholders fail to undertake profitable investments if the returns go to the debtholders (also because of thin equity). Declines as shareholders' capital increases.
+
+**3) Claim dilution**(Smith and Warner 1979): issue new debt without contributing more equity capital (prior debt is proportionately less entitled to gains).
+
+
+
+
+
+
+
+
+
+

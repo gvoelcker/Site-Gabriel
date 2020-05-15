@@ -1,0 +1,52 @@
+---
+title: "Stein Stein 1991"
+date: "08/04/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Stein Stein 1991{.tabset}
+
+### Stock Price Distributions with Stochastic Volatility: An Analytic Approach
+
+-   **Research question**: studies stock price distributions when prices follow a diffusion process with a stochastically varying volatility parameter. 
+
+-   **Intended contribution/importance**: use analytic techniques to derive an explicit closed-form solution for the case where volatility is driven by an arithmetic Orsnstein-Uhlenbeck (AR1) process. This AR1 process has a tendency to revert back to a long-run average level of $\theta$.
+
+-   **Setting/research design**: apply the results to two related problems in the finance literature: i) options pricing in a world of stochastic volatility; ii) the relationship between stochastic volatility and the nature of "fat tails" in stock price distributions. 
+
+The stock price distribution that arise when prices follow a diffusion process with a stochastically varying volatility parameter is described by the following equations:
+
+\begin{equation}
+d P=\mu P d t+\sigma P d z_{1}
+\end{equation}
+
+and
+
+\begin{equation}
+d \sigma=-\delta(\sigma-\theta) d t+k d z_{2}
+\end{equation}
+
+where $P$ is the **stock price**, $\sigma$ is the **"volatility"** of the stock, $k, \mu, \delta,$ and $\theta$ are fixed **constants**, and $d z_{1}$ and $d z_{2}$ are two independent Wiener processes.
+
+Doing this generates an option pricing formula that is appropriate for the case where volatility follows an autoregressive stochastic process. The model is tractable yet it caputes many of the documented features of volatility data. Also, it is capable of handling a nonzero mean reversion parameter $\delta$, which should be valuable given the empirical evidence that volatility is strongly mean-reverting.
+
+-   **Conclusion**: uses analytic techniques to derive both exact and approximate stock price distributions for the case where stock price dynamics are given by the above equations. The results allows us to develop closed-form options pricing formulas that incorporate important aspects of the time-series properties of volatility.
+
+- **Future research**: pg 743 suggests some paths moving forward.
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
