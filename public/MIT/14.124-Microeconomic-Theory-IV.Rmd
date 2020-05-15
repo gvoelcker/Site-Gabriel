@@ -5,6 +5,740 @@ output: html_document
 
 # Study Guide{.tabset}
 
+## **Overview**
+
+We have 12 Lectures which cover:
+
+1) **mechanism design**: how economic mechanisms can be designed to achieve societal goals. This issue rises from the problem of allocating resources $\rightarrow$ how can one socially efficiently allocate resources? 
+
+2) **adverse selection**: the agent has private information at the time of contracting.
+
+3) **moral hazard**: information is known, the issue are the hidden actions to be taken after the contract is signed.
+
+4) **incomplete contracts**: don't specify what happens in every scenario.
+
+### L1 - Introduction to Mechanism Design and the VCG Mechanism
+
+- Lecture notes + slides + MWG: 23.B
+
+Mechanism design situation: a group of agents have private information and must interact in a *mechanism* to allocate a good. A player's type $\theta$ summarizes what the player knows about himself, while what he knows about the others depend on the probability distribution $\phi$ from where $\theta_{-i}$ is drawn. Each player has to choose an option $x$ from the set $X$, depending on each player's type. The **mapping** from the type to the choice is called the **social choice function**:
+
+**Social choice function**: $f: \Theta \rightarrow X$.
+
+So, the players play a "game", in which the outcomes are the choices. This game is represented by a **mechanism**:
+
+**Mechanism**: $\Gamma = (A,g)$, where $A$ is the set of actions and $g$ is an outcome function ($g: A \rightarrow X$). 
+
+As complicated as the choice process can be, it can be represented by a mechanism. Given the players can take different actions, we define as **strategy** for player $i$ the mapping from $\Theta_i \rightarrow A_i$ in the mechanism $\Gamma$. 
+
+To sum up so far - Every mechanism induces an incomplete information game among the players: game *G* induced by mechanism $\Gamma$ is the incomplete information game with players $I$, types $\Theta$, prior probability distribution $\phi$, actions $A$, and **payoff functions** (as a function of actions and types) $u_i(g(a), \theta_i)$ for each $i \in I$. 
+
+What we're curious about in mechanism design is finding which SCF can be implemented. This happens if when the players play some equilibrium $s^\ast$ of $\Gamma$, the outcome corresponds to the social choice function for any type profile. But what is equilbrium?
+
+- **Dominant strategy equilibrium**: you play your strategy no matter what other players do. This happens when a strategy profile has utility at least as good as any other strategy the player could take. This is a simple and appealing concept but very limited. It makes more sense to use this in more complicated settings. 
+
+- **Bayesian Nash Equilibrium**: you play your strategy according to what is expected the other players will do.
+
+**Revelation principle of mechanism design**: it is without loss to restrict attention to mechanisms $\Gamma$ where $A$ is taken to be equal to the type space $\Theta$ and to equilibria where players report their types truthfully. This only works if players have no incentive to deviate from reporting their types truthfully $\implies$ instead of playing complicated mechanisms, we ask them to report their types, the complicated decision is played internally and we only observe the final and truthful choice. 
+
+- **Incentive compatible direct mechanisms**: when the players have incentives to report truthfully. 
+
+- **Direct mechanism**: a mechanism $\Theta = (A,g)$ satisfying $A = \Theta$. It is a mathematical equivalent to social choice functions. 
+
+The Social Choice function is a DSIC if $u_i(f(\theta_i, \theta_{-i}),\theta_i) \geq u_i (f(\theta_i', \theta_{-i}),\theta_i)$. 
+
+- Revelation principle for DSE: if a SCF is implementable in dominant strategies, we can say that it is DSIC. This is very powerful: we only need to know if the social choice function is incentive compatible to know if the SCF is implementable. 
+
+**Quasi-linear environments**: each player cares about the allocation $y$ and a monetary transfer $t$ and her utility of outcome $x = (y,t)$ is given by: $u_i(y,t,\theta_i) = v_i (y, \theta_i) + t_i$ for some function $v_i: Y \times \Theta \rightarrow \mathbb{R}$. This restricts our analysis to the point that each agent cares about its own $t$ in a linear and additively separable manner while not caring about the other's transfers at all. We care usually about implementing either *efficient (utilitarian)* or *profit-maximizing* social choice functions. We define the former to be:
+
+\[ y^\ast (\theta) = argmax_{y \in Y} \sum\limits_{i \in I} v_i (y, \theta_i)\]
+
+Implementing the efficient allocation can be hard! People might not report truthfully and free-ride! However, the **VCG mechanism** states that there are some transfer rules that induce truthful reporting: $t_i (\theta) = [ \sum_\limits_{j \neq i} v_j (y^\ast (\theta), \theta_j) ] + h_i(\theta_{-i})$ for some function $h_i: \theta_{-i} \rightarrow \mathbb{R}$. Then, under SCL $(y^\ast (\theta), t(\theta))$, type $\theta_i$'s utility when she reports that her type is $\theta_i'$ and her opponents report type profile $\theta_{-i}$ equals
+
+\[ \text{utility + transfer} = \sum\limits_{j \in I} v_j (y^\ast (\theta_i', \theta_{-i}), \theta_j) + h_i (\theta_{-i}) \]
+
+All this blablabla leads to the conclusion that it is optimal for the player to report truthfully. VCG mechanisms implement efficient outcomes in the presence of private information by aligning private and social incentives: each player is paid the sum of others' utilities and thus internalizes the effects of her report on others. 
+
+**Proposition 2 - VCG Mechanism is DSIC**: if $t_i (\theta)$ takes the form of $t_i$ from above, for each $i \in I$, then the SCF $(y^\ast(\theta), t(\theta))$ is DSIC. 
+
+**Intuition for VCG**: the losers of the auction get paid the reported value of the winning neighborhood + a constant that doesn't depend on what they report. The winners only get the constant (+ whatever they bid for). Hence, deviating is not optimal: given $v_1 > v_2 > c$, if 2 chooses to report truthfully, they get $v_1$ + c, but if they report falsely, they get $v_1 + \epsilon$ + constant, which is worth less than $v_1$. So, everyone is paid the sum of everyone else's welfare from the outcome $y$ + c $\rightarrow$ everyone's utility equals social welfare from $y$ + c. 
+
+**Pivot mechanism**: special case of VCG, where the transfer is the difference between the total welfare of $-i$ (opponents) under the the efficient outcome for everyone and the total welfare of i's opponents under the efficient outcome for them. The transfer is only strictly negative if player $i$ is *pivotal*, that is, his report changes the efficient outcome from what it would if player *i* didn't exist. Intuition: in a pivot mechanism, each player pays exactly the externality he causes on the rest of the players. 
+
+In a second-price auction, who do we pay the second-highest bid to? If there's no third party, it must be thrown away to maintain incentive compatibility (imagine paying other players: they would have incentive to deviate and lie their value as to get paid for it). So, the key weakness of VCG is that it is not **budget balanced**. 
+
+Do budget balanced DSIC mechanisms exist?
+
+### L2 - Envelope Theorem, Payoff Equivalence and VCG Uniqueness
+
+- Lecture notes + slides + MWG: 23.C
+
+**Envelope theorem**: 
+
+- $V'(\theta) = f_\theta (x^\ast (\theta), \theta)$ = the derivative of the value function with respect to the parameter equals the derivative of the objective function with respect to the parameter, evaluated at an optimal choice. 
+
+- $V(\theta) + V(0) + \int_0^\theta f_\theta (x^\ast (\tilde{\theta}), \tilde{\theta}) d \tilde{\theta}$ =  The value function equals its value at 0 plus the integral of its derivative. 
+
+Read lecture notes for details and proofs of this theorem. We recall the Envelope Theorem here to use it in:
+
+**Payoff Equivalence Theorem**: recall a SCF is *incentive compatible* if: $\theta = argmax_{\theta ' \in \Theta} u (f(\theta'), \theta)$. The following theorem says that if $\Theta = [\underline{\theta}, \overline{\theta}]$ and $u_\theta(x, \theta)$ is uniformly bounded, then $V(\theta)$ (the utility of type $\theta$) is uniquely determined by $V(\underline{theta})$ (the utility of the lowest type) and $u_{\theta} (x(\tilde{\theta}), \tilde{\theta})$ for $\tilde{\theta} \in [\underline{\theta}, \overline{\theta}]$.
+
+Theorem 2 (Envelope Characterization of Payoffs) goes here and it's proven by the envelope theorem. This envelope characterization is useful when utility is quasi-linear, yielding the **payoff equivalent theorem**: 
+
+**Theorem 3 - Payoff Equivalence Theorem**: in addition to the assumptions of the previous theorem: suppose utility is quasi-linear. We have that:
+
+\[ V^t (\theta) - V^t (\underline{\theta}) = V^{\hat{t}} (\theta) - V^{\hat{t}} (\underline{\theta}) \]
+
+And, equivalently:
+
+\[ t(\theta) = \hat{\theta} (\theta) + c\]
+
+Pf: by the envelope characterization of payoffs, we have:
+
+\begin{equation} V^t (\theta) - V^t (\underline{\theta}) = \int_{\underline{\theta}}^\theta v_\theta (y(\tilde{\theta}), \tilde{\theta}) d \tilde{\theta} \end{equation}
+
+The key takeaway is that: incentive compatible mechanisms with the same allocation rule (y) can differ only in the utility they give to the lowest-type agent. 
+
+Then we proceed to the example where $\Theta$ is not an interval.
+
+**Uniqueness of VCG**: given the setting, if SCF is DSIC and allocation-efficient, then for each player exists a function $h_i: \Theta_{-i} \rightarrow \mathbb{R}$ such that the transfer rule is:
+
+\[ t_i(\theta) = [ \sum\limits_{j \neq i} v_j (y^\ast (\theta), \theta_j) + h_i (\theta_{-i}) \]
+
+That is, (y,t) is a VCG mechanism. And any mechanism that differs from a VCG mechanism by a constant is just another VCG mechanism. 
+
+The issue we left hanging from L1 was pertaining **Budget Balance**. VCG mechanisms are unique in robustly implementing the efficient allocation $y^\ast (\theta)$, but if it wastes a lot of money in doing so, it is not a good mechanism. For a VCG mechanism to be budget balanced($\sum_i t_i(\theta) = 0$), it is necessary that exist functions ($h_i : \Theta_{-i} \rightarrow \mathbb{R})_{i \in I}$ such that
+
+\[ \sum\limits_i h_i (\theta_{-i}) = S(\theta)\]
+
+This is very restrictive, for ex, if we set $h_i (\theta_{-i})$ = 0 (aka the *Groves scheme*), we have $\sum_i t_i (\theta) = (n - 1) S(\theta)$. This runs a massive deficit! A pivot mechanism typically wastes money (see characterization in L2). 
+
+Sometimes VCG mechanisms balance the budget, sometimes not. A not example is when a player has no private information: the others dump all the deficit/surplus on player 0. Player 0 is called a *budget breaker*, because she breaks the budget constraint for the others. But in many settings, the budget breaker does not exist $\implies$ it is impossible to implement efficient allocations in dominant strategies without wasting money or relying on outside subsidies. 
+
+**Second-Best Mechanisms under BB**: if an efficient, budget-balanced mechanism does not exist, what is the least inefficient mechansim that does satisfy budget-balance? Bilateral public good problem example: if the agents decide to obtain the public good, the sum of their contributions must cover its cost *c*. 
+
+We now introduce the concept of **Individual Rationality**: if the utility of a mechanism is negative, why would someone play the mechanism? He is better off not playing. 
+
+We proceed to show that a mechanism is budget balanced, IR and DSIC iff the region of ($\theta_1, \theta_2$) in which the good is produced is a rectangle inscreibed in efficient production triangle. The intuition is that the mechanism decides how the cost will be split and the offers the public good, and the players then decide if they want to obtain or not the good. The substance of the theorem states: if IC is to be satisfied, the cost allocation must be chosen independently from any information about the agents' valuations (otherwise they will have incentives to deviate $\rightarrow$ not IC). So, each player must face a constant price to obtain the good, where the price is actually paid iff the other player also pays. 
+
+
+### L3 - Bayesian Implementation
+
+- Lecture notes + slides + MWG: 23.D
+
+First two classes: DSIC. Now, what if players take into account how they expect other players to behave?(strategizing!) Bayesian Implementation!
+
+Mechanism $\Gamma$ implements **SCF** $f: \Theta \rightarrow X$ in BNE if $\exists$ a BNE $s^\ast$ of $\Gamma$ such that $g(s^\ast(\theta)) = f(\theta) \forall theta$. So given the Bayesian strategy, there is a function that maps it to the SCF. The theorem derived states that: **if a SCF $f$ is implementable in BNE, then it is Bayesian IC**. The proof shows how it's suboptimal to deviate. 
+
+The player's expected utility under SCF $f$ is given by $V_i (\theta_i)$, also called the player's **interim** (after $i$ learn his type, but before learning about $-i$'s types). As we did in DSIC, we can apply the envelope theorem to find the payoff equivalence results: if two BIC SCFs($y,t$ and $\hat{y},t$) have the same allocation rule, then the interim expected transfers must be the same up to a constant:
+
+\[ E_{\theta_{-i}} [t_i (\theta_i, \theta_{-i}) | \theta_i] = E_{\theta_{-i}} [\hat{t}_i (\theta_i, \theta_{-i}) | \theta_i] + c_i \]
+
+Then we apply this result to interim equivalence, drawing a parallel to VCG: under any allocation-efficient BIC mechansim, each type of player receives the same expected transfer as she does under some VCG mechanism. The difference is that BIC has an extra degree of freedom: type $\theta_i$'s expected transfer is the same as in VCG, but *realized* transfer can depend on others' types more flexibly: this lets us build efficient and **budget balanced** mechanisms under BIC. 
+
+**Revenue Equivalence Theorem**: any two ways of running an auction that yield the same allocation rule and give the same utility for the lowest type of each bidder generates the same expected revenue.
+
+Then we go into types of auction, arguing that those that give the good to the highest bidder and give utility 0 to lowest value bidder all yield the same expected revenue(regardless if it's first-price, second-price, all-pay, english, dutch). And what is the expected revenue? The expectation of the 2nd-highest bidder value! The winner wants to bid as minimum as possible to win $\rightarrow$ he will marginally beat second place!
+
+We proceed to show that $\exists$ allocation efficiency and budget balance:
+
+- Allocation efficiency: $y^\ast(\theta) = argmax_{y \in Y} \sum\limits_i v_i (y, \theta_i)$.
+
+- Budget balance: $\sum\limits_i t_i (\theta) = 0$.
+
+The mechanism that works to prove this exists is the AGV mechanism. Key idea is that under BIC, transfers needed to ensure the IC need only to depend on $\theta_i$, the dependence on $\theta_{-i}$ can then be set to balance the budget. 
+
+Under VCG, the incentive payment (the part of the transfer other than the constant, such that it depends on the player's type) depends on the whole profile $\theta$. In BIC, all that matters for interim incentives is the expectation of $t_i (\theta_i ', \theta_{-i})$ conditional on $\theta_i$:
+
+\[ E_{\theta_{-i}} [t_i (\theta_i', \theta_{-i}| \theta_i] = E_{\theta_{-i}} [\sum\limits_{j \neq i} v_j (y^\ast (\theta_i', \theta_{-i}), \theta_j | \theta_i] \]
+
+Type $\theta_i$'s AGV incentive payment is the expectation of her VCG incentive payment. This incentive payment $\overline{t}_i(\theta_i)$ is the expected allocation utility of the other players when *i* report $\theta_i$. So, when $i$ changes her report, the change in her transfer equals the expected externality of this change on others' allocation utility. To sum up: BB is possible under BIC because expected externalities depend only on own type. 
+
+AGV has two problems: deviation can be good: reporting a type slightly above the other's type can get the whole good and receive a slightly lower transfer. Also IR constraints. 
+
+To sum up:
+
+- BI is a more permissive and less robust alternative to DSIC.
+
+- Revelation principle and payoff equivalence theorem still apply.
+
+- Revenue equivalence: any two BIC with same $y$ that give the same interim to the lowest type generate the same expected revenue.
+
+- Under BIC, it is possible to balance the budget with efficient allocations (through AGV/"expected externality mechanism").
+
+- However AGV may not give all players the incentive to participate.
+
+### L4 - Participation Constraints
+
+- Lecture notes + slides + MWG: 23.E
+
+What are the key constraints to implementing SCF?
+
+- IC: be truthful.
+
+- BB: the mechanism must not waste money or require external funding.
+
+- IR: participating is better than the outside option.
+
+So, when do allocation-efficient, BIC, budget-balanced and IR mechanisms exists? If gains from trade are certain to exist ex-ante, it's possible, else: never!
+
+It is important to recognize the initial allocation. In a 2-player setting, suppose 1 has the good. The mechanism will be IR if $V_1 (\theta_1) \geq \theta_1$ $\forall \theta_1 \in [0,1]$, $V_2(\theta_2) \geq 0 \forall \theta_2 \in [0,1]$.
+
+- **Myerson-Satterthwaite Theorem**: in the classical bilateral trade setting $\nexists$ an allocation-efficient, BIC, IR and ex-ante budget balanced mechanism. If (y,t) is allocation-efficient, BIC and IR, then $E[t_1(\theta) + t_2 (\theta)] \geq E[S(\theta)]$, where $S(\theta) = max \{ \theta_2 - \theta_1, 0 \}$. Proof in notes/slides. But this theorem is applicable only to the very specific bilateral trading problem. The next half of class deals with mechanisms that have more than 2 agents.
+
+We take the usual setting, with interim $V_i(\theta_i)$ and say that the mechanism is $IR$ if $V_i(\theta_i) \geq 0$ (outside option normalized to 0). To make it work, we have that 1 player can cover the difference between realized deficit $\sum_i t_i (\theta)$ and expected deficit $E_{\theta_{-1}} [\sum_i t_i (\theta_1, \theta_{-1})]$ without affecting interim expected transfers. 
+
+The result for efficien allocation under participation constraints states that: efficient allocation is possible $iff$ sum of interim expected social surpluses according to the worst type of each agent exceeds $n-1$ times ex-ante expected social surplus. In other words, if gains from trade are certain to exist ex-ante, it is possible to have the desired mechanism. 
+
+To sum up:
+
+- With IR, efficient allocation is implementable under BIC and BB iff the agents bear participation fees large enough to cover the deficit created by giving each of them the total gains from trade.
+
+- In the bilateral trade setting(MS Theorem), this implies that efficient allocation with IR is possible iff there is ex-ante certainty of gains from trade.
+
+### L5 - Optimal Auctions
+
+- Lecture notes + slides + MWG: Chapter 13
+
+- Now we turn our attention to situations where we care about maximizing the utility of the designer of the mechanism. Today in the form of auctions.
+
+By the revenue equivalence theorem, the only way an auctioneer can raise more revenue is by sometimes giving the good not to the highest bidder. This is similar to monopoly: to max profit, forego some transactions to keep prices high. 
+
+Introduce the setting, similar to auctions we've seen previously but now we're interested in the transfer *from* the bidder to the auctioneer. The auctioneer wants to maximize these transfers. 
+
+The problem the auctioneer is trying to solve is:
+
+\[ \max\limits_{(y,t): \Theta \rightarrow Y \times \mathbb{R}^n} E[\sum_i t_i (\theta) \] 
+
+subject to IC and IR. 
+
+How can an auctioneer make more revenue than in a standard auction? Can't give the lowest type less than 0 (IR), so they change the allocation rule! This encourages the bidder to bid more. 
+
+Basic 2 bidders example: set price to $\theta_L$ if $\theta_L \geq (1 - \beta) \theta_H$, else set price $\theta_H$. 
+
+The problem is set as:
+
+\[ max \beta t_L + (1 - \beta) t_H \\ \theta_H y_H - t_H ≥ \theta_H y_L - t_L \text{ (ICH)} \\ \theta_L y_L - t_L ≥ \theta_L y_H - t_H \text{ (ICL)} \\ \theta_H y_H - t_H ≥ 0 \text{ (IRH)} \\ \theta_L y_L - t_L ≥ 0 \text{ (IRL)}\]
+
+We solve this to show that the "obvious" mechanism initially considered is the optimal one. So, the optimal mechanism allocates the good to the low type iff the marginal revenue $\theta_L - (1 - \beta) \theta_H$ is non-negative. This term is also called type $\theta_L$'s **virtual value**. 
+
+When we try solve the seller's problem, *payoff equivalence* lets us optimize over allocation rules alone, with transfers "automatically" set to satisfy IC. 
+
+We can simplify the IC and IR constraints and rewrite the problem as:
+
+\[ V_i(\theta_i) = V_i (\underline{\theta}_i) + \int_{\underline{\theta}_i}^{\theta_i} \overline{y}_i (\tilde{\theta}_i) d \tilde{\theta}_i \text{ (ICFOC)} \\ V_i (\underline{\theta}_i) \geq 0 \\ \overline{y}_i (\theta_i) \text{ is non-decreasing in }\theta_i \text{ (M)}\]
+
+Some thoughts:
+
+- Monotonicity is the new constraint: why a lower-value bidder would acquire more of the good? 
+
+- We only have a single continuum of IC constraints now.
+
+- It is clear that $V_i(\underline{\theta}_i) = 0$, otherwise the auctioneer would increase $t_i(\theta_i)$.
+
+We do a lot of math to arrive at the almost unconstrained seller's problem and virtual utility: L5S58.
+
+The expression: $\theta_i - \frac{1 - F_i (\theta_i)}{f_i (\theta_i)}$ is called bidder i's **virtual value**. Seller's problem, to maximize profit, maximize social surplus as if each bidder's type were her virtual value rather than her actual value. When solving this problem, if the seller uses an efficient mechanism, it is impossible to extract all social surplus: the seller leaves rents for the bidders because of their **information rents**. 
+
+To solve this problem, the seller's profit from selling to player $i$ is the difference between the two (surplus minus info rent):
+
+\[ E \left[ \left( \theta_i - \frac{1 - F_i(\theta_i)}{f_i (\theta_i)} \right) \overline{y}_i (\theta_i) \right]\]
+
+Which is precisely the **virtual surplus** from selling to *i*. The economics behind this is the following: selling to $\theta_i$ creates social surplus $\theta_i$ but increases info rent of all higher types by 1. Density at $\theta_i$ is $f_i(\theta_i)$ and mass of higher types is $1 -F_i (\theta_i)$, so total **marginal revenue** from selling to type $\theta_i$ is $\theta_i f_i (\theta_i) - (1 - F_i(\theta_i))$. Divide by $f_i(\theta_i)$ to get the virtual value formula. 
+
+We turn back to the almost unconstrained seller's problem: solve it ignoring (M) and then check if (M) is satisfied. The solution is: 1) to sell to the highest non-negative virtual value; 2) not sell if all virtual values are negative. This solution satisfies (M) iff virtual value is non-decreasing in $\theta_i$, aka the **regular case**. In irregular case, "ironing" solution over ranges where $y_i^\ast$ is decreasing. 
+
+To sum up:
+
+- Optimal mechanism design studies mechanisms that maximize the designer's payoff. 
+
+- Revelation principle and payoff equivalence theorem are still key tools. 
+
+- Optimal auctions may be characterized by first using IC to solve for transfers as a function of allocations, then maximizing over allocations alone. 
+
+- The optimal single-good auction allocates the good to the bidder with the highest non-negative virtual value.
+
+### L6 - Monopolistic Screening
+
+- Lecture notes + slides + MWG: -
+
+We keep studying maximizing the utility of the designer but now under models of screening/adverse selection. We're interested in optimal selling(**screening**): when buyers have diminishing marginal utility for the good. We also assume the seller can produce as much as he wants. 
+We start optimal screening with a 2-Types setting:
+
+- Monopoly seller, population of buyers. 
+
+- Each buyer has types: $0 < \theta_L < \theta_H$.
+
+- $\mathbb{P}(\theta = \theta_L) = \beta$, $Pr(\theta = \theta_H) = 1 - \beta$. 
+
+- Buyer's utility: $\theta v(q) - t$, where v(0) = 0, v' > 0, v'' ≤ 0. q can be quantity (internet plans/health insurance) or quality (airline tickets).
+
+By the revelation principle to single-agent environments, it is wlog to restrict to IC direct mechanisms: we again are constrained by (ICH), (ICL), (IRH) and (IRL).
+
+Seller's problem: L6S5: $\max\limits_{q_L, q_H, t_L, t_H} \beta (t_L - cq_L) + (1 - \beta)(t_H - cq_H)$ subject to ICH, ICL, IRH, IRL.
+
+Now, we have three benchmark scenarios to analyze.
+
+#### 1) **Complete info**: 
+
+Take-it-or-leave-it offer since the seller can observe each buyer's types. No need for IC constraints. To solve: maximize separately over each contract. Both IR bind at the optimum, otherwise keep increasing $t_i$. Hence, use the IR constraints to substitute in the maximization problem. Leads to unconstrained problem, that maximizes social surplus. **The seller extracts all social surplus**. What if buyers have **private info**: seller must offer same menu of contracts to all buyers: ask buyers to report type and then offer FB contract. But high types have incentives to not report truthfully!
+
+#### 2) **Linear pricing**: 
+
+Classic monopoly: all the seller can do is set a constant per-unit price *p*. The buyer then solves $max_{q_i} \theta_i v(q_i) - pq_i$, which is solved by: $\theta_i v'(q_i(p)) = p$. Given the formula for $q_i$, the demand curve facing the seller is:
+
+\[ D(p) = \beta q_L (p) + (1 - \beta) q_H (p) \]
+
+Since $v'' < 0$, $q_L$ and $q_H$ are decreasing functions of $p$. Hence, $D(p)$ slopes down. 
+
+The **seller's problem** is now $max_p D(p) (p-c)$, which the solution is: $p^M = c - \frac{D(p)}{D'(p)} > c$ $\implies$ monopoly price exceeds marginal cost by amount equal to the inverse elasticity of demand. 
+
+#### 3) **2-Part Tariffs**:
+
+Seller can charge fixed fee *z* to buy any of the good, plus per-unit price p. Total cost to purchase $q > 0$ units is z + pq. Conceptually useful, also realistic if can exclude buyers but can't prevent arbitrage among those who participate. Issue: does the seller wants to sell to **both types or only to the high type**?
+
+- Allocations to both types are distorted down related to the FB, but not as much as in Linear Pricing. High type has surplus, low type doesn't. 
+
+- If selling only to high types can extract full surplus. However, sells less quantities.
+
+The seller's problem is now:
+
+\[ \max\limits_{q_L, q_H, t_L, t_H} \beta (t_L - cq_L) + (1 - \beta) (t_H - cq_H) \]
+
+subject to the usual constraints.
+
+We can reach the simplified seller's problem in L6S34. We take FOCs with respect to each quantity. We then compare which maximizes the seller's problem. 
+
+**Second-Best Solution**: what is the optimal mechanism under private information? We analyze the seller's problem through 4 steps:
+
+1) note that IRH is slack.
+
+2) conjecture that ICL is slack.
+
+3) Note that ICH and IRL bind once we eliminate ICL and IRH.
+
+4) Use ICH and IRL to substitute $t_L$ and $t_H$ in the objective function $\rightarrow$ solves the unconstrained problem:
+
+\[ \max\limits_{q_L, q_H} \beta (\theta_L v(q_L) - cq_L) + (1 - \beta) (\theta_H v(q_H) - (\theta_H - \theta_L) v(q_L) - cq_H) \]
+
+which has the FOCs:
+
+\[ \theta_H v'(q_H) = c \]
+
+\[ \theta_L v'(q_L) = \frac{c}{1 - \frac{1 - \beta}{\beta} \frac{\theta_H - \theta_L}{\theta_L}} \]
+
+5) Check ICL is satisfied.
+
+Having solved the seller's problem, we learn that:
+
+- The seller extracts all the surplus from selling to the **low type**.
+
+- $t_H$ does not equal the high type's value for what he consumes, it equals $t_H - (\theta_H - \theta_L) v(q_L)$. This is the high type's *information rent*. The high type takes advantage of accepting the contract intended for the low type. That's why there's no FB with private info. 
+
+- Why is $q_L < q_L^{FB}$? The high type's information rent is increasing in $q_L$ 0 the higher is the low type's allocation the more tempting it is for the high type to take the contract intended for the low type $\implies$ more rent must be left to the high type so that he reports his type truthfully. 
+
+Now let's look at the FOCs:
+
+- $| q_L - q_L^{FB}|$ is increasing in $\frac{1 - \beta}{\beta}$ because when there are more high types (numerator), reducing the information rent is more important relative to selling to low types $\implies q_L$ decreases.
+
+- $| q_L - q_L^{FB}|$ is increasing in $\frac{\theta_H - \theta_L}{\theta_L}$: the high types' information scales with $\theta_H - \theta_L$, while the surplus generated from selling to low types scales with $\theta_L$, so when $\frac{\theta_H - \theta_L}{\theta_L}$ increases it is again more more important to reduce the information rents than selling to low types. 
+
+- If $\frac{1 - \beta}{\beta} \frac{\theta_H - \theta_L}{\theta_L} > 1$, then it is optimal for the seller to avoid selling to low types altogether, even though the seller could extract full surplus from the low types if she wanted to. She doesn't sell to the low types because it would reduce the surplus she could extract from the high types. 
+
+2 key insights from the 2-type case (still applicable when we have more than 2 types):
+
+**1)** every buyer except the lowest type receives a positive **information rent** and this rent is increasing in the allocations of all lower types.
+
+**2)** the allocation of every buyer type except for the highest one is **distorted downward** from the FB and the size of this distortion is increasing in the mass of higher types.
+
+#### **Screening with a continuum of types**
+
+Now $\theta \in [\underline{\theta}, \overline{\theta}]$ with positive density $f(\theta)$. A type $\theta$ buyer's utility from purchasing quantity $q$ for price $t$ equals
+
+\[ \theta v (q) - t \]
+
+The seller's problem is now
+
+\[ \max\limits_{(q,t): \Theta \rightarrow \mathbb{R}_+ \times \mathbb{R}} E[t(\theta) - cq(\theta)]\]
+
+Subject to IC and IR. These are simplified into ICFOC, M and IRL. Monotonicity is implied by IC since, on the margin, higher types value quantity more, so a higher type prefers $(q,t)$ to $(q',t')$ with $q > q'$ whenever a lower type does. 
+
+To solve the problem:
+
+- Use ICFOC to compute buyer's payment as a function of the allocation rule: $t(\theta) = \theta v (q(\theta)) - \int_{\underline{\theta}}^\theta v(q(\tilde{\theta})) d \tilde{\theta}$
+
+- Integrate by parts: $E \left[ \int_{\underline{\theta}}^\theta v(q(\tilde{\theta})) d \tilde{\theta} \right] = E \left[ \frac{1 - F(\theta)}{f(\theta)} v(q(\theta))\right]$
+
+Hence,
+
+$E[t(\theta)] = E \left[ (\theta - \frac{1 - F(\theta)}{f(\theta)})v(q(\theta))]$
+
+And then we can rewrite the seller's problem as
+
+\[ \max\limits_{q: \Theta \rightarrow \mathbb{R}_+} E \left[ \left( \theta - \frac{1 - F(\theta)}{f(\theta)} \right) v(q(\theta)) - cq(\theta) \right] \text{, subject to (M)} \]
+
+Intuition: a profit-maximizing seller maximizes expected virtual surplus(not expected social surplus) because giving allocation utility $v(q(\theta))$ to a type $\theta$ buyer generates a social surplus of $\theta v(q(\theta))$ but also generates an information rent of $v(q(\theta))$ for all higher types. Main difference from the auction problem of feasible allocations: in L5 allocation was a vector that depended on the whole type profile, now $\theta$ and $q(\theta)$ are just numbers.
+
+We again solve the problem ignoring (M) and then check it. It can be solved pointwise: given $\theta$, the relaxed problem is
+
+$\max\limits_{q \in \mathbb{R}_+} \left( \theta - \frac{1 - F(\theta)}{f(\theta)} \right) v(q) - cq$
+
+FOC is either:
+
+\[ \left( \theta - \frac{1 - F(\theta)}{f(\theta)} \right) v'(q^\ast (\theta)) = c \text{, if such }q^\ast \text{ exists}  \]
+
+else:
+
+\[ q^\ast = 0 \]
+
+Remember: if $q^\ast$ is not non-decreasing it needs to b *ironed out*. Interpreting the solution: instead of selling the FB quantity seller sells only the lower quantity $q^\ast (\theta)$ given by $\left( \theta - \frac{1 - F(\theta)}{f(\theta)} \right) v'(q^\ast (\theta)) = c$. The difference is given by the fact that selling more to $\theta$ generates more information rent for all higher types. Just as in the 2-type scenario, no one's tempted to misreport that it is of a higher type than what his type really is $\implies$ no reason to distort higher type's allocation. Also, if type $\theta$ has a negative virtual value, it is best not to sell: even though you can make profits from trading with $\theta$, the rents from higher types outweigh these gains.
+
+To sum up:
+
+- A monopoly with imperfect info can't extract all the social surplus as buyers who value the good more than the lowest type won't reveal their values (leading to information rents).
+
+- With two buyer types, only the high type's IC constraint binds. With a continuum of types, only local IC constraints bind. 
+
+- In the optimal selling mechanism, all buyers except the lowest one receive positive information rents + the allocation of all types except the highest one are distorted downward from the efficient level.
+
+- Each buyer type's allocation is determined by its virtual value.
+
+### L7 - Competitive Screening: Akerlof and Rothschild-Stiglitz
+
+- Lecture notes + slides + MWG:
+
+We continue screening models: instead of monopolistic we got to a competitive environment. 
+
+#### **Akerlof**
+
+- P offers a single price: **adverse selection** - only cars worth less than $p$ to sellers will be sold. Only the seller observes the real quality of the good(car). 
+
+- Buyer's payoff: is $\theta - p$ - depends on seller's type $\theta$!
+
+**Quality is observable**: complete information model - equilbrium price $p(\theta) \in [r(\theta), \theta]$ for every quality $\theta$ and all goods are traded. Efficient outcome. 
+
+**Quality is unobservable**: single equilibrium *p*.**Competitive equilibrium**: 
+
+- $\Theta^\ast$ = $\{ \theta : r(\theta) ≤ p^\ast \}$
+
+- $p^\ast = E[\theta | \theta \in \Theta^\ast] $
+
+Theorem: efficient competitive equilibrium exists iff $r(\overline{\theta}) ≤ E[\theta]$, in words: *the seller values the best good less than a buyer values the average good*. **Obstacle**: no way to make price depend on quality, and when $r(\overline{\theta}) > E[\theta]$ there's no price acceptable to both the buyer and every type of seller. This is an issue, Akerlof gave an example of complete unravelling with p = 0 but the key insight is that there will be no trade.
+
+- Pareto ranking: equilibria with higher $p^\ast$ Pareto dominate those with lower $p^\ast$. 
+
+- The equilibrium that results from the competitive process where buyers make offers and seller accepts or rejects is the **least inefficient** competitve equilibrium, though, it can still be very inefficient. 
+
+- Akerlof's key insight is that equilibrium in the market for lemons can be highly inefficient. This survives when we move from CE formulation to game-theoretic formulation. 
+
+To sum up:
+
+- An efficient competitive equilibrium exists iff a buyers value the **average** good more than the seller values the **best** good.
+
+- Some competitive equilibrium always exists. It may be the case that multiple competitive equilibrium exist. If so, they are Pareto-ranked: higher-price equilibrium Pareto dominates lower-price equilibrium.
+
+- It **may** be that the **market completely unravels**, in that **only the very lowest-quality good is traded**.
+
+- Generically, only the highest CE p is also an equilibrium price in the game-theoretic version of the model. However, lower-price CE may survive as outcomes of a realistic dynamic price-adjustment process (how does the buyer know where $\overline{p}^\ast$ is?)
+
+#### **Rothschild-Stiglitz - Competitive Screening**
+
+Differently from Akerlof, the Principals(buyers) can offer screening contracts that specify a menu of price-allocation pairs. What is key here: **the buyes try to design contracts to select for the good seller types**. But since low-quality sellers are more eager to sell than high-quality ones, buyes can only attract high-quality sellers by offering to buy a lower quantity at a higher per-unit price. These are called **cream-skimming contracts**. 
+
+Setting:
+
+- Buyers offer **exclusive screening contracts** (q,p) where $q \in [0,1]$ is quantity demanded and $p ≥ 0$ is price offered. 
+
+- **Exclusive** = Sellers can't accept two different contracts and supply some of her good to each buyer.
+
+- Buyers simultaneously offer menu of contracts.
+
+- Seller accepts her favorite contract or rejects all contracts. 
+
+- Buyer's payoff: $\theta q - p$.
+
+- Seller's payoff: $p - r(\theta)q$.
+
+**Complete information benchmark**: in this scenario, $\theta$ is observable in every equilibrium, so all type $\theta$ sellers accept FB contract: $(q,p) = (1,\theta)$. All buyers get payoff 0. Deviations are not feasible: smaller deviations would capture all the market.
+
+**Incomplete info**: assume there are only two types: $0 < \theta_L < \theta_H$. Only two possible types of eq:
+
+- **Separating eq**: each type accept one type of contract.
+
+- **Pooling eq**: two types accept the same contract. 
+
+Let's analyze this:
+
+**1) buyers get payoff 0 in every equilibrium.** If buyers had a profit, any buyer could capture a smaller but total profit by offering to pay a little bit more. So at eq, $p$ is so high that there's no profit for the buyer.
+
+**2) No pooling eq exists**. A buyer can break a pooling equilibrium by offering a "cream-skimming"contract: it attracts only the high types by demanding slightly lower quantity while offering a slightly higher per-unit price. Mathly: as buyers get payoff 0, we have $\frac{p^\ast}{q^\ast} = \beta \theta_L + (1 - \beta) \theta_H$. Fix $\hat{q} = q^\ast - \epsilon$ and $\hat{p} = p^\ast - \epsilon r (\theta_H)$, for small $\epsilon$. $\theta_H$ is indifferent between $(q^\ast, p^\ast)$ and $(\hat{q}, \hat{p})$, $\theta_L$ strictly prefers $(q^\ast, p^\ast)$. So, if the buyer offers $(\hat{q}, \hat{p} + \epsilon ')$ for a very small $\epsilon '$, this attracts all high types and no low types. Since $\frac{p^\ast}{q^\ast} < \theta_H$ and $(\hat{q}, \hat{p}) \approx (q^\ast, p^\ast)$, we have that $\frac{\hat{p} + \epsilon '}{\hat{q}} < \theta_H$, so this is profitable.
+
+**3) No cross-subsidization**. Which separating eqs exist? Cross-subsidization states that the buyer makes 0 profit on every contract: $p_L = \theta_L q_L$ and $p_H = \theta_H q_H$. If there's profit in a contract, that can always be outbid.
+
+**4) No Distortion at the Top**: in any separating eq, low types accept contract $(q_L, p_L) = (1, \theta_L)$. Similar to L6 where high types profitted from information rents, now low types can profit from taking the high type's FB contract. Suppose $q_L < 1$. Then the deviant contract ($q_L + \epsilon, p_L + \epsilon \frac{r (\theta_L) + \theta_L}{2}$) is attractive to low types. 
+
+**5) Downward distortion at the bottom**: in a separating eq, high types accept:
+
+\[ (q_H, p_H) = \left( \frac{\theta_L - r(\theta_L)}{\theta_H - r(\theta_L)}, \left( \frac{\theta_L - r(\theta_L)}{\theta_H - r(\theta_L)} \right) \theta_H \right)\]
+
+Intuition $q_H$ must be distorted down to make low types indifferent between $(q_L, p_L)$ and $(q_H, p_H)$. Else, a buyer could deviate by raising $q_H$ and $p_H$ without attracting low types.
+
+To sum up - **Theorem**: in any separating eq, low types accept the efficient contract $(1, \theta_L)$ and high types accept the inefficient contract $(q_H, p_H) = \left( \frac{\theta_L - r(\theta_L)}{\theta_H - r(\theta_L)}, \left( \frac{\theta_L - r(\theta_L)}{\theta_H - r(\theta_L)} \right) \theta_H \right)$. So, in the RS model:
+
+1) there is never a pooling equilibrium.
+
+2) if a separating eq exists, it exhibits qualitatively the same inefficiencies as in monopolistic screening.
+
+The separating eq not always exist: there may be a profitable deviation to a pooling contract - loses money on low types but compensates by making more money on high types. So it has to attract high types, i.e. iff $E[\theta] - r(\theta_H) > \left( \frac{\theta_L - r(\theta_L)}{\theta_H - r(\theta_L)} \right) (\theta_H - r(\theta_H))$
+
+To sum up:
+
+- The difference between RS and Akerlof is that in RS the pricipals compete on quantity as well as price.
+
+- In RS there is never a pooling eq: could be broken by a cream-skimming contract tailored to the high type.
+
+- If a separating eq exists, it exhibits qualitatively the same inefficiencies as in monopolistic screening: FB for eager-to-trade types, inefficiently little trade for hesitant to trade types.
+
+- Sometimes the RS model has no pure strategy eq at all.
+
+### L9 - Introduction to Moral Hazard
+
+- Lecture notes + slides + MWG: 14.B
+
+Difference between Adverse Selection and Moral Hazard:
+
+- **Adverse Selection** = hidden information. Consumer knows risk type, company doesn't. Generates private info before contracting.
+
+- **Moral Hazard** = hidden action. Consumer chooses how much care to take to avoid losses, company doesn't observe this. Agent receives private info after contracting. 
+
+Into Moral Hazard!
+
+The Principal contracts an Agent. Main features:
+
+1) P and A have symmetric info at the time of contracting.
+
+2) Then, A takes an unobserved action that affects the distribution of various outcomes.
+
+3) The contract rewards or punishes A as a function of the outcome.
+
+So Agent chooses an action $a \in A$, i.e. how hard he works/effort spent. This $a$ determines the distribution of possible **outcomes**: $y \in Y$. Often, $Y \subset \mathbb{R}$ is interpreted as output. 
+
+- A's payoff: $u_A = u(w) - c(a)$, utility of wage - cost of action.
+
+- P's payoff: $u_P = V(y,w)$ where V is a function of utility and we assume y=output, so $V(y,w) = v(y - w)$.
+
+**Contracting**: before A chooses action, P offers a **contract** $w: Y \rightarrow \mathbb{R}$. Specifies wage as function of outcome. If *A rejects* contract: game ends and A goes for outside option $\overline{u}$. If *A accepts*:
+
+1) A chooses $a$.
+
+2) Outcome $y$ is drawn according to $F(\cdot | a)$.
+
+3) $P$ pays $A$ w=w(y).
+
+4) Payoffs are $u_A = u(w) - c(a)$, $u_P = V(y,w)$.
+
+What is the optimal contract P can offer? It is subject to the constraint that $a$ is optimal for $A$ under contract $w$. 
+
+The optimal contracting problem is given by:
+
+\[ \max\limits_{a,w: Y \rightarrow \mathbb{R}} E^a [v(y-w(y))] \\
+a \in argmax_{a \in A} E^{a'} [u(w(y))] - c(a') \text{ (IC)}\\
+E^a [u(w(y)) - c(a) ] ≥ \overline{u} \text{ (IR)} \]
+
+When can the Principal attain FB? Under perfect info: we drop IC. Benchmark scenarios:
+
+**1)**  No uncertainty: y is a deterministic function of a. In other words, observing *y*, we know what *a* was. So, if the the Agent deviates from optimal A, he is punished. Also: IR binds, i.e., it is necessary that the utility the agent gets from the contract is at least as good as his outside option, else the P will reduce the wage indefinitely.
+
+We drop the IC constraint and use the IR constraint to plug in the P's problem. Then, the FB solution is: $1 = \frac{c'(y)}{u' (u^{-1}(\overline{u} + c(y)))}$
+
+A keeps putting effort until the marginal monetary benefit of production (the LHS, 1) equals the marginal monetary cost of product (RHS, numerator is utility marginal cost, denominator is the monetary cost of marginal util).
+
+**2)** Observable actions: suppose *y* is a stochastic function of $a$, but *a* is still observable. We let $w$ depend on $a$ in addition to $y$. IC is still slack! We can punish if A deviates. This is a standard risk-sharing problem: it is concave, we solve by maximizing the Lagrangian. We arrive at 
+
+\[ \text{FOC: } \frac{v'(y - w(y))}{u'(w(y))} = \lambda \]
+
+This is known as the **Borch Rule** for optimal risk-sharing. If only one party is risk-neutral, that's the one that bears all the risk. Suppose P is risk neutral, then the Borch Rule becomes: $\frac{1}{u'(w(y))} = \lambda$. If A is strictly risk-averse, this implies the agent's wage is constant $w^\ast$. 
+
+If actions are not observable and the agent is fully insured, he will do the least costly effort and still get paid the fixed wage. We'll defer this scenario to next class.
+
+**3)** Risk-Neutral Agent: solution: sell firm to the agent - agent becomes the **residual claimant**. However, not that realistic: 1) agent is exposed to a lot of risk. 2) does the agent hahve enough liquidity for it?
+
+What is the simplest case where FB is **not** attainable? MH with risk-neutrality but **limited liability**. Now the problem has a third constraint: $w_0, w_1 \geq \overline{w}$ (LL). Given the problem is concave in $a$, ICFOC is necessary and sufficient: $c'(a) = w_1 - w_0 (ICFOC)$. So, LL binds iff $w_0 = \overline{w}$. 
+
+Only one can bind: either IR or LL. IR binds if $\frac{1}{1 - a} [\overline{u} + c(a) - aw_1] ≥ \overline{w}$. Otherwise, LL binds. If IR binds, the outcome is FB(we've seen that before). Let's analyze when LL binds. The simplified problem is:
+
+\[ \max\limits_{a,w_1} a - aw_1 - (1 - a) \overline{w} \]
+
+s.t.
+
+\[ c'(a) = w_1 - \overline{w} \text{ (ICFOC)}\]
+
+We use ICFOC to substitute out for $w_1$, so that the unconstrained problem is:
+
+\[ \max\limits_{a} a - ac'(a) - \overline{w} \]
+
+Whose FOC is: $c'(a^\ast) = 1 - ac''(a^\ast)$. If we compare the FB($c(a^{FB})=1$) and the SB($c'(a^\ast) = 1 - ac''(a^\ast))$, we see that $a^\ast < a^{FB}$ so that effort is **distorted down at the optimum**.  The intuition is that to make the agent choose an effort such that $y = 1$ instead of $y = 0$, the agent's bonus must equal $c'(a)$. The agent sets the Marginal Benefit = Marginal Cost and MB is $w_1 - w_0$ $\implies$ the agent's expected bonus is ac'(a). The marginal cost to principal of increasing $a$ is $\frac{d}{da} (ac'(a)) = c'(a) + ac''(a) > c'(a)$. In other words, A's information rent is: $ac'(a) - c(a) + \overline{w} > \overline{u}$. The higher $a$ $\iff$ the higher the rent. 
+
+To sum up:
+
+- Moral Hazard: private info **after** contracting.
+
+- When P is Risk-Neutral, efficient risk-sharing entails full insurance of the agent. But this gives no incentives for effort. 
+
+- When A is Risk-Neutral: FB attained by selling firm to the agent.
+
+- When A is RN but has LL: effort is distorted down at the optimum.
+
+### L10 - Moral Hazard With 1-Dimensional Effort
+
+- Lecture notes + slides + MWG: 14.C
+
+We build on MH from L9 and assume that A is risk-averse and $a$ is 1-dimensional choice of effort. **Tradeoff**: insurance vs incentives. In absence of MH, optimal to insure agent against variability in output. However, if wage doesn't vary much with output, agent has low incentives to produce. What's the optimal contract?
+
+The contracting problem is:
+
+\[ \max\limits_{a \in A, w: Y \rightarrow \mathbb{R}} \int v(y - w(y)) f(y | a) dy \\ a \in arg\max\limits_{a' \in  A} \int u(w(y)) f(y | a') dy - c(a') \text{ (IC)} \\ \int u(w(y)) f(y|a) dy - c(a) \geq \overline{u} \text{ (IR)} \]
+
+We solve as before: Lagrangian. However, IC is not an inequality: it's an optimization problem. We take ICFOC and ICSOC. Ignore SOC and then come back to see if holds: **first-order approach**. So, the problem becomes:
+
+\[ L = \int v(y - w(y)) f(y |a) dy + \lambda [\int u(w(y))f(y|a)dy - c(a) - \overline{u} ] + \mu [ \int u(w(y)) f_a (y|a) dy - c'(a)] \\
+L = \int [ \left( v(y - w(y)) + \left( \lambda + \mu \frac{f_a (y | a)}{f (y|a)}\right) u(w(y)) \right) ] f(y|a) dy - \lambda [c(a) + \overline{u} - \mu c'(a)\]
+
+The Lagrangian can be maximized pointwise with respect to w(y). L10S11. We arrive at:
+
+\[ \frac{v^{\prime}(y-w(y))}{u^{\prime}(w(y))}=\lambda + \mu \frac{f_a (y|a) }{f(y|a) } \]
+
+Where the elements are, respectively: the ratio of marginal utility, the multiplier of IR, the multiplier of IC and the **score** (derivative of log-likelihood). The FOC says that the ratio of marginal utilities $v'/u'$ are distorted away from efficient risk-sharing in the direction of $f_a (y|a)$. If P is risk-neutral, increasing $v'/u'$ is the same as increasing w(y). We can interpret this as: A is paid **more** after outcomes for which the **score is higher**. Score = how much more likely does output level *y* become when A marginally increases effort. 
+
+Ex: two effort levels. We break the problem into: 1) for any given effort $a$, what contract induces effort $a$ at lowest cost to $P$? 2) given this, what's the optimal effort level to induce?
+
+- If it is optimal to induce $a_L$, use Borch Rule.
+
+- If it is optimal to induce $a_H$, then IC becomes the gain from switching from L to H. The Lagrangian changes too, so the FOC becomes:
+
+\[ \frac{v'(y - w(y))}{u'(w(y))} = \lambda + \mu [ 1 - \frac{f(y| a_L)}{f(y|a_H)}] \]
+
+which means that v'/u' is higher after outcomes for which the likelihood ratio $f(y|a_H)/f(y|a_L)$ is higher. Then we can connect the concept of optimal contracting to Statistical Inference. The **score** is the derivative of the log-likelihood: $\frac{d}{da} log f(y|a)$. If $a$ is r.v., then the score measures the impact of observing $y$ on beliefs about $a$. To sum up: A is paid more after outcomes that are more informative of higher effort. 
+
+One implication is that the link between optimal contracts and statistical inference tells us when the optimal contract is monotone (A paid more when y higher). This property that higher output is more informative of higher effort is called the **monotone likelihood ratio property**. The FOC says the agent is rewarded when the output informs that he took higher effort, not necessarily when there is a higher output. **Under MLRP, higher output is always informative of higher effort.**
+
+Let's revisit the assumptions we've made so far:
+
+1) Multiplier $\mu$ on IC is positive. Pf: lecture notes. That happens whenever a solution to the optimal contracting problem exists. Remember: if $\mu$ = 0, no IC binds. So when does an optimal contract exists? 
+
+Moving support: suppose $y \sim U[a - 1, a + 1]$. Then easy to get first-best payoff with penalty contract: pay $w^{FB}$ if $y \in [a^{FB} - 1, a^{FB} + 1]$ or shoot the agent if the action is outside the interval. Comparing to $y \sim N(a, \sigma^2)$: normal distribution has "thin tails", so it "almost" has moving support. 
+
+2) FOC approach validity: it may be a problem if it picks out a local optimum rather than the global optimum. How to guarantee this won't happen?
+
+- Two effort levels: logic similar to continuum effort case under first-order approach.
+
+- Linear Distribution Function: FOC approach is valid when the distribution $F(y|a)$ is linear in effort. 
+
+- MLRP + Convex Distribution Function: when $F(y|a)$ satisfies MLRP **and** is convex in $a$: $F_{aa} (y|a) \geq 0 \forall y$ (aka **Convexity of the Distribution Function Condition**).
+
+**Informativeness Principle**: suppose the P has another r.v. $z$. When does the optimal contract w(y,z) depend on z? When **z is informative of a**, conditional on y. Given r.v. y and y with joint density $f(y,z|a)$, recall that $y$ is a **sufficient statistic for** (y,z) given $a$ if $f(z|y, a)$ does not depend on $a$ ($\forall a$). The informativeness principle says that the optimal contract should not depend on any r.v. that are not informative of a given *a*. So, what variables should be included in the contract? Everything that informs at least a little, even though they can be very noisy. This can be unrealistically complicated. 
+
+To sum up:
+
+- 1-dimensional effort model is the canonical MH for studying tradeoff between insurance and incentives in P-A relations.
+
+- The model can be tractably analyzed using the FOC approach of replacing IC with ICFOC. Not always valid but often useful.
+
+- When FOC approach is alid, optimal contracts distort pay away from efficient risk-sharing in the direction of the informativeness of output for the agent's effort.
+
+- Optimal contracts are monotonic iff the output distribution satisfies MLRP.
+
+- The FB outcome can be attained or approximated when the output distribution has moving support or thin tails.
+
+- Any new performance measure for which existing measures are not sufficient for should be included in the contract.
+
+### L11 -
+
+- Lecture notes + slides + MWG:
+
+Advancing our notion of Moral Hazard. The 1-dimensional effort model has two limitations: 
+
+1) is too simple, unrealistic: in real life agents do much more than just working harder or not. 
+
+2) recommends unrealistically complicated contract: too much benchmarking and too much sensitivity to performance measures.
+
+A richer action set by the agent solves this!
+
+The earlier scenario causes a mismatch between choice sets of A and P: P is too "powerful" relative to A. P can shape A's incentives very precisely while A has limited means to respond. 
+
+Having a richer set of actions allows the agent to "game" complicated contracts. Supppose A now has the ability to secretly destroy input. So the optimal contract is always monotonic. 
+
+The focus of today's lecture is **linear contracts**: A is paid a constant share of output + constant. 3 topics:
+
+1) Taking linear contacts as given and analyze the optimal contracts within this class.
+
+2) Sketch several foundations for linear contracts, all based on the idea of giving A more actions.
+
+3) Still assuming linear contracts, cover canonical model of moral hazard with **multiple tasks** (i.e. multidimensional effort).
+
+**CARA-Linear-Normal Model**: start with the Mirrlees example from last class. P is risk-neutral, A is risk-averse with CARA utility with coefficient $\eta > 0$:
+
+\[ u_A (w,a) = -exp (- \eta [w - c(a)]) \]
+
+By assuming CARA, we eliminate wealth effects. Assume quadratic effort costs: c(a) = $\frac{c}{2}a^2$ for $c > 0$. 
+
+**Penalty contracts** observed last class are highly non-linear, so that A can game them. Let's instead consider the extreme case where only linear contracts are allowed: contract is restricted to take form:
+
+\[ w(y) = \beta + \alpha y \]
+
+for $\alpha, \beta \in \mathbb{R}$, where $\bet$ is a lump-sum payment to A and $\alpha$ is slope of wage schedule, i.e. "incentive coefficient". 
+
+Restricting the attention to liner contracts, the contracting problem is 
+
+\[ \max\limits_{a, \alpha, \beta} E^a [y - \beta - \alpha y] \\ 
+\text{s.t.} \\ 
+a \in arg \max\limits_{a'} E^{a'} [-exp ( - \eta [ \beta + \alpha y - \frac{c}{2}a'^2 ] ) ] \text{ (IC)} \\
+E^a [- exp (-\eta [\beta + \alpha y - \frac{c}{2}a^2] )] \geq \overline{u} \]
+
+With CARA utility: A's **Certainty Equivalent** is Mean - $\frac{Var}{2}$. We can rewrite A's utility in terms of her certainty equivalent:
+
+\[ \tilde{u}_A (w,a) = E^a [w(y)] - \frac{\eta}{2} Var^a [w(y)] - \frac{c}{2}a^2 \\ = \beta + \alpha a - \frac{\eta}{2} \alpha^2 \sigma^2 - \frac{c}{2} a^2 \]
+
+We can rewrite the contracting problem using the CE in the (IR) constraint (L11S12). Leads to an easy problem: concave with FOC $a = \frac{\alpha}{c}$ (IR) binds at optimum: $\beta = \overline{w} - \frac{\alpha^2}{c} + \frac{\eta}{2} \alpha^2 \sigma^2$. We sub into the principal's problem to obtain the unconstrained problem. FOC: $\alpha^\ast = \frac{1}{1+ \eta c \sigma^2}$. 
+
+Intuition: a) incentives are higher-powered when A is less risk-averse ($\eta$ is low), A faces less risk ($\sigma^2$ is low) and effort is less costly (c is low); b) at FB: a = 1/c $\implies$ effort is distorted down and is more distorted the higher $\eta$, $\sigma^2$, $c$. So, A faces more risk when incentives are higher-powered and P must compensate her for this risk. 
+
+However, linear contracts are not optimal in this model! We need careful analysis to determine when non-linear contracts are viable and when they're not. 
+
+- 3 models that provide foundations for linear contracts. 
+
+1) Holmstrom and Milgrom (1987): agents put effort over time. 
+
+- $u_P$ = $\sum\limits_{t = 1}\limits^{T} (y_t - w_t)$
+
+- $u_A$ = $-exp (- \eta \sum\limits_{t=1}\limits^{T} (w_t - c(a_t)))$
+
+It is shown that the optimal contract is linear in the number of realizations of each output level $y \in Y$. Intuition: economic environment is completely stationary (CARA utility), so solving optimal contract by backward induction from period $T$ shows that it is simply the sum of $T$ optimal 1-period contracts. 
+
+2) Diamond (1998): costlessly adding risk. $A$ can add risk to game any non-linearities. Linear contracts are not **uniquely** optimal. 
+
+3) Arbitrarily rich actions and a robustly optimizing principal (Carroll, 2015).
+
+**Multitasking**: what about tradeoffs among **different kinds** of effort. For example: producing quality vs quantity?
+
+- Multitasking with **no uncertainty**: if A takes action $a = (a_1,a_2)$ and is paid $w$, payoffs are: $u_P = v_1(a_1) + v_2(a_2) - w$; $u_A = w - c(a_1, a_2)$. Assume $\frac{\partial^2 c}{\partial a_1 \partial a_2} > 0$. Strictly increasing differences is key assumption. 
+
+FB benchmark: if $a_1$ and $a_2$ are both observable, problem is: $\max\limits_{a_1, a_2, w} v_1 (a_1) + v_2 (a_2) - w$ s.t. $w - c(a_1,a_2) \geq \overline{u} \text{ (IR)}$. Use IR to substitute out w, and FOCs. 
+
+Now suppose Task 2 is unobservable. $\max\limits_{a_1,a_2,w} v_1(a_1) + v_2(a_2) - w$ s.t. $w - c(a_1,a_2) \geq \overline{u}$ (IR) and $a_2 \in arg\max\limits_{a_2'} w - c (a_1, a_2')$ (IC). How can P influence $a_2$? By demanding different $a_1$ as it affects the marginal cost of $a_2$. 
+
+Multitasking in the CARA-Linear-Normal Model: richer example: 2 tasks in CARA-linear-normalmodel. Brief description of setting. Then, the Agent's problem is to maximize her certainty equivalent. Intuition from the solution: the agent works harder on task 1 when it is rewarded more heavily ($\alpha_1$ is high) when it is easier ($c_1$ is lower) when the other task is rewarded less heavily ($\alpha_2$ is lower) and when the other task is harder ($c_2$ is higher). $\downarrow \alpha_2$ or $\uparrow c_2$ implies A works less hard on task 2. This lowers A's marginal cost of effort on task 1.
+
+To sum up:
+
+- 1-dimensional model: too simple for actions, too complicated for contracts. Enriching the agent's action set can solve both problems.
+
+- CARA-Linear-Normal model gives a very tractable theory of the tradeoff between insurance and incentives. However, linear contracts are in general not optimal. 
+
+- Foundations for linear contracts can be provided by assuming that effort is exerted unobservably over time, the agent can costlessly take on additional risk, or the agent's action set is uncertain and the principal assesses contracts according to a worst-case criterion.
+
+- The multitask model is used to analyze tradeoffs between different kinds of effort.
+
 ## **Lectures**{.tabset}
 
 ### **L1** 
@@ -15,7 +749,7 @@ output: html_document
 
 - **Revelation Principle**: makes it possible to consider **incentive compatible** direct mechanisms without loss.
 
-- VCG mechanism: each player is paid the sum of two terms: 1) sum of everyone else's utility at the efficient allocation + 2) a constant that depends only on others' reports: $t_{i}(\theta)=\left[\sum_{i \neq i} v_{j}\left(y^{*}(\theta), \theta_{j}\right)\right]+h_{i}\left(\theta_{-i}\right)$.
+- VCG mechanism: each player is paid the sum of two terms: 1) sum of everyone else's utility at the efficient allocation + 2) a constant that depends only on others' reports: $t_{i}(\theta)=[\sum_{i \neq i} v_{j}\left(y^{*}(\theta), \theta_{j}\right)]+h_{i}\left(\theta_{-i}\right)$.
 
 - In quasi-linear environments with private values, **VCG mechanisms implement socially efficient allocations in dominant strategies**(DSIC).
 
@@ -928,6 +1662,13 @@ From another perspective, when LL binds and the principal induces effort *a*, th
 
 This is the **agent's information rent** in this context: the principal can't require effort *a* but must induce it via incentive payment. As ac' (a) - c(a) is increasing in *a*, the more effort the principal wants, the higher will be the information rent $\rightarrow$ the principal will demand less than FB effort. 
 
+
+### **L10**
+
+#### **Moral Hazard with 1-Dimensional Effort**
+
+
+
 ## **MWG**
 
 ### **23) Incentives and Mechanism Design**
@@ -1020,5 +1761,7 @@ Expanding on that, we can further restrict our attention to direct revelation me
 
 **Truthful implementation**: The social choice function $f(\cdot)$ is truthfully implementable (or incentive compatible) it the direct revelation mechanism $\Gamma=\left(\Theta_{1}, \ldots, \Theta_{1}, f(\cdot)\right)$ has an equilibrium $\left(s_{1}^{*}(\cdot), \ldots, s_{1}^{*}(\cdot)\right)$ in which $s_{i}^{*}\left(\theta_{i}\right)=\theta_{i}$ for all $\theta_{i} \in \Theta_{i}$ and all
 $i=1, \ldots, I ;$ that is, **if truth telling by each agent $i$ constitutes an equilibrium** of $\Gamma=\left(\Theta_{1}, \ldots, \Theta_{1}, t(\cdot)\right)$.
+
+
 
 
