@@ -1,0 +1,161 @@
+---
+output: html_document
+---
+
+# 14.382 - Applied Econometrics{.tabset}
+
+## **Review** {.tabset}
+
+### **L1**
+
+#### **Gauss-Markov Properties of OLS**
+
+**Summary**: review basic concepts of OLS. 4 Gauss-Markov assumptions needed for the OLS estimator to have good properties(GMA-GMD) $\rightarrow$ OLS is a good estimator and how to do inference. What can we state when GMA-GMD are satisfied.
+
+### **L2**
+
+#### **Asymptotic Theory for OLS**
+
+**Summary**: 2 key conditions for asymptotic inference: asymptotic normality with asymptotic variance; $\hat{V}$ is a consistent estimator of the asymptotic variance V. Asymptotic t-ratios and confidence intervals. Nonsigularity of Q. Variance estimator $\hat{V}$. Heteroskedasticity robust variance estimator.  
+
+### **L3**
+
+#### **Heteroskedasticity**
+
+**Summary**: individual heterogeneity: $y_i = X_i' \beta_i$. When do we have heteroskedasticity. Estimators of variance. Degrees of freedom correction. Unbiased under homoskedasticity. Jackknife Variance Estimator. 
+
+### **L4**
+
+#### **Cluster Consistent Estimation**
+
+**Summary**: consider the estimation of the variance matrix for the OLS estimator when there is heteroskedasticity and when observations are correlated within groups of observations(clusters). What is clustering. Model and variance estimator with clusters. Asymptotic theory in clusters. 
+
+### **L5**
+
+#### **Bootstrapping for OLS**
+
+**Summary**: instead of doing asymptotic approximation we estimate the distribution of objects(estimators, t-ratios). We estimate the distribution of any estimator by: 1) estimating the cumulative distribution function($F_0(z)$) by some $\hat{F}(z)$; 2) estimating the distribution of the estimator by what that distribution would be if $Z_i$ were i.i.d. with CDF $\hat{F}(z)$. 
+
+Mid-page 2: sum of the steps of bootstrap estimator.
+
+**Bootstrap Inference for an Estimator**: it ispossible to use the quantiles of the bootstrap distribution to form confidence intervals based on $\hat{\theta}$.
+
+
+### **L6**
+
+#### **Heteroskedasticity and Autocorrelation Consistent Variance Estimation**
+
+**Summary**: how to estimate V$(\hat{\beta})$ when $\sum$ exhibits **autocorrelation** and heteroskedasticity(GMC is violated). Correcting the biased estimator. 
+
+
+
+
+
+
+
+
+
+## **Lectures**{.tabset}
+
+### **L1**
+
+#### **Least Squares, Adaptive Partialling-Out, Simultaneous Inference**
+
+Overview the least squares from several interesting angles. We discuss
+Frisch-Waugh-Lovell **partialling out** and point out its **adaptivity property** in establishing approximate normality of the regression estimators of a set of target regression coefficients. We then discuss construction of simultaneous confidences sets for this set. We make use of the methods to analyze the gender wage gap and the impact of reemployment incentives on the duration of unemployment.
+
+### **L2**
+
+#### **Structural Equations Models and IV**
+
+We study a very important linear structural model, with a **single endogenous variable** and a **single instrument**, which is frequently used in empirical analysis in economics. We show that we can identify, estimate, and perform **inference on the structural parameters** of the model using the **indirect least squares** method. We also provide inferential methods that are robust to weak instruments. The theory relies only upon conventional results for the least squares method. We apply the tools to revisit the analysis of returns-to-schooling and the impact of quality of institutions on economic growth. In the latter case, the use of inference methods robust to weak identification leads to a sharper lower bound on the impact of institutions quality than the original empirical results.
+
+**Notation**: when two random vectors V and W obey: $EVW' = 0$ and W includes a constant, this means that *V* and *W* are **not correlated** in the sample. 
+
+**Structural Equations Models**: specify a collection of **functional relations** between random variables, motivated by economic reasoning, plus unobserved **shock terms that obey certain orthogonality conditions**. The functional relations typically have causal interpretation. This is sometimes called **Simultaneous Equations Models**, here is a famous example: 
+
+\[ Y = \alpha_1 D + \alpha_2' W + U \text{, } U \perp (W',Z')'\]
+
+\[ D = \beta_1 Z + \beta_2' W + V \text{, } V \perp (W',Z')'\]
+
+Again, W includes a constant.
+
+The goal here is to learn the parameter $\alpha_1$, the return-to-schooling parameter, i.e., how education influences wages. The outcomes above are generated in two steps of a Nature's game:
+
+1) random variables *W,Z,V,U* are generated subject to the orthogonality conditions specified above. 
+
+2) Rvs *Y* and *D* are jointly determined by the system.
+
+We call *W,Z* the predetermined or *exogenous variables*, and *Y,D* as jointly determined or *endogenous variables*. The unobserved variables *U,V* are called stochastic shocks or *error terms*. **Z** is the **instrumental variable** or excluded exogenous variable. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+## **Applied Exercises**{.tabset}
+
+In here I'll try to replicate the applied exercises from 14.382 as taught in the Spring of 2020.
+
+### **PS1**
+
+#### **Q4)**
+
+*(30 points) Consider the [**Angrist and Evans(1998)**](https://www.jstor.org/stable/116844?seq=1) paper on the effect of family size on a mother’s labor force participation. The data is available [**here**](https://dataverse.harvard.edu/dataset.xhtml?persistentId=hdl:1902.1/11288).*
+
+
+*(a) Reproduce the part of Table 7 of Angrist and Evans (1998) that uses labor income as the left hand side variable, more than 2 children as the endogenous dummy variable, same sex as the instrument, and other covariates as in Table 7.*
+
+Let's start by tidying the data to be used:
+
+```{r, echo=TRUE, message=FALSE, warning=FALSE}
+library(haven)
+library(tidyverse)
+library(AER)
+library(systemfit)
+```
+
+```{r, echo=TRUE, message=FALSE}
+  # Importing data:
+m_d_806 <- read_sav("C:/Users/gmv/Dropbox/MIT/2020 1/14.382 - Econometrics/PS1/m_d_806.sav")
+
+# 4a) Table 7, 4th column:
+  # Generating variables:
+
+  # Creating count of same sex for first two births:
+m_d_806$same <- as.numeric(m_d_806$SEXK) + as.numeric(m_d_806$SEX2ND)
+
+  # Creating dummy for first two births of the same sex:
+samesexm <- as.numeric(m_d_806$same == 0)
+samesexw <- as.numeric(m_d_806$same == 2)
+
+  # Generates same sex variable:
+m_d_806$samesex <- as.numeric(samesexm) + as.numeric(samesexw)
+
+```
+
+
+*(b) Calculate standard errors for the coefficients that impose homoskedasticity. For the coefficient on the more than two children variable, how different would a 90% confidence interval be if homoskedasticity consistent standard errors are used rather than heteroskedaticity consistent?*
+
+
+*(c) Caclulate clustered standard errors based on clustering by the state variable. How different is the 95 percent confidence interval for clustered standard errors than for heteroskedasticity consistent standard errors?*
+
+### **PS2**
+
+
+### **PS3**
+
+### **PS4**
+
+### **PS5**
+
+### **PS6**

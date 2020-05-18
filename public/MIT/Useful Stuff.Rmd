@@ -1,0 +1,24 @@
+---
+title: ""
+author: ""
+date: "4/7/2020"
+output: html_document
+---
+
+# Useful Stuff{.tabset}
+
+## Presentations
+
+## 1) 
+
+- Use ioslides in R, create template. Advantages
+
+    - Interactive.
+    
+    - Include hyperlinks.
+
+## 2) 
+
+
+
+

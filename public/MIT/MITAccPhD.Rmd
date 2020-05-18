@@ -1,0 +1,29 @@
+---
+title: "PhD Accounting - MIT"
+author: "Gabriel Voelcker"
+date: "8/29/2019"
+output: html_document
+---
+# Intro {.tabset}
+
+Welcome! The material you now have access to covers all the classes I've had on my PhD in Accounting at MIT. Feel free to send any questions/comments to gmv@mit.edu
+
+## 2019/2:
+
+[**Math Camp**](https://gabrielvoelcker.netlify.com/mit/Math-Camp)
+
+[**14.121 - Microeconomic Theory I**](https://gabrielvoelcker.netlify.com/mit/14.121-microeconomic-theory-i)
+
+[**14.122 - Microeconomic Theory II**](https://gabrielvoelcker.netlify.com/mit/14.122-microeconomic-theory-ii)
+
+[**14.123 - Microeconomic Theory III**](https://gabrielvoelcker.netlify.com/mit/14.123-microeconomic-theory-iii)
+
+[**14.380 - Statistical Methods**](https://gabrielvoelcker.netlify.com/mit/14.380-statistical-methods)
+
+[**14.381 - Applied Econometrics**](https://gabrielvoelcker.netlify.com/mit/14.381-applied-econometrics)
+
+[**15.470 - Asset Pricing**](https://gabrielvoelcker.netlify.com/mit/15.470-asset-pricing)
+
+
+
+

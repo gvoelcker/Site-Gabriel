@@ -1,0 +1,1101 @@
+---
+output: html_document
+---
+
+# 14.381 - Applied Econometrics{.tabset}
+
+## **Questions and Concepts** {.tabset}
+
+### Questions
+
+- How to obtain log likelihood for probit and logit? (PS1 ex 2a)
+
+- What is the **exclusion restriction**? It's a requirement for the Instrumental Variables to work. Assuming that the variable of interest is not entirely random, by the exclusion restriction we assume that the **only impact of the instrumental variable is on the variable of interest**. In the MM example: the only impact of offered seats is on whether they will enroll or not. 
+
+- What are the **endogenous variables**? The dependent variable and the independent variable(s) to be instrumented. In a simultaneous equations model, endogenous variables are determined by solving a system of stochastic linear equations(MHE pg 126). To treat an independent variable as endogenous is to instrument it, i.e. replace it with fitted values in the second stage of a 2SLS procedure.
+
+- And the **exogenous variables**? The exogenous variables include the exogenous covariates that are not instrumented and the instruments themselves. In a simultaneous equations model, exogenous variables are determined outside the system. Ex: in Angrist&Krueger(1991) study are dummies for year of birth and state of birth. Exogenous covariates are controls. 
+
+- What is within-cell variance? ?The values the variable of interest can assume?
+
+- Why is every Wald an IV estimator?
+
+- WNLS for probit/logit?
+
+- [**Heckman Correction**](https://en.wikipedia.org/wiki/Heckman_correction): imagine the is bias from non-randomly selected samples or incidentally truncated dependent variables(ex: wage). To correct for this: we explicitly model the individual sampling probability of each observation (the so-called selection equation) together with the conditional expectation of the dependent variable(so-called outcome equation). So we have two moments in correcting our problem: selection and outcome. The resulting likelihood function is mathematically similar to a Tobit model for censored dependent variables, a connection first drawn by Heckman in 1976. He estimated a two-step control function to estimate this model. In the first step, a regression for observing the positive outcome of the dependent variable is modeled with a probit model. The Inverse Mill's Ratio must be generated from the estimation of a probit model(logit can't be used). The probit model assumes that the error term follows a standard normal distribution. The estimated parameters are used to calculate the Inverse Mills Ratio, which is then used as an additional explanatory variable in the OLS estimation. 
+
+- Inverse Milles Ratio? [**Mills Ratio**](https://en.wikipedia.org/wiki/Mills_ratio) is the following ratio: $m(x) = \frac{\overline{F}(x)}{f(x)}$, where: f(x) is the *probability density function*; $\overline{F}(x): = Pr [X> x] = \int_x^{+\infty} f(u)du$ is the *complimentary cumulative distribution function (aka survival function)*. Example: Imagine we have the following model that predicts wage on the observed characteristics of individuals *i*: $y_i^\ast = x_i'\beta + \varepsilon_i$ for $i = 1,...n$. But there are some people that do not work, generating the truncated value of 0 for wages. Let's model the decision to work the following way: $d_i^\ast = z_i' \gamma + v_i$ for $i = 1,...,n$. If $d_i^\ast$ is > 0, we observe $y_i = y_i^\ast$, otherwise we simply don't observe the wage. Heckman(?) tried to account for the *endogeneity* in this selection bias situation: he suggested that first we estimate $\gamma$(coefficient that influences the decision to work) via MLE probit, usually via an exclusion restriction. Then, we estimate an **Inverse Mill's Ratio** that indicates the probability that an agent decides to work over the cumulative probability of an agent's decision: $\lambda_i = \frac{\phi(z_i' \gamma)}{z_i' \gamma}$. Since we're using probit, we're actually estimating $\frac{\gamma}{\sigma_v}$. The estimated value $\hat{\lambda}_i$ is a means for controlling the endogeneity, i.e., the part of the error term for which the decision to work influences the wage earned. So, the second step is actually: $y_i^\ast = x_i'\beta + \mu \hat{\lambda}_i + \varepsilon_i$. How do we interpret the Inverse Mill's Ratio coefficient: $\mu$? It is: $\frac{\sigma_{ev}}{\sigma_v^2}$, which *represents the fraction of the covariance between the decision to work and the wage earned relative to the variation in decision to work*. To test for selection bias: t-test on whether $\mu$ = 0 (sigma of error of the two equations = 0) or cov(e,v) = 0.
+
+- What is **partialling out**? The process of removing a variable (by giving it a fixed value) to identify any correlation between others. 
+
+- **BLUE**: best linear unbiased estimator.
+
+- **Marginal FX**: FOC of CEF.
+
+- **Regression Anatomy Formula**: $\beta_k = \frac{Cov(Y_i, \tilde{x}_{ki})}{V(\tilde{x}_{ki})}$, where $\tilde{x}_{ki}$ is the residual from a regression of $x_{ki}$ on all the other covariates. So: $E[X_iX_i']^{-1}E[X_iY_i]$ is the K x 1 vector with $kth$ element $\beta_k$.
+
+- **OVB formula**: $\frac{Cov(Y_i,S_i)}{V(S_i)} = \rho + \gamma' \delta_{A_s}$: Short equals long plus the effect of omitted times the regression of omitted on included. Both the OVB formula and the regression anatomy formula tell us that short and long coefficients are the **same** whenever the omitted and included variables are uncorrelated.
+
+- **Mismeasurement**: if a variable $S_i$ is mismeasured, we get: $S_i = S_i^M + u_i$, where Cov($S_i^\ast, u_i$) = Cov($\epsilon_i, u_i$) = 0.
+
+- **Latent variables**: not directly observed but rather inferred from other variables that are directly measured. Ex: quality of life, business confidence, morale.
+
+- $\beta_{2SLS}$ = $\frac{Cov(\hat{x}_i, y_i)}{V(\hat{x}_i)}$, where $\hat{x}_i$ are the instruments.
+
+- $\beta_{IV}$ = $\frac{Cov(\hat{x}_i,y_i)}{Cov(\hat{x}_i,x_i)}$ = $(\hat{X}'X)^{-1} \hat{X}Y$.
+
+- **Potential outcomes**: for probit, let's list 3:
+
+1 - Outcome: $Y_{i} = 1[X_i' \beta_0^\ast + \beta_1^\ast D_i > \epsilon_i]$
+
+2 - Outcome without treatment: $Y_{0i} = 1[X_i' \beta_0^\ast > \epsilon_i]$
+
+3 - Outcome with treatment: $Y_{1i} = 1[X_i' \beta_0^\ast + \beta_1^\ast > \epsilon_i]$
+
+- **Potential treatments**: for probit, let's list 3:
+
+1 - Treatment: $D_{1i} = 1[X_i' \gamma_0^\ast + \gamma_1^\ast Z_i > v_1 ]$
+
+2 - Treatment wasn't assigned: $D_{0i} = 1[X_i' \gamma_0^\ast > v_1 ]$.
+
+3 - Treatment was assigned: $D_{1i} = 1[X_i' \gamma_0^\ast + \gamma_1^\ast > v_1 ]$
+
+- **The Average Treatment Effect** is: ATT = $E[Y_{1i} - Y_{0i}]$. 
+
+- **Effect on the treated**: E$[Y_{1i} - Y_{0i}|D_i = 1]$.
+
+- **TNT**: $E[Y_{1i} - Y_{0i}| D_i  = 0]$.
+
+- **LATE**: $E[Y_{1i} - Y_{0i}|D_{1i} > D_{0i}, Z_i = 1]$.
+
+- 2SLS bias: the first stage regressor: $\hat{x} = P_Zx = Z \pi + P_z \xi$. The bias in 2SLS arises from the fact that $P_Z \xi$ is correlated with $\eta$, so some of the correlation between errors in the first and second stages is in the 2SLS through the sampling variability of $\hat{\pi}$.
+
+- **Over-identified**: more instruments than endogenous variables.
+
+- **Just-identified**: same number of instruments and endogenous variables. 
+
+- **Endogenous variables**: dependent variable + independent being instrumented.
+
+- **Exogenous variables**: covariates + instruments. 
+
+
+## **Useful Stuff** {.tabset}
+
+### **Basic Info**
+
+#### **Documents with basic information about how the course works**
+
+[**2019 Syllabus**](https://gabrielvoelcker.netlify.com/mit/syl381fa19.pdf)
+
+[**2019 Agenda**](https://gabrielvoelcker.netlify.com/mit/agenda381fa19+(new).pdf)
+
+[**2019 Schedule**](https://gabrielvoelcker.netlify.com/mit/sched381fa19+(new).pdf)
+
+### **Class Materials**
+
+#### **Class Materials**
+
+[**1) Mastering Mostly Harmless Metrics**](https://gabrielvoelcker.netlify.com/mit/Intro381fall2019flat.pdf)
+
+[**2) Mastering Regression**](https://gabrielvoelcker.netlify.com/mit/Intro381fall2019flat.pdf)
+
+[**3) Labor Economists Know The Score**](https://gabrielvoelcker.netlify.com/mit/Pscore381fall2019handout.pdf)
+
+
+### **PSets**
+
+#### **The PSets for the semester are:**
+
+[**Qualifying PS**](https://gabrielvoelcker.netlify.com/mit/Review+problem+set.pdf)
+
+[**PS 1**](https://gabrielvoelcker.netlify.com/mit/psetI_381fa19.pdf)
+
+## **Mostly Harmless Econometrics** {.tabset}
+
+### **1) Questions About Questions**
+
+4 Frequently Asked Questions about the relationship of interest, the ideal experiment, the identification strategy and the mode of inference.
+
+  *i) What is the causal relationship of interest?* Useful for making predictions about the consequences of changing circumstances/policies. 
+  
+  *ii) what experiment that could ideally be used to capture the causal effect of interest?* What should the treatment be?
+  
+Fundamentally unindentified questions: FUQs. Questions that cannot be answererd by any experiment. 
+
+  *iii) What is your identification strategy?* Identification is the way the researcher uses his data. 
+  
+  *iv) What is the mode of statistical inference?* it describes tge population, the sample and the assumptions made when constructing standard errors. How straightforward is your inference?
+
+### **2) The Experimental Ideal**
+
+- Importance of Random assignment: eliminate selection bias. Has the randomization successfully balanced the characteristics across groups?
+
+- Regression: constant treatment effects: the impact of the treatment is the same for everyone. Regressions are important, let's review some facts and properties about them:
+
+### **3) Making Regression Make Sense**
+
+#### 3.1) Regression Fundamentals
+
+- Without randomness there is no causality.
+
+- **Conditional Expectation Function(CEF)**: for a dependent ariable $Y_i$, given a $K \times 1$ vector of covariates $X_i$ (with elements $x_{ki}$) is the expectation(population average) of $Y_i$ holding $X_i$ fixed. CEF is written as $E[Y_i|X_i]$. 
+
+- **Law of iterated expectations**: an unconditional expectation can be written as the unconditional average of the CEF: $E[Y_i] = E\{E[Y_i|X_i]\}$, where the outer expectation uses the distribution of $X_i$. The power of LIE comes from it breaking down a r.v. into two pieces: the CEF and a residual with special properties: $Y_i = E[Y_i|X_i] + \epsilon_i$. Where: i) $\epsilon_i$ is mean independent of $X_i$, that is, $E[\epsilon_i |X_i]$ = 0, hence: ii) $\epsilon_i$ is uncorrelated with any function of $X_i$. This can be interpreted as **decomposing** any variable $Y_i$ into a pice that is "explained by $X_i$", that is, the CEF - and a piece left over that is orthogonal to any function of $X_i$. The CEF also has an important **prediction** property: $E[Y_i|X_i] = argmin_{m(X_i)} E[(Y_i - m(X_i))^2]$, so it is the MMSE predictor of $Y_i$ given $X_i$. The last property is the **Anova Theorem**: $V(Y_i) = V(E[Y_i|X_i]) + E[V(Y_i|X_i)]$. This implies that the variance of $Y_i$ is the variance of the CEF plus the variance of the residual, since the residul and $E[Y_i|X_i]$ are uncorrelated. 
+
+##### 3.1.2) Linear Regression and The CEF
+
+The link between the CEF and regression functions can be explained in three ways. To start, let the K x 1 regression coefficient vector $\beta$ be defined by solving
+
+\[ \beta = arg min_{(b)} E[(Y_i - X_i'b)^2] \]
+
+Using FOC:
+
+\[ E[X_i (Y_i - X_i'b)] = 0 \]
+
+Where the solution can be written as $\beta$ = E$[X_iX_i']^{-1}E[X_iY_i]$. The population residual, which we define as $Y_i - X_i'\beta = e_i$ is uncorrelated with the regressors $X_i$. For the multivariate case, the **regression anatomy formula** is:
+
+\[ \beta_k = \frac{Cov(Y_i, \tilde{x}_{ki})}{V(\tilde{x}_{ki})} \]
+
+Where $\tilde{x}_{ki}$ is the residual from a regression of $x_{ki}$ on all the other covariates. Into the math: E[$X_iX_i'$]$^{-1}$E[$X_iY_i$] is the $K \times 1$ vector with *k*th element $\frac{Cov(Y_i,\tilde{x}_{ki})}{V(\tilde{x}_{ki})}$. This formula describes the anatomy of a multivariate regression coefficient and it reveals much more than the matrix formula $\beta$ = $E[X_iX_i']^{-1}E[X_iY_i]$. It is an important formula because it shows that **each coefficient in a multivariate regression is the bivariate slope coefficient for the corresponding regressor after partialing out all the other covariates**. To verify this, substitute: 
+
+\[ Y_i = \alpha + \beta_1x_{1i} + ... + \beta_kx_{ki} + ... + \beta_k x_{ki} + e_i\]
+
+into the numerator of the Regression Anatomy Formula. Since $\tilde{x}_{ki}$ is uncorrelated with $e_i$, it is a **linear combination of the regressors**. Also, since $\tilde{x}_{ki}$ is a residual from a regression on all other covariates in the model, it must be uncorrelated with these covariates. For the same reason, the Cov($\tilde{x}_{ki}$,$x_{ki}$) is just the V($\tilde{x}_{ki}$). Hence: Cov($Y_i, \tilde{x}_{ki}$) = $\beta_k V(\tilde{x}_{ki})$
+
+- **Linear CEF Theorem (3.1.4.)(Regression Justification 1)**: suppose the CEF is linear $\implies$ the population regression function is it. So what makes the CEF linear? Classic scenario: joint normality $\implies$ vector ($Y_i, X_i'$) has a multivariate normal distribution(few empirical validity given the regressors and variables are often discrete). 
+**Saturated regression model**: has a separate parameter for every possible combination of values that the set of regressors can take on. 
+
+- **Best Linear Predictor Theorem(3.1.5.)(Regression Justification 2)**: the function $X_i'\beta$ is the best linear predictor of $Y_i$ given $X_i$ in a MMSE sense. $E[Y_i|X_i]$ is the best (MMSE) predictor of $Y_i$ given $X_i$ in the class of *all* functions of $X_i$, the population regression function is the best we can do in the class of *linear* functions. 
+
+-  **The Regression CEF Theorem(3.1.6)(Regression Justification 3)**: the function $X_i'\beta$ provides the MMSE linear approximation to E[$Y_i|X_i$], that is: 
+
+\[ \beta = argmin_{b} E\{(E[Y_i|X_i] - X_i'b)^2\} \]
+
+##### 3.1.3) Asymptotic OLS Inference
+
+- A natural estimator of the first population moment, E[$W_i$] is the sum $\frac{1}{N} \sum_{i=1}^N W_i$. 
+- **Law of Large Numbers**:
+
+- **Central Limit Theorem**:
+
+- **Slutsky's Theorem**: 1) ; and 2) .
+
+##### 3.1.4) Saturated Models, Main Effects, and Other Regression Talk
+
+- **Saturated regression models**: regression models with discrete explanatory variables, where the model includes a separate parameter for **all possible values** taken on by the explanatory variables. They fit the CEF perfectly because the CEF is a linear function of the dummy regressors used to saturate. We also use interaction terms to show how those behave with each other. 
+
+#### 3.2) Regression and Causality
+
+##### 3.2.1) The Conditional Independence Assumption (CIA)
+
+A regression is causal when the Conditional Expectation Function it approximates is causal. The CEF is causal when it describes differences in average potential outcomes for a fixed reference population. As discussed in chapter 2: **experiments ensure that the causal variable of interest is independent of potential outcomes so that the groups being compared are truly comparable**. We want to generalize this to causal variables that take on more than two values and to more complicated situations where we must hold a variety of control variables fixed for causal inferences to be valid. This leads to the **Conditional Independence Assumption**: the assumption that provides justification for the causal interpretation of regression estimates. Also called **Selection on Observables** because the *covariates are held fixed since they are assumed to be known and observed*. The question is: *what these control variables are?* We call them *covariates* $X_i$ (in the schooling case, $X_i$ is a vector of abilities and family background). 
+
+Suppose we want to know the difference in earnings ($Y_{1i} - Y_{0i}$) if Angrist goes to college($C_i = 1$) versus not going to college ($C_i = 0$). The observed outcome, $Y_{i}$ can be written in terms of **potential outcomes** as:
+
+\[ Y_i = Y_{0i} + (Y_{1i} - Y_{0i})C_i   \]
+
+We get to see one of $Y_{1i}$ or $Y_{0i}$, but never both. We therefore hope to measure the average of $Y_{1i} - Y_{0i}$, or the average for some group, such as those who went to college. This is E[$Y_{1i} - Y_{0i}|C_i = 1$]. But in general, comparisons of those who attend college vs those who don't are a poor measure of the causal effect of college attendance. We have to take more into consideration, given what we talked about on chapter 2:
+
+\[  \underbrace{E[Y_i|C_i = 1] - E[Y_i|C_i = 0]}_\text{Observed difference in earnings} = \underbrace{E[Y_{1i} - Y_{0i}|C_i = 1]}_\text{ATE on the treated} + \underbrace{E[Y_{0i}|C_i = 1] - E[Y_{0i}|C_i = 0]}_\text{Selection Bias}  \]
+
+It seems likely that those who go to college would have earned more anyway, right? So, the Selection Bias is positive and the naive comparison, $E[Y_i|C_i = 1] - E[Y_i | C_i = 0]$ exaggerates the benefits of college attendance(given the value of the Selection Bias, the observed difference in outcome may be misinterpreted).
+
+The Conditional Independence Assumption asserts that **conditional on observed characteristics**, $X_i$, the Selection Bias disappears. Formally:
+
+\[\{Y_{0i},Y_{1i} \} \perp \perp C_i|X_i  \]
+
+Where the symbol $\perp \perp$ denotes the independence relation; the random variables to the right of $|$ are the **conditioning set**. Given the **Conditional Independence Assumption (CIA)**, conditional on $X_i$, comparisons of average earnings across schooling levels have a causal interpretation. In other words:
+
+\[  E[Y_i|X_i,C_i = 1]  - E[Y_i|X_i,C_i = 0] = E[Y_{1i} - Y_{0i}|X_i]\]
+
+This was established for two possible outcomes: $C_i = 1$ and $C_i = 0$(going to college vs not). Let's expand that to variables that can take on **more than two values**. 
+
+The causal relationship between schooling and earnings is likely to be different for each person, so let's use the individual-specific notation: $Y_{si} \equiv f_i(s)$. This denotes the potential earnings of a person after receiving $s$ years of education. $f_i(s)$ answers causal "what if" questions. In the context of theoretical models of the relationship between human capital and earnings, the form of $f_i(s)$ may be determined by aspects of individual behavior, by market forces, or both. The CIA in this general setup becomes:
+
+\[ Y_{si} \perp \perp s_i|X_i\text{, }\forall s \]
+
+In an observational study, the CIA means that $s_i$ can be said to be "as good as randomly assigned", conditional on $X_i$. Conditional on $X_i$, the **average causal effect** of a one-year increase in schooling is E[$f_i(s) - f_i(s-1)|X_i$], while the ACE of a four-year increase in schooling is E[$f_i(s) - f_i(s-4)|X_i$]. The data reveal only $Y_i$ = $f_i(s_i)$, that is, $f_i(s)$ for $s = s_i$. But given the CIA, conditional on $X_i$ comparisons of average earnings across schooling levels have a causal interpretation:
+
+\[ E[Y_i | X_i,s_i = s] - E[Y_i | X_i,s_i = s - 1] =  E[f_i(s) - f_i(s-1)|X_i], \forall s\]
+
+If we were to compare the difference between 12 and 11 years, we would learn about the average causal effect of high school graduation. The selection bias comes from differences in the potential dropout earnings of high school graduates and non-graduates. However, given the CIA, high school graduation is independent of potential earnings conditional on $X_i$, so the selection bias vanishes. 
+
+So far, we've constructed separate causal effects for each value taken on by the conditioning variables. This leads to as many causal effects as there are values of $X_i$, given that every observation could lead to a unique combination of characteristics. So, Empiricists almost always find it useful to boil a set of estimates down to a single summary measure, for ex: the **unconditional** or **overall average causal effect**. By the law of iterated expectations, the unconditional average causal effect of high school graduation is: 
+
+\[  E\{E[Y_i|X_i,s_i = 12] - E[Y_i|X_i, s_i = 11] \}  \]
+
+\[  = E\{E[f_i(12)-f_i(11)|X_i] \}\]
+
+\[ = E[f_i(12) - f_i(11)] \]
+
+Just as well, how much have high school graduates gained by virtue of having graduated? The average causal effect of high school graduation on high school graduates is:
+
+\[ E\{E[Y_i|X_i,s_i = 12] - E[Y_i|X_i,s_i = 11]|s_i = 12\}   \]
+
+\[ = E \{ E[f_i(12) - f_i (11)|X_i]|s_i = 12\}   \]
+
+\[ E[f_i(12) - f_i(11)| s_i = 12]  \]
+
+The **unconditional average effect** can be computed by averaging all the X-specific effects weighted by the marginal distribution of $X_i$. So the empirical **counterpart** is a **matching estimator**: we make comparisons across different schooling groups for individuals with the same covariate values, compute the difference in their average earnings and then average these difference in some way. 
+
+**Regression** provides an easy-to-use empirical strategy that automatically turns the CIA into causal effects. Two routes can be traced from the CIA to regression: **1)** $f_i(s)$ is both linear in $s$ and the same for everyone except for an additive error term, so we can use a linear regression to estimate the features of $f_i(s)$; **2)** recognizing that $f_i(s)$ almost certainly differs for different people and does not need to be linear in $s$. Even so, allowing for random variation in $f_i(s)$ across people and for nonlinearity for a given person, regression can be thought of as a strategy for the estimation of a weighted average of the individual-specific difference $f_i(s) - f_i(s-1)$. 
+
+Now we want to focus on the **conditions required for the regression to have a causal interpretation**. Let's consider a linear constant effects causal model:
+
+\[ f_i(s) = \alpha + \rho s + \eta_i   \]
+
+This equation is linear and says that the functional relationship of interest is the same for everyone. If we were to compute the realized value of s: $s_i$, we would have:
+
+\[ Y_i = \alpha + \rho s_i + \eta_i \]
+
+The penultimate equation explicitly associates the coefficients above with a causal relationship. Since this penultimate equation is a causal model, $s_i$ may be correlated with the potential outcomes $f_i(s)$, or, in this case, the residual term above, $\eta_i$. 
+
+We can decompose $\eta_i$ into a linear function of observable characteristics $X_i$ and an error term $v_i$: $\eta_i = X_i'\gamma + v_i$, where $\gamma$ is a vector of population regression coefficients that is assumed to satisfy E[$\eta_i | X_i$] = $X_i' \gamma$. By virtue of the CIA, we have:
+
+\[ E[f_i(s)|X_i,s_i] = E[f_i(s)|X_i] = \alpha + \rho s + E[\eta_i | X]   \]
+
+\[ = \alpha + \rho s + X_i' \gamma  \]
+
+The residual in the linear causal model: $Y_i = \alpha + \rho s_i + X_i' \gamma + v_i$ is therefore uncorrelated with the regressors $s_i$ and $X_i$, and the regression coefficient $rho$ is **the causal effect of interest**. 
+
+
+##### 3.2.2) The Omitted Variables Bias Formula
+
+In addition to the variable of interest, we now have introduced a set of control variables, $X_i$, into our regression. The **Omitted Variable Bias(OVB) Formula describes the relationship between regression estimates in models with different sets of control variables**. This is motivated by the notion that *a longer regression has a causal interpretation* while a shorter one does not. This means that the coefficients on the variables included in the shorter regression are **biased**. The difference between coefficients in a short and in a long regression are determined by the OVB formula. 
+
+Imagine we are regressing wages on school years: $Y_i = \alpha + \rho s_i + A_i' \gamma + e_i$. What are the consequences of leaving ability ($A_i$) out of the regression? The resulting short regression is related to the long regression as follows:
+
+Ommited Variables Bias Formula:
+
+\[ \frac{Cov(Y_i,S_i)}{V(S_i)} = \rho + \gamma' \delta_{As} \]
+
+Where $\delta_{As}$ is the vector of coefficients from regressions of the elements of $A_i$ on $s_i$. The OVB formula states: *short equals long plus the effect of omitted times the regression of omitted on included*. Both the OVB formula *and* the regression anatomy formula tell us that short and long regression coefficients are the same whenever the omitted and included variables are uncorrelated. 
+
+We use the OVB formula to get a sense of what would happen if we omitted ability for schooling coefficients. Ability variables have positive effects on wages, and these variables are also likely to be positively correlated with schooling $\implies$ the short regression may be "too big" relative to what we want. But some omitted variables may be negatively correlated with schooling, in which case the short regression coefficient may be too small. 
+
+##### 3.2.3) Bad Controls
+
+Not always more control is better. **Bad Controls** are variables that themselves are outcome variables in the notional experiment at hand.  
+
+#### 3.3) Heterogeneity and Nonlinearity
+
+The assumption of a linear **Conditional Expectation Function(CEF)** is not really necessary for a causal interpretation of regression. Section 3.1.2. showed how the regression of $Y_i$ on $X_i$ and $s_i$ can be thought as as providing the best linear approximation to the underlying CEF, regardless of its shape. If the CEF is causal, the fact that a regression approximates it gives regression coefficients a causal flavor. To explore the link between regression and CEF we dive into the understanding of regression as a computationally attractive **matching estimator**.
+
+##### 3.3.1) Regression Meets Matching
+
+**Matching** is a useful strategy to control for *covariates*, motivated by the Conditional Independence Assumption. Military ex: conditional on the individual characteristics the military uses to select soldiers, veteran status is **independent** of potential earnings. The **appeal** of matching is: matching amounts to covariate-specific treatment-control comparisons, weighed together to produce a **single overall average treatment effect**.
+
+An attractive feature of matching strategies is that they are typically accompanied by an explicit statement of the conditional independence assumption required to give matching estimates a causal interpretation. 
+
+**Matching requires two-steps: matching and then averaging**.
+
+That is: CIA assumes that once you have certain characteristics sorted out, a certain outcome does not depend on them. 
+
+The regression estimand differs from the matching estimands only in the weights used to combine the covariate-specific effects, $\delta_X$, into a single average effect. 
+
+
+**REREAD PG 74-80 MHE**
+
+##### 3.3.2) Control for Covariates using Propensity Score
+
+What happens if the covariates $X_i$ are many/multi/continuous? Matching now requires grouping or parametric assumptions, a fact that induces bias. The **Propensity Score Theorem** extends the regression OVB idea to nonparametric conditioning.
+
+**Theorem**: if potential outcomes are independent of treatment status conditional on a multivariate covariate vector $X_i$, then potential outcomes are independent of treatment status conditional on a scalar function of covariates $\rightarrow$ **the propensity score**. It is defined as $p(X_i) = E[D_i|X_i] = P[D_i = 1|X_i]$. Like the OVB formula for regression, the propensity score theorem says that you only need to control for covariates that affect the probability of treatment itself. Also: the only covariate you really need to control for is the probability treatment itself. What it is done: **1)** $p(X_i)$ is estimated using some kind of parametric model (logit/probit); **2)** estimates of the effect of treatment are computed either by matching on the estimated score from this first step or using a weighting scheme. 
+
+- **PSM definition from** [**Dehejia and Wahba(1999)**](https://www.tandfonline.com/doi/pdf/10.1080/01621459.1999.10473858): 
+The propen-sity score is defined as the probability of assignment to treatment, conditional on covariates.
+
+- From Angrist's class *Labor Economists Know The Score*: - Propensity Score Theorem? Suppose the CIA holds for $Y_{ij}$ (j=0,1) $\implies Y_{ji} \perp \perp D_i|p(X_i)$.
+
+**Proof for the Propensity-Score Theorem**: the claim is true if $P[D_i = 1| Y_{ji}, p(X_i)]$ does not depend on $Y_{ji}$:
+
+<center>
+```{r, echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("34.png")
+grid.raster(img)
+```
+</center>
+
+We use the score to match, similarly as Covariate matching, except that we match on the score-as-covariate. By the propensity score theorem and the CIA, $E[Y_{1i} - Y_{0i}|D_i = 1]$ is equal to:
+
+\[ E\{E[Y_i|p(X_i),D_i = 1] - E[Y_i|p(X_i),D_i = 0]|D_i=1 \} \]
+
+- Back to MHE pg 81: 
+
+Example of weighting scheme: **we match on score** instead of the covariates directly. By the PST and the CIA:
+
+\[ E[Y_{1i} - Y_{0i}|D_i = 1]  \]
+
+\[ E\{E[Y_i|\rho (X_i), D_i = 1] - E[Y_i|\rho(X_i),D_i = 0]|D_i = 1\} \]
+
+Estimates of the effect of treatment on the treated can therefore be obtained by: **1)**  stratifying on an estimate of p($X_i$); and **2)** substituting conditional sample averages for expectations or **2)** by matching each treated observation to controls with similar values of the propensity score(used by the paper we review in class: [**Dehejia and Wahba(1999)**](https://www.tandfonline.com/doi/pdf/10.1080/01621459.1999.10473858). 
+
+Another approach one could apply a model-based or nonparametric estimate of E$[Y_i|\rho(X_i),D_i]$ can be substituted for these conditional mean functions and the outer expectation replaced wih a sum(this was done [**here**](https://watermark.silverchair.com/65-2-261.pdf?token=AQECAHi208BE49Ooan9kkhW_Ercy7Dm3ZL_9Cf3qfKAc485ysgAAAnAwggJsBgkqhkiG9w0BBwagggJdMIICWQIBADCCAlIGCSqGSIb3DQEHATAeBglghkgBZQMEAS4wEQQMdjtaBMX_bvz4Op8tAgEQgIICI2z4QA0M_9j0_jXxcnqGUgvt6nl8eYAt1Yupnrf7ET_YcJCbCDV_3WJeLP0I35F-Z-2ZIcJupppgb9FTd7V65b4YT5eWkuQ1SQTBt1DrCyz1qUbW_-DaqgvACuHP2w991HULxqzE8YTLqNp_WVLL2HfmlZJdHewnmP3DYusW_zrhv8i0VepUaTdgYsERy8P6atL422JcMC4XewBtMut-Tu-9uB-Kb4FLZIjt0YwqCmkEZKAB-r2sJZd6T5BzMoPU9quKbcsplhsC3tJHoeo_jGjN9yJA1FZD9PtiIk0ZLcwAdlFKsx4Yak0f4S_7NWKnwIUzqG6jhAA26GNIMNFakSZJhZfT_W7EE-MzpiwMfTOEmQLmhgwKJntdSukNBkQDWNCl3567r-RjtWs7WBUGJFJClTaoQibY-h6VgfolMCQCrhtNvthVZOVHhc3V9o3O-n01pczD3X5Zhs6Bgl7YB_u7eZ49y4LtPca56YUZZ03T_gdabLlYlX2QLhGhL-tXhb_6ffs_TRtgs-xEFnK29D8sAXcvFcxc244BgT7atdeQqNns-NlcxCr6hT9MM3cW4SV6wSZX09gZ_dhMHBX2-Xn0MbBlYZZbNdnJFuLb9OfeSkGssi7RIpvSdacIJWfrVJO-HQHY2cXz1PAEoXs6LPncPukY185gPr5jADYw3klGuhW5Ej7XoPncbu0g2oiThm0PrF40zdK6yxJ49itP8k3QWmA)).
+
+We can calculate the effect of treatment on the treated from the sample analog of:
+
+\[ E[Y_{1i} - Y_{0i}|D_i = 1] = E[\frac{(D_i - \rho(X_i))Y_i}{(1 - \rho(X_i))P(D_i = 1)}]  \]
+
+With a consistent estimator of $\rho(X_i)$ it is possible to **correct for nonrandom sampling** via weighting by the reciprocal of the probability of selection. The first idea for this came from [**Horvitz-Thompson**](http://www.stat.cmu.edu/~brian/905-2008/papers/Horvitz-Thompson-1952-jasa.pdf): in their version of the propensity score approach the estimator is essentially automated, no need for matching. This approach highlights the link between PSM and regression. Consider again(as previously seen in 3.3.1) the regression estimand, $\delta_R$, for the population regression of $Y_i$ on $D_i$, controlling for a saturated model for covariates. This estimand can be written:
+
+\[ \delta_R = \frac{E[(D_i - \rho(X_i))Y_i]}{E[\rho(X_i)(1 - \rho(X_i))]} \]
+
+The two estimators obtained from the last two equations are in the class of weighted average estimands considered by [**Hirano, Imbens and Ridder(2003)**](https://onlinelibrary.wiley.com/doi/pdf/10.1111/1468-0262.00442):
+
+\[ E \{g(X_i) [\frac{Y_iD_i}{\rho(X_i)} - \frac{Y_i(1 - D_i)}{(1 - \rho(X_i))}] \}  \]
+
+Above, $g(X_i)$ is a known weighting function. **So you calculte the effect of the treatment on the treated with an easier less cumbersome approach using weights**. 
+
+Thought-provoking theorems on the efficient use of the propensity score:
+
+i) From the point of view of asymptotic efficiency, **there is usually a cost to matching on the propensity score instead of full covariate matching**. If we investigate the maximal precision of estimates of treatment effects under the CIA, with and without knowledge of the propensity score. A regression analog for this point is the result that even in a scenario with no OVB, the long regression generates more precise estimates of the coefficients on the variables included in a short regression whenever the omitted variables have some predictive power for outcomes. So **why should we use PSM?** It helps the scientist to focus on models for treatment assignment(something he is well-informed of) but not on the typically more complex and mysterious process that determines outcomes. 
+
+ii) Even though there is no **asymptotic efficiency gain** for using the propensity score, there will often be a gain in precision in **finite samples**. Tradeoff: if the covariates omitted from the propensity score explain little of the variation in outcomes, it may be better to ignore them than to bear the statistical burden imposed by the need to estimate their effects. 
+
+iii) [**Hirano, Imbens and Ridder(2003)**](https://onlinelibrary.wiley.com/doi/pdf/10.1111/1468-0262.00442): show that for models with continuous covariates, a Horvitz-Thompson-type weighting estimator is efficient when the weighting scheme uses a *nonparametric* estimate of the score(even though estimates of treatment effects based on a known propensity score are inefficient). 
+
+##### 3.3.3) Propensity Score Methods vs Regression
+
+Propensity score methods shift attention from the estimation of $E[Y_i | X_i, D_i]$ to the estimation of the propensity score: $\rho(X_i) \equiv E[D_i |X_i]$. 
+
+Conclusion(Pg91): the experiments made in this subschapter boost the authors faith in regression. Regression controls for the right covariates does a reasonably good job of eliminating selection bias in the CPS-1 sample despite a huge baseline gap. Restricting the sample using our knowledge of program admissions yields even better results with CPS-3. Systematic **prescreening** to enforce common support seems like a useful adjunct to regression estimation with CPS-1, a large and coarsely selected initial sample. 
+
+#### 3.4) Regression Details
+
+##### 3.4.1) Weighting Regression
+
+The efficient WLS estimator for the LPM - a special case of generalized least squares (GLS) - is to weight by $[X_i'\beta (1 - X_i'\beta)]^{-1}$. Because the CEF has been assumed to be linear, these weights can be estimated in a first pass by OLS. 
+
+##### 3.4.2) Limited Dependent Variables and Marginal Effects
+
+Many econometrics textbooks argue that, while OLS is fine for continuous dependent variables, when the outcome of interest is a limited dependent variable, linear regression models are inappropriate and nonlinear models such as probit and Tobit are preferred. MHE thinks that regression inherits its legitimacy from the CEF, making LDVness less central. Given our earlier discussion:
+
+\[ E[Y_i | D_i = 1] - E[Y_i | D_i = 0] \]
+
+\[ = E[Y_{1i}|D_i = 1] - E[Y_{0i}|D_i = 1] \]
+
+\[ = E[Y_{1i} - Y_{0i}] \]
+
+Which suggests that the estimation of causal effects in experiments presents no special challenges whether $Y_i$ is binary, non-negative, or continuously distributed. We may change the way in which we describe results, but not the underlying population. Because the outcome is a dummy variable, the average causal effect is also a causal effect on usage rates or probabilities. The probit model is usually motivated by the assumption that participation is determined by a latent variable $Y_^\ast$ that satisfies:
+
+\[ Y_i^\ast = \beta_0^\ast + \beta_1^\ast D_i - v_i \]
+
+If we look at equation 3.4.4, the overall difference in average expenditure can be broken up in two parts: the difference in the probability that expenditures are positive (often called a participation effect) and the difference in means conditional on participation, a conditional-on-positive (COP) effect. 
+**Good COP Bad COP**: we can look at the two parts of causal effects on a non-negative random variable. Similarly to Bad Control, the problem here is that Conditional-on-Positive effects (COP) **don't have a causal interpretation**. In equations:
+
+\[ E[Y_i|Y_i > 0, D_i = 1] - E[Y_i|Y_i > 0, D_i = 0] \]
+
+\[ = E[Y_{1i}|Y_{1i} > 0] - E[Y_{0i}|Y_{0i} > 0]\]
+
+\[ = \underbrace{E[Y_{1i} - Y_{0i}| Y_{1i} > 0]}_\text{Causal effect} + \underbrace{\{E[Y_{0i}|Y_{1i} > 0] - E[Y_{0i}|Y_{0i} > 0] \}}_\text{Selection Bias} \]
+
+Selection bias arise because the experiment changes the composition of the group with positive expenditures. 
+
+**Covariates Lead to Nonlinearity**: in practice, the explanatory variable of interest isn't always a dummy, and there are usually covariates in the CEF. In this case, almost certainly $E[Y_i|X_i,D_i]$ is not linear. The upshot is that in LDV models with covariates, regression does not need to fit the CEF perfectly. It remains true, however, that the underlying CEF has a causal interpretation if the CIA holds. 
+
+**Marginal Effects**: the **output** from nonlinear models have to be converted into **marginal effects** to be useful. Marginal effects are the average changes in CEF implied by a nonlinear model. We usually find them by doing multiregression. 
+
+##### 3.4.3 Why is Regression Called Regression, and What Does Regression to the Mean Mean?
+
+Galton: parents and kids' height: towards the mean!
+
+### **4) Instrumental Variables in Action**
+
+From [**Wikipedia**](https://en.wikipedia.org/wiki/Instrumental_variables_estimation): the method of instrumental variables (IV) is used to estimate causal relationships when controlled experiments are not feasible or when a treatment is not successfully delivered to every unit in a randomized experiment. IVs are used when an explanatory variable of interest is correlated with the error term, in which case ordinary least squares and ANOVA give biased results. A valid instrument **induces changes in the explanatory variable but has no independent effect on the dependent variable**, allowing a researcher to uncover the causal effect of the explanatory variable on the dependent variable.
+
+Instrumental variable methods allow for consistent estimation when the explanatory variables (covariates) are correlated with the error terms in a regression model. Such correlation may occur **1)** when changes in the dependent variable change the value of at least one of the covariates ("reverse" causation), **2)** when there are omitted variables that affect both the dependent and independent variables, or **3)** when the covariates are subject to non-random measurement error. Explanatory variables which suffer from one or more of these issues in the context of a regression are sometimes referred to as endogenous. In this situation, ordinary least squares produces biased and inconsistent estimates.
+
+#### **4.1) IV and Causality**
+
+Suppose that potential outcomes can be written:
+
+\[ Y_{si} = f_i(s) \]
+
+\[ f_i(s) = \alpha + \rho s + \eta_i \]
+
+Suppose also: $\eta_i = A_i' \gamma + v_i$, where $A_i$ is the ability we want to take into account in a regression of wages to schooling. A long regression would then be written:
+
+\[ Y_i = \alpha + \rho s_i + A_i' \gamma + v_i \]
+
+How do estimate the long regression coefficient $\rho$ when $A_i$ is unobserved? We need a **instrument**! It has to be correlated to the causal variable of interest($s_i$) but not correlated to any of the other determinants of the dependent variable(Cov($\eta_i, z_i$)=0). This uncorrelated part is called the **exclusion restriction**. Given the exclusion restriction, we have that:
+
+$\beta_{IV} = \rho = \frac{Cov(Y_i,Z_i)}{Cov(S_i,Z_i)}$
+
+The coefficient of interest is the ratio of the population regression of $Y_i$ on $Z_i$ (the reduced form) to the population regression of $s_i$ on $z_i$ (the first stage). This first stage is the regression of the causal variable of interest on covariates and instruments. Once we have that result, we estimate our relation of interest. For example:
+
+\[ \text{First stage: } s_i = X_i' \pi_{10} + \pi_{11}z_i + \xi_{1i} \]
+
+\[ \text{Reduced form: } Y_i = X_i' \pi_{20} + \pi_{21}z_i + \xi_{2i} \]
+
+The parameter $\pi_{11}$ captures the first-stage effect $Z_i$ on $S_i$, adjusting for covariates, $X_i$. The parameter $\pi_{21}$ captures the reduced-form effect of $Z_i$ on $Y_i$, adjusting for these same covariates. The dependent variables in these two equations are said to be **endogenous variables** (determined jointly within the system) and the variables on the right-hand side are said to be the **exogenous variables**. The covariate-adjusted IV estimator is the sample analog of $\frac{\pi_{21}}{\pi_{11}}$. 
+
+##### **4.1.1)** 2SLS
+
+The first stage fitted values are consistently estimated by $\hat{s}_i = X_i'\hat{\pi}{10} + \hat{\pi}_{11} z_i$.
+
+The coefficient on the $\hat{s}_i$ in the regression $Y_i$ on $X_i$ and $\hat{s}_i$ is called the 2SLS estimator of $\rho$. In other words, 2SLS estimates can be constructed by OLS estimation of the "second-stage equation": $Y_i = \alpha 'X_i + \rho \hat{s}_i + [\eta_i + \rho(s_i - \hat{s}_i)]$. This is called 2SLS because it is done in two steps: i) estimating $\hat{s}_i$ and ii) estimating $Y_i$. The resulting estimator is consistent for $\rho$ because the covariates and first-stage fitted values are uncorrelated with both $\eta_i$ and ($s_i - \hat{s}_i$). The intuition is: the 2SLS retains only the variation in $s_i$ that is generated by quasi-experimental variation - that is: generated by the instrument $z_i$. 
+
+2SLS is splendid! It is an IV estimator: the 2SLS estimate of $\rho$ is the smple analog of $\frac{Cov(Y_i, \hat{s}_i^\ast)}{Cov(s_i, \hat{s}_i^\ast)}$, where $\hat{s}_i^\ast$ is the residual from a regression of $\hat{s}_i$ on $X_i$. This follows from the multivariate regression formula and the fact that Cov($S_i, \hat{S}_i^\ast$) = V($\hat{s}_i^\ast$). 
+
+What is the **link** between 2SLS and IV? We might want to combine alternative IV estimates into a single more precise estimate. In models with multiple instruments, 2SLS accomplishes this by combining multiple instruments into a single instrument. We can also add interaction terms to the instrument list, which increases the first-stage $R^2$, that goes up because the quarter-of-birth pattern in schooling differs across cohorts. 
+
+#### **Recap of IV and 2SLS**
+
+- **Endogenous variables**: the *dependent variable* + the *independent variables to be instrumented*. In a simultaneous equations model, endogenous variables are determined by solving a system of stochastic linear equations. To treat an independent variable as endogenous is to instrument it $\rightarrow$ replace it with fitted values in the second stage of a 2SLS procedure. Ex: Angrist&Krueger(1991) use schooling as endogenous variable.
+
+- **Exogenous variable**: includes the *exogenous covariates not instrumented* and the *instruments themselves*. In a simultaneous equations model, exogenous ariables are determined outside the system. We think of them as **controls**. Ex: Angrist&Krueger(1991) use dummies for year of birth and state of birth. 
+
+##### **Wald Estimator**
+
+Simplest IV estimator: uses a single dummy instrument to estimate a model with one endogenous regressor and no covariates. A Wald estimator caputres the causal effect of the treatment ($D_i$) because the only reason why $E[Y_i|Z_i]$ changes is the variation in $E[D_i|Z_i]$. 
+
+##### **4.1.3 Grouped Data and 2SLS**
+
+Wald and 2SLS are linked by **grouped data**: 2SLS using instruments is the same thing as GLS on a set of group means. GLS is a linear combination of all the Wald estimators that can be constructed from pairs of means. Using the earlier draft-eligibility status study as an example, we understand that there is a more complex link between draft lottery numbers($R_i$) and veteran status($D_i$) than eligibility alone. There is variation in who ended up serving. The thing is, we can separate our analysis and do more comparisons in more intervals than just < or > 195 for 1950 born. The result of this expansion in the set of comparisons is a **set** of Wald estimators. These sets are complete in that the intervals partition the support of the underlying instrument, while the individual estimators are linearly independent in the sense that their numerators are linearly independent. Each of these Wald estimators consistently estimate the same causal effect (assumed here to be constant), as long as $R_i$ is independent of potential outcomes and correlated with veteran status. 
+
+What do we do with this bunch of Wald estimators? Can we **translate them into a single number? Yes!** And the most efficient linear combination of a full set of linearly independent Wald estimates is produced by fitting a line through the group means used to construct these samples. The OLS estimates of $\rho$ in the grouped equation are consistent, but in practice GLS are preferred since a grouped equation is heteroskedastic with a known variance structure. 
+
+Two reasons why the GLS(WLS) estimator of $\rho$ is important:
+
+1) the GLS slope estimate constructed from J grouped observations is an asymptotically efficient linear combination of any full set of J-1 linearly independent Wald estimators. 
+
+2) The GLS estimator is 2SLS. The instruments in this case are a full set of dummies to indicate each lottery number cell. The first-stage regression of $D_i$ on $Z_i$ is saturated, the fitted values will be the sample conditional means $\hat{p}_j$, repeated $n_j$ times for each *j*. The second-stage slope estimate is therefore the same as the slope from WLS estimation of the grouped equation, weighted by the cell size $n_j$. 
+
+- **Conceptually**: 2SLS estimator using a set of dummy instruments can be understood as a linear combination of all the Wald estimators generated by using these instruments one at a time. The Wald estimator in turn provides a simple framework used later in this chapter to interpret IV estimates in the more realistic world of heterogeneous potential outcomes. 
+
+- **Practically**: the grouped data equivalent of 2SLS gives us a simple tool used to evaluate any IV strategy. The group model embodies the assumption that the reason the outcome varies with the treatment is because of the randomization of the instrument(?). If the underlying causal relation is linear with constant effects, then equation (4.1.16) should fit the group mean well, something we can assess by inspection and with the machinery of formal statistical inference.
+
+Summing up: grouped data plots for discrete instruments are often called Visual Instrumental Variables. 
+
+#### **4.2) Asymptotic 2SLS Inference**
+
+##### **4.2.1) The Asymptotic Distribution of the 2SLS Coefficient Vector**
+
+Let $V_i \equiv [X_i' \hat{s}_i]'$ denote the vector of regressors in the 2SLS second stage. The 2SLS can be written: $\hat{\Gamma}_{2SLS} = [\sum_i V_iV_i']^{-1} \sum_i V_i Y_i$ where $\Gamma \equiv [\alpha ' \rho]'$ is the corresponding coefficient vector. Note that the first-stage residuals ($s_i - \hat{s}_i$[where $\hat{s}_i$ are the fitted values]) are *orthogonal* to $V_i$. So the **asymptotic distributio n of the 2SLS coefficient vector is the asymptotic distribution** of $[\sum_iV_i V_i']^{-1} \sum_i V_i \eta_i$. 
+
+- Problem: by manually estimating the First-stage and then plugging the fitted values into the second-stage eqution and then estimating it by OLS would result in the **wrong standard errors**. Softwares don't recognize you are trying to construct a 2SLS estimate and then end up replacing the coefficients $\alpha$ and $\rho$ with the corresponding second-stage coefficients. **The correct residual variance estimator uses the original endogenous regressor to construct residuals and not the first-stage fitted values**($\hat{s}_i$). 
+
+##### **4.2.2. Overidentification and the 2SLS Minimand**
+
+**Overidentified**: constant effects models with *more instruments than endogenous variables*. These models impose a set of restrictions that can be evaluated as part of a process of specification testing. This process amounts to asking **whether the line plotted in a VIV-type picture fits the relevant conditional means tightly enough**, given the precision with which these means are estimated.  
+
+**Justidentified**: when you have the same number of instruments and endogenous variables. 
+
+2SLS can be understood as a GMM estimator that chooses a value for $\Gamma$ by making $\frac{1}{N} \sum Z_i \eta_i (\Gamma) \equiv m_N (\Gamma)$ as close to 0 as possible. After a lot of math, the quadratic form to be minimized is: $J_N (\hat{g}) \equiv Nm_N (\hat{g})' \Lambda^{-1} m_N(\hat{g})$. When the residuals are conditionally homoskedastic, the minimizer of $J_N(\hat{g})$ is the 2SLS estimator. Without homoskedasticity, the GMM estimator that minimizes is White's (1982) two-stage IV (a generalization of 2SLS), so it makes sense to call $J_N(\hat{g})$ the **2SLS minimand**. 
+
+**The overidentification test statistic is given by the minimized 2SLS minimand.** The intuition is that this test statistic tells us whether the sample moment vector $m_N(\hat{g})$ is close enough to zero for the assumption that E[$Z_i \eta_i$] = 0 to be plausible. Under the $H_0$ that the residuals and instruments are indeed uncorrelated, the minimized $J_N(\hat{g})$ has a $\mathcal{X}^2(Q-1)$ distribution. So, we can compare the empirical value of the 2SLS minimand with the chi-square tables in a formal test for $H_0: E[Z_i \eta_i] = 0$. 
+
+We're especially interested in the 2SLS minimand when the instruments are a full set of mutually exclusive dummy variables, as for the Wald estimators and grouped data estimation strategies discussed above. In this case, 2SLS becomes WLS estimation of a grouped equation, while the 2SLS minimand is the weighted sum of squares being minimized. 
+
+Given that $\hat{J}_N(\hat{g})$ is the GLS minimand for estimation of the regression of $\overline{y}_i$ on $\overline{W}_i$, the efficient two-step IV procedure without homoskedasticity minimizes it. **The GLS structure of the 2SLS minimand allows us to interpret the overidentification test statistic for dummy instruments as a measure of goodness of fit of the line connecting $\overline{y}_j$ and $\overline{W}_j$**. This is the chi-square goodness-of-fit statistic for the regression line in a VIV plot. There are other paths to know the test, see pg 145. It's worth noting, though, that the overidentification idea can be more way to deal with the same econometric problem. In other words, given more than one instrument for the same causal relation, we might construct just-identified IV estimators one at a time and compare them.
+
+**Caveat**: because the test statistic $J_N (\hat{g})$ measures variance-normalized goodness of fit, the overidentification test statistic tends to be low when the underlying estimates are imprecise. Since IV estimates are often imprecise, it doesn't mean much when an estimate is within sampling variance from another, even if the individual estimates appear precise enough to be informative. However, when the IV estimates are very precise, the fact that the overidentification test rejects need not point to an identification failure, but rather this may be evidence of treatment effect heterogeneity. 
+
+#### **4.3. Two-Sample IV and Split-Sample IV**
+
+The GMM interpretation of 2SLS highlights the fact that IV estimates can be constructed from sample moments alone, with no microdata. 
+
+- **Two-sample instrumental variables**: if the data sets come from the same population, we can use two-sample instrumental variables. Assuming that the plim of both is equal, GLS estimates of the two-sample moment equation:
+
+\[ \frac{Z_1'Y_1}{N_1} = \frac{Z_2'W_2}{N_2} \Gamma + \{ [ \frac{Z_1'W_1}{N_1} - \frac{Z_2'W_2}{N_2}] \Gamma + \frac{Z_1'\eta_1}{N_1} \} \]
+
+Are consistent for the coefficient vector $\Gamma$ ($[\alpha', \rho]'$). This widens the scope for IV estimation: we can use different samples! Two further simplifications: when the instruments consist of a full set of mutually exclusive dummy variables, the second moment equation simplifies to a model for conditional means. The 2SLS minimand for the two-sample problem becomes:
+
+\[ \hat{J}_N (\hat{g}) = \sum_j \omega_j (\hat{y}_{1j} - \hat{g}' \overline{W}_{2j})^2\]
+
+Where $\overline{y}_{1j}$ is the mean of the depend variable at instrument/covariate value *j* in one sample, $\overline{W}_{2j}$ is the mean of endogenous variables and covariates at instrument/covariate value $j$ in a second sample, and $\omega_j$ is an appropriate weight. This amounts to WLS estimation of the VIV equation, except that the dependent variable and independent variables do not come from the same sample. 
+
+#### **4.4. IV with Heterogeneous Potential Outcomes**
+
+So far, we've considered a constant causal effect for IV: $Y_{1i} - Y_{0i} = \rho \forall i$. Why heterogeneity in treatment effects important? In terms of **internal validity** and **external validity**, we have to understand whether the result of a good IV study can be applied to different contexts. An econometric framework with heterogeneous treatment effects helps us to assess both the internal and external validity of IV estimates. 
+
+##### **4.4.1 Local Average Treatment Effects**
+
+We can think of instrumental variables as initiating a causal chain where the instruments $Z_i$ affects the variable of interest $D_i$, which in turn affects the outcomes $Y_i$. In a heterogeneous effects model, we start by assuming that the instrument is as good as randomly assigned. This is sufficient for a causal interpretation of the reduced form. The second key assumption is that $Y_i(d,z)$ is a function only of *d* (exclusion restriction). Using the exclusion restriction, we can define potential outcomes indexed solely agains treatment status using the single index notation ($Y_{0i}, Y_{1i}$). The observed outcome can thus be written in terms of potential outcomes as: 
+
+\[ Y_{0i} + (Y_{1i} - Y_{0i})D_i \]
+
+The last assumption is **monotonicity**: the instrument can only affect the observations in the same way: either $D_{1i} ≥ D_{0i}$ or $D_{1i} ≤ D_{0i}$. 
+
+Given all the assumptions (exlusion restriction, independence of instruments and potential outcomes, existence of a 1st-stage and monotonicity), the Wald estimand can be interpreted as the Local Average Treatment Effect:  
+\[ \frac{E[Y_i|Z_i = 1] - E[Y_i|Z_i = 0]}{E[D_i|Z_i = 1] - E[D_i|Z_i = 0]} = E[Y_{1i} - Y_{0i}|D_{1i} > D_{0i}] = E[\rho_1|\pi_{1i > 0}] \]
+
+The LATE theorem states that an instrument that is as good as randomly assigned, affects the outcome through a single known channel, has a 1st stage and affects the causal channel of interest only in one direction can be used to **estimate the average causal effect on the affected group**. 
+
+##### **4.4.2** The Compliant Subpopulation
+
+LATE partitions any population into a set of three instrument-dependent subgroups: 
+
+*i) compliers*: the subpopulation with $D_{1i} = 1$ and $D_{0i} = 0$.
+
+*ii) always-takers*: the subpopulation with $D_{1i} = D_{0i} = 1$.
+
+*iii) never-takers*: the subpopulation with $D_{1i} = D_{0i} = 0$.
+
+So we can say that the treated are composed of either always-takes or of compliers with the instrument switched on. So we get:
+
+\[ \underbrace{E[Y_{1i} - Y_{0i}| D_i = 1]}_\text{Effect on the treated} + \]
+
+\[ = \underbrace{E[Y_{1i} - Y_{0i}| D_{0i} = 1]}_\text{Effect on always-takers}P[D_{0i} = 1|D_i = 1] + \underbrace{E[Y_{1i} - Y_{0i}|D_{1i} > D_{0i}]}_\text{Effect on compliers}P[D_{1i} > D_{0i}, Z_i = 1| D_i = 1] \]
+
+Since $P[D_{0i} = 1|D_i = 1]$ and $P[D{1i} > D_{0i}, Z_i = 1|D_i = 1]$ add up to one, it means that the effect of TOT is a weighted average of effects on always-takers and compliers.
+
+Looking on the other direction, LATE is **not** the average causal effect of treatment on the nontreated: E$[Y_{1i} - Y_{0i}|D_i = 0]$. The average effect of treatment on the nontreated is a weighted average of effects on never-takers and compliers.
+
+\[ \underbrace{E[Y_{1i} - Y_{0i}| D_{i} = 0]}_\text{Effect on the nontreated} \]
+
+\[ \underbrace{E[Y_{1i} - Y_{0i}| D_{1i} = 0]}_\text{Effect on never-takers} P[D_{1i} = 0|D_i = 0] + \underbrace{E[Y_{1i} - Y_{0i}| D_{1i} > D_{0i}]}_\text{Effect on compliers} P[D_{1i} > D_{0i}, Z_i = 0|D_i = 0]\]
+
+If we average the equations fo the effect on the treated and on the nontreated, we get the unconditional average treatment effect to be a weighted average of effects on complies, always-takers and never-takers.
+
+##### **4.4.3 IV in Randomized Trials**
+
+What happens if we compare results considering whether the subjects were offered treatment? We look at **intention-to-treat effects**. They have a causal interpretation: they tell us the causal effect of the offer of treatment, building in the fact that some of those offered treatment declined to participate. ITT divided by the difference in compliance rates between treatment and control groups as originally assigned measure the ffect of treatment on the treated. **We use the fact the we have almost no always-takers in LATE to show the effect of TOT**. This is known as the Bloom result: 
+
+\[ \frac{E[Y_i|Z_i = 1] - E[Y_i|Z_i = 0]}{P[D_i = 1|Z_i = 1]} = E[Y_{1i} - Y_{0i}|D_i = 1] \]
+
+The best example is the Minneapolis Domestic Violence Experiment: those who were assigned to be arrested were in fact arrested! No never-takers!
+
+##### **4.4.4 Counting and Characterizing Compliers**
+
+We've seen that each instrumental variable identifies a unique causal parameter, one specific to the subpopulation of compliers for that instrument. Although different IV estimates are implicitly weighted up by 2SLS to produce a single average causal effect, overidentification testing where multiple instruments are validated regardless whether they are estimating the same thing is out the window in a fully heterogeneous world. Differences in compliant subpopulations might explain variability in treatment effects from one instrument to another. That's why it's important to know as much as we can about the compliers for different instruments. 
+
+On the other hand, **if the compliant subpopulations** associated with two or more instruments **are very different**, then we are prepared to adopt **homogeneous effects** as a working hypothesis. 
+
+#### **4.5. Generalizing LATE**
+
+The LATE theorem applies to a stripped-down causal model in which a single dummy instrument is used to estimate the impact of a dummy treatment with no covariates. We can generalize this in three important ways: 1) multiple instruments; 2) models with covariates; 3) models with variable and continuous treatment intensity. In those three cases, the IV estimand is a weighted average of causal effects for instrument-specific compliers. The econometric tool remains 2SLS and the interpretation remains fundamentally similar to the basic LATE result, with a few bells and whistles. 2SLS with multiple instruments produces a causal effect that averages IV estimands using the instruments one at a time; 2SLS with covariates produces an average of covariate-specific LATEs; 2SLS with variable or continuous treatment intensity produces a weighted average derivative along the length of a possibly nonlinear causal response function. These results provide a simple casual interpretation for 2SLS in most empirically settings.
+
+##### **4.5.1. LATE with Multiple Instruments**
+
+Similar: use two dummies to construct Wald estimators. We can also use a 2SLS instead of Wald estimators. The resulting grouped data estimator is a linear combination of the underlying estimators. In other words, it is a linear combination of the instrument-specific LATEs using the instruments one at a time. So we can say that 2SLS using dummies $Z_{1i}$ and $Z_{2i}$ is a weighted average of IV estimates using $Z_{1i}$ and $Z_{2i}$ one at a time. Let
+
+\[ \rho_j = \frac{Cov(Y_i,Z_{ji})}{Co(D_i,Z_{ji});j = 1,2} \]
+
+Denote the two IV estimands using $Z_{1i}$ and $Z_{2i}$. Through MHE's math we see that 2SLS is a weighted average of causal effects for instrument-specific compliant subpopulations. When the two instruments are used together, the resulting 2SLS estimates are a weighted average of the Wald estimates produced by using the instruments one at a time.
+
+##### **4.5.2 Covariates in the Heterogeneous Effects Model**
+
+The LATE theorem does not involve covariates! That is because if the instrument is randomized, it is likely independent of covariates. But what if the instrument is not randomized? We condition on covariates in order to have valid conditional independence and exclusion restrictions underlying IV estimation. In other words, we think of the IVs as being as good as randomly assigned conditional on covariates $X_i$. A second reason for incorporating covariates is that conditioning on covariates may reduce some of the variability in the dependent variable. This can lead to more precise 2SLS estimates. 
+
+**Saturate and Weight Theorem**: 2SLS with a fully saturated first stage and a saturated model for covariates in the second stage produces a weighted average of covariate-specific LATEs. The weights are proportional to the average conditional variance of the population first-stage fitted value, $E[D_i|X_i,Z_i]$, at each value of $X_i$. The theorem comes from the fact that the first-stage coincides with $E[D_i|X_i,Z_i]$ when 4.5.3 is saturated. The vision of 2SLS providing a MMSE approximation to an underlying causal relation was developed by Abadie. We can find the compliers in the following sense:
+
+\[ \text{Theorem 4.5.2: Abadie Kappa: } \kappa_i = 1 - \frac{D_i(1 - Z_i)}{1 - P(Z_i = 1|X_i)} - \frac{(1 - D_i)Z_i}{P(Z_i = 1|X_i)} \]
+
+We finz that $D_i(1 - Z_i) = 1$ are always-takers because they have $D_{0i}$ and those with $(1 - D_i)Z_i = 1$ are never-takers because they have $D_{1i} = 0$. Hence, the compliers are the left out group.
+
+##### **4.5.3 Average Causal Response with Variable Treatment Intensity**
+
+Imagine that now we have a causal variable that takes values [1,2,3...]. What's the effect of going from 1 to 2, 2 to 3...? We now are answering a causal "what if" question for a multinomial $s_i$. 2SLS provides a computational device that generates the weighted average of unit causal effects, with a weighting function we can estimate and study, so as to learn where the action is coming from with a particular instrument. 
+
+- **Average Causal Response Theorem**: states that the Wald estimator with variable treatment intensity is a weighted average of the **unit causal response** along the length of the potentially nonlinear causal relation described by $f_i(s)$. The **unit causal response**, $E[Y_{si} - Y_{s-1,i}|S_{1i} ≥ s > S_{0i}]$, **is the average difference in potential compliers at point s**. 
+
+
+
+#### **4.6. IV Details**
+
+##### **4.6.1. 2SLS Mistakes**
+
+There are other risks associated with manually computing 2SLS, not only the OLS standard errors issue already discussed.
+
+- **Covariate Ambivalence**: 
+
+- **Forbidden Regressions**: 2SLS to nonlinear models. Imagine the dummy variable of interest in the first stage is regressed by OLS: the CEF is probably nonlinear! Let's try (for example) probit instead.
+
+##### **4.6.2 Peer Effects**
+
+Peer effects: the causal effect of group characteristics on individual outcomes. **Spillovers**: social return to schooling. 
+
+##### **4.6.3 Limited Dependent Variables Reprise**
+
+Most nonlinear LDV models are built around a nonlinear transformation of a linear latent index. Then, we use probit/logit/Tobit. But they may not be worth the work. OLS, however, has a conceptual robustness that structural models often lack. In fact we can think of OLS as a scheme that has the virtue of simplicity automation, and comparability across studies. Nonlinear latent index models are more like GLS: they provide an efficiency gain when taken literally, but require a commitment to functional form and distributional assumptions(not always indicated). 
+
+The arguments in favor of conventional OLS with LDVs apply with equal force to 2SLS and models with endogenous variables. IV methods capture local average treatment effects regardless of whether the dependent variable is binary, non-negative or continuously distributed. We can think of 2SLS as estimating LATE averaged across covariate cells. In models with variable or continuous treatment intensity, 2SLS gives us the average causal response to an average derivative. 2SLS estimates LATe directly: no intermediate step involving the calculation of marginal effects. 
+
+2SLS is not the only way to go: we can build up a causal story by describing the proces generating LDVs in detail. Then we see the math notations for potential treatment and outcomes, and the treatment effects for a probit model.
+
+##### **4.6.4. The Bias of 2SLS**
+
+OLS is consistent and unbiased. 2SLS is consistent but *biased*. This means that the 2SLS estimator only promises to be close to the causal effect of interest in large samples. In small samples, 2SLS can differ systematically from the target parameter. 
+
+The 2SLS estimator is **most biased** when: i) the **instruments are "weak"**: the correlation with endogenous regressors is low; and ii) there are **many overidentifying restrictions**. When the instruments are both many and weak, the 2SLS estimator is biased toward the probability limit of the corresponding OLS estimate. In the worst-case scenario, when the instruments are so weak that there is no first stage in the population, the 2SLS sampling distribution is centered on the plim. The intuition is that the **bias in 2SLS estimates is the randomness in estimates of the first-stage fitted values**. In practice, the first-stage estimates reflect some of the randomness in the endogenous variable, since the first-stage coefficients come from a regression of the endogenous variable in the instruments. If the population 1st stage is 0, then all randomness in the first stage is due to the endogenous variable. This randomness generates finite-sample correlation between first-stage fitted values and second-stage errors, since the endogenous variable is correlated with the second-stage errors. 
+
+Let's put this more formally: suppose we want to estimate the effect of a single endogenous regressor (x) on a dependent variable (y), with no other covariates. The causal model of interest is:
+
+\[ y = \beta x + \eta  \]
+
+The N $\times$ Q matrix of instrumental variables is Z, with the associated first-stage equation: 
+
+\[ x = Z\pi + \xi\]
+
+OLS estimates of the model of interest are **biased** because $\eta_i$ is correlated with $\xi_i$. The instruments $Z_i$ are uncorrelated with $\xi_i$ by construction and uncorrelated with $\eta_i$ by assumption. The 2SLS estimator is:
+
+\[ \beta_{2SLS} = (x'P_Z x)^{-1} x'P_Z y = \beta + (x' P_Z x)^{-1} x' P_Z \eta\]
+
+Where $P_Z = Z(Z'Z)^{-1}Z'$ is the projection matrix that produces the fitted values from a regression of x on Z. Substituting for x in x'$P_Z \eta$, we get:
+
+\[ \hat{\beta}_{2SLS} - \beta = (x'P_Zx)^{-1} (\pi'Z' + \xi ') P_Z \eta =  (x'P_Zx)^{-1} \pi'Z'\eta + (x' P_Z x)^{-1} \xi ' P_Z \eta\]
+
+The bias in 2SLS comes from the nonzero expectation of terms on the right-hand side. The expectation of this last equation is hard to evaluate because the expectation operator doesn't pass through the inverse $(x'P_Zx)^{-1}$, a nonlinear function. WTS that the expectation of the ratios on the RHS of the last equation can be closely approximated by the ratio of the expectations:
+
+\[ E[\hat{\beta}_{2SLS}- \beta] \approx (E[x'P_Z x])^{-1}E[\pi 'Z'\eta] + (E[x'P_Zx])^{-1}E[\xi'P_Z \eta] \]
+
+This approximation gives us a good measure of the finite-sample behavior of the 2SLS estimator. Also, because E[$\pi'Z'\xi$] = 0 and E[$\pi 'Z' \eta$] = 0, we have
+
+\[ E[\hat{\beta}_{2SLS} - \beta] \approx [E(\pi'Z'Z \pi) + E(\xi' P_Z \xi)]^{-1} E(\xi' P_Z \eta) \]
+
+The approximate bias of 2SLS comes from the fact that E($\xi'P_Z \eta$) is not zero unless $\eta_i$ and $\xi_i$ are uncorrelated. But correlation between $\eta_i$ and $\xi_i$ is what led us to use IV in the first place! 
+
+We manipulate the last equation to generate a useful expression:
+
+\[ E[\hat{\beta}_{2SLS}] \approx \frac{\sigma_{\eta \xi}}{\sigma_{\xi}^2} [\frac{E(\pi 'Z'Z \pi)/Q}{\sigma^2_\xi} + 1]^{-1}  \]
+
+Where Q = number of instruments. 
+$E(\pi 'Z'Z \pi)/Q$ is the *F-statistic for the joint significance of all regressors in the first-stage regression*. We call this F and write:
+
+\[ E[\hat{\beta}_{2SLS} - \beta] \approx \frac{\sigma_{\eta \xi}}{\sigma_{\xi}^2} \frac{1}{ F + 1 }\]
+
+As F gets small, the bias of 2SLS approaches $\frac{\sigma_{\eta \xi}}{\sigma_{\xi}^2}$. The bias of the OLS estimator is $\frac{\sigma_{\eta \xi}}{\sigma_{x}^2}$, which also equals $\frac{\sigma_{\eta \xi}}{\sigma_{\xi}^2}$ if $\pi$ = 0. Thus we have shown that 2SLS is centered on the same point as OLS when the first stage is zero. We can say that 2SLS estimates are biased toward OLS estimates when there isn't much of a first stage. On the other hand, the bias of 2SLS vanishes when F gets large. 
+
+**When the instruments are weak, the F statistic varies inversely with the number of instruments**. If we add uselesss instruments to the 2SLS model, the sum of squares, E($\pi 'Z'Z \pi$) and the residual variance $\sigma^2_\xi$ will both stay the same while Q goes up. The F-statistic becomes smaller as a result. 
+
+**Intuition**: The bias in 2SLS comes as a consequence of the fact that the first-stage is estimated. If the first stage coefficents were known, we could use $\hat{x}_{pop}$ = $Z\pi$ for the first-stage fitted values. These fitted values are uncorrelated with the second-stage error. In practice, however, we use $\hat{x} = P_Z x = Z\pi + P_Z \xi$, which differs from $\hat{x}_{pop}$ by the term $P_Z \xi$. The bias in 2SLS arises from the fact that $P_Z \xi$ is correlated with $\eta$, so some of the correlation between errors in the first and second stages seeps into our 2SLS estimates through the sampling variability in $\hat{\pi}$. Asymptotically, this correlation disappears, but real life does not play out in asymptotia. 
+
+So we get that we want to have the least number of instruments, to the point that the just identified 2SLS is approximately *unbiased*. Even with weak instruments! So we say that just-identified 2SLS is median-unbiased. But if the first stage is really zero, then even a just-identified estimator is biased and centered on the OLS plim. But *with weak instruments, just-identified estimates tend to be too imprecise to mislead you into thinking you've pinned down a useful causal relation*. 
+
+- **Limited information maximum likelihood(LIML)**: is approximately median-unbiased for overidentified constant effects models, and hence, an attractive alternative to just-identified estimation using one instrument at a time. LIML has the same asymptotic distribution as 2SLS while providing a finite-sample bias reduction. A number of other estimators also reduce the bias in overidentified 2SLS models. Using Monte-Carlo to illustrate, imagine the simulated data are drawn from the following model:
+
+\[  y_i = \beta x_i + \eta_i \]
+
+\[ x_i = \sum_{j=1}^Q \pi_j z_{ij} + \xi_{i} \]
+
+Where $\beta = 1$, $\pi_1 = 0.1$ and $\pi_j = 0$ for j = 2,...,Q. Next, we make a Monte-Carlo simulation for: OLS, just-identified IV (2SLS with q = 1), 2SLS with two instruments and LIML with Q = 2. The results (figure 4.6.1) illustrate the virtual unbiasedness of just-identified IV. 2SLS with one weak and one uninformative instrument is moderately biased toward OLS. The distribution function for LIML with Q = 2 is indistinguishable from that for just-identified IV, even though the LIML estimator also uses an uninformative instrument. If we increase the number of instruments to 20, the bias in 2SLS is now much worse (figure 4.6.2). LIML again  performs well and is centered around $\beta = 1$, with more dispersion than in the Q = 2 case. When the simulation reports results from a model that is truly *unidentified*, LIML has an advantage: in figure 4.6.3 the widely dispersed sampling distribution reflects how the data are uninformative about the parameter of interest. 
+
+### **6) Getting a Little Jumpy: Regression Discontinuity Designs**
+
+**Regression discontinuity** research designs exploit precise knowledge of the rules determining treatment. RD identification is based on the idea that in a highly rule-based world, some rules are arbitrary and therefore provide good eperiments. The RD experiments can be divided into:
+
+#### **6.1) Sharp RD**
+
+When treatment status is a deterministic and discontinuous function of a covariate $x_i$. When you have a known threshold/cutoff, you can have a deterministic function of the treatment. For example, once you're 21, you're allowed to drink. A simple model formalizes this:
+
+\[ E[Y_{0i} | x_i] \alpha + \beta x\]
+
+\[ Y_{1i} = Y_{0i} + \rho\]
+
+Which leads to the regression:
+
+\[ Y_i = \alpha + \beta x_i + \rho D_i + \eta_i \]
+
+Where $\rho$ is the causal effect of interest. Key point here: $D_i$ not only is correlated with $x_i$, but is a deterministic function of $x_i$. RD captures causal effects by distinguishing the nonlinear and discontinuous functions 1($x_i ≥ x_0$) from the smooth and (sometimes) linear function $x_i$. What happens if the trent relation, $E[Y_{0i}|x_i]$ is nonlinear? There is still hope! We construct RD estimates by fitting $Y_i = f(x_i) + \rho D_i + \eta_i$, where again $D_i = 1(x_i ≥ x_0)$ is discontinuous in $x_i$ at $x_0$. As long as $f(x_i)$ is continuous in a neighborhood of $x_0$, it should be possible to estimate a model like the one for $Y_i$. 
+
+The validity of RD estimates of causal effects based on turns on whether polynomial models provide an adequate description of E[$Y_{0i}|x_i$]. If not, then what looks like a jump due to treatment might simply be an unaccounted-for nonlinearity in the counterfactual conditional mean function. A sharp turn in E[$Y_{0i}|x_i$] might be mistaken for a jump from one regression line to another. To reduce the likelihood of such mistakes, we can look only at data in a neighborhood around the discontinuity, say the interval [$x_0 - \Delta, x_0 + \Delta$] for some small positive number $\Delta$. We can do the math (6.1.7) to arrive at the conclusion that: comparions of average outcomes in a small enough neighborhood to the left and right of $x_0$ estimate the treatment effect in a way that does not depend on the correct specification of a model for E[$Y_{0i}|x_i$]. Formally:
+
+\[ lim_{\Delta \rightarrow 0} E[Y_i | x_0 ≤ x_i < x_0 + \Delta] - E[Y_i|x_0 - \Delta < x_i < x_0] \]
+
+\[ = E[Y_{1i} - Y_{0i}|x_i = x_0]\]
+
+The nonparametric approach to RD requires good estimates of the mean of $Y_i$ in small neighborhoods to the left and right of $x_0$. This is tricky because: 1) small neighborhood implies that you don't have much data; 2) the sample average is biased for the CEF in the neighborhood of boundary. By the time MHE was written, the majority of RD work used to be parametric. 
+
+#### **6.2) Fuzzy RD**
+
+Fuzzy RD exploits discontinuities in the *probability* or *expected value* of treatment conditional on a covariate. The result is a research design where the **discontinuity becomes an IV for treatment status**, instead of deterministically switching treatment on or off. 
+
+For an example:
+
+\begin{equation}
+     P(D_i = 1| x_i) =
+    \begin{cases}
+      g_1(x_i) & \text{if $x_i \geq x_0$}\\
+      g_0(x_i) & \text{if $x_i < x_0$}
+    \end{cases}       
+\end{equation}
+
+Where $g_1(x_0)$ ≠ $g_0(x_0)$. The functions $g_0$ and $g_1$ can be anything as long as they differ at $x_0$. The more they differ, the better because the effect of the treatment will be more pronounced. We can write the relation between the probability of treatment and $x_i$ as:
+
+\[ E[D_i|x_i] = P(D_i = 1|x_i) = g_0(x_i) + [g_1(x_i) - g_0(x_i)] T_i \]
+
+where $T_i = 1(x_i ≥ x_0)$. The dummy variable $T_i$ indicates the point **where E[$D_i|x_i$] is discontinuous**. Fuzzy RD leads to a 2SLS estimation strategy. Assuming that $g_0(x_i)$ and $g_1(x_i)$ can be described by $\rho$th-order polynomials as we did for $f_0(x_i)$ and $f_1(x_i)$, we have:
+
+\[ E[D_i|x_i] = \gamma_{00} + \gamma_{01} x_i + \gamma_{02}x_i^2 + ... + \gamma_{0p}x_i^\rho + [\pi + \gamma_1^\ast x_i + \gamma_2^\ast x_i^2 + ... + \gamma_p^\ast x_i^\rho] T_i \]
+
+\[ = \gamma_{00} + \gamma_{01}x_i + \gamma_{02}x_i^2 + ... + \gamma_{0p}x_i^\rho + \pi T_i + \gamma_1^\ast x_i T_i + \gamma_2^\ast x_i^2 T_i + ... + \gamma_\rho^\ast x_i^\rho T_i\]
+
+Where the $\gamma^\ast$'s are the coefficients on the polynomial interactions with $T_i$. From here we see that $T_i$ and the interaction terms can be used as instruments for $D_i$. The simplest fuzzy RD estimator uses only $T_i$ as an instrument. The resulting just-identified IV estimator has the virtues of transparency and good finite-sample properties. The first stage in this case is: 
+
+\[ D_i = \gamma_0 + \gamma_1 x_i + \gamma_2 x_i^2 + ... + \gamma_p x_i^p + \pi T_i + \xi_{1i} \]
+
+Where $\pi$ is the 1st-stage effect of $T_i$. The fuzzy RD reduced form is obtained by substituting the above equation into the RD estimates equation(6.1.4). 
+
+The **non-parametric** version of fuzzy RD consists of IV estimation in a small neighborhood around the discontinuity. The reduced-form conditional expectation of $Y_i$ near $x_0$ is:
+
+\[ E[Y_i|x_0 ≤ x_i < x_0 + \Delta] - E[Y_i | x_0 - \Delta < x_i < x_0 ] \approx \rho \pi \]
+
+Similarly, for the first stage for $D_i$ we have:
+
+\[ E[D_i|x_0 ≤ x_i < x_0 + \Delta] - E[D_i|x_0 - \Delta < x_i < x_0] \approx \pi\]
+
+Therefore:
+
+\[ lim_{\Delta \rightarrow 0} \frac{E[Y_i|x_0 < x_i < x_0 + \Delta] - E[Y_i|x_0 - \Delta < x_i < x_0]}{E[D_i|x_0 < x_i < x_0 + \Delta] - E[D_i|x_0 - \Delta < x_i < x_0]} = \rho \]
+
+The above is local average treatment effect. As with the nonparametric version of sharp RD, the finite-sample behavior of the sample analog of the equation above is not likely to be very good. Ideally, 2SLS estimates in the discontinuity sample with few controls will be broadly consistent with the more precise estimates constructed using the larger sample.
+
+## **Mastering Metrics** {.tabset}
+
+### **3) Instrumental Variables**
+
+#### **Instrumental Variables**
+
+**Instrumental Variables** method harnesses partial or incomplete random assignment. 
+
+Ex: charter schools. A charter is the right to operate a public school. But can we compare the effect of these schools to other? How can we employ ceteris paribus to isolate the effect of being at this school?
+
+The decision to attend this school is **not entirely random**. Among applicants, you can be awarded a seat and not enroll, as well as enrolling without being awarded a seat. So we compare those who were offered a seat vs those who weren't. We assume that the only difference created by winning the lottery is the likelihood of charter enrollment(this assumption is called the **exclusion restriction**). So IV turns randomized offer effects into causal estimates of the effect of charter attendance. The estimates of IV capture causal effects on the sort of child who enrolls in KIPP when offered a seat in a lottery. This group is the set of KIPP lottery *compliers*. 
+
+KIPP lotteries randomize the offer of a charter seat, which should balance demographic characteristics. It is important to check for balance in pretreatment outcomes (test scores of lottery applicants prior to KIPP enrollment). These scores have been standardized: subtract the mean and divide by the standard deviation of scores in a reference population. After that, scores are measured in unites defined by the standard deviation of the reference population. The average math score in Lynn is $-0.3\sigma$ compared to the whole population of Massachusetts. The math score for those who were awarded a seat at Lynn is 0.095, an impressive increase when compared to the $-0.3\sigma$ stated above. Those who were not offered a seat had a score of $-0.36\sigma$. 
+
+What does this $-0.36\sigma$ difference tell us? The **IV estimator converts the offer effects into attendance effects**! In this case, the *instrumental variable/instrument is a dummy variable indicating the applicants who receive offers*. In general, an instrument has 3 requirements:
+
+i) **First stage**: the instrument has a causal effect on the variable whose effects we're trying to capture (offered seat has a causal effect on KIPP enrolment). 
+
+ii) **Independence assumption**: The instrument is randomly assigned: unrelated to omitted variables we might want to control for(for example: family background or motivation). 
+
+iii) **Exclusion restriction**: describes a single channel through which the instrument affects outcomes. The exclusion restriction amount to the claim that the $-0.36\sigma$ score differential between winners and losers is attributable solely to the .74 win-loss difference in attendance rates.
+
+The IV method uses these assumptions to characterize the chain reaction leading from the instrument to the outcome. The first link(or the **first stage**) connects randomly assigned offers student performance. The second link(which was the one of interest) is the one comparing treatment(KIPP attendance) with achievement. Thanks to the independence assumption and the exclusion restriction, the product of these two links generates the effect of offers on test scores:
+
+\[ \text{Offers FX on scores = Offers FX on attendance} \times \text{ Effect of attendance on scores} \]
+
+Rearranging:
+
+\[ \text{Attendance FX on scores} = \frac{\text{Offers FX on scores}}{\text{Offer FX on attendance}} \]
+
+The logic is: **KIPP offers are assumed to affect test scores via KIPP attendance alone**. The key point here is related to the third assumption: once offered a KIPP, the only effect on outcome is through KIPP attendance. Offers increase attendance rates by .74, so multiplying Offers FX on scores by about ($\approx 1 / .74$) generates the attendance effect. This adjustment corrects for the facts that roughly a quarter of those who were offered a seat at KIPP chose to go elsewhere and some not offered went anyway. 
+
+We estimate our equation as: [(Average Score of Those Offered a Seat) - (Average score of those not offered a seat)]/[(Proportion of those enrolled at KIPP that were offered a seat) - (Proportion of those enrolled at KIPP that we're not offered a seat)]: (-0,003$\sigma$ - (-0,358$\sigma$))/(0,787 - 0,046) = 0,479$\sigma$. This is an example of an **IV chain reaction**. The direct effect of the instrument on outcomes, which runs the full length of the chain is called the **reduced form**. So we have the first link and the link between instrument and outcome: their difference has got to be the **causal effect of interest**! The second link in the chain is the ratio of reduced form to first-stage estimates. This causal effect is called a **local average treatment effect**(LATE for short). 
+
+These links are made of differences between conditional expectations: comparisons of population averages for different groups. These are, in practice, estimated using sample means, usually with data from random samples. The necessary data are:
+
+- **The instrument $Z_i$**: a dummy variable that equals 1 if the student was offered a KIPP seat.
+
+- **The treatment variable $D_i$**: a dummy that equals 1 if the student attended KIPP(sometimes called the **endogenous variable**).
+
+- **The outcome variable $Y_i$**: fifth-grade math scores. 
+
+The links between in the IV chains are the relationships between those variables: the parameters! 
+
+- **First Stage**: E[$D_i|Z_i = 1$] - E[$D_i|Z_i = 0$]: call this $\phi$. $\phi$ is the difference in KIPP attendance rates between those who were and were not offered a seat in the lottery (=.74).
+
+- **Reduced Form**: E[$Y_i|Z_i = 1$] - E[$Y_i|Z_i = 0$]: call this $\rho$. $\rho$ is the difference in average test scores between applicants who were and were not offered a seat in the lottery. 
+
+- **Local Average Treatment Effect(LATE)**: $\lambda = \frac{\rho}{\phi} = \frac{E[Y_i|Z_i = 1] - E[Y_i|Z_i = 0]}{E[D_i|Z_i = 1] - E[D_i|Z_i = 0]}$. The ratio of the reduced form to the first stage. In the KIPP study, LATE is the difference in scores between winners and losers divided by the difference in KIPP attendance rates between winners and losers. If we substitute the 4 expectation functions by the corresponding sample averages, we get **IV**. In practice, we usually opt for 2SLS(more flexibility).
+
+We've stated how an instrument($Z_i$) changes the variable of interest ($D_i$) and in turn affect outcomes ($Y_i$). LATE can also be denoted as $\lambda = \frac{\rho}{\phi} = E[Y_{1i} - Y_{0i}|C_i = 1]$ ($Y_{1i}$ denotes the outcome for $i$ with treatment, $Y_{0i}$ is the outcome without a treatment). An instrumental variable has **little use** to learn the effects on people whose treatment status can't be changed by manipulating the instrument. 
+
+Researchers and policy makers are sometimes interested also in the average causal effects for the entire treated population, as well as in LATE. This average causal effect is called the **treatment effect on the treated**(TOT): E[$Y_{1i} - Y_{0i} | D_i = 1$]. There are **two ways to be treated: it depends on whether the instrument was switched on, or regardless of the status of the instrument**. In the KIPP study, the threated included always-takers, who were the ones that suffered treatment without being subject of the instrument. Effects on always-takers are not necessarily the same as the effects on compliers. His causal effect may be larger(he really wants to go to KIPP and make the most out of it).
+
+LATE and TOT are usually not the same because the treated population includes always takers. Whether a a particular causal estimate has predictive value for those beyond those represented in the study is a matter of **external validity**. 
+
+##### **Intention-to-treat**
+
+**Intention-to-treat(ITT)**: in randomized trials with imperfect compliance(i.e. treatment assigned ≠ treatment delivered), effects of random assignment can be calculated using intention-to-treat effects. *ITT analysis captures the causal effect of being assigned to treatment*. But an ITT analysis ignores the noncompliance, the solution is: $\frac{\text{ITT effects}}{\Delta\text{compliance in treatment vs control group}}$ = causal effect on compliers. Dividing ITT estimates from a randomized trial by the corresponding difference in compliance rates is another case of IV in action: we recognize ITT as the *reduced form* for a randomly assigned instrument. Ex: the regression of a dummy for having been coddled on a dummy for random assignment to coddling is the *first stage* that goes with this reduced form. The IV causal chain begins with random assignment to treatment, runs through treatment delivered, and ultimately affects outcomes.  
+
+
+##### **One-stop Shopping with Two-Stage Least Squares**
+
+Imagine we'd like to combine the two IV estimates they generate to increase statistical precision. **2-Stage LS** generalizes IV in two ways: 1) 2SLS estimates use multiple instruments efficiently; 2) 2SLS estimates control for covariates, mitigating OVB from imperfect instruments. 
+
+To understand how 2SLS, we rewrite the LATE equation, but now the reduced form and the first stage are written as the coefficient of interest. So the LATE equation is the ratio between the coefficients of the residual form and of the 1st stage. 
+
+The 2SLS offers an alternative way of computing $\frac{\rho}{\phi}$. In 2SLS first stage, we estimate the equation 3.5 and then save the fitted values $\hat{D}_i$. These first-stage fits are defined as: $hat{D}_i = \alpha_1 + \phi Z_i$. The 2SLS second stage regresses $Y_i$ on $\hat{D}_i$ as: $Y_i = \alpha_2 + \lambda_{2SLS}\hat{D}_i + e_{2i}$. The value of $\lambda_{2SLS}$ is equal to $\frac{\rho}{\phi}$. Control variables like maternal age fit neatly into this two-step regression framework. Adding maternal age ($A_i$) makes the reduced form and the first stage look like:
+
+\[ RF: Y_i = \alpha_0 + \rho Z_i + \gamma_0 A_i + e_{0i} \]
+
+\[ 1stS: D_i = \alpha_1 + \phi Z_i + \gamma_1 A_i + e_{1i} \]
+
+The 1st stage fitted values come from models that include the control variable, $A_i$: 
+
+\[ \hat{D}_i = \alpha_1 + \phi Z_i + \gamma_1 A_i  \]
+
+2SLS estimates are again constructed by regressing $Y_i$ on both $\hat{D}_i$ and $A_i$. Hence, the 2SLS second-stage equation is:
+
+\[ Y_i = \alpha_2 + \lambda_{2SLS} \hat{D}_i + \gamma_2 A_i + e_{2i} \]
+
+Which also includes $A_i$. The 2SLS setup allows for **as many control variables as we would like**, provided they appear on both stages. 
+
+2SLS provides a flexible for IV: it incorporates control variables and uses multiple instruments efficiently(and not only dummies!). In practice, we use special statistical software to do 2SLS in order to get the correct standard errors. 
+
+
+
+
+
+
+
+
+
+### **4) Regression Discontinuity Designs**
+
+#### **Regression Discontinuity Designs**
+
+**Regression Discontinuity Designs**: rules that constrain the role of chance in human affais often generate interesting experiments. Ex: legal drinking age. A small difference in age makes a big difference: people are allowed to drink. MM shows how the 21st birthday has more deaths associated with it, possibly because people are now allowed to drink (and do drunk driving). SO RD is based on the (seemingly paradoxical) idea that rigid rules can create valuable experiments. 
+
+A simple RD analysis of Minimum Legal Drinking Age:
+
+\[ \overline{M}_a = \alpha + \rho D_a + \gamma a + e_a \]
+
+The dependent variable is the death rate at month *a*. The treatment dummy is $D_a$. The negative slope of declining death rates among young people is captured by $\gamma$. The parameter $\rho$ captures the jump in deaths at age 21. 
+
+The treatment variable is clearly defined. In our example: if you are at least 21 years old, you receive the treatment (able to legally drink alcohol). If you are younger than 21, you don't get the treatment. The variable that **determines treatment is called the running variable**. One good thing about RD is that you **don't have OVB**: it's very clear what's causing the treatment. So the question of causality is on whether the relationship between the running variable and outcomes has indeed been nailed by a regression with a linear control for age. So we face the tradeoff: how much around the neighbourhood of the cutoff are we willing to extrapolate?
+
+- **Sharp RD**: treatment switches cleanly off or on as the running variable passes a cutoff. 
+
+- **Fuzzy RD**: the probability/intensity of treatment jumps at a cutoff. 
+
+#### **RD Specifics**
+
+But what if there is no discontinuity? How can we reduce mistake likelihood for RD?
+
+1) Modelling nonlinearity directly: using polynomial functions of the running variable. So the above equation becomes something like:
+
+\[ \overline{M}_a = \alpha + \rho D_a + \gamma_1 a + \gamma_2a^2 + e_a \]
+
+A related modification is to allow for different running variable coefficients to the left and right of the cutoff. So $a$ interacts with $D_a$. We add interaction terms and then have:
+
+\[ \overline{M}_a = \alpha + \rho D_a + \gamma (a - a_0) + \delta [(a - a_0) D_a] = e_a \]
+
+Centering the running variable ensures that $\rho$ is still the jump in average outcomes at the cutoff. 
+
+There is no **counterfactual** for a world in which people over 21 aren't able to drink. But it seems reasonable to say that those just under 21 provide a good counterfactual comparison for those just over 21. This makes the estimates for $\rho$ more reliable. 
+
+2) Focusing on observations near the cutoff: **Parametric RD** consists in exploiting the fact that the problem of distinguishing jumps from nonlinear trends grows less vexing as we zero in on points close to the cutoff. This suggests an approach that compares averages in a narrow window just to the left or right of the cutoff without concerning about nonlinear trends. The drawback: the window is very narrow. So what's the **optimal window size**? 
+
+The econometric procedure that makes this trade-off is *non-parametric* RD. It estimates our analysis in a narrow window around the cutoff. What is does is:
+
+\[ \overline{M}_a = \alpha + \rho D_a + \gamma a + e_a \text{in a sample such that } a_0 - b ≤ a ≤ a_0 + b\]
+
+The parameter *b* describes the width of the window and is called a *bandwidth*. How shall we pick the bandwidth? The goal is to show that the findings generated by any particular choice of bandwidth are not a fluke. 
+
+#### **Fuzzy RD**
+
+**Fuzzy RD**: the difference between fuzzy and sharp designs is that, with fuzzy, applicants who cross a threshold are exposed to a more intense treatment while in a sharp design treatment switches cleanly on or off at the cutoff. 
+
+Talking about *peer effects*, people tend to think that grouping good students influence students to be better. So parents look for better schools so that their kids can become better students. This putative peer effect comes from the model:
+
+\[ Y_i = \theta_0 + \theta_1 \overline{X}_{(i)} + \theta_2 X_i + u_i \]
+
+This naive peer regression is unlikely to have a causal interpretation for the simple reason that students educated together tend to be similar for many reasons. Since family background is not held fixed, this kind of info influences. to break the resulting causal deadlock, we'd like to assign students to a range of different peer groups. What we do is examine the cutoff from exam schools. While peer quality jump at the cutoff, cross-cutoff comparisons of variables related to applicants' own abilities/motivation/family background show no similar jumps. The size of the jump is estimated by:
+
+\[ Y_i = \alpha_0 + \rho D_i + \beta_0 R_i + e_{0i} \]
+
+$R_i$ is the running variable that determines qualification and $D_i$ is the dummy variable indicating applicants who qualify. We interpret $\rho$ through the lens of the corresponding 1st-stage. The above equation is the reduced form for a 2SLS setup where the endogenous variable is average peer quality $\overline{X}_{(i)}$. The 1st-stage equation that goes with this reduced form is:
+
+\[ \overline{X}_{(i)} = \alpha_1 + \phi D_i + \beta_1 R_i + e_{1i} \]
+
+Where $\phi$ captures the jump in mean peer quality induced by an exam school offer. The last piece of the puzzle 2SLS, the second stage captures the effect of peer quality on seventh and eighth-grade math scores:
+
+\[ Y_i = \alpha_2 + \lambda \hat{X}_{(i)} + \beta_2 R_i + e_{2i} \]
+
+Where $\lambda$ is the causal effect of peer quality and the variable $\hat{X}_{(i)}$ is the 1st stage fitted value produced by estimating the first stage equation.
+
+Everything ok so far, but who's to say that the only thing that matters about an exam school education is peer quality? The exclusion restriction requires us to commit to a specific causal channel, but the assumed channel need not be the only one that matters in practice. 
+
+Fuzzy RD requires tough judgements about the causal channels through which the instruments affect outcomes. In practice, multiple channels might mediate causal effects, in which case we explore alternatives. Likewise, the channels we measure not necessarily are the ones that matter. 
+
+**Sharp vs Fuzzy summary**: sharp is when treatment itself switches on or off at a cutoff. Fuzzy is when the probability or intensity of treatment jumps. In fuzzy designs, a dummy for clearing the cutoff becomes an instrument; the fuzzy design is analyzed by 2SLS. 
+
+
+## **Class Notes**
+
+### **1) RCT and Regression Recap**
+
+1.1) **Conditional Expectation Function**: $\mathbb{E}(Y_i|X_i)$. For a certain $X_i$ = x, we write: $\mathbb{E}(Y_i|X_i = x)$. 
+
+- For *continuous* $Y_i$ with *conditional density* $f_y(.|X_i = x)$, the CEF is:
+
+\[ \mathbb{E}(Y_i|X_i = x) = \int t f_y(t| X_i = x)dt \]
+
+- For *discrete* $Y_i$ with *condition pmf* $f_y(.|X_i = x)$, the CEF is:
+
+\[ \mathbb{E}(Y_i|X_i = x) = \sum_t t f_y (t|X_i = x) \]
+
+- **Law of Iterated Expectations**: $\mathbb{E}(Y_i) = \mathbb{E}(\mathbb{E}(Y_i|X_i)) \rightarrow$ an unconditional expectation can be written as the population average of the CEF. 
+
+- **CEF Decomposition Property**: any random variable $Y_i$ can be decomposed into a piece explained by $X_i$(the CEF) and a piece left over which is orthogonal (i.e. uncorrelated) with any function of $X_i$. $\mathcal{Y}_i = \mathbb{E}(Y_i|X_i) + \epsilon_i$, where: **i)** $\epsilon_i$ is mean-independent of $X_i$($\mathbb{E}(e_i|X_i)=0$) **ii)** $\epsilon_i$ is uncorrelated with any function of $X_i$ (and so it uncorrelated with the CEF, which is a function of $X_i$). 
+
+Pf: given $Y_i = \mathbb{E}(Y_i|X_i) + \epsilon_i$, we prove:
+
+**i)** $\mathbb{E}(\epsilon_i |X_i) \iff \mathbb{E}(Y_i - \mathbb{E}(Y_i|X_i) | X_i) \iff \mathbb{E}(Y_i|X_i) - \mathbb{E}(Y_i|X_i) = 0$. Note also that $\mathbb{E}(\epsilon_i) \iff \mathbb{E}(\mathbb{E}(\epsilon_i |X_i)) = 0$
+
+**ii)** Let *h* be a function of $X_i$; WTS this function is uncorrelated to $\epsilon_i$: 
+
+\[ \mathbb{E}(h(X_i)\epsilon_i) = \mathbb{E}(\mathbb{E}(h(X_i)\epsilon)|X_i) \iff \mathbb{E}(h(X_i)\mathbb{E}(\epsilon_i|X_i)) = 0\]
+
+So if the expectations are uncorrelated (=0), we have:
+
+\[ Cov(h(X_i),\epsilon_i) = \mathbb{E}(h(X_i)\epsilon_i) - \mathbb{E}(h(X_i))\mathbb{E}(\epsilon_i) = 0\]
+
+Since $\mathbb{E}(\epsilon_i) = \mathbb{E}(h(X_i)\epsilon_i) = 0$. 
+
+- **CEF Solves The MMSE Prediction Problem**: the CEF is the best predictor of $Y_i$ given $X_i$ in that it solves the Minimum Mean Squared Error (MMSE) prediction problem. 
+
+- **ANOVA**: states that: $V(Y_i) = V(\mathbb{E}(Y_i|X_i)) + \mathbb{E}(V(Y_i|X_i))$
+
+Pf: 1) use the CEF Decomposition Property; 2) decompose variance of $\epsilon_i$ and iterate expectations; 3) use the fact that $\epsilon_i = Y_i - \mathbb{E}(Y_i|X_i))$ and find $\mathbb{E}(V(Y_i|X_i))$; 4) Once we know that V($\epsilon_i$) = $\mathbb{E}(\mathbb{E}(\epsilon_i^2|X_i)) = \mathbb{E}(V(Y_i|X_i))$, we have: 5) V($Y_i$) = V($\mathbb{E}(Y_i|X_i)) + \mathbb{E}(V(Y_i|X_i))$.
+
+1.2) **Linear Regression and the CEF**: 
+
+What is the regressor that minimizes the expected $(Y_i - X_i' \beta)^2$? FOC for *b*: $\beta = \mathbb{E}(X_iX_i')^{-1} \mathbb{E}(X_i Y_i)$. The **population residual** is: $e_i = Y_i - X_i'\beta$. 
+
+The beta for a **bivariate regression** is: $\beta_1 = \frac{Cov(Y_i,x_i)}{V(x_i)}$. 
+
+In a **multivariate regression** the slope coefficient for the *k*-th regressor is given by $\beta_k = \frac{Cov(Y_i,\tilde{x}_{ki})}{V(\tilde{x}_{ki})}$. Each coefficient in a multivariate regression is the bivariate slope coefficient for the corresponding regressor, after partialling out all the other variables in the model. 
+
+- **1.3 Regression Justification**: what if the CEF is linear? Then the population regression function is the CEF. Suppose: $\mathbb{E}(Y_i|X_i) = X_i'\beta^\ast$. We know that $\mathbb{E}(X_i(Y_i - \mathbb{E}(Y_i|X_i))) = 0$. So by decomposition property we arrive at $\beta^\ast = \beta$. 
+
+But when is the CEF linear? **i)** *Joint Normality*: vector ($Y_i,X_i$) has a multivariate normal distribution; **ii)** *regression model saturated*: the saturated regression model has a separate parameter for every possible combination of values that the set of regressors can take on.
+
+- **Best Linear Predictor Theorem**: the function $X_i'\beta$, where $\beta = \mathbb{E}(X_iX_i')^{-1} \mathbb{E}(X_iY_i)$ is the best linear predictor of $Y_i$ given $X_i$ in a MMSE sense. Intuition: the CEF $\mathbb{E}(Y_i|X_i)$ is the best MMSE predictor of $Y_i$ given $X_i$ in the class of all functions of $_i$. The population regression function is the best we can do in the class of linear functions.
+
+- **Regression-CEF Theorem**: even if the CEF is nonlinear, the function $X_i'\beta$ provides the MMSE best linear approximation to it. 
+
+- **1.4 Fits and Residuals**: suppose $\alpha$ and $\beta_1,...,\beta_k$ are the intercept and slope coefficients from a regression of $Y_i$ on $X_{1i},..., X_{ki}$. The **fitted values** from this regression are: $\hat{Y}_i = \alpha + \sum_{k=1}^K \beta_k X_{ki}$. The **residuals** are: $e_i = Y_i - \hat{Y}_i = Y_i - \alpha - \sum_{k=1}^K \beta_k X_{ki}$. Properties of the regression residuals: **i)** expectation and mean 0: $\mathbb{E}(e_i) = \sum_{i=1}^n e_i = 0$; **ii)** they are uncorrelated (in population and sample) with all regressors that made them and with the corresponding fitted values.
+
+- **1.5. Bivariate Regression With Dummy Regressor**: with dummy off: 
+
+\[ \mathbb{E}(Y_i|Z_i = 0) = \alpha \]
+
+\[ \mathbb{E}(Y_i|Z_i = 1) - \mathbb{E}(Y_i|Z_i = 0) = \alpha + \beta \]
+
+So $\beta$ = $\mathbb{E}(Y_i|Z_i = 1) - \mathbb{E}(Y_i|Z_i = 0)$. So if we want a complete definition of expectation of $Y_i$ given dummy $Z_i$, we have:
+
+\[ \mathbb{E}(Y_i|Z_i) = \mathbb{E}(Y_i|Z_i = 0) + (\mathbb{E}(Y_i|Z_i = 1) - \mathbb{E}(Y_i|Z_i = 0))Z_i = \alpha + \beta \]
+
+Hence: $\mathbb{E}(Y_i|Z_i)$ is a linear function of $Z_i$, with slope $\beta$ and intercept $\alpha$. Hence regression fits this CEF perfectly. 
+
+- **1.6 Asymptotic OLS Inference**: 
+
+- **1.7 Omitted Variables Bias**: short equals long plus the effect of omitted times the regression of omitted on included. Derive for the bivariate and multivariate cases. 
+
+- **1.8 Bad Controls**: control variables measured later than the treatment and thus may have been affected by it $\rightarrow$ they are outcomes. 
+
+- **1.9 Measurement Error**: Imagine we are running a regression but instead of directly observing one of the independent variables, we observe a slightly different variable: **measurement error**! **Classical Measurement Errors**: **i)** $\mathbb{E} (m_i) = 0$; **ii)** Cov($S_i^\ast, m_i$) = Cov($e_i,m_i$) = 0. 
+
+If we do the $\beta_b = \frac{Cov(Y_i,S_i)}{V(S_i)}$ calculations, we arrive at $\beta_b = \beta \frac{V(S_i^\ast)}{V(S_i^\ast) + V(m_i)}$. We also get that $r = \frac{V(S_i^\ast)}{V(S_i^\ast) + V(m_i)}$, where $r$ is the **reliability** of the wrong measurement ($S_i$), the variation of $S_i$ that is unrelated to mistakes. The **attenuation bias** in $\beta_b$ is $\beta_b - \beta = -(1 - r)\beta$. So the absolute value of the biased estimator is smaller than the desired one, hence attenuation bias.
+
+- **1.9.2 IV Eliminates Measurement Error in Bivariate Regression**
+
+- If we do the regression anatomy calculations but now using an instrument for $S_i$ when $S_i = S_i^\ast + m_i$, we see that there's no measurement error. 
+
+- **1.9.3 Multivariate**: finish this.
+
+Intuition: adding covariates to a model with mismeasured schooling aggravates attenuation bias in estimates of the returns to schooling. Covariates are correlated with accurately measured schooling while being unrelated to the measurement error.
+
+### **2) Conditional Independence Assumptions**
+
+- Cov(X,Y) = $\mathbb{E}$ ((X - $\mathbb{E}$(X))Y); **intuition**: you only need to difference *one* of the r.v.s when calculating covariance.
+
+- **2.1 Matching Meets Regression**
+
+**Matching**: conditional on $X_i$, treatment $D_i$ is as good as randomly assigned: $\{ Y_{0i},Y_{1i} \perp D_i|X_i \}$. This leads to the Treatment on the Treated being:
+
+\[ \delta_{TOT} = \mathbb{E}(Y_{1i} - Y_{0i}|D_i = 1) \]
+
+Then we LIE on $X_i$
+
+\[ = \mathbb{E}(\mathbb{E}(Y_{1i}|X_i, D_i = 1)- \mathbb{E}(Y_{0i}|X_i, D_i = 1|D_i = 1) \]
+
+math....
+
+Intuition: $\delta_{TOT}$ is a *treatment-probability (conditional probability) of treatment weight average of* $\delta_{X}$, whose sample analogue is observable-sample mean between the treated and the control.
+
+**Conditional Expectation**: $E(X|H) = \frac{E(1_H X)}{P(H)} = \int_X x dP (x|H)$. 
+
+**Regression Meets Matching**: Think of regression estimates parameter $\delta_R$ in $Y_i = \sum_x d_{ix} \beta_x + \delta_R D_i + \epsilon_i$ math... $ = \frac{E[\sigma_D^2 (X_i) \delta_X]}{E[\sigma_D^2 (X_i)]}$. **Intuition**: $\delta_R$ is a *conditional-variance weighted(condition variance of treatment) average of* $\delta_X$, whose sample analogue is observable-sample mean between the treated an the control. In particular,
+
+\[ \sigma_D^2 = P(D_i = 1|_i)[1 - P(D_i = 1|X_i)] \]
+
+- **2.2 Propensity Score**
+
+- Given that $\delta_{TOT}$ = $\mathbb{E}(\delta_X | D_i = 1)$, what happens if $X_i$ is many/multi continuous? Cell specific $\delta_X$ does not make sense (requires grouping or parametric assumptions). The **Propensity-Score Theorem** says we only need to control for covariates that affect the probability of treatment.
+
+### **3) Instrument Variables**
+
+- **3.1 Wald Estimator**: use binary instrument $Z_i$ to estimate model with one endogenous regressor and no covariates. 
+
+**Causal regression model**: $Y_i = \rho s_i + \eta_i$.
+
+If $S_i$ is an endogenous regressor, then $\eta_i$ and $S_i$ may be correlated. Suppose $Z_i$ is a binary instrument that equals 1 with probability $p$. Claim: in the causal regression model above, we have that:
+
+\[ \rho = \frac{\mathbb{E}(Y_i|Z_i = 1) - \mathbb{E}(Y_i|Z_i = 0)}{\mathbb{E}(S_i|Z_i = 1) - \mathbb{E}(S_i |Z_i = 0)} \]
+
+**Exclusion restriction**: $\mathbb{E}(\eta|z = 0)$. 
+
+Leads us to: $\mathbb{E}(y|z) = \rho \mathbb{E}(s|z) + \mathbb{E}(\eta | z) = \rho \mathbb{E}(s|z)$
+
+- **3.2 2SLS**: 
+
+- **3.3 Grouped Data and 2SLS**: i) 2SLS using dummy instruments is = GLS on a set of group means; ii) GLS can be understood as a linear combination of all the Wald estimators that can be constructed from pairs of means.
+
+- **3.4 Heterogeneous Effects**:
+
+**LATE Theorem**: assume, $\forall i$: 
+
+i) Independence:
+
+ii) Exclusion:
+
+iii) First-stage:
+
+iv) Monotonicity:
+
+Then: 
+
+\[ \frac{\mathbb{E} (Y_i |Z_i = 1) - \mathbb{E}(Y_i|Z_i = 0)}{\mathbb{E}(D_i|Z_i = 1) - \mathbb{E}(D_i |Z_i = 0)} = \mathbb{E}(Y_{1i} - Y_{0i}|D_{1i} > D_{0i}) = \mathbb{E}(\rho_i | \pi_{1i} > 0) \]
+
+Proof: 1) write in terms of potential outcomes; 2) Rewrite the Wald estimator in terms of potential outcomes, using the law of total expectation; 3) Use independence to simplify the Wald denominator; 4) Combine the pieces.
+
+The intuition is: an instrument that is **i)** as good as randomly assigned, **ii)** affects the outcome through a single known channel, **iii)** has a first-stage and **iv)** affects the causal channel of interest in only one direction, can be used to estimate the **average causal effect on the affected group**. 
+
+- **3.4.1 Failures of Monotonicity**: if monotonicity fails, the instrument pushes some people into treatment while pushing others(defiers) out of treatment. Without monotonicity we could have: $D_{1i} - D_{0i} \in \{ 1,0,-1\}$. So it could be that treatment effects are positive to everyone,, but the reduced form is zero because the effects on compliers are canceled out by the effects on the defiers.
+
+- **3.4.2 IV in Randomized Trials**: **Bloom Result**: when there is one-sided non-compliance, IV estimates the effect of the treatment on the treated in a randomized trial.
+
+- **3.5 2SLS Mistakes**
+
+- **3.5.1 Manual 2SLS**: steps: i) estimate the first stage by OLS; ii) plug the fitted values into the second stage equation; iii) estimate second stage equation by OLS: 
+
+\[ S_i = X_i' \pi_{10} + \pi_{11}' Z_i + \xi_{1i}\]
+
+\[ Y_i = \alpha' X_i + \rho \hat{s}_i + [\eta_i + \rho (S_i - \hat{S}_i)] \]
+
+Where: 
+
+i) $X_i$ is a set of covariates;
+
+ii) $Z_i$ is a set of excluded instruments.
+
+iii) The first-stage fitted values are $\hat{S}_i = X_i' \hat{\pi}_{10} + \hat{\pi}_{11}' Z_i$
+
+The OLS residual variance is the variance of $\eta_i + \rho(S_i - \hat{S}_i)$. The proper 2SLS standard errors include the variance of $\eta_i$ only. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+### **4) Regression Discontinuity Designs**
+
+### **5) Inference**
+
+### **6) Machine Labor**

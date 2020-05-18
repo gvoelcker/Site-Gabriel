@@ -1,0 +1,1529 @@
+---
+output: html_document
+---
+
+# 14.381 - Statistical Methods{.tabset}
+
+## **The Course** {.tabset}
+
+### **Overview**
+
+14.381 Statistical Methods is a half semester course that introduces us to the core concepts of statistics. Two quick notes: 1) I highly advise you to read the [**syllabus**](https://gabrielvoelcker.netlify.com/mit/14_380_syl2019.pdf) before studying: when you play a game you should know all the rules about it!; and 2) I have no idea why sometimes this course is referenced as 14.380 and others as 14.381! Henceforth, I'll use 14.380(I used 14.381 for a while, so forgive-me for possible contradictions!). Let's start!
+
+14.380 is structured in 12 Lectures:
+
+**1)** We start with a review of some basic concepts to establish a common starting point for all students. The first lecture deals ith **distributions** and **random variables**. It starts by describing **basic definitions** about random variables like, for example, types of random variables. Then we proceed to **functions** of random variables, which is the transformation of an X into an Y. We move forward to **Expected Value**, denoting some special cases like *mean*, *second moment* *variance*, *k-th moment* and *k-th central moment*. We go a little bit deeper and talk about properties of expectation, and then give some famous examples of r.v.s. So far we've dealt only with univariate distributions. On the 2nd part of the lecture we advance to **bivariate/multivariate distributions**. They can be **joint**, **marginal**, **conditional**. This leads us to interesting concepts such as **independence** and **covariance**. The last part of the lecture tackles **normal random variables** and their properties. Lastly, we talk about **conditional distribution**.
+
+**2)** The second lecture is still a review. Now we deal with **limit theorems**. The class deals with loads of **theorems**, such as 1) Markov's inequality; 2) Chebyshev's inequality; 3) Hölder's inequality; and others. We are introduced to some useful intuitions for the statistician such as **convergence in probability** and the **law of large numbers**. We then advance to other interesting concepts like **weak convergence** and the famous **Central Limit Theorem**. Through a myriad of theorems we advance to **asymptotic statements** we can derive from those theorems such as the **Slutsky Theorem** and the **Continuous Mapping Theorem**. After that we talk about small and big O: $o_p$ and $O_p$. Lastly, we learn about the **Delta Method**.
+
+**3)** On the third lesson we finally arrive at the **Introduction to Statistics**. We start by dealing with some basic concepts such as **population**, **sample**, **parameter** and **statistics**. We then talk about the three types of data: **cross-section**, **time series** and **panel**. The concept of **inference** is also introduced. The next subsection talks about **sample mean** and **sample variance**. Then we start rolling up our sleeves and talk about **empirical distribution function**. All these tools are pretty useful, but how do we apply them? How do we make something concrete about them? The 2nd part of the lecture deals with that: one of the first steps we make is **finding the distribution** of a statistic. We may find its **exact distribution**, use the **Monte-Carlo Method**, make an **asymptotic approximation** or simply **bootstrap** it. Each method has its own pros and cons, and should be used depending on which situation we find ourselves in. The third part of the lecture jumps quickly into **Plug-in estimators**. After that we talk about one famous **parametric family: Normal**. 
+
+**4)** The fourth lecture finally introduces us to: **Estimation**! When we estimate stuff, how good are our estimators? Well, let's start by dealing with **sufficient statistics**. This interesting concept analyzes how good our statistics are for our parametric family. The 2nd part of the lecture then talks about the **factorization theorem**, that gives a general approach for *how to find a sufficient statistic*. But even if we have a sufficient statistic, what if we want to reduce it even more? Then we introduce **minimal sufficient statistics**. The fourth part of the lecture deals with **estimators and their properties**. When we have an estimator, what should we check for to see if it is a valid one? Is it **biased**? To validate its **efficiency**, we use evaluate it through the **Mean Squared Error**. Great! But what is the relation between efficiency and sufficient statistics?  Let's use the **Rao-Blackwell** theorem to find out. This demands a lot of math going forward.
+
+**5)** **Point estimators** is the topic of the 5th lecture. We come back to topic of estimators and deal with their properties and how to correct some problems. For example: **unbiasness** can be corrected through **bootstrap**? How can we use MSE to improve our efficiency? Also, what are some **asymptotic properties** of estimators? For example: when can we say that an estimator is **consistent**? When is it **normal**? 
+
+**6)** We've been talking so much about estimators that it's high time we deal with how we can **construct an estimator**. We can use various methods: i) **Analogy**: another name for the aforementioned **plug-in estimator**; ii) **Method of Moments**: a popular method for finding an estimator that satisfies a (complicated) system of equations; iii) **Maximum Likelihood Estimator**: we turn to parametric estimation and use the likelihood function to find our estimator. The 2nd part of the lecture deals with **Fisher information**. This math heavy part plays an important role in **maximum likelihood estimation**. Then Fisher information **for a random sample** is briefly addressed. The 3rd part of the lecture deals with a relevant question: is there a nontrivial bound such that no estimator can be more efficient than this bound? This is when the **Rao-Cramer bound** comes into play, another math-heavy concept.
+
+**7)** The seventh lecture deals with **Maximum Likelihood Estimation**. We talk about concepts such as the **log-likelihood**, the **maximum likelihood estimator** and its **FOC**. What **inferences** can we make by using the MLE? And when **MLE asymptotic theory fails**? Lastly, we talk about the **Pseudo-MLE**, which is when the MLE estimate wrongly a specific parametric family. 
+
+**8)** In this lecture we first approach the concepts of **testing**. Let's start by talking about the **hypotheses** about the population distribution. **How can we test a hypothesis**? What is the **critical region** of a test? Obviously there is no free lunch, so **what's the trade-off between size and power** of our test? Moving forward we tackle the **p-value** and how to evaluate a test. The 3rd part of the lecture talks about **pivotal statistics**(when the statistic's distribution is independent of unknown parameters). What **asymptotic tests** can we perform? But what if it's impossible to get a pivotal statistic? We can **bootstrap** it. 
+
+**9)** The ninth lecture deals with **Uniformly Most Powerful(UMP) Tests**. We begin by (still) talking about **bootstraping** here! But then we advance to the UMP, deal with the *Neyman-Pearson Lemma*. In the 3rd part of the lecture we make UMP tests with **composite hypotheses**. Then we perform some **unbiased tests**. Lastly, we talk about the **Likelihood Ratio Test**. 
+
+**10)** The tenth lecture deals with something I personally enjoy very much: **large samples**! The first part continues to deal with the **Likelihood Ratio Test**. We start with a **one-dimensional case** and then proceed to a **multi-dimensional case**. Then we start comparing different types of large sample tests. The first one is **Wald** test, which we approach both the uni-dimensional and the multi-dimensional case. The last thing we talk about on the 2nd part of the lecture is a special case: the **one-dimensional MLE**. Onto the next part, we talk about the **Score Test**. We also deal with the one-dimensional case, then deal with the **lagrangian** and compare it to LR and Wald's tests. After, we talk about the multi-dimensional case. The last part of class talks about some generalizations and summary and compares once more LR, LM and Wald.
+
+**11)** The eleventh lecture deals with **Confidence Sets**. Since so far we've only estimated **specific points**, now we will turn into estimating an **interval**. The class deals with **Test Inversion**, which tackles estimation with a different approach(remember 1 - $\alpha$!), and then with some examples of that. The 3rd part of the lecture deals with **Pratt's Theorem**, that states the if we use a UMP for the confidence set $\implies$ the expected length of the confidence set will be the shortest among all confidence sets of a given level. The 4th part of the lecture deals with the **Asymptotic Theory for Interval Construction**. We've dealt with similar stuff for point estimators, so much so, that we proceed to use the **LM** and **LR** tests to understand **Confidence Sets**. The 5th part of the lecture deals with **bootstrap confidence sets**. How do we this for interval sets? When/how do we use a **grid bootstrap**? The 6th, and last!, part of the lecture offers some notes on **joint confidence sets** and the **projection method**. 
+
+
+
+
+
+
+### **1 - Distributions and Random Variables**
+
+The first 2 lectures are a review/introduction. It's a short summary of probabilistic concepts and discusses normal distribution. For more on what we talk about here, please refer to Statistical Inference 5.1-5.4. 
+
+#### 1 Random Variables
+
+##### 1.1 Basic Definitions 
+
+Where does the data we use comes from? How is it organized? What is it for? How can we use it? This is the beginning of a long journey that is stats/econometrics! Let's start by reviewing some basic concepts:
+
+[**Random Variable**](https://en.wikipedia.org/wiki/Random_variable): is described informally as a variable whose values depend on outcomes of a random phenomenon. There are 3 [**types**](https://www.khanacademy.org/math/statistics-probability/random-variables-stats-library/random-variables-discrete/v/discrete-and-continuous-random-variables) of r.v.: 
+
+1) [**Discrete**](https://en.wikipedia.org/wiki/Random_variable#Discrete_random_variable): can only take on a finite number of values.
+
+2) [**Continuous**](https://en.wikipedia.org/wiki/Random_variable#Continuous_random_variable): 
+
+3) [**Mixed**](https://en.wikipedia.org/wiki/Random_variable#Mixed_type): neither discrete nor continuous.
+
+[**Cdf definition**](https://en.wikipedia.org/wiki/Cumulative_distribution_function): a way to describe the behavior of those variables. The cdf of $F_x$ is the **probability that X will take a value less than x**. $F_x(t)$ = P{X ≤ t} $\forall t \in \mathbb{R}$. P{X ≤ t} denotes the probability that X ≤ t. To emphasize that r.v. X has cdf $F_X$, we write X ~ $F_X$. If the cdf *F* is strictly increasing and continuous, then **it has an inverse**, q(x) = $F^{-1}$(x). q(x) is called the *x-quantile* of X. It is such a number that r.v. X takes a value smaller or equal to this in probability. 
+
+##### 1.2 Functions of Random Variables
+
+Let's advance to another concept: [**Functions of R.V.s**](https://en.wikipedia.org/wiki/Random_variable#Functions_of_random_variables). Suppose we have r.v. X and function g : $\mathbb{R}$ -> $\mathbb{R}$. The first $\mathbb{R}$ represents the X and the second the Y. When you plug X into the function (black box concept!), it returns Y. Then we can defi􏰀ne another random variable **Y = g(X)**. The **cdf of Y** can be calculated as follows:
+
+$F_Y$(t) = P {Y ≤ t} = $\underbrace{P \{g(X) ≤ t\}}_\text{since g(X) = Y}$ = P{X $\in$ $g^{-1}$ (-$\infty$,t] },
+
+where $g^{-1}$ may be the set-valued inverse of *g*.  If g is strictly increasing and continuously differentiable then it has strictly increasing and continuously differentiable inverse $g^{-1}$ defined on set g($\mathbb{R}$). Knowing the inverse($g^{-1}$) is important because its set $g^{-1}(-\infty,t]$ consists of all s $\in \mathbb{R}$ such that g(s) $\in$ ($- \infty,t$] that is: g(s) ≤ t. 
+
+**Linear transformation**: if a function is a linear transformation, e.g. Y = X - a for some a $\in \mathbb{R}$, then
+
+<center>$F_Y$(t) = P{Y ≤ t} = P{X - a≤ t} = P{X ≤ t + a} = $F_X$(t + a)</center>
+
+In particular, if X is continuous $\implies$ Y is also continuous with $f_Y(t)$ = $f_X(t+a)$. If Y = bX with b > 0, then 
+
+\[ F_Y(t) = P \{bX ≤ t\} = P \{X ≤ \frac{t}{b}\} = F_X (\frac{t}{b}) \]
+
+Conclusion: if X is continuous $\implies$ Y is continuous with $f_Y(t) = f_X(\frac{t}{b})/b$. This section (1.2) establishes a foundation from which we go forward. It is more important to get the intuition behind everything discussed thus far, more than being able to memorize all the algebra above.
+
+##### 1.3 **Expected Value**
+
+The [**Expected Value**](https://en.wikipedia.org/wiki/Expected_value) of a random variable, intuitively, is the long-run average value of repetitions of the same experiment it represents. Then, the **expected value for discrete random variables**:
+
+<center> E[g(X)] = $\sum_i$g($x_i$)$p_i$</center>
+
+And the **expected value for continuous random variables**:
+
+<center>E[g(X)] = $\int_{-\infty}^{+\infty}$ g(x)$f_X$(x)dx.</center>
+
+Since we're talking about expecte values, we have some function special functions that deserve to be named: i) **Mean**: g(x)=x $\rightarrow$ E[X]; ii) **Second Moment**: g(x)=$x^2$ $\rightarrow$ E[$X^2$]; iii) **variance**: g(x) = (x - E[X])$^2$ $\rightarrow$ E[(X-E[X])$^2$], commonly denoted by V(X) for variable X; iv) **k-th moment**: g(x)=$x^k$ $\rightarrow$ E[X$^k$]; v) **k-th central moment**: E[(X - EX)$^k$]. 
+
+###### 1.3.1 [**Properties of Expectation**](https://en.wikipedia.org/wiki/Expected_value#Basic_properties)
+
+The first four are talked about in the lecture, the rest I've took from other sources.
+
+**1)** Expected value of a constant: E[a] = a (fairly obvious that some values don't change).
+
+**2) Linearity**: if X and Y are two r.v. and *a* and *b* are two constants, then E[aX + bY] = aE[X] + bE[Y]. most useful property of an expectation.
+
+**3)** The variance of the random variable X is: V(X) = E[X$^2$] - (E[X]$^2$). 
+
+**4)** If X is a random variable and *a* is a constant, then V(aX) = $a^2$V(X) and V(X+a) = V(X).
+
+- E[$1_A$] = P(A)
+
+- If X = Y, then E[X] = E[Y]
+
+- E[X] exists and is finite if and only if E[|X|] is finite.
+
+- If X ≥ 0 (a.s.) then E[X] ≥ 0.
+
+- Monotonicity.
+
+- If |X| ≤ Y (a.s.) and E[Y] is finite then so is E[X].
+
+- If E|$X^ß$ < $\infty$ and 0 < $\alpha$ < ß then E|$X^\alpha$| < $\infty$
+
+- Extremal Property.
+
+- Non-degeneracy.
+
+- If E[X] < $+\infty$ then X < $+\infty$
+
+- Non-multiplicativity.
+
+- Countable non-additivity.
+
+- Countable additivity for non-negative random variables.
+
+##### 1.4 Examples of Random Variables
+
+There are many types of random variables. It is useful to know some and what to expect of them. Let's deal with them by their types.
+
+**Discrete variables**:
+
+- [**Bernoulli**](https://en.wikipedia.org/wiki/Bernoulli_distribution): if a r.v. only takes values $\mathcal{X}$ = {0,1}, P{X = 0} = 1 - p and P{X = 1} = p. Its expectation E[X] = 1 p + 0 (1 - p) = p. Its second moment E[$X^2$] = $1^2 p$ + $0^2 (1-p)$ = p. Thus, the variance is V(X) = E[$X^2$] - $(E[X])^2$ = p - $p^2$ = p(1-p). Notation: X ~ Bernoulli(p).
+
+- [**Poisson**](https://en.wikipedia.org/wiki/Poisson_distribution): r.v. X has a Poisson ($\lambda$) distribution if it takes values from $\mathcal{X}$ = {0,1,2,...} and P(X = j) = $e^{-\lambda}\lambda^j/j!$. This is fairly intuitive, given that it's a discrete variable, it's obvious it can only takes some integer values. Notation: X ~ Poisson($\lambda$). 
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("6.png")
+ grid.raster(img)
+```
+
+**Continuous random variables:**
+
+- [**Uniform**](https://en.wikipedia.org/wiki/Uniform_distribution_(continuous))(a,b): the name gives it away: the probability for each moment is constant, as illustrated below. So r.v. X has a Uniform(a,b) distribution if its density $f_X$(x) = 1/(b-a) for x $\in$ (a,b) and $f_X$(x) = 0 otherwise. Notation: X ~ U(a,b)
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("7.png")
+ grid.raster(img)
+```
+
+- [**Normal**](https://en.wikipedia.org/wiki/Normal_distribution)($\mu,\sigma^2$): this is the famous one and it's applicable to a wide a variety of data. Informally, we can say it assumes to have a center value and as the X goes further and further away from the mean, its frequency will decrease. Its distribution has density $f_X$(x) = exp($\frac{\frac{-(x-\mu)^2}{(2\sigma^2)}}{\sqrt{2 \pi}\sigma}$) $\forall$ x $\in \mathbb{R}$. E[X] = $\mu$ and variance V(X) = $\sigma^2$. Notation: X ~ N($\mu, \sigma ^2$).
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("8.png")
+ grid.raster(img)
+```
+
+
+#### 2 [**Bivariate (multivariate) distributions**](https://en.wikipedia.org/wiki/Joint_probability_distribution)
+
+We've talked about single variables distribution. Now let's go one step further and talk about **multiple variables distributions**. Given random variables X,Y, that are defined on a probability space, the joint probability distribution for X,Y, is a probability distribution that gives the probability that each of X,Y, falls in any particular range or discrete set of values specified for that variable. In the case of only two random variables, this is called a **bivariate distribution**, but the concept generalizes to any number of random variables, giving a **multivariate distribution**.
+
+##### 2.1 [**Joint, marginal, conditional**](https://sites.nicholas.duke.edu/statsreview/jmc/)
+
+**Joint CDF**: given that X and Y are r.v., their joint CDF is given by $F_{X,Y}(x,y)$P{X ≤ x, Y ≤ y}. 
+
+**Joint PDF**: X and Y are said to have joint PDF $f_{XY}$ if $f_{X,Y}$(x,y) ≥ 0 $\forall$ x,y $\in \mathbb{R}$. If $F_{XY}$ is continuous, we can say: $F_{X,Y}(x,y) = \frac{\partial F_{X,Y}(x,y)}{\partial x \partial y}$. From the joint pdf $f_{X,Y}$ it is possible to calculate the pdf of, say, X: $F_X(x) = P\{X ≤ x \} = \int_{-\infty}^x \int_{-\infty}^{\infty} f(s,t)dtds$ Which would led to the $f_X(s)$ to be $\int_{-\infty}^{\infty} f(s,t)dt$. The pdf of X is called *marginal* to emphasize it comes from a joint PDF of X and Y. 
+
+**Conditional PDF**: if X and Y have a joint pdf we can define a **conditional** pdf of Y given X = x $\rightarrow$ we know the value of x, so we can estimate the pdf of Y! So to sum up:
+
+[**Marginal probability**](https://en.wikipedia.org/wiki/Marginal_distribution): is the probability distribution of the variables contained in the subset. It gives the probabilities of various values of the variables in the subset without reference to the values of the other variables. 
+
+[**Joint probability**](https://www.investopedia.com/terms/j/jointprobability.asp): is a statistical measure that calculates the likelihood of two events occurring together and at the same point in time. Joint probability is the probability of event Y occurring at the same time that event X occurs.
+
+[**Conditional probability**](https://en.wikipedia.org/wiki/Conditional_probability): is a measure of the probability of an event occurring given that another event has (by assumption, presumption, assertion or evidence) occurred. Two properties of a conditional expectation:
+
+- E[f(X)Y| X = x] = f(x) E[Y|X = x];
+
+- [**Law of iterated expectations**](https://brilliant.org/wiki/law-of-iterated-expectation/): informally: the expected outcome of an event can be calculated using casework on the possible outcomes of the events it depends on. Formally, states that the expected value of a random variable is equal to the sum of the expected values of that random variable conditioned on a second random variable: E[E[Y|X = x]] = E[Y]. 
+
+##### 2.2 Independence
+
+But how do variables X and Y interact? One scenario is **independence**. This means that the outcome of one variable has no relation with the behavior of the other. Formally speaking, if $f_{Y|X}$(y|x) = $f_Y(y)$ for all x $\in \mathbb{R}$. If X and Y are independent, then so are any g(X) and f(Y).
+
+##### 2.3 [**Covariance**](https://en.wikipedia.org/wiki/Covariance)
+
+But independence is not necessarily the case. Variables can relate to each other. That's why we analyze **Covariance**. Covariance is a measure of the joint variability of two random variables. If the greater values of one variable mainly correspond with the greater values of the other variable, and the same holds for the lesser values, (i.e., the variables tend to show similar behavior), the covariance is positive. Vice-versa, it's negative. Formally: cov(X,Y) = E[(X - E[X])(Y - E[Y])].
+
+Useful **properties**:
+
+1) cov(X,Y) = 0 whenever X and Y are independent.
+
+2) cov (aX,bY) = *ab*cov(X,Y) for any r.v. X and Y and any constants *a* and *b*.
+
+3) cov(X + a,Y) = cov(X,Y) for any r.v. X and Y and any constant *a*.
+
+4) cov(X,Y) = cov(Y,X) for any r.v. X and Y.
+
+5) |cov(X,Y)| ≤ $\sqrt{V(X)V(Y)}$ for any r.v. X and Y.
+
+6) V(X+Y) = V(X) + V(Y) + 2cov(X,Y) for any r.v. X and Y.
+
+7) V($\sum_{i = 1}^nX_i$) = $\sum_{i = 1}^n$ V($X_i$) whenever $X_1,...,X_n$ are independent.
+
+#### 3 [**Normal Random Variables**](https://en.wikipedia.org/wiki/Normal_distribution)
+
+Let's roll up our sleeves and work with a very common case: **Normal Random Variables**. In order to do that, we begin by defining [**Multivariate normal distribution**](https://en.wikipedia.org/wiki/Multivariate_normal_distribution): is a generalization of the one-dimensional (univariate) normal distribution to higher dimensions. One definition is that a random vector is said to be k-variate normally distributed if every linear combination of its k components has a univariate normal distribution. We already know what a normal variable is, we're now dealing with more than one at the same time. The next image helps illustrate that:
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("9.png")
+ grid.raster(img)
+```
+
+Let's put some math into this: fix $\sum$ as a positive definite $n \times n$ matrix. Positive definite means that $a^T \sum a > 0$ for any non-zero $n \times 1$ vector a. Let $\mu$ represent this vector: $\mu = n \times 1$. So the distribution of X is given by: X ~ $N(\mu, \sum)$ if X is continuous and its pdf is given by:
+
+$f_X(x) = \frac{exp(-(x - \mu)^T \sum^{-1} (x - \mu)/2)}{(2 \pi)^{n/2}\sqrt{det(\sum)}}$
+
+The above pdf of $f_X(x)$ holds $\forall$ n $\times$ 1 vector x.
+
+**Properties of the normal distribution:**
+
+1) if X ~ N($\mu, \sum$), then $\sum_{ij}$ = cov($X_i,X_j$) for any i,j = 1,...,n where X = ($X_1,...,X_n$)$^T$.
+
+2) if X ~ N($\mu, \sum$), then $\mu_i$ = E[$X_i$] for any i = 1,...,n.
+
+3) if X ~ N($\mu, \sum$), then any subset of components of X is normal as well. In particular: $X_i$ ~ N($\mu_i,\sum_{ii}$).
+
+4) if X and Y are uncorrelated normal r.v., then X and Y are independent.
+
+5) if X ~ N($\mu_X, \sigma^2_X$), Y ~ N($\mu_Y, \sigma^2_Y$) and X and Y are independent, then X+Y ~ N($\mu_X + \mu_Y, \sigma^2_X + \sigma^2_Y$)
+
+6) Any linear combination of normals is normal. That is, if X ~ N($\mu,\sum$) is an *n x 1* dimensional normal vector, and A is a fixed *k x n* full-rank matrix with k ≤ n, then Y = AX is a normal k x 1 vector: Y ~ N(A$\mu$,A$\sum$A$^T$).
+
+##### 3.1 [**Conditional Distribution**](https://www.statisticshowto.datasciencecentral.com/conditional-distribution/)
+
+A conditional distribution is a probability distribution for a sub-population. In other words, it shows the probability that a randomly selected item in a sub-population has a characteristic you’re interested in. For the math of it, including covariance matrices, pdfs of X and conditional pdfs, refer to the slides.
+
+### **2 - Limit Theorems**
+
+This class is still a review/intro. Now we will deal with several interesting, useful and recurring concepts if we wish to further our statistician toolbox. For more, refer to Statistical Inference 5.5.
+
+#### 1 Useful Inequalities
+
+Before we dive into some examples of inequalities, let's start with the obvious: what is an [**inequality**](https://en.wikipedia.org/wiki/Inequality_(mathematics))? It can be defined as a relation that holds between two values when they are different $\implies$ a ≠ b. If the values are ordered, they have magnitude and can be compared in terms of size, for ex: 5 > 3. We use a bunch of notations to express inequalities, such as: ≠><≥≤. Moving forward, let's look at some inequalities: 
+
+[**Markov's Inequality**](https://en.wikipedia.org/wiki/Markov%27s_inequality): imagine that a function of a r.v. is > 0. When the function exceeds a given level $\varepsilon$, Markov's inequality gives an upper bound measure of the set(the red part in the figure below).
+ 
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("29.png")
+ grid.raster(img)
+``` 
+ 
+Formally: Let X be any nonnegative random variable such that E[X] exists. Then for any t > 0, we have P{X ≥ t} ≤ E[X]/t. 
+ 
+For more [**Intuition**](https://www.youtube.com/watch?v=4nHcPJsxyv8).
+ 
+[**Chebyshev's Inequality**](https://en.wikipedia.org/wiki/Chebyshev%27s_inequality): guarantees that, for a wide class of probability distributions, no more than a certain fraction of values can be more than a certain distance from the mean. Specifically, no more than $1/k^2$ of the distribution's values can be more than k standard deviations away from the mean. So, for any random variable X with mean $\mu$ and finite variance and for any t > 0, we have P{|X - $\mu$| ≥ t} ≤ Var(X)/$t^2$. The inequality has great utility because it **can be applied to any probability distribution in which the mean and variance are defined**. For example, it can be used to prove the weak law of large numbers. In practical usage, in contrast to the 68–95–99.7 rule, which applies to normal distributions, Chebyshev's inequality is weaker, stating that a minimum of just 75\% of values must lie within two standard deviations of the mean and 89\% within three standard deviations.
+ 
+[**Hölder's Inequality**](https://en.wikipedia.org/wiki/H%C3%B6lder%27s_inequality): is a fundamental inequality between integrals and an indispensable tool for the study of $L^p$ spaces. Still haven't figured out the intuition behind this one, but one could relate it to the [**Cauchy-Schwarz inequality**](https://en.wikipedia.org/wiki/Cauchy%E2%80%93Schwarz_inequality). Also, the math given in the lecture is the following:
+
+If p > 1 and 1/p + 1/q = 1, and if E[X]$^p$ < $\infty$ and E[Y]$^q$ < $\infty$, then E|XY| ≤(E|X|$^p$)$^{1/p}$(E|Y|$^q$)$^1/q$.
+
+#### 2 [**Convergence in Probability**](https://en.wikipedia.org/wiki/Convergence_of_random_variables) and [**Law of Large Numbers**](https://en.wikipedia.org/wiki/Law_of_large_numbers).
+
+What happens if we perform the same experiment a large number of times? Outliers should become less and less relevant and the results should tend to the expected value, right? They will tend to become closer and closer as more trials are performed.
+
+**Convergence in Probability(D4)**: the above intuition is expressed mathematically. So we say that {$X_n$}$_{n=1}^\infty$ converges to X in probability if for any $\varepsilon$ > 0 P{|$X_n - X$| > $\varepsilon$} -> 0 as n -> $\infty$. As we perform more experiments(n tends to infinity), the two values, $X_n$ and X become "more and more close to each other" if there is a high probability that their difference is very small. So we write: $X_n \rightarrow^p X$. 
+
+**Theorem 5**: from what we just saw, we can also derive that if we square the difference between the two variables, it will also tend to 0 if the two variables become closer and closer to each other. Math: if E($X_n - X$)$^2$ -> 0 $\implies$ $X_n$ -> X.
+
+**Theorem 6**: similar to what we've seen in convergence in probability, but now let's do so with more than one variable: $lim_{n \rightarrow \infty} F_{X_n} (x) = F_X(x)$. The slides go deeper into the math of it: 
+
+If {$X_i$}$^\infty_{i=1}$ is a sequence of independent and identically distributed i.i.d. r.v.s with E[$X_i$] = $\mu$ and Var($X_i$) = $\sigma^2$ < $\infty$, then $\overline{X}_n$ := $\sum_{i=1}^n X_i/n \rightarrow^p \mu$. This last term means that if we sum the behavior of all the r.v.s and divide it by how many r.v. we're evaluating, the result should converge in probability to the expected value of $X_i$ $\rightarrow$ $\mu$. This part is what **Theorem 7** below is all about. But we don't stop here, we can prove by linearity of expectation that E$|\overline{X}_n - \mu|^2$ $\rightarrow 0$ as n $\rightarrow$ $\infty$.
+
+**Theorem 7**: restates what we've just seen: if $\{X_n\}_{n=1}^\infty$ is a sequence of iid r.v. with E$X_n$ = $\mu$ and E|$X_n$| < $\infty$, then $\overline{\rm X}_n$ ->$_p$ $\mu$.
+
+#### 3 [**Weak Convergence**](https://en.wikipedia.org/wiki/Law_of_large_numbers#Weak_law) and [**Central Limit Theorem**](https://en.wikipedia.org/wiki/Central_limit_theorem)
+
+The **Central Limit Theorem**(CLT) establishes that, in some situations, *when independent random variables are added, their properly normalized sum tends toward a normal distribution (informally a "bell curve") even if the original variables themselves are not normally distributed*. This is pretty useful! It means that we can use **methods that work for normal distributions in problems that involve other types of distributions**.
+
+**Convergence in Distribution(D8)**: this is similar than convergence in probability that we've seen before. A sequence of r.v. $X_1,X_2,...,X_n$ is said to *converge in distribution* to a r.v. X if $lim_{n \rightarrow \infty} F_{X_n} (x) = F_X(x)$ at all points where $F_X(x)$ is continuous. 
+
+**Theorem 9**: If a r.v. converges in probability, then it converges in distribution. If $X_n$ ->$_p$ X, then $X_n \implies X$. The slides go deeper and prove it if you want more math. Given this definition, we have: $lim_{n}|F_{X_n}(x) - F_X(x)| ≤ \delta$. So we know that $F_{X_n}(x)$ tends to $F_X(x)$ as n $\rightarrow \infty$ for any x $\in \mathbb{R}$ where $F_X$(x) is continuous. 
+
+**Central Limit Theorem(T10)**: as stated earlier, CLT states that, in some situations, when independent random variables are added, *their properly normalized sum tends toward a normal distribution (informally a "bell curve") even if the original variables themselves are not normally distributed*. So imagine we have a sequence of i.i.d. r.v.($X_i$) with mean $\mu$ and variance $\sigma^2$. What the CLT says is that if we take the sum of those r.v. and subtract the mean value while controlling for size, it will tend to a normal distribution with mean 0 and variance $\sigma^2$. Mathly speaking: $\sum_{i = 1}^n$ ($X_i - \mu$)\$\sqrt{n} \implies N(0,\sigma^2)$.
+
+Let's address two related issues:
+
+i) And in the **multivariate** case? It depends on the **variance**! If Var($X_i$) = E[($X_i - E[X_i])(X_i - E[X_i])^T]$ = $\sum$, then we can use the CLT and get: $\sum_{i = 1}^n(X_i - \mu)/\sqrt{n} \implies N(0,\sum)$. Here, $\sum$ represents the variance in the multivariate case.
+
+ii) And if the r.v. are not i.i.d.? We can use **Linderberg-Feller's CLT** that relaxes some assumptions and only needs that the r.v. have finite variance. 
+
+[**Linderberg-Feller's CLT(T11)**](https://en.wikipedia.org/wiki/Lindeberg%27s_condition): let's now work with less assumptions. Suppose we have a sequence of independent r.v. with expectation = $\mu_i$ and variance = $\sigma^2_i$. Let's index these variables by *i* and denote them by {$X_i$}$^\infty_{i=1}$. Let's denote also $c_n^2$ as the variance of all these r.v.: $c_n^2 = V(\sum_{i = 1}^n X_i)$ = $\sum_{i = 1}^n \sigma_i^2$. If, for any $\varepsilon$ > 0 we have that
+
+\[ lim_{n \rightarrow \infty} \frac{1}{c_n^{2}} \sum_{i = 1}^n E|X_i - \mu_i|^{2} \mathbb{I} \{|X_i - \mu_i|> \varepsilon c_n \} = 0   \]
+
+then we also have that $\frac{\sum_{i=1}^n(X_i - \mu_i)}{c_n} \implies N(0,1)$.
+
+Linderberg's condition is also called **asymptotic negligibility** since it implies that $max_{1 ≤ i ≤ n}\frac{\sigma^2_i}{c^2_n} \rightarrow 0$ and guarantees that every the influence of any $X_i$ to the variance of the sum is sufficiently small if we have large enough n. 
+
+#### 4 Asymptotic statements derived from basic limit theorems
+
+Now that we have established some basic limit theorems, we can derive some asymptotic statements that will be useful in the long term. Before we jump into that, a brief reflection:
+
+What is asymptotic analysis used for? Asymptotic theory provides **limiting approximations of the probability distribution of sample statistics**, such as the likelihood ratio statistic and the expected value of the deviance. Asymptotic behavior describes a function or expression with a defined limit or asymptote. Your function may approach this limit, getting closer and closer as you change the function's input, but will never reach it. Let's analyze some cases that will yield important definitions:
+
+**1)** Imagine that $X_n$ converges in probability to X and the same goes for $Y_n$ to Y. Then: i) Their sums converge in probability: $X_n + Y_n \rightarrow_p X + Y$; and ii) their multiplications two  $X_nY_n \rightarrow_p XY$. In math therms: if $X_n \rightarrow_p X$ and $Y_n \rightarrow_p Y$, then $X_n + Y_n \rightarrow_p X + Y$ and $X_nY_n \rightarrow_p XY$.  
+
+**2)** Let's switch and mix convergence in probability and convergence in distribution. We know that if $X_n$ converges in *distribution* to $X$ and $Y_n$ converges in *probability* to c, then: i) their sums $X_n$ + $Y_n$ converge in **distribution** to X + c; and ii) and their multiplications too: $X_n Y_n \implies cX$. In math terms: if $X_n$ $\implies$ X and Y ->$_p$ c, then $X_n$ + $Y_n$ $\implies$ X + c and $X_nY_n$ $\implies$ cX.
+
+This is known as [**Slutsky's Theorem**](https://en.wikipedia.org/wiki/Slutsky%27s_theorem).
+
+And what if we used the r.v. in functions? 
+
+**3)** If $X_n$ ->$_p$ X, then a function using the r.v. will also converge in probability: g($X_n$) ->$_p$ g(X).
+
+**4)**The same goes for convergence in distribution: If $X_n$ $\implies$ X, then g($X_n$) $\implies$ g(x).
+
+This is known as the [**Continuous Mapping Theorem**](https://en.wikipedia.org/wiki/Continuous_mapping_theorem). 
+
+##### 4.1 Asymptotic Notation: Symbols $o_p$ and $O_p$
+
+Let's talk about notation for **non-stochastic**(non-random) sequences $x_n$ nd $b_n$. If we have two sequences such that $x_n$ is so small next to $b_n$ that it tends to 0 ($\frac{x_n}{b_n} = 0$ when $lim_{n \rightarrow \infty}$), we can write down then that $x_n = o(b_n)$. This is described as "$x_n$ is asymptotically smaller than $b_n$". Informally. it means that $x_n$  grows much slower than $b_n$ and is insignificant in comparison.
+
+But what if $x_n$ is not bigger than $b_n$ such that it does **not** tend to $\infty$ as n grows larger? In other words, their ratio is bounded such that $sup_n |\frac{x_n}{b_n}| < \infty$. So $x_n$ is not that insignificant anymore! $\rightarrow$ it just tends to a number bigger than 0 and smaller than $\infty$. We denote this by $x_n = O(b_n)$. This is sometimes described as "sequence $\frac{X_n}{b_n}$ is stochastically bounded".
+
+**Definition 13:** this is just a formalization of what we've seen above:
+i) $X_n$ = $o_p$($b_n$) $\iff$ $\frac{X_n}{b_n}$ ->$_p$ 0. 
+
+ii) $X_n$ = $O_p (b_n)$ $\iff \forall \varepsilon > 0$ $\exists$ a constant C < $\infty$ such that P{|$\frac{X_n}{b_n}$| > C} < $\varepsilon$ for all *n*. 
+
+Then we have some useful statements on the slides that I won't linger on here.
+
+#### 5 Delta Method
+
+The last part of the lecture deals mainly with the [**Delta Method**](https://en.wikipedia.org/wiki/Delta_method). This is a result concerning the **approximate probability distribution** for a function of an **asymptotically normal statistical estimator** from knowledge of the **limiting variance** of that estimator. In my words: if we want to know the probability distribution of a function, we can approximate it given that we know the estimator is normal by knowing its limiting variance. Let's turn that intuition into math:
+
+**Theorem 14**: imagine we have a sequence of r.v., constants $\mu$ and $\sigma$ such that we have: $\sqrt{n}(X_n - \mu) \implies N(0,\sigma^2)$. If we differentiate g'($\mu$) and the result is ≠ 0, then we can use the delta method to get $\sqrt{n}(g(X_n) - g(\mu)) \implies N(0, \sigma^2(g'(\mu))^2)$. If $g'(\mu)$ = 0, the asymptotic distribution will be 0(constant) $\rightarrow$ degenerate. The [**first PS**](https://gabrielvoelcker.netlify.com/mit/schedule_2018.pdf) deals with $\Delta$Method. 
+
+### **3 - Intro to Statistics**
+
+Enough with the review/introduction, let's get to it!
+
+#### 1) Basic Concepts: Population, Sample, Parameter, Statistics
+
+In order to study statistics, we deal with data. The following definitions paint the picture of what is yet to come:
+
+[**Sample**](https://en.wikipedia.org/wiki/Sample_(statistics)): a single draw of data from all potential realizations of that data. It is a realization **x** of vector **X**. 
+
+[**Population**](https://en.wikipedia.org/wiki/Statistical_population): is the distribution $F_x$ of data vector $\mathcal{X}$. Not easily observable, but if we do our job the best way possible, we will be closer to what the population really is.
+
+[**Parameter**](https://en.wikipedia.org/wiki/Statistical_parameter): is a numerical characteristic of a statistical population or a statistical model. The goal of statistics is to render some judgement about a parameter (or a population $F_x$) based on a single draw from this population, which is called *inference*. There are three types of inference: a) **Estimation**; b) **Confidence set construction**; and c) **Testing**. These will be properly addressed later.
+
+[**Statistic**](https://en.wikipedia.org/wiki/Statistic): any function of a random sample. The distribution of a statistic is called the [**sampling distribution**](https://en.wikipedia.org/wiki/Sampling_distribution). By construction, it is a r.v. When we calculate the statistic for our specific data set, we denote $y = g(x) = g(x_1,...,x_n) \rightarrow$ represents a single realization of this r.v. Let's set things clearer by using an example.
+
+###### **Example 1**
+
+Suppose we want to the test whether a coin is fair by flipping it 10 times. Then we have that n = 10, and we will record 0 for tails and 1 for heads. My data is: x = ($x_1,...,x_10$). Each $x_n$ will take the value of either 0 or 1. This is a single realization of random vector X = ($X_1,...,X_10$), where $X_i$ ~ i.i.d. Bernoulli(p)(recall Bernoulli distribution from Lecture 1?). The population here is described as P($x_1,...,x_10$) = $\prod_{i = 1}^{10} p^{x_i}(1-p)^{1-x_i}$, and is known up to parameter *p*. We want to judge p in order to infer whether the coin is fair. We may consider so many different functions in order to do that, for example: i) the number of heads; ii) how many times we've flipped a coin until the first heads shows up; iii) the difference between the number of heads and tails. In other words, there are many statistics of the functions of the set we can have. Let's leave it to later whether we can infer if the coin is biased or not.
+
+Back to some interesting concepts. How is our data organized influences(a lot!) what we can do with it. Types of data:
+
+[**Cross-section**](https://en.wikipedia.org/wiki/Cross-sectional_data): i.i.d. random vectors $X_1,...,X_n$. 
+
+[**Time-series**](https://en.wikipedia.org/wiki/Time_series):  is a series of data points indexed/listed/graphed in time order. Usually they allow for dependency between consecutive observations. $X_t$ with t = 1,...,T.
+
+[**Panel data**](https://en.wikipedia.org/wiki/Panel_data): are multi-dimensional data involving measurements over time. $X_{i,t}$,i = 1,...,n and t = 1,...,T.
+
+##### 1.1) Sample mean and sample variance.
+
+Now that we've talked about statistics, what are the most **commonly used statistics when we are doing science**?
+
+[**Sample mean**](https://en.wikipedia.org/wiki/Sample_mean_and_covariance): is an estimator of the population mean, $\overline{\rm X}_n$ = $\sum_{i=1}^n X_i/n$.
+
+[**Sample variance**](https://en.wikipedia.org/wiki/Variance): variance is the expectation of the squared deviation of a random variable from its mean. $s^2$ = $\frac{\sum_{i = 1}^n(X_i - \overline{\rm X}_n)^2}{n-1}$. 
+
+##### 1.2) Empirical Distribution Function
+
+Another important basic concept is the [**Empirical Distribution Function**](https://en.wikipedia.org/wiki/Empirical_distribution_function). Imagine we want to start to understand our data. How can we organize it? How can we interpret it? 
+
+**Empirical Distribution Function**: is the distribution function associated with the empirical measure of a sample. It is denoted by $\hat{F}_n$. This cumulative distribution function is a step function that jumps up by 1/n at each of the n data points, as illustrated:
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("5.png")
+ grid.raster(img)
+```
+
+Yes, it looks like stairs. Each step is the aforementioned jump. This is represented by the formula:
+
+<center> $\hat{F}_n(x) = \sum_{i=1}^n I(X_i ≤ x)/n$ </center>
+
+Where:
+
+I(.) = indicator function: the function which equals 1 if the statement in brackets is true and 0 otherwise.
+
+$\hat{F}_n(x)$ shows the fraction of observations with a value smaller than or equal to x. It tends to F(x) as n -> $\infty$.
+
+**Lemma 2** states an important property of the EDF: if we have a random sample $X_i$ of size n from a distribution with cdf F, then for any x $\in \mathbb{R}$ we have that the expectation of the EDF given x is equal to the expectation of the function in x and the variance of the EDF tends to 0 the bigger the sample is. In math terms: E[$\hat{F}_n(x)] = F(x)$ and V($\hat{F}_n(x)) \rightarrow 0$ as n $\rightarrow \infty$. The result is: $\hat{F}_n(x) \rightarrow_p F(x)$ as n $\rightarrow \infty$.
+
+**Theorem 3**: given Lemma 2, an even stronger result holds as well: the [**Glivenko-Cantelli Theorem**](https://en.wikipedia.org/wiki/Glivenko%E2%80%93Cantelli_theorem). Imagine we have a random sample $X_1,...,X_n$ with distribution cdf F $\implies sup_{x \in \mathbb{R}}| \hat{F}_n (x) - F(x)| \rightarrow_p 0$.
+
+#### 2) Ways to find the distribution of a statistic
+
+So far so good, but to make inferences we often need to know the **distribution** of different statistics. The statistic is a number, and to find the right number (for ex: a mean), it would be much more useful to know its distribution. But how can we figure that out? There are 4 main methods:
+
+##### 2.1) Exact Distribution
+
+Here we can actually calculate the exact distribution of a statistic. However precise, it is unfortunately rare to occur. It depends strongly on the assumptions we make, which limit its applicability.
+
+##### 2.2) Monte-Carlos Method
+
+[**Monte-Carlo Method**](https://en.wikipedia.org/wiki/Monte_Carlo_method): is a broad class of computational algorithms that rely on repeated random sampling to obtain numerical results. The underlying concept is to **use randomness to solve problems that might be deterministic in principle**. The important assumption is: **we assume that we know the distribution of data**. Basic steps: we assume a certain pdf f(x;$\mu,\sigma^2,\gamma$); We draw as many as possible $X_{ib}^\ast$ from f(x;$\mu,\sigma^2,\gamma$). The more we draw, the more precise we will be. Then we calculate $Y_b^\ast$ = g($X_b^\ast$), which could be $\frac{1}{n}\sum_{i=1}^n X_{ib}^\ast$. Knowing this, we can use different procedures to get to: the cdf of Y; probability Y gets into set A; $\alpha$-quantile of Y; mean; variance; among others. 
+
+##### 2.3) Asymptotic Approximation
+
+[**Asymptotic Approximation**](https://en.wikipedia.org/wiki/Asymptotic_expansion): is an approximation of of finite-sample distributions which increases in precision if the sample is large enough. It relies on CLT, delta-methods, Slutsky theorem. If we **can't assume the distribution** of a sample but **we want to assume its variance**, then we have:
+
+\[ \sqrt{n}(\frac{1}{n}\sum_{i=1}^n X_i - EX_i) \implies N(0,V(X_i)) \]
+
+Which means the distribution of $Y_1 = \sum_{i=1}^n X_i$ is approximately gaussian with mean $EX_i$ and variance $V(X_i)/n$. One tricky thing about AA is that we can't control the quality of this approximation nor improve it. But as $\uparrow$n, the approximation should become more precise. It is probably the most popular way of figuring out the distribution of a statistic in econometrics.
+
+##### 2.4) Bootstrap
+
+[**Bootstrapping**](https://en.wikipedia.org/wiki/Bootstrapping_(statistics)): is any test or metric that relies on random sampling with replacement. The idea is similar to Monte-Carlo, we run an algorithm but we simulate $X_{ib}^\ast$ with a known EDF $\hat{F}_n(x)$ instead that with a unknown F. This is called the non-parametric bootstrap. Larger B helps, as in Monte-Carlo, but the approximation error can not be totally eliminated given that we approximated F. 
+
+Arguments of why we should use Bootstrap:
+
+1) True statistic $F_Y$ - Bootstraped statistic $F_{Y^\ast}$ converges to 0 as sample $\rightarrow \infty$.
+
+2) The distribution of Y converges somewhere, which would allow for asymptotic approximation, and that $Y^\ast$ converges to the same distribution. 
+
+#### 3) Plug-in estimators
+
+What are Plug-in estimators? Let's conjecture a situation in which they are useful:
+
+Imagine there's a population with cdf *F* from which we obtain a random sample $X_1,...,X_n$. Now let's imagine there's a function, called *T*, that works on the space of the possible cdfs. We don't know the real distribution *F*, but we are interested in *T(F)*. How can we estimate *T(F)*? Let's use some statistic: g($X_1,...,X_n$), that we will call the *estimator of T(F)*. The *realization of the estimator are the estimates*! These estimates are denoted by g($x_1,...,x_n$). Let's pay attention to the notation: the little x's are the realizations of the big X's. Now we've arrived at the problem: **what is a good estimator for T(F)**? It should be one in which the estimator(g($X_1,...,X_n$)) is as close as possible to the real thing (T(F)), right? One possible estimator is the one we get by using the EDF, such that we have T($\hat{F}_n$). Then, T($\hat{F}_n$) is called the **plug-in estimator**! We know that as n increases, this estimator will be close and closer to the F. We can use plug-in estimators to calculate mean, variance, quantiles. 
+
+#### 4) Parametric Families: Normal
+
+Did you notice that we've made no assumptions about what kind of distribution the plug-in estimator above assumes? That's why we call it **generic nonparametric** estimator. But what if we did assume some possible distributions for our estimator? Then we would call them a **parametric family**. 
+
+It is assumed that F = F($\theta$) with $\theta \in \Theta$ where $\Theta$ is a finite-dimensional set. We call $\theta$ the **parameter** and $\Theta$ the **parameter space**. In this case the cdf F and the corresponding pdf $f$ are often denoted by F(x|$\theta$) and $f(x|\theta)$, respectively. If $X_1,...,X_n$ is a random sample from a distribution with pdf $f(x|\theta)$, then joint pdf $f(x_1,...,x_n|\theta)$ = $\prod_{i = 1}^{n} f(x_i|\theta)$. If we fix $x_1,...,x_n$, the function $f(x_1,...,x_n|\theta)$ as a function of $\theta$ is called the [**likelihood function**](https://en.wikipedia.org/wiki/Likelihood_function). It is so called because it expresses how plausible are different parameter values for a given sample of data.
+
+**Normal Family**: one of the most important parametric families. We have $\theta = (\mu, \sigma^2)$ and population distribution is N($\mu, \sigma^2$). We have to give some definitions related to normal distributions:
+
+1) Imagine $X_1,...,X_n$ is a random sample from N(0,1). Then the r.v. $X_n^2$ = $\sum_{i=1}^n X_i^2$ is called a r.v. with *n degrees of freedom*. Its distribution is known as a $X^2$ distributio with n degrees of freedom. If x > 0, the pdf will be: f(x) = $\frac{x^{p/2 - 1}e^{-x/2}}{(\Gamma(p/2)2^{p/2})}$. If x ≤ 0, then pdf = 0. 
+
+2) If $X_0$ is N(0,1) and independent of $X_1,...,X_n$, then $t_n$ = $\frac{X_0}{\sqrt{\frac{X_n^2}{n}}}$ and is called a **t random variable** with *n* degrees of freem. Its distribution is called a t-distribution or a *Student distribution*. 
+
+3) If $X_n^2$ and $X_m^2$ are independent $X^2$ r.v. with *n* and *m* degrees of freedom, then their ratio is called the **Fisher r.v.**: $F_{n,m} = (\frac{X_n^2}{n})/(\frac{X_m^2}{m})$. This distribution is called a fisher distribution with (n,m) degrees of freedom.
+
+**Theorem 4**: If we have i.i.d. r.v. with normal distribution (N($\mu,\sigma^2$)), then 1) $\overline{X}_n$ and $s_n^2$ are independent!; 2) $\overline{X}_n ~ N(\mu, \sigma^2/2)$; and 3) (n - 1)$s^2$/$\sigma^2$ ~ $X_{n-1}^2$. 
+
+### **4 - Sufficient Statistics**
+
+#### 1) Sufficient Statistics
+
+Now we we'll finally start nearing estimation. In order to do that, we'll deal with sufficient statistics. 
+
+Let $f(|\theta)$. Imagine we want to learn the parameter value $\theta$ from our sample. A **sufficient statistic** allows us to separate the informatin contained in the random sample in two parts: i) with all the information related to $\theta$; and ii) pure noise that has no valuable information for us. So we say:
+
+**Sufficient Statistic Definition(D1)**: is a statistic that is sufficient for $\theta$ if the conditional distribution of the random sample given the sufficient statistic does not depend on $\theta$. Once we know the sufficient statistic, we can discard *X*(random sample) completely. More formally:
+
+A sufficient statistic is a sample statistic that conveys the same information about the data generating process as the entire data itself. Let f(x|$\theta$) with $\theta \in \Theta$ be some parametric family. X = ($X_1,...,X_n$) is a random sample from distribution f(x|$\theta$). A [**sufficient statistic**](https://en.wikipedia.org/wiki/Sufficient_statistic) separates all the information of X into two parts: 1) all the valuable information for parameter $\theta$; 2) pure noise.
+
+But how can we obtain a sufficient statistic?
+
+#### 2) Factorization Theorem
+
+The **Factorization Theorem** provides us with an approach for how to find a sufficient statistic:
+
+[**Factorization Theorem**](https://www.sciencedirect.com/topics/computer-science/factorization-theorem))(T2): T(X) can only be a sufficient statistic $\iff$ $\exist$ g(t|$\theta$) and h(x) such that f(x|$\theta$) = g(T(x)|$\theta$)h(x). I interpret this as being able to disentagle what is related to $\theta$(the first part of the right-hand side of the last equality: g(T(x)|$\theta$)) from what has nothing to do with $\theta$(the second part of the right-hand side of the last equality: h(x)).
+
+The lecture goes deep into proofs and math that I won't spend time looking at here.
+
+#### 3) Minimal Sufficient Statistics
+
+We have found a sufficient statistic T(X), great! But what if we want to reduce it even more? This leads us to the concept of **minimal sufficient statistic**!
+
+**Minimal Sufficient Statistic(D3)**: if for any sufficient statistic T(X) $\exists$ a function *r* such that $T^\ast(X) = r(T(X))$. In other words, we say that $T^\ast$ is not bigger than T if there exists some function r such that $T^\ast$(X) = r(T(X)). In other words, we can calculate $T^\ast$(X) whenever we know T(X). In this case when $T^\ast$ changes its value, statistic T must change its value as well. In this sense $T^\ast$ does not give less of an information reduction than T.
+
+This can be interpreted as the minimal sufficient statistic gives us the **greatest data reduction** without a loss of information about parameters. 
+
+**Characterization of Minimal Statistics(T4)**: let f(x|$\theta$) be the pdf of X. If statement {$f(x|\theta)/f(y|\theta)$} not depending on $\theta$ is equivalent to the statement {T(x) = T(y)} $\implies$ T(X) is minimal sufficient.
+
+#### 4) Estimators and their Properties
+
+An [**estimator**](https://en.wikipedia.org/wiki/Estimator) calculates the estimate of a given quantity based on observed data. More formally, is a function of the data(statistic). If we have a parametric family with parameter $\theta$, then an estimator of $\theta$ is usually denoted by $\hat{\theta}$, in the sense that $\hat{\theta}$ is trying to estimate the true value of $\theta$ given a sample(observed data). Ex: sample variance $\hat{\sigma}^2$ is an estimator of the population variance. 
+
+But how good is our estimator? Does it reflect the reality? What problems can it suffer from? Let's deal with the performance of our estimators in the following 3 issues:
+
+##### 4.1) Unbiasness
+
+We want our estimator to reflect reality to the best of its abilities. An **unbiased estimator** is one that is on average correct about it's estimating. Formally: Let X be our data and $\hat{\theta}$ = T(X) be an estimator where T is some function. We say that $\hat{\theta}$ is **unbiased** if $E_{\theta}[T(X)]$ = $\theta$ for all possible values of $\theta$ where $E_{\theta}$ denotes the expectation when $\theta$ is the true parameter value. The *bias* of $\hat{\theta}$ is defined by Bias($\hat{\theta}$)  = $E_{\theta}[\hat{\theta}] - \theta$.
+
+##### 4.2) Efficiency: MSE
+
+Another aspect of the estimators that we're concerned with is its Efficiency. This can be evaluated by the [**Mean Square Error**](https://en.wikipedia.org/wiki/Mean_squared_error). MSE($\hat{\theta}$) = $E_{\theta}[(\hat{\theta} - \theta)^2]$. We decompose this last equality into:
+
+**Theorem 5**: MSE($\hat{\theta}$) = $Bias^2 (\hat{\theta})$ + V($\hat{\theta}$). The smaller the MSE, the more efficient it is. The proof of MSE is left for you to check on the slides.
+
+##### 4.3)  Connection between efficiency and sufficient statistics
+
+We know that the smaller the MSE, the most efficient is our estimator. And we also know that once we know T(X), we can discard X. **How can we relate sufficiency and efficiency**? For any estimator $\hat{\theta}$ = $\delta$(X), there is another estimator which depends on data X only through T(X) and is at least as efficient as $\hat{\theta}$. This is the Rao-Blackwell Theorem. Suppose the following setting:
+
+X = ($X_1,...,X_n$) is a **random sample** from distribution $f_\theta$. 
+
+$\hat{\theta}$ = $\delta(X)$ is an **estimator** of $\theta$. 
+
+T(X) is a **sufficient statistic** for $\theta$.
+
+$\phi(T) = E[\delta(X)|T]$
+
+[**Rao-Blackwell Theorem (T6)**](https://en.wikipedia.org/wiki/Rao%E2%80%93Blackwell_theorem): $\hat{\theta}_2$ = $\phi(T(X))$ is an estimator for $\theta$ and MSE($\hat{\theta}_2$) ≤ MSE ($\hat{\theta}$). Also, if $\hat{\theta}$ is unbiased, then $\hat{\theta}_2$ is unbiased as well.
+
+From that on, we do a lot of math, if you want to, check the slides.
+
+### **5 - Point Estimators** 
+
+There are two types of estimators: point and interval ones. The names are self-explanatory. This lecture deals with the former.
+
+#### 1) Estimators and their properties
+
+We already addressed this brief introduction of estimators in Lecture 4: An [**estimator**](https://en.wikipedia.org/wiki/Estimator) is a function of the data. If we have a parametric family with parameter $\theta$, then an estimator of $\theta$ is usually denoted by $\hat{\theta}$. Ex: sample variance $\hat{\sigma}^2$ is an estimator of the population variance. 
+
+##### 1.1) Unbiasness
+
+**Unbiasness** means that on average we are right. For an estimator $\hat{\theta}$ to be *unbiased* for $\theta$ depends on $E_{\theta}$[T(X)] = $\theta$ for all possible values of $\theta$ where $E_{\theta}$ denotes the expectation when $\theta$ is the true parameter value. Bias($\hat{\theta}$) = $E_{\theta}[\hat{\theta}]$ - $\theta$. $\hat{\theta}$ is only unbiased if it equals 0. 
+
+##### 1.1.1) Bootstrap bias correction
+
+But eventually, our estimators are biased! How can we correct this? We can use the bootstrap for this too. Let's do this by example: we have EZ = $\mu$, and we're interested in a *non-linear function* of $\mu$, say $\theta = g(\mu)$. And Z may be a r.v. coming from transformations of observed $Z_i = h(X_i)$. We do have an unbiased estimate of $\mu$, say $\hat{\mu}$ = $\overline{Z}$ = $\frac{1}{n}\sum_{i = 1}^n Z_i$. We may try to use this in order to estimate $\theta = \hat{\theta}$ = g($\overline{Z}$). Estimator $\hat{theta}$ is reasonable but is **biased** unless g() is linear $\rightarrow$ B = $E\hat{\theta} - g(\mu)$. To estimate this bias, we use bootstrap:
+
+1) Generate a bootstrap sample from set {$Z_1,...,Z_n$} with replacement.
+
+2) Calculate $\overline{Z}_b^\ast$ = $\frac{1}{n} \sum_{i=1}^n Z_{ib}^\ast$.
+
+3) Estimate $\theta_b^\ast$ = g($\overline{z}_b^\ast$).
+
+4) Bias* = $\frac{1}{B} \sum_{b = 1}^B \theta_b^\ast - \tilde{\theta} \approx Bias$.
+
+5) Use $\tilde{\theta} = \hat{\theta}$ - Bias* as my estimate.
+
+This way we try to eliminate the bias. Why it works? Check the math on the slides.
+
+##### 1.1.2) Efficiency: MSE
+
+Another concept that evaluates the performance of estimators is the MSE(Mean Squared Error). By definition, MSE($\hat{\theta}$) = $E_{\theta}[(\hat{\theta} - \theta)^2]$. In Lecture 4 we got to: MSE($\hat{\theta}$) = Bias$^2$($\hat{\theta}$) + V ($\hat{\theta}$). The smaller the MSE, the more efficient the MSE is. How do we deal with the **trade-off between bias and variance of the estimator**? We may prefer a slightly biased estimator to an unbiased one if the former has much smaller variance in comparison to the latter one. And the math goes deep into that one, which I'll skip in here.
+
+##### 1.2) Asymptotic Properties
+
+The asymptotic properties of estimators deal with their performances in terms of consistency, efficiency, distribution, confidence regions, regularity, etc..
+
+###### 1.2.1) Consistency
+
+We want to test whether one estimator $\hat{\theta}_n$ is **consistent** for $\theta$ That happens if it converges in probability: $\hat{\theta}_n$ $\rightarrow_p$ $\theta$. That is, roughly speaking with an infinite amount of data(Law of Large Numbers) the estimator (the formula for generating the estimates) would almost surely give the correct result for the parameter being estimated. 
+
+###### 1.2.2) Asymptotic Normality
+
+We want to test the [**asymptotic distribution**](https://en.wikipedia.org/wiki/Asymptotic_distribution) of an estimator. This is, a sense we're limiting the distribution of a sequence of distributions to see if they behave like the Normal. We say that $\hat{\theta}_n$ is *asymptotically normal* if there are sequences $(a_n)^\infty_{n = 1}$ and $(r_n)^\infty_{n = 1}$ and constant $\sigma^2$ s.t. $r_n(\hat{\theta} - a_n)$ $\implies$ N(0,$\sigma^2$). Then $r_n$ is called the *rate of convergence*, $a_n$ is the *asymptotic mean* and $\sigma^2$ - the asymptotic variance.
+
+This is a short class if we don't get over the examples. I strongly encourage you to look at them in the lecture slides.
+
+
+### **6 - Efficient Estimators**
+
+#### 1) Common Methods for Constructing an Estimator
+
+We've talked about estimators and their properties, but how can we obtain them? Let's start by talking about three different approaches:
+
+##### 1.1) Method of Analogy(plug-in)
+
+Similar to the plug-in estimators we've seen in Lecture 3. If we want to estimate $\theta = \theta(F)$ where F denotes the population distribution, we can find an estimator  $\hat{\theta}$ by equalling to an estimator $\theta(\hat{F})$, where $\hat{F}$ is some estimator of F. One example of plug-in estimator: $\mu$ = $EX_i$ = $\int xdF(x)$ is a functional of the cdf. An **analog estimator** would be $\hat{\mu}$ = $\int  x d \hat{F}(x) = \overline{X}$. 
+
+##### 1.2) Method of Moments
+
+[**Method of Moments**](https://en.wikipedia.org/wiki/Method_of_moments_(statistics)): may be one of the most famous methods of estimation of population parameters. In words, what it does is: express the population expected values of powers of the r.v. under consideration($X_i^k$) as functions$m_k$ of the parameters of interest($\theta$). You have one moment for each k. he number of such equations is the same as the number of parameters to be estimated. Those equations are then solved for the parameters of interest. The solutions are estimates of those parameters. Let's do the math: E[$X_i$] = $m_1(\theta)$ for k = 1, E[$X_i^2$] = $m_2(\theta)$ for k = 2, and so forth until the maximum *k* we can have. The method-of-moments estimator $\hat{\theta}_{MM}$ is the solution of the above system of equations when we substitute $\frac{\sum_{i=1}^n X_i}{n}$, $\frac{\sum_{i=1}X_i^2}{n}$,...,$\frac{\sum_{i=1}X_i^k}{n}$ for E[$X_i$], E[$X_i^2$],...,E[$X_i^k$] correspondingly. So, $\theta_{MM}$ solves the following system of equations: $\frac{\sum_{i=1}^n X_i}{n} = m_1(\hat{\theta})$, $\frac{\sum_{i=1}X_i^2}{n} = m_2(\hat{\theta})$,..., $\frac{\sum_{i=1}X_i^k}{n} = m_k(\hat{\theta})$.  
+
+The method of moments estimator is **not unique** and **depends on the moments chosen**. 
+
+##### 1.3. Maximum Likelihood Estimator
+
+The third method of estimating parameters, the [**Maximum Likelihood Estimation**](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation), estimates the parameters by maximizing a likelihood function, so that the assumed statistical model points the most probable observable data. The point in the parameter space that maximizes the likelihood function is called the **maximum likelihood estimate**. Now we're talking about a **parametric estimation**, one we partially know the **distribution** of the data, considering the only unknown part is the $\theta$ we're trying to estimate. We denote the joint pdf of X = ($X_1,...,X_n$) as $f(x|\theta) = f(x_1,...,x_n| \theta)$. In other words, if we knew $\theta$, we would have known the exact distribution of the data. 
+
+The maximum likelihood estimator $\hat{\theta}_{ML}$ is the value that maximizes the realizations of joint PDF: $\hat{\theta}_{ML}$ = arg max$_{\theta \in \Theta}$ $f(x_1,...,x_n| \theta)$. The function $f(x|\theta)$ when considered as a function of $\theta$ for fixed values x = $(x_1,...,x_n)$, is called the **likelihood function**. Henceforth it will be denoted by $\mathcal{L}(\theta|x)$. Thus, the maximum likelihood estimator **maximizes** the likelihood function, which explains the name of this estimator. 
+
+**Log-likelihood**: since log(x) is increasing in *x*, it is easy to see that $\hat{\theta}_{ML}$ also maximizes $\ell(\theta|x_1,...,x_n)$ = log$\mathcal{L}(\theta|x_1,...,x_n)$. So the Log-likelihood is: $\ell(\theta|x_1,...,x_n)$. If it is differentiable in $\theta$, then $\hat{\theta}_{ML}$ satisfies first order condition(FOC): $\frac{d \ell}{d \theta}(\hat{\theta}_{ML}|x_1,...,x_n) = 0$. And if the data is i.i.d., then the FOC is equivalent to $\sum_{i=1}^n \partial log f_1(x_i|\hat{\theta}_{ML})/\partial \theta$ = 0. Now it's clear **why we took the log of the likelihood function**: it is easier to take the derivtive of the sum than the derivative of the product. The **Score** is given by: S($\theta |x$) = $\partial log f(x| \theta)/ \partial \theta$.
+
+#### 2) Fisher Information
+
+We have presented three ways of obtaining an estimator. Let's evaluate the estimators now! [**Fisher Information**](https://en.wikipedia.org/wiki/Fisher_information) is a way of measuring the amount of information that an observable random variable X carries about an unknown parameter $\theta$ of a distribution that models X. Formally, it is the **variance of the score** we just obtained in maximum likelihood estimator. The intuition is that the more variance our score has, the more imprecise will be the information of the estimator. Let's go back to the slides and do this more formally.
+
+**Definition 1**: Fisher Information is = $I(\theta)$ = $E_{\theta}[(\frac{\partial \ell(\theta | X)}{ \partial \theta})^2]$. Fisher information plays an important role in maximum likelihood estimation. 
+
+**Theorem 2**: In the setting we've set(in the slides) for Definition 1, we have:
+
+1) $E_{\theta}[\frac{\partial \ell(\theta | X)}{\partial \theta}] = 0$
+
+2) I($\theta$) = -$E_{\theta} [\frac{\partial^2 \ell (\theta | X)}{\partial \theta^2}]$
+
+##### 2.1) Information for a random sample
+
+We should also consider Fisher information for a random sample. Let X = ($X_1,...,X_n$) be an i.i.d. random sample from distribution $f_1(x_i | \theta)$. Then the joint pdf is f(x) = $\prod_{i=1}^n f_1(x_i|\theta)$ where x = ($x_1,...,x_n$). The joint log-likelihood is l(x,$\theta$) = $\sum_{i=1}^n l_1(x_i,\theta)$. So Fisher information for the sample X is: I($\theta$) = -$E_\theta$[$\frac{\partial^2 \ell_n (\theta | X)}{\partial \theta^2}$] = -$E_\theta \sum_{i=1}^n$[$\frac{\partial^2 \ell_1 (\theta | X)}{\partial \theta^2}$] = $nI_1(\theta)$.
+
+Here $I_1(\theta)$ denotes Fisher information for one random draw from the distribution $f_1(x_i | \theta)$.
+
+#### 3) Rao-Cramer bound
+
+What if we think our estimator is not efficient as we would like it to be, but in reality it's impossible to improve it? That's why is important to know whether there is a lower bound to is variance! The [**Rao-Cramer**](https://en.wikipedia.org/wiki/Cram%C3%A9r%E2%80%93Rao_bound) expresses a lower bound on the variance of unbiased estimators of a deterministic (fixed, though unknown) parameter. 
+
+**Rao-Cramer Bound Theorem (T4)**: let X = ($X_1,...,X_n$) be a random sample from distribution $f(x| \theta)$ with information I$(\theta)$. Let W(X) be an etimator of $\theta$ such that 
+
+1) 
+$\frac{d}{d\theta}E_\theta [W(X)] = \int W(x) \frac{\partial f(x | \theta)}{\partial \theta} dx$, where x = $(x_1,...,x_n)$.
+
+2) Var(W) < $\infty$.
+
+Then we have
+
+Var(W) ≥ $(\frac{d}{d\theta}E_\theta [W(X)])^2 \frac{1}{I(\theta)}$. In particular, if W is unbiased for $\theta$, then Var(W) ≥ $\frac{1}{I(\theta)}$ = $\frac{1}{n I_1(\theta)}$. 
+
+### **7 - Maximum Likelihood Estimation**
+
+#### 1) MLE 
+
+[**Maximum Likelihood Estimation(MLE)**](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation):  is a method of estimating the parameters of a probability distribution by maximizing a likelihood function, so that **under the assumed statistical model the observed data is most probable**. The point in the parameter space that maximizes the likelihood function is called the **maximum likelihood estimate**. If the likelihood function is differentiable, *the derivative test for determining maxima can be applied*. In some cases, the first-order conditions of the likelihood function can be solved explicitly; for instance, the ordinary least squares estimator maximizes the likelihood of the linear regression model. Under most circumstances, however, numerical methods will be necessary to find the maximum of the likelihood function.
+
+So, Math-wise: let $f(.|\theta)$ with $\theta \in \Theta$ be a parametric family. Let X = ($X_1,...,X_n$) be a random sample from distribution $f_1(.|\theta)$ with $\theta_0 \in \Theta$. Then the joint pdf is $f(x|\theta)$ = $\prod_{i = 1}^n f_1 (x_i|\theta)$ where x = ($x_1,...x_n$). The log-likelihood is $\ell (\theta | x)$ = $\sum_{i=1}^n log f_1 (x_i | \theta)$. The Maximum Likelihood Estimator is, by definition: 
+\[ \hat{\theta}_{ML} = arg \, max_{\theta \in \Theta} \ell (\theta | x) \]
+
+This maximization problem relates to the above intuition: **under the assumed statistical model the observed data is most probable**. The FOC is:
+
+\[ \frac{1}{n} \sum_{i=1}^n \frac{\partial \ell_1 (\hat{\theta}_{ML}| x_i)}{\partial \theta} = 0 \]
+
+The first information equality is E[$\partial \ell_1 (\theta_0 | X_i)$] = 0. Thus, MLE is the method of moments estimator corresponding to the first information equality. So we can expect that the MLE is *consistent*.
+
+**MLE Consistency (T1)**: For the $\hat{\theta}_{ML}$ to converge in probability $\rightarrow_p$ to $\theta_0$, we assume: **1)** that $\theta_0$ is identifiable ($\forall \theta ≠ \theta_0, \exists \text{ x s.t. }f(x| \theta) ≠ f(x|\theta_0)$); **2)** the support of f(.|$\theta$) does not depend on $\theta$; **3)** $\theta_0$ is an interior point of parameter space $\Theta$.
+
+Once we've established the consistency of the estimator, we can think about the asymptotic distribution of the estimator.
+
+**MLE Asymptotic Normality(T2)**: $\sqrt{n}(\hat{\theta}_{ML} - \theta_0) \implies N(0, I_1^{-1}(\theta_0))$. This happens when the conditions of T1 hold + **4)** $f_1(x_i | \theta)$ is thrice differentiable with respect to $\theta$ and we can interchange integration with respect to x and differentiation with respect to $\theta$; **5)** |$\frac{\partial^3 log f_1(x_i | \theta)}{\partial \theta^3}$| ≤ M(x) and E[M($X_i$)] < $\infty$. One can interpret the MLE Asymptotics as being efficient (hit Rao-Cramer bound in very large samples). 
+
+#### 2) Inference using MLE
+
+The lecture here puts asymptotic variance of the MLE $(I_1(\theta_0))^{-1}$ on hold and makes 3 suggestions:
+
+1) If $I_1(\theta)$ is a continuous function in $\theta$ $\implies$ given that $\hat{\theta}_{ML}$ is consistent for $\theta_0$, the quantity ($I_1(\hat{\theta}_{ML})$) is consistent for the asymptotic variance of the MLE $(I_1(\theta_0))^{-1}$.
+
+2) By definition of Fisher information, it equals the expectation of either negative 2nd derivative of the likelihood or of the squared score. For example, a consistent estimator of the Fisher information will be: $ \hat{I} = -\frac{1}{n} \sum_{i=1}^n\frac{\partial^2 \ell_1 (\hat{\theta}|X_i)}{\partial \theta^2}$.
+
+3) The third idea relates to parametric bootstrap. Assume $\hat{\theta}_{ML}$ is the MLE we obtained. For b = 1,...,B, perform:
+
+  i) Simulate sample $X_b^\ast$ = ($X_{1b}^\ast,...,X_{nb}^\ast$) as i.i.d. draws from $f_1(x_i|\hat{\theta}_ML$).
+  
+  ii) Find MLE using sample $X_b^\ast$, denote it $\theta_b^\ast$. 
+  
+Then we calculate the sample variance of ($\theta_1^\ast$,...,$\theta_B^\ast$), it gives the bootstrap approximation to ($nI_1(\theta_0))^{-1}$). 
+
+#### 3) When MLE asymptotic theory fails us
+
+We've been working so far in this lecture under the assumption that T1 and T2 will hold. If now, what should we do? Imagine we **don't** have common support for the asymptotic normality of MLE. Let $X_1,...,X_n$ be a random sample from U[0,$\theta$]. Then $\hat{\theta}_{ML}$ = X_{(n)}. So $\sqrt{n}(\hat{\theta}_{ML} - \theta)$ is always *nonpositive* $\implies$ it does not converge to mean zero normal distribution. In fact, what happens is the expected value E[$X_{(n)}$] = (n/(n+1))$\theta$ and the variance would be V($X_{(n)}$) = $\frac{\theta^2 n}{((n+1)^2(n+2))}$ $\approx$ $\frac{\theta^2}{n^2}$. But if the theorem worked, we would have a "super-consistent" MLE, meaning it would converge to the true value in a faster speed than the regular parametric speed of $\frac{1}{\sqrt{n}}$ since the variance would be $V(X_{(n)}) \approx \frac{1}{nI(\theta)}$.
+
+#### 4) Pseudo-MLE
+
+Imagine we don't know the distribution of a sample X = $(X_1,...,X_n)$. What happens if we **wrongly assume** a specific parametric family? The MLE would be estimating a **"pseudo-true"** parameter value $\theta_0$! This parameter would minimize in a sense the distance between g(.) and family $f(.|\theta)$. Mathwise:
+
+\[ \theta_0 = arg \, max_{\theta} \int log [f_1(x_i| \theta)]g(x_i)dx_i = \text{ arg } max_{\theta} E \text{ }log f_1 (X_i|\theta)   \]
+
+Parameter $\theta_0$ *may be of interest or not*. Under some regularity condition $\hat{\theta}_{ML} \rightarrow^p \theta_0$, and in **most parts the logic of the proof of theorem about normality will hold**. So what's the problem then? **The information equality will fail**! This will lead us to the concept of **heteroskedasticity**/**Eicker–Huber–White standard errors**. 
+
+**Heteroskedasticity**: In regression and time-series modelling, basic forms of models make use of the assumption that the errors or disturbances $u_i$ have the **same variance across all observation points**. When this is **not** the case, the errors are said to be heteroscedastic, or to have heteroscedasticity, and this behaviour will be reflected in the residuals $\hat{u}_{i}$ estimated from a fitted model. 
+
+The math of the lecture says the following: Define $\sum_1$ and $\sum_2$ as:
+
+\[ \sum_1 = E[(\frac{\partial log f_1(X_i | \theta_0)}{\partial \theta_0})^2]  \]
+
+\[ \sum_2 = E[(\frac{\partial log f_1(X_i | \theta_0)}{\partial \theta_0^2})]  \]
+
+Where both expectations in both cases are taken assuming that $X_i ~ g(.)$. If *g* is not in the parametric family, then in general $\sum_1 ≠ \sum_2$. But using the logic of the proof, we can prove that:
+
+\[ \sqrt{n}(\hat{\theta}_{ML} - \theta_0) \implies N(0, \sum_2^{-1} \sum_1 \sum_2^{-1})   \]
+
+The asymptotic variance, $\sum_2^{-1} \sum_1 \sum_2^{-1}$, is often called [**White's**](https://www.researchgate.net/profile/Alexandre_Janot/publication/268801533_White_Econometrica1980/links/5475dd170cf2778985af1a51.pdf) and that's why is also called **White's Standard Errors**.
+
+To correct that: Heteroscedasticity-consistent standard errors are used to allow the fitting of a model that does contain heteroscedastic residuals.
+
+### **8 - Testing Concepts**
+
+#### 1) [**Hypotheses**](https://en.wikipedia.org/wiki/Statistical_hypothesis_testing)
+
+If we want to make a statement about a population, we use hypothesis testing. A hypothesis is testable when on the basis of observing a process that is modeled via a set of random variables we can test the comparison of two statistical data sets, or a data set obtained by sampling is compared against a synthetic data set from an idealized model. A hypothesis is proposed for the statistical relationship between the two data sets, and this is **compared** as an alternative to an **idealized null hypothesis** that proposes no relationship between two data sets. The comparison is deemed statistically significant if the relationship between the data sets would be an unlikely realization of the null hypothesis according to a threshold probability—the significance level. Hypothesis tests are used when determining what outcomes of a study would lead to a rejection of the null hypothesis for a pre-specified level of significance. More on that later, but that's the basic intuition. Lastly, if a hypothesis **uniquely identifi􏰃es the distribution** of the data, it is called **simple**. Otherwise, the hypothesis is called **composite**.
+
+#### 2) Testing
+
+As already hinted, from the sample we obtained from the population we create a test. Our test is intended to **decide whether we accept the null hypothesis or reject/"not accept" it in favor of the alternative**. 
+
+##### 2.1) Critical Region
+
+Let **X** denote our data. Then any test consists of the **critical region C**, which is a function of our null and alternative hypotheses, such that **we accept the null hypothesis if X $\in$ C and reject it if X $\notin$ C**. If our data is X = ($X_1,...,X_n$) $\implies$ C = {$\sum_{i=1}^n X_i < \delta$} for some $\delta \in \mathbb{R}$. The value $\delta$ in this example might depend both on the null and on the alternative. We'll come back to the importance of this $\delta$ later.
+
+There are four possible scenarios when testing that I feel could be best explained by the following [**illustration**](https://dfrieds.com/math/errors-hypothesis-testing):
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("30.png")
+ grid.raster(img)
+```
+
+##### 2.2) Size and Power tradeoff
+
+When we decide which tests we are going to perform, we usually have to make certain trade-offs depending on which type of error we are trying to avoid. The **type-1 error** is called the **size** of the test. More math on this on the slides, but the bottom line is that the larger the $\delta$, the smaller the test size, which is a good thing. What is the probability of the **type-2 error**? If true parameter $\mu$ > $\mu_0$, then $P_\mu (\sum_{i = 1}^n X_i < \delta)$ = $\phi(\sqrt{n}(\frac{\delta}{n} - \mu)/\sigma)$. This is a function of true $\mu$. The problem is: the larger the $\delta$ the larger the probability of the type-2 error happening. Thus, there is a trade-o􏰂 between the probability of a type-1 error and the probability of a type-2 error. The **power** of the test is the probability of **correcting the null hypothesis**. It is defined as 1 - probability of type-2 error. When the hypothesis is composite, the size of the test also depends on the true parameter value. But instead of considering the size of the test as a function of the true parameter value, the concept of the **level** of the test is used.  The **level** defines a value $\alpha$ for which any true parameter value in the null hypothesis can not be greater than this $\alpha$. We say that the test has *level* $\alpha$ if for any true parameter value in the null hypothesis, the size is not greater than $\alpha$. How do we choose the $\alpha$ of the test? Common practice is to choose a value of 1\%, 5\% or 10\%, and then we choose as test with as much *power* as possible. 
+
+Let's work an example that will lead us to the Z-statistic. Suppose $H_0: \mu = \mu_0$ and $H_\alpha: \mu > \mu_0$. Suppose we want to test with level 5\%. We wish to reject the null when $\sum_i X_i$ is large($\implies$ C = {$\sum_{i=1}^n X_i < \delta$}). We may construct statistics as follows:
+
+\[ Z = Z(X,\mu_0) = \frac{\sqrt{n}}{\sigma}(\overline{X} - \mu_0) ~ N(0,1) \text{ under the null.}  \]
+
+This is often called the [**Z-Statistic**](https://en.wikipedia.org/wiki/Z-test): A Z-test is any statistical test for which the distribution of the test statistic under the null hypothesis can be approximated by a normal distribution. Because of the central limit theorem, many test statistics are approximately normally distributed for large samples. In our case, let $Z_{0.95}$ denote the 95\%-quantile of a standard normal distribution. Then $Z_{0.95} = \sqrt{n}(\delta/n - \mu_0)/\sigma$, which means that our test will accept the null if Z < $Z_{0.95}$. This is the test with exact (finite-sample) size 5\%. 
+
+Since the power of the test depends on the true parameter value, it is possible that **one test has maximal power among all tests** with a given level at one parameter value, while another test has maximal power at some other parameter value. This is tricky! Then there is no **Uniformly Most Powerful Test**. This topic will be seen in lecture 9.
+
+##### 2.3) P-value 
+
+Every test has two possible outcomes: to accept or reject the hypothesis. At the same time, it would be interesting to know **how sure** we are about its result. The **p-value** helps in giving such a measure.
+
+[**P-value**](https://en.wikipedia.org/wiki/P-value): is the probability (calculated under the null) of **obtaining test results at least as adverse/extreme** to the null hypothesis as the ones we observed in our test. Notice that the p-value is a random variable. More intuition on it: it is the probability for the variate to be observed as a value equal to or more extreme than the value observed. If *x* is the observed value, we may interpret the probability of it being {$X ≥ x$} (right-tail event) or {$X ≤ x$}(left-tail event). Thus, the p-value is given by:
+
+- Pr(X ≥ x| $H_0$) for right-tail event.
+
+- Pr(X ≤ x| $H_0$) fo left-tail event.
+
+On interpreting the p-value: The smaller the p-value, the higher the significance because it tells the investigator that the hypothesis under consideration may not adequately explain the observation. The null hypothesis $H_0$ is rejected if any of these probabilities is less than or equal to a small, fixed but arbitrarily pre-defined threshold value $\alpha$, which is referred to as the [**level of significance**](https://en.wikipedia.org/wiki/Statistical_significance). 
+
+Back to the slides: Let z = Z($x,\mu_0$) be the value of the Z-statistic that we see in our dataset:
+
+\[ \text{p-value} = P\{N(0,1) > z \} = 1 - \phi(z) \]
+
+By construction, our test **rejects the null hypothesis if the p-value is smaller than the level we attributed to it**(in this case, 5\%). The smaller the p-value, the more sure we can be that the $H_0$ will not hold. By reporting the p-value, anyone can judge how meaningful the results of the research are given his or her own rigor. The p-value is a controversial subject, and now we turn to some common misunderstandings about it:
+
+1) The p-value is **not the probability of the null hypothesis being true**. This probability does not exist since parameters are **not random** according to the frequentist approach.
+
+2) The p-value is **not the probability of falsely rejecting the null hypothesis**. This is measured by the size of the test as already explained.
+
+3) 1 - p-value is not the probability of the $H_1$/$H_\alpha$ being true. There is no such probability since parameters are not random.
+
+4) The level of the test is not determined by the p-value. Once we know the p-value, the level of the test determines whether we accept/reject the $H_0$. 
+
+#### 3) Pivotal Statistics
+
+What is a pivotal statistic? It's when **the distribution is independent of unknown parameters**. They're useful for calculating quantiles of distributions and thus critical values for tests based on these statistics. 
+
+##### 3.1) Asymptotic tests
+
+An example is: given $H_0 : EX_i = \mu_0$ and $H_1: EX_i ≠ \mu_0$, let us construct a test based on |$\overline{X}_n - \mu_0$| in which large values are a sign in favor of the $H_1$. Our C = {|$\overline{X}_n - \mu_0  \delta$|} for some $\delta > 0$. It is impossible to find the exact distribution, but it is **possible to find an asymptotically pivotal test statistic**, that is a test statistic with an asymptotic distribuiton that does not depend on any unknown parameter. Under $H_0$, we know that $\sqrt{n}(\overline{X}_n - \mu_0) \implies N(0,Var(X_i))$. We lso have a consistent estimate for Var($X_i$): $s^2$. Then we arrive at:
+
+\[ t = \frac{(\overline{X}_n - \mu_0)}{\sqrt{s^2/n}} \implies N(0,1) \text{ if the null is true.}  \]
+
+This is the famous t-statistic.We reject the null at 5\% if |t| > 1.96 and p-value = 2$\phi(-|t|)$. This test is said to have *asymptotic size* of 5\%. That is: $P_{H_0} \text{{reject}} \rightarrow 0.05$ as n $\rightarrow \infty$.
+
+##### 3.2) Bootstrap
+
+What if it is impossible to get a pivotal statistic? Imagine we don't have the normality assumption of the exact distribution of $s^2$ or we are too lazy to find out the asymptotic variance of it. We may do bootstrap then! For b = 1,...,B, the steps are: 1) draw i.i.d. sample $X_b^\ast$ = ($X_{1b}^\ast,...,X_{nb}^\ast$) from a set of initial observations {$X_1,...,X_n$} with replacement; 2) calculate $s_b^2$ to be a sample variance of $X_b^\ast$; 3) calculate $z_b$ = $\sqrt{n}(s_b^2 - s^2)$; 4) order $z_b$ in ascending order(because we want to cut the tail); 5) for test of size $\alpha$, if $z_{([\frac{\alpha}{2}B])} < z < z_{([(1-\frac{\alpha}{2})B])}$ accept the null, otherwise reject. 
+
+
+### **9 - Uniformly Most Powerful Tests**
+
+#### 1) Some more on bootstrap in testing.
+
+Before we jump into UMP, let's revisit we're we stopped on Lecture 8 and talk a little bit more about bootstrap in testing.
+
+Setting: **random sample** X = ($X_1,...,X_n$) with four finite moments. **Mean**:  $\mu$ = $EX_i$. **Variance**: $\sigma^2$ = Var($X_i$). Let h($\mu, \sigma^2$) be a twice-continuously differentiable function of both arguments with a full rank derivative. 
+
+Test:  $H_0$: h($\mu, \sigma^2$) = 0 against $H_1$ : $h(\mu, \sigma^2)$ ≠ 0. How can we deal with this problem? One way is to define a **new parameter** $\gamma = h(\mu, \sigma^2)$ for which we have a consistent estimate: $\hat{\gamma}$ = h($\overline{X},s^2$). We can even prove asymptotic gaussianity via the delta-method:
+
+\[ \sqrt{n}(\hat{\gamma} - \gamma) \implies N(0,(\triangledown)'V\triangledown h), \]
+
+where $\sqrt{n}(\overline{X} - \mu, s^2 - \sigma^2)' \implies N(0,V)$ and $\triangledown h = (\frac{\partial h(\mu ,\sigma^2)}{\partial \mu},\frac{\partial h (\mu, \sigma^2)}{\partial \sigma^2})$. This means that we may get a natural estimate of the asymptotic variance of $\hat{\gamma}$ and construct a regular *t-statistic*  to conduct a test. Or we can employ a **non-parametric bootstrap** (as discussed in previous lecture) to approximate an unknown, finite-sample distribution of a statistic z = $\sqrt{n}(\hat{\gamma} - 0)$ with $z^\ast$ = $\sqrt{n}(h( \overline{X}^\ast ,s^{\ast^2})- \hat{\gamma})$. All the parameters related to the bootstrap are denoted by $\ast$. Some comments:
+
+i) Notice a "re-centering" of the null hypothesis. We approximate the unknown distribution of $X_i$ with EDF $\hat{F}$. The size is defined under $H_0$ so we assume that the unknown distribution of $X_i$ is such that $H_0 : h(\mu, \sigma^2)$ = 0. However we know for sure that this $H_0$ does not hold for the EDF as the mean for it $\mu = \overline{X}$ and the variance is $\sigma^{\ast^2}$ = $\frac{1}{n} \sum_i (X_i - \overline{X})^2$. From this, the true value of parameter $\gamma$ for the empirical distribution is $\hat{\gamma}$(almost). So, for the bootrstrapped samples we should be testing the true null hypothesis $H_0: h(\mu^\ast, \sigma^{\ast^2}) = \hat{\gamma}$.
+
+ii) Why is bootstrap valid? Because asymptotic approximation is valid both for the statistic itself and for its bootstrapped version: $\sqrt{n}(\gamma^\ast - \hat{\gamma}) \implies N(0,(\triangledown h^\ast)'V^\ast \triangledown h^\ast)$
+
+iii) It's important to notice the in the vast majority of cases that we can use bootstrap, its validity comes from some asymptotic approximation to the test statistic, and so the *asymptotic method can also be used*. It's rare not to know whether the statistic has an asymptotic limit and still have the bootstrap work. 
+
+iv) Bootstrap also corrects bias. Remember our discussion about the bias of the order O(1/n) present in estimate $\hat{\gamma}$?
+
+v) On the above example we used bootstrap and avoided calculating the standard error for $\hat{\gamma}$. But if we are willing to calculate the standard errors, is using the bootstrap still valid? Yes! If we construct a natural consistent estimator $\hat{V}$ for V and considered t-statistic, we know that under $H_0 \implies N(0,1)$. Comparing to the bootstrapped statistic: $t^\ast \implies N(0,1)$. Thus the distribution of *t* is close to that of $t^\ast$ in large samples. There are results suggesting that the distance between the distributions of *t* and $t^\ast$ are asymptotically smaller than the distance between the distance between *t* and the standard normal cdf. That is, *the bootstrap provides better approximation*, or so-called second-order refinement.
+
+#### 2) Uniformly Most Powerful Test
+
+[**Uniformly Most Powerful Sets**](https://en.wikipedia.org/wiki/Uniformly_most_powerful_test) is a hypothesis test which has the *greatest power* 1 - $\beta$ among all possible tests of a given size $\alpha$. So for example: suppose we want to the the $H_0$ : $\theta \in \Theta_0$ vs $H_1$ : $\theta \in \Theta_1$. Let *C* be some critical set such that the probability of rejecting $H_0$ is given by $\beta (\theta) = P_\theta$ {$X \notin C$}. The test based on C is of level $\alpha$ if $\alpha ≥ sup_{\theta \in \Theta_0} \beta(\theta)$. The restriction of of $\beta$(.) on $\Theta_1$ is known as the *power* of the test. Let C' be another critical set. Denote the power of the test based on C' by $\beta '(\theta)$. Suppose that both tests are of level $\alpha$. Then the test based on **C is more powerful than the test based on C'** if $\beta (\theta)$ ≥ $\beta '(\theta)$ $\forall \theta \in \Theta_1$. So, if we have a test that is more powerful than all other tests of a group/class, then we say that this is the UMP test in the class. 
+
+[**Neyman-Pearson Lemma**](https://en.wikipedia.org/wiki/Neyman%E2%80%93Pearson_lemma): let f(x|$\theta$) with $\Theta$ = {$\theta_0 , \theta_1$} be some parametric family. We test $H_0: \theta = \theta_0$ vs $H_1: \theta = \theta_1$. Let's assume that some critical set C satisfies: i) x $\in$ C if kf(x|$\theta_0$) > f(x|$\theta_1$); ii) x $\notin$ C if kf(x|$\theta_0$) < f(x|$\theta_1$) where k ≥ 0 is chosen so that $\alpha = P_{\theta_0}(X \notin C)$. The, the test based on C is the UMP among all tests of level $\alpha$. In addition, any UMP test of level $\alpha$ satisfies i) and ii). This holds for simple hypothesis. 
+
+We can link that to what we learned in Lecture 4 about the Factorization Theorem. If T(X) is a sufficient statistic, then f(x|$\theta$) = g(T(x)|$\theta$)h(x) where g(.) denotes the pdf of T(X). In terms of the pdf of sufficient statistics, the critical set C of the UMP satisfies: i) x $\in$ C if kg(T(x)|$\theta_0$) > g(T(x)|$\theta_1$); ii) x $\notin$ C if kg(T(x)|$\theta_0$) < g(T(x)|$\theta_1$).
+
+#### 3) UMP tests with composite hypotheses
+
+What we just addressed was related to simple hypotheses, now we advance to composite ones.
+
+The idea of the NP lemma is very similar to a problem of maximization under a budget constraint. But in this case we want to maximize the power of our test: $\int \phi (x) f(x| \theta_1)dx \rightarrow max$ subject to $\int \phi (x)f(x| \theta_0)dx ≤ \alpha$ and 0 ≤ $\phi$ ≤ 1. Let's say we can extend this idea to complex/composite hypotheses: let's test $H_0: \theta ≤ \theta_0$ vs $H_1: \theta > \theta_0$. Then the UMP test exists if f(x|$\theta$) satisfies the *monotone likelihood ratio property*. 
+
+**Definition 2**: a family (x|$\theta$) with $\theta \in \mathbb{R}$ satisfies the monotone likelihood ratio if there exists some function T(x) such that $\forall \theta < \theta '$, $P_{\theta '}(x)/P_\theta (x)$ depends on *x* only through T(x) and, moreover, $P_{\theta '}(x)/ P_{\theta}(x)$ is a nondecreasing function of T(x). 
+
+**Theorem 3**: suppose f(x|$\theta$) with $\theta \in \mathbb{R}$ is some parametric family that satisfies the monotone likelihood ratio with function T(x) and we want to test $H_0$:$\theta > \theta_0$ vs $H_1: \theta < \theta_0$. Then the UMP test of level $\alpha$ exists and is given by $\phi (X) = 1$ if T(X) > C, $\phi(X) = \gamma$ if T(X) = C and 0 otherwise for some constants *c* and $\gamma$ such that $E_{\theta_0}[\phi(X)] = \alpha$. In addition, the power of this test $\beta (0) = E_\theta [\phi (X)]$ for $\theta > \theta_0$ is strictly decreasing in $\theta$. It is also possible that the UMP does not exist. See slides for an example.
+
+##### 3.1) Unbiased tests
+
+We've talked so far about UMP in level $\alpha$. Now we ask: is it possible to find UMP in some smaller, but still reasonably large, classes of tests? Let's look at a property that reasonable tests should have:
+
+**Definition 4**: any test of $H_0: \theta \in \Theta_0$ vs $H_1 \theta \in \Theta_1$ is called **unbiased** if for some $\alpha \in [0,1]\text{, }\beta(\theta) ≤ \alpha \forall \theta \in \Theta_0 \text{ and } \beta(\theta) ≥ \alpha \forall \theta \in \Theta_1$. 
+
+#### 4) Likelihood Ratio Test
+
+Suppose we want to test the null hypothesis, $H_0$ : $\theta \in \Theta_0$ vs $H_1$ : $\theta \in \Theta_1$. Denote $\Theta = \Theta_0 \cup \Theta_1$. Let $\mathcal{L}(\theta | x)$ denote likelihood function. Then:
+
+**Definition 4**: a Likelihood Ratio Test (LRT) statistic is:
+
+\[ \lambda (x) = \frac{sup_{\theta \in \Theta_0} \mathcal{L}(\theta | x)}{sup_{\theta \in \Theta} \mathcal{L}(\theta | x)}   \]
+
+By definition, 0 ≤ $\lambda (x)$ ≤ 1. Small values of LRT imply that *there is a value $\theta$ in the $H_1$ which gives much greater likelihood than all valuews in the $H_0$*. So the LRT rejects $H_0$ if and only if $\lambda (x) ≤ c$ for some c. As usual, the constant c is chosen according to the desired level of the test. 
+
+Another way to define the LRT test is to set:
+
+\[ \lambda(x) = \frac{\mathcal{L}(\hat{\theta}_r | x)}{\mathcal{L} (\hat{\theta}_{ur}|x)}   \]
+
+Where: i) $\hat{\theta}_r$ = arg max$_{\theta \in \Theta_0} \mathcal{L}(\theta | x)$ is the ML estimator of the **restricted** model; ii) $\hat{\theta}_{ur}$ = arg max$_{\theta \in \Theta_0} \mathcal{L}(\theta | x)$ is the ML estimator of the **unrestricted** model.
+
+If we do some math, we know that the LRT rejects the null hypothesis if and only if |$\overline{X}_n - \theta_0$| > c. Specifically, the LRT of level $\alpha$ rejects the $H_0$ if and only if $\hat{X}_n - \theta_0$ > $z_{1-\alpha /2}/\sqrt{n}$ since under $H_0$, $\overline{X}_n ~ N(\theta_0, 1/\sqrt{n})$. 
+
+### **10 - Large Sample Tests**
+
+#### 1) Likelihood Ratio Test 
+
+**Likelihood Ratio Test**: assesses the goodness of fit of two competing statistical models based on the ratio of their likelihoods, specifically one found by maximization over the entire parameter space and another found after imposing some constraint. If the constraint (i.e. $H_0$) is supported by the observed data, the two likelihoods should not differ by more than sampling error. Thus the LRT tests whether this ratio is significantly different from one, or equivalently whether its natural logarithm is significantly different from zero.
+
+Back to the slides: let $X_1,...,X_n$ be a random sample from a distribution with pdf $f(x|\theta)$ where $\theta$ is some one dimensional (unknown) parameter. We want to test: $H_0: \theta = \theta_0$ vs $H_1: \theta ≠ \theta_0$. The same regularity conditions as in the MLE theory hold. Then LRT is:
+
+\[ \lambda(x) = \frac{\mathcal{L}(\theta_0 | x)}{\mathcal{L}(\hat{\theta}_{ML}|x)} \]
+
+where x = ($x_1,...,x_n$) is a realization of the data set and $\hat{\theta}_{ML}$ is the ML estimator. Then:
+
+**Theorem 1**: under that same regularity conditions as the MLE theory and if $H_0 : \theta = \theta_0$ holds, we have: -2log$\lambda$(X) $\implies \mathcal{X}_1^2$. From this theorem it follows that the large sample LR test of level $\alpha$ rejects the null hypothesis if and only if -2log$\lambda$(x) > $\mathcal{X}_1^2 (1 - \alpha)$, where $\mathcal{X}_1^2 (1 - \alpha)$ denotes the 1 - $\alpha$-quantile of $\mathcal{X}_1^2$. In finite samples, the size of this test may be greater than $\alpha$ but as the sample size increases, the size will converge to $\alpha$. 
+
+##### 1.1) Formulation for the multi-dimensional case
+
+In general let $\theta$ be a multidimensional parameter with dimensionality k. Suppose that the null hypothesis $\Theta_0$ can be written in the form {$\theta \in \Theta : g_1(\theta) = 0,...,g_p(\theta) = 0$} where $g_1,...,g_p$ denote some nonlinear functions of $\theta$. Equations $ g_1(\theta) = 0,...,g_p(\theta) = 0$ are called the **restrictions** of the model (and k ≥ p, if k > p then it is a composite hypothesis, if k = p then simple). Assume that restrictions are jointly linear independent in the sense that we cannot drop any subset of restrictions without changing set $\Theta_0$. Then, under some regularity conditions (mainly smoothness of $g_1,...,g_p$),
+
+\[ -2log \lambda(X) = 2(\max_{\theta \in \Theta} \ell(\theta | X) - max_{\theta \in \Theta_0} \ell (\theta | X)) \implies \mathcal{X}_p^2 \]
+
+under the assumption that $H_0$ holds. So, large sample LR test of level $\alpha$ rejects the null hypothesis if and only if -2log $\lambda$(X) > $\mathcal{X}_p^2 (1 - \alpha)$. Often, we denote LR = -2log$\lambda$(X). LR is called the likelihood ratio statistic(shocking!). Let us denote $\hat{\theta}_0 = arg\, max_{\theta \in \Theta} \ell (\theta | X)$ to be restricted estimate(estimates assuming $H_0$ is true) then: LR = $2(\ell(\hat{\theta}_{ML}|X)-\ell(\hat{\theta}_0|X))$. Then we have an example with a Poisson distribution.
+
+#### 2) Large Sample Tests: Wald
+
+##### 2.1) Simplistic 1-dimensional case
+
+**Wald Test**: informally, let's state that the larger this weighted distance, the less likely it is that the constraint is true. While the finite sample distributions of Wald tests are generally unknown, it has an asymptotic $X^2$-distribution under the null hypothesis, a fact that can be used to determine statistical significance. This fact can be used to determine statistical significance. The Wald test is calculated as:
+
+\[ W = n(\frac{\delta(X) - \tau_0}{\hat{\sigma}})^2 \]
+
+and comparing it to 1 - $\alpha$ quantile of $\mathcal{X}_1^2$ distribution. Here, $H_0: \tau = \tau_0$ vs the two-sided alternative.
+
+##### 2.2) Multi-dimensional case
+
+Assume that $\tau$ is p-dimensional and $\sqrt{n}(\delta(X) - \tau) \implies N(0,\sum)$, and we can construct a consistent estimate $\hat{\sum}$ of the covariance matrix $\sum$, that is $\hat{\sum} \rightarrow^p \sum$, then
+
+\[ W = n(\delta(X) - \tau_0)' \hat{\sum}^{-1}(\delta(X)- \tau_0) \implies \mathcal{X}_p^2 \]
+
+if $H_0: \tau = \tau_0$.
+
+##### 2.3) Special case: 1-dimensional MLE
+
+We can specialize this to the MLE case, for example, and see how this test compares to the LR introduced before. Let $\hat{\theta}_{ML}$ be the ML estimator of 1-dimensional parameter $\theta \in \mathbb{R}$. We know that, under some regularity conditions, $\sqrt{n}(\hat{\theta}_{ML} - \theta) \implies N(0,I_1^{-1}(\theta))$. Suppose that our $H_0: \theta = \theta_0$, then under the $H_0$:
+
+\[ \sqrt{n}I^{1/2}(\hat{\theta}_{ML})(\hat{\theta}_{ML} 0 \theta_0) \implies N(0,1) \]
+
+Again, under $H_0$:
+
+\[ W = nI_1(\hat{\theta}_{ML})(\hat{\theta}_{ML} - \theta_0)^2 \implies \mathcal{X}_1^2 \] 
+
+Recall that LR-statistic is given by:
+
+\[ LR = n(\hat{\theta}_{ML} - \theta_0)^2 (- \frac{1}{n} \frac{\partial^2 \ell(\theta^\ast |X)}{\partial \theta^2}) \]
+
+Where $\theta^\ast$ is between $\theta_0$ and $\hat{theta}_{ML}$. As in the case of Wald statistic, under the null hypothesis, LR $\implies \mathcal{X}_1^2$. Moreover: W - LR $\rightarrow_p$ 0 since I($\hat{\theta}_{ML}$) $\rightarrow_p I(\theta_0)$ and -(1/n)$\partial^2 \ell (\theta^\ast | X)/\partial \theta^2 \rightarrow_p I(\theta_0)$. Thus, **Wald and LR** statistics are asymptotically equivalent. But let's not overgeneralize: they are **different in finite samples**. Opting for Wald over LR has its pros and cons. Pro: it only includes calculations based on the unrestricted estimator $\hat{\theta}_{ML}$. Con: we have to estimate the information matrix. 
+
+#### 3) Score Test
+
+In my opinion, this part of the lecture should be named after the LM test, but let's go ahead anyway.
+
+##### 3.1) 1-dimensional case
+
+Recall that the score is defined by: $S(\theta) = \frac{\partial \ell}{\partial \theta}(\theta | X) = \frac{\partial log \mathcal{L}}{\partial \theta}(\theta | X) = \sum_{i = 1}^n \frac{\partial log f(X_i |  \theta)}{\partial \theta}$
+
+We do some math on it in order to arrive at the **Lagrange Multiplier(LM)** statistic:
+
+\[ LM = \frac{S(\theta_0)^2}{(nI_1(\theta)0)} \implies \mathcal{X}_1^2 \]
+
+Where does the lagrangian comes from? Consider the constrained optimization problem log$\mathcal{L}(\theta | x) \rightarrow max \text{ s.t. } \theta = \theta_0 $. The lagrangian is:
+
+\[ H = log \mathcal{L}(\theta | x) - \lambda (\theta - \theta_0) \]
+
+The FOC is:
+
+\[ S(\theta_0) = \lambda \]
+
+So, indeed, the score is connected to the lagrange multiplier. 
+
+###### **Comparing LM, LR and Wald**
+
+Let us show that $\text{LM - LR } \rightarrow_p 0$. By the Taylor's expansion:
+
+$S(\theta_0) = S(\theta_0) - S(\hat{\theta}_{ML}) = \frac{\partial^ \ell}{\partial \theta^2}(\theta^\ast |X)(\theta_0 - \hat{\theta}_{ML})$,
+
+Where $\theta^\ast$ is between $\theta_0$ and $\hat{\theta}_{ML}$. As before, -(1/n)$\partial^2 \ell(\theta^\ast |X) / \partial \theta^2 \rightarrow_p I_1(\theta_0)$. We use the Slutsky Theorem:
+
+\[ LM = n^2 (\frac{1}{n} \frac{\partial^2 \ell}{\partial \theta^2} (\theta^\ast | X))^2 (\theta_0 - \hat{\theta}_{ML})^2 / nI_1(\theta_0) (\theta_0 - \hat{\theta}_{ML}^2(1 + o_p(1))\]
+
+Thus, we have shown that LR, Wald and LM are asymptotically equivalent under $H_0$. They differ in finite samples. In the case of normal likelihood, we have LM ≤ LR ≤ W. 
+
+##### 3.2) Multi-dimensional case
+
+Now let's assume again that the parameter $\theta$ is k-dimensional, while the null hypothesis is imposing p-dimensional restriction $\theta_0$ = {$\theta \in \Theta : g_1(\theta) = 0,...,g_p(\theta) = 0$}. Score function is $k \times 1$- vector function S($\theta$) = $\frac{\partial \ell}{\partial \theta}(\theta |X)$. Denote $\hat{\theta}_0$ to be restricted estimator: $\hat{\theta}_0$ = arg max$_{\theta \in \Theta_0} \ell (\theta | X)$. Then, LM for the Multidimensional case is:
+
+\[ LM = \frac{1}{n} S(\hat{\theta}_0)I_1(\hat{\theta}_0)^{-1} S(\hat{\theta}_0) \implies \mathcal{X}_p^2   \]
+
+An **advantage** of the LM statistic is that it only includes calculations based on the restricted estimator $\theta_0$. On the other hand, in order to find the LM statistic, we have to estimate the Fisher information. 
+
+#### 4) Generalizations and summary
+
+Let's finish the lectures by proposing a setup and then comparing LM, LR and Wald. 
+
+Setting: let $x = (X_1,...,X_n)$ be a random sample from distribution $f(X|\theta)$ with $\theta \in \Theta$. Test: $H_0: \theta \in \Theta_0$ vs $H_1: \theta \notin \Theta_0$. Restricted estimator: $\hat{\theta}_0$. Unrestricted estimator: $\hat{\theta}_{ML}$. Assume for simplicity that the null can be formulated as g($\theta$) = 0, where *g* is *p-dimensional* function. Then, under the $H_0$:
+
+\[ LR = 2(\ell(\hat{\theta}_{ML}|X) - \ell (\hat{\theta}|X)) \implies \mathcal{X}_p^2 \]
+
+\[ W = (g(\hat{\theta}_{ML}) - 0)\hat{\sum}^{-1} (g(\hat{\theta}_{ML})-0) \implies \mathcal{X}_p^2    \]
+
+\[ LM = S(\hat{\theta}_0)I_n^{-1}(\hat{\theta}_0)S(\hat{\theta}_n) \implies \mathcal{X}_p^2 \]
+
+where $\hat{\sum}$ is a natural delta-method inspired estimate of asymptotic variance. Under a proer regularity condition, all these tests are asymptotically equivalent to each other. Also, LR and LM are invariant to the formulation of the $H_0$ while Wald is not.
+
+
+### **11 - Confidence Sets**
+
+#### 1) Introduction
+
+So far we've dealt only with point estimators. Now, it's time to study [**interval estimation**](https://en.wikipedia.org/wiki/Interval_estimation). Our task is to construct a data-dependent interval [$l(X),r(X)$] so that it contains our parameter of interest $\theta$ with large probability. We want this interval to be as small as possible without losing confidence that it contains $\theta$.  
+
+**Definition 1**: Coverage probability of the set C(X) $\subset \Theta$ is the probability that confidence set C(X) contains $\theta$, that is, Coverage Probability($\theta$) = $P_\theta$ {$\theta \in C(X)$}. Of course, in practice, we are interested in confidence sets that contain the true parameter value with large probability uniformly over the set of possible parameter values.
+
+**Definition 2**: confidence level is the minimum of coverage probabilities over the set of possible parameter values: Confidence Level = inf$_{\theta \in \Theta}P_{\theta}${$\theta \in C(X)$}. We say that a confidence set C(X) has confidence level $\alpha$ if $\inf_{\theta \in \Theta}P_{\theta}${$\theta \in C(X)$} ≥ $\alpha$.
+
+But how can we construct those confidence sets
+
+#### 2) Test Inversion 
+
+To construct a confidence set we use a tool known as **Test Inversion**(the name isn't that popular on the internet). Suppose we want to test: $H_0: \theta = \theta_0$ agains the alternatie $H_1 : \theta ≠ \theta_0$. Suppose that for each such hypothesis we have a test of size $\alpha$. Then the confidence set C(X) = {$\theta_0 \in \Theta: \text{ the null hypothesis that }\theta = \theta_0 \text{ is not rejected }$} is of confidence level 1 - $\alpha$. Let's go one step further and imagine that $\theta_0$ is the true value of the parameter. Since the test of $\theta = \theta_0$ against $\theta ≠ \theta_0$ has level $\alpha$ by construction, P$_{\theta_0}${$\theta_0 \in C(X)$} ≥ 1 - $\alpha$. The same holds $\forall \theta_0 \in \Theta$. So, $inf_{\theta \in \Theta}P_{\theta}\{ \theta \in C(X) \} ≥ 1 - \alpha$. This is test inversion. 
+
+#### 3) Pratt's Theorem
+
+**Pratt's Theorem**: informally states that if we use a UMP test for the confidence set construction, the expected length of the confidence set will be the shortest among all confidence sets of a given level. Math: let X ~ f(x|$\theta$) be our data. Let C(X) be our confidence set for $\theta$. Then, under some regularity conditions, for any $\theta_0$,
+
+\[ E_{\theta_0} [\text{length of C(X)}] = \int P_{\theta_0} \{\theta \in C(X) \} d \theta \]
+
+Moreover, if C(X) is constructed by inverting a UMP test of size $\alpha$, then C(X) has the shortest expected length among all confidence sets of level 1 - $\alpha$ for any $\theta_0$. 
+
+#### 4) Asymptotic Theory for Interval Construction
+
+Starting from $\sqrt{n}\hat{\theta}_ML - \theta) \implies N(0,I^{-1}(\theta))$. We do some math and arrive at a confidence interval for h($\theta$):
+
+\[ [h(\hat{\theta}_{ML}) + z_{\alpha / 2}\sqrt{\hat{V}(h(\hat{\theta}_{ML}))},h(\hat{\theta}_ML) + z_{1 - \alpha /2}\sqrt{\hat{V}(h(\hat{\theta}_{ML}))}   ]  \]
+
+This CS being constructed based on the Wald statistic.
+
+##### 4.1) Confidence Sets Based on LM and LR Tests
+
+But what if we wanted to construct our Confidence Sets based on LR or LM? They are essentially more complex, please refer to the slides for the math. 
+
+#### 5) Bootstrap Confidence Sets
+
+To construct a bootstrap we boobstrap a statistic T($\theta_0$) = $\hat{\theta} - \theta_0$ whenever testing $H_0 : \theta = \theta_0$. In particular, we would draw a boobstrapped sample $X^\ast$ from an approximating distribution $\hat{F}$ and calculate $T^\ast$ = $\delta (X^\ast) - \hat{\theta}$. Then quantiles of $T^\ast$ will serve as critical values for the corresponding test. Then we do some steps to boobstrap (similar to what we've already seen but applied to intervals).
+
+This works when |T - $T^\ast$| tends to 0 as sample increases. 
+
+#### 6) Some notes on joint confidence sets and the projection method
+
+When we estimate two parameters at the same time, their confidence intervals are not jointly valid. To get a joint confidence set, we must invert the test for joint hypothesis. 
+
+### **12 - Bayesian Inference**
+
+To be completed..
+
+## **Useful Info**{.tabset}
+
+### Schedule
+
+[**Schedule**](https://gabrielvoelcker.netlify.com/mit/schedule_2019.pdf)
+
+### Material
+
+[**Statistical Inference - Casella & Berger**](https://gabrielvoelcker.netlify.com/mit/Casella Berger - Statistical Inference.pdf)
+
+[**All of Statistics - Wasserman**](https://gabrielvoelcker.netlify.com/mit/Wasserman - All of Statistics.pdf)
+
+Useful website [**1**](https://towardsdatascience.com/why-sample-variance-is-divided-by-n-1-89821b83ef6d).
+
+### Problem Sets
+
+
+### Exams
+
+[**Midterm 2018**](https://gabrielvoelcker.netlify.com/mit/midterm_exam_fall12.pdf)
+
+[**Midterm 2018 Solutions**](https://gabrielvoelcker.netlify.com/mit/midterm_exam_fall12_solutions.pdf)
+
+
+
+## **Statistical Inference**{.tabset}
+
+### **5 - Properties of a Random Sample**
+
+#### 5.1 Basic Concepts of Random Samples
+
+**Random Sample**: the random variables $X_1,\dots,X_n$ are a random sample with size *n* from a population f(x) if they are mutually independent random variables and the marginal pdf or pmf of each $X_i$ is the same function f(x). They can also be called i.i.d. variables. The variable of interest has a probability distribution described by *f(x)*. If only one observation X is made, then probabilities for X can be calculated using f(x). However, in most experiments there are n > 1 repeated observations. Each $X_i$ is an observation on the same variable and each $X_i$ has a marginal distribution given by f(x). The joint pdf/pmf of $X_1,\dots,X_n$ is given by:
+
+\[ f(x_1,\dots,x_n) = f(x_1)f(x_2)\dots f(x_n) = \prod_{i = 1}^{n} f(x_i) \]
+
+This joint pdf can be used to calculate probabilities involving the sample. If the population pdf is a member of a parametric family, with pdf given by f(x | $\theta$), then the joint pdf is
+
+\[ f(x_1,\dots,x_n|\theta) \prod_{i = 1}^{n} f(x_i| \theta) \]
+
+Where the same parameter value $\theta$ is used in each of the terms. Sometimes the true parameter value is unknown, and considering different possible values of $\theta$, we can study how a random sample would behave for different conditions. 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+## **Symbols and Formulas** {.tabset}
+
+### Symbols {.tabset}
+
+#### Lecture 1
+
+##### 1) Random Variables 
+
+- Random variable: **X**. 
+
+- **cdf**: cumulative distribution function.
+
+- ~ : used as in variable X has cdf $F_X$: X ~ $F_X$. 
+
+- $p_i$: the probability that X will take value $x_i$ given the possible values of $\mathcal{X}$ = ($x_1,...,x_n$). $\sum_{i = 1}^n p_n$ = 1.
+
+- **pdf**: characterizes the **continuous X** such that P{a < Y ≤ b} = $\int_{a}^b f_Y$ (s)ds. Note: $\int_{-\infty}^\infty f_Y (s)ds = 1$. The **cdf of Y** is given by $F_Y(t) = \int_{-\infty}^t f_Y (s)ds$. 
+
+- q(x) = $F^{-1}$(x) $\leftarrow$ possible when cdf F(X) is strictly increasing and continuous. Note that: P{X ≤ q(x)} = P{X ≤ $F^{-1}$(x)} = F($F^{-1}(x)$) = x.
+
+- **Expected Value**: the average! For discrete r.v.: E[g(x)] = $\sum_i g(x_i)p_i$. For continuous r.v.: E[g(X)] = $\int_{- \infty}^\infty g(x) f_X (x)dx$.
+
+- **Mean**: g(x) = x, E[X].
+
+- **Variance**: g(x) = (x - E[X])$^2$, E[(X - E[X])$^2$], also denoted by: V(X).
+
+- **Second moment**: g(x) = $x^2$, E[$X^2$].
+
+- **k-th moment**: g(x) = $x^k$ E[$X^k$].
+
+- **k-th central moment**: E[(X - EX)$^k$].
+
+Discrete r.v.:
+
+- **Bernoulli**: E[X] = 1p + 0 (1-p) = p. E[$X^2$] = $1^2 p + 0^2 (1-p)$. V(X) = p - $p^2$ = p(1-p). *Notation*: X ~ Bernoulli(p).
+
+- **Poisson**: X = {0,1,2,...}. P{X = j} = $e^{-\lambda} \lambda^j / j!$. E[X] = $\lambda$. V(X) = $\lambda$. *Notation*: X ~ Poisson{$\lambda$}. 
+
+Continuous r.v.: 
+
+- **Uniform** (a,b): density: $f_X$(x) = $\frac{1}{b-a}$ for x $\in$ (a,b) and $f_X$(x) = 0 otherwise. *Notation*: X ~ U(a,b).
+
+- **Normal** ($\mu, \sigma^2$): density: $f_X(x)$ = $exp(\frac{-(x-\mu)^2)}{2 \sigma^2}$/($\sqrt{2 \pi}\sigma$) $\forall x \in \mathbb{R}$. E[X] = $\mu$ and V(X) = $\sigma^2$. *Notation*: X ~ N($\mu, \sigma^2$). 
+
+##### 2) Bivariate (multivariate) distributions
+
+**Joint PDF**: $f_{X,Y}(x,y) = \frac{\partial^2 F_{X,Y}(x,y)}{\partial x \partial y} \rightarrow \text{ use it calculate the pdf of X: } F_X(x) = P \{ X ≤ x \} = \int_{- \infty}^x \int_{-\infty}^\infty f(s,t)dtds$. 
+
+- **Conditional PDF**: $f_{Y|X} (y|x) = f_{X,Y} (x,y)/f_X(x)$. 
+
+- **Law of iterated expectations**: E[E[Y|X = $x$]] = E[Y].
+
+- **Independence**: $f_{Y|X}(y|x) = f_Y(y)$.
+
+- **Covariance**: cov(X,Y) = E[(X - E[X])(Y - E[Y])].
+
+- *T* = transposition.
+
+##### 3) Normal Random Variables
+
+- **Multivariate normal distribution**: $f_X(x) = \frac{exp(-(x-\mu)^T \sum^{-1}(x - \mu)/2)}{(2 \pi)^{n/2} \sqrt{det(\sum)}}$ 
+
+- **Conditional distribution**: the conditional pdf of $X_1$ given $X_2$ = $x_2$ is: $f_{X_1|X_2}(x_1| X_2 = x_2) = \frac{exp \{-(x_1 - \tilde{u})^2/(2\tilde{\sigma})\}}{\sqrt{2 \pi} \sqrt{\tilde{\sigma}}}$.
+
+#### Lecture 2
+
+##### 1) Useful Inequalities:
+
+- **Markov's Inequality**: P{X ≥ t} ≤ E[X]/t.
+
+- **Chebyshev's Inequality**: P{|X - $\mu$| ≥ t} ≤ Var(X)/$t^2$.
+
+- **Hölder's Inequality**: E|XY| ≤ (E|X|$^{p}$)$^{1/p}$ (E|Y|$^q$)$^{1/q}$.
+
+##### 2) Convergence in probability and Law of Large Numbers
+
+- **Convergence in Probability**: $\forall \varepsilon > 0$, P{|$X_n$ - X| > $\varepsilon$}$\rightarrow$ 0 as n $\rightarrow \infty$. Denote by: $X_n \rightarrow^p X$. 
+
+- **Theorem 5**: E$(X_n - X)^2 \rightarrow$ 0, $\implies$ $X_n \rightarrow_p X$.
+
+- **Theorem 6**: given E[$X_i$] = $\mu$ and Var($X_i$) = $\sigma^2 < \infty$, then $\overline{X}_n$ = $\sum_{i=1}^n X_i/n \rightarrow^p \mu$. 
+
+- **Theorem 7**: $\overline{X}_n \rightarrow_p \mu$ if $EX_n = \mu$ and E|$X_n$| < $\infty$. 
+
+##### 3) Weak convergence and Central Limit Theorem
+
+- **Convergence in Distribution**: happens when $lim_{n \rightarrow \infty} F_{X_n} (x) = F_X (x)$. Denote: $X_n \implies X$.
+
+- **Theorem 9**: if $X_n \rightarrow_p X$, then $X_n \implies X$. 
+
+- **Central Limit Theorem**: given mean $\mu$ and variance $\sigma^2$: $\sum_{i=1}^n (X_i - \mu)/\sqrt{n} \implies N(0,\sigma^2)$. 
+
+- **Theorem 11/Linderberg condition**: difference from the above theorem: not identically distributed random variables. Given $EX_i = \mu_i$ and V($X_i$) = $\sigma_i^2$, denote $c_n^2 = V(\sum_{i=1}^n X_i) = \sum_{i=1}^n \sigma_i^2$. Main result: $\frac{\sum_{i=1}^n (X_i - \mu_i)}{c_n} \implies N(0,1)$. 
+
+##### 4) Asymptotic statements derived from basic limit theorems
+
+- **Theorem 12/ Slustky's 1**: if $X_n \rightarrow_p X$ and $Y_n \rightarrow_p Y$, then $X_n + Y_n \rightarrow_p X + Y$ and $X_nY_n \rightarrow_p XY$.
+
+- **Theorem 13/ Slustky's 2**: if $X_n \implies X$ and Y $\rightarrow_p c$, then $X_n + Y_n \implies X + c$ and $X_n Y_n \implies cX$. 
+
+- **Theorem 14/ Continuous Mapping's 1**: If $X_n \rightarrow_p X$, then g($X_n$) $\rightarrow_p g(X)$.
+
+- **Theorem 15/ Continuous Mapping's 2**: If $X_n \implies X$, then g($X_n$) $\implies g(X)$.
+
+- **Small o**: $x_n = o(b_n)$ when $lim_{n \rightarrow \infty} \frac{x_n}{b_n} = 0$. Ex: $x_n = o(1)$ means $x_n \rightarrow 0$.
+
+- **Big O**: $x_n = O(b_n)$ when $sup_n |\frac{x_n}{b_n}| < \infty$. Ex: $x_n = O(1)$ means that $x_n$ is a **bounded** sequence.
+
+**Definition 13**: $X_n = o_p(b_n) \iff \frac{X_n}{b_n} \rightarrow_p 0$.
+
+##### 5) Delta Method
+
+- For r.v.s $X_n$ and constants $\mu$ and $\sigma$ we have $\sqrt{n}(X_n - \mu) \implies N (0,\sigma^2)$. If g'($\mu$) ≠ 0 $\implies$ $\sqrt{n}(g(X_n) - g(\mu)) \implies N(0, \sigma^2(g'(\mu))^2)$. 
+
+
+
+
+#### Lecture 3
+
+##### 1) Basic Concepts
+
+- **Population**: distribution $F_X$ of vector $\mathcal{X}$.
+
+- **Cross-section data**: $F_X (x) = \prod_{i=1}^n F(x_i)$. 
+
+- **Panel data**: $\mathcal{X} = \{ X_{it}, i = 1,...,n, t = 1, ..., T\}$.
+
+- **Parameter**: $\theta$, it's a population concept .
+
+- **Inference**: judgement about a parameter.
+
+- **Statistic**: Y = g($\mathcal{X}$) = g($X_1,...,X_n$). Ex: sample mean($\overline{X}_n = \sum_{i = 1}^n X_i / n$), sample variance ($s^2 = \sum_{i=1}^n (X_i - \overline{X}_n)^2/(n-1)$).
+
+- **Empirical Distribution of Data**: $ \hat{F}_n = \sum_{i=1}^n I(X_i ≤ x)/n$. I(.) is the *indicator function* (true = 1, false = 0). 
+
+- **Theorem 3/Glivenko-Cantelli**: $sup_{x \in \mathbb{R}} |\hat{F}_n (x) - F(x)| \rightarrow_p 0$.  
+
+##### 2) Ways to find the distribution of a statistic
+
+- **Monte-Carlo Method**: $f(x;\mu, \sigma^2, \gamma)$ = $(2 \pi \sigma^2)^{-1/2}(x-\gamma)^{-1}e^{- \frac{(log(x - \gamma)\mu)^2}{2 \sigma^2}} \mathbb{I} \{ x > \gamma \}$
+
+- **Closed Form Exact Distribution**: $Y_1 = \frac{1}{n} \sum_{i=1}^n X_i$. Not easy to do, **do Monte-Carlo** for given ($\mu, \sigma^2, \gamma$): **1)** b = 1,...,B, simulate $\mathcal{X}_b^\ast = (X_{1b}^\ast,...,X_{nb}^\ast)$ where $X_{ib}^\ast$ are independently drawn; **2)** $Y_b^\ast = g(\mathcal{X}_b^\ast)$, in our case $\frac{1}{n}\sum_{i=1}^n X_{ib}^\ast$; 3) Infos we can find using MC: *i)* **cdf** of Y: $F_Y(s) \approx \frac{1}{B} \sum_{b=1}^B \mathbb{I} \{ Y_b^\ast ≤ s\}$; *ii)* **prob** Y gets into set A: P{$Y \in A$} $\approx$ $\frac{1}{B}\sum_{b=1}^B \mathbb{I} \{ Y_b^\ast \in A \}$; *iii)* $\alpha$-quantile of Y: $q_Y(\alpha) \approx Y^\ast_{(\alpha B)}$ where (.) stands for order statistics; *iv)* **mean** of Y: EY $\approx \frac{1}{B}\sum_{b=1}^B Y_b^\ast$; *v)* **variance** is V(Y) = $\approx \frac{1}{B - 1} \sum_{b=1}^B (Y_B^\ast - \frac{1}{B} \sum_{s = 1}^B Y_s^\ast)^2$.
+
+- **Asymptotic Approximation**: we assume we don't know the distribution of $X_i$ but assume it has **finite variance**: $\sqrt{n}(\frac{1}{n} \sum_{i=1}^n X_i - EX_i) \implies N(0,V(X_i))$. Distribution of $Y_1$ = $\sum_{i=1}^n X_i$ is approximately gaussian with mean $EX_i$ and variance $V(X_i)/n$. 
+
+- **Bootstrap**: = MC simulation but simulate $X_{ib}^\ast$ from distribution $\hat{F}_n(x)$ rather than from an unknown F.
+
+
+##### 3) Plug-in estimators
+
+- **Population mean**: the pluc-in estimator of the population mean $\hat{\mu}$ = $\overline{X}_n \rightarrow$ the sample average.
+
+- **Variance**: $\hat{\sigma}^2 = \sum_{i=1}^n (X_i - \overline{X}_n)^2/2$.
+
+##### 4) Parametric Families: Normal
+
+- $\theta$: parameter. 
+
+- $\Theta$: parameter family, finite-dimensional set. 
+
+- **cdf**F of a parametric family: F(x|$\theta$).
+
+- **pdf**F of a parametric family: $f(x|\theta)$. Joint pdf: $f(x_1,...,x_n|\theta) = \prod_{i=1}^n f(x_i|\theta)$. 
+
+- **Likelihood function**: $f(x_1,...,x_n|\theta)$ as function of $\theta$, given fixed $x_1,...,x_n$.
+
+- **Normal family**: $\theta = (\mu,\sigma^2)$ and the population distribution is N($\mu, \sigma^2$).
+
+- R.v. $X_n^2$ = $\sum_{i=1}^n _i^2$ is called a $X^2$ random variable with *n* degrees of freedom. Distribution is known as a $X^2$ distribution with *n* degrees of freedom. Its pdf: $f(x) = x^{(p/2)-1}e^{-x/2} \Gamma(p/2)2^{p/2})$ if x > 0. The values of $\gamma(x)$ function are found on special tables.
+
+- **Student distribution**: if $X_0$ is N(0,1) and independent of $X_1,...,X_n$, then $t_n = X_0/\sqrt{X_n^2/n} \implies$ t r.v. with *n* degrees of freedom. 
+
+- **Fisher r.v.**: if $X_n^2$ and $X_m^2$ are independent $X^2$ r.v. with *n* and *m* degrees of freedom correspondingly, then $F_{n,m} = (\frac{X_n^2}{n})/(\frac{X_m^2}{m})$. 
+
+#### Lecture 4
+
+##### 1) Sufficient Statistics
+
+- **Parametric Family**: f(x|$\theta$). 
+
+- **Parameter**: $\theta$. 
+
+- **Sufficient Statistic**: $T(X)$ is sufficient for $\theta$ if the conditional distribution of X given T(X) does not depend on $\theta$. 
+
+- **Conditional distribution of X given T(X)** = t. $\sum_{i=1}^n (x_i - \mu)^2 - n(\overline{x}_n - \mu)^2$ = $\sum_{i=1}^n (x_i - \overline{x}_n)^2$. So: $f_{X|T(X)}(x|T(X) = T(x))$ = $\frac{f_X(x)}{f_T(T(x))} = exp \{ - \sum_{i=1}^n (x_i - \overline{x}_n)^2 / (2\sigma^2) \}/ ((2\pi)^{(n-1)/2}\sigma^{n-1}/n^{1/2}$
+
+##### 2) Factorization Theorem
+
+- **Factorization/Sufficiency**: T(X) is a sufficient statistic $\iff$ $\exists$ g(t|$\theta$) and h(x) s.t. f(x|$\theta$) = g(T(x)|$\theta$)h(x). 
+
+##### 3) Minimal Sufficient Statistics
+
+- $\forall$ x,y, statement {$f(x|\theta)/f(y|\theta)$ does not depend on $\theta$}.
+
+##### 4) Estimators, Properties of Estimators
+
+- **Estimator**: function of the data(statistic). The estimator for the parametric family with parameter $\theta$ is $\hat{\theta}$. 
+
+- **Bias**: Bias($\hat{\theta}$) = $E_\theta [\hat{\theta}] - \theta$.
+
+- **Mean Squared Error(MSE)**: MSE($\hat{\theta}$) = $E_\theta [(\hat{\theta} - \theta)^2]$. T5 states: MSE($\hat{\theta}$) = $Bias^2(\hat{\theta})$ + V($\hat{\theta}$) ($\downarrow$ MSE = better).
+
+- **Rao-Blackwell**: MSE($\hat{\theta}_2$) < MSE ($\hat{\theta}$). 
+
+#### Lecture 5
+
+##### 1) Estimators. Properties of estimators
+
+- **Unbiased**: $E_\theta [T(X)] = \theta$. 
+
+- **Consistency**: $\hat{\theta}_n \rightarrow_p \theta$.
+
+- **Asymptotic Normality**: sequences {$a_n$}$^\infty_{n=1}$ and {$r_n$}$^\infty_{n=1}$ and constant $\sigma^2$ s.t. $r_n(\hat{\theta} - a_n) \implies N(0,\sigma^2)$.
+
+- **Rate of convergence**: $r_n$ above.
+
+- **Asymptotic mean**: $a_n$ above.
+
+- **Asymptotic variance**: $\sigma^2$ above. 
+
+#### Lecture 6
+
+##### 1) Common methods for constructing an estimator
+
+- **Plug-in**: estimate $\hat{\theta} = \theta(\hat{F})$. Example of analog estimator: $\hat{\mu} = \int xd \hat{F}(x) = \overline{X}$.
+
+- **Method of moments estimator**: $\hat{\theta}_{MM}$ is the solution for the system of equations: E[$X_i$] = $m_1 (\theta)$, E[$X_i^2] = m_2(\theta)$,...,E[$X_i^k$] = $m_k(\theta)$, where $m_k$ are known functions. The estimator $\hat{\theta}_{MM}$ is the solution of the system when we substitute $\sum_{i=1}^n \frac{X_i}{n}$, $\sum_{i=1}^n \frac{X_i^2}{n}$,...,$\sum_{i=1}^n \frac{X_i^k}{n}$ for $E[X_i]$, $E[X_i^2]$,...,$E{X_i^k}$, in other words, $\hat{\theta}_{MM}$ solves $\sum_{i=1}^n \frac{X_i}{n} = m_1(\hat{\theta})$, $\sum_{i=1}^n \frac{X_i^2}{n} = m_2(\hat{\theta})$,..., $\sum_{i=1}^n \frac{X_i^k}{n} = m_k(\hat{\theta})$.
+
+- **Maximum Likelihood estimator**: **we have a parametric estimation problem when we know the distribution of the data up to a finite-dimensional parameter** $\theta$(which is the only unknown part). The MLE $\hat{\theta}_{ML}$ is the value that maximizes f(x|$\theta$): $\hat{\theta}_{ML}$ = arg max$_{\theta \in \Theta}$ $f(x_1,...,x_n|\theta)$. The function $f(x|\theta)$ is called the **likelihood function**, denoted by $\mathcal{L}(\theta|x)$. Since log(x) is increasing in x, $\hat{\theta}_{ML}$ also maximizes $\ell(\theta | x_1,...,x_n)$ = log $\mathcal{L}(\theta| x_1,...,x_n)$. Function $\ell (\theta| x_1,...,x_n)$ is called the log-likelihood. If the log-likelihood is differentiable, then $\hat{\theta}_{ML}$ satisfies the FOC: $\frac{\partial \ell }{\partial \theta}(\hat{\theta}_{ML}|x_1,...,x_n)$ = 0.
+
+- **The Score**: S($\theta$|x) = $\partial$ log $f(x|\theta)/ \partial \theta$. $\hat{\theta}_{ML}$ solves the equation $S(\theta | x) = 0$. 
+
+- **Ex: Log-likelihood for a normal**: given $X_1,...,X_n$ random sample from N$(\mu, \sigma^2)$, then: log $f_1(\theta|x_i) = -log \sqrt{2 \pi} - (\frac{1}{2})log \sigma^2 - \frac{(x_i - \mu)^2}{(2 \sigma^2)}$. Here, $\theta = (\mu, \sigma^2)$. So: $\ell (\theta | x_1,...,x_n) = -n log \sqrt{2 \pi} - (\frac{n}{2}) log \sigma^2 - \sum_{i=1}^n \frac{(x_i - \mu)}{2 \sigma^2}$. FOCs: $\frac{\partial \ell}{\partial \mu} = \sum_{i=1}^n (x_i - \mu)/\sigma^2 = 0$ and $\frac{\partial \ell}{\partial \sigma^2} = \frac{-n}{2 \sigma^2} + \sum_{i=1}^n \frac{(x_i - \mu)^2}{2 \sigma^4}$. This gives us $\hat{\mu}_{ML} = \overline{X}_n$ and $\hat{\sigma}_{ML}^2 = \sum_{i=1}^n (X_i - \overline{X}_n)^2/n$. 
+
+##### 2) Fisher Information.
+
+- **Support of Distribution f(x|$\theta$)**: $Supp_\theta = \{ x : f(x|\theta) > 0 \}$. Assume that $Supp_\theta$ does not depend on $\theta$. Assume that $\frac{\partial^2 \ell (\theta | x)}{\partial \theta^2}$ is bounded above by some function g(x) such that Eg(X) < $\infty$ for r.v. X with distribution $f(x|\theta)$. Then: 
+
+- **Fisher Information**: $E_\theta [(\partial \ell(\theta|X)/\partial \theta)^2]$. Very important in MLE. We also have that: **i)** $E_\theta [\partial \ell (\theta | X)/\partial \theta] = 0$; **ii)** $I(\theta) = - E_\theta[\partial^2 \ell (\theta | X)/ \partial \theta^2]$. 
+
+- **Fisher Information example**: given joint log-likelihood $l(x,\theta) = \sum_{i=1}^n l^1 (x_i, \theta)$, the FI for the sample is:
+
+\[ I(\theta) = - E_\theta [\frac{\partial^2 l_n (\theta | X)}{\partial \theta^2}] = - E_\theta \sum_{i=1}^n [\frac{\partial^2 \ell_1 (\theta | X_i)}{\partial \theta^2}] = n I_1(\theta) \]
+
+Where $I_1(\theta)$ denotes the FI for one random draw from the distribution $f_1(x_i | \theta)$. 
+
+##### 3) Rao-cramer bound
+
+- Let W(X) be an estimator of $\theta$ such that: **i)** $\frac{d}{d\theta} E_\theta[W(X)] = \int W(x) \frac{\partial f(x|\theta)}{\partial \theta} dx$, where x = $(x_1,...,x_n)$; and **ii)** Var(W) < $\infty$; then: Var(W) ≥ ($\frac{d}{d \theta}$ $E_\theta [W(X)]$)$^2 \frac{1}{I(\theta)}$. And if **W is unbiased** for $\theta$, then Var(W) ≥ $\frac{1}{I (\theta)} = \frac{1}{n I_1 (\theta)}$
+
+#### Lecture 7
+
+##### 1) MLE
+
+- **ML estimator**: $\hat{\theta}_{ML} = arg max_{\theta \in \Theta} \ell(\theta | x)$. The FOC is: $\frac{1}{n} \sum_{i=1}^n \frac{\partial \ell_1 (\hat{\theta}_{ML}|x_i)}{\partial \theta} = 0$. The **first information equality** is: E[$\partial \ell_1 (\theta_0 | X_i)]$ = 0. Thus, MLE is the method of moments estimator corresponding to the first information equality $\implies$ MLE is **consistent**. In other words: $\hat{\theta}_{ML} \rightarrow_p \theta_0$ if: **i)** $\theta_0$ is identifiable(that is, $\forall \theta \neq \theta_0 \exists$ x s.t. $f(x|\theta) ≠ f(x|\theta_0)$); **ii)** the support of f(.|$\theta$) does not depend on $\theta$; and **iii)** $\theta_0$ is an interior point of parameter space $\Theta$. **Once the estimator is consistent** $\rightarrow$ think the asymptotic distribution of the estimator:
+
+- **Asymptotic Distribution of the MLE**: the conditions above hold + **iv)** $f_1(x_i |\theta)$ is thrice differentiable with respect to $\theta$ and we can interchange integration with respect to *x* and differentiation with respect to $\theta$; and **v)** [$\partial^3 log f_1 (x_i | \theta)/\partial \theta^3] ≤ M(x)$ and $E[M(X_i)] < \infty$. Then: $\sqrt{n} (\hat{\theta}_{ML} - \theta_0) \implies N(0,I_1^{-1}(\theta_0))$.
+
+##### 2) Inference using MLE
+
+- $I_1(\theta)$ is a continuous function in $\theta$ (needed for asymptotic results), then given that $\hat{\theta}_{ML}$ is consistent for $\theta_0$, the quantity ($I_1(\hat{\theta}_{ML}))^{-1}$ is consistent for $(I_1^{-1}(\theta_0))^{-1}$. 
+
+- $\hat{I} = - \frac{1}{n} \sum_{i=1}^n \frac{\partial^2 \ell_1 (\hat{\theta}|X_i)}{\partial \theta^2}$. 
+
+- We can use bootstrap to approximate $(nI_1(\theta_0))^{-1}$. 
+
+##### 3) When MLE asymptotic theory fails us...
+
+##### 4) Pseudo-MLE
+
+- **Wrongly** assuming the parametric family! Most parts about the normality would hold, but for **information equality** it would fail. What happens is that $\sum_1 \neq \sum_2$:
+
+\[ \sum_1 = E[(\frac{\partial log f_1(X_i | \theta_0)}{\partial \theta_0})^2]  \]
+
+\[ \sum_2 = E[(\frac{\partial log f_1(X_i | \theta_0)}{\partial \theta_0^2})]  \]
+
+Using logic of the proof we would have: $\sqrt{n}(\hat{\theta}_{ML} - \theta_0) \implies N(0, \sum_2^{-1}, \sum_1, \sum_2^{-1})$, and this variance is called White's, giving rise to White's standard errors. 
+
+#### Lecture 8
+
+##### 1) Hypotheses
+
+- $H_0$: null hypothesis.
+
+- $H_1$: alternative hypothesis.
+
+##### 2) Testing
+
+- **Critical Region**: accept if $X \in C$ and reject if $X \notin C$. Ex: given data X = ($X_1,...,X_n$), C = {$\sum_{i=1}^n X_i < \delta$} for some $\delta \in \mathbb{R}$. 
+
+- Types of errors: **type-1 error**: $H_0$ is true but we reject. **Type-2 error**: $H_0$ is false but we accept. 
+
+```{r ,echo=FALSE}
+library(png)
+library(grid)
+setwd("~/Dropbox/R/Site-Gabriel/public/MIT")
+img <- readPNG("30.png")
+ grid.raster(img)
+```
+
+- **Size**: probability of type-1 error: 1 - $\Phi (\sqrt{n}(\delta / n - \mu_0)/\sigma)$.
+
+- **Probability of type-2 error**: $\Phi (\sqrt{n}(\delta / n - \mu)/\sigma)$.
+
+- **Power**: probability of correctly rejecting the null-hypothesis. Defined as: 1 - probability of type-2 error. 
+
+- The **level** defines a value $\alpha$ for which any true parameter value in the null hypothesis can not be greater than this $\alpha$. We say that the test has *level* $\alpha$ if for any true parameter value in the null hypothesis, the size is not greater than $\alpha$. $\alpha$ usually = 10\%, 5\% or 1\%.
+
+- **Z-statistic**: Z = Z($X,\mu_0$) = $\frac{\sqrt{n}}{\sigma}(\overline{X} - \mu_0) ~ N(0,1)$ under the null. Let $Z_{0.95}$ denote the 95\%-quantile of a standard normal distribution. Then $\sqrt{n}(\delta / n - \mu_0)/\sigma$ = $Z_{0.95}$, our test will accept the null if Z < $Z_{0.95}$. 
+
+- **P-value**: is the probability (calculated under the null) of **obtaining test results at least as adverse/extreme** to the null hypothesis as the ones we observed in our test. The smaller the p-value, the more sure we can be that the $H_0$ will not hold. P-value = P{N(0,1)>z} = 1 - $\Phi$ (z). 
+
+##### 3) Pivotal statistics
+
+- **Pivotal statistics**: don't depend on unknown parameters. 
+
+- **Asymptotically pivotal statistical**: it may be impossible to find the exact distribution of the test statistic, but possible to find an APS $\rightarrow$ a test statistic with an asymptotic distribution that does not depend on any unknown parameter.
+
+- **t-statistic** = $\frac{(\overline{X}_n - \mu_0)}{\sqrt{s^2/n}} \implies N(0,1)$ if the null is true. We reject the null at 5\% if |t| > 1.96 and p-value = 2$\Phi$(-|t|). 
+
+#### Lecture 9
+
+##### 1) Some more on bootstrap in testing
+
+- **Example**: $H_0: h(\mu, \sigma^2) = 0$ vs $H_1 : h (\mu, \sigma^2) \neq 0$, given $\mu = EX_i$ and $\sigma^2 = Var(X_i)$. Let's define a new parameter $\gamma = h(\mu, \sigma^2)$ for which we have a consistent estimate: $\hat{\gamma} = h(\overline{X}, s^2)$. We can prove asymptotic normality via the delta-method:
+
+\[ \sqrt{n}(\hat{\gamma} - \gamma) \implies N(0,(\triangledown h)' V \triangledown h) \]
+
+where $\sqrt{n}(\overline{X} - \mu, s^2 - \sigma^2)' \implies N(0,V)$ and $\triangledown h$ = ($\frac{\partial h (\mu, \sigma^2)}{\partial \mu}, \frac{\partial h(\mu, \sigma^2)}{\partial \sigma^2}$)'. This works to get a natural estimate of the asymptotic variance of $\hat{\gamma}$ and then construct a regular t-statistic to conduct a test.
+
+- Or we can employ a **parametric bootstrap** by approximating an unknown, finite-sample distribution of a statistic z = $\sqrt{n}(\hat{\gamma} - 0)$ with $z^\ast$ = $\sqrt(h(\overline{X}^\ast, s^{\ast^2}) - \hat{\gamma})$. 
+
+- **Bootstrap to calculate standard errors**: imagine we construct a natural consistent estimator $\hat{V}$ for V and considered t-statistic: $t = \sqrt{n} \frac{\hat{\gamma} - 0}{\sqrt{(\triangledown \hat{h})'\hat{V} \triangledown \hat{h}}}$ where $\triangledown \hat{h}$ is the corresponding derivative evaluated at $\overline{X}$, $s^2$. Under the $H_0 : t\implies N(0,1)$. The bootstrapped statistic is analogous $t^\ast \implies N(0,1)$.
+
+##### 2) Uniformly Most Powerful Test
+
+- Test based on C is more powerful than that based on C' if $\beta(\theta) ≥ \beta'(\theta) \forall \theta \in \Theta_1$. If a test is more powerful than any other, than it is called UMP test. **Neyman Pearson Lemm**: let f(x|$\theta$) with $\Theta = ${$\theta_0,\theta_1$} be some parametric family. $H_0: \theta = \theta_0$ vs $H_1: \theta = \theta_1$. Assume some critical set C satisfies: **i)** $x \in C$ if kf(x|$\theta_0$) > $f(x|\theta_1)$; **ii)** x $\notin$ C if $kf(x|\theta_0)$ < $f(x|\theta_1)$ where k ≥ 0 is chosen so that $\alpha = P_{\theta_0} (X \notin C)$. Then the test based on C is the UMP among all tests of level $\alpha$. 
+
+##### 3) UMP tests with composite hypotheses
+
+- **Neyman Pearson lemma** consider an optimization problem: $\int \phi (x) f(x| \theta_1)dx \rightarrow max$ subject to $\int \phi (x)f(x| \theta_0)dx ≤ \alpha$ and 0 ≤ $\phi$ ≤ 1. The solution to this problem gives the UMP test of level $\alpha$. 
+
+##### 4) Likelihood Ratio Test
+
+- $H_0: \theta \in \Theta_0$ vs $H_1: \theta \in \Theta_1$. Denote $\Theta = \Theta_0 \cup \Theta_1$. Likelihood function is: $\mathcal{L}(\theta |x)$. A LRT statistic is: $\lambda(x) = \frac{sup_{\theta \in \Theta_0} \mathcal{L}(\theta|x)}{sup_{\theta \in \Theta}\mathcal{L}(\theta|x)}$. Small LRT implies that there is a value $\theta$ in the $H_1$ which gives much greater likelihood than all values in the $H_0$. The test rejects the $H_0$ $\iff$ $\lambda(x) ≤ c$ for some c. The constant *c* is chosen according to the desired level of the test. 
+
+- **ML estimator of the restricted model**: $\hat{\theta}_r$ = argmax$_{\theta \in \Theta_0} \mathcal{L}(\theta | x)$.
+
+- **ML estimator of the unrestricted model**: $\hat{\theta}_{ur}$ = argmax$_{\theta \in \Theta_0} \mathcal{L}(\theta | x)$.
+
+- Equivalent definition of the LRT: $\lambda(x) = \frac{\mathcal{L}(\hat{\theta}_r|x)}{\mathcal{L}(\hat{\theta}_{ur}|x)}$.
+
+- **Example**: $H_0 : \theta = \theta_0$ vs $H_1 : \theta \neq \theta_0$. Then $\hat{\theta}_r = \theta_0$ and $\hat{\theta}_{ur} = \hat{\theta}_{MLE}$ = $\overline{X}_n$. The LRT statistic is:
+
+- \[ \lambda(x) = \frac{\mathcal{L}(\theta_0|x)}{\mathcal{L}(\hat{\theta}_{MLE}|x)} = exp \{ -(n/2)(\overline{X}_n - \theta_0)^2 \} \]. 
+
+- The LRT **rejects the $H_0$** $\iff |\overline{X}_n - \theta_0|$ > c. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+#### Lecture 10
+
+##### 1) Likelihood Ratio Test
+
+- **LRT**: $\lambda (x) = \frac{\mathcal{L}(\theta_0 | x)}{\mathcal{L}(\hat{\theta}_{ML}|x)}$. Where $x = (x_1,...,x_n)$ is the realization of the data set and $\hat{\theta}_{ML}$ the ML estimator. Then, under some regularity conditions, we have(T1): -2log$\lambda$(X)$\implies X_1^2$. From this T1 we have that the large sample LR test of level $\alpha$ rejects the $H_0$ $\iff$ -2log$\lambda$(x) > $X_1^2 (1-\alpha)$, where $X_1^2(1 - \alpha)$ denotes 1 - $\alpha$-quantile of $X_1^2$. 
+
+- **Multi-dimensional case**: -2log$\lambda$(X) = 2($max_{\theta \in \Theta} \ell (\theta | X) - max_{\theta \in \Theta_0} \ell (\theta | X)) \implies X_p^2$ under the null. Large sample LR test of level $\alpha$ rejects $H_0 \iff$ -2log$\lambda$(X) > $X_p^2(1 - \alpha)$. We often denote LR = -2log $\lambda$(X), LR is the **likelihood ratio statistic**. By denoting $\hat{\theta}_0$ = arg max$_{\theta \in \Theta_0} \ell (\theta | X)$ as the restricted estimate, then: LR = 2($\ell(\hat{\theta}_{ML}|X)- \ell (\hat{\theta}_0 | X)$). The **LRT statistic** is: $\lambda(x) = (\lambda_0 / \hat{\lambda}_{ML})^{\sum_{i=1}^n X_I}e^{-n (\lambda_0 - \hat{\lambda}_{ML})}$
+
+##### 2) Large Sample Tests: Wald
+
+Once known the asymptotic distribution of some statistic, say $\delta(X_1,...,X_n)$, we can construct a large sample test based on this asymptotic distribution. We can show that: $\sqrt{n}(\delta(X_1,...,X_n)- \tau) \implies N(0,\sigma^2)$. Given that $\tau$ is 1-dimensionl and that $\tau = t_o$ agains the two-sided alternatie, we have $\sqrt{n}(\delta(X_1,...,X_n)- \tau_0) \implies N(0,1)$. A test of level $\alpha$ will reject the $H_0$ if t = $\sqrt{n} \frac{\delta (X_1,...,X_n) - \tau_0}{\hat{\sigma}}$ is smaller than $z_{\alpha /2}$ or larger than $z_{1-\alpha /2}$. Equivalent to calculating the Wald statistic:
+
+- **Wald statistic**: W = $n (\frac{\delta (X) - \tau_0}{\hat{\sigma}})^2$.
+
+- **Multi-dimensional Wald**: now $\tau$ is p-dimensional and: $\sqrt{n}(\delta(X)- \tau) \implies N(0,\sum)$. So we can construct a consistent estimate $\hat{\sum}$ of the covariance matrix $\sum(\hat{\sum} \rightarrow^p \sum)$ then: W = n($\delta(X)- \tau_0)' \hat{\sum}^{-1} (\delta(X)- \tau_0) \implies X_p^2$ if $H_0: \tau = \tau_0$. 
+
+- W - LR $\rightarrow_p$ 0.
+
+##### 3) Score test: 
+
+- The **Score** is: $S(\theta) = \frac{\partial \ell}{\partial \theta}(\theta | X) = \frac{\partial log \mathcal{L}}{\partial \theta}(\theta | X) = \sum_{i=1}^n \frac{\partial log f(X_i | \theta)}{\partial \theta}$. We know that FOC for the MLE says that S($\hat{\theta}_{ML}$) = 0. By the first information equality we have $E[S(\theta_0)]$ = $\sum_{i=1}^n E [\frac{\partial log f(X_i | \theta)}{\partial \theta}] = 0$. By Fisher Information definition: E[($\frac{\partial log f(X_i|\theta)}{\partial \theta}$)$^2$] = $I_1(\theta_0)$. By the CLT: $\frac{1}{\sqrt{n}} \sqrt{S(\theta_0)}{\sqrt{I_1(\theta_0)}} \implies N(0,1)$. By continuous mapping: LM = $S(\theta_0)^2 / (nI_1(\theta_0)) \implies X_1^2$. LM is called the **Lagrange Multiplier** statistic. The name comes from the constrained optimization problem, for ex: given log$\mathcal{L}(\theta | x) \rightarrow max s.t. \theta = \theta_0$. The lagrangian is H = log$\mathcal{L}(\theta|x)- \lambda(\theta - \theta_0)$. The FOC is $S(\theta_0) = \lambda$. So indeed the score is connected to the lagrange multiplier. LM - LR $\rightarrow_p$ 0.
+
+- Multidimensional LM: $LM = \frac{1}{n}S(\hat{\theta}_0)I_1 (\hat{\theta}_0)^{-1}S(\hat{\theta}_0) \implies X_p^2$.
+
+##### 4) Generalizations and Summary
+
+- **LR** = $2(\ell(\hat{\theta}_{ML}|X)-\ell(\hat{\theta}_0|X)) \implies X_p^2$.
+
+- **W** = $(g(\hat{\theta}_{ML})-0)\hat{\sum}^{-1} (g(\hat{\theta})_{ML} - 0) \implies X_p^2$.
+
+- **LM** = $S(\hat{\theta}_0)I_n^{-1}(\hat{\theta}_0) S(\hat{\theta}_0) \implies X_p^2$
+
+- Here, $\hat{\sum}$ = $(\frac{\partial g}{\partial \theta}(\hat{\theta}_{ML}))' I_1^{-1}(\hat{\theta}_{ML})(\frac{\partial g}{\partial \theta}(\hat{\theta}_{ML}))$ is a natural delta-method inspired estimate of asymptotic variance. Under proper regularity conditions all of these tests are asymptotically equivalent to each other. 
+
+#### Lecture 11
+
+##### 1) Introduction
+
+- Constructing a data-dependent interval [$l(X),r(X)$] so that it contains the $\theta$ with large probability. 
+
+
+- **Coverage Probability**: of the set C(X)$\subset \Theta$ is the probability (assuming the true value is $\theta$) that **confidence set C(X)** contains $\theta$, i.e., Coverage Probability($\theta$) = $P_\theta$ {$\theta \in C(X)$}. 
+
+- **Confidence Level**: minimum of coverage probabilities over the set of possible parameter values, CL = $inf_{\theta \in \Theta}P_\theta${$\theta \in C(X)$}. We say that confidence set C(X) has confidence level $\alpha$ if $inf_{\theta \in \Theta} P_\theta \{ \theta \in C(X) \} ≥ \alpha$. 
+
+##### 2) Test Inversion
+
+- **Test Inversion**: To obtain the **Confidence Set C(X)**: $H_0 : \theta = \theta_0$ vs $H_1: \theta \neq \theta_0$ $\forall$ possible parameter value $\theta_0 \in \Theta$. We test for each hypothesis a text of size $\alpha$. Then C(X) = {$\theta_0 \in \Theta:\text{ the }H_0 \text{ that } \theta = \theta_0$} is of confidence level $1 - \alpha$. $P_{\theta_0} \{\text{ the test rejects } \theta = \theta_0 \} ≤ \alpha$. So with probability of at least 1 - $\alpha$, $\theta_0 \in C(X)$. In other words, $P_{\theta_0}$ {$\theta_0 \in C(X)$} ≥ 1 - $\alpha$. 
+
+##### 3) Pratt's Theorem
+
+- If we use a UMP test $\implies$ the length of the confidence set will be the shortest among all confidence sets of a given level: let X ~ $f(x|\theta)$ be the data and C(X) the confidence set for $\theta$. Under some regularity conditions, for any $\theta_0$: $E_{\theta_0} [\text{ length of C(X) }] = \int P_{\theta_0} \{ \theta \in C(X) \}d\theta$. If C(X) is constructed by *inverting a UMP test of size* $\alpha$, then C(X) has the shortest expected length among all confidence sets of level 1 - $\alpha \forall \theta_0$.
+
+##### 4) Asymptotic Theory for Interval Construction
+
+- If $X_1,...,X_n$ is a random sample from distribution $f(x|\theta)$ with $\theta \in \Theta$. Under some regularity conditions, $\sqrt{n}(\hat{\theta}_{ML} - \theta) \implies N(0,I^{-1}(\theta))$. For any function $h: \Theta \rightarrow \mathbb{R}$ under some regularity conditions and using delta-method, Slutsky's theorem and some math, we can construct a confidence interval for $h(\theta)$ as: [$h (\hat{\theta}_{ML} + z_{\alpha / 2}\sqrt{\hat{V}h(\hat{\theta}_{ML})}, h(\hat{\theta}_{ML} + z_{1 - \alpha /2} \sqrt{\hat{V}(h(\hat{\theta}_{ML}))}]$. This CS is essentially based on the Wald statistic. 
+
+- What if we want to construct them based on LM and LR tests? 
+
+- **CS based on LM**: LM = $(\frac{\sum X_i - np}{\sqrt{np(1-p)}})^2$, so the confidence set based on inverting the LM test is: {$p\in (0,1): |\frac{\sum X_i - np}{\sqrt{np(1-p)}}| ≤ z_{1-\alpha /2}$} which is the solution to a quadratic inequality. 
+
+- **CS based on LR**: $l_n^{ur} - l_n^r = \sum X_i log(\hat{p}/p_0) + (n - \sum X_i)log((1-\hat{p})/(1-p_0))$. So the CS based on inverting the LR test is: {$p\in(0,1):  2(\sum X_i log (\hat{p}/p)+ (n - \sum X_i) log (1 - \hat{p})/(1-p)) ≤ X_{1-\alpha}^2(1)$}. 
+
+##### 5) Bootstrap confidence sets
+
+- Creating a CS for $\theta$ for which one has a consistent estimator $\hat{\theta} = \delta (X)$ where X is a random draw from unknown distribution F. We can bootstrap the statistic T($\theta_0$) = $\hat{\theta} - \theta_0$ whenever testing $H_0: \theta = \theta_0$. We would draw a bootstrapped sample $X^\ast$ from an approximating distribution $\hat{F}$ and calculate $T^\ast$ = $\delta(X^\ast) - \hat{\theta}$, then quantiles of $T^\ast$ serve as critical values for the corresponding test. This works when the difference between distributions of T and $T^\ast$ converge almost surely to 0 as $n \uparrow$. 
+
+#### Lecture 12
+
+##### 1) Frequentists and Bayesian Paradigms
+
+##### 2) Bayesian Updating
+
+- $\pi (\theta)$: the prior $\rightarrow$ ex ante known distribution derived from past experience.
+
+- Given **prior distribution** = $N(\mu_0, \tau^2)$ and the **posterior distribution** is $\pi (\mu | X = x) = \pi (\mu)f(x|\mu)/m(x)$ where: $\pi(\mu)$ denotes the prior distribution and $m(x)$ denotes the prior predictive distribution. given that $m(x)$ does not depend on $\mu$, $m(x)$ is a contant that normalizes $\int \pi(\mu | X = x)d \mu$ to 1. When we calculate $\pi(\mu) f(x | \mu)$, all terms that don't contain $\mu$ can be denoted by a constant C when being multiplied. Once we have an expression for $\pi(\mu) f(x| \mu)$ as a function of $\mu$, we can integrate it in order to find the normalizing constant $m(x)$. In our case:
+
+\[ \pi(\mu | X = x) = C \pi (\mu)f(x| \mu) = C exp \{ - \frac{\sum_{i=1}^n (x_i - \mu)^2}{2 \sigma^2} - \frac{(\mu - \mu_0)^2}{2 \tau^2}\} \]
+
+### Formulas
+
+- *P{X ≤ t}*: denotes the probability that X ≤ t.
+
+- The *cdf* of *discrete X* is given by: $F_X (t) = \sum_{j=1,...,n:x_j ≤ t}p_j$.
+
+- The *cdf* of *continuous X* is given by: $F_Y(t) = \int_{-\infty}^t f_Y(s)ds$.
+
+- Suppose Y = g(X). The cdf of Y: $F_Y(t)$ = P{Y ≤ t} = P{g(X) ≤ t} = P{X $\in g^{-1}$(-$\infty ,t]$}.

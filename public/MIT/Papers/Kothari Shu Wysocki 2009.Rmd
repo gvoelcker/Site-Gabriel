@@ -1,0 +1,48 @@
+---
+title: "Kothari Shu Wysocki 2009"
+date: "18/05/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Do Managers Withhold Bad News? {.tabset}
+
+### Paper Analysis
+
+Origin: Joe's suggestion.
+
+-   **Research question**: 
+
+-   **Why is it relevant**: 
+
+-   **Intended contribution/importance**: 
+
+-   **Hypotheses**: 
+
+-   **Setting/research design**: 3 main tests: **1)** stock market reaction to dividend changes - the magnitude of dividend changes and the associated five-day market reactions are more pronounced for dividend cuts than for dividend increases. This suggests that mgmt waits and allows bad news to accumulate before cutting dividends; **2)** stock market reaction to voluntary management earnings forecasts. the magnitude of the five-day market reaction to announcements of bad news exceeds that of good news; **3)** stock returns prior to news announcements: a greater fraction of news is impounded in stock prices prior to good news disclosure relative to a bad news disclosure. this holds for both the dividend change sample and the management forecast sample. 
+
+-   **Main results**: good news tend to be leaked to the market, whereas managers are successful in withholding much of the bad news from investors until it becomes inevitable that the bad news will be released. 
+
+-   **Additional results crucial to the story**: 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
