@@ -1,0 +1,48 @@
+---
+title: "Kausar Shroff White 2016"
+date: "19/05/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Real Effects of Audit Choice {.tabset}
+
+### Paper Analysis
+
+Paper from: Ki-Soon's paper idea.
+
+-   **Research question**: what's the benefits of obtaining audits?
+
+-   **Why is it relevant**: 
+
+-   **Intended contribution/importance**: 1) role of audits in a private firm setting; 2) firms that choose to obtain audits receive higher credit scores than those that choose to be unaudited>
+
+-   **Hypotheses**: "we hypothesize that the choice to obtain a financial statement audit provides external financiers with incremental information about the firm, which helps reduce information asymmetry and financing frictions".
+
+-   **Setting/research design**: they examine whether the choice to obtain an audit eases financing frictions by conveying information about firms' future prospects that is independent of the information generated from the audit itself. 
+
+-   **Main results**: when external financiers observe a firm's choice to voluntarily obtain an audit, it significantly increases their debt/investment/operating performance, and becomes more responsive to their investment opportunities.
+
+-   **Additional results crucial to the story**: the effects are stronger for finacially constrained firms and weaker for firms with other means to reduce financing frictions.
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: audit choice conveys informtion to capital providers, reducing financing frictions and improving performance.
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

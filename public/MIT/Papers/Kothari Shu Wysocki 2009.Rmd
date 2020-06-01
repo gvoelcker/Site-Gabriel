@@ -13,23 +13,23 @@ html_document:
 
 Origin: Joe's suggestion.
 
--   **Research question**: 
+-   **Research question**: whether managers delay disclosure of bad news relative to good news. 
 
 -   **Why is it relevant**: 
 
 -   **Intended contribution/importance**: 
 
--   **Hypotheses**: 
+-   **Hypotheses**: the magnitude of the negative stock price reaction to bad news disclosures is greater than the magnitue of the positive stock price reaction to good news disclosure.
 
--   **Setting/research design**: 3 main tests: **1)** stock market reaction to dividend changes - the magnitude of dividend changes and the associated five-day market reactions are more pronounced for dividend cuts than for dividend increases. This suggests that mgmt waits and allows bad news to accumulate before cutting dividends; **2)** stock market reaction to voluntary management earnings forecasts. the magnitude of the five-day market reaction to announcements of bad news exceeds that of good news; **3)** stock returns prior to news announcements: a greater fraction of news is impounded in stock prices prior to good news disclosure relative to a bad news disclosure. this holds for both the dividend change sample and the management forecast sample. 
+-   **Setting/research design**: 3 main tests: **1)** stock market reaction to dividend changes - the magnitude of dividend changes and the associated five-day market reactions are more pronounced for dividend cuts than for dividend increases. This suggests that mgmt waits and allows bad news to accumulate before cutting dividends; **2)** stock market reaction to voluntary management earnings forecasts. the magnitude of the five-day market reaction to announcements of bad news exceeds that of good news; **3)** stock returns prior to news announcements: a greater fraction of news is impounded in stock prices prior to good news disclosure relative to a bad news disclosure. this holds for both the dividend change sample and the management forecast sample. Control for many specific
 
--   **Main results**: good news tend to be leaked to the market, whereas managers are successful in withholding much of the bad news from investors until it becomes inevitable that the bad news will be released. 
+-   **Main results**: reaction to bad news is bigger in magnitude than to good news.
 
--   **Additional results crucial to the story**: 
+-   **Additional results crucial to the story**: good news tend to be leaked to the market, whereas managers are successful in withholding much of the bad news from investors until it becomes inevitable that the bad news will be released. 
 
 - **Possible alternative hypotheses**: 
 
--   **Conclusion**: 
+-   **Conclusion**: managers have many reasons to delay disclosing bad news, such as career concerns and the possibility that something good offsets the negativity of such news. 
 
 - **Future research**:  
 

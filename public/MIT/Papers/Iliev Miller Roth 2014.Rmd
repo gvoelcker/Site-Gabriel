@@ -1,0 +1,50 @@
+---
+title: "Iliev Miller Roth 2014"
+date: "26/5/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Uninvited U.S. Investors? Economic Consequences of Involuntary Cross-Listings? {.tabset}
+
+Origin: abstract text mining from papers based on Ki-Soon's research idea.
+
+### Paper Analysis
+
+Paper from:
+
+-   **Research question**: what are the economic consequences of an SEC change that grants foreign firms on the US over-the-counter market an exemption from reporting requirements?
+
+-   **Why is it relevant**: 
+
+-   **Intended contribution/importance**: 
+
+-   **Hypotheses**:
+
+-   **Setting/research design**: diff-in-diff in the American market.
+
+-   **Main results**: 1) the number of voluntary OTC cross-listings did not increase as a result of the regulation change. 2) the design of the regulation allowed financial intermediaries to create an unprecedented number of involuntary OTC ADRs. 3) foreign firms forced into the US capital markets experience a significant decrease in firm value, and we further show that the decrease in firm value is related to an increase in US litigation risk. 4) Depositary banks' propensity to involuntarily cross-list firms is positively related to banks' expected fee revenue and that banks choose firms that incur high costs when involuntarily cross-listed.
+
+-   **Additional results crucial to the story**: 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: the regulation change did not achieve its intended objective of attracting more firms to the OTC market.
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

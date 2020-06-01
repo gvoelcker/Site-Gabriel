@@ -1,0 +1,90 @@
+---
+title: "Beyer Cohen Lys Walther 2010"
+date: "29/5/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## The financial reporting environment: review of the recent literature {.tabset}
+
+### Paper Analysis
+
+Paper from: Rodrigo's disclosure course + lit review for summer paper 2020
+
+-   **Research question**: survey that examines the literature on: 1) voluntary firm disclosures; 2) mandatory firm disclosures; 3) analysts' reports. 
+
+- Chronology of the review: 
+
+#### Section 2
+
+What are the **sources** of info investors use?
+
+\[ C A R_{j, q}=a+b_{j, 1} \times \operatorname{car}_{j, q}^{E A}+b_{j, 2} \times \operatorname{car}_{j, q}^{P R E-E A}+b_{j, 3} \times \operatorname{car}_{j, q}^{M F}+b_{j, 4} \times \operatorname{car}_{j, q}^{A F}+b_{j, 5} \times \operatorname{car}_{j, q}^{S E C}+\varepsilon_{j, q} \]
+
+where for company $j$ and quarter $q: C A R_{j, q}$ is the log abnormal return from the first day of calendar quarter $q$ to the last day of calendar quarter $q^{7} ; \operatorname{car}_{j, q}^{E A}$ the three day log abnormal return centered on the earnings announcement; $\operatorname{car}_{j, q}^{P R E-E A}$ the three day log abnormal return centered on earnings pre-announcements if issued, 0 otherwise; $\operatorname{car}_{j, q}^{M F}$ the three day log abnormal return centered on management earnings forecasts if issued, 0 otherwise; $\operatorname{car}_{j, q}^{A F}$ the three day log abnormal return centered on analyst forecasts, if issued, 0 otherwise; and $\operatorname{car}_{j, q}^{S E C}$ is the three day log abnormal return centered on any SEC-form filings date (including $10 \mathrm{Qs}, 10 \mathrm{Ks}$, and other SEC filings)
+
+The authors perform a regression to see how much of the variance of stock return depends on each of the elements on the above equation. This calls attention to the fact the these elements interact with each other and that should be accounted for when analyzing disclosure.
+
+#### Section 3
+
+Addresses the voluntary disclosure literature, first by describing the models and then the empirical works. They start the theoretical part by **identifying the conditions under which firms disclose all their private information**, and discussing them:
+
+1) costless disclosure;
+
+2) investors know that firms have private information;
+
+3) investors interpret the firms' disclosure in the same way and firms know how investors will interpret that disclosure;
+
+4) managers want to maximize their firms' share prices;
+
+5) firms can credibly disclose their private information;
+
+6) firms cannot commit ex-ante to a specific disclosure;
+
+They sum up and proceed to lay out avenues for future research: a) how investors interpretation of both disclosure and its absence plays a role in the manager's decision to voluntarily disclose information; b) it is management and not the ‘‘firm’’ that makes disclosure decisions.
+
+Then it proceeds to describe the empirical literature. (IMO: too few branches within each of the following paragraphs (3.x of the paper))
+
+It deals with **motivation for voluntarily disclosures and financial reporting decisions**, for example: 1) capital market transactions; 2) stock-based compensation and corporate control contests. 
+
+Then tackles the **costs and benefits of disclosure**: a) proprietary costs; b) liquidty; c) cost of capital.
+
+Then: effect of the **institutional environment** on voluntary disclosure: a) litigation costs; b) governance mechanisms, disclosures and financial reporting.
+
+Then it proceeds to deal with how to **measure** voluntary disclosures and the reporting quality. a) AIMR; b) indices; c) textual analysis (strong encouragement for future research); d) cash flows and accruals (Dechow and Dichev 2002); 
+
+Then it proceeds to deal with **other mechanisms of voluntary disclosure**, a) such as propensity of firms to provide management forecasts; b) forecast timing and form, and nature of the disclosure; c) conference calls; 
+
+#### Section 4
+
+Again, we start by models and then proceed to the empirical literature. 
+
+From the theoretical perspective, the **rationales for disclosure regulation** are: a) financial externalities; b) real externalities; c) agency costs; d) economies of scale. What are the optimal accounting standards: a) conservative accounting; b) fair value and hedge accounting.
+
+Given this theoretical framework, it proceeds to the review the recent empirical literature. Two main regulation changes: 1) Regulation FD (2000): levels the playing field; 2) SOX (2002). Then it proceeds to describe the disclosure of non-GAAP numbers and supplementary information. 
+
+#### Section 5
+
+Lastly, it deals with analyst reports. It is important to understand the incentives behind each analyst, where the developed models focused on: 1) analyst's reputation; 2) receiver's reaction; 3) value of forecast to investors. Mainly tackling:
+
+1) when do analysts start following a firm.
+
+2) the timing of the reports. 
+
+3) Bias in the reports.
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

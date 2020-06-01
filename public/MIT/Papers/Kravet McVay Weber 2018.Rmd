@@ -1,0 +1,50 @@
+---
+title: "Kravet Mcvay Weber 2018"
+date: "26/5/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Costs and Benefits of Internal Control Audits: Evidence From M&A Transactions {.tabset}
+
+Origin: abstract text mining from papers based on Ki-Soon's research idea.
+
+### Paper Analysis
+
+Paper from:
+
+-   **Research question**: examines managers' decisions to temporarily exempt newly acquired businesses from Section 404 of the SOX.  
+
+-   **Why is it relevant**: 
+
+-   **Intended contribution/importance**: 
+
+-   **Hypotheses**: a potential benefit of 404 compliance is the identification of control problems vs cost of incremental audit cost and alloction of employee time during this already busy period. 
+
+-   **Setting/research design**: Shock - Section 404 SOX change. This is used to examine acquirer's decisions to comply with or elect exemption from Section 404 the operational and financial reporting consequences associated with this decision, and how these consequences are reflected in stock prices. 
+
+-   **Main results**: managers are more likely to elect the exemption when expected compliance costs are higher (ex: when acquisitions are larger and occur later in the year). 1) 61\% use exemption; 2) reduction in exemption over the early years of the sample. 3) acquirers are more likely to use the exemption when agency conflicts are more severe.
+
+-   **Additional results crucial to the story**: 1) mild evidence that managers use exemption to avoid scrutiny of value-destroying deals; 2) Exemption is associated with negative post-acquisition outcomes, including lower return-on-assets and higher likelihoods of good-will impairments and financial statement restatements; 3) negative abnormal stock returns at the time exemption use is announced and over the subsequent 3 years, suggesting that investors view exemption use negatively and that their initial price reactions are incomplete.
+
+- **Possible alternative hypotheses**: the associations may reflect issues identified during the integration process that lead to both the exemption decision and the subsequent negative outcomes. 
+
+- **Conclusion**: compliance provides benefits by facilitating timely identification and correction of control problems in the newly acquired business. 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

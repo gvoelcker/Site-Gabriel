@@ -1,0 +1,48 @@
+---
+title: "Ge Koester McVay 2017"
+date: "26/5/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Paper title {.tabset}
+
+Origin: abstract text mining from papers based on Ki-Soon's research idea.
+
+### Paper Analysis
+
+-   **Research question**: what are the benefits of exempting firms from SOX 404(b)?
+
+-   **Why is it relevant**: 
+
+-   **Intended contribution/importance**: 
+
+-   **Hypotheses**:
+
+-   **Setting/research design**: measure audit fee settings from 2007-2014. 1) They estimate IC misreporting: model internal control effectiveness using non-exempt firms and apply their behavior to the exempt firms. 2) firms that disclose innefective internal controls experience more negative abnormal stock returns in the year of the disclosure. 3) Develop a prediction model to identify firms most likely to misreport their ineffective internal controls: find that costs of exemption due to IC misreporting are larger than benefits.
+
+-   **Main results**: firms save \$388MM, but incur in costs from misreporting: \$719MM from *lower operating performance* and \$935MM from delay in *aggregate market value* decline. 
+
+-   **Additional results crucial to the story**: 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: the exemption saves fees for all firm's shareholders, whereas the costs are borne by only a fraction. 
+
+- **Future research**: 
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
