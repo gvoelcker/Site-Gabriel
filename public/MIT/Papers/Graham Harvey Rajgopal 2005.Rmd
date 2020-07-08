@@ -1,0 +1,48 @@
+---
+title: "Graham Harvey Rajgopal 2005"
+date: "10/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## The economic implications of corporate financial reporting {.tabset}
+
+### Paper Analysis
+
+Paper from:
+
+-   **What is done**: survey that seeks to understand economic drivers of disclosure from the manager's perspective. **First**, we establish some stylized facts about financial reporting. **Second**, executives rate the descriptive validity of academic theories about why managers make voluntary disclosures or manage reported earnings numbers. **Third**, the interviews and surveys suggest new explanations for several phenomena that have not received extensive attention in the academic literature. **Fourth**, we identify simple heuristics that determine the process by which executives make financial reporting decisions.
+
+-   **Why is it relevant + contribution**: *i)* get financial officers to **rate** the relative importance of extant academic theories about financial reporting policies; *(ii)* discover **new** patterns of behavior and new explanations for known patterns; and *(iii)* highlight stylized facts on issues that are relatively **hard to document** from archival data, such as earnings benchmarks, earnings guidance, and the identity of the marginal investor.
+
+-   **Setting/research design**: survey.
+
+-   **Main results**: managers would rather take economic actions that could have long-term negative consequences than make withing-GAAP accounting choices to manage earnings. 78\% of the sample admits to sacrificing long-term value to smooth earnings. Managers make an effort to maintain predictabilitiy in earnings and financial disclosures. Managers also make voluntary disclosures to reduce information risk and boost stock price while at the same time trying to avoid setting disclosure precedents that will be difficult to maintain.
+
+-   **Additional results crucial to the story**: *i)* CFOs believe that earnings, not cash flows, are the key metric considered by outsiders, the most relevant earnings benchmarks being the quarterly earnings vs PY and the analyst consensus estimate; *ii)* narrowly missing the target might be interpreted as evidence of hidden problems at the firm, since the manager wasn't able to "find the money"; *iii)* CFOs believe that the "system" (i.e. financial market pressures and overreactions) lead to decisions that sacrifice long-term value to meet earnings targets. *iv)* voluntary disclosure is done to facilitate "clarity and understanding" to investors.
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 4 key insights: **i)** accounting earnings matter more to managers than cash flows for financial reporting purposes, which contrasts with the emphasis on cash flows found in the finance literature; **ii)** managers are interested in meeting or beating earnings benchmarks because they are concerned in raising stock prices and their own welfare via career concerns and external reputation, and less so in response to incentives related to debt covenants, credit ratings, political visibility, and employee bonuses that have traditionally been the focus of academic work  ; **iii)** holding cash flows constant, managers care a lot about smooth earnings paths.; **iv)** managers are willing to sacrifice economic value to manage financial reporting perceptions.
+
+- **Why voluntarily disclose information**: five motivations: 1) information asymmetry; 2) increased analyst coverage; 3) corporate control contests; 4) stock compensation; 5) management talent. And four constraints: 1) litigation risk; 2) proprietary costs; 3) Political costs; 4) agency costs. 
+
+- **Bad news vs good news**: *Why accelerate bad news*: The accounting literature has long recognized that managers have incentive to differentially disclose good news versus bad news (e.g., Pastena and Ronen, 1979; Skinner, 1994, 1997; Francis et al., 1994; Bagnoli et al., 2004). 52.9% of the survey respondents give no preferential treatment to disclosing good or bad news faster. 76.8% of the respondents say that they reveal bad news faster to reduce the possibility of a lawsuit resulting from failure to disclose timely information (e.g., unfavorable news) to the market - this concern is more pronounced among low P/E firms. Also, it is better that the news comes from the firm rather than from outside sources. *Why delay bad news*: Several interviewed CFOs argue that they delay bad news in order to further study and interpret the information, or in hopes that the firm’s status will improve before the next required information release, perhaps saving the company the need to ever release the bad information (e.g., interest rates might rise before year-end, correcting a current imbalance in pension funding).
+
+- **Future research**:  apply this knowledge to the mechanics of delaying vs accelerating bad news literature.
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

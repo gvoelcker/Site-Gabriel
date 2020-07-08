@@ -1,0 +1,72 @@
+---
+title: "Leuz Wysocki 2016"
+date: "06/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## The Economics of Disclosure and Financial Reporting Regulation: Evidence and Suggestions for Future Research {.tabset}
+
+### Paper Analysis
+
+Paper from: monumental paper synthesizing disclosure research.
+
+#### 8 Suggestions for future research:
+
+**1)** *regulatory effects using experimental settings in which identification is given a priority*. Such work could exploit natural experiments, and staggered implementations and regulatory thresholds. But it is as important that researchers connect their setting with a **larger economic question** to provide policy-relevant and more generalizable insights (external validity), rather than merely “cute” identificationdriven studies. Also, use: **structural estimation**: allows the computation of counterfactuals, which makes it particularly suited for regulatory questions. Last: space for descriptive empirical studies - it will be important to be clear that the evidence is more suggestive and descriptive in nature and that the results cannot be interpreted in a causal way.
+
+**2)** *why disclosure and reporting regulation is so pervasive?* The need for and the (net) benefits of regulation are not self-evident, highlighting the tradeoff between regulatory and market failures. Most successful capital markets exhibit strong disclosure and securities regulation - do they thrive because of regulation or in spite of it? So, how much does "regulation get in the way"? We lack evidence on externalities, social costs and benefits, and market-wide or network effects. We conjecture that disclosure regulation could make it easier for young firms to commit to transparency and hence to obtain
+funding, which, in turn, could have a positive effect on competition and innovation. Contracts and information are fundamentally incomplete
+and market participants have bounded rationality.
+
+A specific market-wide benefit of disclosure and reporting regulation that
+deserves more attention by future research is its contribution to the stability of financial markets, specifically by mitigating asset price bubbles and subsequent market crashes. Disclosure of fundamentals provides an anchor or “reality check” for market participants who are navigating new market conditions due to technological or financial innovation.
+
+**3)** *the process by which disclosure and reporting regulation arises.* Understanding the rule-making and standard-setting process is important for the evaluation of regulatory outcomes. Little research on the features that make regulation more or less successful. Need: more research that examines the relative roles (and balance) of rules, implementation and enforcement.
+
+**4)** *more research on the dynamics or evolution of disclosure and reporting regulation.* This relates to 3). Inflexible regulation and standards
+could stifle innovation and also make it harder for new technologies and ideas to obtain financing. Most of the literature is static in that studies are primarily concerned with the questions of whether and how to regulate, and not the dynamics of regulation. 
+
+**5)** *real effects of disclosure and reporting regulation.* We have much less evidence on how such regulation affects corporate behavior than we have evidence on its capital-market effects, which reflects among others the behavior of investors and financial analysts. As societies extend the scope of disclosure and transparency regulation beyond financial reporting, understanding the real effects of such regulation is of first-order importance and a topic to which accounting researchers can contribute significantly.
+
+**6)** *macroeconomic outcomes of disclosure and reporting regulation.* Examine: real investment, consumption, and possibly social outcomes of disclosure and reporting regulation at the aggregate level -  determining the magnitude of these aggregate effects would still be important. Doing so would be a first step toward a welfare analysis for disclosure and reporting regulation.
+
+**7)** *disclosure and reporting regulation are part of a larger institutional system in which the elements interact with each other.* They propose exploring institutional complementarities and bundles, starting with descriptive analyses and possibly using new techniques. There are likely interactions between key properties of the reporting standards and the enforceability of such standards.
+
+**8)** *more research on the effects of global convergence of regulation, as well as the effects of regulatory competition.* Little evidence on the effects attributable to accounting harmonization. Even with the harmonization of the rules, there can still be competition among countries or jurisdictions with respect to other elements, such as (1) implementation guidance, (2) additional disclosure requirements, (3) enforcement and penalties, and even (4) nonregulatory elements such as the monitoring by information intermediaries (e.g., financial analysts, auditors, and the media).
+
+-   **Research question**: 
+
+-   **Why is it relevant**: 
+
+-   **Intended contribution/importance**: 
+
+-   **Hypotheses**:
+
+-   **Setting/research design**: 
+
+-   **Main results**: 
+
+-   **Additional results crucial to the story**: 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

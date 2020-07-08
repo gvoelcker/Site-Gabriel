@@ -1,0 +1,56 @@
+---
+title: "Furchtgott Partnoy 2015"
+date: "15/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Disclosure Strategies and Shareholder Litigation Risk {.tabset}
+
+### Paper Analysis
+
+Paper from:
+
+-   **Research question**: do managers reduce litigation risk by bundling and leaking negative news?
+
+-   **Why is it relevant**: analyzes strategies managers began employing more frequently after *Dura 2005* to blur the causal link from restatements to stock price drops. 
+
+-   **Intended contribution/importance**: contributes to the earnings restatements and non-reliance disclosures literature. 
+
+-   **Hypotheses**: "We are particularly interested in knowing whether restating firms became more likely to bundle their corrective restatement announcements with other news, such as earnings filings, as a result of the Dura ruling in 2005".
+
+-   **Setting/research design**: uses the Dura 2005 ruling as a shock: after it, the standard to connect fraud and stock price fall became higher, so firms started bundling negative information (restatements) to blur the causality from the mistakes to the negative stock reaction. **Data**: Non-Reliance Restatement database by Audit Analytics - uses 8-K and 8-K/A filings with restatement info identified as: 4.02 Non-Reliance on Previously Issued Financial Statements or a Related Audit Report or Completed Interim Review since August 2004. Pre-post Dura cutoff date: April 19, 2005.  SEC filings: 2003-2009 from Edgar's $\rightarrow$ which forms were filed on which day. Class action lawsuit data: Stanford Law School's Securities Class Actions Clearinghouse(SCAC) - contains each class action filed in a federal court between 2000 and 2010. Contains: name of the defendant firm, exchange where it's traded, ticker symbol of the defendant's stock, date on which the lawsuit was filed and district court in which the suit was filed. Accounting data from CRSP and WRDS, as well as Audit analytics. For unreported governance tests, board of director data was obtained in The Directors Database Archive (TDDA). Earnings surprise: IBES to obtain SUE. Measures to control for **restatement severity**: 1) *length of restatement period*; 2) number of items listed as reasons for the restatement; 3) whether fraud was indicated in the Audit Analytics observation; 4) change in cumulative earnings brought about by the restatement, scaled by lagged assets. 
+
+**Empirical approach**: standard difference-in-difference set-up: as we believe that large firms, and firms in the Eighth and Ninth Circuits’ jurisdictions, are differentially affected by Dura, the main terms of interest here are the PostDura $\ast$ Circuit89 and PostDura $\ast$ Fortune interaction terms.
+
+We estimate the probit model
+
+\[ \operatorname{Pr}(\text {EarningsDay}=1 | X)=\Phi\left(X^{\prime} \Gamma\right) \]
+
+where $X$ is a vector containing the firm-specific and restatement-specific variables described above, and $\Phi(\cdot)$ is the cumulative distribution function of the standard normal distribution. The estimation results are shown in Table 6 and will be discussed in Section 4
+
+- **Main results**: managers increasingly act opportunistically to obfuscate the negative effects of a restatement by increasing how much they bundle and leak information.
+
+- **Additional results crucial to the story**: unintended Dura consequences: reduces efficiency of information transmission from firms to investors. **1st results** -  determinants of manager's decisions of whether to bundle a restatement with quarterly or annyal reports: a) interaction term PostDura $\ast$ Fortune is positive and of a similar magnitude, also significant, indicating Dura is the differencial effect in disclosure strategies; board variable: perhaps firms that require their managers to go through the board of directors give their managers less freedom over the announcements, or perhaps the board variable is merely picking up more general corporate governance quality. **2nd results** - Y is the number of distinct items in the 8-K. The effect is more sensitive to firm size. **3rd results** - effects of various firm-specific and restatement-specific variables on the restating firm's stock price: restatements that are bundled with section 10 filings are associated with higher/less negative abnormal returns. Takeaway: weakly supportive of the notion that bundling with a long and dense Section 10 filing is more effective for protecting the stock price than bundling with a much-anticipated and  easily-digested preliminary earnings release. **4th results** - firms differentially impacted by Dura saw more pre-announcement leakage after Dura.
+
+- **Possible alternative hypotheses**: 1) bundled restatements could be less severe than non-bundled restatements;
+
+- **Conclusion**: Our empirical investigation finds that prior to the Dura decision, large and prominent firms were less likely to package their restatement news with earnings news. However, it appears that after the 2005 Court decision, the firm size effect went away, and large firms were more likely to bundle news than they were before.
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

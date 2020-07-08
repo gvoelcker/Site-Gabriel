@@ -1,0 +1,50 @@
+---
+title: "Cohen Malloy Pomorski 2012"
+date: "23/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Decoding Inside Information  {.tabset}
+
+### Paper Analysis
+
+Paper from: Eric/Joe's suggestion for summer paper.
+
+-   **Research question**: compare routine and opportunistic insider trading.
+
+-   **Why is it relevant**: they find that there is an improvement in predictive power in opportunistic trades that comes from the suerior performance of opportunistic sells relative to routine sells, a big contrast to prior literature. 
+
+-   **Intended contribution/importance**: 
+
+-   **Hypotheses**: 1)  opportunistic and routine inside traders have different behavior and returns; 2) insider trading is predictive of future disclosures; 3) opportunistic traders are geographically close to the firms; 4) the change of insider trading is not reversed in the future.
+
+-   **Setting/research design**: routine traders: trade in the same month for 3 years in a row. Opportunistic: insiders with different trading patterns. This info has to be disclosed within 2 days of month-end. Looking at the trade-level, pattern remains. First the paper identifies the types of trader. Data comes from **Factiva**, that has headline news data from many newswires. That data is merged with CRSP/Compustat. Table 2 presents the main results (opportunistic traders have better and predictive performance in the future).
+
+-   **Main results**: opportunistic insider traders have better performance than routine traders, as well as being informative of future disclosures of the firm. We show that over half of the improvement in predictive power gained by focusing on opportunistic trades comes from the superior performance of opportunistic sells relative to routine sells; this is in contrast to much of the literature. 
+
+-   **Additional results crucial to the story**: The most informed opportunistic traders are local, nonexecutive insiders from geographically concentrated, poorly governed firms. Opportunistic traders are significantly more likely to have SEC enforcement action taken against them, and reduce trading following waves of SEC insider trading enforcement. We find that the trades of opportunistic insiders  show significant predictive power for future news announcements about the firm, while trades by routine insiders do not. 
+
+We show that over half of the improvement in predictive power gained by focusing on opportunistic trades comes from the superior performance of opportunistic sells relative to routine sells; this is in contrast to much of the literature (e.g., Jeng, Metrick, and Zeckhauser (2003)), which generally finds weak evidence on the profitability of insider sales. Further, we find that the returns to these opportunistic trades continue to rise for roughly six months following the opportunistic trading month, and then level off, exhibiting no future reversal. Thus, it appears that the information being conveyed through the trades of opportunistic insiders has lasting implications for firm values. Importantly, we next examine the drivers of the large information differences revealed by opportunistic versus routine traders. Specifically, we begin by exploring exactly what firm-level information these opportunistic insiders appear to have the ability to predict. We find that the trades of opportunistic insiders show significant predictive power for future news announcements about the firm, while trades by routine insiders do not. 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: the findings are conflicting to prior literature as they distinguish between the types of insider traders and find that the opportunistic ones are much less frequent.
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

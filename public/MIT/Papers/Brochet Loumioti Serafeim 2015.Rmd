@@ -1,0 +1,74 @@
+---
+title: "Brochet Loumioti Serafeim 2015"
+date: "//"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Speaking of the short-term: disclosure horizon and managerial myopia.  {.tabset}
+
+### Paper Analysis
+
+Paper from:
+
+-   **Research question**: is the time horizon of corporate voluntary disclosure symptomatic of short-termism?
+
+-   **Why is it relevant**: 
+
+-   **Intended contribution/importance**: 1) properties of voluntary disclosure: management communication in conference calls and its association with its information content; 2) textual properties of voluntary disclosure channels other than conference calls; 3) capital market effects of managerial and investor horizons. 
+
+-   **Hypotheses**:
+
+-   **Setting/research design**: identify qualitative properties of corporate voluntary disclosures to investors that are likely to reveal managerial myopia using conference calls. They developt a proxy for corporate disclosure horizon by creating a dictionary of short- and long-term oriented keywords. **1st test**: test the determinants of short-termism using relevant variables as X, controlling for firm characteristics that could influence the time horizon of corporate disclosure. **2nd test**: is the proxy associated with symptoms of short-termism documented in the literature?
+
+#### **Proxies**
+
+- **Litigation risk**: managers opt to quickly disclose information that could lead to litigation. Proxy: a) coefficients from Rogers Stocken 2005; b) industry legal exposure. (Field Lowry Shu 2005) - "we classify high legal exposure industries as those with above-median securities lawsuit rates".
+
+- **Information asymmetry**: greater IA provides opportunity to withhold bad news. Proxy: construct a factor using five variables: 1) market-to-book-ratio: for firms with high market-to-book ratios, a greater fraction of firm value is derived from growth opportunities rather than assets in place, which increases the information asymmetry between managers and investors ; 2) stock volatility: firms with high stock volatilities are less transparent and face greater uncertainty, which creates higher information asymmetry; 3) leverage ratio: firms with higher debt, the scrutiny of large debtholders can make it difficult for managers to withhold information, therefore reducing information asymmetry; 4) membership in high-tech industries: investors in technology firms may face greater information asymmetry given the uncertainty about future technologies; 5) regulatory status: firms in regulated industries must provide frequent detailed information to regulatory bodies, and timely mandated disclosures reduce potential information asymmetry with investors; all in the end of the previous FY.
+
+- **Manager's career concerns**: the adverse effect of bad news on their human capital makes the managers withhold bad news + expect this to be more prominent in financially distressed firms. Proxy: a) Financial distress: Z-score (Zmijewski 1984); b) manager's wealth invested in the firm: shares owned by manager / total outstanding shares.
+
+#### **Regressions**
+
+First regression (Table 2): $Ret = \alpha + \beta_0 Neg + \epsilon$
+
+Second regression (Table 2): $Ret = \alpha + \beta_0 Neg + \beta_1 Divchg + \beta_2 Divchg \ast Neg + \epsilon$. This second regression "includes the amount of news contained in the dividend announcement". 
+
+Third regression (Table 3): We next estimate this asymmetric reaction to dividend increases and decreases after controlling for factors that affect managers’ opportunities and incentives to withhold bad news. We examine whether high-litigation-risk firms are less likely to delay the disclosure of bad news before dividend decreases. Third, we explore whether firms with high information asymmetry between insiders and outside investors are better able to hide and delay bad news. Fourth, we explore whether firms in financial distress tend to withhold bad news due to heightened managerial career concerns. Finally, we explore the role of insider ownership on this asymmetry:
+
+\[ \begin{aligned}
+\operatorname{Ret}=& \alpha+\beta_{0} N e g+\beta_{1} \operatorname{Reg} F D+\beta_{2} \operatorname{Reg} F D * N e g+\beta_{3} \text {HiLit} R i s k \\
+&+\beta_{4} \text {HiLitRisk} * N e g+\beta_{5} \text {HiAsymm}+\beta_{6} \text {HiAsymm} * \text {Neg} \\
+&+\beta_{7} \text {HiDistress}+\beta_{8} \text {HiDistress} * \text {Neg}+\varepsilon
+\end{aligned} \]
+
+where $\operatorname{RegFD},$ HiLitRisk, HiAsymm, and HiDistress are dummy variables.
+
+Similar tests are done regaring the management forecast sample.
+
+-   **Main results**: the measure of disclosure time horizon is associated with capital market pressures and executives' short-term monetary incentives.
+
+-   **Additional results crucial to the story**: **1st test**: a) positive association between our proxy for shorttermism and the residual proportion of total executive compensation that is stockbased after controlling for economic factors that explain cross-sectional variation in the use of stock-based incentives; b) positive association between short-termism and the presence of short-term investors using Bushee’s (2001) institutional investor classification, suggesting a significant degree of congruence among capital market participants; **2nd test**: short-term oriented firms have higher absolute discretionary accruals and exhibit higher likelihood of just beating analyst forecasts and a higher likelihood of reporting small positive earnings. Short-term oriented firms are more likely to exhibit lower discretionary R\&D and advertising expenditures, consistent with myopic firms engaging in real activities management.  
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: time horizon of conference call narratives can be informative about managers' myopic behavior. The set of results suggests that the measure for short-termism is positively related to both earnings and real activities management and captures managerial opportunism. 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

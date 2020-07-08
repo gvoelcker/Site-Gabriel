@@ -1,0 +1,72 @@
+---
+title: "Minnis Shroff 2017"
+date: "01/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Why regulate private firm disclosure and auditing? {.tabset}
+
+### Paper Analysis
+
+Paper from: Ki-Soon's suggestion for our research together.
+
+-   **Research question**: why regulate private company financial reporting? 1) defines private firms; 2) reviews theoretical arguments for regulating rpivated firms, particularly those related to public disclosure and auditing; 3) survey to regulators and private firms on their perception of regulation.
+
+-   **Why is it relevant**: difference in regulation US/Canada vs Europe: the latter has private firms disclosing financial data.
+
+-   **Intended contribution/importance**: generate insights of the dynamics of firms.
+
+#### Paper Development
+
+2) **Private** firm definition: a firm that has capital (e.g. debt or equity) and is not traded in a secondary market. A **public** firm can have its capital traded between two investors in a market with little-to-no involvement of the firm itself and in which the two investors are not required to be familiar with each other. The market could be a stock exchange but the paper also considers over-the-counter exchanges as well. 
+
+-   **Setting**: describes US/Canada(limited regulation regime) and European(legal form-based regulation) setting for private firms, the latter requiring private firms to disclose financial information. The paper lays out the main arguments against and for regulating private firm disclosure:
+
+##### Benefits
+
+- **Externalities and spillover effects**: disclosure of one company can help inform stakeholders of other companies about common economic factors.
+
+- **Standardization and processing costs**: easier to process information and saves costs. Ex: IFRS adoption helped reduce information processing costs for foreign investors. 
+
+- **Reducing duplicative effort**: no need to costly negotiate disclosure requirements.
+
+- **Enforcement**: it is harder to punish private arrangements.
+
+##### Costs
+
+- **Special Interests vs Public Interests**: regulators also have agency problems. 
+
+- **Information asymmetry between regulators and companies**: mandatory disclosure requirements can discourage investments ex-ante. Does the disclosure lead economically efficient but financially constrained firms to exit the market or only inefficient firms out of the market?
+
+- **Loss of information from obfuscation of "revealed preferences"**: a more subtle cost of regulation is that it hides the information contained in a firm's choice. By having the option not to disclose, the choice to disclose reveals a preference in itself.
+
+- **Negative externalities**: increases in disclosure can attract investors away from other firms, leading to lower price efficiency.
+
+#### Survey
+
+-   **Main results**: The private costs of disclosure and auditing exceed the private benefits for private companies but there is potential for externality benefits - especiality of disclosure.
+
+-   **Additional results crucial to the story**: standard setters view the benefits of public disclosure and auditing requirements as exceeding the costs more often than firms do. Surveyed firms indicate they wouldn't disclose information if the mandate were removed. A majoity of firms also state they support a rule requiring public **financial** reporting. Regarding **audits**, most firms would prefer the mandates to be removed and would hire the audits for personal gain. The findings provide evidence of a necessary condition for the existence of positive externalities of public disclosure. 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: much to explore regarding private firms disclosure regulation. The theory and the survey presented generate some insights, to sum up: firms have private costs of disclosing such info but given the positive externalities, may prefer that a regulation takes place so they can learn from peers. 
+
+- **Future research**: 1) it is far from obvious whether firms typically characterized with little separation of ownership and control accrue any benefits from the public disclosure of their financial statements. 2) when are benefits of disclosure regulation sufficient to offset the costs? 3) perhaps firms make less investment ex ante because of proprietary cost concerns.
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

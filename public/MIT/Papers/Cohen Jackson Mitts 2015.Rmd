@@ -1,0 +1,48 @@
+---
+title: "Cohen Jackson Mitts 2015"
+date: "07/07/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## The 8-K Trading Gap {.tabset}
+
+### Paper Analysis
+
+Paper from:
+
+-   **Research question**: how do corporate insiders trade their company's stock during the 8-K trading gap?
+
+-   **Why is it relevant**: deals with the discretion managers exercise in the window before having to disclose 8-Ks.
+
+-   **Intended contribution/importance**: 1) little work emphasized the relationship between insider trading and the information-forcing rules that form the bedrock of securities law. 2) we document how insiders’ returns differ among the different types of information that the firm is about to reveal—and, hence, provide a framework for policymakers considering whether securities rules in this area should reflect the heterogeneous nature of the information they govern; 3) we demonstrate that profits from the 8-K trading gap do not require the unusually deep information that insiders have about the firm; instead, even a relatively uninformed investor can earn systematic abnormal profits by knowing about particular types of corporate developments before the market does; 4) the evidence we present may raise concerns for policymakers.
+
+-   **Hypotheses**:
+
+-   **Setting/research design**: 2004 8K shock. 15,419 8K forms.
+
+-   **Main results**: insiders earn abnormal returns on average and are correct about the directional impact of the 8K more often than not. 
+
+-   **Additional results crucial to the story**: 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

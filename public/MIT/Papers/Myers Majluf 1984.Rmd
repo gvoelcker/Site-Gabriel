@@ -1,0 +1,122 @@
+---
+title: "Myers Majluf 1984"
+date: "03/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Paper title {.tabset}
+
+### Paper Analysis
+
+Paper from: many relevant papers cite it.
+
+-   **In a sentence**: presents a model of the issue-investment decision with Information Asymmetry between managers and investors. 
+
+#### The Model
+
+-   **The Model**: assumes that a firm must issue common stock to rais ecash to undertake a valuable investment opportunity. Management is assumed to know more about the firm's value than potential investors and investors interpret the firm's actions rationally. The model shows how firms may **refure to issue stock** and hence pass on NPV>0 opportunities. It helps the intuition of why firms tend to rely on internal sources of funds and to prefer debt to equity when raising funds. This leads to the following interesting properties:
+  
+  **1)** better to issue safe securities than risky ones. Firms should go to bond markets for external capital, but raise equity by retention if possible.
+  
+  **2)** Even NPV > 0 projects are passed when there is no financial slack. Firms whose investment opportunities outstrip operating cash flows, and which have used up their ability to issue low-risk debt, may forego good investments rather than issue risky securities to finance them. This happens because of the old shareholders' interest. Increasing the required investment or reducing slack available for this investment also increases the ex-ante loss. 
+  
+  **3)** *Firms can build up financial slack* by restricting dividends when investment requirements are modest. The cash saved is held as marketable securities or reserve borrowing power. Another way is by issuing stock when IA is small.
+  
+  **4)** Firms should not pay dividends if they have to recoup the cash by selling stock or some other risky security. The model suggests that changes in dividend policy are highly correlated to the estimate of the value of assets in place.
+  
+  **5)** When there's IA + stock is issue to finance investment $\implies$ stock price will fall. This is, nevertheless, in the old stockholders' interest. However, if the firm issues risk-free debt, stock price will not fall.
+  
+  **6)** A merger of slack-rich and slack-poor firm increases the firm's combined value. But the negotiation of such mergers will be hopeless unless the slack-poor firms' can convey their special information to the prospective buyers. 
+  
+An interesting intuition is that the cost to old shareholders of issuing shares may outweigh the project's NPV, that's why some positive projects can be passed by even thought they could be lucrative. Given the IA, investors will reason that the decision to not issue shares signals "good news". The news conveyed by an issue is bad or at least less good. 
+
+The model initially assumes that stockholders are **passive**, that is, they don't adjust their portfolio to the firm's issue-invest decision. This makes financing matter: a firm with ample financial slack would take all positive-NPV oportunities. If old shareholders are assumed to be **active**, they rebalance their portfolios and so financing does not matter. 
+
+#### Main points
+
+**1)** introduces the assumptions of the model and gives a clear numerical example of how the model would work. It has 3 periods: t = -1, 0 and 1. Then, managers can choose to issue or debt/equity to raise funds. Depending on the slack and what fraction of the old shareholders' would retain after the issuance, they choose to issue or not. The example leads to two states, one in which is good to issue, the other not.
+
+- Why can't firms take advantage by issuing securities when the market is overpriced? Slack doesn't allow it: if investors know the firm does not **need** to issue to invest, an attempt to issue is a bad signal.
+
+- IA: not only managers have more info, they know what to do with it. 
+
+Lastly, it discusses related papers. 
+
+**2)** The Model: by varying the Slack *S*, they vary the size of the required issue: E = I - S. By introducing regions M and M', which depend on issue price P' simultaneously, we visually observe when should the firm issue or not to raise funds. The equilibrium depends on the distributions of the NPV of the project and the firm's asset-in-place value. Brief description of the model:
+
+\[ V^{old} = \frac{P'}{P' + E} (E + S + a + b) \]
+where:
+
+- $V^{old}$: the value for the old stockholder.
+
+- P': old stockholders fraction of total shares.
+
+- E: new shares.
+
+- S: financial slack.
+
+- a: asset in place.
+
+- b: NPV of the project.
+
+For the old stockholders to be better off, the firm will only issue when:
+
+\[ S + a ≤ \frac{P'}{P' + E} (E + S + a + b) \]
+
+That is, the fraction of the firm total value in their possession has to be bigger than the sum of Slack and Asset in Place before issuing and taking up the project. It is also beneficial for them to issue when
+
+\[ \frac{E}{P' + E} (S + a) ≤ \frac{P'}{P' + E}(E + b)\]
+
+That is, the share of existing assets and slack going to the new shareholders has to be inferior than the share of increment to firm value obtained by old stockholders.
+
+The line: $(E/P')(S+a) = E + b$ divides the joint probability distribution of *a* and *b* into two regions, where in M' the firm issues and invests, while in M it does nothing. This is illustrated by figure 1. Intuition is: the higher b is (NPV), the more stockholders gain from issuing and investing. The lower a(assets-in-place) is, the more attractive it is to issue with price P'. The stock issue will be fairly priced if: $P' = S + \overline{A}(M') + \overline{B}(M')$.
+
+By extending the analysis to incude the possible of debt (risk-free and/or risky), the model arrives at the main conclusions presented above in this document. It''s interesting that risky securities are less attractive to issue than safe ones. Suppose $\Delta E$ is the shareholders' capital gain from the security issuance. The firm should only issue if: $S + a ≤ S + a + b - \Delta E$. If there's no risk, the ability to issue risk-free debt is as good as financial slack. 
+
+If we compare the issue-invest decision for debt vs. equity financing firms, we'll see that the firm will always invest when $\Delta D$ and $\Delta E$ are zero or negative. Note that *if the firm is willing to issue equity, then it is necessarily also willing to issue debt*, as $\Delta D < \Delta E$. In this model, however, the firm never issues equity. If it issues, it will be debt (pecking order(?)). 
+
+**3)** Assumptions about management's objectives: rational stockholders react to the firm's investment decision. In frictionless capital markets, their reaction does not depend on whether the investment is financed with internal or external funds (MM-style).
+
+- The "passive investor" assumption implies that stock price falls when stock is issued. However, it wouldn't fall if default risk-free debt is issued, because this is equivalent as having ample financial slack. In the model, the only information conveyed by the decision to issue risk-free debt and invest is that the firm has a positive-NPV project. This causes a positive price change unless the project's existence was known beforehand.
+
+**4)** Extensions and implications: they address two possible extensions: 1) what happens when the information asymmetry is temporary? What happens when it is permanent but the firm has no immediate need for funds - except to build slack? 2) What does our model says about mergers?
+
+An easy way out is to issue stocks when there's no IA. 
+
+**Mergers**: given IA, a firm with insufficient financial slack may not undertake all valuable investment opportunities. How can mergers be explained under the premises of this model? 1) there may be partial/total disclosure of internal information during negotiation; 2) the merger may go through if the buyer rather than the seller takes the initiative. 
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
+
+
+- **Assumptions**: 
+
+    1) The firms have information that investors do not have, and managers and investors realize this.
+    
+    2) Firm has one existing asset.
+    
+    3) Firm has one opportunity requiring investment - required equity investment.
+    
+    4) Investment can be financed by issuing stock, drawing down the firm's cash balance or selling marketable securities. The last two + debt the firm can raise will be referred to as *financial slack*.
+
+    5) Delaying the investment reduces its value.
+    
+    6) Project is all-or-nothing, not possible to partly undertake it.
+    
+    7) Capital markets are perfect and efficient with respect to publicly available information. 
+    
+    **Stopped at page 8**

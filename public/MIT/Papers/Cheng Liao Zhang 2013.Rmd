@@ -1,0 +1,50 @@
+---
+title: "Cheng Liao Zheng 2013"
+date: "05/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## The Commitment Effect versus Information Effect of Disclosure—Evidence from Smaller Reporting Companies {.tabset}
+
+### Paper Analysis
+
+Paper from: possible deal-breaker for Ki-Soon's research idea.
+
+-   **Research question**: what is the commitment effect provided by mandatory disclosure and the information effect by voluntary disclosure on market illiquidity?
+
+-   **Why is it relevant**: distinguishes the impact of the credibility of a mandatory disclosure (accorded ex-ante) from a voluntary one. Uses a rare exemption setting.
+
+-   **Intended contribution/importance**: 1) direct evidence of the commitment effect of mandatory disclosure on market illiquidity while holding the disclosure information content constant; 2) voluntary disclosure can't replace mandatory; 3) debates whether one-size-fits-all regulation is worth it. 
+
+-   **Hypotheses**: the commitment effect provided by mandatory disclosure on market illiquidity can't be fully replaced by voluntary disclosure. **H1)** Commitment effect provided by mandatory disclosure: The market illiquidity for smaller reporting companies that choose to maintain their disclosure level increases after the passage of the SRC rule; **H2)** Information effect of voluntary disclosure: Relative to smaller reporting companies that maintain their disclosure level, smaller reporting companies that reduce their disclosure face a larger increase in market illiquidity; **H3)** The increase in market illiquidity for smaller reporting companies that choose to maintain their disclosure level is more pronounced for firms with higher agency costs.
+
+-   **Setting/research design**: they use a 2007 SEC exemption of SRC with public float < $75MM to isolate the effect of mandatory disclosure. Use a diff-in-diff design with the 75MM threshold. However, some firms below the threshold keep disclosing. Then, it's possible to isolate the effect of mandatory disclosure from the disclosure per se. 283 SRCs used. Read their 10-Ks. 
+
+-   **Main results**: even if a firm maintains the same disclosure level after an exemption the loss of the commitment ex-ante (the commitment of mandatory disclosure effect) makes it experience greater market illiquidity. At the same time, if a firm chooses to stop disclosing given the exemption, it experiences an even bigger illiquidity effect. 
+
+-   **Additional results crucial to the story**: can market illiquidity grow with less IA? (would go against their intuition). 
+
+- **Shortcomings/caveats**: 1) results may be distorted by the 2008 financial crisis; 2) very small firms, no following by analysts; 3) do they look at firms that could file as SRCs and don't? if you maintain the disclosure level, then not filing as SRC could reduce the negative impact? How does that relate to the interest of a firm in staying as SRC?
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: mandatory disclosure serves as a credible commitment mechanism and that losing such mechanism by deregulation/exemption is costly. Voluntary disclosure helps firms but can't perfectly replace mandatory disclosure. Mandatory disclosure yields more credibility.
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

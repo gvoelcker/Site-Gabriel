@@ -1,0 +1,49 @@
+---
+title: "Niessner 2013"
+date: "26/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Strategic Disclosure Timing and Insider Trading {.tabset}
+
+### Paper Analysis
+
+Paper from:
+
+-   **Research question**: do managers strategically disclose negative news for their own benefits?  I exploit an SEC requirement that managers have to disclose any material corporate event to investors within five business days, using Form 8-K. In this setting, managers only have discretion over the day of the week that they disclose the news. 8-K filings allow me to identify the event and the disclosure dates, and the short five-day window reduces the scope for other confounding activity.
+
+-   **Why is it relevant**: identifying both mispricing and strategic behavior in the same setting is empirically challenging.
+
+-   **Intended contribution/importance**: 1) it is related to papers that
+examine whether companies disclose negative news on Fridays and after the market closes (Damodaran (1989); Patell and Wolfson (1982); Francis, Pagach, and Stephan (1992); Bagnoli, Clement, and Watts (2005); Doyle and Magilke (2009); Dellavigna and Pollet (2009); Michaely, Rubin, and Vedrashko (2011); Doyle and Magilke (2012)). These papers document that more negative news is released when investors are distracted; 2) to the literature on voluntary disclosures and insider trading, Prior studies find managers change timing (Cheng and Lo (2006)) and quality (Rogers (2008)) of voluntary disclosures prior to trading; 3) this paper relates to literature on whether managers undertake strategic actions to take advantage of market mispricing caused by investors. Several papers have addressed this question empirically (e.g., Baker, Greenwood, and Wurgler (2003), Bagnoli, Clement, and Watts (2005), Baker and Stein (2004), Baker and Wurgler (2004), Baker, Greenwood, and Wurgler (2009)).
+
+-   **Hypotheses**: a) managers time information disclosure? b) managers profit from this timing?
+
+-   **Setting/research design**: 1) find that bad news are released such that their impact is diminished; 2) find what gain the managers have from timing such bad news. Regarding the choice of setting: Earnings announcements, which generally follow rigid schedules, offer managers too little discretion over disclosure timing, whereas voluntary forecasts offer too much discretion. 8-K filings provide a nice compromise for how much control managers have over disclosure timing. Furthermore, managers have to report the date of the event that triggers the 8K filing, which other types of disclosures do not require
+
+-   **Main results**: managers disclose negative events disproportionately on Fridays, before national holidays, after the market closes - when the investors ared distracted - despite these events occurring uniformly across days. This happens only for negative news. 
+
+-   **Additional results crucial to the story**: results are concentrated among smaller firms that have more retail investors and lower analyst coverage. I find a significant return under-reaction following negative Friday disclosures that persists for approximately three weeks, but no under-reaction for other days of the week. Disclosure of negative news on a Friday is twice as likely if a manager sells shares in the weeks following the event. Google searches and trading volume provide corroborating evidence that investors are more distracted on Fridays. 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: The results are consistent with managers undertaking strategic actions to exploit the behavior of investors in the market.
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

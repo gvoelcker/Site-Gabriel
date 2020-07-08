@@ -1,0 +1,48 @@
+---
+title: "Kyung Lee Marquardt 2019"
+date: "16/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## The effect of voluntary clawback adoption on non-GAAP reporting {.tabset}
+
+### Paper Analysis
+
+Paper from: Joe suggested to look at the clawback provision literature for my summer paper 2020. 
+
+-   **Research question**: what's the effect of the voluntary adoption of  clawback provisions on non-GAAP earnings disclosures?
+
+-   **Why is it relevant**: Prior literature documents that voluntary clawback adoption improves financial reporting quality by increasing the costs of misstating GAAP earnings.
+
+-   **Intended contribution/importance**: 1) to the growing clawback literature by documenting an increase in the frequency and a decrease in the quality of non-GAAP earnings, consistent with an increase in the opportunistic use of non-GAAP disclosure following clawback adoption. 2) to the literature on substitution effects between alternative financial reporting strategies: the majority of previous studies examined the substitutability within-GAAP, they look at GAAP and non-GAAP. 3) implications for corporate boards and regulators: mandatory adoption regulation nears, provides insights. 
+
+-   **Hypotheses**: managers may respond to perceptions of reduced discretion over GAAP reporting by increasing their reliance on non-GAAP earnings disclosures. Evidence suggests that adopting clawback provisions increases the costs associated with misstating earnings defined under generally accepted accounting principles (GAAP). However, it is possible that managers adapt to this more restrictive reporting environment by disclosing financial performance measures that would likely be less subject to restatement, such as non-GAAP earnings. We therefore examine whether the voluntary adoption of clawback provisions affects the frequency and quality of firms’ non-GAAP earnings disclosures.
+
+-   **Setting/research design**: we estimate a probit model of the likelihood of non-GAAP earnings disclosure before and after voluntary clawback adoption using two different samples: (1) a sample consisting of only clawback adopters and (2) a sample where clawback adopters are matched with non-adopters based on a propensity score matched sample (1:1 matching). we examine the quality of non-GAAP earnings exclusions using two different measures. First, we follow Doyle et al. (2003) and Kolev et al. (2008) and define higher quality exclusions as being more transitory and having less predictive power for future operating income. Our second proxy for quality is based on Black et al. (2015) definition of ‘aggressive’ non-GAAP reporting – exclusions that are likely to contain recurring expenses and thus are inversely related to quality.  
+
+-   **Main results**: we find that nonGAAP earnings disclosure frequency increases and non-GAAP exclusion quality decreases after clawback adoption, consistent with a more opportunistic use of non-GAAP reporting. An increase in non-GAAP reporting frequency combined with a decrease in non-GAAP exclusion quality is consistent with greater opportunistic use of non-GAAP earnings disclosures after clawback adoption.
+
+-   **Additional results crucial to the story**: additional cross-sectional tests help support this interpretation.
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

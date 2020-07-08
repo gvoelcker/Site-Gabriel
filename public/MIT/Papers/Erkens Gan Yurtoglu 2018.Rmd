@@ -1,0 +1,48 @@
+---
+title: "Erkens Gan Yurtoglu 2018"
+date: "16/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Not all clawbacks are the same: Consequences of strong versus weak clawback provisions {.tabset}
+
+### Paper Analysis
+
+Paper from:
+
+-   **Research question**: develop a Clawback Strengh Index and assess how it impacts firms.
+
+-   **Why is it relevant**: leads discussion on clawbacks not as a binary decision, but rather tackling it as a decision that varies in intensity. One can expect differential economic outcomes conditional on clawback design, rather than a uniform effect due to adoption.
+
+-   **Intended contribution/importance**: 1) we provide novel evidence on clawback design. We quantify the strength of clawbacks and show that firms with strong clawbacks experience beneficial firm-level outcomes, while firms with weak clawbacks do not; 2) studying the design of corporate governance mechanisms is useful for making inferences about firms’ motives for adopting such mechanisms; 3) offer two non-mutually exclusive explanations for the findings: the **isolated clawback** and the **broader reform** explanations. The broader reform  provides a more comprehensive interpretation of the results, without rejecting the possibility that strong clawbacks may act as a powerful tool as part of the broader reform package. 4) clawback strength can be interpreted as a proxy for elements of a broader reform, elements taht are implemented simultaneously with the clawback. 
+
+-   **Hypotheses**:
+
+-   **Setting/research design**: perform a comprehensive linguistic analysis of 4,464 voluntarily adopted clawbacks between 2007 and 2013. Drawing on the linguistic analysis, we create an index for capturing the strength of clawbacks (Clawback Strength Index). This index is based on five components that determine clawback strength: (1) the compensation types that are subject to a potential recoupment, (2) the employee groups that are covered by the clawback, (3) the extent to which the clawback mandates its enforcement, (4) the time period to which the clawback pertains, and (5) the various events that trigger a potential compensation recoupment. They distinguish clawbacks into two groups: **weak** and **strong** clawbacks. The latter group seems to have a greater positive economic impact. We argue that overall reporting risk consists of two components: controllable and non-controllable reporting risk. Controllable reporting risk is the risk of a restatement caused by the CEO's decision to misreport. Non-controllable reporting risk is the risk of a restatement caused by factors beyond the CEO's immediate control. Because the CEO's costs of misreporting is increasing in clawback strength, they expect improvements for strong clawback adopters. Using a difference-in-differences (DiD) design combined with a propensity-score method that matches strong adopters to weak adopters, we test our predictions by analyzing the consequences following the adoption of strong or weak clawbacks.
+
+-   **Main results**: adopters of strong provisions experience (1) improvements in reporting quality, as evidenced by a lower incidence of financial restatements and other measures of reporting quality, (2) decreases in the likelihood of a CEO turnover, and (3) a decrease in total and incentive-based CEO pay.
+
+-   **Additional results crucial to the story**: weak clawbacks appear ineffective. Strong clawbacks, either as a standalone measure or as part of package of measures. 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

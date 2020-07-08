@@ -1,0 +1,16 @@
+---
+title: "Shocks"
+author: "Gabriel Voelcker"
+date: "6/18/2020"
+output: html_document
+---
+
+## Shocks
+
+List of interesting shocks to be using in accounting research.
+
+- Reg FD.
+
+- SOX.
+
+- Dodd-Frank.

@@ -1,0 +1,130 @@
+---
+title: "Edmans 2009"
+date: "08/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Blockholder Trading, Market Efficiency, and Managerial Myopia {.tabset}
+
+### Paper Analysis
+
+Paper from: Ki-Soon's suggestion for mgmt myopia literature.
+
+-   **Research question**: how blockholders exert governance even if they can't interfere in a firm's operations?
+
+-   **Why is it relevant**: blockholders have strong incentives to monitor the firm's fundamental value because they can sell their stakes upon negative information. By trading on private info, they cause prices to reflect fundamental value rather than current earnings. This encourages managers to invest for long-run.  
+
+-   **Intended contribution/importance**: 
+
+-   **Hypotheses**:
+
+-   **Setting/research design**: the paper endogenizes costly information gathering and generates testable predictions regarding the effect of block size on monitoring and trading, and in turn, market efficiency, real investment and firm value. 
+
+-   **Main results**: blockholders can encourage investment by impounding its effect into prices. 
+
+-   **Additional results crucial to the story**: a key cost of US's dispersed ownership is myopia - potential solutions: equity compensation and regulation against takeover defenses (how can we set the mgmt's horizon to long term?). The problem with small shareholders may not be the separation of ownership from control but of ownership from information.  
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### The Model
+
+Blockholder **B** owns $\alpha$ units of the shares and the rest of shareholders own $1 - \alpha$. There are 3 periods, t=1,2,3. 
+
+At **t=1** there is a public signal: $s \in \{ s_g, s_b\}$. The signal is imperfectly informative about true firm value **V**, to be revealed at t=3. If $s = s_g$, then V = X > 0 with certainty. If $s = s_b$, then V = 0 or X with equal probability. That is, a bad signal can still turn out to be a positive firm value at t = 3.
+
+At **t=2**, B exerts monitoring effort $\mu \in [0,1]$ at cost $\frac{1}{2}c \mu^2$. Monitoring leads to B receiving a **private signal**: $i \in \{ i_g, i_b \}$ of $V$, whose precision rises with $\mu$ as follows: 
+
+\[ \operatorname{Pr}\left(i_{g} | X\right)=\operatorname{Pr}\left(i_{b} | 0\right)=\frac{1}{2}+\frac{1}{2} \mu \]
+
+\[ \operatorname{Pr}\left(i_{g} | 0\right)=\operatorname{Pr}\left(i_{b} | X\right)=\frac{1}{2}-\frac{1}{2} \mu \]
+
+The posterior probabilities that the firm is of high quality are thus given by:
+
+\[ Pr(X|i_g) = \frac{1+u}{2} \]
+
+\[ Pr(X | i_b) = \frac{1 - \mu}{2} = \pi_b \]
+
+If $\mu = 0$, then private information is useless and the posterior equals $\mu$. The opposite, $\mu = 1$ means that B perfectly knows V. Then, there is a round of trading. B can either demand nothing (b = 0) or sells $\beta$ units of the stock ($b = -\beta$); she sells if she receives signal $i_b$ and holds otherwise. Also at t=2, liquidity traders demand *u*, where u is exponentially distributed that is,
+
+$f(u)=\left\{\begin{array}{l}0 \text { if } u \leq 0 \\ \lambda e^{-\lambda u} \text { if } u>0\end{array}\right.$
+
+where $\lambda = \frac{1}{\nu (1 - \alpha)}$ and $\nu ≤ 1$ is a liuidity parameter. Total demand $d = b + u$ sets a price $P$, equal to the conditional expectation of firm value at t=3, **V**, given $d$ and $s$. $\nu$ captures factors that affect liquidity other than the free float $1 - \alpha$(ex: transaction costs, taxes, disclosure requirements). The volume in liquidity trades is increasing in the amount held by small shareholders, as the liquidity trades often stem from current investors. Remember that $\frac{1}{\lambda}$ represents the optimal trading volume.
+
+#### **2.A - Market Equilibrium**
+
+If signal $s_g$ is emitted, B doesn't sell because the signal is fully reveleaing. The market maker knows that the firm is of high quality and so sets P = X. 
+
+The section focuses on when $s = s_b$. Because the signal is not fully revealing, B monitors and trades and the market maker tries to infer B's information from total order flow $d$. Upon observing $s_b$ and total demand $d$, the market maker sets the following prices: 
+
+$\left\{\begin{array}{ll}P=\pi_{b} X & \text { if } d \leq 0 \\ P=\pi_{m} X & \text { if } d>0\end{array}\right.$
+
+where
+
+\[ \pi_{m}=\operatorname{Pr}(X | d>0)=\frac{1+e^{-\lambda \beta}+\mu\left(1-e^{-\lambda \beta}\right)}{2\left(1+e^{-\lambda \beta}\right)} \]
+
+The blockholder exerts monitoring effort
+
+\[\mu=\frac{\beta X}{4 c} \]
+
+If and only if she observes signal $i_{b}, B$ sells
+
+\[ \beta=\min \left(\frac{1}{\lambda}, \alpha\right)\]
+
+Basic intuition: if $d ≤ 0$, the market maker knows that B has sold and thus has received $i_b$ $\implies$ market maker sets prices according to the posterior $\pi_b = Pr(X|i_b)$ in equation (1). However, if $d > 0$, this is consistent with both selling and not selling. Hence, the MM sets prices according to $\pi_m = Pr(X|d > 0)$. 
+
+If B receives $i_b$, then she wishes to sell. However, her optimal trade is finite ($\frac{1}{\lambda}$) as she is concerned with excessive price impact, that is, if she sells too much it can attract attention and distort price. With short-sale constraints, B can't sell more than $\alpha$, her initial holding. If $\alpha ≤ \frac{1}{\lambda}$, then $\beta = \alpha$. Liquidity is sufficiently high that $B$ finds it optimal to sell her entire stake. Hence, we arrive at Lemma 2: the maximum sale volume $\beta$ is given by:
+
+\[ \beta = \alpha^\ast = \frac{\nu}{ \nu + 1} \]
+
+Blockholder effort $\mu$ is also maximized when $\alpha = \alpha^\ast$. Both $\beta$ and $\mu$ are increasing in $\alpha$ if $\alpha < \alpha^\ast$ and decreasing in $\alpha$ if $\alpha > \alpha^\ast$. 
+
+For $\alpha < \alpha^\ast$, a higher initial stake drives B to obtain more information, as B can make greater use of it. The paper generates a link between $\alpha$ and $\mu$ via the combination of liquidity trader demand, endogenous informed trader demand, and short-sales constraints. 
+
+However, a consequence of a higher stake is that it reduces liquidity. If $\alpha > \alpha$, liquidity is sufficiently low that B chooses to sell only $\frac{1}{\lambda}$ if she receives signal $i_b$. Further increases in $\alpha$ reduce liquidity and thus decrease optimal trading volume $\frac{1}{\lambda}$. Because B expects to trade less on information $\implies$ she has fewer incentives to obtain information. The optimal block size to maximize information acquisition is therefore finite at $\alpha^\ast$. 
+
+Intuitively, we have a concave graph: increasing $\alpha$ from 0 increases $\beta$ and $\mu$, as long as the cost is sufficiently nontrivial that the reduction in short-sale costs that results from raising $\alpha$ outweighs the negative effect on liquidity. Once $\alpha$ is sufficiently large, increase the stake lowers $\beta$ and $\mu$ because the negative effect on liquidity dominates, so the relationship is again concave. 
+
+#### **2.B Market Efficiency**
+
+What's the relationship between block size and price efficiency? To sum up so far: A high-quality firm has a $\left(\frac{1}{2}+\frac{1}{2} \mu\right)$ chance of emitting signal $i_{g},$ in which case $B$ does not sell and the price is $\pi_{m} X .$ It has a $\left(\frac{1}{2}-\frac{1}{2} \mu\right)$ chance of emitting signal $i_{b},$ in which case $B$ sells. If $u \leq \beta$ (which occurs with probability $1-e^{-\lambda \beta}$ ), then d ≤ 0 and the price is $\pi_b X$, else price is $\pi_m X$. The expected price of a high-quality firm is
+
+\[ E[P|X] = X \pi_X \]
+
+where the expectation is taken over the possible realizations of $i$ and $u$, and
+
+$\begin{aligned} \pi_{X} &=\left[\frac{1}{2}+\frac{1}{2} \mu+\left(\frac{1}{2}-\frac{1}{2} \mu\right) e^{-\lambda \beta}\right] \pi_{m}+\left(\frac{1}{2}-\frac{1}{2} \mu\right)\left(1-e^{-\lambda \beta}\right) \pi_{b} \\ &=\frac{1}{2}\left(\mu^{2} \frac{1-e^{-\lambda \beta}}{1+e^{-\lambda \beta}}+1\right) \end{aligned}$
+
+I use $\pi_X$ as a measure of market efficiency as it captures the closeness of expected prices to fundamental value. If $pi_X$ = 1 $\implies$ market is fully efficient.
+
+Proposition 1 (Market Efficiency): Market efficiency $\pi_{X}$ is maximized at $\alpha=\alpha^{*}$ It is increasing in $\alpha$ for $\alpha<\alpha^{*},$ and decreasing in $\alpha$ for $\alpha>\alpha^{*}$
+Proof: If $\alpha<\alpha^{*},$ then $\beta=\alpha .$ Differentiating equation (7) with respect to $\alpha$ gives
+
+\[ \frac{\partial \pi_{X}}{\partial \alpha}=\underbrace{\frac{\mu^{2} \lambda e^{-\lambda \alpha}}{\left(1+e^{-\lambda \alpha}\right)^{2}}}_{\text {trading effect}}+\underbrace{\mu^{2} \frac{\alpha \lambda}{1-\alpha} e^{-\lambda \alpha}}_{\text {camouflage effect }}+\underbrace{\mu \frac{1-e^{-\lambda \alpha}}{1+e^{-\lambda \alpha}} \frac{\partial \mu}{\partial \alpha}}_{\text {effort effect }} \]
+
+- *Trading Effect*: the direct impact of $\alpha$. It is >0 iff $\alpha < \alpha^\ast$ because an increase in $\alpha$ raises the amount sold by $B$ upon negative information: if B trades more, her trading impounds more information into prices.
+
+- *Camouflage Effect*: operates indirectly through $\alpha$ by decreasing liquidity. Liquidity camouflages B's trades $\implies$ this effect is >0 for all levels of $\alpha$. 
+
+- *Effort effect*: indirectly affects $\mu$ through $\alpha$. It is positive iff $\frac{\partial \mu}{\partial \mu} > 0$, that is, $\alpha < \alpha^\ast$. Increased effort leads to $B$ receiving a more informative signal $\implies$ B's trades convey more information about V. 
+
+Overall, if $\alpha < \alpha^\ast$, all three effects are positive and so $\uparrow \alpha \iff \pi_X$, in words: an increase in B's shares leads to an increase in market efficiency.
+
+If $\alpha > \alpha^\ast$, then $\beta = \frac{1}{\lambda}$. Differentiating with respect to $\alpha$ gives: 
+
+\[\frac{\partial \pi_{X}}{\partial \alpha}=\underbrace{\mu \frac{1-e^{-1}}{1+e^{-1}} \frac{\partial \mu}{\partial \alpha}}_{\text {effort effect }}\]
+
+From Lemma 2, the trading effect is negative, as liquidity is sufficiently low that B only sells $\frac{1}{\lambda}$, which is decreasing in $\alpha$. The negative trading effect exactly cancels out the positive camouflage effect. This leaves the effort effect, which is negative from Lemma 2.
+
+Even considering only the benefits of blockholders and ignoring their costs, the optimal block size for market efficiency is a finite level, $\alpha^\ast$. In the presented model, it is the associated optimal trading volume that matters. Prices are a function of $min(\frac{1}{\lambda}, \alpha)$, not of $\alpha$. The fact that $B$ has not existed is less of a positive boost to the stock price if exit was difficult in the first place.
+
+#### **II. Blockholders and Long-Term Investment**
+
+
+

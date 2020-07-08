@@ -1,0 +1,49 @@
+---
+title: "Jagolinzer Larcker Taylor 2011"
+date: "26/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Corporate Governance and the Information Content of Insider Trades {.tabset}
+
+### Paper Analysis
+
+Paper from:
+
+-   **Research question**: This study examines the role of the general counsel (GC) in mitigating informed trading by corporate insiders. 
+
+-   **Why is it relevant**: Little research focuses on the impact of executives whose primary responsibility is to enforce and shape corporate governance inside the firm. This literature has used plausible, but relatively imprecise, measures for corporate governance (e.g., “G-score,” percentage of the board that is independent, board size, presence of an “accounting expert,” etc.) and the empirical results are quite mixed (e.g., Bhagat and Black [1998], Core, Guay, and Rusticus [2006], Larcker, Richardson, and Tuna [2007]).
+
+-   **Intended contribution/importance**: In contrast to prior literature, we find that restricted trade windows do not appear binding and that insider trades made within these windows (absent GC approval) are generally informed.
+
+-   **Hypotheses**:  If informed trading by insiders is considered undesirable by shareholders or illegal by regulators, corporate governance should manifest itself in restrictive governance elements within the firm’s ITP
+
+-   **Setting/research design**: Using a unique sample of detailed ITPs, we
+find that active monitoring by the GC is associated with a substantial reduction in inside trading profits and the ability of insider trades to predict earnings surprises.
+
+-   **Main results**: We find that insider trading profits and the predictive ability of insider trades for future operating performance are generally higher when insiders trade within firm-imposed restricted trade windows. We find that active monitoring by the GC is associated with a substantial reduction in informed trading by insiders and the extent to which insiders use their private information to extract rents from shareholders.
+
+-   **Additional results crucial to the story**: when GC approval is required to execute a trade, insiders’ trading profits and the predictive ability of insider trades for future operating performance are substantively lower. Our results suggest that restricted trading windows, by themselves, are not effective at reducing informed trading. Rather, the results suggest that the effectiveness of restricted trade windows depends on whether individual transactions require GC approval.
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: when they have authority, GC can effectively limit the extent to which corporate insiders use their private information to extract rents from shareholders.
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

@@ -1,0 +1,48 @@
+---
+title: "Billings 2008"
+date: "24/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Disclosure Timeliness, Insider Trading Opportunities and Litigation Consequences {.tabset}
+
+### Paper Analysis
+
+Paper from: Eric/Joe's suggestion for summer paper.
+
+-   **Research question**: whether managers’ disclosure delays relate to the opportunity to decrease their equity position in the firm and, if so, whether this trading behavior is associated with increased litigation consequences. This paper investigates whether managers delay disclosure of negative news and trade to exploit information asymmetries prior to supplying negative earnings news to the market, and, if so, whether this opportunistic behavior is associated with increased litigation consequences for the firm (via increased litigation risk and/or higher lawsuit settlement amounts) or for managers (via higher employment turnover or SEC action).
+
+-   **Why is it relevant**: tension: disclosing negative earnings with delay leads to litigation vs managers frequnetly delay bad news. Why? Tradeoff between increased litigation consequences and tempting insider trading opportunities by examining managers’ disclosure decisions in relation to their trading behavior
+
+-   **Intended contribution/importance**:  I connect the stream of literature examining managers’ incentives to correct information asymmetries via negative news warnings to the stream of literature examining insiders’ exploitation of information asymmetries. 1) This study adds to the stream of research examining managers’ disclosure incentives. I observe managers’ disclosure decisions in relation to their trading behavior (a factor not considered in prior studies that examine the link between disclosure behavior and litigation consequences) and find that the less timely disclosers are more likely to have engaged in abnormal trade that increases litigation consequences for the firm. 2) This paper also contributes to the literature investigating the degree to which insiders exploit information asymmetries; the paper finds evidence contrary to prior literature that states that  many studies do not find evidence of abnormal trade prior to negative news events, including information revelations that trigger lawsuit filings. 3) this study advances the stream of literature that examines factors that influence lawsuit settlement amounts.
+
+-   **Hypotheses**: 1) Abnormal trade by managers facing negative earnings news is associated with less timely disclosure of the news; 2) Abnormal trade by managers prior to the market’s receipt of the negative news is associated with increased incidence of litigation and higher lawsuit settlement amounts; 3) Abnormal trade is associated with higher turnover for managers of lawsuit firms.
+
+-   **Setting/research design**: uses a sample of very big drops in stock price (35\% in 3 days) from 1996 to 2002.
+
+-   **Main results**: I find that the managers who are less timely in their disclosure of negative news are more likely to have engaged in abnormal trade prior to the market’s receipt of the negative news and that this trading behavior is associated with increased litigation consequences for the firm.
+
+-   **Additional results crucial to the story**: 1) Further analysis detects limited repercussions for the managers involved in the trading. 2) I document a positive relation between settlement amounts and measures of pre-disclosure abnormal trade(so the managers weigh whether it pays off to engage in trading despite having to later pay for the costs of litigation (?)). 3) I find that insurance companies cover smaller proportions of the firms’ settlement costs if the lawsuit filing includes trading allegations as evidence of managers’ incentives to delay disclosure. 4) No evidence of turnover following manager's trading behavior.
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: Collectively, my findings suggest that research examining managers’ disclosure behavior, particularly studies that consider managers’ disclosure behavior in the litigation setting, should take into account the influence of managers’ trading behavior on both their disclosure decisions and firms’ litigation consequences.
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

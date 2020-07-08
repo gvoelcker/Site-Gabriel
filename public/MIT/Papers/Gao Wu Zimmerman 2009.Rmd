@@ -1,0 +1,82 @@
+---
+title: "Gao Wu Zimmerman 2009"
+date: "18/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Unintended Consequences of Granting Small Firms Exemptions from Securities Regulation: Evidence from the Sarbanes-Oxley Act {.tabset}
+
+### Paper Analysis
+
+Paper from: SRC literature.
+
+-   **Research question**: What are the unintended consequences of exempting small firms from costly regulations? 
+
+-   **Why is it relevant**: small firms are gaining traction not only in the literature but also in regulatory measures.
+
+-   **Intended contribution/importance**: 1) we provide evidence on the economic consequences of exempting small companies from regulation. The Advisory Committee on Small Public Companies (ACSPC [2006]) recommends less onerous regulatory rules for small filers, and the SEC is pro- poses rules to systematically adopt these recommendations; 2) Second, we document a heretofore unrecognized consequence of SOX— nonaccelerated filers keeping their public float below $75 million; 3)  we provide additional evidence on the economic consequences of SOX and, in particular, its Section 404 provisions on internal controls, for small public companies.
+
+-   **Hypotheses**: some firms decided to "stay small" in response to having to comply with SOX's 404 section, effectively staying below the small firm threshold.
+
+**H1**: In the post-SOX period nonaccelerated filers are more likely to stay below the $75 million threshold than control firms.
+
+**H2**: In the post-SOX period nonaccelerated filers are more likely to:
+
+(a): reduce their net investment in property, plant, and equipment, intangibles, and acquisitions;
+
+(b): pay out more cash to shareholders via ordinary and special dividends and share repurchases;
+
+(c): decrease the number of shares held by nonaffiliates of the firm.
+
+**H3**: In the post-SOX period nonaccelerated filers are more likely to:
+
+(a): disclose more bad news in the second fiscal quarter;
+
+(b): report lower accounting earnings in the second fiscal quarter.
+
+**H4**: In the post-SOX period, nonaccelerated filers’ propensity to under- take the actions predicted in H2 and H3 increases when their public float is closer to the $75 million threshold.
+
+-   **Setting/research design**: uses SOX as a shock for small firms, however, the compliance with the shock was postponed, so that small firms manifested that its adoption could have a negative impact on their business: 1) complying with Section 404 reduces shareholder value; 2) managers believe that complying with 404 reduces their private control benefits. Our **test design** is therefore one of *difference-in-differences* where we compare the post-SOX differences between nonaccelerated filers and accelerated filers to the corresponding pre-SOX differences.
+
+-   **Main results**: firms indeed stay small: they undertake less investment, make more cash payouts to shareholders, reduce the  number of shares held by non-affiliates, making more bad news disclosures, and reporting lower earnings than control firms. These unintended consequences of SOX may be troublesome in terms of welfarism. 
+
+-   **Additional results crucial to the story**: the results point to management undesirably reducing risk-taking incentives, distorting corporate disclosure, impeding the flow of internal information and reducing the firm's ability to attract qualified managers and directors. The regulation has especially high costs for small firms. Actions that Post-SOX nonaccelerated filers take to stay small: 
+
+1) Take actions related to various corporate policies to stay small:
+
+- reducing net investment in property, plant, and equipment, intangibles, and acquisitions;
+
+- paying out more cash to shareholders via ordinary and special divi- r dends and share repurchases
+
+- decreasing the number of shares held by nonaffiliates.
+
+2) Actions related to short-term price impact:
+
+- disclosing more bad news in the second fiscal quarter
+
+- reporting lower accounting earnings in the second fiscal quarter.
+
+Also, they find no evidence of poor governance in firms that remain small. If anything, these firms appear to have better governance systems than firms that cross the threshold.
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: exempting small firms from certain regulations may have unintended consequences that can be harmful for the economy. 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

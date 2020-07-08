@@ -1,0 +1,91 @@
+---
+title: "Roychowdury Shroff Verdi 2019"
+date: "02/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## The effects of financial reporting and disclosure on corporate investment: A review {.tabset}
+
+### Paper Analysis
+
+Paper from: personal general interest in the field.
+
+-   **Research question**: reviews literature on whether and to what extent financial reporting facilitates the allocation of capital to the right investment projects. It organizes the literature into two scenarios: IA between agents and uncertainty about growth opportunities (see Fig.1).
+
+#### IA between agents
+
+Characterized by the presence of information asymmetry that gives rise to agency frictions such as adverse selection and moral hazard costs. Within this channel, the authors divide the literature into **adverse selection** and **moral hazard**. 
+
+- **Adverse selection**: need for better estimation of the magnitude of the increases in investmenet efficiency attributable to financial reporting, as well as to understand alternative forces and channels available to firms to overcome the purported costs of having low reporting quality.
+
+- **Moral hazard**: interaction between mandatory reporting requirements, managers' discretionary disclosure choices and their investment decisions is thus a fertile ground for future research to understand the circumstances under which the impact on investment efficiency is beneficial or distortionary.
+
+#### Uncertainty about growth opportunities
+
+2) Presence of uncertainty about growth opportunities. Two scenarios:
+
+- Accounting information disclosed by peer firms can reduce managers' (and shareholders') uncertainty about growth opportunities for their own firms, thereby improving investment efficiency. 
+
+- Presentation and preparation of financial reports for their own firms can enhance maangers' information sets, which then affects the quality of their investment decisions. 
+
+#### Interesting points from the paper
+
+- Little literature on the **direct effect of accounting on the firm's investment decisions**. 
+
+Several attributes of the accounting system are purported to influence investment decisions and they can be broadly classified into two non-mutually exclusive groups: (i) attributes capturing the amount and precision of the information disclosed, and (ii) attributes capturing the nature and extent of disclosure related to a transaction or economic event.
+
+- **Future research**:
+
+1) Although the evidence in the myopia and financial reporting literatures is closely related, they do not provide a cohesive picture of the economic consequences of financial reporting that incorporates both its positive and negative effects on investment decisions. More research is necessary to reconcile these two streams of the literature.
+
+2) Financial reporting also generates significant externalities. As a result, it is difficult to estimate the aggregate effect of financial reporting on investment decisions that accounts for (i) the firm-specific positive and negative effects (as discussed in the first point above) as well as (ii) the positive and negative spillover effects on non-disclosing firms. It'd be interesting to decompose financial reporting effects into significant externalities.
+
+3) Understanding how managers exercise their joint control over reporting and investment, and how they can commit to higher reporting quality in a way that
+facilitates more efficient investments remains a fertile area of research.
+
+4) Studies identifying and isolating specific mechanisms through which accounting information affects investment decisions will help further our understanding of when and how accounting information might be most valuable.
+
+5) Recent technological advances and the availability of big data and sophisticated data analytic tools can influence internal and external reporting decisions which can ultimately influence investment via agency costs, managerial learning or behavioral biases, and thus offer promising opportunities for both empirical and analytical research.
+
+6) Given that investment efficiency is not observable, better measurements would be interesting!
+
+#### 2.1) Adverse selection channel
+
+Key challenge: **endogeneity** - it is possible that an omitted correlated factor such as managerial ability influences both reporting quality and investment efficiency (pg 5-6). The paper proceeds to some empirical examples of how the previous literature addressed endogeneity.
+
+Unanswered questions: 1) what prevents firms from voluntarily increasing reporting quality? 2) improve estimates of the economic benefits and costs of financial reporting on investment which can help researchers understand the trade-offs associated with changing reporting quality; 3) direct evidence of **credibility** mechanisms with implications for investment is sparse in the literature; 4) no studies isolate other sources of information that can also lead to a reduction in adverse selection costs (e.g. accounting info disclosed by peer firms).
+
+To summarize, our review of the literature on the effect of financial reporting quality on investment via the reduction of adverse selection costs highlights four suggestions for future work: (i) improvement in identification with a focus on the economic magnitude of benefits from reducing adverse selection costs, (ii) measurement of the costs of improving financial reporting quality as well as identification of other contracting arrangements that firms can use to substitute for low financial reporting quality, (iii) identification of the mechanisms firms use to provide credible disclosures about future growth opportunities, and (iv) identification of other sources of (accounting) information that can influence firms' adverse selection costs and investment decisions.
+
+#### 2.2) Moral Hazard
+
+Exs: over-investment(empire building); effort-aversion (quiet life); either way, managers choose investment that is misaligned with investors interests.
+
+Future research: 1) distinguishing specific aspects and types of reporting and disclosure choices; 2) measuring myopia.
+
+#### 2.3) Other agency conflicts
+
+(a) conflicts between shareholders and debtholders, (b) conflicts that arise within multi-segment organizations and (c) conflicts between managers and broader stakeholder groups such as regulators and consumers.
+
+The preceding discussion highlights the importance of recognizing the situations in which managers are likely to pursue opportunistic reporting practices and inefficient investments, versus when they are likely to commit to higher-quality reporting and better investment decisions. Governance and managerial incentives are likely to play a key role in distinguishing between these situations, as multiple studies including Bushee (1998), Zang (2012) and Huang et al. (2019) argue. But more research is necessary to understand the joint determination of reporting practices and investment decisions.
+
+#### 3) Information uncertainty
+
+- This section discusses the theoretical arguments and empirical evidence examining whether and why financial accounting disclosures affect investment when the stakeholders of a firm are symmetrically informed and agency frictions are absent.
+
+- If peer-firm disclosures inform managers of other firms about these economic conditions, then peer-firm disclosures can help managers make more informed investment decisions. But open issues remain:  (i) address some of the conceptual challenges in the literature, (ii) address some of the empirical challenges in the literature, and (iii) build on the insights learned from prior studies and highlight the policy implications of peer disclosures.
+
+- **Our review of the literature reveals that prior research generally does not distinguish between peer effects that arise from the disclosure of proprietary versus non-proprietary information**. Future research that partitions disclosures of firms into those that reveal proprietary information versus those that do not and examine peer-firms' responses to these different types of disclosure can yield interesting insights. There is little evidence examining the implications of proprietary disclosures on (i) the disclosing firm's investment decisions and (ii) peer firms' investment decisions. Overall, we call for research that examines and quantifies the benefit of disclosure to peer firms and calibrates these benefits against the cost of disclosure to disclosing firms. 
+
+- It would be informative to know what kinds of information managers collect absent regulation and whether managers collect and process the optimal amount of information.
+
+In sum, existing studies provide evidence that complying with financial reporting requirements can affect managers' investment decisions. However, the idea that managers can learn new information from the financial reporting process is still in its infancy and much is yet to be learned. The existing evidence is largely cross-sectional in nature, leaving room for alternative interpretations. In addition, the precise mechanisms that drive the extant evidence are unclear. Thus, more research is needed to examine whether the financial reporting system indeed informs and improves managers' investment decisions.
+
+#### 4) Related topics
+
+- Other **behavioral biases**! We are aware of only a few studies that explicitly examine the implications of managers' and investors' behavioral biases in the context of the relation between accounting and investment. Broadly speaking, economic agents can have several behavioral biases such as overconfidence, limited attention, loss aversion, miscalibration, and attribution, among others.
+
+- **Network effects**! The use of common agents (e.g., auditors, board members, shareholders, etc.) affects firms' decision-making. The premise underlying such studies is that shared agents (i) have conflicts of interest and/or (ii) act as a conduit for information, which subsequently affects the decisions managers make.

@@ -1,0 +1,58 @@
+---
+title: "Noh So Weber"
+date: "13/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Voluntary and mandatory disclosures: Do managers view them as substitutes? {.tabset}
+
+### Paper Analysis
+
+Paper from:
+
+-   **Research question**: do managers view mandatory and voluntary disclosures as substitutes?
+
+-   **Why is it relevant**: clear the air in the following tension: are voluntary and mandatory disclosures complements or substitutes?
+
+-   **Intended contribution/importance**: to shed light on the link between firms’ voluntary and mandatory disclosures; our paper provides evidence consistent with firms using mandatory 8K filings and voluntary guidance as substitutes. These results suggest the link between voluntary and mandatory disclosures likely depends on the specific context and attributes of the disclosure being considered.
+
+-   **Hypotheses**:
+
+1) Firms that significantly increase the amount of mandatory disclosure by increasing their 8K filings will change their management guidance frequency.
+
+2) Firms that increase their 8K filings pertaining to earnings-related news will change their management guidance frequency more substantially than the firms that increase their 8K filings about administrative or miscellaneous news.
+
+3) Firms that increase the amount of mandatory disclosure by increasing their 8K filings will change their use of guidance conveying good news more than bad news.
+
+4) Firms that significantly increase the amount/timeliness of mandatory disclosure by increasing their 8K filings as a result of the 2004 regulation will change their management guidance frequency even more after the regulation.
+
+5) Firms that increase their 8K filings following the 2004 regulation will change their guidance frequency more substantially for good news compared to bad news forecasts.
+
+-   **Setting/research design**: uses the 2004 regulation shock that requires firms to timely disclose material information on the 8Ks. Our main tests focus on the relation between within-firm variation in firms' guidance and 8K filings using a sample of 86,150 firm-quarters spanning the three years before and after the 2004 regulation. 
+
+-   **Main results**: find a negative relation between guidance and 8Ks, strenghtened after the 2004 shock. Consistent with firms using the disclosures as substitutes. We find an upward trend in the propensity and frequency of guidance for the average firm over our sample period, but firms that increase their 8K disclosures do not increase guidance as much. 
+
+-   **Additional results crucial to the story**: **1)** 8Ks about firms' material contracts (e.g., items 1.01 and 1.02) are more likely to serve as a substitute for guidance than 8Ks about firms’ code of ethics (e.g., item 5.05). Additionally, to mitigate concerns about confounding changes in the reporting or regulatory environment, we show our main results hold when focusing on observations within one year of the 2004 regulation. **2)** partition our guidance sample into those providing ‘good news’ versus ‘bad news': results show the 2004 regulation is associated with an asymmetric increase in the extent to which 8K filings substitute for good news relative to bad news guidance. 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: within-firm variations in 8Ks and guidance are, on average, negatively related, consistent with firms using 8Ks and guidance as substitutes, rather than complements.
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

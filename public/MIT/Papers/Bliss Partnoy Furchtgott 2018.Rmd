@@ -1,0 +1,50 @@
+---
+title: "Bliss Partnoy Furchtgott 2018"
+date: "13/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Information bundling and securities litigation {.tabset}
+
+### Paper Analysis
+
+Paper from:
+
+-   **Research question**: whether bundling restatement announcements with other information makes it more difficult for plaintiffs to establish loss causation in litigation processes?
+
+-   **Why is it relevant**: the packaging through which disclosure happens varies. The paper deals with how can bundling restatements (bad news that could lead to litigation) among other news can help firms avoid litigation. 
+
+-   **Intended contribution/importance**: We contribute to the two literatures discussed above – on the timing and packaging of disclosures and on practices that reduce the likelihood and cost of securities litigation – by showing that bundling restatement announcements with other information reduces litigation costs.
+
+-   **Hypotheses**: t both types of information bundling reduce the costs of securities litigation by confounding the loss causation requirement.
+
+-   **Setting/research design**: to  establish loss causation possible of litigation, it is needed: “(1) identifying a ‘corrective disclosure’ (a release of information that reveals to the market the pertinent truth that was previously concealed or obscured by the company’s fraud); (2) showing that the stock price dropped soon after the corrective disclosure; and (3) eliminating other possible explanations for this price drop, so that the fact finder can infer that it is more probable than not that it was the corrective disclosure—as opposed to other possible depressive factors—that caused at least a ‘substantial’ amount of the price drop”. They use an exogenous **shock**: 2005 US Supreme Court *Dura* ruling on loss causation standards: it made it harder to successfully litigate against misstatements. Uses 1562 "corrective disclosures".
+
+Diff-in-diff-in-diff: to test whether bundling had a stronger effect in deterring litigation, the authors pool bundled and non-bundled restatements together and perform a diff-in-diff-in-diff probit  (equation 2, pg 70). The coefficient of interest: Post-Dura $\ast$ 8th-9th Circuits $\ast$ Bundled is negative and significant, indicating bundle leads to less litigation.
+
+-   **Main results**: We find that positive bundling offsets price declines and results in less litigation. In contrast, noise bundling magnifies price declines, but nevertheless deters litigation by confounding which bad news caused a decline. information bundling significantly reduced litigation occurrence for firms in the Eighth and Ninth Circuits after the Dura ruling. Specifically, the occurrence of litigation dropped from 6.7% to 0% for positive bundled restatements, and from 20.3% to 5.6% for noise bundled restatements after the tightening of loss causation standards. 
+
+-   **Additional results crucial to the story**: Results: 1) **stock market reaction**:  a) *positive bundling* - reduces negative effect of a standalone misstatement: it is less likely that firms face litigation as good news counterbalance bad news; b) *noise bundling* - creates noise that prevents potential plaintiffs from isolating the sole effect of misstatements on stock returns. 2) **Litigation occurrence**: a) *positive bundling*: no single restatement results in litigation; b) *noise bundling*: lower litigation rates for restatements. In sum, both types of bundling became more effective in reducing litigation risk after the shock. To acertain that results are not driven by information particular to restatements, they robustness test for trends before and after the shock and find they were similar. Sum up: they do the diff-in-diff-in-diff and find tht the decrease in litigation occurence is restricted to bundled restatements for firms located in the Eight and Ninth Circuits, which experienced a tightening of the loss causation standards, but not to control firms that are outside the 8th and 9th Circuits. 3) **Litigation Outcome**: lastly they test and find that bundling not only decreases the amount of the settlement in litigations, but also leads to more dismissals. They again run a triple diff-in-diff. 
+
+- **Possible alternative hypotheses**: after Dura, disclosure strategies could have changed. For example, managers started disclosing more/differently things from before to effectively alter how bundling takes place.
+
+-   **Conclusion**: disclosure packaging can affect stock price reactions and disclosing a restatement discreetly can reduce litigation risk through **information bundling**. 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

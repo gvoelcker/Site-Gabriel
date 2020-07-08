@@ -1,0 +1,56 @@
+---
+title: "Boone White 2015"
+date: "13/06/20"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## The effect of institutional ownership on firm transparency and information production {.tabset}
+
+### Paper Analysis
+
+Paper from: Eric's suggestion for my summer paper.
+
+-   **Research question**: what's the impact of higher institutional ownership on the information environment?
+
+-   **Why is it relevant**: "little is known about how their varying preferences for information impact firms' public information production and the trading environment."
+
+-   **Intended contribution/importance**: 1) use novel settings to help overcome endogeneity problems to make inferences regarding the factors influencing the information environment; 2) We illustrate that institutional investors have heterogeneous influences on the information environment; 3) we bring important evidence to bear that certain institutional investors, such as quasi-indexers, appear to provide external benefits for all shareholders by increasing firm transparency and information production, which can improve both internal and external monitoring efforts.
+
+-   **Hypotheses**: higher proportions of institutional ownership affect voluntary disclosure by firms in a number of ways that enhance firm transparency.
+
+-   **Setting/research design**: by using an RDD on the Russell 1000/2000 index cutoff, the paper compares how similar firms (around the threshold) with different institutional ownership (firms in the bottom of the 1000 sample have less institutional ownership than those on the top of the 2000 sample) have different information environment. Using this setting accounts for endogeneity concerns. 
+
+3 types of institutional investors:
+
+1) *Quasi-indexers*: main drivers of the results. Include both passive index funds and those that are actively managed, but closely mimic a particular index. Their diverse holdings make gathering private information on their portfolio firms more costly, and their tracking strategies largely attenuate their ability to strategically trade on private information
+
+2) *Transient*:  tend to hold small positions for short periods, could benefit from either private or public information. On the one hand, gathering private information enables them to trade ahead of firm-specific news and gain from short-term price movements (Ke,Petroni, and Yu, 2008). On the other hand, greater public information generates more opportunities to trade and can lessen the price impact of those trades.
+
+3) *Dedicated*: hold large positions in a select set of firms for long periods of time, providing the ability to directly interact with management. We, therefore, expect dedicated investors to have less influence on public information production because they likely rely more on private information.
+
+-   **Main results**: higher institutional ownership, particularly from quasi-indexers, lead to less information asymmetry. It is associated with greater management disclosure, analyst following and liquidity. We find that firms with greater quasi-indexer ownership communicate to investors more about firm prospects via management forecasts and voluntary Securities and Exchange Commission (SEC) Form 8-K filings (for intuition, see figure 5). 
+
+-   **Additional results crucial to the story**: to test for information environment, they look at: 1) **voluntary earnings forecast and 8k** ($\uparrow$ institutional investor $\iff \downarrow$ IA); 2) **analyst following**: $\uparrow$ II $\iff \downarrow$ Analyst following, suggesting that AF is a substitute for firm information, that is, less info leads to higher demand for AF; 3) **trading environment**: $\uparrow$ II $\iff \downarrow$ IA, the latter proxied by the probability of an informed trade (PIN) and bid-ask spreads.
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

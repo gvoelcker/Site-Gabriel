@@ -1,0 +1,54 @@
+---
+title: "Lerman Livnat 2010"
+date: "22/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## The new Form 8-K disclosures {.tabset}
+
+### Paper Analysis
+
+Paper from:
+
+-   **Research question**: examines market reactions to 8Ks file under the new SEC regime and investigates whether 10K/Qs become less informative under the new 8Ks. 1) Are Forms 8-K filed under the new SEC guidance informative to the market? 2) Is the expanded Form 8-K disclosure after 2004 associated with a decrease in information content of periodic reports?
+
+-   **Why is it relevant**: one of the first papers to deal with the 2004 shock to the 8K.
+
+-   **Intended contribution/importance**: **1)** by examining the information content of the recently added items; **2)** by examining the market reactions to all items not only through signed returns but also by examining contemporaneous return volatility and trading volume as well as investigating whether there is a drift in returns beyond the SEC filing date; **3)** it examines whether greater event-time disclosure is associated with a decrease in information content of periodic reports. Our study is relevant for researchers who are interested in the market effects of company disclosures through SEC filings, to regulators who can assess the effects of additional mandatory disclosures on market reactions, and to investors who can assess the information content of specific 8-K forms.
+
+-   **Hypotheses**: 1) does the increase to on 8K filings lead to less informativeness of the 10K/Qs filings? 
+
+-   **Setting/research design**: sample of 8Ks filed from 94-07 from EDGAR. The Compustat database used for the matching is the Charter Oak Point-In-Time database, which reflects company information as it was known at the time. For 8-K filings made after August 2004, it also includes the SEC category. Data: 330053 8K filings and 260629 10K/Q filings.
+
+-   **Main results**: all disclosed items are associated with abnormal volume and return volatility around both the event and the SEC filing dates, and some items have significant return drifts after the SEC filings (8Ks are relevant!). The information content of periodic reports has **not** diminished after the 8K regulation change in 2004. 
+
+-   **Additional results crucial to the story**: 95% of the filings are timely (<4 days). The new itens are present in over half of all filings made during this period - they also have significant information content as they trigger abnormal trading volume and volatility around the event and filing dates. $\uparrow$ filings $\iff \uparrow$ market impact.
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 1) the new 8K guidance provided the investors with timely access to relevant corporate information. 2) Investors may use periodic filings to interpret the effects of material events that had been disclosed earlier. 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
+
+The paper is one of the first to analyze the 2004 8K regulation change by the SEC. Using 8K filings as the X, they interpret how they impact the market. They look at the timeliness of the reports and what items are disclosed, using a very broad and not thorough definition of when is the filing good or bad. 
+
+
+
+

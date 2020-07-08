@@ -1,0 +1,50 @@
+---
+title: "Natalie's Presentation 03/06/2020"
+date: "02/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Auditor's Role in Fair Value Monitoring: Evidence from Security-Level Data {.tabset}
+
+### Paper Analysis
+
+Paper from: Natalie's presentation
+
+-   **Research question**: what are the economic forces that shape the auditor's effectiveness as monitors of their clients' FVs?
+
+-   **Why is it relevant**: FVs have become increasingly important in financial reporting. Concern: manager's discretion can lead to high uncertainty. The auditor's role is to mitigate uncertainty about insider's reports.
+
+- **Priors**: PCAOB FV deficiencies. Auditors have to balance the following pressures: a) to maintain relationship by allowing hard-to-detect; b) ensure quality due to regulatory pressure. 
+
+-   **Intended contribution/importance**: 1) nascent auditor FV expertise literature; 2) provide evidence on the way auditors build expertise in detecting within-GAAP manipulations that characterize FV; 3) interaction between auditors and other player in the monitoring ecosystem.
+
+-   **Hypotheses**: *H1*: audit firms' security-specific experience strengthens their views on appropriate FVs $\implies$ increased precision in valuations of the same security across an audit firm's different clients. *H2*: H1 varies with the external regulatory environment.
+
+-   **Setting/research design**: the audit process is unobservable and it's hard to separate outcome differences stemming from the auditing process from other sources. The approach adopted is to **compare outcomes across auditors for the same security in the same period**. It tries to capture the auditor's experience effect on the imprecision measure. Ths auditor experience is a cross-sectional and time-series measure. The auditor FV difference is captured by the number of securities at auditor and the cumulative number of securities at auditor.  
+
+-   **Main results**: 1) internal expertise development; 2) other monitoring affects auditor monitoring.
+
+-   **Additional results crucial to the story**: 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: 
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary

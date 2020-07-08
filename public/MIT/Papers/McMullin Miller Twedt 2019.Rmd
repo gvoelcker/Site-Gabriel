@@ -1,0 +1,48 @@
+---
+title: "McMullin Miller Twedt 2019"
+date: "24/06/2020"
+html_document:
+    toc: true
+    toc_depth: 2
+    number_sections: true
+    fig_caption: true
+---
+## Increased Mandated Disclosure Frequency and Price Formation: evidence from the 8K expansion regulation {.tabset}
+
+### Paper Analysis
+
+Paper from: 8K literature for 2020 Summer Paper.
+
+-   **Research question**: has the 2004 SEC regulation change towards 8K led to more efficient price formation?
+
+-   **Why is it relevant**: increased mandated disclosure frequency should lead to more efficient price formation vs mandating disclosure may impede the price formation. Prior literature has been unable to document a relation between mandatory disclosure and improved price formation.  
+
+-   **Intended contribution/importance**: our evidence suggests that mandated increases in disclosure frequency can indeed improve price formation. This evidence contributes to our understanding of whether shifts to a more continuous disclosure regime are likely to impact the speed of price formation, and as such complements studies examining these effects. We also contribute to the growing literature that identifies factors that influence the efficiency of the price formation process as well as the literature that examines the benefits and costs of disclosure regulation.
+
+-   **Hypotheses**: is an increase in the frequency of mandated disclosue associated with an increase in the speed of price formation?
+
+-   **Setting/research design**: use a diff-in-diff to test whether the firms more affected by the shock also experienced a greater increase in price formation. 
+
+-   **Main results**: price formation improves after the mandate, where firms with the largest increases in mandatory disclosure experience the greatest improvements in price formation. 
+
+-   **Additional results crucial to the story**: 
+
+- **Possible alternative hypotheses**: 
+
+-   **Conclusion**: the frequency with which material events are disclosed is positively related to price formation.
+
+- **Future research**:  
+
+### When evaluating a paper:
+
+- Does the study address an important question?
+
+- Does the study extend prior literature?
+
+- Is the study's conceptual framework logically consistent and credible?
+
+- Are the sample, proxies, and empirical models appropriate?
+
+- Does the study consider and rule out alternative explanations?
+
+### Summary
