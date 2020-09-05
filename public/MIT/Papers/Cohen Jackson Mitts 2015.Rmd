@@ -11,7 +11,7 @@ html_document:
 
 ### Paper Analysis
 
-Paper from:
+Paper from: Ki-Soon's suggestion when I showed him my summer paper 2020 idea.
 
 -   **Research question**: how do corporate insiders trade their company's stock during the 8-K trading gap?
 
